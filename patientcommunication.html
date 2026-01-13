@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8.1 & 9.1: Technology & Written Communication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-purple: #af4bef;
+            --accent-blue: #8380f0;
+            --success-green: #00b894;
+            --light-lavender: #f7f5fb;
+            --light-purple: #d492ff;
+            --error-orange: #e17055;
+            --warning-yellow: #fdcb6e;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(175, 75, 239, 0.1);
+            --radius: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--white) 0%, #f1ecff 50%, var(--light-lavender) 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-purple), var(--accent-blue));
+            color: var(--white);
+            padding: 25px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .logo img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .title h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .title p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .progress-indicator {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .progress-indicator i {
+            font-size: 1.2rem;
+        }
+
+        .content-wrapper {
+            display: flex;
+            min-height: 800px;
+        }
+
+        .sidebar {
+            width: 320px;
+            background: var(--light-lavender);
+            padding: 25px;
+            border-right: 2px solid #e9e1ff;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            color: var(--primary-purple);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-purple);
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 10px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            text-decoration: none;
+            color: var(--text-dark);
+            background: var(--white);
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: var(--light-purple);
+            color: var(--primary-purple);
+            transform: translateX(5px);
+        }
+
+        .nav-link.active {
+            background: var(--primary-purple);
+            color: var(--white);
+            border-left-color: var(--success-green);
+        }
+
+        .nav-link.completed {
+            border-left-color: var(--success-green);
+        }
+
+        .nav-link i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .lesson-content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .lesson-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .lesson-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9e1ff;
+        }
+
+        .section-header h2 {
+            color: var(--primary-purple);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border: 1px solid #e9e1ff;
+        }
+
+        .card h3 {
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h3 i {
+            color: var(--accent-blue);
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .objective-item {
+            background: var(--light-lavender);
+            padding: 20px;
+            border-radius: var(--radius);
+            border-left: 5px solid var(--primary-purple);
+            transition: all 0.3s ease;
+        }
+
+        .objective-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .objective-item.completed {
+            border-left-color: var(--success-green);
+        }
+
+        .objective-number {
+            display: inline-block;
+            background: var(--primary-purple);
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .objective-item.completed .objective-number {
+            background: var(--success-green);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: var(--primary-purple);
+            color: var(--white);
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9e1ff;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: var(--light-lavender);
+        }
+
+        .comparison-table tr:hover {
+            background: var(--light-purple);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--primary-purple);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: var(--accent-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(131, 128, 240, 0.3);
+        }
+
+        .btn-success {
+            background: var(--success-green);
+        }
+
+        .btn-success:hover {
+            background: #00a085;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-purple);
+            color: var(--primary-purple);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-purple);
+            color: var(--white);
+        }
+
+        .quiz-container {
+            background: var(--light-lavender);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-top: 25px;
+        }
+
+        .quiz-question {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #d9cfff;
+        }
+
+        .quiz-option {
+            display: block;
+            margin: 10px 0;
+            padding: 15px;
+            background: var(--white);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-option:hover {
+            background: var(--light-purple);
+        }
+
+        .quiz-option.selected {
+            background: var(--primary-purple);
+            color: var(--white);
+        }
+
+        .quiz-option.correct {
+            background: var(--success-green);
+            color: var(--white);
+        }
+
+        .quiz-option.incorrect {
+            background: var(--error-orange);
+            color: var(--white);
+        }
+
+        .activity-box {
+            background: linear-gradient(135deg, #f7f5fb, #f1ecff);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 5px solid var(--accent-blue);
+        }
+
+        .activity-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .activity-icon {
+            font-size: 2rem;
+            color: var(--accent-blue);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--light-lavender);
+            color: var(--text-light);
+            border-top: 1px solid #e9e1ff;
+            margin-top: 30px;
+        }
+
+        .completion-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--success-green);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e9e1ff;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-purple), var(--accent-blue));
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .tech-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid var(--primary-purple);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .tech-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-purple);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .hardware-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .hardware-card {
+            background: var(--light-lavender);
+            padding: 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 2px solid #e9e1ff;
+        }
+
+        .step-container {
+            counter-reset: step-counter;
+            margin: 20px 0;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e9e1ff;
+        }
+
+        .step-item:before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background: var(--primary-purple);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .letter-template {
+            background: #f0f7ff;
+            padding: 30px;
+            border-radius: var(--radius);
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            border: 2px dashed var(--accent-blue);
+        }
+
+        .letter-element {
+            margin: 10px 0;
+            padding-left: 20px;
+            border-left: 3px solid var(--primary-purple);
+        }
+
+        .safeguard-item {
+            background: #f0fff4;
+            padding: 15px;
+            border-radius: var(--radius);
+            margin: 10px 0;
+            border-left: 4px solid var(--success-green);
+        }
+
+        .website-criteria {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: var(--white);
+            border-radius: var(--radius);
+            margin: 10px 0;
+            border: 1px solid #e9e1ff;
+        }
+
+        .criteria-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-purple);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .writing-rule {
+            background: #fff8f0;
+            padding: 15px;
+            border-radius: var(--radius);
+            margin: 10px 0;
+            border-left: 3px solid var(--warning-yellow);
+        }
+
+        .email-example {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: var(--radius);
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .fax-template {
+            background: #fff0f0;
+            padding: 25px;
+            border-radius: var(--radius);
+            margin: 20px 0;
+            border: 2px solid var(--error-orange);
+        }
+
+        @media (max-width: 992px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid #e9e1ff;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .logo-section {
+                justify-content: center;
+            }
+            
+            .objectives-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .hardware-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/64e9d2f719b1e5258e5d57f5_IMG_1512-p-500.png" alt="Medical Assisting Logo">
+                </div>
+                <div class="title">
+                    <h1>Healthcare Technology & Written Communication</h1>
+                    <p>Lesson 8.1 & 9.1: Computer Systems & Professional Writing</p>
+                </div>
+            </div>
+            <div class="progress-indicator">
+                <i class="fas fa-laptop-medical"></i>
+                <span>Progress: <span id="progress-percentage">0%</span></span>
+            </div>
+        </header>
+        
+        <div class="content-wrapper">
+            <nav class="sidebar">
+                <h2><i class="fas fa-list-ol"></i> Lesson Modules</h2>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#pretest" class="nav-link active" data-section="pretest">
+                            <i class="fas fa-clipboard-check"></i>
+                            <span>1. Pretest & Introduction</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#computer-types" class="nav-link" data-section="computer-types">
+                            <i class="fas fa-desktop"></i>
+                            <span>2. Computer Types</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#hardware" class="nav-link" data-section="hardware">
+                            <i class="fas fa-microchip"></i>
+                            <span>3. Hardware Components</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#maintenance" class="nav-link" data-section="maintenance">
+                            <i class="fas fa-tools"></i>
+                            <span>4. Maintenance & Ergonomics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#software" class="nav-link" data-section="software">
+                            <i class="fas fa-code"></i>
+                            <span>5. Software Systems</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#emr-ehr" class="nav-link" data-section="emr-ehr">
+                            <i class="fas fa-file-medical-alt"></i>
+                            <span>6. EMR vs EHR</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#security" class="nav-link" data-section="security">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>7. Security & HIPAA</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#writing-basics" class="nav-link" data-section="writing-basics">
+                            <i class="fas fa-pen-fancy"></i>
+                            <span>8. Writing Fundamentals</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#business-letters" class="nav-link" data-section="business-letters">
+                            <i class="fas fa-envelope"></i>
+                            <span>9. Business Letters</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#email-fax" class="nav-link" data-section="email-fax">
+                            <i class="fas fa-mail-bulk"></i>
+                            <span>10. Email, Fax & Mail</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#assessment" class="nav-link" data-section="assessment">
+                            <i class="fas fa-question-circle"></i>
+                            <span>11. Final Assessment</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="btn btn-success" id="complete-lesson-btn">
+                        <i class="fas fa-check-circle"></i> Mark Lesson Complete
+                    </button>
+                </div>
+            </nav>
+            
+            <main class="lesson-content">
+                <!-- Pretest Section -->
+                <section id="pretest" class="lesson-section active">
+                    <div class="section-header">
+                        <h2><i class="fas fa-clipboard-check"></i> Pretest & Introduction</h2>
+                        <p>Assess your baseline knowledge of healthcare technology and written communication.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-bullseye"></i> Lesson Objectives</h3>
+                        <p>By the end of this lesson, you will be able to:</p>
+                        
+                        <div class="objectives-grid" id="objectives-list">
+                            <!-- Objectives populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-tachometer-alt"></i> Knowledge Pretest</h3>
+                        <p>Complete this brief assessment to evaluate your current understanding.</p>
+                        
+                        <div class="quiz-container">
+                            <div class="quiz-question">
+                                <p><strong>1. What is the main difference between EMR and EHR?</strong></p>
+                                <div class="quiz-option" data-correct="false">A. EMR is electronic, EHR is paper-based</div>
+                                <div class="quiz-option" data-correct="true">B. EMR is for one practice, EHR shares between providers</div>
+                                <div class="quiz-option" data-correct="false">C. EMR is for billing, EHR is for clinical notes</div>
+                                <div class="quiz-option" data-correct="false">D. There is no difference</div>
+                            </div>
+                            
+                            <div class="quiz-question">
+                                <p><strong>2. Which is an example of an input device?</strong></p>
+                                <div class="quiz-option" data-correct="false">A. Monitor</div>
+                                <div class="quiz-option" data-correct="false">B. Printer</div>
+                                <div class="quiz-option" data-correct="true">C. Keyboard</div>
+                                <div class="quiz-option" data-correct="false">D. Speaker</div>
+                            </div>
+                            
+                            <button class="btn" id="submit-pretest">
+                                <i class="fas fa-paper-plane"></i> Submit Pretest
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-box">
+                        <div class="activity-header">
+                            <i class="fas fa-laptop-medical activity-icon"></i>
+                            <div>
+                                <h3>Technology in Healthcare Reflection</h3>
+                                <p>Think about how technology has changed healthcare in recent years. What benefits and challenges have you observed or experienced?</p>
+                            </div>
+                        </div>
+                        <textarea placeholder="Type your reflection here..." rows="3" style="width:100%; padding:15px; border-radius:var(--radius); border:1px solid #d9cfff;"></textarea>
+                        <button class="btn btn-outline" style="margin-top:15px;">
+                            <i class="fas fa-share"></i> Save Reflection
+                        </button>
+                    </div>
+                </section>
+                
+                <!-- Computer Types Section -->
+                <section id="computer-types" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-desktop"></i> Computer Types in Healthcare</h2>
+                        <p>Understanding different computer systems used in ambulatory care.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-clinic-medical"></i> Common Computer Types in Medical Offices</h3>
+                        
+                        <div class="hardware-grid">
+                            <div class="hardware-card">
+                                <div style="font-size: 2.5rem; color: var(--primary-purple); margin-bottom: 15px;">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                                <h4>Desktop Computers</h4>
+                                <p>Fixed workstations at reception, nursing stations, provider offices</p>
+                                <div style="background: #f0f7ff; padding: 10px; border-radius: var(--radius); margin-top: 10px;">
+                                    <strong>Pros:</strong> Powerful, upgradable, secure
+                                </div>
+                            </div>
+                            
+                            <div class="hardware-card">
+                                <div style="font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 15px;">
+                                    <i class="fas fa-laptop"></i>
+                                </div>
+                                <h4>Laptop Computers</h4>
+                                <p>Portable for providers, administrators, mobile work</p>
+                                <div style="background: #f0f7ff; padding: 10px; border-radius: var(--radius); margin-top: 10px;">
+                                    <strong>Pros:</strong> Portable, space-saving
+                                </div>
+                            </div>
+                            
+                            <div class="hardware-card">
+                                <div style="font-size: 2.5rem; color: var(--success-green); margin-bottom: 15px;">
+                                    <i class="fas fa-tablet-alt"></i>
+                                </div>
+                                <h4>Tablets & Mobile Devices</h4>
+                                <p>Point-of-care documentation, patient education, mobile access</p>
+                                <div style="background: #f0fff4; padding: 10px; border-radius: var(--radius); margin-top: 10px;">
+                                    <strong>Pros:</strong> Highly portable, touch interface
+                                </div>
+                            </div>
+                            
+                            <div class="hardware-card">
+                                <div style="font-size: 2.5rem; color: var(--warning-yellow); margin-bottom: 15px;">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <h4>Servers</h4>
+                                <p>Central data storage, network management, backup systems</p>
+                                <div style="background: #fff8f0; padding: 10px; border-radius: var(--radius); margin-top: 10px;">
+                                    <strong>Pros:</strong> Centralized control, secure data
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-th"></i> Specialized Medical Computers</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fas fa-x-ray"></i>
+                                </div>
+                                <h4>Medical Grade Computers</h4>
+                                <p>Designed for clinical environments:</p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Easy to clean/disinfect</li>
+                                    <li>Resistant to fluids and chemicals</li>
+                                    <li>Compliant with medical standards</li>
+                                    <li>Fanless designs (reduce contamination)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h4>COW/WOW Systems</h4>
+                                <p><strong>COW:</strong> Computer on Wheels</p>
+                                <p><strong>WOW:</strong> Workstation on Wheels</p>
+                                <p>Mobile carts with computers for bedside documentation</p>
+                            </div>
+                            
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fas fa-print"></i>
+                                </div>
+                                <h4>Medical Kiosks</h4>
+                                <p>Self-service stations for:</p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Patient check-in</li>
+                                    <li>Insurance verification</li>
+                                    <li>Payment processing</li>
+                                    <li>Health information access</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-box">
+                        <div class="activity-header">
+                            <i class="fas fa-brain activity-icon"></i>
+                            <div>
+                                <h3>Computer Selection Scenario</h3>
+                                <p>A new clinic is setting up their front desk. What type of computer would be most appropriate and why?</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 15px;">
+                            <textarea placeholder="Your analysis and recommendation..." rows="4" style="width:100%; padding:15px; border-radius:var(--radius); border:1px solid #d9cfff;"></textarea>
+                        </div>
+                        
+                        <button class="btn btn-outline" style="margin-top:15px;">
+                            <i class="fas fa-lightbulb"></i> View Expert Recommendation
+                        </button>
+                    </div>
+                </section>
+                
+                <!-- Hardware Components Section -->
+                <section id="hardware" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-microchip"></i> Hardware Components</h2>
+                        <p>Understanding input, output, and storage devices.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-keyboard"></i> Input vs. Output Devices</h3>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Device Type</th>
+                                    <th>Definition</th>
+                                    <th>Healthcare Examples</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Input Devices</strong></td>
+                                    <td>Send data TO the computer</td>
+                                    <td>
+                                        <ul style="margin-left: 20px;">
+                                            <li>Keyboard & Mouse</li>
+                                            <li>Scanner (document, barcode)</li>
+                                            <li>Digital pen/stylus</li>
+                                            <li>Microphone (voice recognition)</li>
+                                            <li>Webcam (telemedicine)</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Output Devices</strong></td>
+                                    <td>Receive data FROM the computer</td>
+                                    <td>
+                                        <ul style="margin-left: 20px;">
+                                            <li>Monitor/Display</li>
+                                            <li>Printer (labels, reports)</li>
+                                            <li>Speakers (alerts, patient education)</li>
+                                            <li>Projector (training)</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Input/Output Devices</strong></td>
+                                    <td>Both input and output</td>
+                                    <td>
+                                        <ul style="margin-left: 20px;">
+                                            <li>Touchscreen monitor</li>
+                                            <li>Network interface card</li>
+                                            <li>Modem/router</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-hdd"></i> Storage Devices & Cloud Storage</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background: #f0f7ff; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--primary-purple);"><i class="fas fa-hdd"></i> Primary Storage</h4>
+                                <p><strong>RAM (Random Access Memory):</strong> Temporary, fast, volatile</p>
+                                <p><strong>ROM (Read Only Memory):</strong> Permanent, non-volatile</p>
+                                <div class="medical-term" style="background: #e9e1ff; margin-top: 10px;">Volatile = loses data when power off</div>
+                            </div>
+                            
+                            <div style="background: #fff0f7; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--accent-blue);"><i class="fas fa-save"></i> Secondary Storage</h4>
+                                <p><strong>Hard Disk Drive (HDD):</strong> Magnetic storage, slower, cheaper</p>
+                                <p><strong>Solid State Drive (SSD):</strong> Flash memory, faster, more reliable</p>
+                                <p><strong>External Drives:</strong> USB flash drives, external HDD/SSD</p>
+                            </div>
+                            
+                            <div style="background: #f0fff4; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--success-green);"><i class="fas fa-cloud"></i> Cloud Storage</h4>
+                                <p>Remote storage accessed via internet:</p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li><strong>Advantages:</strong> Accessibility, backup, collaboration</li>
+                                    <li><strong>Healthcare Use:</strong> Must be HIPAA-compliant</li>
+                                    <li><strong>Examples:</strong> AWS, Google Cloud, Microsoft Azure</li>
+                                    <li><strong>Security:</strong> Encryption, access controls required</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-shopping-cart"></i> Hardware Purchasing Considerations</h3>
+                        <p>Important questions to ask when purchasing computer hardware:</p>
+                        
+                        <div class="step-container">
+                            <div class="step-item">
+                                <h4>Compatibility</h4>
+                                <p>Will it work with existing software and systems?</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Technical Specifications</h4>
+                                <p>Processor speed, RAM, storage capacity, ports needed?</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Healthcare Specifics</h4>
+                                <p>Is it medical-grade? Easy to disinfect? Quiet operation?</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Support & Warranty</h4>
+                                <p>What technical support is available? Warranty length?</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Security Features</h4>
+                                <p>Does it support necessary security protocols?</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Cost Considerations</h4>
+                                <p>Total cost of ownership including maintenance?</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Maintenance & Ergonomics Section -->
+                <section id="maintenance" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-tools"></i> Maintenance & Ergonomics</h2>
+                        <p>Proper care of computer equipment and workstation setup.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-broom"></i> Computer Hardware Maintenance</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background: #f0f7ff; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--primary-purple);"><i class="fas fa-shield-virus"></i> Cleaning & Disinfection</h4>
+                                <p><strong>General Rules:</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Turn off and unplug before cleaning</li>
+                                    <li>Use approved disinfectants (check manufacturer)</li>
+                                    <li>Avoid excessive moisture</li>
+                                    <li>Clean keyboards and mice daily</li>
+                                    <li>Use screen-safe cleaners for monitors</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background: #fff0f7; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--accent-blue);"><i class="fas fa-hands-wash"></i> Infection Control</h4>
+                                <p><strong>Healthcare Specific:</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Wash hands before/after computer use</li>
+                                    <li>Use keyboard covers that can be disinfected</li>
+                                    <li>Consider antimicrobial keyboards</li>
+                                    <li>Clean shared devices between users</li>
+                                    <li>Follow facility-specific protocols</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background: #fff8f0; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--warning-yellow);"><i class="fas fa-tasks"></i> Preventive Maintenance</h4>
+                                <p><strong>Regular Tasks:</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Regular software updates</li>
+                                    <li>Disk cleanup and defragmentation</li>
+                                    <li>Backup verification</li>
+                                    <li>Virus/malware scans</li>
+                                    <li>Check for wear and tear</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-user-check"></i> Ergonomics Principles</h3>
+                        <p>Proper workstation setup to prevent injury and increase productivity:</p>
+                        
+                        <div class="step-container">
+                            <div class="step-item">
+                                <h4>Chair Position</h4>
+                                <p>Adjust height so feet are flat, thighs parallel to floor</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Monitor Placement</h4>
+                                <p>Top of screen at or slightly below eye level, 20-40 inches away</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Keyboard & Mouse</h4>
+                                <p>Elbows at 90-110 degrees, wrists straight</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Lighting</h4>
+                                <p>Reduce glare, use task lighting as needed</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Posture Breaks</h4>
+                                <p>Take micro-breaks every 30 minutes, stretch regularly</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Document Placement</h4>
+                                <p>Use document holder at same height/distance as monitor</p>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-box" style="margin-top: 20px;">
+                            <h4><i class="fas fa-user-md"></i> Ergonomic Assessment</h4>
+                            <p>Identify three ergonomic issues in this workstation setup:</p>
+                            <div style="background: var(--white); padding: 20px; border-radius: var(--radius); margin-top: 10px; text-align: center;">
+                                <div style="display: inline-block; padding: 20px; background: #f0f7ff; border-radius: var(--radius);">
+                                    <p><strong>Scenario:</strong> Monitor placed too high, chair too low, keyboard at edge of desk</p>
+                                </div>
+                                <textarea placeholder="List the ergonomic issues and suggested corrections..." rows="4" style="width:100%; padding:15px; border-radius:var(--radius); border:1px solid #d9cfff; margin-top:15px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Software Systems Section -->
+                <section id="software" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-code"></i> Software Systems</h2>
+                        <p>Understanding different types of software in healthcare.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-layer-group"></i> System vs. Application Software</h3>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Software Type</th>
+                                    <th>Definition</th>
+                                    <th>Examples</th>
+                                    <th>Healthcare Role</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>System Software</strong></td>
+                                    <td>Manages computer hardware and provides platform for applications</td>
+                                    <td>
+                                        <ul>
+                                            <li>Operating Systems (Windows, macOS, Linux)</li>
+                                            <li>Device Drivers</li>
+                                            <li>Utilities (antivirus, backup)</li>
+                                        </ul>
+                                    </td>
+                                    <td>Provides foundation for medical applications</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Application Software</strong></td>
+                                    <td>Performs specific tasks for users</td>
+                                    <td>
+                                        <ul>
+                                            <li>EHR/EMR systems</li>
+                                            <li>Practice Management</li>
+                                            <li>Billing/Coding software</li>
+                                            <li>Microsoft Office</li>
+                                        </ul>
+                                    </td>
+                                    <td>Direct patient care and administrative tasks</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-stethoscope"></i> Healthcare-Specific Software</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                </div>
+                                <h4>Practice Management Software</h4>
+                                <p><strong>Primary Functions:</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Scheduling appointments</li>
+                                    <li>Billing and claims processing</li>
+                                    <li>Patient registration</li>
+                                    <li>Reporting and analytics</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fas fa-prescription-bottle-alt"></i>
+                                </div>
+                                <h4>Pharmacy Software</h4>
+                                <p><strong>Functions:</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Prescription processing</li>
+                                    <li>Drug interaction checking</li>
+                                    <li>Inventory management</li>
+                                    <li>Insurance verification</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fas fa-diagnoses"></i>
+                                </div>
+                                <h4>Diagnostic Software</h4>
+                                <p><strong>Examples:</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Radiology/PACS systems</li>
+                                    <li>Laboratory information systems</li>
+                                    <li>EKG analysis software</li>
+                                    <li>Medical imaging software</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-box">
+                        <div class="activity-header">
+                            <i class="fas fa-question-circle activity-icon"></i>
+                            <div>
+                                <h3>Software Identification Exercise</h3>
+                                <p>Classify each software as System or Application:</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 15px;">
+                            <div style="background: var(--white); padding: 15px; border-radius: var(--radius); margin-bottom: 15px;">
+                                <p><strong>1. Windows 11</strong></p>
+                                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                    <button class="btn btn-outline software-btn" data-software="1" data-type="system">System Software</button>
+                                    <button class="btn btn-outline software-btn" data-software="1" data-type="application">Application Software</button>
+                                </div>
+                                <div id="software1-feedback" style="margin-top: 10px;"></div>
+                            </div>
+                            
+                            <div style="background: var(--white); padding: 15px; border-radius: var(--radius);">
+                                <p><strong>2. Epic EHR System</strong></p>
+                                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                    <button class="btn btn-outline software-btn" data-software="2" data-type="system">System Software</button>
+                                    <button class="btn btn-outline software-btn" data-software="2" data-type="application">Application Software</button>
+                                </div>
+                                <div id="software2-feedback" style="margin-top: 10px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- EMR vs EHR Section -->
+                <section id="emr-ehr" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-file-medical-alt"></i> EMR vs. EHR Systems</h2>
+                        <p>Understanding electronic medical records and their differences.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-clinic-medical"></i> Key Differences</h3>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Aspect</th>
+                                    <th>Electronic Medical Record (EMR)</th>
+                                    <th>Electronic Health Record (EHR)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Scope</strong></td>
+                                    <td>Digital version of paper chart in ONE practice</td>
+                                    <td>Comprehensive record across MULTIPLE providers</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sharing</strong></td>
+                                    <td>Stays within the practice</td>
+                                    <td>Designed to be shared with other providers</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Focus</strong></td>
+                                    <td>Diagnosis and treatment in one practice</td>
+                                    <td>Total health of patient across continuum</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Interoperability</strong></td>
+                                    <td>Limited ability to exchange information</td>
+                                    <td>Designed for information exchange</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Patient Access</strong></td>
+                                    <td>May not include patient portal</td>
+                                    <td>Often includes patient portal access</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-blender-phone"></i> Hybrid Health Records</h3>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+                            <div style="flex: 1; min-width: 300px; background: #f0f7ff; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--primary-purple);">What is a Hybrid Record?</h4>
+                                <p>A combination of paper and electronic records during transition periods.</p>
+                                <p><strong>Common Scenarios:</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Transitioning from paper to electronic</li>
+                                    <li>Scanning old records into new system</li>
+                                    <li>Temporary system during EHR implementation</li>
+                                    <li>Backup system during outages</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background: #fff0f7; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--accent-blue);">Challenges & Solutions</h4>
+                                <p><strong>Challenges:</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Inconsistent data access</li>
+                                    <li>Duplicate documentation</li>
+                                    <li>Increased risk of errors</li>
+                                    <li>HIPAA compliance issues</li>
+                                </ul>
+                                <p style="margin-top: 15px;"><strong>Solutions:</strong> Clear protocols, staff training, timeline for full transition</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-rocket"></i> Technological Advances in Healthcare</h3>
+                        
+                        <div class="hardware-grid">
+                            <div class="hardware-card">
+                                <div style="font-size: 2rem; color: var(--primary-purple); margin-bottom: 15px;">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h4>Telemedicine</h4>
+                                <p>Remote consultations, monitoring, and diagnosis</p>
+                            </div>
+                            
+                            <div class="hardware-card">
+                                <div style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h4>Mobile Health Apps</h4>
+                                <p>Patient monitoring, medication reminders, health tracking</p>
+                            </div>
+                            
+                            <div class="hardware-card">
+                                <div style="font-size: 2rem; color: var(--success-green); margin-bottom: 15px;">
+                                    <i class="fas fa-dna"></i>
+                                </div>
+                                <h4>Genomics & Precision Medicine</h4>
+                                <p>Personalized treatment based on genetic makeup</p>
+                            </div>
+                            
+                            <div class="hardware-card">
+                                <div style="font-size: 2rem; color: var(--warning-yellow); margin-bottom: 15px;">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h4>AI & Machine Learning</h4>
+                                <p>Diagnostic assistance, predictive analytics, workflow optimization</p>
+                            </div>
+                            
+                            <div class="hardware-card">
+                                <div style="font-size: 2rem; color: var(--error-orange); margin-bottom: 15px;">
+                                    <i class="fas fa-print"></i>
+                                </div>
+                                <h4>3D Printing</h4>
+                                <p>Custom prosthetics, surgical models, tissue engineering</p>
+                            </div>
+                            
+                            <div class="hardware-card">
+                                <div style="font-size: 2rem; color: var(--light-purple); margin-bottom: 15px;">
+                                    <i class="fas fa-vr-cardboard"></i>
+                                </div>
+                                <h4>VR/AR Training</h4>
+                                <p>Medical training, surgical simulation, pain management</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Security & HIPAA Section -->
+                <section id="security" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-shield-alt"></i> Security & HIPAA Compliance</h2>
+                        <p>Protecting patient information and following regulations.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-user-shield"></i> HIPAA Security Rule Safeguards</h3>
+                        
+                        <div class="step-container">
+                            <div class="step-item">
+                                <h4>Administrative Safeguards</h4>
+                                <p>Policies and procedures to protect ePHI</p>
+                                <div class="safeguard-item">
+                                    <strong>Examples:</strong> Risk analysis, security management process, workforce training, contingency planning
+                                </div>
+                            </div>
+                            
+                            <div class="step-item">
+                                <h4>Physical Safeguards</h4>
+                                <p>Physical protection of electronic systems and facilities</p>
+                                <div class="safeguard-item">
+                                    <strong>Examples:</strong> Facility access controls, workstation security, device and media controls
+                                </div>
+                            </div>
+                            
+                            <div class="step-item">
+                                <h4>Technical Safeguards</h4>
+                                <p>Technology and policies to protect ePHI</p>
+                                <div class="safeguard-item">
+                                    <strong>Examples:</strong> Access controls, audit controls, integrity controls, transmission security
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-lock"></i> Security Best Practices</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 20px;">
+                            <div style="background: #fff0f0; padding: 15px; border-radius: var(--radius);">
+                                <h5><i class="fas fa-key" style="color: var(--error-orange);"></i> Access Controls</h5>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Unique user IDs</li>
+                                    <li>Strong password policies</li>
+                                    <li>Automatic logoff</li>
+                                    <li>Role-based access</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background: #fff8f0; padding: 15px; border-radius: var(--radius);">
+                                <h5><i class="fas fa-history" style="color: var(--warning-yellow);"></i> Audit Controls</h5>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Login/logout tracking</li>
+                                    <li>Record access logging</li>
+                                    <li>Regular audit reviews</li>
+                                    <li>Incident reporting</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background: #f0fff4; padding: 15px; border-radius: var(--radius);">
+                                <h5><i class="fas fa-shield-alt" style="color: var(--success-green);"></i> Data Protection</h5>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Encryption at rest and in transit</li>
+                                    <li>Regular backups</li>
+                                    <li>Malware protection</li>
+                                    <li>Secure disposal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-search"></i> Identifying Reliable Health Websites</h3>
+                        <p>Criteria for evaluating online health information:</p>
+                        
+                        <div style="margin-top: 20px;">
+                            <div class="website-criteria">
+                                <div class="criteria-icon">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div>
+                                    <h4>Authority</h4>
+                                    <p>Is the author/organization qualified? Look for credentials and affiliations.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="website-criteria">
+                                <div class="criteria-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Currency</h4>
+                                    <p>Is the information current? Look for publication/update dates.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="website-criteria">
+                                <div class="criteria-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div>
+                                    <h4>Objectivity</h4>
+                                    <p>Is there bias? Commercial vs. educational purpose?</p>
+                                </div>
+                            </div>
+                            
+                            <div class="website-criteria">
+                                <div class="criteria-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div>
+                                    <h4>Accuracy</h4>
+                                    <p>Is information supported by evidence? References provided?</p>
+                                </div>
+                            </div>
+                            
+                            <div class="website-criteria">
+                                <div class="criteria-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Privacy Policy</h4>
+                                    <p>How is personal information handled? HIPAA compliance if collecting health data.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-box" style="margin-top: 20px;">
+                            <h4><i class="fas fa-globe"></i> Website Evaluation Exercise</h4>
+                            <p>Evaluate this health website using the criteria above: <strong>www.examplehealthinfo.com</strong></p>
+                            <textarea placeholder="Your evaluation..." rows="4" style="width:100%; padding:15px; border-radius:var(--radius); border:1px solid #d9cfff; margin-top:10px;"></textarea>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Writing Fundamentals Section -->
+                <section id="writing-basics" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-pen-fancy"></i> Writing Fundamentals</h2>
+                        <p>Essential writing skills for professional communication.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-font"></i> Fundamental Writing Skills</h3>
+                        
+                        <div class="step-container">
+                            <div class="step-item">
+                                <h4>Clarity</h4>
+                                <p>Use clear, concise language. Avoid medical jargon when communicating with patients.</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Accuracy</h4>
+                                <p>Verify all information (names, dates, dosages) before sending.</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Professional Tone</h4>
+                                <p>Maintain formal, respectful language appropriate for healthcare.</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Organization</h4>
+                                <p>Logical flow with clear introduction, body, and conclusion.</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Proofreading</h4>
+                                <p>Always review for spelling, grammar, and punctuation errors.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-ruler"></i> Business Writing Guidelines</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background: #f0f7ff; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--primary-purple);"><i class="fas fa-text-height"></i> Capitalization Rules</h4>
+                                <div class="writing-rule">
+                                    <strong>Capitalize:</strong> Proper nouns, titles before names, medical terms derived from proper nouns
+                                </div>
+                                <div class="writing-rule">
+                                    <strong>Do NOT capitalize:</strong> General medical terms, job titles after names
+                                </div>
+                                <div class="writing-rule">
+                                    <strong>Example:</strong> "Dr. Smith, our cardiologist, diagnosed atrial fibrillation."
+                                </div>
+                            </div>
+                            
+                            <div style="background: #fff0f7; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--accent-blue);"><i class="fas fa-sort-numeric-up"></i> Number Usage</h4>
+                                <div class="writing-rule">
+                                    <strong>Spell out:</strong> Numbers one through nine
+                                </div>
+                                <div class="writing-rule">
+                                    <strong>Use numerals:</strong> Numbers 10 and above, ages, measurements, dosages
+                                </div>
+                                <div class="writing-rule">
+                                    <strong>Medical exception:</strong> Always use numerals for dosages and lab values
+                                </div>
+                                <div class="writing-rule">
+                                    <strong>Example:</strong> "Take 2 tablets every 4 hours for seven days."
+                                </div>
+                            </div>
+                            
+                            <div style="background: #fff8f0; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--warning-yellow);"><i class="fas fa-comma"></i> Punctuation</h4>
+                                <div class="writing-rule">
+                                    <strong>Commas:</strong> Separate items in lists, clauses, and after introductory phrases
+                                </div>
+                                <div class="writing-rule">
+                                    <strong>Semicolons:</strong> Connect related independent clauses
+                                </div>
+                                <div class="writing-rule">
+                                    <strong>Colons:</strong> Introduce lists or explanations
+                                </div>
+                                <div class="writing-rule">
+                                    <strong>Apostrophes:</strong> Show possession (doctor's office) or contractions
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-box">
+                        <div class="activity-header">
+                            <i class="fas fa-edit activity-icon"></i>
+                            <div>
+                                <h3>Writing Correction Exercise</h3>
+                                <p>Correct the errors in this sentence:</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background: var(--white); padding: 20px; border-radius: var(--radius); margin-top: 15px;">
+                            <p style="font-family: 'Courier New', monospace; background: #fff0f0; padding: 15px; border-radius: var(--radius);">
+                                "please schedule an appointment with dr jones our Neurologist for next wednesday at 2 pm to discuss your mri results from last month"
+                            </p>
+                            
+                            <textarea placeholder="Your corrected version..." rows="3" style="width:100%; padding:15px; border-radius:var(--radius); border:1px solid #d9cfff; margin-top:15px;"></textarea>
+                            
+                            <button class="btn btn-outline" style="margin-top:15px;">
+                                <i class="fas fa-check"></i> Check Correction
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Business Letters Section -->
+                <section id="business-letters" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-envelope"></i> Business Letters</h2>
+                        <p>Professional correspondence in healthcare.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-file-alt"></i> Components of a Business Letter</h3>
+                        
+                        <div class="letter-template">
+                            <div class="letter-element">
+                                <strong>1. Letterhead</strong> - Practice name, address, contact information
+                            </div>
+                            <div class="letter-element">
+                                <strong>2. Date</strong> - Date letter is written
+                            </div>
+                            <div class="letter-element">
+                                <strong>3. Inside Address</strong> - Recipient's name and address
+                            </div>
+                            <div class="letter-element">
+                                <strong>4. Salutation</strong> - Formal greeting (Dear Dr. Smith:)
+                            </div>
+                            <div class="letter-element">
+                                <strong>5. Body</strong> - Main content, divided into paragraphs
+                            </div>
+                            <div class="letter-element">
+                                <strong>6. Complimentary Close</strong> - Formal closing (Sincerely,)
+                            </div>
+                            <div class="letter-element">
+                                <strong>7. Signature Block</strong> - Space for signature, typed name, title
+                            </div>
+                            <div class="letter-element">
+                                <strong>8. Reference Initials</strong> - Writer/typist initials (JS/mt)
+                            </div>
+                            <div class="letter-element">
+                                <strong>9. Enclosure Notation</strong> - If documents are included (Enclosure: Lab Report)
+                            </div>
+                            <div class="letter-element">
+                                <strong>10. Copy Notation</strong> - If others receive copies (cc: Medical Records Department)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-align-left"></i> Letter Formats</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background: #f0f7ff; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--primary-purple);">Block Format</h4>
+                                <p>All elements aligned left, no indentation</p>
+                                <div class="medical-term" style="background: #e9e1ff;">Most common in healthcare</div>
+                                <p style="margin-top: 10px;"><strong>Advantages:</strong> Professional, easy to format</p>
+                            </div>
+                            
+                            <div style="background: #fff0f7; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--accent-blue);">Modified Block Format</h4>
+                                <p>Date, closing, and signature centered or right-aligned</p>
+                                <p style="margin-top: 10px;"><strong>Advantages:</strong> Traditional, balanced appearance</p>
+                            </div>
+                            
+                            <div style="background: #fff8f0; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--warning-yellow);">Simplified Format</h4>
+                                <p>No salutation or closing, subject line emphasized</p>
+                                <div class="medical-term" style="background: #ffeaa7;">Less common in healthcare</div>
+                                <p style="margin-top: 10px;"><strong>Use:</strong> Internal memos, routine correspondence</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-stamp"></i> Templates in Professional Communication</h3>
+                        
+                        <div style="background: #f0fff4; padding: 20px; border-radius: var(--radius); margin-top: 20px;">
+                            <h4 style="color: var(--success-green);">Benefits of Using Templates</h4>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li><strong>Consistency:</strong> Uniform appearance and tone</li>
+                                <li><strong>Efficiency:</strong> Save time on formatting</li>
+                                <li><strong>Accuracy:</strong> Reduce errors in standard documents</li>
+                                <li><strong>Compliance:</strong> Ensure required elements are included</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: #f0f7ff; padding: 20px; border-radius: var(--radius); margin-top: 20px;">
+                            <h4 style="color: var(--primary-purple);">Common Healthcare Templates</h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+                                <div class="medical-term">Referral letters</div>
+                                <div class="medical-term">Consultation reports</div>
+                                <div class="medical-term">Test result notifications</div>
+                                <div class="medical-term">Appointment reminders</div>
+                                <div class="medical-term">Insurance correspondence</div>
+                                <div class="medical-term">Collection letters</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Email, Fax & Mail Section -->
+                <section id="email-fax" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-mail-bulk"></i> Email, Fax & Mail</h2>
+                        <p>Professional communication methods in healthcare.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-envelope-open-text"></i> Memorandums & Professional Emails</h3>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+                            <div style="flex: 1; min-width: 300px; background: #f0f7ff; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--primary-purple);">Memorandums (Memos)</h4>
+                                <p><strong>Internal communication within organization</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>To: Recipient(s)</li>
+                                    <li>From: Sender</li>
+                                    <li>Date: Current date</li>
+                                    <li>Subject: Brief description</li>
+                                    <li>Body: Concise message</li>
+                                </ul>
+                                <p style="margin-top: 15px;"><strong>Use:</strong> Policy updates, meeting announcements, internal notifications</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background: #fff0f7; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--accent-blue);">Email Etiquette</h4>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li><strong>Subject line:</strong> Clear and specific</li>
+                                    <li><strong>Greeting:</strong> Formal salutation</li>
+                                    <li><strong>Professional tone:</strong> Avoid slang, emoticons</li>
+                                    <li><strong>Conciseness:</strong> Get to the point</li>
+                                    <li><strong>Signature:</strong> Include name, title, contact</li>
+                                    <li><strong>Proofread:</strong> Check before sending</li>
+                                    <li><strong>Attachments:</strong> Mention in body</li>
+                                    <li><strong>Response time:</strong> Within 24 hours for business</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="email-example" style="margin-top: 20px;">
+                            <p><strong>Subject:</strong> Appointment Confirmation - Dr. Johnson, March 15, 2:00 PM</p>
+                            <p><strong>Dear Ms. Rodriguez,</strong></p>
+                            <p>This email confirms your appointment with Dr. Johnson on March 15 at 2:00 PM.</p>
+                            <p>Please arrive 15 minutes early to complete any necessary paperwork.</p>
+                            <p>If you need to reschedule, please call our office at (555) 123-4567.</p>
+                            <p><strong>Sincerely,</strong><br>
+                            Maria Chen, Medical Assistant<br>
+                            Healthy Living Medical Center<br>
+                            (555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-fax"></i> HIPAA-Compliant Fax Cover Sheets</h3>
+                        
+                        <div class="fax-template">
+                            <h4 style="color: var(--error-orange);">Essential Elements of HIPAA Fax Cover Sheet</h4>
+                            <div style="margin-left: 20px; margin-top: 15px;">
+                                <p><strong>1. Confidentiality Notice:</strong> Warning about protected health information</p>
+                                <p><strong>2. Recipient Information:</strong> Name, fax number, contact person</p>
+                                <p><strong>3. Sender Information:</strong> Name, fax number, contact person</p>
+                                <p><strong>4. Date and Time:</strong> When fax was sent</p>
+                                <p><strong>5. Number of Pages:</strong> Including cover sheet</p>
+                                <p><strong>6. Purpose/Subject:</strong> Brief description of contents</p>
+                                <p><strong>7. Instructions if misdirected:</strong> "If received in error, destroy and notify sender"</p>
+                            </div>
+                            
+                            <div style="background: var(--white); padding: 15px; border-radius: var(--radius); margin-top: 20px;">
+                                <h5>Sample Confidentiality Statement:</h5>
+                                <p style="font-style: italic; color: var(--error-orange);">
+                                    CONFIDENTIAL: This fax contains protected health information (PHI) as defined by HIPAA. 
+                                    It is intended only for the designated recipient. If you are not the intended recipient, 
+                                    you are hereby notified that any disclosure, copying, distribution, or use of this 
+                                    information is strictly prohibited. Please notify the sender immediately and destroy 
+                                    all copies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-mail-bulk"></i> Mail Services & Processing</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background: #f0f7ff; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--primary-purple);">Envelope Addressing</h4>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Use recipient's formal title</li>
+                                    <li>Include complete address</li>
+                                    <li>Place return address in top left corner</li>
+                                    <li>Use proper postage</li>
+                                    <li>For confidential mail: Mark "CONFIDENTIAL"</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background: #fff0f7; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--accent-blue);">Folding Documents</h4>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li><strong>Standard #10 envelope:</strong> Fold in thirds</li>
+                                    <li><strong>Small envelope:</strong> Fold in half then thirds</li>
+                                    <li>Fold with printed side inward</li>
+                                    <li>Avoid creasing through text</li>
+                                    <li>Use letter-folding tools for efficiency</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background: #fff8f0; padding: 20px; border-radius: var(--radius);">
+                                <h4 style="color: var(--warning-yellow);">Postal Services</h4>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li><strong>First-Class Mail:</strong> Standard business correspondence</li>
+                                    <li><strong>Certified Mail:</strong> Proof of mailing and delivery</li>
+                                    <li><strong>Return Receipt:</strong> Proof recipient received</li>
+                                    <li><strong>Priority Mail:</strong> Faster delivery (1-3 days)</li>
+                                    <li><strong>Registered Mail:</strong> Most secure, for valuable items</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-inbox"></i> Incoming Mail Processing</h3>
+                        <p>The medical assistant's role with incoming mail:</p>
+                        
+                        <div class="step-container">
+                            <div class="step-item">
+                                <h4>1. Sort and Distribute</h4>
+                                <p>Separate patient mail, bills, insurance correspondence, professional journals</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>2. Date Stamp</h4>
+                                <p>Stamp all incoming mail with date received</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>3. Open and Review</h4>
+                                <p>Open envelopes (except marked "Personal" or "Confidential")</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>4. Attach to Charts</h4>
+                                <p>Attach correspondence to appropriate patient charts</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>5. Prioritize Urgent Items</h4>
+                                <p>Flag time-sensitive items (lab results, consultation reports)</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>6. Document in Log</h4>
+                                <p>Maintain mail log for tracking purposes</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Final Assessment Section -->
+                <section id="assessment" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-question-circle"></i> Final Assessment</h2>
+                        <p>Test your understanding of healthcare technology and written communication.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-certificate"></i> Comprehensive Quiz</h3>
+                        <p>Complete this assessment to check your comprehension of the lesson material.</p>
+                        
+                        <div class="quiz-container">
+                            <div class="quiz-question">
+                                <p><strong>1. Which device is considered BOTH input and output?</strong></p>
+                                <div class="quiz-option">A. Keyboard</div>
+                                <div class="quiz-option">B. Monitor</div>
+                                <div class="quiz-option">C. Touchscreen</div>
+                                <div class="quiz-option">D. Printer</div>
+                            </div>
+                            
+                            <div class="quiz-question">
+                                <p><strong>2. What is the main purpose of a HIPAA fax cover sheet?</strong></p>
+                                <div class="quiz-option">A. To make faxes look professional</div>
+                                <div class="quiz-option">B. To protect patient privacy</div>
+                                <div class="quiz-option">C. To reduce paper costs</div>
+                                <div class="quiz-option">D. To speed up fax transmission</div>
+                            </div>
+                            
+                            <div class="quiz-question">
+                                <p><strong>3. Which is an example of system software?</strong></p>
+                                <div class="quiz-option">A. Microsoft Word</div>
+                                <div class="quiz-option">B. EHR System</div>
+                                <div class="quiz-option">C. Windows Operating System</div>
+                                <div class="quiz-option">D. Practice Management Software</div>
+                            </div>
+                            
+                            <div class="quiz-question">
+                                <p><strong>4. How should numbers be written in business correspondence?</strong></p>
+                                <div class="quiz-option">A. Always spell out all numbers</div>
+                                <div class="quiz-option">B. Always use numerals</div>
+                                <div class="quiz-option">C. Spell out 1-9, use numerals for 10+</div>
+                                <div class="quiz-option">D. Use Roman numerals for formal documents</div>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 30px;">
+                            <button class="btn btn-success" id="submit-final-quiz">
+                                <i class="fas fa-check-circle"></i> Submit Assessment
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-star"></i> Lesson Completion</h3>
+                        <p>Congratulations on completing Lesson 8.1 & 9.1! Your progress has been saved.</p>
+                        
+                        <div style="text-align: center; padding: 30px;">
+                            <div class="completion-badge">
+                                <i class="fas fa-trophy"></i>
+                                Technology & Communication Mastered!
+                            </div>
+                            
+                            <div style="margin-top: 30px;">
+                                <h4>Key Competencies Achieved:</h4>
+                                <ul style="text-align: left; display: inline-block; margin-top: 10px;">
+                                    <li>Understanding of computer hardware and software</li>
+                                    <li>Knowledge of EMR vs EHR systems</li>
+                                    <li>HIPAA security compliance understanding</li>
+                                    <li>Professional writing and correspondence skills</li>
+                                    <li>Email and fax communication protocols</li>
+                                    <li>Mail processing procedures</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-top: 30px;">
+                                <h4>What's Next?</h4>
+                                <p>Proceed to Lesson 10.1: Telephone Techniques & Scheduling</p>
+                                <button class="btn" style="margin-top: 15px;">
+                                    <i class="fas fa-arrow-right"></i> Continue to Next Lesson
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        
+        <footer class="footer">
+            <p>Healthcare Technology & Written Communication &copy; 2023 | Lesson 8.1 & 9.1: Computer Systems & Professional Writing</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                <i class="fas fa-external-link-alt"></i> Based on ABHES and CAAHEP Competencies
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Lesson objectives data
+        const objectives = [
+            "Describe types of personal computers used in ambulatory care facilities.",
+            "Discuss input vs. output hardware and list examples of each.",
+            "Describe computer storage devices and cloud storage.",
+            "Explain how to maintain computer hardware and infection control procedures.",
+            "Identify ergonomic principles for computer workstations.",
+            "Identify questions to ask when purchasing hardware.",
+            "Differentiate between system software and application software.",
+            "Differentiate between practice management software, EMR, and EHR.",
+            "Discuss HIPAA Security Rule safeguards with examples.",
+            "Discuss technological advances in healthcare.",
+            "Describe how to identify reliable health websites.",
+            "Recognize elements of fundamental writing skills.",
+            "Explain guidelines for capitalization, numbers, and punctuation.",
+            "List and describe components of professional business letters.",
+            "Summarize formats for business letters.",
+            "Describe the purpose of templates in professional communication.",
+            "Discuss memorandums and email etiquette.",
+            "Describe how to complete a HIPAA-compliant fax cover sheet.",
+            "Describe how to address envelopes and fold documents.",
+            "Describe commonly used postal services.",
+            "Explain the medical assistant's role with incoming mail."
+        ];
+
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Populate objectives
+            const objectivesList = document.getElementById('objectives-list');
+            objectives.forEach((obj, index) => {
+                const objElement = document.createElement('div');
+                objElement.className = 'objective-item';
+                objElement.innerHTML = `
+                    <div class="objective-number">${index + 1}</div>
+                    <span>${obj}</span>
+                `;
+                objectivesList.appendChild(objElement);
+            });
+            
+            // Navigation between sections
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.lesson-section');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links and sections
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).classList.add('active');
+                    
+                    // Update progress
+                    updateProgress();
+                });
+            });
+            
+            // Pretest functionality
+            const pretestOptions = document.querySelectorAll('#pretest .quiz-option');
+            pretestOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from siblings
+                    const parent = this.parentElement;
+                    const siblings = parent.querySelectorAll('.quiz-option');
+                    siblings.forEach(sib => sib.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                });
+            });
+            
+            document.getElementById('submit-pretest').addEventListener('click', function() {
+                // Check answers
+                let score = 0;
+                const questions = document.querySelectorAll('#pretest .quiz-question');
+                
+                questions.forEach(question => {
+                    const selected = question.querySelector('.quiz-option.selected');
+                    if (selected && selected.getAttribute('data-correct') === 'true') {
+                        score++;
+                        selected.classList.add('correct');
+                    } else if (selected) {
+                        selected.classList.add('incorrect');
+                        // Show correct answer
+                        const correct = question.querySelector('.quiz-option[data-correct="true"]');
+                        if (correct) correct.classList.add('correct');
+                    }
+                });
+                
+                // Display score
+                const percentage = Math.round((score / questions.length) * 100);
+                alert(`Pretest submitted! You scored ${score}/${questions.length} (${percentage}%). This helps personalize your learning.`);
+                
+                // Mark first section as completed
+                document.querySelector('a[data-section="computer-types"]').classList.add('completed');
+                updateProgress();
+                
+                // Disable further selection
+                pretestOptions.forEach(option => {
+                    option.style.pointerEvents = 'none';
+                });
+                this.disabled = true;
+                this.innerHTML = '<i class="fas fa-check"></i> Pretest Submitted';
+            });
+            
+            // Software identification buttons
+            document.querySelectorAll('.software-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const softwareNum = this.getAttribute('data-software');
+                    const type = this.getAttribute('data-type');
+                    const feedback = document.getElementById(`software${softwareNum}-feedback`);
+                    
+                    if (softwareNum === '1' && type === 'system') {
+                        feedback.innerHTML = '<p style="color: var(--success-green);"><i class="fas fa-check-circle"></i> Correct! Windows 11 is an operating system - system software.</p>';
+                    } else if (softwareNum === '1') {
+                        feedback.innerHTML = '<p style="color: var(--error-orange);"><i class="fas fa-times-circle"></i> Actually, Windows 11 is system software - it\'s an operating system that manages computer hardware.</p>';
+                    } else if (softwareNum === '2' && type === 'application') {
+                        feedback.innerHTML = '<p style="color: var(--success-green);"><i class="fas fa-check-circle"></i> Correct! Epic EHR is application software - it performs specific healthcare tasks.</p>';
+                    } else if (softwareNum === '2') {
+                        feedback.innerHTML = '<p style="color: var(--error-orange);"><i class="fas fa-times-circle"></i> Actually, Epic EHR is application software - it\'s a program designed for specific healthcare functions.</p>';
+                    }
+                });
+            });
+            
+            // Complete lesson button
+            document.getElementById('complete-lesson-btn').addEventListener('click', function() {
+                // Mark all sections as completed
+                navLinks.forEach(link => link.classList.add('completed'));
+                
+                // Mark all objectives as completed
+                document.querySelectorAll('.objective-item').forEach(item => {
+                    item.classList.add('completed');
+                });
+                
+                // Update progress to 100%
+                updateProgress(100);
+                
+                // Show completion message
+                alert('Congratulations! You have completed Lessons 8.1 & 9.1 on Healthcare Technology & Written Communication.');
+                
+                // Change button text
+                this.innerHTML = '<i class="fas fa-check-circle"></i> Lesson Completed';
+                this.classList.add('btn-success');
+                this.disabled = true;
+            });
+            
+            // Progress tracking
+            function updateProgress() {
+                const completedSections = document.querySelectorAll('.nav-link.completed').length;
+                const totalSections = navLinks.length;
+                const percentage = Math.round((completedSections / totalSections) * 100);
+                
+                document.getElementById('progress-percentage').textContent = percentage + '%';
+                document.getElementById('progress-fill').style.width = percentage + '%';
+                
+                // Update progress indicator color
+                const progressFill = document.getElementById('progress-fill');
+                if (percentage < 30) {
+                    progressFill.style.background = 'linear-gradient(90deg, var(--error-orange), #fdcb6e)';
+                } else if (percentage < 70) {
+                    progressFill.style.background = 'linear-gradient(90deg, #fdcb6e, var(--accent-blue))';
+                } else {
+                    progressFill.style.background = 'linear-gradient(90deg, var(--primary-purple), var(--success-green))';
+                }
+            }
+            
+            // Initialize progress
+            updateProgress();
+            
+            // Quiz option selection
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    if (this.closest('.quiz-question')) {
+                        const siblings = this.parentElement.querySelectorAll('.quiz-option');
+                        siblings.forEach(sib => sib.classList.remove('selected'));
+                        this.classList.add('selected');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
