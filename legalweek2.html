@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3.1: Legal Principles in Healthcare</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-purple: #af4bef;
+            --accent-blue: #8380f0;
+            --success-green: #00b894;
+            --light-lavender: #f7f5fb;
+            --light-purple: #d492ff;
+            --error-orange: #e17055;
+            --warning-yellow: #fdcb6e;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(175, 75, 239, 0.1);
+            --radius: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--white) 0%, #f1ecff 50%, var(--light-lavender) 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-purple), var(--accent-blue));
+            color: var(--white);
+            padding: 25px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .logo img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .title h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .title p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .progress-indicator {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .progress-indicator i {
+            font-size: 1.2rem;
+        }
+
+        .content-wrapper {
+            display: flex;
+            min-height: 800px;
+        }
+
+        .sidebar {
+            width: 320px;
+            background: var(--light-lavender);
+            padding: 25px;
+            border-right: 2px solid #e9e1ff;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            color: var(--primary-purple);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-purple);
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 10px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            text-decoration: none;
+            color: var(--text-dark);
+            background: var(--white);
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: var(--light-purple);
+            color: var(--primary-purple);
+            transform: translateX(5px);
+        }
+
+        .nav-link.active {
+            background: var(--primary-purple);
+            color: var(--white);
+            border-left-color: var(--success-green);
+        }
+
+        .nav-link.completed {
+            border-left-color: var(--success-green);
+        }
+
+        .nav-link i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .lesson-content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .lesson-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .lesson-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9e1ff;
+        }
+
+        .section-header h2 {
+            color: var(--primary-purple);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border: 1px solid #e9e1ff;
+        }
+
+        .card h3 {
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h3 i {
+            color: var(--accent-blue);
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .objective-item {
+            background: var(--light-lavender);
+            padding: 20px;
+            border-radius: var(--radius);
+            border-left: 5px solid var(--primary-purple);
+            transition: all 0.3s ease;
+        }
+
+        .objective-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .objective-item.completed {
+            border-left-color: var(--success-green);
+        }
+
+        .objective-number {
+            display: inline-block;
+            background: var(--primary-purple);
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .objective-item.completed .objective-number {
+            background: var(--success-green);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: var(--primary-purple);
+            color: var(--white);
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9e1ff;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: var(--light-lavender);
+        }
+
+        .comparison-table tr:hover {
+            background: var(--light-purple);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--primary-purple);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: var(--accent-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(131, 128, 240, 0.3);
+        }
+
+        .btn-success {
+            background: var(--success-green);
+        }
+
+        .btn-success:hover {
+            background: #00a085;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-purple);
+            color: var(--primary-purple);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-purple);
+            color: var(--white);
+        }
+
+        .quiz-container {
+            background: var(--light-lavender);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-top: 25px;
+        }
+
+        .quiz-question {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #d9cfff;
+        }
+
+        .quiz-option {
+            display: block;
+            margin: 10px 0;
+            padding: 15px;
+            background: var(--white);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-option:hover {
+            background: var(--light-purple);
+        }
+
+        .quiz-option.selected {
+            background: var(--primary-purple);
+            color: var(--white);
+        }
+
+        .quiz-option.correct {
+            background: var(--success-green);
+            color: var(--white);
+        }
+
+        .quiz-option.incorrect {
+            background: var(--error-orange);
+            color: var(--white);
+        }
+
+        .activity-box {
+            background: linear-gradient(135deg, #f7f5fb, #f1ecff);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 5px solid var(--accent-blue);
+        }
+
+        .activity-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .activity-icon {
+            font-size: 2rem;
+            color: var(--accent-blue);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--light-lavender);
+            color: var(--text-light);
+            border-top: 1px solid #e9e1ff;
+            margin-top: 30px;
+        }
+
+        .completion-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--success-green);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e9e1ff;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-purple), var(--accent-blue));
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .law-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid var(--primary-purple);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .law-title {
+            color: var(--primary-purple);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legal-term {
+            background: #f0f7ff;
+            padding: 10px 15px;
+            border-radius: var(--radius);
+            margin: 10px 0;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        .legal-term strong {
+            color: var(--primary-purple);
+        }
+
+        .step-container {
+            counter-reset: step-counter;
+            margin: 20px 0;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e9e1ff;
+        }
+
+        .step-item:before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background: var(--primary-purple);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .consent-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .consent-card {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            border-radius: var(--radius);
+            background: var(--white);
+            border: 2px solid #e9e1ff;
+        }
+
+        .consent-card h4 {
+            color: var(--primary-purple);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--light-lavender);
+            color: var(--primary-purple);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 5px;
+            border: 1px solid var(--light-purple);
+        }
+
+        @media (max-width: 992px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid #e9e1ff;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .logo-section {
+                justify-content: center;
+            }
+            
+            .objectives-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/64e9d2f719b1e5258e5d57f5_IMG_1512-p-500.png" alt="Medical Assisting Logo">
+                </div>
+                <div class="title">
+                    <h1>Legal Principles in Healthcare</h1>
+                    <p>Lesson 3.1: Laws, Regulations & Professional Standards</p>
+                </div>
+            </div>
+            <div class="progress-indicator">
+                <i class="fas fa-balance-scale"></i>
+                <span>Progress: <span id="progress-percentage">0%</span></span>
+            </div>
+        </header>
+        
+        <div class="content-wrapper">
+            <nav class="sidebar">
+                <h2><i class="fas fa-list-ol"></i> Lesson Modules</h2>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#pretest" class="nav-link active" data-section="pretest">
+                            <i class="fas fa-clipboard-check"></i>
+                            <span>1. Pretest & Introduction</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#legal-system" class="nav-link" data-section="legal-system">
+                            <i class="fas fa-landmark"></i>
+                            <span>2. US Legal System</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#criminal-civil" class="nav-link" data-section="criminal-civil">
+                            <i class="fas fa-gavel"></i>
+                            <span>3. Criminal vs Civil Law</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#torts-negligence" class="nav-link" data-section="torts-negligence">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>4. Torts & Negligence</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#liability" class="nav-link" data-section="liability">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>5. Liability & Insurance</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contracts" class="nav-link" data-section="contracts">
+                            <i class="fas fa-file-contract"></i>
+                            <span>6. Contracts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#consent" class="nav-link" data-section="consent">
+                            <i class="fas fa-signature"></i>
+                            <span>7. Consent & Rights</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#hipaa" class="nav-link" data-section="hipaa">
+                            <i class="fas fa-user-shield"></i>
+                            <span>8. HIPAA & Privacy</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#healthcare-laws" class="nav-link" data-section="healthcare-laws">
+                            <i class="fas fa-book-medical"></i>
+                            <span>9. Healthcare Laws</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#compliance" class="nav-link" data-section="compliance">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>10. Compliance</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#assessment" class="nav-link" data-section="assessment">
+                            <i class="fas fa-question-circle"></i>
+                            <span>11. Final Assessment</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="btn btn-success" id="complete-lesson-btn">
+                        <i class="fas fa-check-circle"></i> Mark Lesson Complete
+                    </button>
+                </div>
+            </nav>
+            
+            <main class="lesson-content">
+                <!-- Pretest Section -->
+                <section id="pretest" class="lesson-section active">
+                    <div class="section-header">
+                        <h2><i class="fas fa-clipboard-check"></i> Pretest & Introduction</h2>
+                        <p>Assess your baseline knowledge of healthcare laws and legal principles.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-bullseye"></i> Lesson Objectives</h3>
+                        <p>By the end of this lesson, you will be able to:</p>
+                        
+                        <div class="objectives-grid" id="objectives-list">
+                            <!-- Objectives populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-tachometer-alt"></i> Knowledge Pretest</h3>
+                        <p>Complete this brief assessment to evaluate your current understanding of healthcare laws.</p>
+                        
+                        <div class="quiz-container">
+                            <div class="quiz-question">
+                                <p><strong>1. Which type of law involves disputes between individuals or organizations?</strong></p>
+                                <div class="quiz-option" data-correct="false">A. Criminal Law</div>
+                                <div class="quiz-option" data-correct="true">B. Civil Law</div>
+                                <div class="quiz-option" data-correct="false">C. Constitutional Law</div>
+                                <div class="quiz-option" data-correct="false">D. Administrative Law</div>
+                            </div>
+                            
+                            <div class="quiz-question">
+                                <p><strong>2. What does HIPAA primarily protect?</strong></p>
+                                <div class="quiz-option" data-correct="false">A. Medical equipment standards</div>
+                                <div class="quiz-option" data-correct="false">B. Physician licensing</div>
+                                <div class="quiz-option" data-correct="true">C. Patient health information privacy</div>
+                                <div class="quiz-option" data-correct="false">D. Drug manufacturing processes</div>
+                            </div>
+                            
+                            <button class="btn" id="submit-pretest">
+                                <i class="fas fa-paper-plane"></i> Submit Pretest
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-box">
+                        <div class="activity-header">
+                            <i class="fas fa-balance-scale activity-icon"></i>
+                            <div>
+                                <h3>Why Healthcare Laws Matter</h3>
+                                <p>Medical assistants must understand laws to protect patients, themselves, and their employers from legal issues.</p>
+                            </div>
+                        </div>
+                        <div style="background: var(--white); padding: 20px; border-radius: var(--radius); margin-top: 15px;">
+                            <h4><i class="fas fa-exclamation-circle" style="color: var(--error-orange);"></i> Real-World Impact</h4>
+                            <p>A medical assistant who misunderstands consent laws could inadvertently perform a procedure without proper authorization, leading to:</p>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Legal liability for the practice</li>
+                                <li>Loss of professional license/certification</li>
+                                <li>Harm to patient trust</li>
+                                <li>Financial penalties</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- US Legal System Section -->
+                <section id="legal-system" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-landmark"></i> US Legal System & Types of Law</h2>
+                        <p>Understanding the balance of power and different legal frameworks.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-balance-scale-right"></i> Balance of Power</h3>
+                        <p>The U.S. government operates on a system of checks and balances:</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background: #f0f7ff; padding: 20px; border-radius: var(--radius); text-align: center;">
+                                <div style="width: 60px; height: 60px; background: var(--primary-purple); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <h4 style="color: var(--primary-purple);">Judicial Branch</h4>
+                                <p>Interprets laws</p>
+                                <div class="pill">Courts</div>
+                                <div class="pill">Judges</div>
+                            </div>
+                            
+                            <div style="background: #fff0f7; padding: 20px; border-radius: var(--radius); text-align: center;">
+                                <div style="width: 60px; height: 60px; background: var(--accent-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <h4 style="color: var(--accent-blue);">Legislative Branch</h4>
+                                <p>Creates laws</p>
+                                <div class="pill">Congress</div>
+                                <div class="pill">Senate/House</div>
+                            </div>
+                            
+                            <div style="background: #f0fff4; padding: 20px; border-radius: var(--radius); text-align: center;">
+                                <div style="width: 60px; height: 60px; background: var(--success-green); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h4 style="color: var(--success-green);">Executive Branch</h4>
+                                <p>Enforces laws</p>
+                                <div class="pill">President</div>
+                                <div class="pill">Agencies</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-book-law"></i> Four Types of Laws</h3>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Type of Law</th>
+                                    <th>Description</th>
+                                    <th>Healthcare Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Constitutional Law</strong></td>
+                                    <td>Based on the U.S. Constitution and state constitutions</td>
+                                    <td>Right to privacy (basis for HIPAA)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Statutory Law</strong></td>
+                                    <td>Laws enacted by legislative bodies</td>
+                                    <td>Affordable Care Act (federal), state medical practice acts</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Administrative Law</strong></td>
+                                    <td>Rules created by government agencies</td>
+                                    <td>OSHA regulations, CLIA standards</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Common Law</strong></td>
+                                    <td>Based on court decisions and precedents</td>
+                                    <td>Informed consent requirements</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="activity-box">
+                        <div class="activity-header">
+                            <i class="fas fa-brain activity-icon"></i>
+                            <div>
+                                <h3>Critical Thinking Scenario</h3>
+                                <p>A new state law requires all healthcare facilities to implement electronic health records. Which type(s) of law does this represent?</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 15px;">
+                            <div class="quiz-option" data-answer="statutory">A. Statutory Law only</div>
+                            <div class="quiz-option" data-answer="both">B. Statutory and Administrative Law</div>
+                            <div class="quiz-option" data-answer="constitutional">C. Constitutional Law</div>
+                            <div class="quiz-option" data-answer="common">D. Common Law</div>
+                        </div>
+                        
+                        <button class="btn btn-outline" id="check-law-answer" style="margin-top: 15px;">
+                            <i class="fas fa-check"></i> Check Answer
+                        </button>
+                        
+                        <div id="law-feedback" style="margin-top: 15px; display: none; padding: 15px; background: var(--light-lavender); border-radius: var(--radius);">
+                            <!-- Feedback will appear here -->
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Criminal vs Civil Law Section -->
+                <section id="criminal-civil" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-gavel"></i> Criminal vs. Civil Law</h2>
+                        <p>Understanding the key differences that affect medical practice.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-scale-balanced"></i> Key Differences</h3>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Aspect</th>
+                                    <th>Criminal Law</th>
+                                    <th>Civil Law</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Purpose</strong></td>
+                                    <td>Punish wrongdoers, protect society</td>
+                                    <td>Resolve disputes between parties</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Parties</strong></td>
+                                    <td>Government vs. Defendant</td>
+                                    <td>Plaintiff vs. Defendant</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Burden of Proof</strong></td>
+                                    <td>"Beyond a reasonable doubt"</td>
+                                    <td>"Preponderance of evidence"</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Penalties</strong></td>
+                                    <td>Fines, imprisonment, probation</td>
+                                    <td>Monetary damages, injunctions</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Healthcare Examples</strong></td>
+                                    <td>Medicare fraud, drug trafficking</td>
+                                    <td>Medical malpractice, breach of contract</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-stethoscope"></i> Application to Medical Assisting</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background: #fff0f0; padding: 20px; border-radius: var(--radius); border-left: 5px solid var(--error-orange);">
+                                <h4 style="color: var(--error-orange);"><i class="fas fa-handcuffs"></i> Criminal Violations</h4>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Stealing controlled substances</li>
+                                    <li>Insurance fraud</li>
+                                    <li>Assault on a patient</li>
+                                    <li>Practicing without a license</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background: #f0f7ff; padding: 20px; border-radius: var(--radius); border-left: 5px solid var(--accent-blue);">
+                                <h4 style="color: var(--accent-blue);"><i class="fas fa-file-invoice-dollar"></i> Civil Violations</h4>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Medical malpractice</li>
+                                    <li>Breach of confidentiality</li>
+                                    <li>Wrongful termination</li>
+                                    <li>Breach of contract</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-box">
+                        <div class="activity-header">
+                            <i class="fas fa-gavel activity-icon"></i>
+                            <div>
+                                <h3>Case Study Analysis</h3>
+                                <p>Determine whether each scenario involves criminal law, civil law, or both:</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 15px;">
+                            <div style="background: var(--white); padding: 15px; border-radius: var(--radius); margin-bottom: 15px;">
+                                <p><strong>Case 1:</strong> A medical assistant intentionally gives a patient the wrong medication, causing harm.</p>
+                                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                    <button class="btn btn-outline case-btn" data-case="1" data-type="criminal">Criminal</button>
+                                    <button class="btn btn-outline case-btn" data-case="1" data-type="civil">Civil</button>
+                                    <button class="btn btn-outline case-btn" data-case="1" data-type="both">Both</button>
+                                </div>
+                                <div id="case1-feedback" style="margin-top: 10px;"></div>
+                            </div>
+                            
+                            <div style="background: var(--white); padding: 15px; border-radius: var(--radius);">
+                                <p><strong>Case 2:</strong> A clinic fails to maintain proper sterilization procedures, leading to patient infections.</p>
+                                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                    <button class="btn btn-outline case-btn" data-case="2" data-type="criminal">Criminal</button>
+                                    <button class="btn btn-outline case-btn" data-case="2" data-type="civil">Civil</button>
+                                    <button class="btn btn-outline case-btn" data-case="2" data-type="both">Both</button>
+                                </div>
+                                <div id="case2-feedback" style="margin-top: 10px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Torts & Negligence Section -->
+                <section id="torts-negligence" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-exclamation-triangle"></i> Torts & Negligence</h2>
+                        <p>Understanding legal wrongs and professional responsibility.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-balance-scale-left"></i> Intentional vs. Unintentional Torts</h3>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+                            <div style="flex: 1; min-width: 300px; background: #fff0f0; padding: 20px; border-radius: var(--radius); border-left: 5px solid var(--error-orange);">
+                                <h4 style="color: var(--error-orange);">Intentional Torts</h4>
+                                <p><em>Deliberate actions causing harm</em></p>
+                                <div class="legal-term">
+                                    <strong>Assault:</strong> Threat of harmful contact
+                                </div>
+                                <div class="legal-term">
+                                    <strong>Battery:</strong> Unauthorized touching
+                                </div>
+                                <div class="legal-term">
+                                    <strong>False Imprisonment:</strong> Unlawful restraint
+                                </div>
+                                <div class="legal-term">
+                                    <strong>Defamation:</strong> Harming reputation (slander/libel)
+                                </div>
+                                <div class="legal-term">
+                                    <strong>Invasion of Privacy:</strong> Unauthorized disclosure
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background: #fff8f0; padding: 20px; border-radius: var(--radius); border-left: 5px solid var(--warning-yellow);">
+                                <h4 style="color: var(--warning-yellow);">Negligent Torts</h4>
+                                <p><em>Failure to exercise reasonable care</em></p>
+                                <div class="legal-term">
+                                    <strong>Malpractice:</strong> Professional negligence
+                                </div>
+                                <div class="legal-term">
+                                    <strong>Standard of Care:</strong> What a reasonable professional would do
+                                </div>
+                                <div class="legal-term">
+                                    <strong>Scope of Practice:</strong> Legal boundaries of practice
+                                </div>
+                                <p style="margin-top: 15px; font-style: italic;">Medical assistants are more likely to face negligent tort claims than intentional ones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-clipboard-list"></i> The 4 Ds of Negligence</h3>
+                        <p>To prove medical negligence, all four elements must be present:</p>
+                        
+                        <div class="step-container">
+                            <div class="step-item">
+                                <h4>Duty</h4>
+                                <p>A professional relationship existed (provider-patient relationship)</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Dereliction (Breach of Duty)</h4>
+                                <p>The standard of care was not met</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Direct Cause</h4>
+                                <p>The breach directly caused the injury (proximate cause)</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Damages</h4>
+                                <p>Actual harm or injury occurred (physical, emotional, financial)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-ruler-combined"></i> Standard of Care vs. Scope of Practice</h3>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Concept</th>
+                                    <th>Definition</th>
+                                    <th>Determined By</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Standard of Care</strong></td>
+                                    <td>Level of care a reasonable professional would provide</td>
+                                    <td>Professional organizations, expert testimony</td>
+                                    <td>Checking two patient identifiers before blood draw</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Scope of Practice</strong></td>
+                                    <td>Legal boundaries of what a professional can do</td>
+                                    <td>State laws, certification bodies</td>
+                                    <td>Medical assistant cannot prescribe medication</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div style="background: #f0f7ff; padding: 15px; border-radius: var(--radius); margin-top: 15px;">
+                            <h4><i class="fas fa-lightbulb" style="color: var(--accent-blue);"></i> Key Insight</h4>
+                            <p>A medical assistant can be within their <strong>scope of practice</strong> but still violate the <strong>standard of care</strong> by performing a permitted task incorrectly or carelessly.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Liability & Insurance Section -->
+                <section id="liability" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-shield-alt"></i> Liability & Insurance</h2>
+                        <p>Protecting yourself and your practice from legal claims.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-umbrella"></i> Types of Professional Liability Insurance</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background: #f0fff4; padding: 20px; border-radius: var(--radius); border: 2px solid var(--success-green);">
+                                <h4 style="color: var(--success-green);">Occurrence Policy</h4>
+                                <p><strong>Covers:</strong> Claims for incidents that occurred during the policy period</p>
+                                <p><strong>Example:</strong> Covers a 2020 incident even if reported in 2023</p>
+                                <div class="pill">Long-term protection</div>
+                            </div>
+                            
+                            <div style="background: #f0f7ff; padding: 20px; border-radius: var(--radius); border: 2px solid var(--accent-blue);">
+                                <h4 style="color: var(--accent-blue);">Claims-Made Policy</h4>
+                                <p><strong>Covers:</strong> Claims made during the policy period</p>
+                                <p><strong>Example:</strong> Only covers if both incident AND claim happen during policy</p>
+                                <div class="pill">"Tail coverage" needed</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-user-md"></i> Who Needs Coverage?</h3>
+                        
+                        <div class="step-container">
+                            <div class="step-item">
+                                <h4>Employer's Insurance</h4>
+                                <p>Usually covers employees acting within scope of employment</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Individual Policies</h4>
+                                <p>Additional protection if employer's insurance is insufficient</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Professional Association Policies</h4>
+                                <p>Often available at discounted rates through organizations like AAMA</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-box">
+                        <div class="activity-header">
+                            <i class="fas fa-calculator activity-icon"></i>
+                            <div>
+                                <h3>Insurance Decision Scenario</h3>
+                                <p>You're a newly certified medical assistant starting your first job. The clinic has a claims-made policy. What additional coverage might you consider?</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 15px;">
+                            <textarea placeholder="Your analysis and recommendation..." rows="4" style="width:100%; padding:15px; border-radius:var(--radius); border:1px solid #d9cfff;"></textarea>
+                        </div>
+                        
+                        <button class="btn btn-outline" style="margin-top:15px;">
+                            <i class="fas fa-lightbulb"></i> View Expert Recommendation
+                        </button>
+                    </div>
+                </section>
+                
+                <!-- Contracts Section -->
+                <section id="contracts" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-file-contract"></i> Contracts in Healthcare</h2>
+                        <p>Understanding legally binding agreements.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-check-double"></i> 5 Elements of a Valid Contract</h3>
+                        <p>All five must be present for a contract to be legally binding:</p>
+                        
+                        <div class="step-container">
+                            <div class="step-item">
+                                <h4>1. Offer</h4>
+                                <p>One party proposes specific terms</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>2. Acceptance</h4>
+                                <p>Other party agrees to the exact terms</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>3. Consideration</h4>
+                                <p>Something of value exchanged (money, services, promise)</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>4. Legal Capacity</h4>
+                                <p>Parties are legally able to contract (adults, mentally competent)</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>5. Legal Purpose</h4>
+                                <p>Contract is for a legal activity</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-handshake"></i> Provider-Patient Relationship</h3>
+                        
+                        <div style="background: #f0f7ff; padding: 20px; border-radius: var(--radius); margin-bottom: 20px;">
+                            <h4 style="color: var(--primary-purple);">Establishing the Relationship</h4>
+                            <p>The provider-patient relationship is a type of contract that begins when:</p>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Provider agrees to treat patient</li>
+                                <li>Patient agrees to be treated</li>
+                                <li>Provider renders treatment</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: #fff0f0; padding: 20px; border-radius: var(--radius);">
+                            <h4 style="color: var(--error-orange);">Terminating the Relationship</h4>
+                            <p>Proper termination requires specific steps to avoid abandonment claims:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Written notice sent via certified mail</li>
+                                <li>Reason for termination (non-payment, non-compliance, etc.)</li>
+                                <li>Offer to transfer records to new provider</li>
+                                <li>Provide emergency care for reasonable time (typically 30 days)</li>
+                                <li>Document everything in patient's record</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Consent & Rights Section -->
+                <section id="consent" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-signature"></i> Consent & Patient Rights</h2>
+                        <p>Understanding authorization requirements and patient protections.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-clipboard-check"></i> Types of Consent</h3>
+                        
+                        <div class="consent-types">
+                            <div class="consent-card">
+                                <h4><i class="fas fa-hand-paper" style="color: var(--warning-yellow);"></i> Implied Consent</h4>
+                                <p><strong>Definition:</strong> Actions indicate agreement</p>
+                                <p><strong>Example:</strong> Patient rolls up sleeve for blood draw</p>
+                                <p><strong>Appropriate for:</strong> Routine, low-risk procedures</p>
+                            </div>
+                            
+                            <div class="consent-card">
+                                <h4><i class="fas fa-signature" style="color: var(--accent-blue);"></i> Expressed Consent</h4>
+                                <p><strong>Definition:</strong> Verbal or written agreement</p>
+                                <p><strong>Example:</strong> Verbal "yes" to vaccination</p>
+                                <p><strong>Appropriate for:</strong> Non-invasive procedures</p>
+                            </div>
+                            
+                            <div class="consent-card">
+                                <h4><i class="fas fa-file-signature" style="color: var(--primary-purple);"></i> Informed Consent</h4>
+                                <p><strong>Definition:</strong> Understanding risks, benefits, alternatives</p>
+                                <p><strong>Example:</strong> Signed surgical consent form</p>
+                                <p><strong>Required for:</strong> Invasive procedures, research</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-user-check"></i> Who Can Give Consent?</h3>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Can Give Consent</th>
+                                    <th>Cannot Give Consent</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Competent adults (18+)</td>
+                                    <td>Minors (exceptions: emancipated, mature minor)</td>
+                                </tr>
+                                <tr>
+                                    <td>Parents/legal guardians for minors</td>
+                                    <td>Incompetent adults without guardian</td>
+                                </tr>
+                                <tr>
+                                    <td>Legally appointed guardians</td>
+                                    <td>Unconscious patients (emergency exception)</td>
+                                </tr>
+                                <tr>
+                                    <td>Emancipated minors</td>
+                                    <td>Severely mentally impaired individuals</td>
+                                </tr>
+                                <tr>
+                                    <td>Spouse (in some states/situations)</td>
+                                    <td>Healthcare providers (except emergencies)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-flag-usa"></i> Patient's Bill of Rights</h3>
+                        
+                        <div class="step-container">
+                            <div class="step-item">
+                                <h4>Right to Respectful Care</h4>
+                                <p>Regardless of race, religion, gender, etc.</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Right to Information</h4>
+                                <p>About diagnosis, treatment, risks in understandable language</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Right to Privacy</h4>
+                                <p>HIPAA protections, confidential treatment</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Right to Refuse Treatment</h4>
+                                <p>Except in specific public health situations</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Right to Emergency Care</h4>
+                                <p>Under EMTALA, regardless of ability to pay</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- HIPAA Section -->
+                <section id="hipaa" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-user-shield"></i> HIPAA & Privacy</h2>
+                        <p>Protecting patient health information.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-user-secret"></i> HIPAA Key Terminology</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 20px;">
+                            <div class="legal-term">
+                                <strong>Covered Entity:</strong> Healthcare providers, health plans, healthcare clearinghouses
+                            </div>
+                            <div class="legal-term">
+                                <strong>Protected Health Information (PHI):</strong> Any health information that identifies an individual
+                            </div>
+                            <div class="legal-term">
+                                <strong>Business Associate:</strong> Third parties who handle PHI (billing companies, IT services)
+                            </div>
+                            <div class="legal-term">
+                                <strong>De-identify:</strong> Remove all identifying information (18 specific identifiers)
+                            </div>
+                            <div class="legal-term">
+                                <strong>Limited Data Set:</strong> PHI with some identifiers removed for research
+                            </div>
+                            <div class="legal-term">
+                                <strong>Minimum Necessary:</strong> Only access/share PHI needed for the task
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-lock"></i> HIPAA Privacy Rule Components</h3>
+                        
+                        <div class="step-container">
+                            <div class="step-item">
+                                <h4>Patient Rights</h4>
+                                <p>Access records, request amendments, accounting of disclosures</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Uses & Disclosures</h4>
+                                <p>Treatment, payment, operations (TPO) don't need authorization</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Administrative Requirements</h4>
+                                <p>Privacy officer, workforce training, safeguards</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Security Rule</h4>
+                                <p>Administrative, physical, and technical safeguards for e-PHI</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-laptop-medical"></i> HITECH Act</h3>
+                        <p><strong>Health Information Technology for Economic and Clinical Health Act:</strong></p>
+                        
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Promotes adoption of electronic health records (EHRs)</li>
+                            <li>Strengthens HIPAA enforcement</li>
+                            <li>Expands breach notification requirements</li>
+                            <li>Increases penalties for violations</li>
+                            <li>Provides incentives for "meaningful use" of EHRs</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Healthcare Laws Section -->
+                <section id="healthcare-laws" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-book-medical"></i> Major Healthcare Laws</h2>
+                        <p>Key federal laws affecting medical practice.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-dna"></i> Genetic Information & Drug Laws</h3>
+                        
+                        <div class="law-card">
+                            <div class="law-title">
+                                <i class="fas fa-dna"></i> GINA (Genetic Information Nondiscrimination Act)
+                            </div>
+                            <p>Prohibits discrimination based on genetic information in health insurance and employment.</p>
+                            <div class="pill">Genetic testing</div>
+                            <div class="pill">Family medical history</div>
+                        </div>
+                        
+                        <div class="law-card">
+                            <div class="law-title">
+                                <i class="fas fa-pills"></i> Food, Drug, and Cosmetic Act
+                            </div>
+                            <p>Ensures safety of food, drugs, medical devices, and cosmetics.</p>
+                            <div class="pill">FDA oversight</div>
+                            <div class="pill">Drug approvals</div>
+                        </div>
+                        
+                        <div class="law-card">
+                            <div class="law-title">
+                                <i class="fas fa-capsules"></i> Controlled Substances Act
+                            </div>
+                            <p>Regulates manufacturing, distribution, and dispensing of controlled substances.</p>
+                            <div class="pill">Schedule I-V drugs</div>
+                            <div class="pill">DEA enforcement</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-heartbeat"></i> Patient Protection & Safety Laws</h3>
+                        
+                        <div class="law-card">
+                            <div class="law-title">
+                                <i class="fas fa-heart"></i> Affordable Care Act (ACA)
+                            </div>
+                            <p>Expands health insurance coverage, prohibits denial for pre-existing conditions.</p>
+                        </div>
+                        
+                        <div class="law-card">
+                            <div class="law-title">
+                                <i class="fas fa-vial"></i> CLIA (Clinical Laboratory Improvement Amendments)
+                            </div>
+                            <p>Quality standards for laboratory testing to ensure accurate results.</p>
+                        </div>
+                        
+                        <div class="law-card">
+                            <div class="law-title">
+                                <i class="fas fa-hard-hat"></i> OSHA (Occupational Safety and Health Act)
+                            </div>
+                            <p>Ensures safe working conditions; requires exposure control plans.</p>
+                        </div>
+                        
+                        <div class="law-card">
+                            <div class="law-title">
+                                <i class="fas fa-syringe"></i> Needlestick Safety and Prevention Act
+                            </div>
+                            <p>Requires safety-engineered sharps devices and exposure control plans.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-hands-helping"></i> Patient Self-Determination & Organ Donation</h3>
+                        
+                        <div class="law-card">
+                            <div class="law-title">
+                                <i class="fas fa-advance"></i> Patient Self-Determination Act
+                            </div>
+                            <p>Requires healthcare facilities to inform patients about advance directives.</p>
+                        </div>
+                        
+                        <div class="law-card">
+                            <div class="law-title">
+                                <i class="fas fa-cross"></i> Uniform Determination of Death Act
+                            </div>
+                            <p>Defines legal death as irreversible cessation of circulatory/respiratory functions or brain functions.</p>
+                        </div>
+                        
+                        <div class="law-card">
+                            <div class="law-title">
+                                <i class="fas fa-heart"></i> Uniform Anatomical Gift Act
+                            </div>
+                            <p>Governs organ donation and transplantation procedures.</p>
+                        </div>
+                        
+                        <div class="law-card">
+                            <div class="law-title">
+                                <i class="fas fa-hand-holding-medical"></i> National Organ Transplant Act
+                            </div>
+                            <p>Establishes organ procurement and transplantation network; prohibits organ sales.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Compliance Section -->
+                <section id="compliance" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-clipboard-list"></i> Compliance & Reporting</h2>
+                        <p>Following regulations and reporting requirements.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-check-circle"></i> Compliance Programs</h3>
+                        
+                        <div class="step-container">
+                            <div class="step-item">
+                                <h4>Written Policies</h4>
+                                <p>Clear guidelines for legal and ethical conduct</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Training</h4>
+                                <p>Regular education on regulations and policies</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Auditing</h4>
+                                <p>Regular checks to ensure compliance</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Reporting Mechanisms</h4>
+                                <p>Safe ways to report concerns without retaliation</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>Corrective Action</h4>
+                                <p>Addressing violations when they occur</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-exclamation-circle"></i> Mandatory Reporting Requirements</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 20px;">
+                            <div style="background: #fff0f0; padding: 15px; border-radius: var(--radius);">
+                                <h4 style="color: var(--error-orange);">Communicable Diseases</h4>
+                                <p>Report to public health authorities (HIV, TB, COVID-19, etc.)</p>
+                            </div>
+                            
+                            <div style="background: #fff0f0; padding: 15px; border-radius: var(--radius);">
+                                <h4 style="color: var(--error-orange);">Abuse & Neglect</h4>
+                                <p>Child, elder, domestic violence, vulnerable adults</p>
+                            </div>
+                            
+                            <div style="background: #fff0f0; padding: 15px; border-radius: var(--radius);">
+                                <h4 style="color: var(--error-orange);">Wounds of Violence</h4>
+                                <p>Gunshot wounds, stabbings, suspicious injuries</p>
+                            </div>
+                            
+                            <div style="background: #fff0f0; padding: 15px; border-radius: var(--radius);">
+                                <h4 style="color: var(--error-orange);">Vaccine Reactions</h4>
+                                <p>VAERS (Vaccine Adverse Event Reporting System)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-file-alt"></i> Incident Reporting</h3>
+                        
+                        <div class="step-container">
+                            <div class="step-item">
+                                <h4>1. Immediate Response</h4>
+                                <p>Ensure safety, provide care if needed</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>2. Documentation</h4>
+                                <p>Complete incident report with facts only (no opinions)</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>3. Notification</h4>
+                                <p>Notify supervisor per facility policy</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>4. Follow-up</h4>
+                                <p>Participate in investigation if required</p>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-box" style="margin-top: 20px;">
+                            <h4><i class="fas fa-edit"></i> Incident Report Exercise</h4>
+                            <p>Complete a sample incident report for a medication error:</p>
+                            <div style="background: var(--white); padding: 20px; border-radius: var(--radius); margin-top: 10px;">
+                                <p><strong>Scenario:</strong> You administered medication to the wrong patient. The error was caught immediately, no harm occurred.</p>
+                                <textarea placeholder="Write your incident report here..." rows="6" style="width:100%; padding:15px; border-radius:var(--radius); border:1px solid #d9cfff; margin-top:10px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Final Assessment Section -->
+                <section id="assessment" class="lesson-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-question-circle"></i> Final Assessment</h2>
+                        <p>Test your understanding of healthcare laws and legal principles.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-certificate"></i> Comprehensive Quiz</h3>
+                        <p>Complete this assessment to check your comprehension of the lesson material.</p>
+                        
+                        <div class="quiz-container">
+                            <div class="quiz-question">
+                                <p><strong>1. Which branch of government creates statutory laws?</strong></p>
+                                <div class="quiz-option">A. Judicial</div>
+                                <div class="quiz-option">B. Executive</div>
+                                <div class="quiz-option">C. Legislative</div>
+                                <div class="quiz-option">D. Administrative</div>
+                            </div>
+                            
+                            <div class="quiz-question">
+                                <p><strong>2. What must be proven in a medical malpractice case? (Select all that apply)</strong></p>
+                                <div class="quiz-option">A. Duty existed</div>
+                                <div class="quiz-option">B. Standard of care was breached</div>
+                                <div class="quiz-option">C. Breach caused injury</div>
+                                <div class="quiz-option">D. Damages occurred</div>
+                            </div>
+                            
+                            <div class="quiz-question">
+                                <p><strong>3. Which law protects genetic information discrimination?</strong></p>
+                                <div class="quiz-option">A. HIPAA</div>
+                                <div class="quiz-option">B. GINA</div>
+                                <div class="quiz-option">C. CLIA</div>
+                                <div class="quiz-option">D. OSHA</div>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 30px;">
+                            <button class="btn btn-success" id="submit-final-quiz">
+                                <i class="fas fa-check-circle"></i> Submit Assessment
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><i class="fas fa-star"></i> Lesson Completion</h3>
+                        <p>Congratulations on completing Lesson 3.1! Your progress has been saved.</p>
+                        
+                        <div style="text-align: center; padding: 30px;">
+                            <div class="completion-badge">
+                                <i class="fas fa-trophy"></i>
+                                Legal Principles Mastered!
+                            </div>
+                            
+                            <div style="margin-top: 30px;">
+                                <h4>Key Legal Competencies Achieved:</h4>
+                                <ul style="text-align: left; display: inline-block; margin-top: 10px;">
+                                    <li>Understanding of criminal vs. civil law</li>
+                                    <li>Knowledge of torts and negligence</li>
+                                    <li>HIPAA compliance understanding</li>
+                                    <li>Consent requirements</li>
+                                    <li>Major healthcare laws</li>
+                                    <li>Compliance and reporting procedures</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-top: 30px;">
+                                <h4>What's Next?</h4>
+                                <p>Proceed to Lesson 3.2: Medical Ethics and Professional Standards</p>
+                                <button class="btn" style="margin-top: 15px;">
+                                    <i class="fas fa-arrow-right"></i> Continue to Next Lesson
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        
+        <footer class="footer">
+            <p>Legal Principles in Healthcare &copy; 2023 | Lesson 3.1: Laws, Regulations & Professional Standards</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                <i class="fas fa-external-link-alt"></i> Based on ABHES and CAAHEP Competencies
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Lesson objectives data
+        const objectives = [
+            "Discuss the balance of power in the U.S. and name the four types of laws.",
+            "Compare criminal and civil law as they apply to medical assisting practice.",
+            "Differentiate between intentional torts and negligent (unintentional) torts.",
+            "Differentiate between standard of care and scope of practice for medical assistants.",
+            "Describe types of professional liability insurance and their importance.",
+            "Explain the five elements required for a contract to be legally binding.",
+            "Describe the reasons and steps for terminating the provider-patient relationship.",
+            "Differentiate between implied, expressed, and informed consent.",
+            "Identify who can and cannot give consent for medical treatment.",
+            "Summarize the Patient's Bill of Rights and its applications.",
+            "Describe licensure, certification, registration, and accreditation processes.",
+            "Explain HIPAA standards and related terminology.",
+            "Describe key features of major healthcare laws (HITECH, GINA, ACA, CLIA, etc.).",
+            "Discuss Good Samaritan Laws and their protections.",
+            "Define laws related to patient self-determination and organ donation.",
+            "Describe compliance with public health reporting requirements.",
+            "Discuss how compliance programs work and complete incident reports correctly."
+        ];
+
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Populate objectives
+            const objectivesList = document.getElementById('objectives-list');
+            objectives.forEach((obj, index) => {
+                const objElement = document.createElement('div');
+                objElement.className = 'objective-item';
+                objElement.innerHTML = `
+                    <div class="objective-number">${index + 1}</div>
+                    <span>${obj}</span>
+                `;
+                objectivesList.appendChild(objElement);
+            });
+            
+            // Navigation between sections
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.lesson-section');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links and sections
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).classList.add('active');
+                    
+                    // Update progress
+                    updateProgress();
+                });
+            });
+            
+            // Pretest functionality
+            const pretestOptions = document.querySelectorAll('#pretest .quiz-option');
+            pretestOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from siblings
+                    const parent = this.parentElement;
+                    const siblings = parent.querySelectorAll('.quiz-option');
+                    siblings.forEach(sib => sib.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                });
+            });
+            
+            document.getElementById('submit-pretest').addEventListener('click', function() {
+                // Check answers
+                let score = 0;
+                const questions = document.querySelectorAll('#pretest .quiz-question');
+                
+                questions.forEach(question => {
+                    const selected = question.querySelector('.quiz-option.selected');
+                    if (selected && selected.getAttribute('data-correct') === 'true') {
+                        score++;
+                        selected.classList.add('correct');
+                    } else if (selected) {
+                        selected.classList.add('incorrect');
+                        // Show correct answer
+                        const correct = question.querySelector('.quiz-option[data-correct="true"]');
+                        if (correct) correct.classList.add('correct');
+                    }
+                });
+                
+                // Display score
+                const percentage = Math.round((score / questions.length) * 100);
+                alert(`Pretest submitted! You scored ${score}/${questions.length} (${percentage}%). This helps personalize your learning.`);
+                
+                // Mark first section as completed
+                document.querySelector('a[data-section="legal-system"]').classList.add('completed');
+                updateProgress();
+                
+                // Disable further selection
+                pretestOptions.forEach(option => {
+                    option.style.pointerEvents = 'none';
+                });
+                this.disabled = true;
+                this.innerHTML = '<i class="fas fa-check"></i> Pretest Submitted';
+            });
+            
+            // Law type activity
+            document.getElementById('check-law-answer').addEventListener('click', function() {
+                const selected = document.querySelector('#legal-system .quiz-option.selected');
+                const feedback = document.getElementById('law-feedback');
+                
+                if (!selected) {
+                    feedback.innerHTML = '<p style="color: var(--error-orange);">Please select an answer first.</p>';
+                    feedback.style.display = 'block';
+                    return;
+                }
+                
+                const answer = selected.getAttribute('data-answer');
+                
+                if (answer === 'both') {
+                    feedback.innerHTML = `
+                        <p style="color: var(--success-green);"><i class="fas fa-check-circle"></i> <strong>Correct!</strong> This would be a state statutory law, and administrative agencies would create regulations to implement it.</p>
+                        <p style="margin-top: 10px;">Many healthcare laws work this way - legislatures create the law, and agencies create detailed regulations.</p>
+                    `;
+                } else {
+                    feedback.innerHTML = `
+                        <p style="color: var(--error-orange);"><i class="fas fa-times-circle"></i> <strong>Incorrect.</strong> The best answer is B - both statutory and administrative law.</p>
+                        <p style="margin-top: 10px;">A state law (statutory) would require EHR implementation, and administrative agencies would create the specific regulations and standards.</p>
+                    `;
+                }
+                
+                feedback.style.display = 'block';
+            });
+            
+            // Case study buttons
+            document.querySelectorAll('.case-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const caseNum = this.getAttribute('data-case');
+                    const type = this.getAttribute('data-type');
+                    const feedback = document.getElementById(`case${caseNum}-feedback`);
+                    
+                    if (caseNum === '1' && type === 'both') {
+                        feedback.innerHTML = '<p style="color: var(--success-green);"><i class="fas fa-check-circle"></i> Correct! This could be both criminal (assault/battery) and civil (medical malpractice).</p>';
+                    } else if (caseNum === '1') {
+                        feedback.innerHTML = '<p style="color: var(--error-orange);"><i class="fas fa-times-circle"></i> Actually, this could be both. Intentional wrong medication could be criminal assault, and the harm could lead to civil malpractice claims.</p>';
+                    } else if (caseNum === '2' && type === 'civil') {
+                        feedback.innerHTML = '<p style="color: var(--success-green);"><i class="fas fa-check-circle"></i> Correct! This is primarily civil (negligence/malpractice) unless there was intentional wrongdoing.</p>';
+                    } else if (caseNum === '2') {
+                        feedback.innerHTML = '<p style="color: var(--error-orange);"><i class="fas fa-times-circle"></i> This is primarily civil negligence. Criminal charges would require intentional or grossly negligent conduct.</p>';
+                    }
+                });
+            });
+            
+            // Complete lesson button
+            document.getElementById('complete-lesson-btn').addEventListener('click', function() {
+                // Mark all sections as completed
+                navLinks.forEach(link => link.classList.add('completed'));
+                
+                // Mark all objectives as completed
+                document.querySelectorAll('.objective-item').forEach(item => {
+                    item.classList.add('completed');
+                });
+                
+                // Update progress to 100%
+                updateProgress(100);
+                
+                // Show completion message
+                alert('Congratulations! You have completed Lesson 3.1 on Legal Principles in Healthcare.');
+                
+                // Change button text
+                this.innerHTML = '<i class="fas fa-check-circle"></i> Lesson Completed';
+                this.classList.add('btn-success');
+                this.disabled = true;
+            });
+            
+            // Progress tracking
+            function updateProgress() {
+                const completedSections = document.querySelectorAll('.nav-link.completed').length;
+                const totalSections = navLinks.length;
+                const percentage = Math.round((completedSections / totalSections) * 100);
+                
+                document.getElementById('progress-percentage').textContent = percentage + '%';
+                document.getElementById('progress-fill').style.width = percentage + '%';
+                
+                // Update progress indicator color
+                const progressFill = document.getElementById('progress-fill');
+                if (percentage < 30) {
+                    progressFill.style.background = 'linear-gradient(90deg, var(--error-orange), #fdcb6e)';
+                } else if (percentage < 70) {
+                    progressFill.style.background = 'linear-gradient(90deg, #fdcb6e, var(--accent-blue))';
+                } else {
+                    progressFill.style.background = 'linear-gradient(90deg, var(--primary-purple), var(--success-green))';
+                }
+            }
+            
+            // Initialize progress
+            updateProgress();
+            
+            // Quiz option selection
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    if (this.closest('.quiz-question')) {
+                        const siblings = this.parentElement.querySelectorAll('.quiz-option');
+                        siblings.forEach(sib => sib.classList.remove('selected'));
+                        this.classList.add('selected');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
