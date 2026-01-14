@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Module: Professional Communication & Telephone Skills</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .lesson-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0 20px 0;
+        }
+        
+        .lesson-title {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .lesson-number {
+            background-color: white;
+            color: #3498db;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .module-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #3498db;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: #3498db;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .objective-icon {
+            background-color: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        h4 {
+            color: #2c3e50;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .learning-objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .objective-card {
+            background-color: #e8f4fc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s;
+        }
+        
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .objective-number {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .content-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .highlight-box {
+            background-color: #fff8e1;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        
+        .important-box {
+            background-color: #ffebee;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #f44336;
+            margin: 20px 0;
+        }
+        
+        .tip-box {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #4caf50;
+            margin: 20px 0;
+        }
+        
+        .example-box {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            border-left: 3px solid #9e9e9e;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .comparison-table {
+            overflow-x: auto;
+        }
+        
+        .letter-format {
+            background-color: #f0f7ff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #d1e3ff;
+        }
+        
+        .format-label {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .format-content {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .fax-template {
+            background-color: #fff;
+            padding: 20px;
+            border: 2px dashed #3498db;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .phone-system-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .feature-card {
+            background-color: #f0f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #d1e3ff;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        
+        .quiz-container {
+            background-color: #e3f2fd;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .quiz-question {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #bbdefb;
+        }
+        
+        .quiz-options {
+            margin-left: 20px;
+        }
+        
+        .quiz-options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .scenario-box {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #6c757d;
+            margin: 20px 0;
+        }
+        
+        .scenario-title {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .learning-objectives {
+                grid-template-columns: 1fr;
+            }
+            
+            .phone-system-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Professional Communication & Telephone Skills</h1>
+        <p class="subtitle">Lessons 9.1 & 10.1: Written Communication & Telephone Use in Medical Office</p>
+    </header>
+    
+    <div class="lesson-header">
+        <div class="lesson-title">
+            <div class="lesson-number">9.1</div>
+            <div>Written Communication in Healthcare</div>
+        </div>
+    </div>
+    
+    <div class="module-container">
+        <section class="card">
+            <h2>Learning Objectives</h2>
+            <div class="learning-objectives">
+                <div class="objective-card">
+                    <p><span class="objective-number">1</span> Recognize elements of fundamental writing skills and explain guidelines for capitalization, numbers, and punctuation</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">2</span> List and describe each component of a professional business letter</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">3</span> Summarize the formats for business letters</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">4</span> Describe the purpose of templates in professional communication</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">5</span> Discuss memorandums and describe etiquette for professional emails</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">6</span> Describe how to complete a HIPAA compliant fax cover sheet</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">7</span> Describe how to address envelopes and fold business documents</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">8</span> Describe commonly used postal services in ambulatory care</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">9</span> Explain the medical assistant's role with incoming mail</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">1</span> Fundamental Writing Skills</h3>
+            
+            <h4>Capitalization Guidelines</h4>
+            <ul>
+                <li>Always capitalize proper nouns (names, specific places, organizations)</li>
+                <li>Capitalize titles when they precede a name: <em>Dr. Smith, Professor Johnson</em></li>
+                <li>Capitalize medical terms when they are proper nouns: <em>Alzheimer's disease, Parkinson's disease</em></li>
+                <li>Capitalize department names when they are specific: <em>Cardiology Department</em></li>
+                <li>Do not capitalize common nouns: <em>the doctor, the hospital</em></li>
+            </ul>
+            
+            <h4>Number Usage Guidelines</h4>
+            <ul>
+                <li>Spell out numbers one through nine; use numerals for 10 and above</li>
+                <li>Always use numerals for ages, measurements, dosages, and lab values</li>
+                <li>Use numerals for dates, times, and monetary amounts</li>
+                <li>For percentages, use numerals followed by % symbol: <em>15%</em></li>
+            </ul>
+            
+            <h4>Punctuation Guidelines</h4>
+            <ul>
+                <li>Use commas to separate items in a series</li>
+                <li>Use semicolons to connect related independent clauses</li>
+                <li>Use periods to end declarative sentences</li>
+                <li>Use colons to introduce lists or explanations</li>
+                <li>Avoid excessive exclamation points in professional communication</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>Professional Writing Tip:</strong> Always proofread your writing twice—once for content accuracy and once for grammar and punctuation errors.
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">2</span> Components of a Professional Business Letter</h3>
+            
+            <div class="letter-format">
+                <div class="format-label">Letterhead/Return Address</div>
+                <div class="format-content">Clinic name, address, phone, fax, and email</div>
+                
+                <div class="format-label">Date</div>
+                <div class="format-content">Month Day, Year (e.g., March 15, 2024)</div>
+                
+                <div class="format-label">Inside Address</div>
+                <div class="format-content">Recipient's name, title, organization, and address</div>
+                
+                <div class="format-label">Salutation</div>
+                <div class="format-content">Dear [Title] [Last Name]:</div>
+                
+                <div class="format-label">Body</div>
+                <div class="format-content">Introduction, main content, conclusion (single-spaced)</div>
+                
+                <div class="format-label">Complimentary Close</div>
+                <div class="format-content">Sincerely, Respectfully, Cordially</div>
+                
+                <div class="format-label">Signature Block</div>
+                <div class="format-content">Handwritten signature, typed name, title</div>
+                
+                <div class="format-label">Reference Initials</div>
+                <div class="format-content">Writer's/typist's initials (e.g., AS/jr)</div>
+                
+                <div class="format-label">Enclosure Notation</div>
+                <div class="format-content">"Enclosure" or "Enc." if documents are included</div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">3</span> Business Letter Formats</h3>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Format</th>
+                            <th>Description</th>
+                            <th>When to Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Block Format</strong></td>
+                            <td>All elements aligned to the left margin</td>
+                            <td>Most common; standard business correspondence</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Modified Block</strong></td>
+                            <td>Date, closing, and signature centered or right-aligned</td>
+                            <td>Slightly more formal; professional medical correspondence</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Semi-Block</strong></td>
+                            <td>First line of each paragraph indented</td>
+                            <td>Traditional format; less common today</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Simplified</strong></td>
+                            <td>No salutation or complimentary close</td>
+                            <td>Internal memos; informal communications</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">4</span> Templates in Professional Communication</h3>
+            
+            <p>Templates serve several important purposes in healthcare communication:</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>Consistency</h4>
+                    <p>Ensures all documents follow the same format and contain required information</p>
+                </div>
+                <div class="content-card">
+                    <h4>Efficiency</h4>
+                    <p>Saves time by providing a ready-made structure for common documents</p>
+                </div>
+                <div class="content-card">
+                    <h4>Accuracy</h4>
+                    <p>Reduces errors by including all necessary components automatically</p>
+                </div>
+                <div class="content-card">
+                    <h4>Compliance</h4>
+                    <p>Ensures documents meet legal and regulatory requirements (HIPAA, etc.)</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <strong>Common Healthcare Templates:</strong> Referral letters, consultation requests, test result notifications, appointment reminders, billing inquiries, and patient instructions.
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">5</span> Memorandums & Email Etiquette</h3>
+            
+            <h4>Memorandum Components</h4>
+            <ul>
+                <li><strong>TO:</strong> Recipient(s)</li>
+                <li><strong>FROM:</strong> Sender</li>
+                <li><strong>DATE:</strong> Date memo is sent</li>
+                <li><strong>SUBJECT:</strong> Brief description of memo content</li>
+                <li><strong>Body:</strong> Clear, concise information</li>
+                <li><strong>Signature:</strong> Initials or signature</li>
+            </ul>
+            
+            <h4>Professional Email Etiquette</h4>
+            <ul>
+                <li>Use a clear, descriptive subject line</li>
+                <li>Address recipient professionally (Dear Dr. Smith)</li>
+                <li>Keep messages concise and to the point</li>
+                <li>Use proper grammar and spelling</li>
+                <li>Avoid ALL CAPS (perceived as shouting)</li>
+                <li>Include a professional signature block</li>
+                <li>Never discuss sensitive patient information in regular email <span class="badge">HIPAA</span></li>
+                <li>Use encrypted email for protected health information</li>
+                <li>Proofread before sending</li>
+                <li>Respond within 24 hours during business days</li>
+            </ul>
+            
+            <div class="important-box">
+                <strong>Critical Reminder:</strong> Regular email is NOT secure for Protected Health Information (PHI). Always use encrypted email systems approved by your healthcare organization.
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">6</span> HIPAA Compliant Fax Cover Sheet</h3>
+            
+            <div class="fax-template">
+                <h4 style="text-align: center;">CONFIDENTIAL MEDICAL INFORMATION</h4>
+                <p style="text-align: center;"><strong>FAX TRANSMISSION COVER SHEET</strong></p>
+                
+                <p><strong>TO:</strong> [Recipient Name/Department]</p>
+                <p><strong>FAX:</strong> [Recipient Fax Number]</p>
+                <p><strong>FROM:</strong> [Your Name/Department]</p>
+                <p><strong>DATE:</strong> [Date]</p>
+                <p><strong>NUMBER OF PAGES:</strong> [Including this cover sheet]</p>
+                
+                <div class="highlight-box" style="margin: 15px 0;">
+                    <strong>CONFIDENTIALITY NOTICE:</strong> This transmission contains confidential information belonging to the sender. This information is legally protected under HIPAA regulations. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the contents is strictly prohibited. If you have received this transmission in error, please notify the sender immediately and destroy the original and any copies.
+                </div>
+                
+                <p><strong>MESSAGE:</strong> [Brief description of contents]</p>
+                
+                <p><strong>IF TRANSMISSION PROBLEMS OCCUR, CALL:</strong> [Your Phone Number]</p>
+            </div>
+            
+            <div class="important-box">
+                <strong>Fax Security Protocols:</strong>
+                <ul>
+                    <li>Verify fax number before sending</li>
+                    <li>Use pre-programmed numbers when possible</li>
+                    <li>Confirm receipt with recipient</li>
+                    <li>Place fax machine in secure location</li>
+                    <li>Remove documents from fax tray immediately</li>
+                    <li>Keep transmission logs for 6 years (HIPAA requirement)</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">7</span> Addressing Envelopes & Folding Documents</h3>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>Envelope Addressing</h4>
+                    <ul>
+                        <li>Use block format with all caps</li>
+                        <li>Include recipient's full name and professional title</li>
+                        <li>Use correct postal abbreviations for states</li>
+                        <li>Include return address in top left corner</li>
+                        <li>Place postage in top right corner</li>
+                        <li>For business: Include "ATTN:" for specific individuals</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Standard Folding (for #10 envelope)</h4>
+                    <ol>
+                        <li>Place letter face up</li>
+                        <li>Fold bottom third up toward top</li>
+                        <li>Fold top third down over first fold</li>
+                        <li>Insert with last fold (top edge) facing envelope flap</li>
+                    </ol>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Window Envelope Folding</h4>
+                    <ol>
+                        <li>Position letter so address shows through window</li>
+                        <li>Fold so address remains visible</li>
+                        <li>Ensure no other information shows through window</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">8</span> Postal Services in Ambulatory Care</h3>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>First-Class Mail</h4>
+                    <p>Standard for letters, bills, statements. Delivery in 1-3 business days.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Priority Mail</h4>
+                    <p>Faster delivery (1-3 days) with tracking included. For time-sensitive documents.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Certified Mail</h4>
+                    <p>Provides proof of mailing and delivery. Essential for legal documents.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Return Receipt</h4>
+                    <p>Proof of delivery with recipient's signature. Often used with certified mail.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Registered Mail</h4>
+                    <p>Most secure option with chain of custody. For highly valuable documents.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Express Mail</h4>
+                    <p>Overnight delivery. For emergency medical records or time-critical items.</p>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <strong>Mail Security:</strong> Always use opaque envelopes for medical information. Consider using "Confidential" stamps for sensitive documents.
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">9</span> Medical Assistant's Role with Incoming Mail</h3>
+            
+            <div class="scenario-box">
+                <div class="scenario-title">
+                    <span>📬</span> Daily Mail Processing Procedure
+                </div>
+                <ol>
+                    <li><strong>Sort mail</strong> by category: patient correspondence, insurance, invoices, lab results, pharmacy</li>
+                    <li><strong>Open mail</strong> carefully (use letter opener, preserve contents)</li>
+                    <li><strong>Date-stamp</strong> all incoming mail</li>
+                    <li><strong>Sort by priority:</strong> Urgent (lab results, referrals), Routine (bills, general correspondence)</li>
+                    <li><strong>Route to appropriate personnel:</strong> Clinical to providers, billing to financial department</li>
+                    <li><strong>Document receipt</strong> in mail log if required</li>
+                    <li><strong>Handle confidential items</strong> according to HIPAA protocols</li>
+                </ol>
+            </div>
+            
+            <h4>Special Handling for Specific Mail Types</h4>
+            <ul>
+                <li><strong>Lab Results:</strong> Route immediately to appropriate provider</li>
+                <li><strong>Legal Documents:</strong> Do not open; deliver sealed to office manager</li>
+                <li><strong>Prescription Refills:</strong> Attach to patient chart and flag for provider</li>
+                <li><strong>Insurance Correspondence:</strong> Forward to billing department with date received noted</li>
+                <li><strong>Patient Payments:</strong> Process immediately and provide receipt</li>
+            </ul>
+        </section>
+    </div>
+    
+    <div class="lesson-header">
+        <div class="lesson-title">
+            <div class="lesson-number">10.1</div>
+            <div>Telephone Use in Medical Office</div>
+        </div>
+    </div>
+    
+    <div class="module-container">
+        <section class="card">
+            <h2>Learning Objectives</h2>
+            <div class="learning-objectives">
+                <div class="objective-card">
+                    <p><span class="objective-number">1</span> Identify features of multiple-line telephone systems and discuss cell phone use</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">2</span> Discuss telephone equipment, active listening, and professional techniques</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">3</span> Explain importance of thinking ahead and correct answering procedures</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">4</span> Discuss screening calls and handling emergency calls</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">5</span> Demonstrate placing callers on hold and transferring calls</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">6</span> Document messages accurately with all seven required elements</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">1</span> Multiple-Line Telephone Systems</h3>
+            
+            <div class="phone-system-features">
+                <div class="feature-card">
+                    <div class="feature-icon">🔊</div>
+                    <h4>Hold Function</h4>
+                    <p>Pause conversation while retrieving information or transferring calls</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h4>Transfer</h4>
+                    <p>Redirect calls to appropriate departments or individuals</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h4>Conference Calling</h4>
+                    <p>Connect multiple parties for consultations or meetings</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h4>Intercom/Paging</h4>
+                    <p>Internal communication between staff members</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h4>Call Waiting</h4>
+                    <p>Receive notifications of incoming calls while on another line</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎤</div>
+                    <h4>Speakerphone</h4>
+                    <p>Hands-free communication for note-taking or including others</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h4>Speed Dial</h4>
+                    <p>Quick access to frequently called numbers (hospitals, labs, pharmacies)</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h4>Call Forwarding</h4>
+                    <p>Redirect calls to another number when office is closed or during emergencies</p>
+                </div>
+            </div>
+            
+            <h4>Cell Phone Use in Healthcare Facilities</h4>
+            <ul>
+                <li>Personal cell phones should be on silent/vibrate in patient care areas</li>
+                <li>Never discuss PHI on personal cell phones</li>
+                <li>Use hospital-provided encrypted phones for work-related calls when mobile</li>
+                <li>Avoid using cell phones during direct patient interactions</li>
+                <li>Follow facility-specific policies on mobile device use</li>
+            </ul>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">2</span> Effective Telephone Use</h3>
+            
+            <h4>Essential Telephone Equipment</h4>
+            <ul>
+                <li>Multi-line telephone system with hold and transfer capabilities</li>
+                <li>Headsets for hands-free operation during documentation</li>
+                <li>Message pads or electronic message system</li>
+                <li>Speed dial directory for frequently called numbers</li>
+                <li>On-hold messaging system with healthcare information or music</li>
+            </ul>
+            
+            <h4>Active Listening Skills</h4>
+            <ul>
+                <li>Give full attention to the caller</li>
+                <li>Avoid interrupting</li>
+                <li>Paraphrase to confirm understanding</li>
+                <li>Ask clarifying questions</li>
+                <li>Note important details</li>
+                <li>Provide appropriate verbal cues ("I see," "Go on")</li>
+            </ul>
+            
+            <h4>Professional Telephone Techniques</h4>
+            <div class="example-box">
+                <p><strong>Correct:</strong> "Good morning, City Medical Clinic, this is Sarah speaking. How may I help you?"</p>
+                <p><strong>Incorrect:</strong> "Yeah, City Medical."</p>
+            </div>
+            
+            <h4>Tone of Voice & Enunciation</h4>
+            <ul>
+                <li>Speak clearly and at a moderate pace</li>
+                <li>Modulate tone to sound pleasant and professional</li>
+                <li>Smile while talking (it changes your tone)</li>
+                <li>Pronounce words completely</li>
+                <li>Avoid mumbling or speaking too quickly</li>
+                <li>Adjust volume appropriately (not too loud or soft)</li>
+            </ul>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">3</span> Answering Procedures & Preparedness</h3>
+            
+            <div class="scenario-box">
+                <div class="scenario-title">
+                    <span>📋</span> Thinking Ahead: Be Prepared Before Answering
+                </div>
+                <ul>
+                    <li>Have message pads and pens ready</li>
+                    <li>Keep frequently referenced information accessible (provider schedules, office hours)</li>
+                    <li>Know emergency protocols and contact numbers</li>
+                    <li>Have referral directories available</li>
+                    <li>Keep computer system open to appointment scheduling or patient records</li>
+                </ul>
+            </div>
+            
+            <h4>Correct Telephone Answering Procedure</h4>
+            <ol>
+                <li>Answer within 3 rings</li>
+                <li>Identify facility: "Good [morning/afternoon], [Clinic Name]"</li>
+                <li>Identify yourself: "This is [Your Name]"</li>
+                <li>Offer assistance: "How may I help you?"</li>
+                <li>Listen attentively to caller's needs</li>
+                <li>Respond appropriately based on call type</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>Professional Tip:</strong> Always answer with a smile in your voice. Callers can hear your facial expressions through your tone.
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">4</span> Screening Calls & Emergency Protocols</h3>
+            
+            <h4>Screening Incoming Calls</h4>
+            <ul>
+                <li>Determine nature of call before transferring</li>
+                <li>Ask: "May I tell the doctor what this call is regarding?"</li>
+                <li>Triage calls: emergencies, urgent matters, routine questions</li>
+                <li>Screen out solicitors and sales calls appropriately</li>
+                <li>Respect caller privacy while gathering necessary information</li>
+            </ul>
+            
+            <h4>Handling Emergency Calls</h4>
+            
+            <div class="important-box">
+                <strong>Emergency Call Protocol:</strong>
+                <ol>
+                    <li>Stay calm and speak clearly</li>
+                    <li>Ask: "What is the nature of your emergency?"</li>
+                    <li>Determine if immediate 911 call is needed</li>
+                    <li>If yes: Instruct caller to hang up and dial 911, or offer to connect them</li>
+                    <li>If no: Gather essential information quickly</li>
+                </ol>
+            </div>
+            
+            <h4>Emergency Call Questions</h4>
+            <ul>
+                <li>What is the emergency? (Describe symptoms)</li>
+                <li>Is the person conscious and breathing?</li>
+                <li>What is the person's name and date of birth?</li>
+                <li>What is your location and phone number?</li>
+                <li>Are there any known allergies or medical conditions?</li>
+                <li>What medications is the person currently taking?</li>
+                <li>When did the symptoms begin?</li>
+            </ul>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">5</span> Placing on Hold & Transferring Calls</h3>
+            
+            <h4>Proper Hold Procedure</h4>
+            <ol>
+                <li>Ask permission: "May I place you on hold for a moment?"</li>
+                <li>Wait for response before placing on hold</li>
+                <li>Return within 30-45 seconds</li>
+                <li>If longer wait is needed: "Thank you for holding. I need a bit more time. Would you prefer to continue holding or may I call you back?"</li>
+                <li>Thank caller for their patience when returning</li>
+            </ol>
+            
+            <h4>Correct Call Transfer</h4>
+            <ol>
+                <li>Explain why you're transferring: "Let me connect you with our billing department who can help with that."</li>
+                <li>Provide recipient's name if known: "I'm transferring you to Ms. Johnson in billing."</li>
+                <li>Stay on line to introduce caller if possible: "Ms. Johnson, I have Mr. Smith on the line regarding his insurance claim."</li>
+                <li>If direct transfer isn't possible, provide extension number</li>
+                <li>Ensure call goes through before disconnecting</li>
+            </ol>
+            
+            <div class="example-box">
+                <p><strong>Transfer Script:</strong> "I can help you with that. Let me transfer you to our referral coordinator who handles specialist appointments. Please hold while I connect you."</p>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">6</span> Taking Accurate Telephone Messages</h3>
+            
+            <h4>The Seven Essential Elements</h4>
+            <div class="letter-format">
+                <div class="format-label">1. Date and Time</div>
+                <div class="format-content">Include both date and exact time of call</div>
+                
+                <div class="format-label">2. Caller's Full Name</div>
+                <div class="format-content">First and last name, spelled correctly</div>
+                
+                <div class="format-label">3. Caller's Phone Number</div>
+                <div class="format-content">Include area code and best time to call back</div>
+                
+                <div class="format-label">4. Recipient's Name</div>
+                <div class="format-content">Who the message is for</div>
+                
+                <div class="format-label">5. Message Content</div>
+                <div class="format-content">Brief but complete summary of caller's message</div>
+                
+                <div class="format-label">6. Action Required</div>
+                <div class="format-content">What needs to be done (call back, schedule, etc.)</div>
+                
+                <div class="format-label">7. Your Initials</div>
+                <div class="format-content">Message taker's initials for accountability</div>
+            </div>
+            
+            <div class="example-box">
+                <p><strong>Sample Message:</strong></p>
+                <p>Date: 3/15/2024 | Time: 10:45 AM</p>
+                <p>For: Dr. Wilson</p>
+                <p>From: Robert Johnson (patient)</p>
+                <p>Phone: (555) 123-4567 (Best time: after 3 PM)</p>
+                <p>Message: Requesting refill of Lisinopril. Last filled 2/15/2024. Also reporting mild dizziness when standing quickly.</p>
+                <p>Action: Please call patient to discuss symptoms and refill.</p>
+                <p>Taken by: MJ</p>
+            </div>
+            
+            <div class="important-box">
+                <strong>HIPAA Reminder:</strong> When leaving messages, never reveal protected health information. Simply state: "This is [Clinic] calling for [Patient Name]. Please call us back at [Phone Number]."
+            </div>
+        </section>
+        
+        <section class="card quiz-container">
+            <h2>Knowledge Check</h2>
+            
+            <div class="quiz-question">
+                <p><strong>1. Which of the following is NOT a required element of a telephone message?</strong></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q1"> Date and time of call</label>
+                    <label><input type="radio" name="q1"> Caller's phone number</label>
+                    <label><input type="radio" name="q1"> Caller's social security number</label>
+                    <label><input type="radio" name="q1"> Message taker's initials</label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>2. What should you do before placing a caller on hold?</strong></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q2"> Immediately press hold button</label>
+                    <label><input type="radio" name="q2"> Ask for permission and wait for response</label>
+                    <label><input type="radio" name="q2"> Transfer the call instead</label>
+                    <label><input type="radio" name="q2"> Tell them to call back later</label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>3. Which mail service provides proof of delivery with recipient's signature?</strong></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q3"> First-Class Mail</label>
+                    <label><input type="radio" name="q3"> Certified Mail with Return Receipt</label>
+                    <label><input type="radio" name="q3"> Priority Mail</label>
+                    <label><input type="radio" name="q3"> Media Mail</label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>4. When handling an emergency call, what should you ask FIRST?</strong></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q4"> Patient's insurance information</label>
+                    <label><input type="radio" name="q4"> What is the nature of the emergency?</label>
+                    <label><input type="radio" name="q4"> Patient's medication list</label>
+                    <label><input type="radio" name="q4"> Caller's relationship to patient</label>
+                </div>
+            </div>
+            
+            <button onclick="checkAnswers()">Check Your Answers</button>
+            <div id="quiz-result" style="margin-top: 20px; font-weight: bold;"></div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>Professional Communication & Telephone Skills Learning Module</p>
+        <p>Healthcare Administrative Skills Training | Lessons 9.1 & 10.1</p>
+    </footer>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            const totalQuestions = 4;
+            const answers = [3, 2, 2, 2]; // Correct answer indices (0-based)
+            
+            // Check each question
+            for (let i = 1; i <= totalQuestions; i++) {
+                const options = document.querySelectorAll(`input[name="q${i}"]`);
+                let selected = -1;
+                
+                // Find which option is selected
+                for (let j = 0; j < options.length; j++) {
+                    if (options[j].checked) {
+                        selected = j;
+                        break;
+                    }
+                }
+                
+                // Check if correct
+                if (selected === answers[i-1]) {
+                    score++;
+                }
+            }
+            
+            const resultDiv = document.getElementById('quiz-result');
+            const percentage = (score / totalQuestions) * 100;
+            
+            if (percentage === 100) {
+                resultDiv.innerHTML = `Excellent! You scored ${score}/${totalQuestions} (${percentage}%) - Perfect understanding of professional communication skills!`;
+                resultDiv.style.color = '#4caf50';
+            } else if (percentage >= 75) {
+                resultDiv.innerHTML = `Good job! You scored ${score}/${totalQuestions} (${percentage}%) - You have a solid understanding of the material.`;
+                resultDiv.style.color = '#ff9800';
+            } else {
+                resultDiv.innerHTML = `You scored ${score}/${totalQuestions} (${percentage}%) - Review the material and try again. Pay special attention to emergency protocols and message documentation.`;
+                resultDiv.style.color = '#f44336';
+            }
+            
+            // Provide correct answers
+            resultDiv.innerHTML += `<br><br><strong>Correct Answers:</strong><br>
+            1. Caller's social security number (never ask for this on a routine call)<br>
+            2. Ask for permission and wait for response<br>
+            3. Certified Mail with Return Receipt<br>
+            4. What is the nature of the emergency?`;
+        }
+    </script>
+</body>
+</html>
