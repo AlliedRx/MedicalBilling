@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 21.1: Medical Emergencies</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-left: 5px solid #2c8c99;
+        }
+        
+        h1 {
+            color: #1a5f7a;
+            border-bottom: 3px solid #2c8c99;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #2c8c99;
+            margin: 25px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #a3d9e3;
+        }
+        
+        h3 {
+            color: #3aa6b9;
+            margin: 18px 0 10px 0;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3aa6b9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .learning-objectives h3 {
+            margin-top: 0;
+        }
+        
+        .learning-objectives ul {
+            padding-left: 20px;
+        }
+        
+        .learning-objectives li {
+            margin-bottom: 8px;
+        }
+        
+        .emergency-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #e1e1e1;
+        }
+        
+        .emergency-card h3 {
+            color: #d64545;
+            display: flex;
+            align-items: center;
+        }
+        
+        .emergency-card h3:before {
+            content: "⚠️";
+            margin-right: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th {
+            background-color: #2c8c99;
+            color: white;
+            text-align: left;
+            padding: 12px;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f9fb;
+        }
+        
+        .steps {
+            background-color: #fff9e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .steps ol {
+            padding-left: 20px;
+        }
+        
+        .steps li {
+            margin-bottom: 10px;
+        }
+        
+        .key-term {
+            background-color: #e8f7ff;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #1a5f7a;
+        }
+        
+        .note {
+            background-color: #f0ffe6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #6bc950;
+        }
+        
+        .warning {
+            background-color: #ffe6e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #d64545;
+        }
+        
+        .checklist {
+            background-color: #f5f9ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .checklist h3 {
+            margin-top: 0;
+        }
+        
+        .checklist-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .checklist-item:before {
+            content: "✓";
+            color: #6bc950;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .module-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .btn {
+            background-color: #2c8c99;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background-color: #1a5f7a;
+        }
+        
+        .btn-next {
+            background-color: #3aa6b9;
+        }
+        
+        .btn-next:hover {
+            background-color: #2c8c99;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 14px;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lesson 21.1: Medical Emergencies</h1>
+        
+        <div class="learning-objectives">
+            <h3>Learning Objectives</h3>
+            <p>By the end of this lesson, you will be able to:</p>
+            <ul>
+                <li>Identify common healthcare emergencies and describe team roles during emergency response</li>
+                <li>Recognize and describe the use of emergency equipment and supplies</li>
+                <li>Administer first aid for environmental emergencies, burns, poisonings, anaphylaxis, bites/stings, and eye injuries</li>
+                <li>Recognize and respond to diabetic emergencies, including insulin shock</li>
+                <li>Identify musculoskeletal and neurological emergencies and provide first aid for seizures</li>
+                <li>Respond to respiratory emergencies and provide first aid for choking</li>
+                <li>Manage cardiovascular emergencies and provide appropriate first aid including CPR</li>
+            </ul>
+        </div>
+        
+        <h2>Module 1: Introduction to Emergencies in Healthcare</h2>
+        
+        <h3>A. Types of Emergencies in Healthcare Settings</h3>
+        <ul>
+            <li><span class="key-term">Cardiovascular:</span> Cardiac arrest, heart attack, stroke</li>
+            <li><span class="key-term">Respiratory:</span> Choking, asthma attack, respiratory arrest</li>
+            <li><span class="key-term">Neurological:</span> Seizures, syncope (fainting), altered mental status</li>
+            <li><span class="key-term">Traumatic:</span> Falls, fractures, bleeding wounds</li>
+            <li><span class="key-term">Metabolic:</span> Diabetic emergencies, electrolyte imbalances</li>
+            <li><span class="key-term">Environmental:</span> Burns, poisoning, temperature-related issues</li>
+            <li><span class="key-term">Allergic:</span> Anaphylaxis from medications, food, or environmental triggers</li>
+        </ul>
+        
+        <h3>B. Emergency Response Roles</h3>
+        <p><em>Each healthcare setting follows specific protocols (e.g., Code Blue, Rapid Response Team).</em></p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Responsibilities</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>First Responder</strong></td>
+                    <td>Activates emergency response, begins initial assessment, starts basic life support</td>
+                </tr>
+                <tr>
+                    <td><strong>Team Leader</strong></td>
+                    <td>Coordinates the response, assigns roles, makes key decisions, communicates with other teams</td>
+                </tr>
+                <tr>
+                    <td><strong>Airway Manager</strong></td>
+                    <td>Manages airway, provides ventilation, prepares for intubation if needed</td>
+                </tr>
+                <tr>
+                    <td><strong>Compressor</strong></td>
+                    <td>Performs high-quality chest compressions during CPR</td>
+                </tr>
+                <tr>
+                    <td><strong>Medication Nurse</strong></td>
+                    <td>Administers emergency medications as directed, documents all medications given</td>
+                </tr>
+                <tr>
+                    <td><strong>Recorder/Timekeeper</strong></td>
+                    <td>Documents all events, medications, interventions, and times; tracks compression cycles</td>
+                </tr>
+                <tr>
+                    <td><strong>Runner</strong></td>
+                    <td>Retrieves equipment, medications, and supplies; communicates with lab/pharmacy</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="note">
+            <p><strong>Note:</strong> In smaller facilities, team members may assume multiple roles. Always follow your facility's specific emergency response protocols.</p>
+        </div>
+        
+        <h2>Module 2: Emergency Equipment and Supplies</h2>
+        
+        <div class="checklist">
+            <h3>Essential Emergency Equipment</h3>
+            <div class="checklist-item">Automated External Defibrillator (AED)</div>
+            <div class="checklist-item">Emergency Crash Cart</div>
+            <div class="checklist-item">Bag-Valve-Mask (BVM) resuscitator</div>
+            <div class="checklist-item">Suction equipment (portable and wall-mounted)</div>
+            <div class="checklist-item">Oxygen delivery systems (tanks, masks, nasal cannulas)</div>
+            <div class="checklist-item">Splints and immobilization devices</div>
+            <div class="checklist-item">Burn care supplies (sterile dressings, burn gels)</div>
+            <div class="checklist-item">Personal Protective Equipment (PPE)</div>
+        </div>
+        
+        <h3>Crash Cart Contents</h3>
+        <p>Emergency crash carts are standardized and typically contain:</p>
+        <ul>
+            <li>Cardiac monitor/defibrillator</li>
+            <li>Emergency medications (epinephrine, atropine, amiodarone, etc.)</li>
+            <li>IV access supplies and fluids</li>
+            <li>Airway management equipment (endotracheal tubes, laryngoscope)</li>
+            <li>Emergency procedure trays (central line, chest tube)</li>
+            <li>Documentation forms</li>
+        </ul>
+        
+        <div class="warning">
+            <p><strong>Important:</strong> Crash carts must be checked regularly (usually daily) for expired medications and complete supplies. A seal or log indicates when it was last checked.</p>
+        </div>
+        
+        <h2>Module 3: First Aid for Environmental Emergencies</h2>
+        
+        <div class="emergency-card">
+            <h3>Temperature-Related Emergencies</h3>
+            <p><strong>Heat Stroke:</strong> Hot, dry skin; confusion; rapid pulse; possible loss of consciousness</p>
+            <div class="steps">
+                <p><strong>First Aid Steps:</strong></p>
+                <ol>
+                    <li>Move to cool area immediately</li>
+                    <li>Remove excess clothing</li>
+                    <li>Cool with water, ice packs, or wet sheets</li>
+                    <li>Fan the person while wetting skin</li>
+                    <li>Monitor breathing and consciousness</li>
+                    <li>Seek immediate medical attention</li>
+                </ol>
+            </div>
+            
+            <p><strong>Hypothermia:</strong> Shivering, confusion, slurred speech, weak pulse, loss of coordination</p>
+            <div class="steps">
+                <p><strong>First Aid Steps:</strong></p>
+                <ol>
+                    <li>Move to warm area</li>
+                    <li>Remove wet clothing</li>
+                    <li>Warm center of body first (chest, neck, head, groin)</li>
+                    <li>Use warm blankets, skin-to-skin contact</li>
+                    <li>Give warm (not hot) beverages if person is alert</li>
+                    <li>Handle gently - rough handling can cause cardiac arrest</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="emergency-card">
+            <h3>Burns</h3>
+            <p><strong>Classifications:</strong></p>
+            <ul>
+                <li><strong>First Degree:</strong> Red, painful, dry (sunburn)</li>
+                <li><strong>Second Degree:</strong> Blisters, swelling, wet appearance</li>
+                <li><strong>Third Degree:</strong> White or charred, leathery, may be painless (nerve damage)</li>
+            </ul>
+            
+            <div class="steps">
+                <p><strong>First Aid for Burns:</strong></p>
+                <ol>
+                    <li>Stop the burning process (remove from source)</li>
+                    <li>Cool the burn with cool (not cold) running water for 10-20 minutes</li>
+                    <li>Remove jewelry or tight items before swelling occurs</li>
+                    <li>Cover with sterile, non-stick dressing</li>
+                    <li>Do not apply ice, butter, or ointments to severe burns</li>
+                    <li>Seek medical attention for severe burns, burns on face/hands/genitals, or chemical/electrical burns</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="emergency-card">
+            <h3>Poisonings</h3>
+            <p><strong>General Signs:</strong> Nausea, vomiting, difficulty breathing, confusion, seizures, unconsciousness</p>
+            
+            <div class="steps">
+                <p><strong>First Aid Steps:</strong></p>
+                <ol>
+                    <li>Check the scene for safety (chemical fumes, etc.)</li>
+                    <li>Check responsiveness and breathing</li>
+                    <li>Call Poison Control (1-800-222-1222) or emergency services</li>
+                    <li>Have container/package available to identify substance</li>
+                    <li>Do NOT induce vomiting unless directed by medical professional</li>
+                    <li>If chemical is on skin, remove contaminated clothing and rinse skin for 15-20 minutes</li>
+                    <li>If poison is in eyes, rinse eyes with lukewarm water for 15-20 minutes</li>
+                </ol>
+            </div>
+        </div>
+        
+        <h2>Module 4: Diabetic Emergencies</h2>
+        
+        <div class="emergency-card">
+            <h3>Insulin Shock (Hypoglycemia)</h3>
+            <p><strong>Causes:</strong> Too much insulin, too little food, excessive exercise</p>
+            <p><strong>Signs & Symptoms:</strong> Confusion, irritability, sweating, trembling, rapid heartbeat, hunger, dizziness, seizures, loss of consciousness</p>
+            
+            <div class="steps">
+                <p><strong>First Aid for Conscious Patient:</strong></p>
+                <ol>
+                    <li>Give 15-20 grams of fast-acting sugar:
+                        <ul>
+                            <li>4 oz fruit juice or regular soda</li>
+                            <li>Glucose tablets/gel</li>
+                            <li>1 tablespoon sugar or honey</li>
+                        </ul>
+                    </li>
+                    <li>Wait 15 minutes and recheck blood sugar if possible</li>
+                    <li>If still low, repeat sugar treatment</li>
+                    <li>Once improved, give complex carbohydrate and protein snack</li>
+                </ol>
+            </div>
+            
+            <div class="steps">
+                <p><strong>First Aid for Unconscious Patient:</strong></p>
+                <ol>
+                    <li>Place in recovery position</li>
+                    <li>Do NOT give anything by mouth</li>
+                    <li>Call emergency services immediately</li>
+                    <li>Administer glucagon injection if trained and available</li>
+                    <li>Monitor breathing and pulse</li>
+                    <li>Be prepared to perform CPR if needed</li>
+                </ol>
+            </div>
+        </div>
+        
+        <h2>Module 5: Musculoskeletal and Neurologic Emergencies</h2>
+        
+        <div class="emergency-card">
+            <h3>Seizures</h3>
+            <p><strong>Types:</strong> Generalized (tonic-clonic), partial (focal), absence</p>
+            
+            <div class="steps">
+                <p><strong>First Aid During Seizure:</strong></p>
+                <ol>
+                    <li>Stay calm and time the seizure</li>
+                    <li>Protect from injury - move furniture, place pillow under head</li>
+                    <li>Turn person on their side (recovery position) to keep airway clear</li>
+                    <li>Loosen tight clothing around neck</li>
+                    <li>Do NOT restrain the person</li>
+                    <li>Do NOT put anything in their mouth</li>
+                    <li>Stay with them until fully alert</li>
+                </ol>
+            </div>
+            
+            <div class="steps">
+                <p><strong>When to Call Emergency Services:</strong></p>
+                <ol>
+                    <li>Seizure lasts more than 5 minutes</li>
+                    <li>Person has difficulty breathing afterwards</li>
+                    <li>Person is injured during seizure</li>
+                    <li>Person is pregnant or has diabetes</li>
+                    <li>Another seizure follows immediately</li>
+                    <li>Seizure occurs in water</li>
+                    <li>Person does not regain consciousness after seizure stops</li>
+                </ol>
+            </div>
+        </div>
+        
+        <h2>Module 6: Respiratory Emergencies</h2>
+        
+        <div class="emergency-card">
+            <h3>Choking (Conscious Adult/Child)</h3>
+            
+            <div class="steps">
+                <p><strong>Signs of Severe Choking:</strong> Cannot breathe, speak, or cough; universal choking sign (hands to throat); blue lips/nails</p>
+                
+                <p><strong>Abdominal Thrusts (Heimlich Maneuver):</strong></p>
+                <ol>
+                    <li>Stand behind person, wrap arms around waist</li>
+                    <li>Make a fist with one hand, thumb side against middle of abdomen, above navel</li>
+                    <li>Grasp fist with other hand</li>
+                    <li>Give quick, inward and upward thrusts</li>
+                    <li>Continue until object is expelled or person becomes unconscious</li>
+                </ol>
+            </div>
+            
+            <div class="warning">
+                <p><strong>For Pregnant or Obese Patients:</strong> Use chest thrusts instead of abdominal thrusts. Place hands at center of chest (same position as for CPR compressions).</p>
+            </div>
+            
+            <div class="steps">
+                <p><strong>For Unconscious Choking Victim:</strong></p>
+                <ol>
+                    <li>Lower to ground, call for help/activate emergency response</li>
+                    <li>Begin CPR starting with chest compressions</li>
+                    <li>Before giving breaths, check mouth for object and remove if visible</li>
+                    <li>Continue cycles of 30 compressions and 2 breaths</li>
+                </ol>
+            </div>
+        </div>
+        
+        <h2>Module 7: Cardiovascular Emergencies</h2>
+        
+        <div class="emergency-card">
+            <h3>Bleeding Wounds</h3>
+            
+            <div class="steps">
+                <p><strong>First Aid for Severe Bleeding:</strong></p>
+                <ol>
+                    <li>Apply direct pressure with sterile dressing or clean cloth</li>
+                    <li>Elevate injured area above heart if no fracture suspected</li>
+                    <li>Apply pressure to pressure points if direct pressure fails</li>
+                    <li>Apply tourniquet only as last resort for life-threatening limb bleeding</li>
+                    <li>Never remove soaked dressing - add more layers on top</li>
+                    <li>Treat for shock - keep person warm and lying down</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="emergency-card">
+            <h3>Shock</h3>
+            <p><strong>Signs & Symptoms:</strong> Pale/cool/clammy skin, rapid weak pulse, rapid shallow breathing, nausea, confusion, unconsciousness</p>
+            
+            <div class="steps">
+                <p><strong>First Aid for Shock:</strong></p>
+                <ol>
+                    <li>Call for emergency medical help</li>
+                    <li>Have person lie down on back</li>
+                    <li>Elevate legs about 12 inches (unless head/neck/leg injury suspected)</li>
+                    <li>Keep person warm with blanket</li>
+                    <li>Do not give anything to eat or drink</li>
+                    <li>Monitor breathing and consciousness</li>
+                    <li>Be prepared to perform CPR if needed</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="emergency-card">
+            <h3>Cardiopulmonary Resuscitation (CPR)</h3>
+            
+            <div class="steps">
+                <p><strong>Adult CPR Steps (C-A-B):</strong></p>
+                <ol>
+                    <li><strong>Check</strong> for responsiveness and breathing</li>
+                    <li><strong>Call</strong> for help/activate emergency response</li>
+                    <li><strong>Compressions:</strong> Place heel of hand on center of chest, other hand on top
+                        <ul>
+                            <li>Push hard and fast (at least 2 inches deep)</li>
+                            <li>Rate of 100-120 compressions per minute</li>
+                            <li>Allow chest to recoil completely between compressions</li>
+                        </ul>
+                    </li>
+                    <li><strong>Airway:</strong> Tilt head back, lift chin to open airway</li>
+                    <li><strong>Breathing:</strong> Give 2 breaths (1 second each), watching for chest rise</li>
+                    <li>Continue cycles of 30 compressions to 2 breaths</li>
+                    <li>Use AED as soon as available</li>
+                </ol>
+            </div>
+            
+            <div class="note">
+                <p><strong>Note:</strong> For infant/child CPR, compression depth is about ⅓ of chest depth. For infants, use two fingers or two-thumb encircling technique. Rescue breathing for children/infants is particularly important.</p>
+            </div>
+        </div>
+        
+        <div class="module-nav">
+            <a href="#" class="btn">Previous Lesson</a>
+            <a href="#" class="btn btn-next">Next: Lesson 22.1: Skills and Strategies</a>
+        </div>
+        
+        <div class="warning">
+            <p><strong>Important Disclaimer:</strong> This lesson provides general first aid information. Always follow your facility's specific protocols and your scope of practice. Proper certification (BLS, ACLS, First Aid) is required to perform many of these skills in clinical settings.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Simple script to handle button clicks and expandable content
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to emergency cards to highlight them
+            const emergencyCards = document.querySelectorAll('.emergency-card');
+            emergencyCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.backgroundColor = '#f0f8ff';
+                    setTimeout(() => {
+                        this.style.backgroundColor = '#f9f9f9';
+                    }, 500);
+                });
+            });
+            
+            // Add functionality to buttons
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Navigation would take you to the next lesson in a full course.');
+                });
+            });
+            
+            // Highlight key terms on hover
+            const keyTerms = document.querySelectorAll('.key-term');
+            keyTerms.forEach(term => {
+                term.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#d4edf7';
+                });
+                term.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '#e8f7ff';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
