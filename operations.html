@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Module: Daily Operations, Safety & Pharmacology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .lesson-header {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0 20px 0;
+        }
+        
+        .lesson-title {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .lesson-number {
+            background-color: white;
+            color: #8e44ad;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .module-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #8e44ad;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: #8e44ad;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .objective-icon {
+            background-color: #8e44ad;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        h4 {
+            color: #2c3e50;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .learning-objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .objective-card {
+            background-color: #f4ecf7;
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 4px solid #8e44ad;
+            transition: transform 0.3s;
+        }
+        
+        .objective-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .objective-number {
+            display: inline-block;
+            background-color: #8e44ad;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .content-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .highlight-box {
+            background-color: #fff8e1;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        
+        .important-box {
+            background-color: #ffebee;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #f44336;
+            margin: 20px 0;
+        }
+        
+        .tip-box {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #4caf50;
+            margin: 20px 0;
+        }
+        
+        .example-box {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 3px solid #9e9e9e;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .procedure-box {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #bbdefb;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background-color: #8e44ad;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .comparison-table {
+            overflow-x: auto;
+            margin: 25px 0;
+        }
+        
+        .checklist {
+            background-color: #f0f7ff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #d1e3ff;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .checklist-checkbox {
+            margin-right: 15px;
+            color: #8e44ad;
+            font-size: 1.2rem;
+        }
+        
+        .safety-section {
+            background-color: #fff3e0;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #ff9800;
+        }
+        
+        .safety-title {
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .pharmacology-section {
+            background-color: #e8f5e9;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #4caf50;
+        }
+        
+        .pharm-title {
+            color: #2e7d32;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .drug-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .drug-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-top: 4px solid #8e44ad;
+        }
+        
+        .drug-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .fire-extinguisher {
+            background-color: #ffebee;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #f44336;
+            text-align: center;
+        }
+        
+        .fire-title {
+            color: #c62828;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .PASS-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .pass-step {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #f44336;
+        }
+        
+        .step-letter {
+            background-color: #f44336;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px auto;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .body-mechanics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .mechanics-card {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #bbdefb;
+        }
+        
+        .mechanics-icon {
+            font-size: 2.5rem;
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+        
+        .inventory-form {
+            background-color: #f5f5f5;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px dashed #8e44ad;
+        }
+        
+        .form-title {
+            text-align: center;
+            color: #8e44ad;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .form-header {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .scenario-box {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #6c757d;
+            margin: 20px 0;
+        }
+        
+        .scenario-title {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quiz-container {
+            background-color: #e3f2fd;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .quiz-question {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #bbdefb;
+        }
+        
+        .quiz-options {
+            margin-left: 20px;
+        }
+        
+        .quiz-options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        
+        button {
+            background-color: #8e44ad;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #7d3c98;
+        }
+        
+        .icon {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        .safety-badge {
+            background-color: #ff9800;
+        }
+        
+        .legal-badge {
+            background-color: #3498db;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .learning-objectives {
+                grid-template-columns: 1fr;
+            }
+            
+            .PASS-steps {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+            
+            .drug-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Daily Operations, Safety & Pharmacology Principles</h1>
+        <p class="subtitle">Lessons 13.1 & 14.1: Healthcare Facility Management & Medication Fundamentals</p>
+    </header>
+    
+    <div class="lesson-header">
+        <div class="lesson-title">
+            <div class="lesson-number">13.1</div>
+            <div>Daily Operations and Safety</div>
+        </div>
+    </div>
+    
+    <div class="module-container">
+        <section class="card">
+            <h2>Learning Objectives</h2>
+            <div class="learning-objectives">
+                <div class="objective-card">
+                    <p><span class="objective-number">1</span> Explain tasks for opening and closing the healthcare facility</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">2</span> List steps for completing an inventory and perform equipment inventory</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">3</span> Explain purpose of routine equipment maintenance</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">4</span> Discuss warranties, service calls, and purchasing equipment</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">5</span> Discuss inventory management and control systems</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">6</span> Identify principles of body mechanics during inventory</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">7</span> Evaluate work environment for unsafe conditions</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">8</span> Identify critical elements of emergency response plans</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">9</span> Demonstrate proper use of a fire extinguisher</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">10</span> Recognize effects on persons in emergency situations</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">1</span> Opening & Closing Procedures</h3>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>Opening Procedures (Before Patients Arrive)</h4>
+                    <div class="checklist">
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Unlock doors and disarm security system</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Turn on lights and adjust thermostat</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Boot up computers and check systems</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Check voicemail and after-hours messages</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Prepare waiting and reception areas</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Check exam rooms for supplies and cleanliness</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Review schedule and pull patient charts</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Closing Procedures (After Patients Leave)</h4>
+                    <div class="checklist">
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Secure patient records and sensitive information</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Close out cash drawer and prepare bank deposit</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Clean and restock exam rooms</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Process end-of-day reports and backups</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Set phone system to after-hours mode</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Turn off non-essential equipment and lights</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-checkbox">✓</div>
+                            <div>Lock all doors and activate security system</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">2</span> Inventory Procedures & Documentation</h3>
+            
+            <div class="procedure-box">
+                <h4>Inventory Process Steps</h4>
+                <ol>
+                    <li><strong>Preparation:</strong> Gather inventory sheets, pens, clipboard, calculator</li>
+                    <li><strong>Categorization:</strong> Separate items by type (medical supplies, office supplies, medications)</li>
+                    <li><strong>Counting:</strong> Physically count each item in stock</li>
+                    <li><strong>Recording:</strong> Document quantities on inventory sheet</li>
+                    <li><strong>Verification:</strong> Double-count high-value or critical items</li>
+                    <li><strong>Analysis:</strong> Compare counts to minimum/maximum levels</li>
+                    <li><strong>Documentation:</strong> Complete inventory report with date and signature</li>
+                    <li><strong>Action:</strong> Generate purchase orders for low stock items</li>
+                </ol>
+            </div>
+            
+            <div class="inventory-form">
+                <div class="form-title">EQUIPMENT INVENTORY FORM</div>
+                <div class="form-row form-header">
+                    <div>Equipment Name/Description</div>
+                    <div>Model/Serial #</div>
+                    <div>Location</div>
+                    <div>Condition</div>
+                </div>
+                <div class="form-row">
+                    <div>Automatic Blood Pressure Monitor</div>
+                    <div>BPM-2000 / SN12345</div>
+                    <div>Exam Room 1</div>
+                    <div>Good ✓</div>
+                </div>
+                <div class="form-row">
+                    <div>EKG Machine</div>
+                    <div>CardioMax / SN67890</div>
+                    <div>Procedure Room</div>
+                    <div>Needs Calibration</div>
+                </div>
+                <div class="form-row">
+                    <div>Centrifuge</div>
+                    <div>SpinFast 5000 / SN54321</div>
+                    <div>Lab Area</div>
+                    <div>Good ✓</div>
+                </div>
+                <div class="form-row">
+                    <div>Autoclave</div>
+                    <div>SteriSafe Pro / SN98765</div>
+                    <div>Sterilization Room</div>
+                    <div>Due for Service</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">3</span> Routine Equipment Maintenance</h3>
+            
+            <h4>Purpose of Routine Maintenance</h4>
+            <ul>
+                <li><strong>Preventive Care:</strong> Avoid equipment failures during patient care</li>
+                <li><strong>Accuracy:</strong> Ensure diagnostic equipment provides correct readings</li>
+                <li><strong>Longevity:</strong> Extend equipment lifespan and performance</li>
+                <li><strong>Safety:</strong> Prevent accidents, electrical hazards, or contamination</li>
+                <li><strong>Compliance:</strong> Meet manufacturer and regulatory requirements</li>
+                <li><strong>Cost Savings:</strong> Reduce expensive repairs and replacements</li>
+            </ul>
+            
+            <h4>Maintenance Schedule Examples</h4>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Equipment</th>
+                            <th>Daily Maintenance</th>
+                            <th>Weekly/Monthly</th>
+                            <th>Annual</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Autoclave</strong></td>
+                            <td>Clean chamber, check water level</td>
+                            <td>Biological testing</td>
+                            <td>Full service by technician</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Centrifuge</strong></td>
+                            <td>Wipe exterior, check balance</td>
+                            <td>Clean rotor, lubricate</td>
+                            <td>Motor inspection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Microscope</strong></td>
+                            <td>Clean lenses with proper cloth</td>
+                            <td>Check light source, clean stage</td>
+                            <td>Optical alignment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EKG Machine</strong></td>
+                            <td>Clean leads, check paper</td>
+                            <td>Test calibration</td>
+                            <td>Electrical safety check</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">4</span> Warranties, Service & Purchasing</h3>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>Warranties</h4>
+                    <ul>
+                        <li><strong>Manufacturer's Warranty:</strong> Typically 1-3 years for defects</li>
+                        <li><strong>Extended Warranty:</strong> Optional additional coverage</li>
+                        <li><strong>Service Contracts:</strong> Pre-paid maintenance agreements</li>
+                        <li><strong>Documentation:</strong> Keep warranty cards and receipts</li>
+                        <li><strong>Exclusions:</strong> Understand what's not covered (abuse, neglect)</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Service Calls</h4>
+                    <ul>
+                        <li>Document issue thoroughly before calling</li>
+                        <li>Have model/serial numbers ready</li>
+                        <li>Note error messages or symptoms</li>
+                        <li>Ask about priority and estimated time</li>
+                        <li>Get service report with findings and recommendations</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Purchasing Equipment</h4>
+                    <ul>
+                        <li>Research options and compare features</li>
+                        <li>Consider total cost of ownership</li>
+                        <li>Check compatibility with existing systems</li>
+                        <li>Review warranty and service options</li>
+                        <li>Get demonstrations and references</li>
+                        <li>Consider future needs and scalability</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">5</span> Inventory Management Systems</h3>
+            
+            <h4>Inventory Control Systems</h4>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>System Type</th>
+                            <th>Description</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Manual System</strong></td>
+                            <td>Paper-based, visual checks, manual reordering</td>
+                            <td>Small practices, low-cost items</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Par Level System</strong></td>
+                            <td>Pre-set minimum/maximum quantities for each item</td>
+                            <td>Medium practices, predictable usage</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Just-in-Time (JIT)</strong></td>
+                            <td>Ordering as needed, minimal stock on hand</td>
+                            <td>Large practices with reliable suppliers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Computerized System</strong></td>
+                            <td>Automated tracking, barcode scanning, automatic reordering</td>
+                            <td>Large practices, high-value items</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h4>Ordering Supplies Process</h4>
+            <div class="procedure-box">
+                <ol>
+                    <li>Review inventory levels against par levels</li>
+                    <li>Create purchase order with item numbers and quantities</li>
+                    <li>Obtain necessary approvals per office policy</li>
+                    <li>Submit order to approved vendor</li>
+                    <li>Receive shipment and verify against packing slip</li>
+                    <li>Check for damage and expiration dates</li>
+                    <li>Restock shelves with new items behind old (FIFO)</li>
+                    <li>Update inventory records</li>
+                    <li>Process invoice for payment</li>
+                </ol>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">6</span> Body Mechanics & Safe Lifting</h3>
+            
+            <div class="body-mechanics">
+                <div class="mechanics-card">
+                    <div class="mechanics-icon">🦵</div>
+                    <h4>Wide Base of Support</h4>
+                    <p>Feet shoulder-width apart for stability</p>
+                </div>
+                
+                <div class="mechanics-card">
+                    <div class="mechanics-icon">🧍</div>
+                    <h4>Bend Knees, Not Back</h4>
+                    <p>Squat to lift, keep back straight</p>
+                </div>
+                
+                <div class="mechanics-card">
+                    <div class="mechanics-icon">🤗</div>
+                    <h4>Hug the Load</h4>
+                    <p>Keep heavy items close to body</p>
+                </div>
+                
+                <div class="mechanics-card">
+                    <div class="mechanics-icon">🔄</div>
+                    <h4>Pivot, Don't Twist</h4>
+                    <p>Move feet to turn, not your spine</p>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Supply Inventory Safety Tips</h4>
+                <ul>
+                    <li>Use step stools for high shelves, never climb on shelves</li>
+                    <li>Request help for heavy or bulky items</li>
+                    <li>Wear closed-toe shoes with non-slip soles</li>
+                    <li>Break down boxes immediately to prevent tripping</li>
+                    <li>Use carts or dollies for moving multiple items</li>
+                    <li>Keep aisles clear and well-lit</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">7</span> Identifying Unsafe Working Conditions</h3>
+            
+            <div class="safety-section">
+                <div class="safety-title">Common Workplace Hazards in Healthcare</div>
+                
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>Physical Hazards</h4>
+                        <ul>
+                            <li>Wet floors without warning signs</li>
+                            <li>Obstructed walkways and exits</li>
+                            <li>Poor lighting in storage areas</li>
+                            <li>Loose electrical cords</li>
+                            <li>Unsecured heavy equipment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Biological Hazards</h4>
+                        <ul>
+                            <li>Improperly disposed sharps</li>
+                            <li>Contaminated surfaces not cleaned</li>
+                            <li>Unlabeled biohazard waste</li>
+                            <li>Inadequate PPE availability</li>
+                            <li>Improper hand hygiene stations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Ergonomic Hazards</h4>
+                        <ul>
+                            <li>Workstations at wrong height</li>
+                            <li>Chairs without proper support</li>
+                            <li>Repetitive motions without breaks</li>
+                            <li>Lifting heavy patients without assistance</li>
+                            <li>Improper computer monitor positioning</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="important-box">
+                    <h4>Reporting Procedure</h4>
+                    <ol>
+                        <li>Document the hazard with location and description</li>
+                        <li>Take immediate action if possible (place warning sign, clean spill)</li>
+                        <li>Report to supervisor or safety officer</li>
+                        <li>Follow up to ensure correction</li>
+                        <li>Document the resolution</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">8</span> Emergency Response Plans</h3>
+            
+            <div class="safety-section">
+                <div class="safety-title">Critical Elements of Emergency Plans</div>
+                
+                <ul>
+                    <li><strong>Evacuation Routes:</strong> Clearly marked exits and alternative routes</li>
+                    <li><strong>Assembly Points:</strong> Designated safe areas away from building</li>
+                    <li><strong>Communication Plan:</strong> How to notify staff, patients, emergency services</li>
+                    <li><strong>Emergency Contacts:</strong> Updated list of key personnel and services</li>
+                    <li><strong>Patient Prioritization:</strong> System for evacuating non-ambulatory patients</li>
+                    <li><strong>Utility Shut-off:</strong> Locations and procedures for gas, water, electricity</li>
+                    <li><strong>Emergency Supplies:</strong> First aid kits, flashlights, batteries, water</li>
+                    <li><strong>Staff Roles:</strong> Assigned responsibilities during emergencies</li>
+                    <li><strong>Recovery Plan:</strong> Procedures for resuming operations</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>Mock Exposure Event Participation</h4>
+                    <p>Participating in drills helps identify gaps in emergency plans. During mock events:</p>
+                    <ul>
+                        <li>Treat the drill as a real emergency</li>
+                        <li>Follow assigned roles and procedures</li>
+                        <li>Note timing and communication issues</li>
+                        <li>Participate in the debriefing session</li>
+                        <li>Provide constructive feedback for improvement</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">9</span> Fire Extinguisher Use</h3>
+            
+            <div class="fire-extinguisher">
+                <div class="fire-title">PASS Method for Fire Extinguisher Use</div>
+                
+                <div class="PASS-steps">
+                    <div class="pass-step">
+                        <div class="step-letter">P</div>
+                        <h4>PULL</h4>
+                        <p>Pull the pin to break the tamper seal</p>
+                    </div>
+                    
+                    <div class="pass-step">
+                        <div class="step-letter">A</div>
+                        <h4>AIM</h4>
+                        <p>Aim low at the base of the fire</p>
+                    </div>
+                    
+                    <div class="pass-step">
+                        <div class="step-letter">S</div>
+                        <h4>SQUEEZE</h4>
+                        <p>Squeeze the handle to discharge</p>
+                    </div>
+                    
+                    <div class="pass-step">
+                        <div class="step-letter">S</div>
+                        <h4>SWEEP</h4>
+                        <p>Sweep from side to side at base</p>
+                    </div>
+                </div>
+                
+                <div class="important-box">
+                    <h4>Fire Safety Priorities</h4>
+                    <ol>
+                        <li><strong>Rescue:</strong> Help anyone in immediate danger</li>
+                        <li><strong>Alarm:</strong> Activate fire alarm and call 911</li>
+                        <li><strong>Contain:</strong> Close doors to contain fire</li>
+                        <li><strong>Extinguish/Evacuate:</strong> Use extinguisher if safe, otherwise evacuate</li>
+                    </ol>
+                    <p><strong>Remember:</strong> Only attempt to fight a fire if it's small, contained, and you have a clear escape route.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">10</span> Effects of Emergency Situations</h3>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>Physical Effects</h4>
+                    <ul>
+                        <li>Increased heart rate and blood pressure</li>
+                        <li>Rapid breathing or hyperventilation</li>
+                        <li>Trembling or shaking</li>
+                        <li>Nausea or dizziness</li>
+                        <li>Fatigue after adrenaline subsides</li>
+                        <li>Headaches or muscle tension</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Emotional/Psychological Effects</h4>
+                    <ul>
+                        <li>Anxiety, fear, or panic</li>
+                        <li>Confusion or disorientation</li>
+                        <li>Irritability or anger</li>
+                        <li>Withdrawal or emotional numbness</li>
+                        <li>Difficulty concentrating</li>
+                        <li>Sleep disturbances or nightmares</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Support Strategies</h4>
+                    <ul>
+                        <li>Provide clear, calm instructions</li>
+                        <li>Maintain a reassuring presence</li>
+                        <li>Encourage slow, deep breathing</li>
+                        <li>Offer water if appropriate</li>
+                        <li>Provide follow-up support and debriefing</li>
+                        <li>Connect with professional help if needed</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Crisis Intervention for Medical Assistants</h4>
+                <p>During emergencies, your calm demeanor can help stabilize others. Use simple, clear language. Acknowledge feelings without judgment. Focus on immediate needs and next steps rather than the overall situation.</p>
+            </div>
+        </section>
+    </div>
+    
+    <div class="lesson-header">
+        <div class="lesson-title">
+            <div class="lesson-number">14.1</div>
+            <div>Principles of Pharmacology</div>
+        </div>
+    </div>
+    
+    <div class="module-container">
+        <section class="card">
+            <h2>Learning Objectives</h2>
+            <div class="learning-objectives">
+                <div class="objective-card">
+                    <p><span class="objective-number">1</span> Describe the sources and uses of drugs</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">2</span> Describe pharmacokinetics (absorption, distribution, metabolism, excretion)</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">3</span> Discuss drug action, therapeutic effects, and adverse reactions</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">4</span> Explain drug legislation and discuss dietary supplements</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">5</span> Describe the four types of drug names</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">6</span> Describe methods to access drug reference information</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">7</span> Identify classifications of medications</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">8</span> Discuss drug terminology (half-life, onset, peak, duration)</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">9</span> Discuss types of medication orders</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">10</span> List parts of a prescription and prepare refills</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">11</span> Describe requirements for scheduled substances</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">12</span> Discuss OTC medications and herbal supplements</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">1</span> Sources and Uses of Drugs</h3>
+            
+            <div class="pharmacology-section">
+                <div class="pharm-title">Drug Sources</div>
+                
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>Natural Sources</h4>
+                        <ul>
+                            <li><strong>Plants:</strong> Digitalis (foxglove), morphine (poppy), quinine (cinchona bark)</li>
+                            <li><strong>Animals:</strong> Insulin (pancreas), thyroid hormones (thyroid glands)</li>
+                            <li><strong>Minerals:</strong> Iron supplements, magnesium, lithium</li>
+                            <li><strong>Microorganisms:</strong> Penicillin (mold), streptomycin (bacteria)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Synthetic & Semi-synthetic</h4>
+                        <ul>
+                            <li><strong>Synthetic:</strong> Created entirely in laboratories (most modern drugs)</li>
+                            <li><strong>Semi-synthetic:</strong> Natural compounds chemically modified</li>
+                            <li><strong>Biotechnology:</strong> Genetically engineered (monoclonal antibodies)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pharm-title" style="margin-top: 20px;">Drug Uses</div>
+                <ul>
+                    <li><strong>Therapeutic:</strong> Treat, cure, or prevent disease</li>
+                    <li><strong>Diagnostic:</strong> Aid in diagnosis (contrast media)</li>
+                    <li><strong>Palliative:</strong> Relieve symptoms without curing</li>
+                    <li><strong>Prophylactic:</strong> Prevent disease (vaccines, antibiotics before surgery)</li>
+                    <li><strong>Replacement:</strong> Replace deficient substances (hormones, enzymes)</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">2</span> Pharmacokinetics (ADME)</h3>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Process</th>
+                            <th>Definition</th>
+                            <th>Factors Influencing</th>
+                            <th>Clinical Significance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Absorption</strong></td>
+                            <td>Drug movement from administration site into bloodstream</td>
+                            <td>Route, solubility, blood flow, pH, food interactions</td>
+                            <td>Determines onset of action and bioavailability</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Distribution</strong></td>
+                            <td>Drug movement from blood to tissues</td>
+                            <td>Blood flow, protein binding, lipid solubility, barriers (BBB)</td>
+                            <td>Affects drug concentration at site of action</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Metabolism</strong></td>
+                            <td>Chemical alteration of drug in the body (mainly liver)</td>
+                            <td>Liver function, age, genetics, other drugs, disease states</td>
+                            <td>Creates active/inactive metabolites, affects duration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Excretion</strong></td>
+                            <td>Removal of drug from body (mainly kidneys)</td>
+                            <td>Kidney function, urine pH, age, other drugs</td>
+                            <td>Determines elimination rate and dosing interval</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">3</span> Drug Action & Effects</h3>
+            
+            <div class="pharmacology-section">
+                <div class="pharm-title">Factors Influencing Drug Action</div>
+                <ul>
+                    <li><strong>Age:</strong> Metabolism differs in children and elderly</li>
+                    <li><strong>Weight/Body Composition:</strong> Affects drug distribution</li>
+                    <li><strong>Gender:</strong> Differences in body composition and hormones</li>
+                    <li><strong>Genetic Factors:</strong> Enzyme variations affecting metabolism</li>
+                    <li><strong>Disease States:</strong> Liver/kidney disease affects metabolism/excretion</li>
+                    <li><strong>Psychological Factors:</strong> Placebo effect, patient expectations</li>
+                    <li><strong>Environment:</strong> Temperature, altitude, noise</li>
+                    <li><strong>Route of Administration:</strong> Affects absorption rate and bioavailability</li>
+                    <li><strong>Time of Administration:</strong> Circadian rhythms affect drug action</li>
+                </ul>
+                
+                <div class="pharm-title" style="margin-top: 20px;">Therapeutic vs. Adverse Effects</div>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>Therapeutic Effects</h4>
+                        <p>Intended, beneficial effects of medication</p>
+                        <ul>
+                            <li>Analgesia (pain relief)</li>
+                            <li>Antibacterial action</li>
+                            <li>Blood pressure reduction</li>
+                            <li>Blood glucose control</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Adverse Reactions</h4>
+                        <p>Unintended, harmful effects</p>
+                        <ul>
+                            <li><strong>Side Effects:</strong> Predictable, dose-related (nausea, drowsiness)</li>
+                            <li><strong>Allergic Reactions:</strong> Immune response (rash, anaphylaxis)</li>
+                            <li><strong>Toxic Effects:</strong> Excessive dosing (liver/kidney damage)</li>
+                            <li><strong>Idiosyncratic Reactions:</strong> Unusual, unpredictable responses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">4</span> Drug Legislation & Dietary Supplements</h3>
+            
+            <div class="important-box">
+                <h4>Key Drug Legislation</h4>
+                <ul>
+                    <li><strong>Pure Food and Drug Act (1906):</strong> Prohibited misbranded/adulterated drugs</li>
+                    <li><strong>Food, Drug, and Cosmetic Act (1938):</strong> Required proof of safety before marketing</li>
+                    <li><strong>Controlled Substances Act (1970):</strong> Established drug schedules (I-V)</li>
+                    <li><strong>Dietary Supplement Health and Education Act (1994):</strong> Regulated supplements as foods, not drugs</li>
+                    <li><strong>Health Insurance Portability and Accountability Act (1996):</strong> Protected patient health information</li>
+                    <li><strong>Drug Addiction Treatment Act (2000):</strong> Allowed office-based opioid treatment</li>
+                </ul>
+            </div>
+            
+            <h4>Dietary Supplements</h4>
+            <ul>
+                <li>Regulated as foods, not drugs (FDA oversight differs)</li>
+                <li>Cannot claim to treat, cure, or prevent disease</li>
+                <li>Manufacturers responsible for safety, not FDA pre-approval</li>
+                <li>Can interact with prescription medications</li>
+                <li>Medical assistants should document all supplements in patient records</li>
+                <li>Quality varies between manufacturers</li>
+            </ul>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">5</span> Four Types of Drug Names</h3>
+            
+            <div class="example-box">
+                <p><strong>Example: Fluoxetine</strong></p>
+                <ol>
+                    <li><strong>Chemical Name:</strong> (±)-N-methyl-γ-[4-(trifluoromethyl)phenoxy]benzenepropanamine</li>
+                    <li><strong>Generic Name:</strong> Fluoxetine (non-proprietary, official name)</li>
+                    <li><strong>Brand/Trade Name:</strong> Prozac® (proprietary, manufacturer's name)</li>
+                    <li><strong>Official Name:</strong> Fluoxetine hydrochloride (USP designation)</li>
+                </ol>
+            </div>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name Type</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                            <th>Used By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Chemical</strong></td>
+                            <td>Describes molecular structure</td>
+                            <td>Acetylsalicylic acid</td>
+                            <td>Chemists, researchers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Generic</strong></td>
+                            <td>Official non-proprietary name</td>
+                            <td>Ibuprofen</td>
+                            <td>Healthcare professionals</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Brand/Trade</strong></td>
+                            <td>Proprietary name by manufacturer</td>
+                            <td>Advil®, Motrin®</td>
+                            <td>Marketing, consumers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Official</strong></td>
+                            <td>Name in official compendium (USP/NF)</td>
+                            <td>Ibuprofen tablets, USP</td>
+                            <td>Pharmacists, regulators</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">6</span> Drug Reference Information Access</h3>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>Print References</h4>
+                    <ul>
+                        <li><strong>Physicians' Desk Reference (PDR):</strong> Comprehensive drug information</li>
+                        <li><strong>USP DI:</strong> United States Pharmacopeia Drug Information</li>
+                        <li><strong>Drug Facts and Comparisons:</strong> Comparative drug information</li>
+                        <li><strong>AHFS Drug Information:</strong> American Hospital Formulary Service</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Electronic/Digital References</h4>
+                    <ul>
+                        <li><strong>EHR Integration:</strong> Drug databases within electronic records</li>
+                        <li><strong>Mobile Apps:</strong> Epocrates, Medscape, Micromedex</li>
+                        <li><strong>Online Databases:</strong> Drugs.com, RxList, DailyMed</li>
+                        <li><strong>Package Inserts:</strong> Manufacturer-provided information</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Information to Verify</h4>
+                    <ul>
+                        <li>Dosage and administration</li>
+                        <li>Contraindications and precautions</li>
+                        <li>Side effects and adverse reactions</li>
+                        <li>Drug interactions</li>
+                        <li>Pregnancy/lactation safety</li>
+                        <li>Storage requirements</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">7</span> Medication Classifications</h3>
+            
+            <div class="drug-categories">
+                <div class="drug-card">
+                    <div class="drug-name">Antibiotics</div>
+                    <p><strong>Indications:</strong> Bacterial infections</p>
+                    <p><strong>Examples:</strong> Penicillin, Amoxicillin, Ciprofloxacin</p>
+                    <p><strong>Side Effects:</strong> Nausea, diarrhea, allergic reactions</p>
+                </div>
+                
+                <div class="drug-card">
+                    <div class="drug-name">Antihypertensives</div>
+                    <p><strong>Indications:</strong> High blood pressure</p>
+                    <p><strong>Examples:</strong> Lisinopril, Amlodipine, Hydrochlorothiazide</p>
+                    <p><strong>Side Effects:</strong> Dizziness, cough, electrolyte imbalance</p>
+                </div>
+                
+                <div class="drug-card">
+                    <div class="drug-name">Analgesics</div>
+                    <p><strong>Indications:</strong> Pain relief</p>
+                    <p><strong>Examples:</strong> Ibuprofen, Acetaminophen, Oxycodone</p>
+                    <p><strong>Side Effects:</strong> GI upset, liver toxicity, dependence</p>
+                </div>
+                
+                <div class="drug-card">
+                    <div class="drug-name">Antidiabetics</div>
+                    <p><strong>Indications:</strong> Diabetes mellitus</p>
+                    <p><strong>Examples:</strong> Metformin, Insulin, Glipizide</p>
+                    <p><strong>Side Effects:</strong> Hypoglycemia, GI distress, weight gain</p>
+                </div>
+                
+                <div class="drug-card">
+                    <div class="drug-name">Anticoagulants</div>
+                    <p><strong>Indications:</strong> Blood clot prevention</p>
+                    <p><strong>Examples:</strong> Warfarin, Heparin, Apixaban</p>
+                    <p><strong>Side Effects:</strong> Bleeding, bruising, interactions with food</p>
+                </div>
+                
+                <div class="drug-card">
+                    <div class="drug-name">Antidepressants</div>
+                    <p><strong>Indications:</strong> Depression, anxiety</p>
+                    <p><strong>Examples:</strong> Sertraline, Fluoxetine, Venlafaxine</p>
+                    <p><strong>Side Effects:</strong> Sexual dysfunction, weight changes, insomnia</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">8</span> Drug Terminology</h3>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Term</th>
+                            <th>Definition</th>
+                            <th>Clinical Significance</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Onset of Action</strong></td>
+                            <td>Time until drug begins to produce effect</td>
+                            <td>Determines when patient should feel relief</td>
+                            <td>Fast-acting insulin: 15-30 minutes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Peak Effect</strong></td>
+                            <td>Time when drug reaches maximum therapeutic effect</td>
+                            <td>When monitoring for maximum benefit or side effects</td>
+                            <td>Regular insulin: 2-4 hours</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Duration of Action</strong></td>
+                            <td>Length of time drug produces therapeutic effect</td>
+                            <td>Determines dosing frequency</td>
+                            <td>Lisinopril: 24 hours (once daily dosing)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Biologic Half-life</strong></td>
+                            <td>Time for drug concentration to decrease by 50% in body</td>
+                            <td>Determines steady state and accumulation risk</td>
+                            <td>Digoxin: 36-48 hours (long half-life)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Half-life Clinical Application</h4>
+                <p>It takes approximately 5 half-lives for a drug to reach steady state (consistent blood levels) and 5 half-lives for a drug to be eliminated from the body after discontinuation. This is crucial for determining loading doses and when to monitor for therapeutic effects.</p>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">9</span> Types of Medication Orders</h3>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>Standing Order</h4>
+                    <p>Pre-approved orders for specific situations or protocols</p>
+                    <p><strong>Example:</strong> "Tylenol 650mg PO every 6 hours PRN for temperature >101°F"</p>
+                </div>
+                
+                <div class="content-card">
+                    <h4>PRN Order</h4>
+                    <p>Given as needed based on specific criteria</p>
+                    <p><strong>Example:</strong> "Lorazepam 1mg PO every 8 hours PRN for anxiety"</p>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Single/One-Time Order</h4>
+                    <p>Given once at a specified time</p>
+                    <p><strong>Example:</strong> "Midazolam 2mg IV once pre-operatively"</p>
+                </div>
+                
+                <div class="content-card">
+                    <h4>STAT Order</h4>
+                    <p>Given immediately, one time only</p>
+                    <p><strong>Example:</strong> "Furosemide 40mg IV STAT"</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">10</span> Prescription Parts & Refill Procedures</h3>
+            
+            <div class="procedure-box">
+                <h4>Four Parts of a Prescription</h4>
+                <ol>
+                    <li><strong>Superscription:</strong> Patient information (name, DOB, address), date, Rx symbol (℞)</li>
+                    <li><strong>Inscription:</strong> Drug name, strength, dosage form (e.g., "Lisinopril 10mg tablets")</li>
+                    <li><strong>Subscription:</strong> Dispensing instructions to pharmacist (quantity, refills, instructions)</li>
+                    <li><strong>Signature:</strong> Directions for patient (Sig: "Take 1 tablet daily"), provider signature, DEA# if controlled</li>
+                </ol>
+            </div>
+            
+            <div class="example-box">
+                <p><strong>Sample Prescription:</strong></p>
+                <p>Patient: Jane Smith, DOB: 05/15/1975<br>
+                Date: 03/15/2024<br>
+                ℞ Lisinopril 10mg tablets<br>
+                Dispense: #30, Refills: 3<br>
+                Sig: Take 1 tablet by mouth daily for blood pressure<br>
+                Dr. A. Johnson, MD<br>
+                DEA: BJ1234567 (if controlled substance)</p>
+            </div>
+            
+            <h4>Prescription Refill Procedures</h4>
+            <ol>
+                <li>Verify patient identity and medication details</li>
+                <li>Check remaining refills and expiration date</li>
+                <li>Review patient chart for recent visits/lab results if needed</li>
+                <li>Obtain provider approval if no refills remain or monitoring needed</li>
+                <li>Document refill in patient record with date and initials</li>
+                <li>Contact pharmacy with authorization</li>
+                <li>Notify patient that refill has been approved</li>
+            </ol>
+            
+            <div class="highlight-box">
+                <h4>Commonly Approved Abbreviations</h4>
+                <ul>
+                    <li><strong>PO:</strong> By mouth</li>
+                    <li><strong>PR:</strong> Rectally</li>
+                    <li><strong>IM:</strong> Intramuscular</li>
+                    <li><strong>IV:</strong> Intravenous</li>
+                    <li><strong>Q:</strong> Every</li>
+                    <li><strong>BID:</strong> Twice daily</li>
+                    <li><strong>TID:</strong> Three times daily</li>
+                    <li><strong>QID:</strong> Four times daily</li>
+                    <li><strong>PRN:</strong> As needed</li>
+                    <li><strong>AC:</strong> Before meals</li>
+                    <li><strong>PC:</strong> After meals</li>
+                    <li><strong>HS:</strong> At bedtime</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">11</span> Scheduled Substance Requirements</h3>
+            
+            <div class="important-box">
+                <h4>Controlled Substance Schedules</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Schedule</th>
+                            <th>Examples</th>
+                            <th>Potential for Abuse</th>
+                            <th>Prescription Requirements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>I</strong></td>
+                            <td>Heroin, LSD, Marijuana (federally)</td>
+                            <td>High, no accepted medical use</td>
+                            <td>Not prescribed (research only)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>II</strong></td>
+                            <td>Morphine, Oxycodone, Adderall</td>
+                            <td>High</td>
+                            <td>Written Rx only (no refills), strict records</td>
+                        </tr>
+                        <tr>
+                            <td><strong>III</strong></td>
+                            <td>Codeine combinations, Ketamine</td>
+                            <td>Moderate to low</td>
+                            <td>Written or oral Rx, max 5 refills in 6 months</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IV</strong></td>
+                            <td>Alprazolam (Xanax), Zolpidem (Ambien)</td>
+                            <td>Low</td>
+                            <td>Written or oral Rx, max 5 refills in 6 months</td>
+                        </tr>
+                        <tr>
+                            <td><strong>V</strong></td>
+                            <td>Cough preparations with codeine</td>
+                            <td>Lower</td>
+                            <td>May not require Rx in some states</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h4>DEA Requirements for Controlled Substances</h4>
+            <ul>
+                <li>Maintain separate, secure storage (double-locked cabinet)</li>
+                <li>Document all transactions in controlled substance log</li>
+                <li>Conduct regular inventory counts</li>
+                <li>Report losses/theft immediately to DEA and local police</li>
+                <li>Maintain records for 2 years</li>
+                <li>Follow state-specific requirements which may be stricter</li>
+            </ul>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">12</span> OTC Medications & Herbal Supplements</h3>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>Over-the-Counter (OTC) Medications</h4>
+                    <ul>
+                        <li>Available without prescription for self-treatment</li>
+                        <li>Generally recognized as safe and effective when used as directed</li>
+                        <li>Examples: Acetaminophen (Tylenol), Ibuprofen (Advil), Diphenhydramine (Benadryl)</li>
+                        <li>Can interact with prescription medications</li>
+                        <li>Patients may not report OTC use unless specifically asked</li>
+                        <li>Medical assistants should document all OTC use in patient records</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Herbal Supplements</h4>
+                    <ul>
+                        <li>Considered dietary supplements, not medications</li>
+                        <li>Not regulated for safety/efficacy like prescription drugs</li>
+                        <li>Common examples: Echinacea, St. John's Wort, Ginkgo Biloba, Ginseng</li>
+                        <li>Can have significant drug interactions (St. John's Wort with antidepressants)</li>
+                        <li>Quality and potency vary between brands</li>
+                        <li>Patients may believe "natural" means "safe"</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="important-box">
+                <h4>Patient Education Points</h4>
+                <ul>
+                    <li>Always inform healthcare providers about ALL medications and supplements</li>
+                    <li>Read OTC labels carefully for active ingredients and warnings</li>
+                    <li>Follow dosage instructions precisely</li>
+                    <li>Be aware of potential interactions with prescription medications</li>
+                    <li>Choose supplements from reputable manufacturers</li>
+                    <li>Report any adverse reactions to healthcare provider</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="card quiz-container">
+            <h2>Comprehensive Knowledge Check</h2>
+            
+            <div class="quiz-question">
+                <p><strong>1. What does the "A" in the PASS method for fire extinguisher use stand for?</strong></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q1"> Alert others</label>
+                    <label><input type="radio" name="q1"> Aim at the base of the fire</label>
+                    <label><input type="radio" name="q1"> Activate the alarm</label>
+                    <label><input type="radio" name="q1"> Avoid the smoke</label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>2. Which of the following is NOT one of the four types of drug names?</strong></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q2"> Chemical name</label>
+                    <label><input type="radio" name="q2"> Generic name</label>
+                    <label><input type="radio" name="q2"> Brand name</label>
+                    <label><input type="radio" name="q2"> Pharmacy name</label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>3. What is the primary purpose of routine equipment maintenance?</strong></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q3"> To increase equipment resale value</label>
+                    <label><input type="radio" name="q3"> To prevent failures during patient care</label>
+                    <label><input type="radio" name="q3"> To make the equipment look newer</label>
+                    <label><input type="radio" name="q3"> To reduce electricity consumption</label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>4. Which schedule of controlled substances has the highest potential for abuse and no accepted medical use?</strong></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q4"> Schedule II</label>
+                    <label><input type="radio" name="q4"> Schedule III</label>
+                    <label><input type="radio" name="q4"> Schedule I</label>
+                    <label><input type="radio" name="q4"> Schedule IV</label>
+                </div>
+            </div>
+            
+            <button onclick="checkAnswers()">Check Your Answers</button>
+            <div id="quiz-result" style="margin-top: 20px; font-weight: bold;"></div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>Daily Operations, Safety & Pharmacology Principles Learning Module</p>
+        <p>Healthcare Administration & Clinical Foundations | Lessons 13.1 & 14.1</p>
+    </footer>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            const totalQuestions = 4;
+            const answers = [2, 4, 2, 3]; // Correct answer indices (0-based)
+            
+            // Check each question
+            for (let i = 1; i <= totalQuestions; i++) {
+                const options = document.querySelectorAll(`input[name="q${i}"]`);
+                let selected = -1;
+                
+                // Find which option is selected
+                for (let j = 0; j < options.length; j++) {
+                    if (options[j].checked) {
+                        selected = j;
+                        break;
+                    }
+                }
+                
+                // Check if correct
+                if (selected === answers[i-1]) {
+                    score++;
+                }
+            }
+            
+            const resultDiv = document.getElementById('quiz-result');
+            const percentage = (score / totalQuestions) * 100;
+            
+            if (percentage === 100) {
+                resultDiv.innerHTML = `Excellent! You scored ${score}/${totalQuestions} (${percentage}%) - Perfect understanding of operations, safety, and pharmacology!`;
+                resultDiv.style.color = '#4caf50';
+            } else if (percentage >= 75) {
+                resultDiv.innerHTML = `Good job! You scored ${score}/${totalQuestions} (${percentage}%) - You have a solid grasp of healthcare operations and medication principles.`;
+                resultDiv.style.color = '#ff9800';
+            } else {
+                resultDiv.innerHTML = `You scored ${score}/${totalQuestions} (${percentage}%) - Review the material focusing on safety procedures and pharmacology fundamentals.`;
+                resultDiv.style.color = '#f44336';
+            }
+            
+            // Provide correct answers
+            resultDiv.innerHTML += `<br><br><strong>Correct Answers:</strong><br>
+            1. Aim at the base of the fire<br>
+            2. Pharmacy name (not one of the four drug name types)<br>
+            3. To prevent failures during patient care<br>
+            4. Schedule I`;
+        }
+    </script>
+</body>
+</html>
