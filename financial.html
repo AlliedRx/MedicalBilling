@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Module: Financial Management & Advanced Administration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .lesson-header {
+            background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0 20px 0;
+        }
+        
+        .lesson-title {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .lesson-number {
+            background-color: white;
+            color: #16a085;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .module-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #16a085;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: #16a085;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .objective-icon {
+            background-color: #16a085;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        h4 {
+            color: #2c3e50;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .learning-objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .objective-card {
+            background-color: #e8f6f3;
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 4px solid #16a085;
+            transition: transform 0.3s;
+        }
+        
+        .objective-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .objective-number {
+            display: inline-block;
+            background-color: #16a085;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .content-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .highlight-box {
+            background-color: #fff8e1;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        
+        .important-box {
+            background-color: #ffebee;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #f44336;
+            margin: 20px 0;
+        }
+        
+        .tip-box {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #4caf50;
+            margin: 20px 0;
+        }
+        
+        .example-box {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 3px solid #9e9e9e;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .procedure-box {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #bbdefb;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background-color: #16a085;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .comparison-table {
+            overflow-x: auto;
+            margin: 25px 0;
+        }
+        
+        .financial-section {
+            background-color: #e8f6f3;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #16a085;
+        }
+        
+        .financial-title {
+            color: #0d5d4c;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .bookkeeping-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .term-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-top: 4px solid #16a085;
+        }
+        
+        .term-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .patient-statement {
+            background-color: #f5f5f5;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px dashed #16a085;
+        }
+        
+        .statement-title {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: bold;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        
+        .statement-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .statement-label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .statement-value {
+            color: #16a085;
+        }
+        
+        .collection-techniques {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .technique-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #bbdefb;
+        }
+        
+        .technique-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .banking-section {
+            background-color: #e3f2fd;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #2196f3;
+        }
+        
+        .banking-title {
+            color: #0d47a1;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .account-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .account-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #bbdefb;
+        }
+        
+        .account-icon {
+            font-size: 2rem;
+            color: #2196f3;
+            margin-bottom: 10px;
+        }
+        
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .payment-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .payment-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .management-section {
+            background-color: #fff3e0;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #ff9800;
+        }
+        
+        .management-title {
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .interview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .legal-card, .illegal-card {
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .legal-card {
+            background-color: #e8f5e9;
+            border: 2px solid #4caf50;
+        }
+        
+        .illegal-card {
+            background-color: #ffebee;
+            border: 2px solid #f44336;
+        }
+        
+        .legal-title, .illegal-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .legal-title {
+            color: #2e7d32;
+        }
+        
+        .illegal-title {
+            color: #c62828;
+        }
+        
+        .compliance-section {
+            background-color: #f3e5f5;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #9c27b0;
+        }
+        
+        .compliance-title {
+            color: #7b1fa2;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .scenario-box {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #6c757d;
+            margin: 20px 0;
+        }
+        
+        .scenario-title {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quiz-container {
+            background-color: #e3f2fd;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .quiz-question {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #bbdefb;
+        }
+        
+        .quiz-options {
+            margin-left: 20px;
+        }
+        
+        .quiz-options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        
+        button {
+            background-color: #16a085;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #138d75;
+        }
+        
+        .icon {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        .financial-badge {
+            background-color: #9b59b6;
+        }
+        
+        .compliance-badge {
+            background-color: #e74c3c;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .learning-objectives {
+                grid-template-columns: 1fr;
+            }
+            
+            .bookkeeping-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .collection-techniques {
+                grid-template-columns: 1fr;
+            }
+            
+            .interview-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .payment-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Financial Management & Advanced Administration</h1>
+        <p class="subtitle">Lessons 19.1, 19.2 & 20.1: Patient Accounts, Banking & Office Management</p>
+    </header>
+    
+    <div class="lesson-header">
+        <div class="lesson-title">
+            <div class="lesson-number">19.1</div>
+            <div>Patient Accounts, Bookkeeping & Collections</div>
+        </div>
+    </div>
+    
+    <div class="module-container">
+        <section class="card">
+            <h2>Learning Objectives</h2>
+            <div class="learning-objectives">
+                <div class="objective-card">
+                    <p><span class="objective-number">1</span> Define bookkeeping and bookkeeping terms</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">2</span> Perform accounts receivable procedures</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">3</span> Describe Truth in Lending Act impact</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">4</span> Discuss monthly patient account statements</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">5</span> Describe collection procedures and techniques</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">1</span> Bookkeeping Fundamentals</h3>
+            
+            <div class="financial-section">
+                <div class="financial-title">Bookkeeping Definition</div>
+                <p>The systematic recording, organizing, and maintaining of financial transactions for a business.</p>
+                
+                <div class="bookkeeping-grid">
+                    <div class="term-card">
+                        <div class="term-name">Accounts Receivable (A/R)</div>
+                        <p>Money owed to the practice by patients and insurance companies</p>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-name">Accounts Payable (A/P)</div>
+                        <p>Money the practice owes to vendors and suppliers</p>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-name">General Ledger</div>
+                        <p>Complete record of all financial transactions</p>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-name">Chart of Accounts</div>
+                        <p>List of all accounts used in the general ledger</p>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-name">Debit and Credit</div>
+                        <p>Debit = left side (assets increase), Credit = right side (liabilities increase)</p>
+                    </div>
+                    
+                    <div class="term-card">
+                        <div class="term-name">Double-Entry Bookkeeping</div>
+                        <p>Each transaction affects at least two accounts (debit and credit)</p>
+                    </div>
+                </div>
+                
+                <div class="financial-title" style="margin-top: 20px;">Transactions in Patient Accounts</div>
+                <ul>
+                    <li><strong>Charges:</strong> Services rendered and fees applied</li>
+                    <li><strong>Payments:</strong> Cash, checks, credit cards received</li>
+                    <li><strong>Adjustments:</strong> Write-offs, discounts, corrections</li>
+                    <li><strong>Refunds:</strong> Money returned to patients or insurers</li>
+                    <li><strong>Transfers:</strong> Moving balances between accounts</li>
+                    <li><strong>Bad Debt Write-offs:</strong> Uncollectible amounts removed</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">2</span> Accounts Receivable Procedures</h3>
+            
+            <div class="procedure-box">
+                <h4>Posting Transactions to Patient Accounts</h4>
+                <ol>
+                    <li><strong>Charges:</strong> Enter services with CPT codes and fees</li>
+                    <li><strong>Insurance Payments:</strong> Post EOB payments with adjustments</li>
+                    <li><strong>Patient Payments:</strong> Apply co-pays, deductibles, balances</li>
+                    <li><strong>Adjustments:</strong> Record write-offs, discounts, corrections</li>
+                    <li><strong>Verify:</strong> Ensure accounts balance and match supporting documents</li>
+                </ol>
+            </div>
+            
+            <h4>Payment at Time of Service</h4>
+            <ul>
+                <li><strong>Co-payments:</strong> Collected at check-in per insurance requirements</li>
+                <li><strong>Past Due Balances:</strong> Request payment on outstanding amounts</li>
+                <li><strong>Self-Pay Patients:</strong> Collect estimated payment or full fee</li>
+                <li><strong>High-Deductible Plans:</strong> Collect estimated patient portion</li>
+            </ul>
+            
+            <div class="scenario-box">
+                <div class="scenario-title">
+                    <span>💬</span> Sensitive Payment Request Example
+                </div>
+                <p><strong>Situation:</strong> Patient has $150 past due balance</p>
+                <p><strong>Sensitive Approach:</strong> "Mrs. Johnson, I see there's a balance of $150 from your previous visit. I understand medical expenses can be challenging. Would you like to take care of that today, or would you prefer to discuss payment plan options?"</p>
+                <p><strong>Key Elements:</strong></p>
+                <ul>
+                    <li>Acknowledge amount clearly but tactfully</li>
+                    <li>Show empathy and understanding</li>
+                    <li>Offer options rather than demands</li>
+                    <li>Maintain privacy during discussion</li>
+                    <li>Use non-confrontational language</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">3</span> Truth in Lending Act Impact</h3>
+            
+            <div class="important-box">
+                <h4>Truth in Lending Act (Regulation Z)</h4>
+                <p>Federal law requiring clear disclosure of credit terms to consumers.</p>
+            </div>
+            
+            <h4>Impact on Medical Practice Collections</h4>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>Written Agreements Required</h4>
+                    <p>Payment plans exceeding 4 installments or charging interest must have written agreement</p>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Disclosure Requirements</h4>
+                    <p>Must disclose finance charges, annual percentage rate (APR), payment schedule</p>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Right of Rescission</h4>
+                    <p>Patients may have right to cancel agreement within 3 business days</p>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Best Practices for TILA Compliance</h4>
+                <ul>
+                    <li>Use standardized payment plan agreements</li>
+                    <li>Clearly state all terms in writing</li>
+                    <li>Provide copies to patients</li>
+                    <li>Train staff on requirements</li>
+                    <li>Consult legal counsel for complex arrangements</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">4</span> Monthly Patient Statements</h3>
+            
+            <div class="patient-statement">
+                <div class="statement-title">MEDICAL PRACTICE STATEMENT</div>
+                
+                <div class="statement-line">
+                    <div class="statement-label">Patient:</div>
+                    <div class="statement-value">Jane Smith</div>
+                </div>
+                
+                <div class="statement-line">
+                    <div class="statement-label">Account #:</div>
+                    <div class="statement-value">PAT-2024-00123</div>
+                </div>
+                
+                <div class="statement-line">
+                    <div class="statement-label">Statement Date:</div>
+                    <div class="statement-value">March 31, 2024</div>
+                </div>
+                
+                <div class="statement-line">
+                    <div class="statement-label">Previous Balance:</div>
+                    <div class="statement-value">$150.00</div>
+                </div>
+                
+                <div class="statement-line">
+                    <div class="statement-label">Payments Received:</div>
+                    <div class="statement-value">-$50.00</div>
+                </div>
+                
+                <div class="statement-line">
+                    <div class="statement-label">New Charges:</div>
+                    <div class="statement-value">$85.00</div>
+                </div>
+                
+                <div class="statement-line">
+                    <div class="statement-label">Adjustments:</div>
+                    <div class="statement-value">-$10.00</div>
+                </div>
+                
+                <div class="statement-line">
+                    <div class="statement-label"><strong>Current Balance:</strong></div>
+                    <div class="statement-value"><strong>$175.00</strong></div>
+                </div>
+                
+                <div class="statement-line">
+                    <div class="statement-label">Due Date:</div>
+                    <div class="statement-value">April 15, 2024</div>
+                </div>
+                
+                <div class="statement-line">
+                    <div class="statement-label">Payment Methods:</div>
+                    <div class="statement-value">Check, Credit Card, Online</div>
+                </div>
+            </div>
+            
+            <h4>Required Data Elements on Statements</h4>
+            <ul>
+                <li><strong>Practice Information:</strong> Name, address, phone, website</li>
+                <li><strong>Patient Information:</strong> Name, address, account number</li>
+                <li><strong>Statement Date:</strong> Date statement generated</li>
+                <li><strong>Service Period:</strong> Dates covered by statement</li>
+                <li><strong>Detailed Activity:</strong> Charges, payments, adjustments by date</li>
+                <li><strong>Balance Information:</strong> Previous, current, and total due</li>
+                <li><strong>Payment Instructions:</strong> Methods, due date, payment address</li>
+                <li><strong>Contact Information:</strong> For questions or disputes</li>
+                <li><strong>Privacy Notice:</strong> HIPAA compliance statement</li>
+            </ul>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">5</span> Collection Procedures</h3>
+            
+            <div class="collection-techniques">
+                <div class="technique-card">
+                    <div class="technique-name">📞 Phone Collections</div>
+                    <ul>
+                        <li>Call at appropriate times (avoid early morning/late night)</li>
+                        <li>Be polite, professional, and empathetic</li>
+                        <li>Listen to patient's situation</li>
+                        <li>Document all conversations</li>
+                        <li>Follow office policies consistently</li>
+                    </ul>
+                </div>
+                
+                <div class="technique-card">
+                    <div class="technique-name">✉️ Written Communications</div>
+                    <ul>
+                        <li>Clear, concise statements</li>
+                        <li>Gradual escalation (friendly to firm)</li>
+                        <li>Include payment options and deadlines</li>
+                        <li>Maintain professional tone</li>
+                        <li>Follow FDCPA guidelines</li>
+                    </ul>
+                </div>
+                
+                <div class="technique-card">
+                    <div class="technique-name">💬 Personal Finance Interviews</div>
+                    <ul>
+                        <li>Conduct in private setting</li>
+                        <li>Review account history together</li>
+                        <li>Discuss patient's financial situation</li>
+                        <li>Negotiate realistic payment plan</li>
+                        <li>Put agreement in writing</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h4>Adjustments to Patient Accounts</h4>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>NSF Checks</h4>
+                    <ul>
+                        <li>Charge NSF fee per state law and office policy</li>
+                        <li>Contact patient for alternative payment</li>
+                        <li>Document communication attempts</li>
+                        <li>Consider certified funds requirement for future</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Collection Agency Transactions</h4>
+                    <ul>
+                        <li>Write off balance when sent to collections</li>
+                        <li>Maintain record of agency and date sent</li>
+                        <li>Do not continue billing patient directly</li>
+                        <li>Document any payments received from agency</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Other Adjustments</h4>
+                    <ul>
+                        <li><strong>Professional Courtesy:</strong> Discount for colleagues</li>
+                        <li><strong>Sliding Scale:</strong> Income-based adjustments</li>
+                        <li><strong>Bad Debt:</strong> Uncollectible amounts</li>
+                        <li><strong>Billing Errors:</strong> Corrections to charges</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="procedure-box">
+                <h4>Posting Payments & Adjustments</h4>
+                <ol>
+                    <li>Verify payment amount matches documentation</li>
+                    <li>Apply payment to oldest charges first (FIFO method)</li>
+                    <li>Record adjustment with appropriate reason code</li>
+                    <li>Ensure account balance updates correctly</li>
+                    <li>File supporting documents (EOBs, receipts)</li>
+                    <li>Reconcile daily batches</li>
+                </ol>
+            </div>
+        </section>
+    </div>
+    
+    <div class="lesson-header">
+        <div class="lesson-title">
+            <div class="lesson-number">19.2</div>
+            <div>Banking Procedures and Payroll</div>
+        </div>
+    </div>
+    
+    <div class="module-container">
+        <section class="card">
+            <h3><span class="objective-icon">6</span> Banking Fundamentals</h3>
+            
+            <div class="banking-section">
+                <div class="banking-title">Federal Reserve Bank System</div>
+                <p>The central banking system of the United States, established to provide stable monetary and financial system.</p>
+                
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>Federal Reserve Functions</h4>
+                        <ul>
+                            <li>Conducts national monetary policy</li>
+                            <li>Supervises and regulates banks</li>
+                            <li>Maintains financial system stability</li>
+                            <li>Provides banking services to government</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Types of Banks Managed</h4>
+                        <ul>
+                            <li><strong>National Banks:</strong> Chartered by federal government</li>
+                            <li><strong>State Banks:</strong> Chartered by state governments</li>
+                            <li><strong>Member Banks:</strong> Belong to Federal Reserve System</li>
+                            <li><strong>Non-member Banks:</strong> State banks not in Fed system</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="account-types">
+                    <div class="account-card">
+                        <div class="account-icon">💰</div>
+                        <h4>Checking Account</h4>
+                        <p>For daily transactions, unlimited withdrawals</p>
+                    </div>
+                    
+                    <div class="account-card">
+                        <div class="account-icon">🏦</div>
+                        <h4>Savings Account</h4>
+                        <p>Interest-bearing, limited withdrawals</p>
+                    </div>
+                    
+                    <div class="account-card">
+                        <div class="account-icon">📈</div>
+                        <h4>Money Market Account</h4>
+                        <p>Higher interest, check-writing privileges</p>
+                    </div>
+                    
+                    <div class="account-card">
+                        <div class="account-icon">🔒</div>
+                        <h4>Certificate of Deposit (CD)</h4>
+                        <p>Fixed term, fixed interest rate</p>
+                    </div>
+                </div>
+                
+                <div class="banking-title" style="margin-top: 20px;">Signature Cards & Online Banking</div>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>Signature Card Importance</h4>
+                        <ul>
+                            <li>Legal document authorizing account access</li>
+                            <li>Verifies authorized signatories</li>
+                            <li>Provides signature samples for verification</li>
+                            <li>Required for all business accounts</li>
+                            <li>Must be updated when signatories change</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Online Banking Efficiency</h4>
+                        <ul>
+                            <li>24/7 account access</li>
+                            <li>Electronic bill payment</li>
+                            <li>Mobile check deposit</li>
+                            <li>Real-time transaction monitoring</li>
+                            <li>Automated reconciliation</li>
+                            <li>Reduced paperwork and errors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">7</span> Checks & Negotiable Instruments</h3>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Instrument Type</th>
+                            <th>Description</th>
+                            <th>Common Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Personal Check</strong></td>
+                            <td>Drawn on personal checking account</td>
+                            <td>Patient payments</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cashier's Check</strong></td>
+                            <td>Bank-guaranteed funds</td>
+                            <td>Large payments, security deposits</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Certified Check</strong></td>
+                            <td>Personal check certified by bank</td>
+                            <td>Guaranteed payment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Money Order</strong></td>
+                            <td>Prepaid payment instrument</td>
+                            <td>Patients without checking accounts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Traveler's Check</strong></td>
+                            <td>Prepaid, replaceable if lost</td>
+                            <td>Travel, less common now</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h4>Check Acceptance Precautions</h4>
+            <div class="procedure-box">
+                <ul>
+                    <li>Verify current date (not post-dated or stale-dated)</li>
+                    <li>Confirm amount in numbers and words match</li>
+                    <li>Check for proper signature</li>
+                    <li>Verify patient identification</li>
+                    <li>Consider check verification services for large amounts</li>
+                    <li>Establish office policies for check acceptance limits</li>
+                </ul>
+            </div>
+            
+            <h4>Check Processing Procedure</h4>
+            <ol>
+                <li>Patient writes check to healthcare provider</li>
+                <li>Provider deposits check into bank account</li>
+                <li>Bank sends check through clearing system</li>
+                <li>Federal Reserve processes between banks</li>
+                <li>Funds transferred from patient's to provider's account</li>
+                <li>Process typically takes 1-3 business days</li>
+            </ol>
+            
+            <div class="important-box">
+                <h4>NSF Check Procedure</h4>
+                <ol>
+                    <li>Contact patient immediately upon notification</li>
+                    <li>Request alternative payment method</li>
+                    <li>Charge NSF fee according to state law and office policy</li>
+                    <li>Document all communication attempts</li>
+                    <li>Consider requiring certified funds for future payments</li>
+                    <li>If unresolved, send to collections per office policy</li>
+                </ol>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">8</span> Cash Acceptance Precautions</h3>
+            
+            <div class="financial-section">
+                <div class="financial-title">Cash Handling Security</div>
+                
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>Verification Procedures</h4>
+                        <ul>
+                            <li>Use counterfeit detection pen</li>
+                            <li>Check security features (watermarks, security thread)</li>
+                            <li>Verify large bills under UV light if available</li>
+                            <li>Count cash twice - once when received, once when deposited</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Security Measures</h4>
+                        <ul>
+                            <li>Keep minimal cash in drawer</li>
+                            <li>Use drop safe for large amounts</li>
+                            <li>Implement dual control for counting</li>
+                            <li>Regular cash drawer audits</li>
+                            <li>Surveillance cameras at cash handling areas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Documentation</h4>
+                        <ul>
+                            <li>Issue receipts for all cash transactions</li>
+                            <li>Use numbered receipt books</li>
+                            <li>Reconcile cash daily</li>
+                            <li>Document discrepancies immediately</li>
+                            <li>Maintain audit trail</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">9</span> Debit & Credit Cards</h3>
+            
+            <div class="payment-methods">
+                <div class="payment-card">
+                    <div class="payment-name">Debit Cards</div>
+                    <p><strong>Advantages:</strong></p>
+                    <ul>
+                        <li>Funds immediately available</li>
+                        <li>Lower processing fees than credit cards</li>
+                        <li>Reduced risk (requires PIN)</li>
+                        <li>No credit check for patient</li>
+                    </ul>
+                    <p><strong>Precautions:</strong></p>
+                    <ul>
+                        <li>Verify signature matches card</li>
+                        <li>Check expiration date</li>
+                        <li>Use chip reader when possible</li>
+                        <li>Keep receipts secure</li>
+                    </ul>
+                </div>
+                
+                <div class="payment-card">
+                    <div class="payment-name">Credit Cards</div>
+                    <p><strong>Advantages:</strong></p>
+                    <ul>
+                        <li>Guaranteed payment (if authorized)</li>
+                        <li>Faster than check processing</li>
+                        <li>Convenient for patients</li>
+                        <li>Can process recurring payments</li>
+                    </ul>
+                    <p><strong>Precautions:</strong></p>
+                    <ul>
+                        <li>Higher processing fees (2-4%)</li>
+                        <li>PCI compliance requirements</li>
+                        <li>Chargeback risk</li>
+                        <li>Secure storage of card information</li>
+                    </ul>
+                </div>
+                
+                <div class="payment-card">
+                    <div class="payment-name">Processing Security</div>
+                    <p><strong>PCI Compliance:</strong> Payment Card Industry Data Security Standard</p>
+                    <ul>
+                        <li>Secure network and systems</li>
+                        <li>Protect cardholder data</li>
+                        <li>Regular vulnerability management</li>
+                        <li>Strong access control measures</li>
+                        <li>Regular monitoring and testing</li>
+                        <li>Maintain information security policy</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">10</span> Ambulatory Care Banking Procedures</h3>
+            
+            <div class="banking-section">
+                <div class="banking-title">Daily Banking Procedures</div>
+                
+                <div class="procedure-box">
+                    <h4>Bank Deposit Preparation</h4>
+                    <ol>
+                        <li>Count and verify all cash received</li>
+                        <li>Endorse all checks properly</li>
+                        <li>Complete deposit slip with totals</li>
+                        <li>Make copy of deposit for office records</li>
+                        <li>Place funds in secure deposit bag</li>
+                        <li>Make deposit before bank cutoff time</li>
+                        <li>Verify deposit receipt matches slip</li>
+                    </ol>
+                </div>
+                
+                <div class="important-box">
+                    <h4>Importance of Daily Deposits</h4>
+                    <ul>
+                        <li>Reduces theft risk from office</li>
+                        <li>Accelerates funds availability</li>
+                        <li>Improves cash flow management</li>
+                        <li>Simplifies accounting reconciliation</li>
+                        <li>Professional business practice</li>
+                        <li>Reduces NSF check risk (deposit promptly)</li>
+                    </ul>
+                </div>
+                
+                <div class="banking-title" style="margin-top: 20px;">Check Endorsements</div>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>Blank Endorsement</h4>
+                        <p>Simple signature on back<br>
+                        <strong>Risk:</strong> Anyone can cash if lost</p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Restrictive Endorsement</h4>
+                        <p>"For deposit only" + signature<br>
+                        <strong>Safety:</strong> Can only be deposited</p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Special Endorsement</h4>
+                        <p>"Pay to the order of [name]" + signature<br>
+                        <strong>Use:</strong> Transferring to another party</p>
+                    </div>
+                </div>
+                
+                <div class="banking-title" style="margin-top: 20px;">Check Writing Procedures</div>
+                <div class="procedure-box">
+                    <ol>
+                        <li>Verify bill accuracy before payment</li>
+                        <li>Use secure check stock with security features</li>
+                        <li>Complete all fields clearly and accurately</li>
+                        <li>Obtain proper authorization signatures</li>
+                        <li>Record check in check register immediately</li>
+                        <li>Attach supporting documentation</li>
+                        <li>Mail promptly or pay electronically if possible</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">11</span> Bank Reconciliation & Bill Payment</h3>
+            
+            <div class="financial-section">
+                <div class="financial-title">Bank Account Reconciliation</div>
+                <p>Monthly process comparing bank statement with practice records to ensure accuracy.</p>
+                
+                <div class="procedure-box">
+                    <h4>Reconciliation Steps</h4>
+                    <ol>
+                        <li>Compare ending balance on bank statement with practice records</li>
+                        <li>Check off cleared checks and deposits</li>
+                        <li>Add deposits in transit (not on statement yet)</li>
+                        <li>Subtract outstanding checks (not cleared yet)</li>
+                        <li>Account for bank fees or interest</li>
+                        <li>Investigate and correct any discrepancies</li>
+                        <li>Document reconciliation with signature and date</li>
+                    </ol>
+                </div>
+                
+                <div class="important-box">
+                    <h4>Auditing Importance</h4>
+                    <ul>
+                        <li>Detects errors in recording</li>
+                        <li>Identifies fraudulent activity</li>
+                        <li>Ensures accurate financial reporting</li>
+                        <li>Required for tax preparation</li>
+                        <li>Provides internal control</li>
+                        <li>Supports compliance with regulations</li>
+                    </ul>
+                </div>
+                
+                <div class="financial-title" style="margin-top: 20px;">Maximizing Cash Flow Through Bill Payment</h4>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>Payment Timing Strategies</h4>
+                        <ul>
+                            <li>Take advantage of early payment discounts</li>
+                            <li>Pay on due date (not early) to retain cash</li>
+                            <li>Schedule payments to align with cash inflows</li>
+                            <li>Use electronic payments for precise timing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Vendor Management</h4>
+                        <ul>
+                            <li>Negotiate favorable payment terms</li>
+                            <li>Consolidate vendors when possible</li>
+                            <li>Regularly review vendor performance and costs</li>
+                            <li>Establish automated payment systems</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Cash Flow Monitoring</h4>
+                        <ul>
+                            <li>Maintain cash flow projections</li>
+                            <li>Monitor accounts receivable aging</li>
+                            <li>Track key financial ratios</li>
+                            <li>Regular financial review meetings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="lesson-header">
+        <div class="lesson-title">
+            <div class="lesson-number">20.1</div>
+            <div>Advanced Roles in Administration</div>
+        </div>
+    </div>
+    
+    <div class="module-container">
+        <section class="card">
+            <h2>Learning Objectives</h2>
+            <div class="learning-objectives">
+                <div class="objective-card">
+                    <p><span class="objective-number">1</span> Define qualities of successful office manager</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">2</span> Explain how to conduct staff meetings</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">3</span> Identify ways to motivate employees</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">4</span> Discuss team environment strategies</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">5</span> Explain hiring process and legal considerations</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">6</span> Review new employee orientation</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">7</span> Discuss salary, problem employee, and termination strategies</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">8</span> Identify personnel policy manual content</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">9</span> Describe office vs personnel policies</p>
+                </div>
+                <div class="objective-card">
+                    <p><span class="objective-number">10</span> Explain office manager's compliance role</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">1</span> Successful Office Manager Qualities</h3>
+            
+            <div class="management-section">
+                <div class="management-title">Essential Qualities of Healthcare Office Manager</div>
+                
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>Leadership Skills</h4>
+                        <ul>
+                            <li>Decision-making ability</li>
+                            <li>Conflict resolution</li>
+                            <li>Team motivation</li>
+                            <li>Strategic thinking</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Communication Skills</h4>
+                        <ul>
+                            <li>Active listening</li>
+                            <li>Clear verbal/written communication</li>
+                            <li>Diplomacy and tact</li>
+                            <li>Presentation skills</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Technical Knowledge</h4>
+                        <ul>
+                            <li>Healthcare regulations</li>
+                            <li>Financial management</li>
+                            <li>Technology systems</li>
+                            <li>Clinical workflow understanding</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="management-title" style="margin-top: 20px;">Key Responsibilities</div>
+                <ul>
+                    <li><strong>Staff Management:</strong> Hiring, training, scheduling, evaluation</li>
+                    <li><strong>Financial Oversight:</strong> Budgeting, billing, payroll, purchasing</li>
+                    <li><strong>Operations Management:</strong> Workflow, policies, procedures</li>
+                    <li><strong>Patient Relations:</strong> Service quality, complaint resolution</li>
+                    <li><strong>Compliance:</strong> HIPAA, OSHA, billing regulations</li>
+                    <li><strong>Facility Management:</strong> Equipment, supplies, maintenance</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">2</span> Conducting Effective Staff Meetings</h3>
+            
+            <div class="procedure-box">
+                <h4>Effective Meeting Structure</h4>
+                <ol>
+                    <li><strong>Preparation:</strong> Create agenda, gather materials, notify participants</li>
+                    <li><strong>Start on Time:</strong> Respect everyone's schedule</li>
+                    <li><strong>Review Agenda:</strong> Outline topics and time allocations</li>
+                    <li><strong>Facilitate Discussion:</strong> Encourage participation, manage time</li>
+                    <li><strong>Document Decisions:</strong> Record action items and responsibilities</li>
+                    <li><strong>Summarize:</strong> Review key points and next steps</li>
+                    <li><strong>Follow Up:</strong> Distribute minutes, monitor action items</li>
+                </ol>
+            </div>
+            
+            <div class="example-box">
+                <p><strong>Sample Staff Meeting Agenda</strong></p>
+                <p><strong>DATE:</strong> April 15, 2024<br>
+                <strong>TIME:</strong> 8:00 AM - 9:00 AM<br>
+                <strong>LOCATION:</strong> Conference Room<br><br>
+                <strong>AGENDA:</strong><br>
+                1. Call to order and roll call (5 min)<br>
+                2. Review of previous meeting minutes (5 min)<br>
+                3. Practice updates and announcements (10 min)<br>
+                4. Patient satisfaction survey results (15 min)<br>
+                5. New EHR module training schedule (10 min)<br>
+                6. Staff concerns and suggestions (10 min)<br>
+                7. Action items and assignments (5 min)</p>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">3</span> Employee Motivation Strategies</h3>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>Recognition & Rewards</h4>
+                    <ul>
+                        <li>Employee of the month programs</li>
+                        <li>Performance bonuses</li>
+                        <li>Public recognition in meetings</li>
+                        <li>Thank you notes for exceptional work</li>
+                        <li>Celebrating work anniversaries</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Professional Development</h4>
+                    <ul>
+                        <li>Training and certification opportunities</li>
+                        <li>Conference attendance support</li>
+                        <li>Career advancement paths</li>
+                        <li>Cross-training opportunities</li>
+                        <li>Tuition reimbursement</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Work Environment</h4>
+                    <ul>
+                        <li>Flexible scheduling when possible</li>
+                        <li>Comfortable break areas</li>
+                        <li>Team-building activities</li>
+                        <li>Open communication channels</li>
+                        <li>Work-life balance support</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Motivation Theory Application</h4>
+                <ul>
+                    <li><strong>Maslow's Hierarchy:</strong> Address physiological, safety, social, esteem, self-actualization needs</li>
+                    <li><strong>Herzberg's Two-Factor:</strong> Provide both hygiene factors (salary, conditions) and motivators (achievement, recognition)</li>
+                    <li><strong>McGregor's Theory X/Y:</strong> Adopt Theory Y approach (employees are self-motivated)</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">4</span> Creating Team Environment</h3>
+            
+            <div class="management-section">
+                <div class="management-title">Team Building Strategies</div>
+                
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>Communication Enhancement</h4>
+                        <ul>
+                            <li>Regular team meetings</li>
+                            <li>Open door policy</li>
+                            <li>Collaborative problem-solving</li>
+                            <li>Clear role definitions</li>
+                            <li>Shared goals and vision</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Collaborative Culture</h4>
+                        <ul>
+                            <li>Cross-training between roles</li>
+                            <li>Team-based projects</li>
+                            <li>Shared recognition</li>
+                            <li>Social events and activities</li>
+                            <li>Mentorship programs</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="management-title" style="margin-top: 20px;">Communication Barriers & Solutions</div>
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Barrier</th>
+                                <th>Description</th>
+                                <th>Solution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Hierarchical Structure</strong></td>
+                                <td>Staff reluctant to speak up to superiors</td>
+                                <td>Flatten communication channels, encourage open dialogue</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cultural Differences</strong></td>
+                                <td>Diverse backgrounds affecting communication styles</td>
+                                <td>Cultural sensitivity training, clear communication standards</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Information Overload</strong></td>
+                                <td>Too much information causing confusion</td>
+                                <td>Prioritize messages, use multiple channels appropriately</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Technological Issues</strong></td>
+                                <td>System failures or improper use of technology</td>
+                                <td>Regular training, backup systems, tech support</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Personal Conflicts</strong></td>
+                                <td>Interpersonal issues affecting work communication</td>
+                                <td>Conflict resolution training, mediation when needed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">5</span> Hiring Process & Legal Considerations</h3>
+            
+            <div class="procedure-box">
+                <h4>Finding the Right Employee</h4>
+                <ol>
+                    <li><strong>Job Analysis:</strong> Determine exact requirements and responsibilities</li>
+                    <li><strong>Job Description:</strong> Create detailed, accurate description</li>
+                    <li><strong>Recruitment:</strong> Advertise through appropriate channels</li>
+                    <li><strong>Screening:</strong> Review resumes and applications</li>
+                    <li><strong>Interviewing:</strong> Conduct structured interviews</li>
+                    <li><strong>Selection:</strong> Choose best candidate based on criteria</li>
+                    <li><strong>Verification:</strong> Check references and credentials</li>
+                    <li><strong>Offer:</strong> Extend formal job offer</li>
+                </ol>
+            </div>
+            
+            <div class="example-box">
+                <p><strong>Medical Assistant Job Description Excerpt</strong></p>
+                <p><strong>Position:</strong> Certified Medical Assistant<br>
+                <strong>Reports to:</strong> Office Manager<br>
+                <strong>Responsibilities:</strong><br>
+                • Perform clinical duties (vital signs, patient prep, injections)<br>
+                • Assist with procedures and treatments<br>
+                • Maintain examination rooms and supplies<br>
+                • Schedule appointments and manage patient flow<br>
+                • Process insurance and patient billing<br>
+                • Maintain patient records per HIPAA<br>
+                <strong>Requirements:</strong><br>
+                • CMA certification required<br>
+                • 2+ years medical office experience<br>
+                • CPR certification<br>
+                • EHR proficiency</p>
+            </div>
+            
+            <div class="interview-grid">
+                <div class="legal-card">
+                    <div class="legal-title">Legal Interview Questions</div>
+                    <ul>
+                        <li>Can you perform the essential job functions?</li>
+                        <li>What is your work experience?</li>
+                        <li>What are your strengths and weaknesses?</li>
+                        <li>Why do you want to work here?</li>
+                        <li>What are your salary expectations?</li>
+                        <li>Are you authorized to work in the US?</li>
+                        <li>Can you work the required schedule?</li>
+                    </ul>
+                </div>
+                
+                <div class="illegal-card">
+                    <div class="illegal-title">Illegal Interview Questions</div>
+                    <ul>
+                        <li>How old are you?</li>
+                        <li>Are you married or planning to have children?</li>
+                        <li>What is your religion?</li>
+                        <li>What is your national origin?</li>
+                        <li>Do you have any disabilities?</li>
+                        <li>Have you ever been arrested?</li>
+                        <li>What is your sexual orientation?</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h4>Candidate Selection & Follow-up</h4>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>Selection Criteria</h4>
+                    <ul>
+                        <li>Qualifications match job requirements</li>
+                        <li>Experience relevant to position</li>
+                        <li>Cultural fit with organization</li>
+                        <li>References and background check</li>
+                        <li>Interview performance</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Post-Interview Activities</h4>
+                    <ul>
+                        <li>Notify all candidates of decision</li>
+                        <li>Conduct reference checks</li>
+                        <li>Verify credentials and certifications</li>
+                        <li>Make formal written offer</li>
+                        <li>Complete hiring paperwork</li>
+                        <li>Schedule orientation and training</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">6</span> New Employee Orientation</h3>
+            
+            <div class="procedure-box">
+                <h4>Orientation Process</h4>
+                <ol>
+                    <li><strong>Paperwork Completion:</strong> I-9, W-4, direct deposit, benefits enrollment</li>
+                    <li><strong>Policy Review:</strong> Personnel manual, safety protocols, HIPAA training</li>
+                    <li><strong>Facility Tour:</strong> Introduce to workspace, equipment, safety features</li>
+                    <li><strong>Team Introduction:</strong> Meet colleagues and understand roles</li>
+                    <li><strong>System Training:</strong> EHR, phone system, scheduling software</li>
+                    <li><strong>Job-Specific Training:</strong> Shadow experienced staff, supervised practice</li>
+                    <li><strong>Check-in Meetings:</strong> Regular follow-ups during probation period</li>
+                </ol>
+            </div>
+            
+            <div class="important-box">
+                <h4>Required Documentation</h4>
+                <ul>
+                    <li><strong>Form I-9:</strong> Employment eligibility verification</li>
+                    <li><strong>Form W-4:</strong> Employee's withholding certificate</li>
+                    <li><strong>Direct Deposit Authorization:</strong> Bank information for payroll</li>
+                    <li><strong>Benefits Enrollment Forms:</strong> Health insurance, retirement plans</li>
+                    <li><strong>Emergency Contact Information</strong></li>
+                    <li><strong>HIPAA Confidentiality Agreement</strong></li>
+                    <li><strong>Job Description Acknowledgement</strong></li>
+                    <li><strong>Policy Manual Receipt</strong></li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">7</span> Salary, Performance & Termination</h3>
+            
+            <div class="management-section">
+                <div class="management-title">Determining Fair Salaries & Raises</div>
+                
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>Salary Considerations</h4>
+                        <ul>
+                            <li>Market rates for position and location</li>
+                            <li>Candidate experience and qualifications</li>
+                            <li>Practice budget and financial health</li>
+                            <li>Internal equity with existing staff</li>
+                            <li>Benefits package value</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Raise Strategies</h4>
+                        <ul>
+                            <li>Performance-based increases</li>
+                            <li>Cost of living adjustments</li>
+                            <li>Market adjustments to remain competitive</li>
+                            <li>Promotion-based increases</li>
+                            <li>Annual review process</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="management-title" style="margin-top: 20px;">Addressing Problem Employees</div>
+                <div class="procedure-box">
+                    <ol>
+                        <li><strong>Document Issues:</strong> Specific incidents, dates, impacts</li>
+                        <li><strong>Private Discussion:</strong> Address concerns directly with employee</li>
+                        <li><strong>Clear Expectations:</strong> Outline required improvements</li>
+                        <li><strong>Support & Training:</strong> Provide resources for improvement</li>
+                        <li><strong>Progressive Discipline:</strong> Verbal warning, written warning, final warning</li>
+                        <li><strong>Follow-up:</strong> Monitor progress and provide feedback</li>
+                    </ol>
+                </div>
+                
+                <div class="management-title" style="margin-top: 20px;">Termination Procedures</div>
+                <div class="important-box">
+                    <h4>Legal Termination Practices</h4>
+                    <ul>
+                        <li>Document all performance issues and disciplinary actions</li>
+                        <li>Conduct termination meeting with witness present</li>
+                        <li>Provide clear reasons for termination</li>
+                        <li>Discuss final pay and benefits</li>
+                        <li>Collect practice property (keys, badges, equipment)</li>
+                        <li>Escort employee from premises</li>
+                        <li>Notify remaining staff appropriately</li>
+                        <li>Consult legal counsel for complex situations</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">8</span> Personnel Policy Manual</h3>
+            
+            <div class="compliance-section">
+                <div class="compliance-title">Essential Personnel Policy Manual Contents</div>
+                
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>Employment Policies</h4>
+                        <ul>
+                            <li>Equal employment opportunity statement</li>
+                            <li>At-will employment disclaimer</li>
+                            <li>Job descriptions and classifications</li>
+                            <li>Probationary period details</li>
+                            <li>Performance evaluation process</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Compensation & Benefits</h4>
+                        <ul>
+                            <li>Pay periods and methods</li>
+                            <li>Overtime policies</li>
+                            <li>Health insurance details</li>
+                            <li>Retirement plans</li>
+                            <li>Paid time off (vacation, sick, holidays)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Workplace Conduct</h4>
+                        <ul>
+                            <li>Dress code and appearance</li>
+                            <li>Attendance and punctuality</li>
+                            <li>Confidentiality agreements</li>
+                            <li>Conflict of interest policies</li>
+                            <li>Social media guidelines</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="content-grid" style="margin-top: 15px;">
+                    <div class="content-card">
+                        <h4>Leave Policies</h4>
+                        <ul>
+                            <li>Family and Medical Leave Act (FMLA)</li>
+                            <li>Military leave</li>
+                            <li>Jury duty</li>
+                            <li>Bereavement leave</li>
+                            <li>Disability accommodations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Safety & Compliance</h4>
+                        <ul>
+                            <li>HIPAA privacy and security</li>
+                            <li>OSHA safety requirements</li>
+                            <li>Workplace violence prevention</li>
+                            <li>Harassment and discrimination policies</li>
+                            <li>Drug-free workplace</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Separation Policies</h4>
+                        <ul>
+                            <li>Resignation procedures</li>
+                            <li>Termination procedures</li>
+                            <li>Exit interviews</li>
+                            <li>Final paycheck timing</li>
+                            <li>References policy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">9</span> Office vs. Personnel Policies</h3>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Office Policies</th>
+                            <th>Personnel Policies</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Focus</strong></td>
+                            <td>Practice operations and patient care</td>
+                            <td>Employee rights, responsibilities, and benefits</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Examples</strong></td>
+                            <td>Scheduling, billing, clinical protocols, safety procedures</td>
+                            <td>Pay, benefits, leave, conduct, discipline, termination</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Governance</strong></td>
+                            <td>Practice efficiency and patient satisfaction</td>
+                            <td>Employment laws and regulations</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Audience</strong></td>
+                            <td>All staff involved in operations</td>
+                            <td>All employees</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Legal Requirements</strong></td>
+                            <td>Healthcare regulations (HIPAA, OSHA)</td>
+                            <td>Labor laws (FLSA, FMLA, ADA)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Documentation</strong></td>
+                            <td>Procedure manuals, protocols</td>
+                            <td>Employee handbook, policy manual</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="example-box">
+                <p><strong>Office Policy Example:</strong> "All patient messages must be returned within 24 business hours."</p>
+                <p><strong>Personnel Policy Example:</strong> "Employees accrue 10 vacation days per year after completing one year of service."</p>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3><span class="objective-icon">10</span> Regulatory Compliance Role</h3>
+            
+            <div class="compliance-section">
+                <div class="compliance-title">Office Manager's Compliance Responsibilities</div>
+                
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>HIPAA Compliance</h4>
+                        <ul>
+                            <li>Develop and maintain privacy policies</li>
+                            <li>Conduct staff training</li>
+                            <li>Implement security safeguards</li>
+                            <li>Manage business associate agreements</li>
+                            <li>Respond to patient access requests</li>
+                            <li>Report breaches if necessary</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>OSHA Compliance</h4>
+                        <ul>
+                            <li>Maintain safety data sheets (SDS)</li>
+                            <li>Conduct safety training</li>
+                            <li>Implement exposure control plan</li>
+                            <li>Maintain injury logs (OSHA 300)</li>
+                            <li>Ensure proper equipment and PPE</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h4>Billing Compliance</h4>
+                        <ul>
+                            <li>Ensure accurate coding and documentation</li>
+                            <li>Prevent fraud and abuse</li>
+                            <li>Stay current with payer requirements</li>
+                            <li>Conduct internal audits</li>
+                            <li>Implement compliance program</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="important-box">
+                    <h4>Compliance Program Elements</h4>
+                    <ol>
+                        <li>Written policies and procedures</li>
+                        <li>Designated compliance officer</li>
+                        <li>Effective training and education</li>
+                        <li>Effective lines of communication</li>
+                        <li>Internal monitoring and auditing</li>
+                        <li>Enforcement through disciplinary guidelines</li>
+                        <li>Prompt response to detected offenses</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card quiz-container">
+            <h2>Comprehensive Knowledge Check</h2>
+            
+            <div class="quiz-question">
+                <p><strong>1. Which bookkeeping term refers to money owed to the practice by patients and insurance companies?</strong></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q1"> Accounts Payable</label>
+                    <label><input type="radio" name="q1"> Accounts Receivable</label>
+                    <label><input type="radio" name="q1"> General Ledger</label>
+                    <label><input type="radio" name="q1"> Chart of Accounts</label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>2. What type of check endorsement provides the most security by restricting the check to deposit only?</strong></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q2"> Blank endorsement</label>
+                    <label><input type="radio" name="q2"> Restrictive endorsement</label>
+                    <label><input type="radio" name="q2"> Special endorsement</label>
+                    <label><input type="radio" name="q2"> Conditional endorsement</label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>3. Which federal law requires clear disclosure of credit terms for payment plans exceeding 4 installments?</strong></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q3"> Fair Debt Collection Practices Act</label>
+                    <label><input type="radio" name="q3"> Truth in Lending Act</label>
+                    <label><input type="radio" name="q3"> Fair Credit Reporting Act</label>
+                    <label><input type="radio" name="q3"> Equal Credit Opportunity Act</label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>4. Which of the following is typically an ILLEGAL interview question?</strong></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q4"> "Can you work the required schedule?"</label>
+                    <label><input type="radio" name="q4"> "Are you authorized to work in the US?"</label>
+                    <label><input type="radio" name="q4"> "How old are you?"</label>
+                    <label><input type="radio" name="q4"> "What are your salary expectations?"</label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>5. Which compliance regulation requires practices to maintain safety data sheets and conduct safety training?</strong></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q5"> HIPAA</label>
+                    <label><input type="radio" name="q5"> OSHA</label>
+                    <label><input type="radio" name="q5"> CLIA</label>
+                    <label><input type="radio" name="q5"> FDA</label>
+                </div>
+            </div>
+            
+            <button onclick="checkAnswers()">Check Your Answers</button>
+            <div id="quiz-result" style="margin-top: 20px; font-weight: bold;"></div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>Financial Management & Advanced Administration Learning Module</p>
+        <p>Healthcare Office Management | Lessons 19.1, 19.2 & 20.1</p>
+    </footer>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            const totalQuestions = 5;
+            const answers = [2, 2, 2, 3, 2]; // Correct answer indices (0-based)
+            
+            // Check each question
+            for (let i = 1; i <= totalQuestions; i++) {
+                const options = document.querySelectorAll(`input[name="q${i}"]`);
+                let selected = -1;
+                
+                // Find which option is selected
+                for (let j = 0; j < options.length; j++) {
+                    if (options[j].checked) {
+                        selected = j;
+                        break;
+                    }
+                }
+                
+                // Check if correct
+                if (selected === answers[i-1]) {
+                    score++;
+                }
+            }
+            
+            const resultDiv = document.getElementById('quiz-result');
+            const percentage = (score / totalQuestions) * 100;
+            
+            if (percentage === 100) {
+                resultDiv.innerHTML = `Excellent! You scored ${score}/${totalQuestions} (${percentage}%) - Perfect understanding of financial management and office administration!`;
+                resultDiv.style.color = '#4caf50';
+            } else if (percentage >= 80) {
+                resultDiv.innerHTML = `Great job! You scored ${score}/${totalQuestions} (${percentage}%) - Strong knowledge of accounting, banking, and management principles.`;
+                resultDiv.style.color = '#ff9800';
+            } else if (percentage >= 60) {
+                resultDiv.innerHTML = `Good effort! You scored ${score}/${totalQuestions} (${percentage}%) - Review bookkeeping terms, banking procedures, and employment laws.`;
+                resultDiv.style.color = '#ff9800';
+            } else {
+                resultDiv.innerHTML = `You scored ${score}/${totalQuestions} (${percentage}%) - Focus on financial terminology, check processing, and HR compliance requirements.`;
+                resultDiv.style.color = '#f44336';
+            }
+            
+            // Provide correct answers
+            resultDiv.innerHTML += `<br><br><strong>Correct Answers:</strong><br>
+            1. Accounts Receivable (money owed to the practice)<br>
+            2. Restrictive endorsement ("For deposit only" provides most security)<br>
+            3. Truth in Lending Act (requires credit term disclosure)<br>
+            4. "How old are you?" (illegal age discrimination question)<br>
+            5. OSHA (requires safety data sheets and training)`;
+        }
+    </script>
+</body>
+</html>
