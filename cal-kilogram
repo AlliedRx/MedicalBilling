@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Calculations: Convert kg to g</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 100, 0.1);
+            padding: 30px;
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #4a6fa5;
+        }
+        
+        h1 {
+            color: #2c3e6e;
+            margin-top: 0;
+        }
+        
+        h2 {
+            color: #4a6fa5;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            color: #5a86c2;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .lesson-content {
+            margin-bottom: 30px;
+        }
+        
+        .step-card {
+            background-color: #f9fbff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #4a6fa5;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #4a6fa5;
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 0 0 10px 0;
+        }
+        
+        .conversion-formula {
+            font-family: 'Courier New', monospace;
+            background-color: #2c3e6e;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-size: 1.2rem;
+            text-align: center;
+            overflow-x: auto;
+        }
+        
+        .example-box {
+            background-color: #eef5ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #5a86c2;
+        }
+        
+        .practice-area {
+            background-color: #f0f7ff;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .input-group {
+            margin: 20px 0;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        input, select {
+            padding: 12px;
+            border-radius: 6px;
+            border: 2px solid #b0c4de;
+            width: 250px;
+            font-size: 1.1rem;
+            transition: border 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #4a6fa5;
+        }
+        
+        button {
+            padding: 12px 25px;
+            background-color: #4a6fa5;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            margin: 10px 10px 10px 0;
+        }
+        
+        button:hover {
+            background-color: #2c3e6e;
+            transform: translateY(-2px);
+        }
+        
+        .visualization {
+            height: 300px;
+            background-color: #f5f9ff;
+            border-radius: 10px;
+            margin: 30px 0;
+            padding: 20px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            position: relative;
+        }
+        
+        .kg-block {
+            width: 80px;
+            height: 80px;
+            background-color: #4a6fa5;
+            border-radius: 8px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .g-block {
+            width: 25px;
+            height: 25px;
+            background-color: #5a86c2;
+            border-radius: 4px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin: 2px;
+        }
+        
+        .g-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            justify-content: center;
+            align-content: flex-start;
+        }
+        
+        .conversion-arrow {
+            font-size: 3rem;
+            color: #4a6fa5;
+            margin: 0 20px;
+            align-self: center;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: none;
+        }
+        
+        .result.correct {
+            background-color: #e8f7ef;
+            color: #2d7d46;
+            border: 2px solid #a3d9b1;
+            display: block;
+        }
+        
+        .result.incorrect {
+            background-color: #fdeaea;
+            color: #c33;
+            border: 2px solid #f5b5b5;
+            display: block;
+        }
+        
+        .exercises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .exercise-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e7ff;
+        }
+        
+        .exercise-card.correct {
+            border-left: 5px solid #2d7d46;
+        }
+        
+        .exercise-card.incorrect {
+            border-left: 5px solid #c33;
+        }
+        
+        .small-input {
+            width: 150px !important;
+        }
+        
+        .small-button {
+            padding: 8px 16px;
+            font-size: 1rem;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .key-points {
+            background-color: #eef5ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .key-points ul {
+            padding-left: 20px;
+        }
+        
+        .key-points li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background-color: #fffacd;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .pharmacy-context {
+            background-color: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #2c3e6e;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .exercises-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .visualization {
+                flex-direction: column;
+                height: auto;
+                align-items: center;
+            }
+            
+            .conversion-arrow {
+                transform: rotate(90deg);
+                margin: 20px 0;
+            }
+            
+            .g-container {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pharmacy Calculations Course</h1>
+            <p class="subtitle">How to Convert Kilogram to Gram</p>
+        </header>
+        
+        <div class="lesson-content">
+            <div class="pharmacy-context">
+                <h3>Why This Matters in Pharmacy</h3>
+                <p>In the field of pharmacy, accurate calculations are crucial to ensure the correct dosage and administration of medications. One common calculation that pharmacists frequently encounter is the conversion of units of measurement. While kilograms are used for bulk quantities in manufacturing and inventory, grams and milligrams are used for compounding and individual dosing.</p>
+            </div>
+            
+            <h2>Understanding the Relationship</h2>
+            <p>Before we begin, it's important to understand the relationship between kilograms and grams. The conversion factor for converting kilograms to grams is <span class="highlight">1000</span>. This means that:</p>
+            
+            <div class="conversion-formula">
+                1 kilogram (kg) = 1000 grams (g)
+            </div>
+            
+            <div class="visualization">
+                <div class="kg-block" id="kg-block">1 kg</div>
+                <div class="conversion-arrow">→</div>
+                <div class="g-container" id="g-container">
+                    <!-- Gram blocks will be generated by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Step 1: Understand the Conversion Factor</h3>
+                <p>The conversion factor is the number you multiply by to convert from one unit to another. For kg to g:</p>
+                <div class="conversion-formula">Conversion Factor = 1000</div>
+                <p>This means every kilogram contains 1000 grams. Think of it like this: 1 kg is 1000 times larger than 1 g.</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Step 2: Set Up the Conversion Equation</h3>
+                <p>To convert kilograms to grams, use this simple equation:</p>
+                <div class="conversion-formula">
+                    Number of kilograms × 1000 = Number of grams
+                </div>
+                <p>Or written mathematically:</p>
+                <div class="conversion-formula">g = kg × 1000</div>
+                
+                <div class="example-box">
+                    <h4>Example:</h4>
+                    <p>Let's say we have 2 kilograms that we want to convert to grams. We can set up the equation as:</p>
+                    <div class="conversion-formula">2 kg × 1000 = ? g</div>
+                </div>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Step 3: Perform the Calculation</h3>
+                <p>Multiply the number of kilograms by 1000 to find the number of grams.</p>
+                
+                <div class="example-box">
+                    <h4>Continuing our example:</h4>
+                    <div class="conversion-formula">2 kg × 1000 = 2000 g</div>
+                    <p>So, 2 kilograms is equal to 2000 grams.</p>
+                </div>
+                
+                <p><strong>Simple trick:</strong> When multiplying by 1000, just add three zeros to the number, or move the decimal point three places to the right.</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Step 4: Check Your Answer</h3>
+                <p>Always double-check your calculations in pharmacy work. To verify, convert the grams back to kilograms using the reverse calculation:</p>
+                
+                <div class="example-box">
+                    <h4>Verifying our example:</h4>
+                    <div class="conversion-formula">2000 g ÷ 1000 = 2 kg</div>
+                    <p>As expected, the result is 2 kilograms, confirming our conversion was correct.</p>
+                </div>
+            </div>
+            
+            <div class="key-points">
+                <h3>Key Points to Remember</h3>
+                <ul>
+                    <li>1 kg = 1000 g (always remember this conversion factor)</li>
+                    <li>To convert kg to g: <strong>Multiply by 1000</strong></li>
+                    <li>To convert g to kg: <strong>Divide by 1000</strong></li>
+                    <li>In pharmacy, you'll often need to convert further to mg (1 g = 1000 mg)</li>
+                    <li>Always double-check your work, especially with medication calculations</li>
+                </ul>
+            </div>
+            
+            <div class="practice-area">
+                <h2>Interactive Conversion Tool</h2>
+                <p>Try converting kilograms to grams using the tool below:</p>
+                
+                <div class="input-group">
+                    <label for="kg-input">Enter kilograms (kg):</label>
+                    <input type="number" id="kg-input" value="1" min="0" step="0.001" placeholder="e.g., 2.5">
+                </div>
+                
+                <button id="convert-btn">Convert to Grams</button>
+                <button id="reset-btn">Reset</button>
+                
+                <div class="result" id="conversion-result"></div>
+                
+                <div id="step-by-step" style="display: none; margin-top: 20px; padding: 15px; background-color: #f9fbff; border-radius: 8px;">
+                    <h4>Step-by-Step Solution:</h4>
+                    <p id="step-solution"></p>
+                </div>
+            </div>
+            
+            <h2>Practice Exercises</h2>
+            <p>Test your understanding with these pharmacy-related exercises:</p>
+            
+            <div class="exercises-grid">
+                <!-- Exercise 1 -->
+                <div class="exercise-card" id="exercise-card-1">
+                    <h4>Exercise 1</h4>
+                    <p>A bulk medication order arrives as 3.5 kg of raw material. How many grams is this?</p>
+                    <div class="input-group">
+                        <label for="exercise1">Your answer (in g):</label>
+                        <input type="number" id="exercise1" step="0.1" class="small-input">
+                    </div>
+                    <button class="small-button check-exercise" data-exercise="1">Check Answer</button>
+                    <div class="result" id="result1"></div>
+                </div>
+                
+                <!-- Exercise 2 -->
+                <div class="exercise-card" id="exercise-card-2">
+                    <h4>Exercise 2</h4>
+                    <p>You need to compound a large batch requiring 0.75 kg of ingredient A. Convert this to grams.</p>
+                    <div class="input-group">
+                        <label for="exercise2">Your answer (in g):</label>
+                        <input type="number" id="exercise2" step="1" class="small-input">
+                    </div>
+                    <button class="small-button check-exercise" data-exercise="2">Check Answer</button>
+                    <div class="result" id="result2"></div>
+                </div>
+                
+                <!-- Exercise 3 -->
+                <div class="exercise-card" id="exercise-card-3">
+                    <h4>Exercise 3</h4>
+                    <p>A prescription calls for 2.25 kg of a base cream. How many grams should you weigh out?</p>
+                    <div class="input-group">
+                        <label for="exercise3">Your answer (in g):</label>
+                        <input type="number" id="exercise3" step="1" class="small-input">
+                    </div>
+                    <button class="small-button check-exercise" data-exercise="3">Check Answer</button>
+                    <div class="result" id="result3"></div>
+                </div>
+                
+                <!-- Exercise 4 -->
+                <div class="exercise-card" id="exercise-card-4">
+                    <h4>Exercise 4</h4>
+                    <p>The pharmacy receives 0.5 kg of a powdered antibiotic. Convert to grams.</p>
+                    <div class="input-group">
+                        <label for="exercise4">Your answer (in g):</label>
+                        <input type="number" id="exercise4" step="1" class="small-input">
+                    </div>
+                    <button class="small-button check-exercise" data-exercise="4">Check Answer</button>
+                    <div class="result" id="result4"></div>
+                </div>
+                
+                <!-- Exercise 5 -->
+                <div class="exercise-card" id="exercise-card-5">
+                    <h4>Exercise 5</h4>
+                    <p>A patient's medication requires 1.8 kg of a special ointment base. How many grams is this?</p>
+                    <div class="input-group">
+                        <label for="exercise5">Your answer (in g):</label>
+                        <input type="number" id="exercise5" step="1" class="small-input">
+                    </div>
+                    <button class="small-button check-exercise" data-exercise="5">Check Answer</button>
+                    <div class="result" id="result5"></div>
+                </div>
+                
+                <!-- Exercise 6 -->
+                <div class="exercise-card" id="exercise-card-6">
+                    <h4>Exercise 6</h4>
+                    <p>You have 0.025 kg of a potent drug for compounding. Convert to grams.</p>
+                    <div class="input-group">
+                        <label for="exercise6">Your answer (in g):</label>
+                        <input type="number" id="exercise6" step="0.001" class="small-input">
+                    </div>
+                    <button class="small-button check-exercise" data-exercise="6">Check Answer</button>
+                    <div class="result" id="result6"></div>
+                </div>
+            </div>
+            
+            <div class="practice-area">
+                <h3>Challenge Problems</h3>
+                
+                <!-- Challenge 1 -->
+                <div class="exercise-card">
+                    <h4>Challenge 1: Two-Step Conversion</h4>
+                    <p>A medication order requires 1.2 kg of a substance. The pharmacy scale measures in milligrams. How many milligrams is this?</p>
+                    <p><em>Hint: Convert kg to g first, then g to mg (1 g = 1000 mg)</em></p>
+                    <div class="input-group">
+                        <label for="challenge1">Your answer (in mg):</label>
+                        <input type="number" id="challenge1" step="1" class="small-input">
+                    </div>
+                    <button class="small-button" id="check-challenge1">Check Answer</button>
+                    <div class="result" id="challenge-result1"></div>
+                </div>
+                
+                <!-- Challenge 2 -->
+                <div class="exercise-card">
+                    <h4>Challenge 2: Real Pharmacy Scenario</h4>
+                    <p>You're preparing a large batch of cough syrup that requires 0.6 kg of sweetener. The recipe makes 200 bottles. How many grams of sweetener are in each bottle?</p>
+                    <div class="input-group">
+                        <label for="challenge2">Your answer (g per bottle):</label>
+                        <input type="number" id="challenge2" step="0.1" class="small-input">
+                    </div>
+                    <button class="small-button" id="check-challenge2">Check Answer</button>
+                    <div class="result" id="challenge-result2"></div>
+                </div>
+            </div>
+            
+            <div class="key-points">
+                <h3>Common Pharmacy Applications</h3>
+                <ul>
+                    <li><strong>Bulk compounding:</strong> Converting kg measurements to g for accurate weighing</li>
+                    <li><strong>Inventory management:</strong> Tracking medication quantities in consistent units</li>
+                    <li><strong>Manufacturing:</strong> Scaling up recipes from lab to production size</li>
+                    <li><strong>Purchasing:</strong> Comparing prices when medications are sold in different units</li>
+                    <li><strong>Quality control:</strong> Ensuring consistency in large batch preparations</li>
+                </ul>
+            </div>
+            
+            <div class="nav-buttons">
+                <button id="prev-lesson">← Previous Lesson</button>
+                <button id="next-lesson">Next Lesson: Grams to Milligrams →</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Pharmacy Calculations Course: Kilogram to Gram Conversion</p>
+            <p>Remember: Accuracy in measurement conversion is essential for patient safety in pharmacy practice.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize visualization
+        function createGramVisualization() {
+            const gContainer = document.getElementById('g-container');
+            gContainer.innerHTML = '';
+            
+            // Create 1000 gram blocks (simplified for visualization)
+            for (let i = 0; i < 100; i++) { // Show 100 blocks to represent 1000
+                const gBlock = document.createElement('div');
+                gBlock.className = 'g-block';
+                gBlock.textContent = '10g'; // Each block represents 10g
+                gContainer.appendChild(gBlock);
+            }
+        }
+        
+        // Create initial visualization
+        createGramVisualization();
+        
+        // Update visualization based on input
+        function updateVisualization(kgValue) {
+            const kgBlock = document.getElementById('kg-block');
+            kgBlock.textContent = `${kgValue} kg`;
+            
+            // Update the number of gram blocks (simplified)
+            const gContainer = document.getElementById('g-container');
+            gContainer.innerHTML = '';
+            
+            const totalGrams = kgValue * 1000;
+            const blocksToShow = Math.min(100, totalGrams / 10); // Show max 100 blocks
+            
+            for (let i = 0; i < blocksToShow; i++) {
+                const gBlock = document.createElement('div');
+                gBlock.className = 'g-block';
+                const gramsPerBlock = totalGrams / blocksToShow;
+                gBlock.textContent = `${Math.round(gramsPerBlock)}g`;
+                gContainer.appendChild(gBlock);
+            }
+            
+            if (blocksToShow < totalGrams / 10) {
+                const moreText = document.createElement('div');
+                moreText.textContent = `... and ${totalGrams - (blocksToShow * (totalGrams/blocksToShow))} more`;
+                moreText.style.width = '100%';
+                moreText.style.textAlign = 'center';
+                moreText.style.marginTop = '10px';
+                moreText.style.fontWeight = 'bold';
+                gContainer.appendChild(moreText);
+            }
+        }
+        
+        // Convert kg to g
+        document.getElementById('convert-btn').addEventListener('click', function() {
+            const kgInput = document.getElementById('kg-input');
+            const kgValue = parseFloat(kgInput.value);
+            const resultDiv = document.getElementById('conversion-result');
+            const stepDiv = document.getElementById('step-by-step');
+            const stepSolution = document.getElementById('step-solution');
+            
+            if (isNaN(kgValue) || kgValue < 0) {
+                resultDiv.textContent = "Please enter a valid positive number";
+                resultDiv.className = "result incorrect";
+                stepDiv.style.display = 'none';
+                return;
+            }
+            
+            const grams = kgValue * 1000;
+            
+            // Update visualization
+            updateVisualization(kgValue);
+            
+            // Show result
+            resultDiv.textContent = `${kgValue} kg = ${grams.toLocaleString()} g`;
+            resultDiv.className = "result correct";
+            
+            // Show step-by-step solution
+            stepDiv.style.display = 'block';
+            stepSolution.innerHTML = `
+                <strong>Step 1:</strong> Identify the conversion factor: 1 kg = 1000 g<br>
+                <strong>Step 2:</strong> Set up the equation: ${kgValue} kg × 1000 = ? g<br>
+                <strong>Step 3:</strong> Perform the multiplication: ${kgValue} × 1000 = ${grams.toLocaleString()}<br>
+                <strong>Step 4:</strong> State the answer: ${kgValue} kg = ${grams.toLocaleString()} g
+            `;
+        });
+        
+        // Reset conversion tool
+        document.getElementById('reset-btn').addEventListener('click', function() {
+            document.getElementById('kg-input').value = '1';
+            document.getElementById('conversion-result').textContent = '';
+            document.getElementById('conversion-result').className = 'result';
+            document.getElementById('step-by-step').style.display = 'none';
+            updateVisualization(1);
+        });
+        
+        // Exercise answers
+        const exerciseAnswers = {
+            1: 3500,   // 3.5 kg = 3500 g
+            2: 750,    // 0.75 kg = 750 g
+            3: 2250,   // 2.25 kg = 2250 g
+            4: 500,    // 0.5 kg = 500 g
+            5: 1800,   // 1.8 kg = 1800 g
+            6: 25      // 0.025 kg = 25 g
+        };
+        
+        const challengeAnswers = {
+            1: 1200000, // 1.2 kg = 1200 g = 1,200,000 mg
+            2: 3        // 0.6 kg = 600 g ÷ 200 bottles = 3 g/bottle
+        };
+        
+        // Check exercise answers
+        document.querySelectorAll('.check-exercise').forEach(button => {
+            button.addEventListener('click', function() {
+                const exerciseNum = this.getAttribute('data-exercise');
+                const answer = parseFloat(document.getElementById(`exercise${exerciseNum}`).value);
+                const resultDiv = document.getElementById(`result${exerciseNum}`);
+                const exerciseCard = document.getElementById(`exercise-card-${exerciseNum}`);
+                
+                if (isNaN(answer)) {
+                    resultDiv.textContent = "Please enter a number";
+                    resultDiv.className = "result incorrect";
+                    exerciseCard.classList.remove('correct', 'incorrect');
+                    exerciseCard.classList.add('incorrect');
+                    return;
+                }
+                
+                const correctAnswer = exerciseAnswers[exerciseNum];
+                const tolerance = 0.01;
+                
+                if (Math.abs(answer - correctAnswer) < tolerance) {
+                    resultDiv.textContent = `Correct! ${exerciseAnswers[exerciseNum]} g`;
+                    resultDiv.className = "result correct";
+                    exerciseCard.classList.remove('correct', 'incorrect');
+                    exerciseCard.classList.add('correct');
+                } else {
+                    resultDiv.textContent = `Not quite. The correct answer is ${exerciseAnswers[exerciseNum]} g (${getCalculationSteps(exerciseNum)})`;
+                    resultDiv.className = "result incorrect";
+                    exerciseCard.classList.remove('correct', 'incorrect');
+                    exerciseCard.classList.add('incorrect');
+                }
+            });
+        });
+        
+        // Function to get calculation steps for exercises
+        function getCalculationSteps(exerciseNum) {
+            const steps = {
+                1: "3.5 kg × 1000 = 3500 g",
+                2: "0.75 kg × 1000 = 750 g",
+                3: "2.25 kg × 1000 = 2250 g",
+                4: "0.5 kg × 1000 = 500 g",
+                5: "1.8 kg × 1000 = 1800 g",
+                6: "0.025 kg × 1000 = 25 g"
+            };
+            return steps[exerciseNum];
+        }
+        
+        // Check challenge problems
+        document.getElementById('check-challenge1').addEventListener('click', function() {
+            const answer = parseFloat(document.getElementById('challenge1').value);
+            const resultDiv = document.getElementById('challenge-result1');
+            
+            if (isNaN(answer)) {
+                resultDiv.textContent = "Please enter a number";
+                resultDiv.className = "result incorrect";
+                return;
+            }
+            
+            const correctAnswer = challengeAnswers[1];
+            const tolerance = 100; // Allow some rounding
+            
+            if (Math.abs(answer - correctAnswer) < tolerance) {
+                resultDiv.textContent = `Excellent! 1.2 kg = 1200 g = 1,200,000 mg`;
+                resultDiv.className = "result correct";
+            } else {
+                resultDiv.textContent = `Let's work through it: 1.2 kg × 1000 = 1200 g; 1200 g × 1000 = 1,200,000 mg`;
+                resultDiv.className = "result incorrect";
+            }
+        });
+        
+        document.getElementById('check-challenge2').addEventListener('click', function() {
+            const answer = parseFloat(document.getElementById('challenge2').value);
+            const resultDiv = document.getElementById('challenge-result2');
+            
+            if (isNaN(answer)) {
+                resultDiv.textContent = "Please enter a number";
+                resultDiv.className = "result incorrect";
+                return;
+            }
+            
+            const correctAnswer = challengeAnswers[2];
+            const tolerance = 0.1;
+            
+            if (Math.abs(answer - correctAnswer) < tolerance) {
+                resultDiv.textContent = `Perfect! 0.6 kg = 600 g; 600 g ÷ 200 bottles = 3 g/bottle`;
+                resultDiv.className = "result correct";
+            } else {
+                resultDiv.textContent = `Solution: 0.6 kg = 600 g; 600 g ÷ 200 bottles = 3 g per bottle`;
+                resultDiv.className = "result incorrect";
+            }
+        });
+        
+        // Navigation buttons
+        document.getElementById('prev-lesson').addEventListener('click', function() {
+            alert('This would take you to the previous lesson in a full course.');
+        });
+        
+        document.getElementById('next-lesson').addEventListener('click', function() {
+            alert('This would take you to the next lesson on gram to milligram conversion.');
+        });
+        
+        // Initialize with example
+        updateVisualization(1);
+    </script>
+</body>
+</html>
