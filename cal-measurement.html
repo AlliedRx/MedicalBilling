@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Calculations: Measurement Basics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 100, 0.1);
+            padding: 30px;
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #4a6fa5;
+        }
+        
+        h1 {
+            color: #2c3e6e;
+            margin-top: 0;
+        }
+        
+        h2 {
+            color: #4a6fa5;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+        }
+        
+        h3 {
+            color: #5a86c2;
+        }
+        
+        h4 {
+            color: #6a96cf;
+            margin-top: 20px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-button {
+            padding: 12px 18px;
+            background-color: #f5f9ff;
+            border: none;
+            border-radius: 8px 8px 0 0;
+            margin-right: 3px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #4a6fa5;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .tab-button:hover {
+            background-color: #e6efff;
+        }
+        
+        .tab-button.active {
+            background-color: #4a6fa5;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+            animation: fadeIn 0.5s;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .card {
+            background-color: #f9fbff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #4a6fa5;
+        }
+        
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .unit-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e7ff;
+        }
+        
+        .conversion-example {
+            background-color: #eef5ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .conversion-formula {
+            font-family: 'Courier New', monospace;
+            background-color: #2c3e6e;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        .practice-area {
+            background-color: #f0f7ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .exercises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .exercise-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e7ff;
+        }
+        
+        .exercise-card.correct {
+            border-left: 5px solid #2d7d46;
+        }
+        
+        .exercise-card.incorrect {
+            border-left: 5px solid #c33;
+        }
+        
+        .input-group {
+            margin: 15px 0;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        input, select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #b0c4de;
+            width: 200px;
+            font-size: 1rem;
+        }
+        
+        .small-input {
+            width: 120px !important;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #4a6fa5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin: 10px 5px 10px 0;
+        }
+        
+        button:hover {
+            background-color: #2c3e6e;
+        }
+        
+        .small-button {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+        
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            display: none;
+        }
+        
+        .result.correct {
+            background-color: #e8f7ef;
+            color: #2d7d46;
+            border: 1px solid #a3d9b1;
+            display: block;
+        }
+        
+        .result.incorrect {
+            background-color: #fdeaea;
+            color: #c33;
+            border: 1px solid #f5b5b5;
+            display: block;
+        }
+        
+        .score-display {
+            background-color: #2c3e6e;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        .measurement-tool {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .tool-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e6efff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 24px;
+        }
+        
+        .visualization {
+            height: 200px;
+            background-color: #f5f9ff;
+            border-radius: 10px;
+            margin: 20px 0;
+            padding: 20px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .measurement-bar {
+            width: 50px;
+            background-color: #4a6fa5;
+            margin: 0 10px;
+            border-radius: 5px 5px 0 0;
+            position: relative;
+            transition: height 0.5s;
+        }
+        
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .conversion-tool {
+            background-color: #f9fbff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .converter-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .exercise-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .exercise-category {
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 1100px) {
+            .exercises-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .units-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .converter-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-tabs {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .tab-button {
+                font-size: 0.8rem;
+                padding: 10px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pharmacy Calculations: Measurement Basics</h1>
+            <p class="subtitle">An interactive learning simulation with 21+ practice exercises</p>
+        </header>
+        
+        <div class="nav-tabs">
+            <button class="tab-button active" data-tab="intro">Introduction</button>
+            <button class="tab-button" data-tab="mass">Mass Units</button>
+            <button class="tab-button" data-tab="volume">Volume Units</button>
+            <button class="tab-button" data-tab="concentration">Concentration</button>
+            <button class="tab-button" data-tab="other">Other Systems</button>
+            <button class="tab-button" data-tab="practice">Practice Exercises</button>
+            <button class="tab-button" data-tab="tools">Measurement Tools</button>
+        </div>
+        
+        <!-- Introduction Tab -->
+        <div id="intro" class="tab-content active">
+            <div class="card">
+                <h2>Measurement Basics in Pharmacy</h2>
+                <p>In the field of pharmacy, understanding measurement basics is crucial for accurate and precise calculations. Measurement plays a vital role in pharmacy calculations, as it involves determining the correct dosage of medications and ensuring patient safety.</p>
+                
+                <div class="conversion-example">
+                    <h3>Why Accuracy Matters</h3>
+                    <p>A small error in measurement can lead to under-dosing or overdosing, which can have serious consequences for patients. Pharmacists must be proficient with various measurement systems and conversion factors.</p>
+                </div>
+                
+                <h3>Key Measurement Concepts</h3>
+                <ul>
+                    <li><strong>Accuracy:</strong> How closely a measurement matches the true value</li>
+                    <li><strong>Precision:</strong> Consistency and reproducibility of measurements</li>
+                    <li><strong>Quality Control:</strong> Procedures to ensure medication preparation meets standards</li>
+                </ul>
+                
+                <div class="visualization" id="intro-viz">
+                    <div class="measurement-bar" style="height: 30%;" data-value="0.001">
+                        <div class="bar-label">1 mg</div>
+                    </div>
+                    <div class="measurement-bar" style="height: 100%;" data-value="1">
+                        <div class="bar-label">1 g</div>
+                    </div>
+                    <div class="measurement-bar" style="height: 10%;" data-value="0.000001">
+                        <div class="bar-label">1 µg</div>
+                    </div>
+                </div>
+                <p style="text-align: center; font-style: italic;">Visual comparison of mass units: 1 gram = 1000 mg = 1,000,000 µg</p>
+            </div>
+        </div>
+        
+        <!-- Mass Units Tab -->
+        <div id="mass" class="tab-content">
+            <h2>Mass Units in Pharmacy</h2>
+            <p>Mass refers to the amount of matter in an object or substance. In pharmacy calculations, mass is often measured in grams (g), milligrams (mg), micrograms (µg), or kilograms (kg).</p>
+            
+            <div class="units-grid">
+                <div class="unit-card">
+                    <h3>Microgram (µg)</h3>
+                    <p>1 µg = 0.000001 g</p>
+                    <p><em>Used for very potent drugs like hormones or digoxin</em></p>
+                </div>
+                <div class="unit-card">
+                    <h3>Milligram (mg)</h3>
+                    <p>1 mg = 0.001 g</p>
+                    <p><em>Common for tablet and capsule dosages</em></p>
+                </div>
+                <div class="unit-card">
+                    <h3>Gram (g)</h3>
+                    <p>1 g = 1000 mg</p>
+                    <p><em>Used for bulk powders and compounding</em></p>
+                </div>
+                <div class="unit-card">
+                    <h3>Kilogram (kg)</h3>
+                    <p>1 kg = 1000 g</p>
+                    <p><em>Used for large quantities in manufacturing</em></p>
+                </div>
+            </div>
+            
+            <div class="conversion-example">
+                <h3>Mass Conversion Practice</h3>
+                <p>Convert 0.5 g to mg:</p>
+                <div class="conversion-formula">0.5 g × (1000 mg / 1 g) = 500 mg</div>
+                <p>Convert 2500 µg to mg:</p>
+                <div class="conversion-formula">2500 µg × (1 mg / 1000 µg) = 2.5 mg</div>
+            </div>
+            
+            <div class="practice-area">
+                <h3>Try a Mass Conversion</h3>
+                <div class="input-group">
+                    <label for="mass-value">Value:</label>
+                    <input type="number" id="mass-value" value="1" min="0" step="0.01">
+                </div>
+                
+                <div class="input-group">
+                    <label for="mass-from">From Unit:</label>
+                    <select id="mass-from">
+                        <option value="kg">Kilogram (kg)</option>
+                        <option value="g" selected>Gram (g)</option>
+                        <option value="mg">Milligram (mg)</option>
+                        <option value="mcg">Microgram (µg)</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="mass-to">To Unit:</label>
+                    <select id="mass-to">
+                        <option value="kg">Kilogram (kg)</option>
+                        <option value="g">Gram (g)</option>
+                        <option value="mg" selected>Milligram (mg)</option>
+                        <option value="mcg">Microgram (µg)</option>
+                    </select>
+                </div>
+                
+                <button id="convert-mass">Convert</button>
+                <div class="result" id="mass-result"></div>
+            </div>
+        </div>
+        
+        <!-- Volume Units Tab -->
+        <div id="volume" class="tab-content">
+            <h2>Volume Units in Pharmacy</h2>
+            <p>Volume refers to the amount of space occupied by an object or substance. In pharmacy calculations, volume is typically measured in liters (L), milliliters (mL), or microliters (µL).</p>
+            
+            <div class="units-grid">
+                <div class="unit-card">
+                    <h3>Microliter (µL)</h3>
+                    <p>1 µL = 0.001 mL</p>
+                    <p><em>Used for very small liquid volumes</em></p>
+                </div>
+                <div class="unit-card">
+                    <h3>Milliliter (mL)</h3>
+                    <p>1 mL = 0.001 L</p>
+                    <p><em>Most common unit for liquid medications</em></p>
+                </div>
+                <div class="unit-card">
+                    <h3>Liter (L)</h3>
+                    <p>1 L = 1000 mL</p>
+                    <p><em>Used for IV bags and large containers</em></p>
+                </div>
+            </div>
+            
+            <div class="conversion-example">
+                <h3>Volume Conversion Practice</h3>
+                <p>Convert 1.5 L to mL:</p>
+                <div class="conversion-formula">1.5 L × (1000 mL / 1 L) = 1500 mL</div>
+                <p>Convert 500 mL to L:</p>
+                <div class="conversion-formula">500 mL × (1 L / 1000 mL) = 0.5 L</div>
+            </div>
+            
+            <div class="practice-area">
+                <h3>Try a Volume Conversion</h3>
+                <div class="input-group">
+                    <label for="volume-value">Value:</label>
+                    <input type="number" id="volume-value" value="100" min="0" step="0.01">
+                </div>
+                
+                <div class="input-group">
+                    <label for="volume-from">From Unit:</label>
+                    <select id="volume-from">
+                        <option value="L">Liter (L)</option>
+                        <option value="mL" selected>Milliliter (mL)</option>
+                        <option value="uL">Microliter (µL)</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="volume-to">To Unit:</label>
+                    <select id="volume-to">
+                        <option value="L" selected>Liter (L)</option>
+                        <option value="mL">Milliliter (mL)</option>
+                        <option value="uL">Microliter (µL)</option>
+                    </select>
+                </div>
+                
+                <button id="convert-volume">Convert</button>
+                <div class="result" id="volume-result"></div>
+            </div>
+        </div>
+        
+        <!-- Concentration Tab -->
+        <div id="concentration" class="tab-content">
+            <h2>Concentration in Pharmacy</h2>
+            <p>Concentration refers to the amount of a substance per unit volume. It is an important concept in pharmacy calculations, especially when preparing medications.</p>
+            
+            <div class="card">
+                <h3>Common Concentration Units</h3>
+                <ul>
+                    <li><strong>Micrograms per milliliter (µg/mL):</strong> Used for very dilute solutions</li>
+                    <li><strong>Milligrams per milliliter (mg/mL):</strong> Most common unit for injectable medications</li>
+                    <li><strong>Grams per liter (g/L):</strong> Used for IV solutions and infusions</li>
+                </ul>
+                
+                <div class="conversion-formula">1 g/L = 1 mg/mL</div>
+                <div class="conversion-formula">1 mg/mL = 1000 µg/mL</div>
+            </div>
+            
+            <div class="conversion-example">
+                <h3>Concentration Calculation Example</h3>
+                <p>If you have a solution with 2 g of drug in 500 mL, what is the concentration in mg/mL?</p>
+                <div class="conversion-formula">
+                    Step 1: Convert 2 g to mg = 2000 mg<br>
+                    Step 2: Concentration = Amount / Volume = 2000 mg / 500 mL = 4 mg/mL
+                </div>
+            </div>
+            
+            <div class="practice-area">
+                <h3>Concentration Calculator</h3>
+                <p>Calculate the concentration given the amount and volume:</p>
+                
+                <div class="input-group">
+                    <label for="amount">Amount of Drug:</label>
+                    <input type="number" id="amount" value="250" min="0" step="0.01">
+                    <select id="amount-unit">
+                        <option value="g">g</option>
+                        <option value="mg" selected>mg</option>
+                        <option value="mcg">µg</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="total-volume">Total Volume:</label>
+                    <input type="number" id="total-volume" value="500" min="0" step="0.01">
+                    <select id="volume-unit">
+                        <option value="L">L</option>
+                        <option value="mL" selected>mL</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="target-unit">Concentration Unit:</label>
+                    <select id="target-unit">
+                        <option value="g/L">g/L</option>
+                        <option value="mg/mL" selected>mg/mL</option>
+                        <option value="mcg/mL">µg/mL</option>
+                    </select>
+                </div>
+                
+                <button id="calculate-concentration">Calculate Concentration</button>
+                <div class="result" id="concentration-result"></div>
+            </div>
+        </div>
+        
+        <!-- Other Systems Tab -->
+        <div id="other" class="tab-content">
+            <h2>Other Measurement Systems</h2>
+            
+            <div class="card">
+                <h3>Apothecary System</h3>
+                <p>An older system of measurement that was commonly used in pharmacy practice.</p>
+                <ul>
+                    <li><strong>Grain (gr):</strong> 1 gr ≈ 64.8 mg</li>
+                    <li><strong>Dram (dr):</strong> 1 dr ≈ 3.89 g</li>
+                    <li><strong>Ounce (oz):</strong> 1 oz ≈ 31.1 g</li>
+                    <li><strong>Pound (lb):</strong> 1 lb ≈ 373.2 g</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Household System</h3>
+                <p>Commonly used in everyday life, helpful for patient instructions.</p>
+                <ul>
+                    <li><strong>Teaspoon (tsp):</strong> 1 tsp ≈ 5 mL</li>
+                    <li><strong>Tablespoon (tbsp):</strong> 1 tbsp ≈ 15 mL</li>
+                    <li><strong>Fluid ounce (fl oz):</strong> 1 fl oz ≈ 29.6 mL</li>
+                    <li><strong>Cup (c):</strong> 1 c ≈ 236.6 mL</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Specialized Units</h3>
+                <ul>
+                    <li><strong>International Units (IU):</strong> Measures biological activity (varies by substance)</li>
+                    <li><strong>Milliequivalents (mEq):</strong> Reflects chemical combining power</li>
+                    <li><strong>Millimoles (mmol):</strong> Based on molecular weight of substance</li>
+                </ul>
+            </div>
+            
+            <div class="conversion-tool">
+                <h3>System Conversion Tool</h3>
+                <div class="converter-row">
+                    <input type="number" id="system-value" value="1" min="0" step="0.01">
+                    <select id="system-from">
+                        <option value="gr">Grains (gr)</option>
+                        <option value="tsp">Teaspoons (tsp)</option>
+                        <option value="tbsp">Tablespoons (tbsp)</option>
+                        <option value="floz">Fluid Ounces (fl oz)</option>
+                    </select>
+                    <span> = </span>
+                    <input type="number" id="system-result" readonly>
+                    <select id="system-to">
+                        <option value="mg">Milligrams (mg)</option>
+                        <option value="g">Grams (g)</option>
+                        <option value="mL" selected>Milliliters (mL)</option>
+                    </select>
+                </div>
+                <button id="convert-system">Convert</button>
+                <div class="result" id="system-conversion-result"></div>
+            </div>
+        </div>
+        
+        <!-- Practice Exercises Tab -->
+        <div id="practice" class="tab-content">
+            <h2>Practice Exercises</h2>
+            <p>Test your understanding of pharmacy measurement conversions with these 21+ exercises. Check your answers and track your progress.</p>
+            
+            <div class="score-display">
+                <div id="score-text">Your Score: <span id="score">0</span> out of <span id="total-exercises">21</span> correct</div>
+                <div id="score-percentage">Percentage: 0%</div>
+                <button id="reset-all-exercises" style="margin-top: 10px;">Reset All Exercises</button>
+            </div>
+            
+            <div class="exercise-category">
+                <h3>Category 1: Basic Mass Conversions (5 exercises)</h3>
+                <div class="exercises-grid">
+                    <!-- Exercise 1 -->
+                    <div class="exercise-card" id="exercise-card-1">
+                        <h4>Exercise 1</h4>
+                        <p>A prescription calls for 0.125 g of a drug. How many milligrams is this?</p>
+                        <div class="input-group">
+                            <label for="exercise1">Your answer (in mg):</label>
+                            <input type="number" id="exercise1" step="0.01" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="1">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise1-hint">Show Hint</button>
+                        <div class="result" id="result1"></div>
+                        <div id="exercise1-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> Remember that 1 g = 1000 mg, so multiply by 1000.
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 2 -->
+                    <div class="exercise-card" id="exercise-card-2">
+                        <h4>Exercise 2</h4>
+                        <p>Convert 750 mg to grams.</p>
+                        <div class="input-group">
+                            <label for="exercise2">Your answer (in g):</label>
+                            <input type="number" id="exercise2" step="0.001" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="2">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise2-hint">Show Hint</button>
+                        <div class="result" id="result2"></div>
+                        <div id="exercise2-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> Since 1 g = 1000 mg, divide by 1000.
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 3 -->
+                    <div class="exercise-card" id="exercise-card-3">
+                        <h4>Exercise 3</h4>
+                        <p>A medication is dosed at 500 µg. How many milligrams is this?</p>
+                        <div class="input-group">
+                            <label for="exercise3">Your answer (in mg):</label>
+                            <input type="number" id="exercise3" step="0.01" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="3">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise3-hint">Show Hint</button>
+                        <div class="result" id="result3"></div>
+                        <div id="exercise3-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> 1 mg = 1000 µg, so divide by 1000.
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 4 -->
+                    <div class="exercise-card" id="exercise-card-4">
+                        <h4>Exercise 4</h4>
+                        <p>Convert 2.5 kg to grams.</p>
+                        <div class="input-group">
+                            <label for="exercise4">Your answer (in g):</label>
+                            <input type="number" id="exercise4" step="0.1" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="4">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise4-hint">Show Hint</button>
+                        <div class="result" id="result4"></div>
+                        <div id="exercise4-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> 1 kg = 1000 g, so multiply by 1000.
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 5 -->
+                    <div class="exercise-card" id="exercise-card-5">
+                        <h4>Exercise 5</h4>
+                        <p>A patient needs 0.25 mg of a drug, but it's available in 125 µg tablets. How many tablets should be given?</p>
+                        <div class="input-group">
+                            <label for="exercise5">Your answer (tablets):</label>
+                            <input type="number" id="exercise5" step="0.5" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="5">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise5-hint">Show Hint</button>
+                        <div class="result" id="result5"></div>
+                        <div id="exercise5-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> Convert 0.25 mg to µg first (0.25 mg = 250 µg), then divide by 125 µg per tablet.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-category">
+                <h3>Category 2: Volume Conversions (5 exercises)</h3>
+                <div class="exercises-grid">
+                    <!-- Exercise 6 -->
+                    <div class="exercise-card" id="exercise-card-6">
+                        <h4>Exercise 6</h4>
+                        <p>A patient needs to take 2 teaspoons of medication. How many milliliters is this?</p>
+                        <div class="input-group">
+                            <label for="exercise6">Your answer (in mL):</label>
+                            <input type="number" id="exercise6" step="0.1" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="6">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise6-hint">Show Hint</button>
+                        <div class="result" id="result6"></div>
+                        <div id="exercise6-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> 1 teaspoon ≈ 5 mL, so multiply by 5.
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 7 -->
+                    <div class="exercise-card" id="exercise-card-7">
+                        <h4>Exercise 7</h4>
+                        <p>Convert 1.5 L to milliliters.</p>
+                        <div class="input-group">
+                            <label for="exercise7">Your answer (in mL):</label>
+                            <input type="number" id="exercise7" step="1" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="7">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise7-hint">Show Hint</button>
+                        <div class="result" id="result7"></div>
+                        <div id="exercise7-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> 1 L = 1000 mL, so multiply by 1000.
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 8 -->
+                    <div class="exercise-card" id="exercise-card-8">
+                        <h4>Exercise 8</h4>
+                        <p>An IV bag contains 500 mL. How many liters is this?</p>
+                        <div class="input-group">
+                            <label for="exercise8">Your answer (in L):</label>
+                            <input type="number" id="exercise8" step="0.01" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="8">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise8-hint">Show Hint</button>
+                        <div class="result" id="result8"></div>
+                        <div id="exercise8-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> 1000 mL = 1 L, so divide by 1000.
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 9 -->
+                    <div class="exercise-card" id="exercise-card-9">
+                        <h4>Exercise 9</h4>
+                        <p>A medication order is for 2 tablespoons. How many milliliters is this?</p>
+                        <div class="input-group">
+                            <label for="exercise9">Your answer (in mL):</label>
+                            <input type="number" id="exercise9" step="1" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="9">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise9-hint">Show Hint</button>
+                        <div class="result" id="result9"></div>
+                        <div id="exercise9-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> 1 tablespoon ≈ 15 mL, so multiply by 15.
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 10 -->
+                    <div class="exercise-card" id="exercise-card-10">
+                        <h4>Exercise 10</h4>
+                        <p>Convert 0.25 mL to microliters.</p>
+                        <div class="input-group">
+                            <label for="exercise10">Your answer (in µL):</label>
+                            <input type="number" id="exercise10" step="1" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="10">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise10-hint">Show Hint</button>
+                        <div class="result" id="result10"></div>
+                        <div id="exercise10-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> 1 mL = 1000 µL, so multiply by 1000.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-category">
+                <h3>Category 3: Concentration Calculations (4 exercises)</h3>
+                <div class="exercises-grid">
+                    <!-- Exercise 11 -->
+                    <div class="exercise-card" id="exercise-card-11">
+                        <h4>Exercise 11</h4>
+                        <p>You have 400 mg of a drug dissolved in 200 mL of solution. What is the concentration in mg/mL?</p>
+                        <div class="input-group">
+                            <label for="exercise11">Your answer (in mg/mL):</label>
+                            <input type="number" id="exercise11" step="0.01" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="11">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise11-hint">Show Hint</button>
+                        <div class="result" id="result11"></div>
+                        <div id="exercise11-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> Concentration = Amount / Volume = 400 mg ÷ 200 mL
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 12 -->
+                    <div class="exercise-card" id="exercise-card-12">
+                        <h4>Exercise 12</h4>
+                        <p>A solution has a concentration of 5 mg/mL. How many mg are in 30 mL of this solution?</p>
+                        <div class="input-group">
+                            <label for="exercise12">Your answer (in mg):</label>
+                            <input type="number" id="exercise12" step="1" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="12">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise12-hint">Show Hint</button>
+                        <div class="result" id="result12"></div>
+                        <div id="exercise12-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> Amount = Concentration × Volume = 5 mg/mL × 30 mL
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 13 -->
+                    <div class="exercise-card" id="exercise-card-13">
+                        <h4>Exercise 13</h4>
+                        <p>A medication comes as 2 g in 500 mL. What is the concentration in mg/mL?</p>
+                        <div class="input-group">
+                            <label for="exercise13">Your answer (in mg/mL):</label>
+                            <input type="number" id="exercise13" step="0.1" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="13">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise13-hint">Show Hint</button>
+                        <div class="result" id="result13"></div>
+                        <div id="exercise13-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> First convert 2 g to mg (2000 mg), then divide by 500 mL.
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 14 -->
+                    <div class="exercise-card" id="exercise-card-14">
+                        <h4>Exercise 14</h4>
+                        <p>A solution has 50 µg/mL concentration. How many mg are in 100 mL of this solution?</p>
+                        <div class="input-group">
+                            <label for="exercise14">Your answer (in mg):</label>
+                            <input type="number" id="exercise14" step="0.01" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="14">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise14-hint">Show Hint</button>
+                        <div class="result" id="result14"></div>
+                        <div id="exercise14-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> First calculate µg: 50 µg/mL × 100 mL = 5000 µg, then convert to mg (divide by 1000).
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-category">
+                <h3>Category 4: Apothecary & Household Systems (4 exercises)</h3>
+                <div class="exercises-grid">
+                    <!-- Exercise 15 -->
+                    <div class="exercise-card" id="exercise-card-15">
+                        <h4>Exercise 15</h4>
+                        <p>A medication is prescribed as gr 1/4. How many milligrams is this? (Round to nearest whole number)</p>
+                        <div class="input-group">
+                            <label for="exercise15">Your answer (in mg):</label>
+                            <input type="number" id="exercise15" step="1" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="15">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise15-hint">Show Hint</button>
+                        <div class="result" id="result15"></div>
+                        <div id="exercise15-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> 1 grain ≈ 64.8 mg, so multiply 0.25 by 64.8.
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 16 -->
+                    <div class="exercise-card" id="exercise-card-16">
+                        <h4>Exercise 16</h4>
+                        <p>Convert 3 fluid ounces to milliliters. (Round to nearest whole number)</p>
+                        <div class="input-group">
+                            <label for="exercise16">Your answer (in mL):</label>
+                            <input type="number" id="exercise16" step="1" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="16">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise16-hint">Show Hint</button>
+                        <div class="result" id="result16"></div>
+                        <div id="exercise16-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> 1 fl oz ≈ 29.6 mL, so multiply by 3.
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 17 -->
+                    <div class="exercise-card" id="exercise-card-17">
+                        <h4>Exercise 17</h4>
+                        <p>Convert 1 dram to grams. (Round to two decimal places)</p>
+                        <div class="input-group">
+                            <label for="exercise17">Your answer (in g):</label>
+                            <input type="number" id="exercise17" step="0.01" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="17">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise17-hint">Show Hint</button>
+                        <div class="result" id="result17"></div>
+                        <div id="exercise17-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> 1 dram ≈ 3.89 g.
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 18 -->
+                    <div class="exercise-card" id="exercise-card-18">
+                        <h4>Exercise 18</h4>
+                        <p>A recipe calls for 1 cup of water. How many milliliters is this? (Round to nearest whole number)</p>
+                        <div class="input-group">
+                            <label for="exercise18">Your answer (in mL):</label>
+                            <input type="number" id="exercise18" step="1" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="18">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise18-hint">Show Hint</button>
+                        <div class="result" id="result18"></div>
+                        <div id="exercise18-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> 1 cup ≈ 236.6 mL.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-category">
+                <h3>Category 5: Advanced Applications (3 exercises)</h3>
+                <div class="exercises-grid">
+                    <!-- Exercise 19 -->
+                    <div class="exercise-card" id="exercise-card-19">
+                        <h4>Exercise 19</h4>
+                        <p>A patient needs 150 mg of a drug. The available solution is 50 mg/mL. How many mL should be administered?</p>
+                        <div class="input-group">
+                            <label for="exercise19">Your answer (in mL):</label>
+                            <input type="number" id="exercise19" step="0.1" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="19">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise19-hint">Show Hint</button>
+                        <div class="result" id="result19"></div>
+                        <div id="exercise19-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> Volume = Dose needed ÷ Concentration = 150 mg ÷ 50 mg/mL
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 20 -->
+                    <div class="exercise-card" id="exercise-card-20">
+                        <h4>Exercise 20</h4>
+                        <p>You have 1 L of a 10% w/v solution. How many grams of drug are in the solution? (10% w/v means 10 g per 100 mL)</p>
+                        <div class="input-group">
+                            <label for="exercise20">Your answer (in g):</label>
+                            <input type="number" id="exercise20" step="1" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="20">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise20-hint">Show Hint</button>
+                        <div class="result" id="result20"></div>
+                        <div id="exercise20-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> 10% w/v = 10 g/100 mL = 100 g/L. Since you have 1 L, multiply by 1.
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise 21 -->
+                    <div class="exercise-card" id="exercise-card-21">
+                        <h4>Exercise 21</h4>
+                        <p>A child weighing 20 kg needs 15 mg/kg of a drug. The drug comes as 250 mg/5 mL. How many mL should be given?</p>
+                        <div class="input-group">
+                            <label for="exercise21">Your answer (in mL):</label>
+                            <input type="number" id="exercise21" step="0.1" class="small-input">
+                        </div>
+                        <button class="small-button check-exercise" data-exercise="21">Check Answer</button>
+                        <button class="small-button show-hint" data-hint="exercise21-hint">Show Hint</button>
+                        <div class="result" id="result21"></div>
+                        <div id="exercise21-hint" style="display: none; margin-top: 10px; padding: 10px; background-color: #eef5ff; border-radius: 5px;">
+                            <strong>Hint:</strong> Step 1: Calculate total dose: 20 kg × 15 mg/kg = 300 mg. Step 2: Calculate concentration: 250 mg/5 mL = 50 mg/mL. Step 3: Calculate volume: 300 mg ÷ 50 mg/mL.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-navigation">
+                <button id="check-all-exercises">Check All Exercises</button>
+                <button id="show-all-hints">Show All Hints</button>
+                <button id="hide-all-hints">Hide All Hints</button>
+            </div>
+        </div>
+        
+        <!-- Measurement Tools Tab -->
+        <div id="tools" class="tab-content">
+            <h2>Measurement Tools in Pharmacy</h2>
+            <p>To make precise measurements in pharmacy, various tools are utilized. Each tool has specific gradations or markings to ensure accurate measurements.</p>
+            
+            <div class="measurement-tool">
+                <div class="tool-icon">💉</div>
+                <div>
+                    <h3>Syringes</h3>
+                    <p>Used for accurate measurement of small liquid volumes, especially for injectable medications. Common sizes: 1 mL, 3 mL, 5 mL, 10 mL.</p>
+                </div>
+            </div>
+            
+            <div class="measurement-tool">
+                <div class="tool-icon">📏</div>
+                <div>
+                    <h3>Graduated Cylinders</h3>
+                    <p>Used for measuring larger volumes of liquids with good accuracy. Available in various sizes from 10 mL to 1000 mL.</p>
+                </div>
+            </div>
+            
+            <div class="measurement-tool">
+                <div class="tool-icon">🥄</div>
+                <div>
+                    <h3>Measuring Spoons</h3>
+                    <p>Used in compounding and for patient instructions. Typically include 1/4 tsp, 1/2 tsp, 1 tsp, and 1 tbsp measurements.</p>
+                </div>
+            </div>
+            
+            <div class="measurement-tool">
+                <div class="tool-icon">⚖️</div>
+                <div>
+                    <h3>Electronic Balances</h3>
+                    <p>Used to weigh powders or other solid medications with high precision. Can measure down to 0.001 g (1 mg) or better.</p>
+                </div>
+            </div>
+            
+            <div class="measurement-tool">
+                <div class="tool-icon">🏺</div>
+                <div>
+                    <h3>Compounding Scales</h3>
+                    <p>Specialized scales for pharmaceutical compounding that meet legal metrology requirements.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Accuracy and Precision</h3>
+                <p><strong>Accuracy</strong> refers to how closely the measured value matches the true value.</p>
+                <p><strong>Precision</strong> refers to the consistency of repeated measurements.</p>
+                <p>In pharmacy, we need both accuracy and precision to ensure patient safety.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Quality Control</h3>
+                <p>Quality control measures are implemented to ensure that medications prepared in a pharmacy meet required standards:</p>
+                <ul>
+                    <li>Regular calibration of measurement equipment</li>
+                    <li>Double-checking calculations</li>
+                    <li>Following standard operating procedures</li>
+                    <li>Documentation and verification</li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Pharmacy Calculations: Measurement Basics Learning Simulation</p>
+            <p>Remember: Accurate measurement is essential for patient safety in pharmacy practice.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Tab navigation functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all tabs and buttons
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding tab content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Mass conversion functionality
+        document.getElementById('convert-mass').addEventListener('click', () => {
+            const value = parseFloat(document.getElementById('mass-value').value);
+            const fromUnit = document.getElementById('mass-from').value;
+            const toUnit = document.getElementById('mass-to').value;
+            const resultDiv = document.getElementById('mass-result');
+            
+            if (isNaN(value) || value < 0) {
+                resultDiv.textContent = "Please enter a valid positive number";
+                resultDiv.className = "result incorrect";
+                return;
+            }
+            
+            // Convert to grams first
+            let grams;
+            switch(fromUnit) {
+                case 'kg': grams = value * 1000; break;
+                case 'g': grams = value; break;
+                case 'mg': grams = value / 1000; break;
+                case 'mcg': grams = value / 1000000; break;
+            }
+            
+            // Convert from grams to target unit
+            let result;
+            switch(toUnit) {
+                case 'kg': result = grams / 1000; break;
+                case 'g': result = grams; break;
+                case 'mg': result = grams * 1000; break;
+                case 'mcg': result = grams * 1000000; break;
+            }
+            
+            // Format result
+            const fromLabels = {kg: 'kg', g: 'g', mg: 'mg', mcg: 'µg'};
+            const toLabels = {kg: 'kg', g: 'g', mg: 'mg', mcg: 'µg'};
+            
+            resultDiv.textContent = `${value} ${fromLabels[fromUnit]} = ${result.toFixed(6)} ${toLabels[toUnit]}`;
+            resultDiv.className = "result correct";
+        });
+        
+        // Volume conversion functionality
+        document.getElementById('convert-volume').addEventListener('click', () => {
+            const value = parseFloat(document.getElementById('volume-value').value);
+            const fromUnit = document.getElementById('volume-from').value;
+            const toUnit = document.getElementById('volume-to').value;
+            const resultDiv = document.getElementById('volume-result');
+            
+            if (isNaN(value) || value < 0) {
+                resultDiv.textContent = "Please enter a valid positive number";
+                resultDiv.className = "result incorrect";
+                return;
+            }
+            
+            // Convert to mL first
+            let mL;
+            switch(fromUnit) {
+                case 'L': mL = value * 1000; break;
+                case 'mL': mL = value; break;
+                case 'uL': mL = value / 1000; break;
+            }
+            
+            // Convert from mL to target unit
+            let result;
+            switch(toUnit) {
+                case 'L': result = mL / 1000; break;
+                case 'mL': result = mL; break;
+                case 'uL': result = mL * 1000; break;
+            }
+            
+            // Format result
+            const fromLabels = {L: 'L', mL: 'mL', uL: 'µL'};
+            const toLabels = {L: 'L', mL: 'mL', uL: 'µL'};
+            
+            resultDiv.textContent = `${value} ${fromLabels[fromUnit]} = ${result.toFixed(6)} ${toLabels[toUnit]}`;
+            resultDiv.className = "result correct";
+        });
+        
+        // Concentration calculation functionality
+        document.getElementById('calculate-concentration').addEventListener('click', () => {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const amountUnit = document.getElementById('amount-unit').value;
+            const volume = parseFloat(document.getElementById('total-volume').value);
+            const volumeUnit = document.getElementById('volume-unit').value;
+            const targetUnit = document.getElementById('target-unit').value;
+            const resultDiv = document.getElementById('concentration-result');
+            
+            if (isNaN(amount) || amount < 0 || isNaN(volume) || volume <= 0) {
+                resultDiv.textContent = "Please enter valid positive numbers";
+                resultDiv.className = "result incorrect";
+                return;
+            }
+            
+            // Convert amount to mg
+            let amountMg;
+            switch(amountUnit) {
+                case 'g': amountMg = amount * 1000; break;
+                case 'mg': amountMg = amount; break;
+                case 'mcg': amountMg = amount / 1000; break;
+            }
+            
+            // Convert volume to mL
+            let volumeMl;
+            switch(volumeUnit) {
+                case 'L': volumeMl = volume * 1000; break;
+                case 'mL': volumeMl = volume; break;
+            }
+            
+            // Calculate concentration in mg/mL
+            const concentrationMgMl = amountMg / volumeMl;
+            
+            // Convert to target unit
+            let result;
+            let unitLabel;
+            switch(targetUnit) {
+                case 'mg/mL': 
+                    result = concentrationMgMl;
+                    unitLabel = 'mg/mL';
+                    break;
+                case 'g/L':
+                    result = concentrationMgMl; // 1 mg/mL = 1 g/L
+                    unitLabel = 'g/L';
+                    break;
+                case 'mcg/mL':
+                    result = concentrationMgMl * 1000;
+                    unitLabel = 'µg/mL';
+                    break;
+            }
+            
+            resultDiv.textContent = `Concentration = ${result.toFixed(4)} ${unitLabel}`;
+            resultDiv.className = "result correct";
+        });
+        
+        // System conversion functionality
+        document.getElementById('convert-system').addEventListener('click', () => {
+            const value = parseFloat(document.getElementById('system-value').value);
+            const fromUnit = document.getElementById('system-from').value;
+            const toUnit = document.getElementById('system-to').value;
+            const resultDiv = document.getElementById('system-conversion-result');
+            
+            if (isNaN(value) || value < 0) {
+                resultDiv.textContent = "Please enter a valid positive number";
+                resultDiv.className = "result incorrect";
+                return;
+            }
+            
+            // Conversion factors
+            const factors = {
+                // Apothecary to metric
+                'gr': {mg: 64.79891, g: 0.0648, mL: null},
+                // Household to metric
+                'tsp': {mg: null, g: null, mL: 5},
+                'tbsp': {mg: null, g: null, mL: 15},
+                'floz': {mg: null, g: null, mL: 29.5735}
+            };
+            
+            // Check if conversion is possible
+            if (factors[fromUnit][toUnit] === null) {
+                resultDiv.textContent = `Cannot convert ${fromUnit} to ${toUnit} - incompatible units`;
+                resultDiv.className = "result incorrect";
+                return;
+            }
+            
+            const result = value * factors[fromUnit][toUnit];
+            document.getElementById('system-result').value = result.toFixed(4);
+            
+            // Format result message
+            const fromLabels = {gr: 'grains', tsp: 'teaspoons', tbsp: 'tablespoons', floz: 'fluid ounces'};
+            const toLabels = {mg: 'mg', g: 'g', mL: 'mL'};
+            
+            resultDiv.textContent = `${value} ${fromLabels[fromUnit]} ≈ ${result.toFixed(4)} ${toLabels[toUnit]}`;
+            resultDiv.className = "result correct";
+        });
+        
+        // Exercise answers and scoring
+        const exerciseAnswers = {
+            1: 125,
+            2: 0.75,
+            3: 0.5,
+            4: 2500,
+            5: 2,
+            6: 10,
+            7: 1500,
+            8: 0.5,
+            9: 30,
+            10: 250,
+            11: 2,
+            12: 150,
+            13: 4,
+            14: 5,
+            15: 16,
+            16: 89,
+            17: 3.89,
+            18: 237,
+            19: 3,
+            20: 100,
+            21: 6
+        };
+        
+        const exerciseTolerances = {
+            1: 0.01,
+            2: 0.001,
+            3: 0.01,
+            4: 0.1,
+            5: 0,
+            6: 0.1,
+            7: 1,
+            8: 0.01,
+            9: 1,
+            10: 1,
+            11: 0.01,
+            12: 1,
+            13: 0.1,
+            14: 0.01,
+            15: 0.5,
+            16: 1,
+            17: 0.01,
+            18: 1,
+            19: 0.1,
+            20: 1,
+            21: 0.1
+        };
+        
+        // Track which exercises are completed
+        let completedExercises = {};
+        let score = 0;
+        const totalExercises = 21;
+        
+        // Update score display
+        function updateScore() {
+            document.getElementById('score').textContent = score;
+            document.getElementById('total-exercises').textContent = totalExercises;
+            const percentage = Math.round((score / totalExercises) * 100);
+            document.getElementById('score-percentage').textContent = `Percentage: ${percentage}%`;
+        }
+        
+        // Check exercise functionality
+        document.querySelectorAll('.check-exercise').forEach(button => {
+            button.addEventListener('click', function() {
+                const exerciseNum = this.getAttribute('data-exercise');
+                const answer = parseFloat(document.getElementById(`exercise${exerciseNum}`).value);
+                const resultDiv = document.getElementById(`result${exerciseNum}`);
+                const exerciseCard = document.getElementById(`exercise-card-${exerciseNum}`);
+                
+                if (isNaN(answer)) {
+                    resultDiv.textContent = "Please enter a number";
+                    resultDiv.className = "result incorrect";
+                    exerciseCard.classList.remove('correct', 'incorrect');
+                    exerciseCard.classList.add('incorrect');
+                    return;
+                }
+                
+                const correctAnswer = exerciseAnswers[exerciseNum];
+                const tolerance = exerciseTolerances[exerciseNum];
+                
+                // Special handling for rounding exercises
+                let isCorrect = false;
+                if (exerciseNum == 15 || exerciseNum == 16 || exerciseNum == 18) {
+                    isCorrect = Math.abs(answer - correctAnswer) <= 1; // Within 1 for rounding
+                } else {
+                    isCorrect = Math.abs(answer - correctAnswer) < tolerance;
+                }
+                
+                if (isCorrect) {
+                    resultDiv.textContent = `Correct! ${getCorrectExplanation(exerciseNum)}`;
+                    resultDiv.className = "result correct";
+                    exerciseCard.classList.remove('correct', 'incorrect');
+                    exerciseCard.classList.add('correct');
+                    
+                    // Update score if not already completed
+                    if (!completedExercises[exerciseNum]) {
+                        completedExercises[exerciseNum] = true;
+                        score++;
+                        updateScore();
+                    }
+                } else {
+                    resultDiv.textContent = `Not quite. ${getCorrectExplanation(exerciseNum)}`;
+                    resultDiv.className = "result incorrect";
+                    exerciseCard.classList.remove('correct', 'incorrect');
+                    exerciseCard.classList.add('incorrect');
+                }
+            });
+        });
+        
+        // Function to get correct answer explanation
+        function getCorrectExplanation(exerciseNum) {
+            const explanations = {
+                1: "0.125 g × 1000 = 125 mg",
+                2: "750 mg ÷ 1000 = 0.75 g",
+                3: "500 µg ÷ 1000 = 0.5 mg",
+                4: "2.5 kg × 1000 = 2500 g",
+                5: "0.25 mg = 250 µg; 250 µg ÷ 125 µg/tablet = 2 tablets",
+                6: "2 tsp × 5 mL/tsp = 10 mL",
+                7: "1.5 L × 1000 = 1500 mL",
+                8: "500 mL ÷ 1000 = 0.5 L",
+                9: "2 tbsp × 15 mL/tbsp = 30 mL",
+                10: "0.25 mL × 1000 = 250 µL",
+                11: "400 mg ÷ 200 mL = 2 mg/mL",
+                12: "5 mg/mL × 30 mL = 150 mg",
+                13: "2 g = 2000 mg; 2000 mg ÷ 500 mL = 4 mg/mL",
+                14: "50 µg/mL × 100 mL = 5000 µg = 5 mg",
+                15: "1/4 gr = 0.25 gr; 0.25 × 64.8 mg/gr ≈ 16 mg",
+                16: "3 fl oz × 29.6 mL/fl oz ≈ 89 mL",
+                17: "1 dr ≈ 3.89 g",
+                18: "1 cup × 236.6 mL/cup ≈ 237 mL",
+                19: "150 mg ÷ 50 mg/mL = 3 mL",
+                20: "10% w/v = 10 g/100 mL = 100 g/L; 1 L contains 100 g",
+                21: "Dose: 20 kg × 15 mg/kg = 300 mg; Concentration: 250 mg/5 mL = 50 mg/mL; Volume: 300 mg ÷ 50 mg/mL = 6 mL"
+            };
+            return `The correct answer is ${exerciseAnswers[exerciseNum]}. ${explanations[exerciseNum]}`;
+        }
+        
+        // Show hint functionality
+        document.querySelectorAll('.show-hint').forEach(button => {
+            button.addEventListener('click', function() {
+                const hintId = this.getAttribute('data-hint');
+                const hintDiv = document.getElementById(hintId);
+                if (hintDiv.style.display === 'none' || hintDiv.style.display === '') {
+                    hintDiv.style.display = 'block';
+                    this.textContent = 'Hide Hint';
+                } else {
+                    hintDiv.style.display = 'none';
+                    this.textContent = 'Show Hint';
+                }
+            });
+        });
+        
+        // Check all exercises
+        document.getElementById('check-all-exercises').addEventListener('click', () => {
+            document.querySelectorAll('.check-exercise').forEach(button => {
+                button.click();
+            });
+        });
+        
+        // Show all hints
+        document.getElementById('show-all-hints').addEventListener('click', () => {
+            document.querySelectorAll('[id$="-hint"]').forEach(hintDiv => {
+                hintDiv.style.display = 'block';
+            });
+            document.querySelectorAll('.show-hint').forEach(button => {
+                button.textContent = 'Hide Hint';
+            });
+        });
+        
+        // Hide all hints
+        document.getElementById('hide-all-hints').addEventListener('click', () => {
+            document.querySelectorAll('[id$="-hint"]').forEach(hintDiv => {
+                hintDiv.style.display = 'none';
+            });
+            document.querySelectorAll('.show-hint').forEach(button => {
+                button.textContent = 'Show Hint';
+            });
+        });
+        
+        // Reset all exercises
+        document.getElementById('reset-all-exercises').addEventListener('click', () => {
+            // Reset all input fields
+            for (let i = 1; i <= 21; i++) {
+                document.getElementById(`exercise${i}`).value = '';
+                document.getElementById(`result${i}`).textContent = '';
+                document.getElementById(`result${i}`).className = "result";
+                document.getElementById(`exercise-card-${i}`).classList.remove('correct', 'incorrect');
+                const hintDiv = document.getElementById(`exercise${i}-hint`);
+                if (hintDiv) hintDiv.style.display = 'none';
+            }
+            
+            // Reset score
+            completedExercises = {};
+            score = 0;
+            updateScore();
+            
+            // Reset hint buttons
+            document.querySelectorAll('.show-hint').forEach(button => {
+                button.textContent = 'Show Hint';
+            });
+        });
+        
+        // Initialize system conversion result field
+        document.getElementById('system-result').value = '0';
+        
+        // Add some interactivity to the visualization
+        document.querySelectorAll('.measurement-bar').forEach(bar => {
+            bar.addEventListener('mouseover', function() {
+                this.style.backgroundColor = '#2c3e6e';
+            });
+            
+            bar.addEventListener('mouseout', function() {
+                this.style.backgroundColor = '#4a6fa5';
+            });
+        });
+        
+        // Initialize score display
+        updateScore();
+    </script>
+</body>
+</html>
