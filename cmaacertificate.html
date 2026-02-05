@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>AlliedRx CMAA • Certificate Requirements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        :root {
+            --color-primary: #af4bef;
+            --color-primary-soft: #d492ff;
+            --color-accent: #8380f0;
+            --color-success: #00b894;
+            --color-warning: #fdcb6e;
+            --color-error: #e17055;
+            --color-bg: #f7f5fb;
+            --color-text: #2b2b2b;
+            --color-muted: #6c6880;
+            --radius-lg: 24px;
+            --shadow-soft: 0 18px 45px rgba(23, 10, 61, 0.18);
+            --shadow-hover: 0 25px 50px rgba(175, 75, 239, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            padding: 24px;
+            background: radial-gradient(circle at top left, #ffffff 0%, #f1ecff 40%, var(--color-bg) 100%);
+            color: var(--color-text);
+            -webkit-text-size-adjust: 100%;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+        }
+
+        .page {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            padding: 28px 30px 32px 30px;
+            display: grid;
+            grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.4fr);
+            gap: 28px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @keyframes checkmark {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 900px) {
+            .page {
+                grid-template-columns: 1fr;
+                padding: 22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0;
+            }
+            .page {
+                border-radius: 0;
+                box-shadow: none;
+                padding: 18px 14px 22px;
+                gap: 22px;
+            }
+        }
+
+        /* Header & branding */
+        .brand-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .brand-logo {
+            height: 40px;
+            width: auto;
+            max-width: 100%;
+            filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .course-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            max-width: 100%;
+        }
+
+        .course-name {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--color-muted);
+            white-space: normal;
+        }
+
+        .certificate-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            font-size: 0.76rem;
+            font-weight: 600;
+            color: white;
+            white-space: normal;
+            animation: pulse 3s infinite;
+        }
+
+        .certificate-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: white;
+            flex-shrink: 0;
+            animation: blink 1.5s infinite;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 3vw, 2.4rem);
+            line-height: 1.05;
+            color: var(--color-primary);
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 0.98rem;
+            color: var(--color-muted);
+            max-width: 34rem;
+            margin-bottom: 18px;
+        }
+
+        /* Certificate info box */
+        .certificate-info {
+            background: linear-gradient(135deg, rgba(175, 75, 239, 0.08), rgba(255, 255, 255, 0.95));
+            border-radius: 18px;
+            padding: 24px;
+            border: 2px solid var(--color-primary-soft);
+            margin: 20px 0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .certificate-info:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .info-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        .info-subtitle {
+            font-size: 1rem;
+            color: var(--color-success);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .info-text {
+            font-size: 0.95rem;
+            color: var(--color-text);
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .timeline-note {
+            font-size: 0.9rem;
+            color: var(--color-muted);
+            font-style: italic;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(175, 75, 239, 0.2);
+        }
+
+        /* Requirements checklist */
+        .requirements-section {
+            margin: 30px 0;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .requirements-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .requirement-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px;
+            border-radius: 12px;
+            background: rgba(12, 10, 24, 0.02);
+            border: 1px solid rgba(12, 10, 24, 0.06);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .requirement-item:hover {
+            background: rgba(175, 75, 239, 0.05);
+            border-color: var(--color-primary-soft);
+            transform: translateX(5px);
+        }
+
+        .requirement-item.completed {
+            background: rgba(0, 184, 148, 0.05);
+            border-color: rgba(0, 184, 148, 0.3);
+        }
+
+        .requirement-checkbox {
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            border: 2px solid rgba(148, 163, 184, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: rgba(148, 163, 184, 0.9);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .requirement-item.completed .requirement-checkbox {
+            background: var(--color-success);
+            border-color: var(--color-success);
+            color: white;
+        }
+
+        .requirement-content {
+            flex: 1;
+        }
+
+        .requirement-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 4px;
+        }
+
+        .requirement-description {
+            font-size: 0.85rem;
+            color: var(--color-muted);
+            line-height: 1.5;
+        }
+
+        /* Progress tracker */
+        .progress-container {
+            margin: 25px 0;
+            background: rgba(12, 10, 24, 0.03);
+            border-radius: 16px;
+            padding: 16px 18px;
+            border: 1px solid rgba(12, 10, 24, 0.06);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .progress-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .progress-percent {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(12, 10, 24, 0.08);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+            border-radius: 4px;
+            width: 0%;
+            transition: width 1s ease-out;
+        }
+
+        /* Action buttons */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #9a3bd6;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(175, 75, 239, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(12, 10, 24, 0.06);
+            color: var(--color-text);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(12, 10, 24, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Right column */
+        .section-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .side-heading {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--color-text);
+            margin-bottom: 10px;
+        }
+
+        .side-card {
+            background: rgba(12, 10, 24, 0.94);
+            color: #e5e7eb;
+            border-radius: 18px;
+            padding: 20px 22px;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
+            margin-bottom: 14px;
+        }
+
+        .side-subheading {
+            font-size: 0.86rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #d492ff;
+            font-weight: 600;
+            margin: 14px 0 10px;
+        }
+
+        .side-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 0.86rem;
+        }
+
+        .side-list li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            margin-top: 6px;
+            border-radius: 999px;
+            background: var(--color-accent);
+            flex-shrink: 0;
+        }
+
+        .tip-card {
+            margin-top: 14px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(15, 23, 42, 0.75);
+            padding: 14px 16px;
+            font-size: 0.82rem;
+            color: #e5e7eb;
+        }
+
+        /* Important note */
+        .important-note {
+            background: linear-gradient(135deg, rgba(253, 203, 110, 0.1), rgba(255, 255, 255, 0.95));
+            border: 2px solid var(--color-warning);
+            border-radius: 16px;
+            padding: 16px 18px;
+            margin: 20px 0;
+        }
+
+        .note-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #e17055;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .note-content {
+            font-size: 0.86rem;
+            color: var(--color-text);
+            line-height: 1.5;
+        }
+
+        /* Completion celebration overlay */
+        .completion-celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        .celebration-content {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            max-width: 500px;
+            animation: fadeInUp 0.5s ease;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .celebration-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: successPulse 2s infinite;
+        }
+
+        .celebration-title {
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        .celebration-text {
+            color: var(--color-muted);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .celebration-btn {
+            padding: 12px 24px;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .celebration-btn:hover {
+            background: #9a3bd6;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <main class="page" aria-labelledby="certificate-heading">
+        <!-- LEFT COLUMN: Requirements checklist -->
+        <section class="column" aria-label="Certificate requirements">
+            <header class="brand-row">
+                <div class="brand">
+                    <img
+                        src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/64e9d2f719b1e5258e5d57f5_IMG_1512-p-500.png"
+                        alt="AlliedRx logo"
+                        class="brand-logo"
+                    />
+                    <div class="course-meta">
+                        <span class="course-name">Medical Administrative Assistant • Certification Workflow</span>
+                        <div class="certificate-badge">
+                            <span class="certificate-badge-dot"></span>
+                            <span>CMAA Requirements</span>
+                        </div>
+                    </div>
+                </div>
+                <span style="padding: 4px 10px; border-radius: 999px; background: rgba(175, 75, 239, 0.1); font-size: 0.75rem; font-weight: 600; color: var(--color-primary);">Graduation Path</span>
+            </header>
+
+            <h1 id="certificate-heading">CMAA Certificate Requirements</h1>
+            <p class="subtitle">
+                To successfully graduate from the 14-week CMAA program and receive your institutional certificate, 
+                you must fulfill the criteria below. Once cleared, your certificate will be issued via the graduation portal.
+            </p>
+
+            <!-- Certificate Access Info -->
+            <div class="certificate-info">
+                <div class="info-title">Certificate Access</div>
+                <div class="info-subtitle">🎓 Issued via AlliedRx Graduation Portal</div>
+                <div class="info-text">
+                    Upon fulfillment of all program requirements, your account will be transitioned to the graduation portal. 
+                    Institutional certificates are digital and accessible for high-resolution download.
+                </div>
+                <div class="timeline-note">
+                    ⏱️ Processing time: 7 to 14 business days following final requirement verification.
+                </div>
+            </div>
+
+            <!-- Progress tracker -->
+            <div class="progress-container">
+                <div class="progress-header">
+                    <span class="progress-title">Your Completion Progress</span>
+                    <span class="progress-percent" id="progress-percent">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Requirements Checklist -->
+            <div class="requirements-section">
+                <h2 class="section-title">📋 CMAA Requirements Checklist</h2>
+                <p style="font-size: 0.9rem; color: var(--color-muted); margin-bottom: 15px;">
+                    Click to track your status. Note: Marking items here is for your tracking; official verification is conducted by AlliedRx Student Services.
+                </p>
+                
+                <ul class="requirements-list" id="requirements-checklist">
+                    <!-- Requirement 1 -->
+                    <li class="requirement-item" data-index="0">
+                        <div class="requirement-checkbox">□</div>
+                        <div class="requirement-content">
+                            <div class="requirement-title">Program GPA Average</div>
+                            <div class="requirement-description">Maintain a cumulative GPA of 2.0 or higher across all 14 weeks.</div>
+                        </div>
+                    </li>
+                    
+                    <!-- Requirement 2 -->
+                    <li class="requirement-item" data-index="1">
+                        <div class="requirement-checkbox">□</div>
+                        <div class="requirement-content">
+                            <div class="requirement-title">Administrative Modules Completion</div>
+                            <div class="requirement-description">Completion of all EHR simulation labs, billing assignments, and scheduling exams.</div>
+                        </div>
+                    </li>
+                    
+                    <!-- Requirement 3 -->
+                    <li class="requirement-item" data-index="2">
+                        <div class="requirement-checkbox">□</div>
+                        <div class="requirement-content">
+                            <div class="requirement-title">Identity Verification</div>
+                            <div class="requirement-description">Ensure a valid Government-issued ID (DL/State ID/Passport) is on file.</div>
+                        </div>
+                    </li>
+                    
+                    <!-- Requirement 4 -->
+                    <li class="requirement-item" data-index="3">
+                        <div class="requirement-checkbox">□</div>
+                        <div class="requirement-content">
+                            <div class="requirement-title">Enrollment Documentation</div>
+                            <div class="requirement-description">Signed enrollment agreement and program disclosures must be finalized.</div>
+                        </div>
+                    </li>
+                    
+                    <!-- Requirement 5 -->
+                    <li class="requirement-item" data-index="4">
+                        <div class="requirement-checkbox">□</div>
+                        <div class="requirement-content">
+                            <div class="requirement-title">Exit Surveys</div>
+                            <div class="requirement-description">Complete the program satisfaction survey and employment status update.</div>
+                        </div>
+                    </li>
+                    
+                    <!-- Requirement 6 -->
+                    <li class="requirement-item" data-index="5">
+                        <div class="requirement-checkbox">□</div>
+                        <div class="requirement-content">
+                            <div class="requirement-title">Financial Ledger Clearance</div>
+                            <div class="requirement-description">Tuition and all program fees must be settled (zero balance account).</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-primary" id="mark-all-complete">
+                    <span>✓</span>
+                    Mark All Complete
+                </button>
+                <button class="btn btn-secondary" id="reset-checklist">
+                    <span>↺</span>
+                    Reset Progress
+                </button>
+            </div>
+
+            <!-- Important Note -->
+            <div class="important-note">
+                <div class="note-title">⚠️ Student Support Notice</div>
+                <div class="note-content">
+                    <p><strong>Certificates are released only after a full administrative audit.</strong></p>
+                    <p style="margin-top: 8px;">For inquiries regarding your financial status or missing documents, please contact <strong>enrollment@alliedrxtraining.com</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RIGHT COLUMN -->
+        <aside class="column" aria-label="Certificate details and next steps">
+            <p class="section-tag">Professional Milestone</p>
+            <h2 class="side-heading">The CMAA Credential</h2>
+            
+            <div class="side-card">
+                <p>
+                    Your institutional certificate from AlliedRx signifies that you have mastered the administrative workflow of a clinical environment.
+                </p>
+                
+                <p class="side-subheading">Why it matters:</p>
+                <ul class="side-list">
+                    <li>
+                        <span class="dot"></span>
+                        <span><strong>Verification:</strong> Employers can verify your training through our database.</span>
+                    </li>
+                    <li>
+                        <span class="dot"></span>
+                        <span><strong>Career Entry:</strong> Essential for applying to medical coordinator and front-office roles.</span>
+                    </li>
+                    <li>
+                        <span class="dot"></span>
+                        <span><strong>Exam Prerequisite:</strong> Proves eligibility for the national NHA certification exam.</span>
+                    </li>
+                </ul>
+
+                <div class="tip-card">
+                    <strong>Certificate Storage Tip:</strong>
+                    <ul style="margin-top: 8px; padding-left: 20px;">
+                        <li>Keep your digital PDF on a secure cloud drive.</li>
+                        <li>Add the AlliedRx training to your LinkedIn "Education" section.</li>
+                        <li>Provide a copy to your NHA testing site if requested.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="side-card">
+                <p class="side-subheading">National Certification Path</p>
+                <p style="margin-bottom: 12px;">
+                    Earning your AlliedRx certificate is the final step before challenging the NHA national exam.
+                </p>
+                <ul class="side-list">
+                    <li><span class="dot"></span><span>Register at nhanow.com</span></li>
+                    <li><span class="dot"></span><span>Select "CMAA" Certification</span></li>
+                    <li><span class="dot"></span><span>Schedule proctored exam date</span></li>
+                </ul>
+
+                <div class="tip-card">
+                    <strong>NHA Eligibility:</strong>
+                    <p style="margin-top: 5px;">Most certification boards require proof of program completion. Your AlliedRx certificate satisfies this requirement.</p>
+                </div>
+            </div>
+
+            <!-- "Mailing Check" block removed at user request -->
+        </aside>
+    </main>
+
+    <!-- Celebration Modal -->
+    <div class="completion-celebration" id="celebration-modal">
+        <div class="celebration-content">
+            <div class="celebration-icon">🎓</div>
+            <h2 class="celebration-title">Program Requirements Met!</h2>
+            <p class="celebration-text">
+                Outstanding effort! You have successfully completed all CMAA program milestones. 
+                Our administration will now begin the final audit of your student file.
+            </p>
+            <p class="celebration-text" style="font-weight: 600;">
+                Expect your graduation portal invitation via email within the next 2 weeks.
+            </p>
+            <button class="celebration-btn" id="close-celebration">Continue to Portal</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let requirementsState = [false, false, false, false, false, false];
+
+            const requirementItems = document.querySelectorAll('#requirements-checklist .requirement-item');
+            const progressFill = document.getElementById('progress-fill');
+            const progressPercent = document.getElementById('progress-percent');
+            const markAllBtn = document.getElementById('mark-all-complete');
+            const resetBtn = document.getElementById('reset-checklist');
+            const celebrationModal = document.getElementById('celebration-modal');
+            const closeCelebrationBtn = document.getElementById('close-celebration');
+
+            function updateProgress() {
+                const completedCount = requirementsState.filter(item => item).length;
+                const percentage = Math.round((completedCount / requirementsState.length) * 100);
+                
+                progressFill.style.width = `${percentage}%`;
+                progressPercent.textContent = `${percentage}%`;
+                
+                if (percentage === 100) {
+                    progressFill.style.background = 'linear-gradient(90deg, var(--color-success), #00d2a0)';
+                    showCelebration();
+                } else {
+                    progressFill.style.background = 'linear-gradient(90deg, var(--color-primary), var(--color-accent))';
+                }
+            }
+
+            function toggleRequirement(index) {
+                const item = requirementItems[index];
+                const checkbox = item.querySelector('.requirement-checkbox');
+                
+                requirementsState[index] = !requirementsState[index];
+                
+                if (requirementsState[index]) {
+                    item.classList.add('completed');
+                    checkbox.textContent = '✓';
+                    checkbox.style.background = 'var(--color-success)';
+                    checkbox.style.borderColor = 'var(--color-success)';
+                    checkbox.style.color = 'white';
+                    checkbox.style.animation = 'checkmark 0.3s ease-out';
+                } else {
+                    item.classList.remove('completed');
+                    checkbox.textContent = '□';
+                    checkbox.style.background = '';
+                    checkbox.style.borderColor = 'rgba(148, 163, 184, 0.9)';
+                    checkbox.style.color = 'rgba(148, 163, 184, 0.9)';
+                    checkbox.style.animation = '';
+                }
+                updateProgress();
+            }
+
+            function showCelebration() {
+                setTimeout(() => {
+                    celebrationModal.style.display = 'flex';
+                }, 400);
+            }
+
+            requirementItems.forEach((item, index) => {
+                item.addEventListener('click', () => toggleRequirement(index));
+            });
+
+            markAllBtn.addEventListener('click', () => {
+                requirementsState = requirementsState.map(() => true);
+                requirementItems.forEach((item, index) => {
+                    item.classList.add('completed');
+                    const checkbox = item.querySelector('.requirement-checkbox');
+                    checkbox.textContent = '✓';
+                    checkbox.style.background = 'var(--color-success)';
+                    checkbox.style.borderColor = 'var(--color-success)';
+                    checkbox.style.color = 'white';
+                });
+                updateProgress();
+            });
+
+            resetBtn.addEventListener('click', () => {
+                requirementsState = requirementsState.map(() => false);
+                requirementItems.forEach((item, index) => {
+                    item.classList.remove('completed');
+                    const checkbox = item.querySelector('.requirement-checkbox');
+                    checkbox.textContent = '□';
+                    checkbox.style.background = '';
+                    checkbox.style.borderColor = 'rgba(148, 163, 184, 0.9)';
+                    checkbox.style.color = 'rgba(148, 163, 184, 0.9)';
+                });
+                updateProgress();
+            });
+
+            closeCelebrationBtn.addEventListener('click', () => celebrationModal.style.display = 'none');
+
+            // Scroll reveal logic
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.requirement-item, .side-card').forEach((el, i) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = `opacity(0.4s) ease ${i * 0.05}s, transform 0.4s ease ${i * 0.05}s`;
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
