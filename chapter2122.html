@@ -28,6 +28,7 @@
             padding: 30px;
             margin-bottom: 25px;
             border-left: 5px solid #2c8c99;
+            position: relative;
         }
         
         h1 {
@@ -76,6 +77,8 @@
             padding: 20px;
             margin: 15px 0;
             border: 1px solid #e1e1e1;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
         }
         
         .emergency-card h3 {
@@ -133,6 +136,7 @@
             border-radius: 3px;
             font-weight: bold;
             color: #1a5f7a;
+            transition: background-color 0.2s;
         }
         
         .note {
@@ -174,38 +178,31 @@
             font-weight: bold;
             margin-right: 10px;
         }
-        
-        .module-nav {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-        }
-        
-        .btn {
-            background-color: #2c8c99;
-            color: white;
-            padding: 10px 20px;
-            border: none;
+
+        /* Custom Notification Toast */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
             border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            text-decoration: none;
-            display: inline-block;
+            padding: 16px;
+            position: fixed;
+            z-index: 100;
+            left: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-        
-        .btn:hover {
-            background-color: #1a5f7a;
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
         }
-        
-        .btn-next {
-            background-color: #3aa6b9;
-        }
-        
-        .btn-next:hover {
-            background-color: #2c8c99;
-        }
+
+        @keyframes fadein { from {top: 0; opacity: 0;} to {top: 30px; opacity: 1;} }
+        @keyframes fadeout { from {top: 30px; opacity: 1;} to {top: 0; opacity: 0;} }
         
         @media (max-width: 768px) {
             body {
@@ -227,6 +224,8 @@
     </style>
 </head>
 <body>
+    <div id="toast"></div>
+
     <div class="container">
         <h1>Lesson 21.1: Medical Emergencies</h1>
         
@@ -568,40 +567,33 @@
             </div>
         </div>
         
-        <div class="module-nav">
-            <a href="#" class="btn">Previous Lesson</a>
-            <a href="#" class="btn btn-next">Next: Lesson 22.1: Skills and Strategies</a>
-        </div>
-        
         <div class="warning">
             <p><strong>Important Disclaimer:</strong> This lesson provides general first aid information. Always follow your facility's specific protocols and your scope of practice. Proper certification (BLS, ACLS, First Aid) is required to perform many of these skills in clinical settings.</p>
         </div>
     </div>
     
     <script>
-        // Simple script to handle button clicks and expandable content
         document.addEventListener('DOMContentLoaded', function() {
-            // Add click event to emergency cards to highlight them
+            // Function to show toast notification
+            function showToast(message) {
+                const toast = document.getElementById("toast");
+                toast.textContent = message;
+                toast.className = "show";
+                setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+            }
+
+            // Click event to highlight emergency cards
             const emergencyCards = document.querySelectorAll('.emergency-card');
             emergencyCards.forEach(card => {
                 card.addEventListener('click', function() {
-                    this.style.backgroundColor = '#f0f8ff';
+                    this.style.backgroundColor = '#eef9ff';
                     setTimeout(() => {
                         this.style.backgroundColor = '#f9f9f9';
                     }, 500);
                 });
             });
             
-            // Add functionality to buttons
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('Navigation would take you to the next lesson in a full course.');
-                });
-            });
-            
-            // Highlight key terms on hover
+            // Smooth hover for key terms
             const keyTerms = document.querySelectorAll('.key-term');
             keyTerms.forEach(term => {
                 term.addEventListener('mouseenter', function() {
