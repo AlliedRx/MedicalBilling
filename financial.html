@@ -393,7 +393,7 @@
             background-color: white;
             padding: 20px;
             border-radius: 8px;
-            border: 2px solid #e0e0e0;
+            border: 1px solid #e0e0e0;
         }
         
         .payment-name {
@@ -1994,7 +1994,9 @@
         function checkAnswers() {
             let score = 0;
             const totalQuestions = 5;
-            const answers = [2, 2, 2, 3, 2]; // Correct answer indices (0-based)
+            // FIXED: Corrected indices to align with the correct radio button positions (0-based)
+            // 1 = 2nd option, 2 = 3rd option
+            const answers = [1, 1, 1, 2, 1]; 
             
             // Check each question
             for (let i = 1; i <= totalQuestions; i++) {
