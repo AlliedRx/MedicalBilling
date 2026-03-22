@@ -936,7 +936,7 @@
                             <div class="option-text">Tell them they're being foolish and must take their medications as prescribed.</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(1, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(1, 'D')">Submit Response</button>
                     <div class="feedback-message" id="feedback-1"></div>
                 </div>
 
@@ -1034,7 +1034,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="B">
-                                <span class="quiz-option-text">B) Nonmaleficence</span>
+                                <span class="quiz-option-text">D) Fidelity</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="C">
@@ -1042,7 +1042,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="D">
-                                <span class="quiz-option-text">D) Fidelity</span>
+                                <span class="quiz-option-text">B) Nonmaleficence</span>
                             </label>
                         </div>
                     </div>
@@ -1078,11 +1078,11 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="B">
-                                <span class="quiz-option-text">B) Standing upright, facing forward, palms facing forward (supine)</span>
+                                <span class="quiz-option-text">C) Lying flat on the back</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="C">
-                                <span class="quiz-option-text">C) Lying flat on the back</span>
+                                <span class="quiz-option-text">B) Standing upright, facing forward, palms facing forward (supine)</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="D">
@@ -1096,11 +1096,11 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="A">
-                                <span class="quiz-option-text">A) Distal</span>
+                                <span class="quiz-option-text">B) Medial</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="B">
-                                <span class="quiz-option-text">B) Medial</span>
+                                <span class="quiz-option-text">A) Distal</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="C">
@@ -1122,7 +1122,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="B">
-                                <span class="quiz-option-text">B) Ipsilateral</span>
+                                <span class="quiz-option-text">D) Superficial</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="C">
@@ -1130,7 +1130,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="D">
-                                <span class="quiz-option-text">D) Superficial</span>
+                                <span class="quiz-option-text">B) Ipsilateral</span>
                             </label>
                         </div>
                     </div>
@@ -1149,11 +1149,11 @@
     <script>
         // Quiz answer key
         const quizAnswers = {
-            q1: 'B',
-            q2: 'A',
-            q3: 'B',
-            q4: 'C',
-            q5: 'B'
+            q1: 'D', 
+            q2: 'B', 
+            q3: 'C', 
+            q4: 'A', 
+            q5: 'D'
         };
 
         // Activity tracking
@@ -1261,10 +1261,10 @@
 
             const messages = {
                 1: {
-                    B: "Correct! This approach respects autonomy while fulfilling your ethical obligation to beneficence by ensuring the physician has necessary information for proper care.",
+                    B: "Incorrect. Judgmental responses violate respect for autonomy and harm therapeutic relationships.",
                     A: "Incorrect. While respecting confidence is important, the physician needs medication adherence information to provide appropriate care.",
                     C: "Incorrect. Supporting medication non-adherence violates beneficence and could harm the patient.",
-                    D: "Incorrect. Judgmental responses violate respect for autonomy and harm therapeutic relationships."
+                    D: "Correct! This approach respects autonomy while fulfilling your ethical obligation to beneficence by ensuring the physician has necessary information for proper care."
                 },
                 2: {
                     A: "Correct! Justice requires fair distribution of resources based on medical need, not ability to pay. This demonstrates ethical healthcare practice.",
