@@ -357,7 +357,7 @@
             background: white;
             border-radius: var(--radius-md);
             padding: 20px;
-            border-left: 4px solid var(--color-primary);
+            border-top: 4px solid #5D6DFA; border-radius: 12px;
         }
 
         .timeline-year {
@@ -833,7 +833,373 @@
                 font-size: 1.1rem;
             }
         }
-    </style>
+    
+        /* ═══════════════════════════════════════════════════
+           AlliedRx Premium Design System — Applied Override
+           ═══════════════════════════════════════════════════ */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --color-primary: #5D6DFA;
+            --color-primary-soft: #A5AFFF;
+            --color-accent: #7C6CF0;
+            --color-dark: #4C5CDD;
+            --color-bg: #F7F7F7;
+            --color-surface: #ffffff;
+            --color-text: #1e2033;
+            --color-muted: #6b7280;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            --color-error: #e74c3c;
+            --color-border: rgba(15,23,42,0.07);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+            --shadow-sm: 0 2px 8px rgba(93,109,250,0.08);
+            --shadow-md: 0 8px 24px rgba(23,10,61,0.10);
+            --shadow-lg: 0 18px 45px rgba(23,10,61,0.14);
+            --gradient-primary: linear-gradient(135deg, #5D6DFA 0%, #7C6CF0 100%);
+            --gradient-card: linear-gradient(135deg, rgba(93,109,250,0.06) 0%, rgba(255,255,255,0.98) 100%);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+            background: radial-gradient(circle at 0% 0%, #ffffff 0%, #F5F6FF 45%, #F7F7F7 100%) !important;
+            color: var(--color-text);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Container ── */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 20px;
+        }
+
+        /* ── Header upgrade ── */
+        header, .header {
+            background: var(--gradient-primary) !important;
+            border-radius: var(--radius-xl) !important;
+            padding: 28px 32px !important;
+            box-shadow: var(--shadow-lg) !important;
+            margin-bottom: 28px !important;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before, .header::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 200px; height: 200px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        header h1, .header h1 {
+            font-size: clamp(1.4rem, 3vw, 2rem) !important;
+            font-weight: 800 !important;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #ffffff !important;
+            margin-bottom: 6px !important;
+        }
+        header p, .header p, header .subtitle, .header .subtitle {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.82) !important;
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            header, .header { padding: 20px 18px !important; border-radius: var(--radius-lg) !important; }
+        }
+
+        /* ── Card upgrades ── */
+        .card, .content-card, .lesson-card, .topic-card, .info-card,
+        .objective-card, .section-card, .module-card, .concept-card,
+        .learning-card, .feature-card, .term-card, .step-card, .tip-card {
+            background: var(--gradient-card) !important;
+            border: 1px solid var(--color-border) !important;
+            border-radius: var(--radius-lg) !important;
+            box-shadow: var(--shadow-sm) !important;
+            padding: 20px !important;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-left: none !important;
+        }
+        .card:hover, .content-card:hover, .lesson-card:hover, .topic-card:hover,
+        .info-card:hover, .objective-card:hover, .concept-card:hover,
+        .learning-card:hover, .feature-card:hover, .term-card:hover, .step-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md) !important;
+        }
+
+        /* ── Section headers ── */
+        h2, .section-header, .lesson-header {
+            font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+            font-weight: 700;
+            color: var(--color-text);
+            letter-spacing: -0.01em;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(93,109,250,0.15) !important;
+            border-left: none !important;
+        }
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 10px;
+        }
+
+        /* ── Module/section label chips ── */
+        .module-number, .lesson-number, .step-number, .badge, .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: rgba(93,109,250,0.10);
+            color: var(--color-primary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+
+        /* ── Button upgrades ── */
+        button, .btn, .submit-btn, .action-btn, .check-btn, .next-btn,
+        input[type="submit"], input[type="button"] {
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+            background: var(--gradient-primary) !important;
+            color: #ffffff !important;
+            border: none !important;
+            border-radius: 999px !important;
+            padding: 11px 24px !important;
+            font-size: 0.875rem !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(93,109,250,0.30) !important;
+            transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+        }
+        button:hover, .btn:hover, .submit-btn:hover, .action-btn:hover {
+            transform: translateY(-1px) !important;
+            box-shadow: 0 10px 28px rgba(93,109,250,0.40) !important;
+        }
+        button:active { transform: translateY(0) !important; }
+
+        /* ── Quiz / multiple choice options ── */
+        .option, .quiz-option, .answer-option, .choice {
+            border: 2px solid var(--color-border) !important;
+            border-radius: var(--radius-md) !important;
+            padding: 14px 18px !important;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            background: var(--color-surface) !important;
+            margin-bottom: 10px;
+        }
+        .option:hover, .quiz-option:hover, .answer-option:hover, .choice:hover {
+            border-color: var(--color-primary) !important;
+            background: rgba(93,109,250,0.05) !important;
+        }
+        .option.correct, .quiz-option.correct, .answer-option.correct {
+            border-color: var(--color-success) !important;
+            background: rgba(16,185,129,0.08) !important;
+        }
+        .option.incorrect, .quiz-option.incorrect, .answer-option.incorrect {
+            border-color: var(--color-error) !important;
+            background: rgba(231,76,60,0.08) !important;
+        }
+
+        /* ── Table upgrades ── */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        th {
+            background: var(--gradient-primary) !important;
+            color: #ffffff !important;
+            padding: 13px 16px !important;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-align: left;
+        }
+        td {
+            padding: 12px 16px !important;
+            border-bottom: 1px solid rgba(15,23,42,0.06);
+            font-size: 0.9rem;
+        }
+        tr:nth-child(even) td { background: rgba(93,109,250,0.03); }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(93,109,250,0.05); }
+
+        /* ── Progress / stats panels ── */
+        .progress-bar, .progress-fill {
+            border-radius: 999px;
+            background: var(--gradient-primary) !important;
+            transition: width 0.6s ease;
+        }
+        .progress-track, .progress-container, .progress-wrapper {
+            background: rgba(93,109,250,0.10) !important;
+            border-radius: 999px !important;
+            overflow: hidden;
+        }
+        .stat-card, .stats-card, .stat-box, .metric-card {
+            background: var(--gradient-card) !important;
+            border-radius: var(--radius-lg) !important;
+            border: 1px solid var(--color-border) !important;
+            box-shadow: var(--shadow-sm) !important;
+            padding: 20px !important;
+        }
+        .stat-value, .metric-value, .stat-number {
+            font-size: 2rem !important;
+            font-weight: 800 !important;
+            color: var(--color-primary) !important;
+        }
+
+        /* ── Tabs ── */
+        .tab-btn, .tab-button, .tab, .nav-tab {
+            border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
+            padding: 10px 20px !important;
+            font-weight: 600 !important;
+            font-size: 0.875rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: rgba(93,109,250,0.08);
+            color: var(--color-primary);
+        }
+        .tab-btn.active, .tab-button.active, .tab.active, .nav-tab.active {
+            background: var(--gradient-primary) !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(93,109,250,0.30);
+        }
+
+        /* ── Input fields ── */
+        input[type="text"], input[type="number"], input[type="email"],
+        select, textarea {
+            border: 2px solid rgba(93,109,250,0.2) !important;
+            border-radius: var(--radius-md) !important;
+            padding: 10px 14px !important;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+            font-size: 0.9rem;
+            transition: border-color 0.2s ease;
+            outline: none;
+            width: 100%;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--color-primary) !important;
+            box-shadow: 0 0 0 3px rgba(93,109,250,0.12) !important;
+        }
+
+        /* ── Highlight / callout boxes ── */
+        .note, .callout, .highlight-box, .info-box, .tip-box, .warning-box, .important {
+            border-radius: var(--radius-md) !important;
+            padding: 16px 20px !important;
+            border-left: 4px solid var(--color-primary) !important;
+            background: rgba(93,109,250,0.05) !important;
+        }
+
+        /* ── Sidebar nav (in sidebar layout files) ── */
+        nav.sidebar, .sidebar {
+            background: #ffffff !important;
+            border-right: 1px solid var(--color-border) !important;
+            box-shadow: var(--shadow-sm);
+        }
+        nav.sidebar h2, .sidebar h2 {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--color-muted);
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: 12px;
+        }
+        .nav-link, .sidebar a {
+            border-radius: var(--radius-sm) !important;
+            padding: 10px 14px !important;
+            font-size: 0.875rem !important;
+            font-weight: 500;
+            transition: all 0.15s ease;
+            display: block;
+            color: var(--color-muted);
+            text-decoration: none;
+        }
+        .nav-link:hover, .sidebar a:hover,
+        .nav-link.active, .sidebar a.active {
+            background: rgba(93,109,250,0.10) !important;
+            color: var(--color-primary) !important;
+        }
+        .nav-link.active, .sidebar a.active {
+            font-weight: 700 !important;
+        }
+
+        /* ── Accordion ── */
+        .accordion-header, .accordion-btn, details summary {
+            border-radius: var(--radius-md) !important;
+            padding: 14px 18px !important;
+            background: var(--gradient-card) !important;
+            border: 1px solid var(--color-border) !important;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .accordion-header:hover, details summary:hover {
+            background: rgba(93,109,250,0.08) !important;
+            border-color: var(--color-primary) !important;
+        }
+
+        /* ── List items ── */
+        li {
+            padding: 4px 0;
+            line-height: 1.65;
+        }
+        ul li::marker { color: var(--color-primary); }
+
+        /* ── Feedback / result messages ── */
+        .feedback, .result, .correct-msg, .incorrect-msg, .score-display {
+            border-radius: var(--radius-md) !important;
+            padding: 14px 18px !important;
+            font-weight: 600;
+        }
+
+        /* ── Animations ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .container, .page {
+            animation: fadeUp 0.4s ease both;
+        }
+        @keyframes alliedrx-pulse {
+            0%   { box-shadow: 0 0 0 0 rgba(93,109,250,0.6); }
+            70%  { box-shadow: 0 0 0 10px rgba(93,109,250,0); }
+            100% { box-shadow: 0 0 0 0 rgba(93,109,250,0); }
+        }
+
+        /* ── Mobile overrides ── */
+        @media (max-width: 768px) {
+            .container { padding: 16px 14px; }
+            h1 { font-size: 1.4rem !important; }
+            h2 { font-size: 1.1rem; }
+            .card, .content-card, .lesson-card, .topic-card,
+            .info-card, .objective-card, .concept-card { padding: 16px !important; }
+            button, .btn { padding: 10px 20px !important; }
+        }
+        @media (max-width: 480px) {
+            body { font-size: 15px; }
+            header h1, .header h1 { font-size: 1.25rem !important; }
+        }
+
+        </style>
 </head>
 <body>
     <div class="lesson-container">
