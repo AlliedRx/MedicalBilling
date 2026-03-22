@@ -2,875 +2,1350 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Module: CMS-1500 Form (Version 02-12)</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-        }
-        
-        body {
-            background-color: #F7F7F7;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #4C5CDD 0%, #207cca 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-        
-        .module-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-        }
-        
-        .card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            border-top: 4px solid #5D6DFA; border-radius: 12px;
-        }
-        
-        h2 {
-            color: #4C5CDD;
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-        
-        h3 {
-            color: #207cca;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-        
-        h4 {
-            color: #2c3e50;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .objectives-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .objective-item {
-            background-color: #F5F6FF;
-            padding: 15px;
-            border-radius: 8px;
-            border-top: 4px solid #5D6DFA; border-radius: 12px;
-        }
-        
-        .form-section {
-            background-color: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 15px 0;
-        }
-        
-        .block-number {
-            display: inline-block;
-            background-color: #4C5CDD;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 30px;
-            margin-right: 10px;
-            font-weight: bold;
-        }
-        
-        .highlight {
-            background-color: #fff8e1;
-            padding: 15px;
-            border-radius: 5px;
-            border-top: 4px solid #5D6DFA; border-radius: 12px;
-            margin: 20px 0;
-        }
-        
-        .tip {
-            background-color: #e8f5e9;
-            padding: 15px;
-            border-radius: 5px;
-            border-top: 4px solid #5D6DFA; border-radius: 12px;
-            margin: 20px 0;
-        }
-        
-        .important {
-            background-color: #ffebee;
-            padding: 15px;
-            border-radius: 5px;
-            border-top: 4px solid #5D6DFA; border-radius: 12px;
-            margin: 20px 0;
-        }
-        
-        ul, ol {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
-        .examples {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 5px;
-            font-family: monospace;
-            margin: 15px 0;
-            border-left: 3px solid #9e9e9e;
-        }
-        
-        .block-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .block-item {
-            background-color: #F5F6FF;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #d1e3ff;
-        }
-        
-        .quiz-container {
-            background-color: #F0F1FF;
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 30px;
-        }
-        
-        .quiz-question {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #bbdefb;
-        }
-        
-        .quiz-options {
-            margin-left: 20px;
-        }
-        
-        .quiz-options label {
-            display: block;
-            margin-bottom: 8px;
-            cursor: pointer;
-        }
-        
-        button {
-            background-color: #4C5CDD;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 15px;
-            transition: background-color 0.3s;
-        }
-        
-        button:hover {
-            background-color: #154275;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .card {
-                padding: 20px;
-            }
-            
-            .objectives-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    
-        /* ═══════════════════════════════════════════════════
-           AlliedRx Premium Design System — Applied Override
-           ═══════════════════════════════════════════════════ */
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    <title>Lesson 15.1: CMS-1500 Form & Health Insurance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <style>
         :root {
             --color-primary: #5D6DFA;
             --color-primary-soft: #A5AFFF;
             --color-accent: #7C6CF0;
-            --color-dark: #4C5CDD;
+            --color-success: #00b894;
+            --color-error: #e17055;
+            --color-warning: #fdcb6e;
             --color-bg: #F7F7F7;
-            --color-surface: #ffffff;
-            --color-text: #1e2033;
-            --color-muted: #6b7280;
-            --color-success: #10b981;
-            --color-warning: #f59e0b;
-            --color-error: #e74c3c;
-            --color-border: rgba(15,23,42,0.07);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 18px;
-            --radius-xl: 24px;
-            --shadow-sm: 0 2px 8px rgba(93,109,250,0.08);
-            --shadow-md: 0 8px 24px rgba(23,10,61,0.10);
-            --shadow-lg: 0 18px 45px rgba(23,10,61,0.14);
-            --gradient-primary: linear-gradient(135deg, #5D6DFA 0%, #7C6CF0 100%);
-            --gradient-card: linear-gradient(135deg, rgba(93,109,250,0.06) 0%, rgba(255,255,255,0.98) 100%);
+            --color-text: #2b2b2b;
+            --color-muted: #6c6880;
+            --color-dark: #0c0a18;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 12px;
+            --shadow-soft: 0 18px 45px rgba(23, 10, 61, 0.18);
+            --shadow-hover: 0 25px 50px rgba(93, 109, 250, 0.15);
+            --shadow-card: 0 12px 30px rgba(15, 23, 42, 0.1);
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
         body {
-            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
-            background: radial-gradient(circle at 0% 0%, #ffffff 0%, #F5F6FF 45%, #F7F7F7 100%) !important;
+            font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+            padding: 24px;
+            background: var(--color-bg);
             color: var(--color-text);
-            line-height: 1.65;
-            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: 100%;
+            line-height: 1.5;
         }
 
-        /* ── Container ── */
-        .container {
-            max-width: 1100px;
+        @media (max-width: 600px) {
+            body { padding: 12px; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes checkmarkPop {
+            0% { transform: scale(0); opacity: 0; }
+            70% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .page {
+            width: 100%;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 24px 20px;
-        }
-
-        /* ── Header upgrade ── */
-        header, .header {
-            background: var(--gradient-primary) !important;
-            border-radius: var(--radius-xl) !important;
-            padding: 28px 32px !important;
-            box-shadow: var(--shadow-lg) !important;
-            margin-bottom: 28px !important;
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            padding: 28px 30px 32px;
             position: relative;
             overflow: hidden;
-        }
-        header::before, .header::before {
-            content: '';
-            position: absolute;
-            top: -40px; right: -40px;
-            width: 200px; height: 200px;
-            background: rgba(255,255,255,0.07);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        header h1, .header h1 {
-            font-size: clamp(1.4rem, 3vw, 2rem) !important;
-            font-weight: 800 !important;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            color: #ffffff !important;
-            margin-bottom: 6px !important;
-        }
-        header p, .header p, header .subtitle, .header .subtitle {
-            font-size: 0.95rem;
-            color: rgba(255,255,255,0.82) !important;
-            font-weight: 500;
-        }
-        @media (max-width: 768px) {
-            header, .header { padding: 20px 18px !important; border-radius: var(--radius-lg) !important; }
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        /* ── Card upgrades ── */
-        .card, .content-card, .lesson-card, .topic-card, .info-card,
-        .objective-card, .section-card, .module-card, .concept-card,
-        .learning-card, .feature-card, .term-card, .step-card, .tip-card {
-            background: var(--gradient-card) !important;
-            border: 1px solid var(--color-border) !important;
-            border-radius: var(--radius-lg) !important;
-            box-shadow: var(--shadow-sm) !important;
-            padding: 20px !important;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border-left: none !important;
-        }
-        .card:hover, .content-card:hover, .lesson-card:hover, .topic-card:hover,
-        .info-card:hover, .objective-card:hover, .concept-card:hover,
-        .learning-card:hover, .feature-card:hover, .term-card:hover, .step-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md) !important;
+        @media (max-width: 900px) {
+            .page { padding: 22px; }
         }
 
-        /* ── Section headers ── */
-        h2, .section-header, .lesson-header {
-            font-size: clamp(1.15rem, 2.5vw, 1.35rem);
-            font-weight: 700;
-            color: var(--color-text);
-            letter-spacing: -0.01em;
-            padding-bottom: 12px;
+        @media (max-width: 480px) {
+            body { padding: 0; }
+            .page {
+                border-radius: 0;
+                box-shadow: none;
+                padding: 18px 14px 22px;
+            }
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
             margin-bottom: 20px;
-            border-bottom: 2px solid rgba(93,109,250,0.15) !important;
-            border-left: none !important;
-        }
-        h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--color-text);
-            margin-bottom: 10px;
+            flex-wrap: wrap;
+            width: 100%;
+            animation: fadeIn 0.6s ease-out 0.2s both;
         }
 
-        /* ── Module/section label chips ── */
-        .module-number, .lesson-number, .step-number, .badge, .section-badge {
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .brand-logo {
+            height: 40px;
+            width: auto;
+            max-width: 100%;
+            filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .course-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            max-width: 100%;
+        }
+
+        .course-name {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--color-muted);
+            white-space: normal;
+        }
+
+        .week-label {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 4px 12px;
+            gap: 8px;
+            padding: 4px 10px;
             border-radius: 999px;
-            background: rgba(93,109,250,0.10);
+            background: rgba(93, 109, 250, 0.08);
+            font-size: 0.76rem;
             color: var(--color-primary);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 10px;
+            white-space: normal;
         }
 
-        /* ── Button upgrades ── */
-        button, .btn, .submit-btn, .action-btn, .check-btn, .next-btn,
-        input[type="submit"], input[type="button"] {
-            font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
-            background: var(--gradient-primary) !important;
-            color: #ffffff !important;
-            border: none !important;
-            border-radius: 999px !important;
-            padding: 11px 24px !important;
-            font-size: 0.875rem !important;
-            font-weight: 700 !important;
-            letter-spacing: 0.04em;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(93,109,250,0.30) !important;
-            transition: transform 0.15s ease, box-shadow 0.15s ease !important;
-        }
-        button:hover, .btn:hover, .submit-btn:hover, .action-btn:hover {
-            transform: translateY(-1px) !important;
-            box-shadow: 0 10px 28px rgba(93,109,250,0.40) !important;
-        }
-        button:active { transform: translateY(0) !important; }
-
-        /* ── Quiz / multiple choice options ── */
-        .option, .quiz-option, .answer-option, .choice {
-            border: 2px solid var(--color-border) !important;
-            border-radius: var(--radius-md) !important;
-            padding: 14px 18px !important;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            background: var(--color-surface) !important;
-            margin-bottom: 10px;
-        }
-        .option:hover, .quiz-option:hover, .answer-option:hover, .choice:hover {
-            border-color: var(--color-primary) !important;
-            background: rgba(93,109,250,0.05) !important;
-        }
-        .option.correct, .quiz-option.correct, .answer-option.correct {
-            border-color: var(--color-success) !important;
-            background: rgba(16,185,129,0.08) !important;
-        }
-        .option.incorrect, .quiz-option.incorrect, .answer-option.incorrect {
-            border-color: var(--color-error) !important;
-            background: rgba(231,76,60,0.08) !important;
-        }
-
-        /* ── Table upgrades ── */
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-        th {
-            background: var(--gradient-primary) !important;
-            color: #ffffff !important;
-            padding: 13px 16px !important;
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            text-align: left;
-        }
-        td {
-            padding: 12px 16px !important;
-            border-bottom: 1px solid rgba(15,23,42,0.06);
-            font-size: 0.9rem;
-        }
-        tr:nth-child(even) td { background: rgba(93,109,250,0.03); }
-        tr:last-child td { border-bottom: none; }
-        tr:hover td { background: rgba(93,109,250,0.05); }
-
-        /* ── Progress / stats panels ── */
-        .progress-bar, .progress-fill {
+        .week-label-dot {
+            width: 8px;
+            height: 8px;
             border-radius: 999px;
-            background: var(--gradient-primary) !important;
-            transition: width 0.6s ease;
-        }
-        .progress-track, .progress-container, .progress-wrapper {
-            background: rgba(93,109,250,0.10) !important;
-            border-radius: 999px !important;
-            overflow: hidden;
-        }
-        .stat-card, .stats-card, .stat-box, .metric-card {
-            background: var(--gradient-card) !important;
-            border-radius: var(--radius-lg) !important;
-            border: 1px solid var(--color-border) !important;
-            box-shadow: var(--shadow-sm) !important;
-            padding: 20px !important;
-        }
-        .stat-value, .metric-value, .stat-number {
-            font-size: 2rem !important;
-            font-weight: 800 !important;
-            color: var(--color-primary) !important;
+            background: var(--color-success);
+            flex-shrink: 0;
         }
 
-        /* ── Tabs ── */
-        .tab-btn, .tab-button, .tab, .nav-tab {
-            border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
-            padding: 10px 20px !important;
-            font-weight: 600 !important;
-            font-size: 0.875rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: rgba(93,109,250,0.08);
-            color: var(--color-primary);
-        }
-        .tab-btn.active, .tab-button.active, .tab.active, .nav-tab.active {
-            background: var(--gradient-primary) !important;
-            color: #ffffff !important;
-            box-shadow: 0 4px 12px rgba(93,109,250,0.30);
-        }
-
-        /* ── Input fields ── */
-        input[type="text"], input[type="number"], input[type="email"],
-        select, textarea {
-            border: 2px solid rgba(93,109,250,0.2) !important;
-            border-radius: var(--radius-md) !important;
-            padding: 10px 14px !important;
-            font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
-            font-size: 0.9rem;
-            transition: border-color 0.2s ease;
-            outline: none;
-            width: 100%;
-        }
-        input:focus, select:focus, textarea:focus {
-            border-color: var(--color-primary) !important;
-            box-shadow: 0 0 0 3px rgba(93,109,250,0.12) !important;
-        }
-
-        /* ── Highlight / callout boxes ── */
-        .note, .callout, .highlight-box, .info-box, .tip-box, .warning-box, .important {
-            border-radius: var(--radius-md) !important;
-            padding: 16px 20px !important;
-            border-left: 4px solid var(--color-primary) !important;
-            background: rgba(93,109,250,0.05) !important;
-        }
-
-        /* ── Sidebar nav (in sidebar layout files) ── */
-        nav.sidebar, .sidebar {
-            background: #ffffff !important;
-            border-right: 1px solid var(--color-border) !important;
-            box-shadow: var(--shadow-sm);
-        }
-        nav.sidebar h2, .sidebar h2 {
-            font-size: 0.78rem;
+        .badge-mode {
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: rgba(12, 10, 24, 0.06);
+            border: 1px solid rgba(12, 10, 24, 0.08);
+            font-size: 0.74rem;
             text-transform: uppercase;
             letter-spacing: 0.14em;
             color: var(--color-muted);
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--color-border);
-            margin-bottom: 12px;
-        }
-        .nav-link, .sidebar a {
-            border-radius: var(--radius-sm) !important;
-            padding: 10px 14px !important;
-            font-size: 0.875rem !important;
-            font-weight: 500;
-            transition: all 0.15s ease;
-            display: block;
-            color: var(--color-muted);
-            text-decoration: none;
-        }
-        .nav-link:hover, .sidebar a:hover,
-        .nav-link.active, .sidebar a.active {
-            background: rgba(93,109,250,0.10) !important;
-            color: var(--color-primary) !important;
-        }
-        .nav-link.active, .sidebar a.active {
-            font-weight: 700 !important;
+            white-space: nowrap;
+            transition: all 0.3s ease;
         }
 
-        /* ── Accordion ── */
-        .accordion-header, .accordion-btn, details summary {
-            border-radius: var(--radius-md) !important;
-            padding: 14px 18px !important;
-            background: var(--gradient-card) !important;
-            border: 1px solid var(--color-border) !important;
+        .badge-mode:hover {
+            background: rgba(93, 109, 250, 0.1);
+            border-color: var(--color-primary-soft);
+            color: var(--color-primary);
+        }
+
+        @media (max-width: 480px) {
+            .brand-row { flex-direction: column; align-items: flex-start; }
+            .badge-mode { margin-top: 6px; }
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            line-height: 1.1;
+            color: var(--color-primary);
+            margin-bottom: 6px;
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+
+        .module-subtitle {
+            font-size: 0.98rem;
+            color: var(--color-muted);
+            max-width: 600px;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+
+        .progress-tracker {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding: 0 20px;
+            animation: fadeInUp 0.6s ease-out 0.45s both;
+        }
+
+        .progress-tracker::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50px;
+            right: 50px;
+            height: 3px;
+            background: rgba(12, 10, 24, 0.08);
+            z-index: 1;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid rgba(12, 10, 24, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
             font-weight: 600;
+            color: var(--color-muted);
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active .step-circle {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .progress-step.completed .step-circle {
+            background: var(--color-success);
+            border-color: var(--color-success);
+            color: white;
+        }
+
+        .step-label {
+            font-size: 0.75rem;
+            color: var(--color-muted);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .progress-step.active .step-label {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .progress-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.6s ease-out 0.5s both;
+        }
+
+        .summary-card {
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            border: 1px solid rgba(12, 10, 24, 0.06);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .summary-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--color-primary-soft);
+        }
+
+        .summary-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            display: block;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .summary-label {
+            font-size: 0.8rem;
+            color: var(--color-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .activity-card {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(12, 10, 24, 0.08);
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .activity-card:nth-child(1) { animation-delay: 0.55s; }
+        .activity-card:nth-child(2) { animation-delay: 0.6s; }
+        .activity-card:nth-child(3) { animation-delay: 0.65s; }
+
+        .activity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--color-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--color-primary-soft);
+        }
+
+        .activity-card:hover::before {
+            opacity: 1;
+        }
+
+        .activity-card.completed {
+            border-color: var(--color-success);
+        }
+
+        .activity-card.completed::before {
+            background: var(--color-success);
+            opacity: 1;
+        }
+
+        .activity-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .activity-number {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            background: rgba(93, 109, 250, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .activity-status {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 12px;
+            background: rgba(12, 10, 24, 0.06);
+            color: var(--color-muted);
+        }
+
+        .activity-card.completed .activity-status {
+            background: rgba(0, 184, 148, 0.1);
+            color: var(--color-success);
+        }
+
+        .activity-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 10px;
+        }
+
+        .activity-description {
+            font-size: 0.9rem;
+            color: var(--color-muted);
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .dropzone-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 600px) {
+            .dropzone-grid { grid-template-columns: 1fr; }
+        }
+
+        .dropzone {
+            min-height: 250px;
+            border: 3px dashed rgba(93, 109, 250, 0.3);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            background: rgba(93, 109, 250, 0.02);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .dropzone.hover {
+            border-color: var(--color-primary);
+            background: rgba(93, 109, 250, 0.08);
+            transform: scale(1.02);
+        }
+
+        .dropzone-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(93, 109, 250, 0.2);
+        }
+
+        .dropzone-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-height: 150px;
+        }
+
+        .duty-card {
+            background: white;
+            border: 2px solid rgba(12, 10, 24, 0.1);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            cursor: grab;
+            transition: all 0.3s ease;
+            user-select: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .duty-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-card);
+            transform: translateY(-2px);
+        }
+
+        .duty-card.dragging {
+            opacity: 0.6;
+            transform: scale(0.95);
+            cursor: grabbing;
+        }
+
+        .duty-card.placed {
+            background: rgba(0, 184, 148, 0.08);
+            border-color: var(--color-success);
+            cursor: default;
+        }
+
+        .duty-card.incorrect {
+            background: rgba(225, 112, 85, 0.08);
+            border-color: var(--color-error);
+            animation: shake 0.5s ease;
+        }
+
+        .drag-source {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(12, 10, 24, 0.06);
+        }
+
+        .drag-source .duty-card {
+            margin: 0;
+        }
+
+        .scenario-container {
+            margin-bottom: 25px;
+        }
+
+        .scenario {
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .scenario-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .scenario-icon {
+            font-size: 1.2rem;
+        }
+
+        .scenario-content {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            line-height: 1.5;
+        }
+
+        .scenario-content strong {
+            color: var(--color-primary);
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-sm);
+            border: 2px solid rgba(12, 10, 24, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-label:hover {
+            background: rgba(93, 109, 250, 0.05);
+            border-color: var(--color-primary-soft);
+            transform: translateY(-2px);
+        }
+
+        .option-label.selected {
+            background: rgba(0, 184, 148, 0.08);
+            border-color: var(--color-success);
+        }
+
+        .option-label.incorrect {
+            background: rgba(225, 112, 85, 0.08);
+            border-color: var(--color-error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-radio {
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .option-text {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            flex: 1;
+        }
+
+        .feedback-message {
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-sm);
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 4px solid var(--color-primary);
+            display: none;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .feedback-message.show {
+            display: block;
+        }
+
+        .feedback-message.correct {
+            border-left-color: var(--color-success);
+            background: rgba(0, 184, 148, 0.05);
+        }
+
+        .feedback-message.incorrect {
+            border-left-color: var(--color-error);
+            background: rgba(225, 112, 85, 0.05);
+        }
+
+        .quiz-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .quiz-question {
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            border: 1px solid rgba(12, 10, 24, 0.06);
+        }
+
+        .quiz-question-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 15px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .quiz-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            background: white;
+            border: 2px solid rgba(12, 10, 24, 0.08);
+            border-radius: var(--radius-sm);
             cursor: pointer;
             transition: all 0.2s ease;
         }
-        .accordion-header:hover, details summary:hover {
-            background: rgba(93,109,250,0.08) !important;
-            border-color: var(--color-primary) !important;
+
+        .quiz-option:hover {
+            border-color: var(--color-primary);
+            background: rgba(93, 109, 250, 0.03);
         }
 
-        /* ── List items ── */
-        li {
-            padding: 4px 0;
-            line-height: 1.65;
+        .quiz-option input[type="radio"] {
+            margin-top: 3px;
+            flex-shrink: 0;
         }
-        ul li::marker { color: var(--color-primary); }
 
-        /* ── Feedback / result messages ── */
-        .feedback, .result, .correct-msg, .incorrect-msg, .score-display {
-            border-radius: var(--radius-md) !important;
-            padding: 14px 18px !important;
+        .quiz-option.correct {
+            background: rgba(0, 184, 148, 0.08);
+            border-color: var(--color-success);
+        }
+
+        .quiz-option.incorrect {
+            background: rgba(225, 112, 85, 0.08);
+            border-color: var(--color-error);
+        }
+
+        .quiz-option-text {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            flex: 1;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
             font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: "Plus Jakarta Sans", system-ui, sans-serif;
         }
 
-        /* ── Animations ── */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .container, .page {
-            animation: fadeUp 0.4s ease both;
-        }
-        @keyframes alliedrx-pulse {
-            0%   { box-shadow: 0 0 0 0 rgba(93,109,250,0.6); }
-            70%  { box-shadow: 0 0 0 10px rgba(93,109,250,0); }
-            100% { box-shadow: 0 0 0 0 rgba(93,109,250,0); }
+        .btn:hover:not(:disabled) {
+            background: #4C5CDD;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(93, 109, 250, 0.3);
         }
 
-        /* ── Mobile overrides ── */
-        @media (max-width: 768px) {
-            .container { padding: 16px 14px; }
-            h1 { font-size: 1.4rem !important; }
-            h2 { font-size: 1.1rem; }
-            .card, .content-card, .lesson-card, .topic-card,
-            .info-card, .objective-card, .concept-card { padding: 16px !important; }
-            button, .btn { padding: 10px 20px !important; }
-        }
-        @media (max-width: 480px) {
-            body { font-size: 15px; }
-            header h1, .header h1 { font-size: 1.25rem !important; }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
-        </style>
+        .completion-badge {
+            background: var(--color-success);
+            color: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .completion-badge.show {
+            display: block;
+        }
+
+        .badge-checkmark {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+            animation: checkmarkPop 0.6s ease;
+        }
+
+        .badge-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .badge-subtext {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .progress-summary {
+                grid-template-columns: 1fr;
+            }
+            .progress-tracker {
+                padding: 0 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>CMS-1500 Form Completion Learning Module</h1>
-        <p class="subtitle">Version 02-12 | OMB Control Number: 0938-1197</p>
-    </header>
-    
-    <div class="module-container">
-        <section class="card">
-            <h2>Module Overview</h2>
-            <p>This module provides a comprehensive guide to completing the CMS-1500 claim form (version 02-12), the standard paper form for submitting healthcare claims to Medicare and other insurers when electronic submission is not possible or when using a clearinghouse.</p>
-            
-            <div class="highlight">
-                <strong>Key Facts:</strong> The CMS-1500 form is maintained by the National Uniform Claim Committee (NUCC) and approved by the White House Office of Management and Budget (OMB). Version 02-12 is the current approved version.
-            </div>
-        </section>
-        
-        <section class="card">
-            <h2>Learning Objectives</h2>
-            <div class="objectives-grid">
-                <div class="objective-item">
-                    <h4>Objective 1</h4>
-                    <p>Identify the purpose and importance of the CMS-1500 form in healthcare billing</p>
-                </div>
-                <div class="objective-item">
-                    <h4>Objective 2</h4>
-                    <p>Correctly complete patient, insured, and insurance information blocks</p>
-                </div>
-                <div class="objective-item">
-                    <h4>Objective 3</h4>
-                    <p>Accurately document provider information, services rendered, and diagnoses</p>
-                </div>
-                <div class="objective-item">
-                    <h4>Objective 4</h4>
-                    <p>Apply proper formatting rules for dates, codes, and identifiers</p>
-                </div>
-                <div class="objective-item">
-                    <h4>Objective 5</h4>
-                    <p>Recognize when to leave blocks blank or mark them appropriately</p>
+    <main class="page" aria-labelledby="module-heading">
+        <header class="brand-row">
+            <div class="brand">
+                <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/64e9d2f719b1e5258e5d57f5_IMG_1512-p-500.png" alt="AlliedRx logo" class="brand-logo" />
+                <div class="course-meta">
+                    <span class="course-name">MBC • Lesson 15.1</span>
+                    <div class="week-label">
+                        <span class="week-label-dot"></span>
+                        <span>Lesson 15.1: CMS-1500 Form & Health Insurance</span>
+                    </div>
                 </div>
             </div>
-        </section>
-        
-        <section class="card">
-            <h2>Key Concepts & Form Structure</h2>
-            
-            <h3>Form Sections</h3>
-            <div class="block-grid">
-                <div class="block-item">
-                    <h4>Member Information (Blocks 1-13)</h4>
-                    <p>Patient demographics, insurance details, and coordination of benefits</p>
+            <span class="badge-mode">Campus & Online</span>
+        </header>
+
+        <h1 id="module-heading">CMS-1500 Form & Insurance Billing Foundations</h1>
+        <p class="module-subtitle">Master the CMS-1500 form structure, field requirements, and insurance claim billing procedures essential for medical billing professionals.</p>
+
+        <div class="progress-tracker">
+            <div class="progress-step active" data-step="1">
+                <div class="step-circle">1</div>
+                <div class="step-label">Form Fields</div>
+            </div>
+            <div class="progress-step" data-step="2">
+                <div class="step-circle">2</div>
+                <div class="step-label">Billing Scenarios</div>
+            </div>
+            <div class="progress-step" data-step="3">
+                <div class="step-circle">3</div>
+                <div class="step-label">Knowledge Check</div>
+            </div>
+        </div>
+
+        <div class="progress-summary">
+            <div class="summary-card">
+                <span class="summary-number" id="activities-completed">0</span>
+                <span class="summary-label">Activities Completed</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-number" id="accuracy-rate">0%</span>
+                <span class="summary-label">Accuracy %</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-number" id="time-spent">0:00</span>
+                <span class="summary-label">Time Spent</span>
+            </div>
+        </div>
+
+        <div class="activity-grid">
+            <section class="activity-card" id="activity-1">
+                <div class="activity-header">
+                    <span class="activity-number">Activity 1</span>
+                    <span class="activity-status">Not Started</span>
                 </div>
-                <div class="block-item">
-                    <h4>Provider/Supplier Information (Blocks 14-33)</h4>
-                    <p>Service details, diagnoses, procedures, and billing information</p>
+                <h3 class="activity-title">CMS-1500 Field Matching</h3>
+                <p class="activity-description">Match 6 essential CMS-1500 form blocks to their correct purposes and requirements. Drag each field card to the appropriate category.</p>
+
+                <div class="drag-source">
+                    <div class="duty-card" draggable="true" data-correct="patient-info">Box 1</div>
+                    <div class="duty-card" draggable="true" data-correct="patient-dob">Box 3</div>
+                    <div class="duty-card" draggable="true" data-correct="insurance-info">Box 11</div>
+                    <div class="duty-card" draggable="true" data-correct="diagnosis">Box 21</div>
+                    <div class="duty-card" draggable="true" data-correct="procedure-code">Box 24D</div>
+                    <div class="duty-card" draggable="true" data-correct="billing-provider">Box 33</div>
                 </div>
-            </div>
-            
-            <div class="tip">
-                <strong>Tip:</strong> Always use an "X" to mark checkboxes. Special characters are not allowed on claim forms.
-            </div>
-            
-            <div class="important">
-                <strong>Important:</strong> Medicare only accepts paper claims that use ALL CAPITAL LETTERS.
-            </div>
-        </section>
-        
-        <section class="card">
-            <h2>Detailed Block Instructions</h2>
-            
-            <h3>Critical Patient & Insurance Blocks</h3>
-            
-            <div class="form-section">
-                <h4><span class="block-number">1</span> Insurance Type</h4>
-                <p>Check the box indicating what kind of insurance is applicable (Medicare, Medicaid, Tricare, etc.)</p>
-            </div>
-            
-            <div class="form-section">
-                <h4><span class="block-number">1A</span> Medicare HICN</h4>
-                <p>Patient's Medicare Health Insurance Claim Number. Must be recorded whether Medicare is primary or secondary payer.</p>
-            </div>
-            
-            <div class="form-section">
-                <h4><span class="block-number">3</span> Patient Date of Birth & Sex</h4>
-                <p>Format: MM | DD | CCYY (8-digit format)</p>
-                <div class="examples">Example: September 28, 1990 = 09 | 28 | 1990</div>
-            </div>
-            
-            <div class="form-section">
-                <h4><span class="block-number">11</span> Primary/Secondary Insurance Determination</h4>
-                <p><strong>Most Important Block:</strong> Indicates that a good faith effort has been made to determine whether Medicare is primary or secondary insurance.</p>
-                
-                <div class="highlight">
-                    <strong>When Medicare is Secondary:</strong>
-                    <ul>
-                        <li>Group health plan coverage</li>
-                        <li>Working aged or disability (large group health plan)</li>
-                        <li>End-stage renal disease</li>
-                        <li>No-fault or other liability insurance</li>
-                        <li>Work-related illness/injury (Workers' Compensation, Black Lung, Veterans benefits)</li>
-                    </ul>
+
+                <div class="dropzone-grid">
+                    <div class="dropzone" data-category="patient-info">
+                        <div class="dropzone-title">Patient Type</div>
+                        <div class="dropzone-content"></div>
+                    </div>
+                    <div class="dropzone" data-category="patient-dob">
+                        <div class="dropzone-title">Patient DOB</div>
+                        <div class="dropzone-content"></div>
+                    </div>
+                    <div class="dropzone" data-category="insurance-info">
+                        <div class="dropzone-title">Insurance Info</div>
+                        <div class="dropzone-content"></div>
+                    </div>
+                    <div class="dropzone" data-category="diagnosis">
+                        <div class="dropzone-title">Diagnosis Codes</div>
+                        <div class="dropzone-content"></div>
+                    </div>
+                    <div class="dropzone" data-category="procedure-code">
+                        <div class="dropzone-title">Procedure Code</div>
+                        <div class="dropzone-content"></div>
+                    </div>
+                    <div class="dropzone" data-category="billing-provider">
+                        <div class="dropzone-title">Provider Info</div>
+                        <div class="dropzone-content"></div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="form-section">
-                <h4><span class="block-number">12</span> Patient Signature</h4>
-                <p>Authorization for release of medical information. Must be dated (6- or 8-digit format). Signature on file or computer-generated signature is acceptable.</p>
-            </div>
-        </section>
-        
-        <section class="card">
-            <h2>Provider & Service Information</h2>
-            
-            <div class="form-section">
-                <h4><span class="block-number">17</span> Referring/Ordering Provider</h4>
-                <p>Name of referring, ordering, or supervising provider. Use appropriate qualifiers:</p>
-                <ul>
-                    <li><strong>DN:</strong> Referring Provider</li>
-                    <li><strong>DK:</strong> Ordering Provider</li>
-                    <li><strong>DO:</strong> Supervising Provider</li>
-                </ul>
-            </div>
-            
-            <div class="form-section">
-                <h4><span class="block-number">17B</span> NPI Number</h4>
-                <p>National Provider Identifier - unique identification number for all HIPAA-covered entities.</p>
-            </div>
-            
-            <div class="form-section">
-                <h4><span class="block-number">21</span> Diagnosis Codes</h4>
-                <p>Enter ICD diagnosis codes. Note: Transition from ICD-9-CM to ICD-10-CM occurred in September 2015.</p>
-            </div>
-            
-            <div class="form-section">
-                <h4><span class="block-number">24</span> Service Line Details</h4>
-                <p>Multiple sub-blocks for service details:</p>
-                <ul>
-                    <li><strong>24A:</strong> Dates of service (MMDDYY or MMDDCCYY)</li>
-                    <li><strong>24B:</strong> Place of service codes (HIPAA-compliant 2-digit codes)</li>
-                    <li><strong>24D:</strong> CPT/HCPCS codes with modifiers</li>
-                    <li><strong>24E:</strong> Diagnosis reference code (from Block 21)</li>
-                    <li><strong>24F:</strong> Billed charges</li>
-                    <li><strong>24G:</strong> Days/units (enter "1" for single service)</li>
-                </ul>
-            </div>
-        </section>
-        
-        <section class="card">
-            <h2>Common Scenarios & Special Instructions</h2>
-            
-            <h3>Medicare-Specific Requirements</h3>
-            <ul>
-                <li>Block 8: Always leave blank for Medicare</li>
-                <li>Block 11D: Leave blank for Medicare claims</li>
-                <li>Block 14: For chiropractic services, enter date of initiation of treatment and x-ray date in Block 19 if used</li>
-                <li>Block 15: Leave blank (not required for Medicare)</li>
-            </ul>
-            
-            <h3>Medigap/Supplemental Insurance</h3>
-            <ul>
-                <li>Block 9: Medigap enrollee information if different from patient</li>
-                <li>Block 9A: Policy/group number preceded by MEDIGAP, MG, or MGAP</li>
-            </ul>
-            
-            <h3>Block 19: Additional Claim Information</h3>
-            <p>Used for various purposes:</p>
-            <ul>
-                <li>Explain modifier 99 (multiple modifiers)</li>
-                <li>Indicate attached reports/documentation</li>
-                <li>Worker's Compensation requirements (state-specific)</li>
-                <li>Payer-specific qualifiers</li>
-            </ul>
-        </section>
-        
-        <section class="card quiz-container">
-            <h2>Knowledge Check</h2>
-            
-            <div class="quiz-question">
-                <p><strong>1. What is the correct date format for Block 3 (Patient's Date of Birth)?</strong></p>
-                <div class="quiz-options">
-                    <label><input type="radio" name="q1"> DD/MM/YYYY</label>
-                    <label><input type="radio" name="q1"> MM-DD-YYYY</label>
-                    <label><input type="radio" name="q1"> MM | DD | CCYY</label>
-                    <label><input type="radio" name="q1"> YYYYMMDD</label>
+
+                <button class="btn" id="check-btn-1" onclick="checkActivity1()">Check Answer</button>
+                <div id="activity1-result" class="completion-badge">
+                    <span class="badge-checkmark">✓</span>
+                    <div class="badge-text">Activity 1 Complete!</div>
                 </div>
-            </div>
-            
-            <div class="quiz-question">
-                <p><strong>2. When should Block 11 be completed to indicate Medicare is secondary?</strong></p>
-                <div class="quiz-options">
-                    <label><input type="radio" name="q2"> When the patient has no other insurance</label>
-                    <label><input type="radio" name="q2"> When the patient has insurance through work</label>
-                    <label><input type="radio" name="q2"> When the patient is over 65</label>
-                    <label><input type="radio" name="q2"> Never, Medicare is always primary</label>
+            </section>
+
+            <section class="activity-card" id="activity-2">
+                <div class="activity-header">
+                    <span class="activity-number">Activity 2</span>
+                    <span class="activity-status">Not Started</span>
                 </div>
-            </div>
-            
-            <div class="quiz-question">
-                <p><strong>3. What should you enter in Block 24G if only one service was performed?</strong></p>
-                <div class="quiz-options">
-                    <label><input type="radio" name="q3"> Leave it blank</label>
-                    <label><input type="radio" name="q3"> Enter "0"</label>
-                    <label><input type="radio" name="q3"> Enter "1"</label>
-                    <label><input type="radio" name="q3"> Enter "SINGLE"</label>
+                <h3 class="activity-title">Billing Scenarios</h3>
+                <p class="activity-description">Analyze 3 real-world billing scenarios and select the correct procedure for insurance claims, pre-authorization, or denial appeals.</p>
+
+                <div class="scenario-container">
+                    <div class="scenario">
+                        <div class="scenario-title">
+                            <span class="scenario-icon">📋</span>
+                            Scenario 1: Standard Claim Processing
+                        </div>
+                        <div class="scenario-content">
+                            You're processing an office visit claim for an established patient with commercial insurance. All required CMS-1500 fields are completed. What should you verify regarding provider information?
+                        </div>
+                    </div>
+                    <div class="options-container">
+                        <label class="option-label" data-scenario="1" data-answer="A">
+                            <input type="radio" name="scenario1" class="option-radio" value="A">
+                            <div class="option-text">Verify Box 24J and Box 33 contain the correct rendering and billing provider NPIs</div>
+                        </label>
+                        <label class="option-label" data-scenario="1" data-answer="B">
+                            <input type="radio" name="scenario1" class="option-radio" value="B">
+                            <div class="option-text">Ensure insurance company name appears in Box 1</div>
+                        </label>
+                        <label class="option-label" data-scenario="1" data-answer="C">
+                            <input type="radio" name="scenario1" class="option-radio" value="C">
+                            <div class="option-text">Confirm patient SSN is in Box 2</div>
+                        </label>
+                        <label class="option-label" data-scenario="1" data-answer="D">
+                            <input type="radio" name="scenario1" class="option-radio" value="D">
+                            <div class="option-text">Check that medical record number appears in Box 21</div>
+                        </label>
+                    </div>
+                    <button class="btn" onclick="submitScenario(1, 'A')">Submit Response</button>
+                    <div class="feedback-message" id="feedback-1"></div>
                 </div>
-            </div>
-            
-            <button onclick="checkAnswers()">Check Your Answers</button>
-            <div id="quiz-result" style="margin-top: 20px; font-weight: bold;"></div>
-        </section>
-        
-        <section class="card">
-            <h2>Additional Resources</h2>
-            <ul>
-                <li>NUCC Instruction Manual: www.nucc.org</li>
-                <li>CMS Official Instructions: www.cms.gov</li>
-                <li>Place of Service Codes: www.cms.gov (search for POS codes)</li>
-                <li>ICD-10-CM Code Sets: www.cdc.gov/nchs/icd</li>
-                <li>CPT Codes: American Medical Association (AMA)</li>
-            </ul>
-            
-            <div class="tip" style="margin-top: 20px;">
-                <strong>Remember:</strong> Always verify payer-specific requirements as private insurers may have variations from Medicare guidelines.
-            </div>
-        </section>
-    </div>
-    
-    <footer>
-        <p>CMS-1500 Form Learning Module | Based on Version 02-12 Specifications</p>
-        <p>For training purposes only. Always refer to official CMS and NUCC documentation for current requirements.</p>
-    </footer>
+
+                <div class="scenario-container">
+                    <div class="scenario">
+                        <div class="scenario-title">
+                            <span class="scenario-icon">⚠️</span>
+                            Scenario 2: Pre-Authorization Denial
+                        </div>
+                        <div class="scenario-content">
+                            You receive a pre-authorization denial for an MRI with reason code "Missing Medical Necessity Documentation." Box 19 is empty. What is your next step?
+                        </div>
+                    </div>
+                    <div class="options-container">
+                        <label class="option-label" data-scenario="2" data-answer="A">
+                            <input type="radio" name="scenario2" class="option-radio" value="A">
+                            <div class="option-text">Resubmit with clinical documentation in Box 19 to support medical necessity</div>
+                        </label>
+                        <label class="option-label" data-scenario="2" data-answer="B">
+                            <input type="radio" name="scenario2" class="option-radio" value="B">
+                            <div class="option-text">Call the insurance company verbally; pre-auths don't require documented justification</div>
+                        </label>
+                        <label class="option-label" data-scenario="2" data-answer="C">
+                            <input type="radio" name="scenario2" class="option-radio" value="C">
+                            <div class="option-text">Schedule the MRI as self-pay since pre-auth denials are final</div>
+                        </label>
+                        <label class="option-label" data-scenario="2" data-answer="D">
+                            <input type="radio" name="scenario2" class="option-radio" value="D">
+                            <div class="option-text">Submit an identical claim without changes; errors resolve on resubmission</div>
+                        </label>
+                    </div>
+                    <button class="btn" onclick="submitScenario(2, 'A')">Submit Response</button>
+                    <div class="feedback-message" id="feedback-2"></div>
+                </div>
+
+                <div class="scenario-container">
+                    <div class="scenario">
+                        <div class="scenario-title">
+                            <span class="scenario-icon">🔄</span>
+                            Scenario 3: Medicare & Supplemental Insurance
+                        </div>
+                        <div class="scenario-content">
+                            Your patient has Medicare primary and Medigap supplemental coverage. How should you complete Box 9 (other insurance) and Box 9A on the CMS-1500?
+                        </div>
+                    </div>
+                    <div class="options-container">
+                        <label class="option-label" data-scenario="3" data-answer="A">
+                            <input type="radio" name="scenario3" class="option-radio" value="A">
+                            <div class="option-text">Enter Medigap policy info in Box 9 with "MEDIGAP" or "MG" prefix in Box 9A</div>
+                        </label>
+                        <label class="option-label" data-scenario="3" data-answer="B">
+                            <input type="radio" name="scenario3" class="option-radio" value="B">
+                            <div class="option-text">Leave both boxes blank; Medigap is never listed as secondary</div>
+                        </label>
+                        <label class="option-label" data-scenario="3" data-answer="C">
+                            <input type="radio" name="scenario3" class="option-radio" value="C">
+                            <div class="option-text">Submit separate claims to Medicare and Medigap without cross-referencing</div>
+                        </label>
+                        <label class="option-label" data-scenario="3" data-answer="D">
+                            <input type="radio" name="scenario3" class="option-radio" value="D">
+                            <div class="option-text">Put Medicare info in Box 9 and Medigap in a separate form</div>
+                        </label>
+                    </div>
+                    <button class="btn" onclick="submitScenario(3, 'A')">Submit Response</button>
+                    <div class="feedback-message" id="feedback-3"></div>
+                </div>
+
+                <div id="activity2-result" class="completion-badge">
+                    <span class="badge-checkmark">✓</span>
+                    <div class="badge-text">Activity 2 Complete!</div>
+                </div>
+            </section>
+
+            <section class="activity-card" id="activity-3">
+                <div class="activity-header">
+                    <span class="activity-number">Activity 3</span>
+                    <span class="activity-status">Not Started</span>
+                </div>
+                <h3 class="activity-title">Knowledge Check</h3>
+                <p class="activity-description">Test your understanding of CMS-1500 requirements, insurance types, and claim processing. Score at least 4/5 to mark this activity complete.</p>
+
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">1. What is the correct date format for Block 3 (Patient's Date of Birth) on the CMS-1500?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="A">
+                                <span class="quiz-option-text">A) MM | DD | CCYY</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="B">
+                                <span class="quiz-option-text">B) DD/MM/YYYY</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="C">
+                                <span class="quiz-option-text">C) YYYY-MM-DD</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="D">
+                                <span class="quiz-option-text">D) MMDDYY</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">2. Which insurance type typically requires referrals for specialist visits?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="A">
+                                <span class="quiz-option-text">A) PPO (Preferred Provider Organization)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="B">
+                                <span class="quiz-option-text">B) HMO (Health Maintenance Organization)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="C">
+                                <span class="quiz-option-text">C) Indemnity Insurance</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="D">
+                                <span class="quiz-option-text">D) EPO (Exclusive Provider Organization)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">3. What does ICD-10 coding represent and why is it critical on claims?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="A">
+                                <span class="quiz-option-text">A) International Classification of Diseases, 10th edition; identifies diagnoses for medical necessity</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="B">
+                                <span class="quiz-option-text">B) Insurance Code Directive 10; optional on most claims</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="C">
+                                <span class="quiz-option-text">C) Internal Classification Data 10; used only for research</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="D">
+                                <span class="quiz-option-text">D) Identification Code 10; identifies the provider only</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">4. Which CPT code range includes Evaluation and Management (E/M) services?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="A">
+                                <span class="quiz-option-text">A) 99201-99499 (E/M Services)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="B">
+                                <span class="quiz-option-text">B) 10000-69999 (Surgery)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="C">
+                                <span class="quiz-option-text">C) 70000-79999 (Radiology)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="D">
+                                <span class="quiz-option-text">D) 80000-89999 (Pathology)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">5. What is the purpose of Box 24G (Days or Units) on the CMS-1500?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="A">
+                                <span class="quiz-option-text">A) Indicates the quantity or frequency of service performed</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="B">
+                                <span class="quiz-option-text">B) Shows the patient's insurance group number</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="C">
+                                <span class="quiz-option-text">C) Documents the diagnosis code location</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="D">
+                                <span class="quiz-option-text">D) Records the claim submission date</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn" id="submit-quiz" onclick="submitQuiz()">Check Answers</button>
+                <div id="quiz-result" class="completion-badge">
+                    <span class="badge-checkmark">✓</span>
+                    <div class="badge-text">Knowledge Check Complete!</div>
+                    <div class="badge-subtext" id="quiz-score"></div>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <script>
-        function checkAnswers() {
-            let score = 0;
-            const totalQuestions = 3;
-            
-            // Question 1 - Correct answer is option 3 (index 2)
-            const q1Answer = document.querySelectorAll('input[name="q1"]')[2].checked;
-            if (q1Answer) score++;
-            
-            // Question 2 - Correct answer is option 2 (index 1)
-            const q2Answer = document.querySelectorAll('input[name="q2"]')[1].checked;
-            if (q2Answer) score++;
-            
-            // Question 3 - Correct answer is option 3 (index 2)
-            const q3Answer = document.querySelectorAll('input[name="q3"]')[2].checked;
-            if (q3Answer) score++;
-            
-            const resultDiv = document.getElementById('quiz-result');
-            const percentage = (score / totalQuestions) * 100;
-            
-            if (percentage === 100) {
-                resultDiv.innerHTML = `Perfect! You scored ${score}/${totalQuestions} (${percentage}%) - Excellent understanding of CMS-1500 form completion!`;
-                resultDiv.style.color = '#4caf50';
-            } else if (percentage >= 70) {
-                resultDiv.innerHTML = `Good job! You scored ${score}/${totalQuestions} (${percentage}%) - You have a good grasp of the material.`;
-                resultDiv.style.color = '#ff9800';
-            } else {
-                resultDiv.innerHTML = `You scored ${score}/${totalQuestions} (${percentage}%) - Review the module and try again.`;
-                resultDiv.style.color = '#f44336';
-            }
-            
-            // Provide correct answers
-            resultDiv.innerHTML += `<br><br><strong>Correct Answers:</strong><br>
-            1. MM | DD | CCYY (8-digit format)<br>
-            2. When the patient has insurance through work<br>
-            3. Enter "1" (always enter 1 for single service)`;
+        const quizAnswers = {
+            q1: 'A',
+            q2: 'B',
+            q3: 'A',
+            q4: 'A',
+            q5: 'A'
+        };
+
+        let activitiesCompleted = 0;
+        let totalAccuracy = 0;
+        let startTime = Date.now();
+        let draggedCard = null;
+
+        setInterval(() => {
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed % 60;
+            document.getElementById('time-spent').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+
+        function setupDragAndDrop() {
+            const cards = document.querySelectorAll('.duty-card');
+            const dropzones = document.querySelectorAll('.dropzone');
+
+            cards.forEach(card => {
+                card.addEventListener('dragstart', (e) => {
+                    draggedCard = card;
+                    card.classList.add('dragging');
+                    e.dataTransfer.effectAllowed = 'move';
+                });
+
+                card.addEventListener('dragend', () => {
+                    card.classList.remove('dragging');
+                });
+            });
+
+            dropzones.forEach(zone => {
+                zone.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    zone.classList.add('hover');
+                });
+
+                zone.addEventListener('dragleave', () => {
+                    zone.classList.remove('hover');
+                });
+
+                zone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    zone.classList.remove('hover');
+
+                    if (draggedCard && !draggedCard.classList.contains('placed')) {
+                        const content = zone.querySelector('.dropzone-content');
+                        const clone = draggedCard.cloneNode(true);
+                        clone.draggable = false;
+                        clone.classList.add('placed');
+                        clone.style.cursor = 'default';
+                        clone.dataset.original = draggedCard.dataset.correct;
+                        clone.dataset.target = zone.dataset.category;
+                        content.appendChild(clone);
+                        draggedCard.style.opacity = '0.5';
+                        draggedCard.draggable = false;
+                    }
+                });
+            });
         }
+
+        function checkActivity1() {
+            const placedCards = document.querySelectorAll('.duty-card.placed');
+            let correct = 0;
+
+            placedCards.forEach(card => {
+                const isCorrect = card.dataset.original === card.dataset.target;
+                if (isCorrect) {
+                    correct++;
+                    card.classList.add('correct');
+                } else {
+                    card.classList.add('incorrect');
+                }
+            });
+
+            const accuracy = Math.round((correct / 6) * 100);
+            totalAccuracy = (totalAccuracy + accuracy) / 2;
+            document.getElementById('accuracy-rate').textContent = Math.round(totalAccuracy) + '%';
+
+            if (correct === 6) {
+                document.getElementById('activity1-result').classList.add('show');
+                document.getElementById('activity-1').classList.add('completed');
+                document.querySelector('#activity-1 .activity-status').textContent = 'Complete';
+                activitiesCompleted++;
+                updateProgressTracker(1);
+                updateActivityCount();
+            }
+
+            document.getElementById('check-btn-1').disabled = true;
+        }
+
+        function submitScenario(scenarioNum, correctAnswer) {
+            const selected = document.querySelector(`input[name="scenario${scenarioNum}"]:checked`);
+            if (!selected) return;
+
+            const feedback = document.getElementById(`feedback-${scenarioNum}`);
+            const selectedAnswer = selected.value;
+            const isCorrect = selectedAnswer === correctAnswer;
+
+            const messages = {
+                1: {
+                    A: "Correct! Both NPIs must be verified for proper provider identification.",
+                    B: "Incorrect. Insurance name belongs in Box 1c and other fields, not Box 1.",
+                    C: "Incorrect. SSN is in Box 2, but provider NPIs are critical to verify.",
+                    D: "Incorrect. Medical record numbers are not on the CMS-1500 form."
+                },
+                2: {
+                    A: "Correct! Box 19 is designed to support medical necessity appeals.",
+                    B: "Incorrect. Documentation in Box 19 is specifically required for medical necessity justification.",
+                    C: "Incorrect. Pre-authorization denials can be appealed with supporting documentation.",
+                    D: "Incorrect. Pre-auth denials require corrected information, not blind resubmission."
+                },
+                3: {
+                    A: "Correct! Medigap supplemental info must include the policy prefix.",
+                    B: "Incorrect. Supplemental insurance should be listed when applicable.",
+                    C: "Incorrect. Both coverages should be referenced on a single claim.",
+                    D: "Incorrect. All insurance information belongs on one CMS-1500 form."
+                }
+            };
+
+            feedback.textContent = messages[scenarioNum][selectedAnswer];
+            feedback.classList.add('show', isCorrect ? 'correct' : 'incorrect');
+
+            if (isCorrect) {
+                totalAccuracy = (totalAccuracy + 100) / 2;
+            } else {
+                totalAccuracy = (totalAccuracy + 0) / 2;
+            }
+
+            document.getElementById('accuracy-rate').textContent = Math.round(totalAccuracy) + '%';
+
+            const allOptions = document.querySelectorAll(`[data-scenario="${scenarioNum}"]`);
+            allOptions.forEach(opt => opt.querySelector('input').disabled = true);
+
+            const allAnswered = document.querySelectorAll('.scenario-container').length ===
+                               document.querySelectorAll('.feedback-message.show').length;
+
+            if (allAnswered) {
+                document.getElementById('activity2-result').classList.add('show');
+                document.getElementById('activity-2').classList.add('completed');
+                document.querySelector('#activity-2 .activity-status').textContent = 'Complete';
+                activitiesCompleted++;
+                updateProgressTracker(2);
+                updateActivityCount();
+            }
+        }
+
+        function submitQuiz() {
+            let correct = 0;
+
+            Object.keys(quizAnswers).forEach(question => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === quizAnswers[question]) {
+                    correct++;
+                    selected.closest('.quiz-option').classList.add('correct');
+                } else if (selected) {
+                    selected.closest('.quiz-option').classList.add('incorrect');
+                }
+                if (selected) {
+                    selected.disabled = true;
+                }
+            });
+
+            const accuracy = Math.round((correct / 5) * 100);
+            totalAccuracy = (totalAccuracy + accuracy) / 2;
+            document.getElementById('accuracy-rate').textContent = Math.round(totalAccuracy) + '%';
+
+            document.getElementById('quiz-score').textContent = `Score: ${correct}/5 (${accuracy}%)`;
+
+            if (correct >= 4) {
+                document.getElementById('quiz-result').classList.add('show');
+                document.getElementById('activity-3').classList.add('completed');
+                document.querySelector('#activity-3 .activity-status').textContent = 'Complete';
+                activitiesCompleted++;
+                updateProgressTracker(3);
+                updateActivityCount();
+            }
+
+            document.getElementById('submit-quiz').disabled = true;
+        }
+
+        function updateActivityCount() {
+            document.getElementById('activities-completed').textContent = activitiesCompleted;
+        }
+
+        function updateProgressTracker(step) {
+            const stepEl = document.querySelector(`.progress-step[data-step="${step}"]`);
+            if (stepEl) {
+                stepEl.classList.remove('active');
+                stepEl.classList.add('completed');
+                if (step < 3) {
+                    const nextStep = document.querySelector(`.progress-step[data-step="${step + 1}"]`);
+                    if (nextStep) nextStep.classList.add('active');
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', setupDragAndDrop);
+    </script>
+
+    <script>
+        (function() {
+            var dragSrc = null, cloneEl = null, lastTarget = null;
+            function pt(e){ return e.touches ? e.touches[0] : e.changedTouches[0]; }
+            document.addEventListener("touchstart", function(e){
+                var el = e.target.closest("[draggable='true']");
+                if(!el) return;
+                dragSrc = el;
+                dragSrc._dt = { data:{}, getData:function(k){return this.data[k]||"";}, setData:function(k,v){this.data[k]=v;} };
+                var ev = new Event("dragstart",{bubbles:true,cancelable:true});
+                ev.dataTransfer = dragSrc._dt;
+                el.dispatchEvent(ev);
+                cloneEl = el.cloneNode(true);
+                var r = el.getBoundingClientRect();
+                Object.assign(cloneEl.style, {position:"fixed",top:r.top+"px",left:r.left+"px",width:r.width+"px",opacity:"0.7",pointerEvents:"none",zIndex:9999,boxShadow:"0 8px 24px rgba(0,0,0,0.2)",borderRadius:"8px"});
+                document.body.appendChild(cloneEl);
+                e.preventDefault();
+            }, {passive:false});
+            document.addEventListener("touchmove", function(e){
+                if(!dragSrc) return;
+                var t = pt(e);
+                if(cloneEl){ cloneEl.style.top=(t.clientY-30)+"px"; cloneEl.style.left=(t.clientX-60)+"px"; }
+                var over = document.elementFromPoint(t.clientX, t.clientY);
+                if(over && over !== lastTarget){
+                    if(lastTarget){ var lev=new Event("dragleave",{bubbles:true}); lastTarget.dispatchEvent(lev); }
+                    lastTarget = over;
+                    var ov=new Event("dragover",{bubbles:true,cancelable:true}); ov.dataTransfer=dragSrc._dt; over.dispatchEvent(ov);
+                }
+                e.preventDefault();
+            }, {passive:false});
+            document.addEventListener("touchend", function(e){
+                if(!dragSrc) return;
+                if(cloneEl){ cloneEl.remove(); cloneEl=null; }
+                var t = pt(e);
+                var dropEl = document.elementFromPoint(t.clientX, t.clientY);
+                if(dropEl){ var ev=new Event("drop",{bubbles:true,cancelable:true}); ev.dataTransfer=dragSrc._dt; dropEl.dispatchEvent(ev); }
+                var de=new Event("dragend",{bubbles:true}); dragSrc.dispatchEvent(de);
+                dragSrc=null; lastTarget=null;
+            }, {passive:false});
+        })();
     </script>
 </body>
 </html>
