@@ -2,25 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HIPAA Mastery Learning Platform</title>
+    <title>Lesson 17.1: HIPAA Mastery & Healthcare Compliance</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
             --color-primary: #5D6DFA;
-            --color-primary-light: #A5AFFF;
+            --color-primary-soft: #A5AFFF;
             --color-accent: #7C6CF0;
             --color-success: #00b894;
-            --color-warning: #fdcb6e;
             --color-error: #e17055;
-            --color-bg-light: #F7F7F7;
-            --color-bg-gradient: linear-gradient(to bottom, white, #F5F6FF, #F7F7F7);
-            --color-text: #333333;
-            --color-muted: #666666;
-            --radius-lg: 20px;
-            --radius-md: 12px;
-            --radius-sm: 8px;
-            --shadow-soft: 0 10px 30px rgba(93, 109, 250, 0.1);
-            --shadow-hover: 0 15px 35px rgba(93, 109, 250, 0.15);
+            --color-warning: #fdcb6e;
+            --color-bg: #F7F7F7;
+            --color-text: #2b2b2b;
+            --color-muted: #6c6880;
+            --color-dark: #0c0a18;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 12px;
+            --shadow-soft: 0 18px 45px rgba(23, 10, 61, 0.18);
+            --shadow-hover: 0 25px 50px rgba(93, 109, 250, 0.15);
+            --shadow-card: 0 12px 30px rgba(15, 23, 42, 0.1);
         }
 
         * {
@@ -29,23 +33,33 @@
             padding: 0;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--color-bg-gradient);
-            color: var(--color-text);
-            line-height: 1.6;
-            padding: 20px;
-            min-height: 100vh;
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        @keyframes fadeIn {
+        body {
+            font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+            padding: 24px;
+            background: var(--color-bg);
+            color: var(--color-text);
+            -webkit-text-size-adjust: 100%;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 12px; }
+        }
+
+        @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes slideIn {
-            from { transform: translateX(-100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         @keyframes pulse {
@@ -53,2140 +67,1207 @@
             50% { transform: scale(1.05); }
         }
 
-        @keyframes flip {
-            0% { transform: rotateY(0); }
-            100% { transform: rotateY(180deg); }
+        @keyframes checkmarkPop {
+            0% { transform: scale(0); opacity: 0; }
+            70% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
-        .platform-container {
-            max-width: 1400px;
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .page {
+            width: 100%;
+            max-width: 1000px;
             margin: 0 auto;
-            animation: fadeIn 0.6s ease-out;
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            padding: 28px 30px 32px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        /* Dashboard Header */
-        .dashboard-header {
+        @media (max-width: 900px) {
+            .page { padding: 22px; }
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 0; }
+            .page {
+                border-radius: 0;
+                box-shadow: none;
+                padding: 18px 14px 22px;
+            }
+        }
+
+        /* Header */
+        .brand-row {
             display: flex;
+            align-items: flex-start;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
+            gap: 14px;
+            margin-bottom: 20px;
             flex-wrap: wrap;
-            gap: 20px;
+            width: 100%;
+            animation: fadeIn 0.6s ease-out 0.2s both;
         }
 
-        .brand-section {
+        .brand {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .brand-logo {
-            height: 50px;
+            height: 40px;
             width: auto;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            max-width: 100%;
+            filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.2));
+            transition: transform 0.3s ease;
         }
 
-        .user-stats {
+        .brand-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .course-meta {
             display: flex;
-            gap: 20px;
-            background: white;
-            padding: 15px 25px;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-soft);
+            flex-direction: column;
+            gap: 2px;
+            max-width: 100%;
         }
 
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--color-primary);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--color-muted);
+        .course-name {
+            font-size: 0.78rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.16em;
+            color: var(--color-muted);
+            white-space: normal;
         }
 
-        /* Learning Navigation */
-        .learning-nav {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-            overflow-x: auto;
-            padding-bottom: 10px;
+        .week-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(93, 109, 250, 0.08);
+            font-size: 0.76rem;
+            color: var(--color-primary);
+            white-space: normal;
         }
 
-        .nav-tab {
-            padding: 12px 24px;
-            background: white;
-            border: 2px solid rgba(93, 109, 250, 0.1);
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            color: var(--color-text);
-            cursor: pointer;
+        .week-label-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: var(--color-success);
+            flex-shrink: 0;
+        }
+
+        .badge-mode {
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: rgba(12, 10, 24, 0.06);
+            border: 1px solid rgba(12, 10, 24, 0.08);
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--color-muted);
             white-space: nowrap;
             transition: all 0.3s ease;
         }
 
-        .nav-tab:hover {
-            border-color: var(--color-primary);
-            transform: translateY(-2px);
-        }
-
-        .nav-tab.active {
-            background: var(--color-primary);
-            color: white;
-            border-color: var(--color-primary);
-        }
-
-        /* Content Panels */
-        .content-panel {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .content-panel.active {
-            display: block;
-        }
-
-        /* Topic Cards Panel */
-        .topics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
-
-        .topic-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            box-shadow: var(--shadow-soft);
-            border: 2px solid rgba(93, 109, 250, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .topic-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--color-primary);
-        }
-
-        .topic-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .topic-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: white;
-            flex-shrink: 0;
-        }
-
-        .topic-title {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--color-primary);
-        }
-
-        .topic-description {
-            color: var(--color-text);
-            margin-bottom: 25px;
-            line-height: 1.7;
-        }
-
-        .learning-objectives {
-            background: rgba(93, 109, 250, 0.05);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .objectives-title {
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .objectives-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .objectives-list li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .objectives-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--color-success);
-            font-weight: bold;
-        }
-
-        .activity-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .activity-btn {
-            padding: 10px 20px;
+        .badge-mode:hover {
             background: rgba(93, 109, 250, 0.1);
-            border: 2px solid rgba(93, 109, 250, 0.2);
-            border-radius: var(--radius-sm);
+            border-color: var(--color-primary-soft);
             color: var(--color-primary);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            flex: 1;
-            text-align: center;
-            min-width: 120px;
         }
 
-        .activity-btn:hover {
-            background: var(--color-primary);
-            color: white;
-            transform: translateY(-2px);
+        @media (max-width: 480px) {
+            .brand-row { flex-direction: column; align-items: flex-start; }
+            .badge-mode { margin-top: 6px; }
         }
 
-        /* Flash Cards Panel */
-        .flashcards-container {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .flashcard-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .flashcard-title {
-            font-size: 1.8rem;
-            font-weight: 800;
+        h1 {
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            line-height: 1.1;
             color: var(--color-primary);
-            margin-bottom: 10px;
+            margin-bottom: 6px;
+            animation: fadeInUp 0.6s ease-out 0.3s both;
         }
 
-        .flashcard-subtitle {
+        .module-subtitle {
+            font-size: 0.98rem;
             color: var(--color-muted);
-            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease-out 0.4s both;
         }
 
-        .flashcard-area {
-            perspective: 1000px;
-            margin-bottom: 40px;
-        }
-
-        .flashcard {
-            width: 100%;
-            height: 400px;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.8s;
-            cursor: pointer;
-        }
-
-        .flashcard.flipped {
-            transform: rotateY(180deg);
-        }
-
-        .flashcard-front, .flashcard-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .flashcard-front {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-            color: white;
-        }
-
-        .flashcard-back {
-            background: white;
-            color: var(--color-text);
-            transform: rotateY(180deg);
-            border: 2px solid rgba(93, 109, 250, 0.1);
-        }
-
-        .term {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        .hint {
-            font-size: 1rem;
-            opacity: 0.8;
-            margin-top: 20px;
-        }
-
-        .definition {
-            font-size: 1.4rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .example {
-            background: rgba(93, 109, 250, 0.05);
-            padding: 20px;
-            border-radius: var(--radius-md);
-            margin-top: 20px;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .example-title {
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: 10px;
-        }
-
-        .flashcard-controls {
+        /* Progress Tracker */
+        .progress-tracker {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            padding: 0 20px;
+            animation: fadeInUp 0.6s ease-out 0.45s both;
         }
 
-        .nav-btn {
-            padding: 12px 30px;
-            background: var(--color-primary);
-            color: white;
-            border: none;
-            border-radius: var(--radius-md);
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .progress-tracker::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50px;
+            right: 50px;
+            height: 3px;
+            background: rgba(12, 10, 24, 0.08);
+            z-index: 1;
         }
 
-        .nav-btn:hover {
-            background: #4C5CDD;
-            transform: translateY(-2px);
-        }
-
-        .nav-btn:disabled {
-            background: var(--color-muted);
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .progress-indicator {
-            font-size: 1rem;
-            color: var(--color-muted);
-            font-weight: 600;
-        }
-
-        .mastery-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 184, 148, 0.1);
-            color: var(--color-success);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: 700;
-            margin-left: 10px;
-        }
-
-        /* Simulations Panel */
-        .simulations-container {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .simulation-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .simulation-title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--color-primary);
-            margin-bottom: 10px;
-        }
-
-        .simulation-scenario {
-            background: linear-gradient(135deg, rgba(93, 109, 250, 0.05), rgba(131, 128, 240, 0.05));
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            margin-bottom: 40px;
-            border: 2px dashed rgba(93, 109, 250, 0.3);
-        }
-
-        .scenario-title {
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .scenario-text {
-            line-height: 1.7;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .decision-points {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .decision-card {
-            background: white;
-            border: 2px solid rgba(93, 109, 250, 0.2);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .decision-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--color-primary);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .decision-card.selected {
-            border-color: var(--color-success);
-            background: rgba(0, 184, 148, 0.05);
-        }
-
-        .decision-card.incorrect {
-            border-color: var(--color-error);
-            background: rgba(225, 112, 85, 0.05);
-        }
-
-        .decision-text {
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .decision-explanation {
-            font-size: 0.9rem;
-            color: var(--color-muted);
-            display: none;
-        }
-
-        .decision-card.selected .decision-explanation,
-        .decision-card.incorrect .decision-explanation {
-            display: block;
-        }
-
-        .feedback-panel {
-            background: rgba(93, 109, 250, 0.05);
-            border-radius: var(--radius-lg);
-            padding: 25px;
-            margin-top: 30px;
-            border-top: 4px solid #5D6DFA; border-radius: 12px;
-            display: none;
-        }
-
-        .feedback-panel.show {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .feedback-title {
-            font-weight: 800;
-            color: var(--color-primary);
-            margin-bottom: 15px;
+        .progress-step {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
+            position: relative;
+            z-index: 2;
+            flex: 1;
         }
 
-        .feedback-content {
-            line-height: 1.7;
-        }
-
-        /* Interactive Exercises Panel */
-        .exercises-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
-
-        .exercise-card {
+        .step-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
             background: white;
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            box-shadow: var(--shadow-soft);
-            border: 2px solid rgba(93, 109, 250, 0.1);
-        }
-
-        .exercise-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .exercise-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--color-primary);
-            border-radius: 10px;
+            border: 2px solid rgba(12, 10, 24, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-muted);
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active .step-circle {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .progress-step.completed .step-circle {
+            background: var(--color-success);
+            border-color: var(--color-success);
             color: white;
         }
 
-        .exercise-title {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--color-primary);
-        }
-
-        .matching-game {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .matching-item {
-            padding: 15px;
-            background: rgba(93, 109, 250, 0.05);
-            border: 2px solid rgba(93, 109, 250, 0.2);
-            border-radius: var(--radius-sm);
-            cursor: move;
+        .step-label {
+            font-size: 0.75rem;
+            color: var(--color-muted);
             text-align: center;
+            font-weight: 500;
+        }
+
+        .progress-step.active .step-label {
+            color: var(--color-primary);
             font-weight: 600;
-            transition: all 0.3s ease;
         }
 
-        .matching-item.dragging {
-            opacity: 0.5;
+        /* Progress Summary */
+        .progress-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.6s ease-out 0.5s both;
         }
 
-        .matching-item.matched {
-            background: rgba(0, 184, 148, 0.1);
-            border-color: var(--color-success);
-            color: var(--color-success);
-        }
-
-        .fill-blank {
-            background: rgba(93, 109, 250, 0.05);
-            padding: 25px;
+        .summary-card {
+            background: rgba(12, 10, 24, 0.02);
             border-radius: var(--radius-md);
-            margin: 20px 0;
-        }
-
-        .sentence {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .blank {
-            display: inline-block;
-            width: 200px;
-            height: 40px;
-            border-bottom: 2px dashed var(--color-primary);
-            margin: 0 10px;
-            vertical-align: middle;
-            position: relative;
-        }
-
-        .blank.filled {
-            border-bottom: 2px solid var(--color-success);
-        }
-
-        .word-bank {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .word-option {
-            padding: 10px 20px;
-            background: white;
-            border: 2px solid rgba(93, 109, 250, 0.2);
-            border-radius: var(--radius-sm);
-            cursor: move;
-            font-weight: 600;
+            padding: 16px;
+            border: 1px solid rgba(12, 10, 24, 0.06);
+            text-align: center;
             transition: all 0.3s ease;
         }
 
-        .word-option:hover {
-            border-color: var(--color-primary);
-            transform: translateY(-2px);
+        .summary-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--color-primary-soft);
         }
 
-        /* Progress Tracking */
-        .progress-section {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            margin-top: 40px;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .progress-title {
-            font-size: 1.5rem;
+        .summary-number {
+            font-size: 2rem;
             font-weight: 800;
             color: var(--color-primary);
-            margin-bottom: 20px;
+            display: block;
+            line-height: 1;
+            margin-bottom: 4px;
         }
 
-        .mastery-levels {
+        .summary-label {
+            font-size: 0.8rem;
+            color: var(--color-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Activity Grid */
+        .activity-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 25px;
             margin-bottom: 30px;
         }
 
-        .mastery-card {
-            background: rgba(93, 109, 250, 0.05);
+        .activity-card {
+            background: white;
             border-radius: var(--radius-md);
-            padding: 20px;
-            text-align: center;
-            border: 2px solid rgba(93, 109, 250, 0.1);
+            border: 1px solid rgba(12, 10, 24, 0.08);
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out both;
         }
 
-        .mastery-card.completed {
-            background: rgba(0, 184, 148, 0.1);
+        .activity-card:nth-child(1) { animation-delay: 0.55s; }
+        .activity-card:nth-child(2) { animation-delay: 0.6s; }
+        .activity-card:nth-child(3) { animation-delay: 0.65s; }
+
+        .activity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--color-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--color-primary-soft);
+        }
+
+        .activity-card:hover::before {
+            opacity: 1;
+        }
+
+        .activity-card.completed {
             border-color: var(--color-success);
         }
 
-        .mastery-topic {
+        .activity-card.completed::before {
+            background: var(--color-success);
+            opacity: 1;
+        }
+
+        .activity-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .activity-number {
+            font-size: 0.8rem;
             font-weight: 700;
             color: var(--color-primary);
-            margin-bottom: 10px;
+            background: rgba(93, 109, 250, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
         }
 
-        .mastery-progress {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--color-primary);
-            margin-bottom: 5px;
+        .activity-status {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 12px;
+            background: rgba(12, 10, 24, 0.06);
+            color: var(--color-muted);
         }
 
-        .mastery-card.completed .mastery-progress {
+        .activity-card.completed .activity-status {
+            background: rgba(0, 184, 148, 0.1);
             color: var(--color-success);
         }
 
-        .mastery-label {
-            font-size: 0.9rem;
-            color: var(--color-muted);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            .dashboard-header {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .user-stats {
-                justify-content: space-around;
-            }
-
-            .topics-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .exercises-container {
-                grid-template-columns: 1fr;
-            }
-
-            .flashcard {
-                height: 300px;
-            }
-
-            .term {
-                font-size: 1.8rem;
-            }
-
-            .definition {
-                font-size: 1.2rem;
-            }
-
-            .matching-game {
-                grid-template-columns: 1fr;
-            }
-        }
-    
-        /* ═══════════════════════════════════════════════════
-           AlliedRx Premium Design System — Applied Override
-           ═══════════════════════════════════════════════════ */
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
-        :root {
-            --color-primary: #5D6DFA;
-            --color-primary-soft: #A5AFFF;
-            --color-accent: #7C6CF0;
-            --color-dark: #4C5CDD;
-            --color-bg: #F7F7F7;
-            --color-surface: #ffffff;
-            --color-text: #1e2033;
-            --color-muted: #6b7280;
-            --color-success: #10b981;
-            --color-warning: #f59e0b;
-            --color-error: #e74c3c;
-            --color-border: rgba(15,23,42,0.07);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 18px;
-            --radius-xl: 24px;
-            --shadow-sm: 0 2px 8px rgba(93,109,250,0.08);
-            --shadow-md: 0 8px 24px rgba(23,10,61,0.10);
-            --shadow-lg: 0 18px 45px rgba(23,10,61,0.14);
-            --gradient-primary: linear-gradient(135deg, #5D6DFA 0%, #7C6CF0 100%);
-            --gradient-card: linear-gradient(135deg, rgba(93,109,250,0.06) 0%, rgba(255,255,255,0.98) 100%);
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
-            background: radial-gradient(circle at 0% 0%, #ffffff 0%, #F5F6FF 45%, #F7F7F7 100%) !important;
-            color: var(--color-text);
-            line-height: 1.65;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ── Container ── */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 24px 20px;
-        }
-
-        /* ── Header upgrade ── */
-        header, .header {
-            background: var(--gradient-primary) !important;
-            border-radius: var(--radius-xl) !important;
-            padding: 28px 32px !important;
-            box-shadow: var(--shadow-lg) !important;
-            margin-bottom: 28px !important;
-            position: relative;
-            overflow: hidden;
-        }
-        header::before, .header::before {
-            content: '';
-            position: absolute;
-            top: -40px; right: -40px;
-            width: 200px; height: 200px;
-            background: rgba(255,255,255,0.07);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        header h1, .header h1 {
-            font-size: clamp(1.4rem, 3vw, 2rem) !important;
-            font-weight: 800 !important;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            color: #ffffff !important;
-            margin-bottom: 6px !important;
-        }
-        header p, .header p, header .subtitle, .header .subtitle {
-            font-size: 0.95rem;
-            color: rgba(255,255,255,0.82) !important;
-            font-weight: 500;
-        }
-        @media (max-width: 768px) {
-            header, .header { padding: 20px 18px !important; border-radius: var(--radius-lg) !important; }
-        }
-
-        /* ── Card upgrades ── */
-        .card, .content-card, .lesson-card, .topic-card, .info-card,
-        .objective-card, .section-card, .module-card, .concept-card,
-        .learning-card, .feature-card, .term-card, .step-card, .tip-card {
-            background: var(--gradient-card) !important;
-            border: 1px solid var(--color-border) !important;
-            border-radius: var(--radius-lg) !important;
-            box-shadow: var(--shadow-sm) !important;
-            padding: 20px !important;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border-left: none !important;
-        }
-        .card:hover, .content-card:hover, .lesson-card:hover, .topic-card:hover,
-        .info-card:hover, .objective-card:hover, .concept-card:hover,
-        .learning-card:hover, .feature-card:hover, .term-card:hover, .step-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md) !important;
-        }
-
-        /* ── Section headers ── */
-        h2, .section-header, .lesson-header {
-            font-size: clamp(1.15rem, 2.5vw, 1.35rem);
-            font-weight: 700;
-            color: var(--color-text);
-            letter-spacing: -0.01em;
-            padding-bottom: 12px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid rgba(93,109,250,0.15) !important;
-            border-left: none !important;
-        }
-        h3 {
-            font-size: 1.05rem;
+        .activity-title {
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--color-text);
             margin-bottom: 10px;
         }
 
-        /* ── Module/section label chips ── */
-        .module-number, .lesson-number, .step-number, .badge, .section-badge {
+        .activity-description {
+            font-size: 0.9rem;
+            color: var(--color-muted);
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        /* Activity 1: Drag-and-Drop */
+        .dropzone-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 600px) {
+            .dropzone-grid { grid-template-columns: 1fr; }
+        }
+
+        .dropzone {
+            min-height: 250px;
+            border: 3px dashed rgba(93, 109, 250, 0.3);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            background: rgba(93, 109, 250, 0.02);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .dropzone.hover {
+            border-color: var(--color-primary);
+            background: rgba(93, 109, 250, 0.08);
+            transform: scale(1.02);
+        }
+
+        .dropzone-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(93, 109, 250, 0.2);
+        }
+
+        .dropzone-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-height: 150px;
+        }
+
+        .duty-card {
+            background: white;
+            border: 2px solid rgba(12, 10, 24, 0.1);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            cursor: grab;
+            transition: all 0.3s ease;
+            user-select: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .duty-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-card);
+            transform: translateY(-2px);
+        }
+
+        .duty-card.dragging {
+            opacity: 0.6;
+            transform: scale(0.95);
+            cursor: grabbing;
+        }
+
+        .duty-card.placed {
+            background: rgba(0, 184, 148, 0.08);
+            border-color: var(--color-success);
+            cursor: default;
+        }
+
+        .duty-card.incorrect {
+            background: rgba(225, 112, 85, 0.08);
+            border-color: var(--color-error);
+            animation: shake 0.5s ease;
+        }
+
+        .drag-source {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(12, 10, 24, 0.06);
+        }
+
+        .drag-source .duty-card {
+            margin: 0;
+        }
+
+        /* Activity 2: Scenarios */
+        .scenario-container {
+            margin-bottom: 25px;
+        }
+
+        .scenario {
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .scenario-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .scenario-icon {
+            font-size: 1.2rem;
+        }
+
+        .scenario-content {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            line-height: 1.5;
+        }
+
+        .scenario-content strong {
+            color: var(--color-primary);
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-sm);
+            border: 2px solid rgba(12, 10, 24, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-label:hover {
+            background: rgba(93, 109, 250, 0.05);
+            border-color: var(--color-primary-soft);
+            transform: translateY(-2px);
+        }
+
+        .option-label.selected {
+            background: rgba(0, 184, 148, 0.08);
+            border-color: var(--color-success);
+        }
+
+        .option-label.incorrect {
+            background: rgba(225, 112, 85, 0.08);
+            border-color: var(--color-error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-radio {
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .option-text {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            flex: 1;
+        }
+
+        .feedback-message {
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-sm);
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 4px solid var(--color-primary);
+            display: none;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .feedback-message.show {
+            display: block;
+        }
+
+        .feedback-message.correct {
+            border-left-color: var(--color-success);
+            background: rgba(0, 184, 148, 0.05);
+        }
+
+        .feedback-message.incorrect {
+            border-left-color: var(--color-error);
+            background: rgba(225, 112, 85, 0.05);
+        }
+
+        /* Activity 3: Quiz */
+        .quiz-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .quiz-question {
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            border: 1px solid rgba(12, 10, 24, 0.06);
+        }
+
+        .quiz-question-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 15px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .quiz-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            background: white;
+            border: 2px solid rgba(12, 10, 24, 0.08);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--color-primary);
+            background: rgba(93, 109, 250, 0.03);
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .quiz-option.correct {
+            background: rgba(0, 184, 148, 0.08);
+            border-color: var(--color-success);
+        }
+
+        .quiz-option.incorrect {
+            background: rgba(225, 112, 85, 0.08);
+            border-color: var(--color-error);
+        }
+
+        .quiz-option-text {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            flex: 1;
+        }
+
+        /* Buttons */
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 4px 12px;
-            border-radius: 999px;
-            background: rgba(93,109,250,0.10);
-            color: var(--color-primary);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 10px;
-        }
-
-        /* ── Button upgrades ── */
-        button, .btn, .submit-btn, .action-btn, .check-btn, .next-btn,
-        input[type="submit"], input[type="button"] {
-            font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
-            background: var(--gradient-primary) !important;
-            color: #ffffff !important;
-            border: none !important;
-            border-radius: 999px !important;
-            padding: 11px 24px !important;
-            font-size: 0.875rem !important;
-            font-weight: 700 !important;
-            letter-spacing: 0.04em;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(93,109,250,0.30) !important;
-            transition: transform 0.15s ease, box-shadow 0.15s ease !important;
-        }
-        button:hover, .btn:hover, .submit-btn:hover, .action-btn:hover {
-            transform: translateY(-1px) !important;
-            box-shadow: 0 10px 28px rgba(93,109,250,0.40) !important;
-        }
-        button:active { transform: translateY(0) !important; }
-
-        /* ── Quiz / multiple choice options ── */
-        .option, .quiz-option, .answer-option, .choice {
-            border: 2px solid var(--color-border) !important;
-            border-radius: var(--radius-md) !important;
-            padding: 14px 18px !important;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            background: var(--color-surface) !important;
-            margin-bottom: 10px;
-        }
-        .option:hover, .quiz-option:hover, .answer-option:hover, .choice:hover {
-            border-color: var(--color-primary) !important;
-            background: rgba(93,109,250,0.05) !important;
-        }
-        .option.correct, .quiz-option.correct, .answer-option.correct {
-            border-color: var(--color-success) !important;
-            background: rgba(16,185,129,0.08) !important;
-        }
-        .option.incorrect, .quiz-option.incorrect, .answer-option.incorrect {
-            border-color: var(--color-error) !important;
-            background: rgba(231,76,60,0.08) !important;
-        }
-
-        /* ── Table upgrades ── */
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-        th {
-            background: var(--gradient-primary) !important;
-            color: #ffffff !important;
-            padding: 13px 16px !important;
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            text-align: left;
-        }
-        td {
-            padding: 12px 16px !important;
-            border-bottom: 1px solid rgba(15,23,42,0.06);
-            font-size: 0.9rem;
-        }
-        tr:nth-child(even) td { background: rgba(93,109,250,0.03); }
-        tr:last-child td { border-bottom: none; }
-        tr:hover td { background: rgba(93,109,250,0.05); }
-
-        /* ── Progress / stats panels ── */
-        .progress-bar, .progress-fill {
-            border-radius: 999px;
-            background: var(--gradient-primary) !important;
-            transition: width 0.6s ease;
-        }
-        .progress-track, .progress-container, .progress-wrapper {
-            background: rgba(93,109,250,0.10) !important;
-            border-radius: 999px !important;
-            overflow: hidden;
-        }
-        .stat-card, .stats-card, .stat-box, .metric-card {
-            background: var(--gradient-card) !important;
-            border-radius: var(--radius-lg) !important;
-            border: 1px solid var(--color-border) !important;
-            box-shadow: var(--shadow-sm) !important;
-            padding: 20px !important;
-        }
-        .stat-value, .metric-value, .stat-number {
-            font-size: 2rem !important;
-            font-weight: 800 !important;
-            color: var(--color-primary) !important;
-        }
-
-        /* ── Tabs ── */
-        .tab-btn, .tab-button, .tab, .nav-tab {
-            border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
-            padding: 10px 20px !important;
-            font-weight: 600 !important;
-            font-size: 0.875rem;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--color-primary);
+            color: white;
             border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: rgba(93,109,250,0.08);
-            color: var(--color-primary);
-        }
-        .tab-btn.active, .tab-button.active, .tab.active, .nav-tab.active {
-            background: var(--gradient-primary) !important;
-            color: #ffffff !important;
-            box-shadow: 0 4px 12px rgba(93,109,250,0.30);
-        }
-
-        /* ── Input fields ── */
-        input[type="text"], input[type="number"], input[type="email"],
-        select, textarea {
-            border: 2px solid rgba(93,109,250,0.2) !important;
-            border-radius: var(--radius-md) !important;
-            padding: 10px 14px !important;
-            font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+            border-radius: var(--radius-md);
             font-size: 0.9rem;
-            transition: border-color 0.2s ease;
-            outline: none;
-            width: 100%;
-        }
-        input:focus, select:focus, textarea:focus {
-            border-color: var(--color-primary) !important;
-            box-shadow: 0 0 0 3px rgba(93,109,250,0.12) !important;
-        }
-
-        /* ── Highlight / callout boxes ── */
-        .note, .callout, .highlight-box, .info-box, .tip-box, .warning-box, .important {
-            border-radius: var(--radius-md) !important;
-            padding: 16px 20px !important;
-            border-left: 4px solid var(--color-primary) !important;
-            background: rgba(93,109,250,0.05) !important;
-        }
-
-        /* ── Sidebar nav (in sidebar layout files) ── */
-        nav.sidebar, .sidebar {
-            background: #ffffff !important;
-            border-right: 1px solid var(--color-border) !important;
-            box-shadow: var(--shadow-sm);
-        }
-        nav.sidebar h2, .sidebar h2 {
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--color-muted);
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--color-border);
-            margin-bottom: 12px;
-        }
-        .nav-link, .sidebar a {
-            border-radius: var(--radius-sm) !important;
-            padding: 10px 14px !important;
-            font-size: 0.875rem !important;
-            font-weight: 500;
-            transition: all 0.15s ease;
-            display: block;
-            color: var(--color-muted);
-            text-decoration: none;
-        }
-        .nav-link:hover, .sidebar a:hover,
-        .nav-link.active, .sidebar a.active {
-            background: rgba(93,109,250,0.10) !important;
-            color: var(--color-primary) !important;
-        }
-        .nav-link.active, .sidebar a.active {
-            font-weight: 700 !important;
-        }
-
-        /* ── Accordion ── */
-        .accordion-header, .accordion-btn, details summary {
-            border-radius: var(--radius-md) !important;
-            padding: 14px 18px !important;
-            background: var(--gradient-card) !important;
-            border: 1px solid var(--color-border) !important;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .accordion-header:hover, details summary:hover {
-            background: rgba(93,109,250,0.08) !important;
-            border-color: var(--color-primary) !important;
+            transition: all 0.3s ease;
+            font-family: "Plus Jakarta Sans", system-ui, sans-serif;
         }
 
-        /* ── List items ── */
-        li {
-            padding: 4px 0;
-            line-height: 1.65;
-        }
-        ul li::marker { color: var(--color-primary); }
-
-        /* ── Feedback / result messages ── */
-        .feedback, .result, .correct-msg, .incorrect-msg, .score-display {
-            border-radius: var(--radius-md) !important;
-            padding: 14px 18px !important;
-            font-weight: 600;
+        .btn:hover:not(:disabled) {
+            background: #4C5CDD;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(93, 109, 250, 0.3);
         }
 
-        /* ── Animations ── */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .container, .page {
-            animation: fadeUp 0.4s ease both;
-        }
-        @keyframes alliedrx-pulse {
-            0%   { box-shadow: 0 0 0 0 rgba(93,109,250,0.6); }
-            70%  { box-shadow: 0 0 0 10px rgba(93,109,250,0); }
-            100% { box-shadow: 0 0 0 0 rgba(93,109,250,0); }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
-        /* ── Mobile overrides ── */
-        @media (max-width: 768px) {
-            .container { padding: 16px 14px; }
-            h1 { font-size: 1.4rem !important; }
-            h2 { font-size: 1.1rem; }
-            .card, .content-card, .lesson-card, .topic-card,
-            .info-card, .objective-card, .concept-card { padding: 16px !important; }
-            button, .btn { padding: 10px 20px !important; }
-        }
-        @media (max-width: 480px) {
-            body { font-size: 15px; }
-            header h1, .header h1 { font-size: 1.25rem !important; }
+        .btn-secondary {
+            background: rgba(12, 10, 24, 0.06);
+            color: var(--color-text);
         }
 
-        </style>
+        .btn-secondary:hover {
+            background: rgba(12, 10, 24, 0.12);
+            box-shadow: var(--shadow-card);
+        }
+
+        /* Completion Badge */
+        .completion-badge {
+            background: var(--color-success);
+            color: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .completion-badge.show {
+            display: block;
+        }
+
+        .badge-checkmark {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+            animation: checkmarkPop 0.6s ease;
+        }
+
+        .badge-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .badge-subtext {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .progress-summary {
+                grid-template-columns: 1fr;
+            }
+            .progress-tracker {
+                padding: 0 10px;
+            }
+        }
+
+    </style>
 </head>
 <body>
-    <div class="platform-container">
-        <!-- Dashboard Header -->
-        <div class="dashboard-header">
-            <div class="brand-section">
-                <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/64e9d2f719b1e5258e5d57f5_IMG_1512-p-500.png" 
-                     alt="Brand Logo" class="brand-logo">
-                <div>
-                    <h1 style="color: var(--color-primary); font-size: 1.8rem; margin-bottom: 5px;">HIPAA Mastery Platform</h1>
-                    <div style="color: var(--color-muted);">Comprehensive Learning & Simulation Environment</div>
-                </div>
-            </div>
-            
-            <div class="user-stats">
-                <div class="stat-item">
-                    <span class="stat-value" id="mastery-score">0%</span>
-                    <span class="stat-label">Mastery Score</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value" id="cards-mastered">0</span>
-                    <span class="stat-label">Cards Mastered</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value" id="sims-completed">0</span>
-                    <span class="stat-label">Simulations</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Learning Navigation -->
-        <div class="learning-nav">
-            <div class="nav-tab active" data-tab="topics">📚 Learning Topics</div>
-            <div class="nav-tab" data-tab="flashcards">🎴 Flash Cards</div>
-            <div class="nav-tab" data-tab="simulations">🎮 Simulations</div>
-            <div class="nav-tab" data-tab="exercises">🧩 Interactive Exercises</div>
-            <div class="nav-tab" data-tab="progress">📊 My Progress</div>
-        </div>
-
-        <!-- Learning Topics Panel -->
-        <div class="content-panel active" id="topics-panel">
-            <div class="topics-grid">
-                <!-- Topic 1: Compliance & HIPAA Basics -->
-                <div class="topic-card">
-                    <div class="topic-header">
-                        <div class="topic-icon">⚖️</div>
-                        <div class="topic-title">Compliance & HIPAA Fundamentals</div>
-                    </div>
-                    <div class="topic-description">
-                        Master the foundation of healthcare compliance, understand HIPAA's structure, and learn about key regulatory frameworks.
-                    </div>
-                    <div class="learning-objectives">
-                        <div class="objectives-title">🎯 Learning Objectives</div>
-                        <ul class="objectives-list">
-                            <li>Define healthcare compliance</li>
-                            <li>Name HIPAA's two main provisions</li>
-                            <li>Distinguish Title I vs Title II</li>
-                            <li>Identify HIPAA key roles</li>
-                        </ul>
-                    </div>
-                    <div class="activity-buttons">
-                        <button class="activity-btn" onclick="startFlashcards('compliance')">Flash Cards</button>
-                        <button class="activity-btn" onclick="startSimulation('compliance')">Simulation</button>
-                        <button class="activity-btn" onclick="startExercise('compliance')">Exercise</button>
-                    </div>
-                </div>
-
-                <!-- Topic 2: Privacy Rule & PHI -->
-                <div class="topic-card">
-                    <div class="topic-header">
-                        <div class="topic-icon">🔒</div>
-                        <div class="topic-title">Privacy Rule & PHI Management</div>
-                    </div>
-                    <div class="topic-description">
-                        Learn to identify, protect, and properly handle Protected Health Information (PHI) according to HIPAA Privacy Rule requirements.
-                    </div>
-                    <div class="learning-objectives">
-                        <div class="objectives-title">🎯 Learning Objectives</div>
-                        <ul class="objectives-list">
-                            <li>Define PHI and its components</li>
-                            <li>Understand use vs disclosure</li>
-                            <li>Apply minimum necessary rule</li>
-                            <li>Handle patient privacy requests</li>
-                        </ul>
-                    </div>
-                    <div class="activity-buttons">
-                        <button class="activity-btn" onclick="startFlashcards('privacy')">Flash Cards</button>
-                        <button class="activity-btn" onclick="startSimulation('privacy')">Simulation</button>
-                        <button class="activity-btn" onclick="startExercise('privacy')">Exercise</button>
-                    </div>
-                </div>
-
-                <!-- Topic 3: Security Safeguards -->
-                <div class="topic-card">
-                    <div class="topic-header">
-                        <div class="topic-icon">🛡️</div>
-                        <div class="topic-title">Security Rule & Safeguards</div>
-                    </div>
-                    <div class="topic-description">
-                        Implement the three categories of security safeguards to protect electronic PHI in healthcare settings.
-                    </div>
-                    <div class="learning-objectives">
-                        <div class="objectives-title">🎯 Learning Objectives</div>
-                        <ul class="objectives-list">
-                            <li>List three safeguard categories</li>
-                            <li>Apply technical safeguards</li>
-                            <li>Implement administrative controls</li>
-                            <li>Establish physical security measures</li>
-                        </ul>
-                    </div>
-                    <div class="activity-buttons">
-                        <button class="activity-btn" onclick="startFlashcards('security')">Flash Cards</button>
-                        <button class="activity-btn" onclick="startSimulation('security')">Simulation</button>
-                        <button class="activity-btn" onclick="startExercise('security')">Exercise</button>
-                    </div>
-                </div>
-
-                <!-- Topic 4: Fraud vs Abuse -->
-                <div class="topic-card">
-                    <div class="topic-header">
-                        <div class="topic-icon">🚨</div>
-                        <div class="topic-title">Fraud Detection & Prevention</div>
-                    </div>
-                    <div class="topic-description">
-                        Identify, prevent, and report healthcare fraud and abuse while understanding legal consequences and compliance programs.
-                    </div>
-                    <div class="learning-objectives">
-                        <div class="objectives-title">🎯 Learning Objectives</div>
-                        <ul class="objectives-list">
-                            <li>Distinguish fraud from abuse</li>
-                            <li>Identify red flags</li>
-                            <li>Understand audit programs</li>
-                            <li>Implement compliance programs</li>
-                        </ul>
-                    </div>
-                    <div class="activity-buttons">
-                        <button class="activity-btn" onclick="startFlashcards('fraud')">Flash Cards</button>
-                        <button class="activity-btn" onclick="startSimulation('fraud')">Simulation</button>
-                        <button class="activity-btn" onclick="startExercise('fraud')">Exercise</button>
-                    </div>
-                </div>
-
-                <!-- Topic 5: HITECH & Enforcement -->
-                <div class="topic-card">
-                    <div class="topic-header">
-                        <div class="topic-icon">⚡</div>
-                        <div class="topic-title">HITECH & Enforcement</div>
-                    </div>
-                    <div class="topic-description">
-                        Understand HITECH Act enhancements, Omnibus Rule updates, and consequences of non-compliance in healthcare.
-                    </div>
-                    <div class="learning-objectives">
-                        <div class="objectives-title">🎯 Learning Objectives</div>
-                        <ul class="objectives-list">
-                            <li>Explain HITECH provisions</li>
-                            <li>Understand Omnibus Rule</li>
-                            <li>Know penalty structures</li>
-                            <li>Implement breach protocols</li>
-                        </ul>
-                    </div>
-                    <div class="activity-buttons">
-                        <button class="activity-btn" onclick="startFlashcards('enforcement')">Flash Cards</button>
-                        <button class="activity-btn" onclick="startSimulation('enforcement')">Simulation</button>
-                        <button class="activity-btn" onclick="startExercise('enforcement')">Exercise</button>
-                    </div>
-                </div>
-
-                <!-- Topic 6: Practical Application -->
-                <div class="topic-card">
-                    <div class="topic-header">
-                        <div class="topic-icon">🏥</div>
-                        <div class="topic-title">Practice Implementation</div>
-                    </div>
-                    <div class="topic-description">
-                        Apply HIPAA concepts in real healthcare settings through comprehensive case studies and practical scenarios.
-                    </div>
-                    <div class="learning-objectives">
-                        <div class="objectives-title">🎯 Learning Objectives</div>
-                        <ul class="objectives-list">
-                            <li>Develop compliance policies</li>
-                            <li>Conduct risk assessments</li>
-                            <li>Train healthcare staff</li>
-                            <li>Respond to violations</li>
-                        </ul>
-                    </div>
-                    <div class="activity-buttons">
-                        <button class="activity-btn" onclick="startFlashcards('practice')">Flash Cards</button>
-                        <button class="activity-btn" onclick="startSimulation('practice')">Case Studies</button>
-                        <button class="activity-btn" onclick="startExercise('practice')">Role Play</button>
+    <main class="page" aria-labelledby="module-heading">
+        <!-- Header -->
+        <header class="brand-row">
+            <div class="brand">
+                <div style="font-size: 28px; font-weight: 700; color: var(--color-primary); letter-spacing: -1px;">AlliedRx</div>
+                <div class="course-meta">
+                    <span class="course-name">CCMA • Lesson 17.1</span>
+                    <div class="week-label">
+                        <span class="week-label-dot"></span>
+                        <span>HIPAA Mastery & Healthcare Compliance</span>
                     </div>
                 </div>
             </div>
-        </div>
+            <span class="badge-mode">Campus & Online</span>
+        </header>
 
-        <!-- Flash Cards Panel -->
-        <div class="content-panel" id="flashcards-panel">
-            <div class="flashcards-container">
-                <div class="flashcard-header">
-                    <div class="flashcard-title">HIPAA Terminology Flash Cards</div>
-                    <div class="flashcard-subtitle">Click card to flip | Study until you achieve mastery</div>
-                </div>
-                
-                <div class="flashcard-area">
-                    <div class="flashcard" id="flashcard" onclick="flipCard()">
-                        <div class="flashcard-front">
-                            <div>
-                                <div class="term" id="card-term">Compliance</div>
-                                <div class="hint">Click to reveal definition</div>
-                            </div>
-                        </div>
-                        <div class="flashcard-back">
-                            <div>
-                                <div class="definition" id="card-definition">Adherence to laws, regulations, and guidelines governing healthcare operations</div>
-                                <div class="example">
-                                    <div class="example-title">Example:</div>
-                                    A hospital implementing policies to ensure patient privacy and accurate billing practices demonstrates compliance.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <h1 id="module-heading">HIPAA Mastery & Healthcare Compliance</h1>
+        <p class="module-subtitle">
+            Master the Health Insurance Portability and Accountability Act (HIPAA) principles and compliance requirements. Learn to protect patient privacy, understand breach notification protocols, and implement security safeguards.
+        </p>
 
-                <div class="flashcard-controls">
-                    <button class="nav-btn" id="prev-btn" onclick="prevCard()">← Previous</button>
-                    
-                    <div class="progress-indicator">
-                        Card <span id="current-card">1</span> of <span id="total-cards">25</span>
-                        <span class="mastery-badge" id="mastery-badge">📚 Learning</span>
-                    </div>
-                    
-                    <button class="nav-btn" id="next-btn" onclick="nextCard()">Next →</button>
-                </div>
-
-                <div style="text-align: center; margin-top: 30px;">
-                    <button class="nav-btn" onclick="markMastered()" style="background: var(--color-success);">
-                        ✅ Mark as Mastered
-                    </button>
-                    <button class="nav-btn" onclick="shuffleCards()" style="background: var(--color-accent); margin-left: 10px;">
-                        🔀 Shuffle Cards
-                    </button>
-                </div>
+        <!-- Progress Tracker -->
+        <div class="progress-tracker">
+            <div class="progress-step active" data-step="1">
+                <div class="step-circle">1</div>
+                <div class="step-label">HIPAA Fundamentals</div>
+            </div>
+            <div class="progress-step" data-step="2">
+                <div class="step-circle">2</div>
+                <div class="step-label">Compliance Scenarios</div>
+            </div>
+            <div class="progress-step" data-step="3">
+                <div class="step-circle">3</div>
+                <div class="step-label">Knowledge Check</div>
             </div>
         </div>
 
-        <!-- Simulations Panel -->
-        <div class="content-panel" id="simulations-panel">
-            <div class="simulations-container">
-                <div class="simulation-header">
-                    <div class="simulation-title">HIPAA Decision-Making Simulations</div>
-                    <div class="flashcard-subtitle">Practice real-world scenarios and make critical compliance decisions</div>
-                </div>
-
-                <!-- Simulation 1: PHI Disclosure -->
-                <div class="simulation-scenario" id="sim-1">
-                    <div class="scenario-title">🔍 Scenario 1: PHI Disclosure Request</div>
-                    <div class="scenario-text">
-                        You're a medical office manager. A pharmaceutical sales representative visits your office and asks for a list of patients diagnosed with diabetes, claiming they want to provide educational materials. They offer free medical supplies in exchange. What do you do?
-                    </div>
-                    
-                    <div class="decision-points">
-                        <div class="decision-card" onclick="selectDecision(1, 'A')">
-                            <div class="decision-text">A. Provide the list since it's for educational purposes</div>
-                            <div class="decision-explanation">❌ Violates HIPAA - PHI cannot be disclosed for marketing without authorization</div>
-                        </div>
-                        <div class="decision-card" onclick="selectDecision(1, 'B')">
-                            <div class="decision-text">B. Provide partial information without names</div>
-                            <div class="decision-explanation">⚠️ Still violates HIPAA - demographic info alone can still identify patients</div>
-                        </div>
-                        <div class="decision-card" onclick="selectDecision(1, 'C')">
-                            <div class="decision-text">C. Politely decline and report the request</div>
-                            <div class="decision-explanation">✅ Correct - PHI cannot be disclosed without patient authorization</div>
-                        </div>
-                        <div class="decision-card" onclick="selectDecision(1, 'D')">
-                            <div class="decision-text">D. Ask patients individually for permission</div>
-                            <div class="decision-explanation">⚠️ Time-consuming and unnecessary - this is a marketing request, not treatment-related</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Simulation 2: Security Breach -->
-                <div class="simulation-scenario" style="display: none;" id="sim-2">
-                    <div class="scenario-title">💻 Scenario 2: Security Breach Response</div>
-                    <div class="scenario-text">
-                        An employee reports that their laptop containing unencrypted patient information was stolen from their car. The laptop had passwords but no full-disk encryption. Approximately 500 patient records were potentially accessed. What are your immediate actions?
-                    </div>
-                    
-                    <div class="decision-points">
-                        <div class="decision-card" onclick="selectDecision(2, 'A')">
-                            <div class="decision-text">A. Wait to see if any issues arise before taking action</div>
-                            <div class="decision-explanation">❌ Violates HITECH breach notification rule - must act within 60 days</div>
-                        </div>
-                        <div class="decision-card" onclick="selectDecision(2, 'B')">
-                            <div class="decision-text">B. Notify affected patients immediately by phone</div>
-                            <div class="decision-explanation">⚠️ Impractical - need written notification and proper documentation</div>
-                        </div>
-                        <div class="decision-card" onclick="selectDecision(2, 'C')">
-                            <div class="decision-text">C. Follow breach notification protocol per HITECH Act</div>
-                            <div class="decision-explanation">✅ Correct - includes risk assessment, notification, and mitigation steps</div>
-                        </div>
-                        <div class="decision-card" onclick="selectDecision(2, 'D')">
-                            <div class="decision-text">D. Only notify if financial information was compromised</div>
-                            <div class="decision-explanation">❌ All PHI breaches require notification regardless of content</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Simulation 3: Fraud Detection -->
-                <div class="simulation-scenario" style="display: none;" id="sim-3">
-                    <div class="scenario-title">💰 Scenario 3: Billing Irregularities</div>
-                    <div class="scenario-text">
-                        While reviewing billing patterns, you notice a provider consistently bills for complex 60-minute psychotherapy sessions (CPT 90837) but patient appointments are scheduled for 30 minutes. The provider claims the extra time is for documentation. How do you proceed?
-                    </div>
-                    
-                    <div class="decision-points">
-                        <div class="decision-card" onclick="selectDecision(3, 'A')">
-                            <div class="decision-text">A. Accept the explanation since documentation is important</div>
-                            <div class="decision-explanation">⚠️ Could be abuse - billing must match actual face-to-face time</div>
-                        </div>
-                        <div class="decision-card" onclick="selectDecision(3, 'B')">
-                            <div class="decision-text">B. Report to compliance officer for investigation</div>
-                            <div class="decision-explanation">✅ Correct - potential upcoding/fraud requires investigation</div>
-                        </div>
-                        <div class="decision-card" onclick="selectDecision(3, 'C')">
-                            <div class="decision-text">C. Confront the provider immediately</div>
-                            <div class="decision-explanation">⚠️ Better to follow established compliance procedures first</div>
-                        </div>
-                        <div class="decision-card" onclick="selectDecision(3, 'D')">
-                            <div class="decision-text">D. Ignore it if patients aren't complaining</div>
-                            <div class="decision-explanation">❌ Failure to investigate potential fraud is itself non-compliant</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feedback-panel" id="feedback-panel">
-                    <div class="feedback-title">
-                        <span>📊</span> Simulation Feedback
-                    </div>
-                    <div class="feedback-content" id="feedback-content">
-                        Your decision has been recorded. Review the explanations to understand the correct compliance approach.
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 30px;">
-                    <button class="nav-btn" onclick="prevSimulation()" id="prev-sim-btn" disabled>← Previous Scenario</button>
-                    <button class="nav-btn" onclick="nextSimulation()" id="next-sim-btn">Next Scenario →</button>
-                </div>
+        <!-- Progress Summary -->
+        <div class="progress-summary">
+            <div class="summary-card">
+                <span class="summary-number" id="activities-completed">0</span>
+                <span class="summary-label">Activities Completed</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-number" id="accuracy-rate">0%</span>
+                <span class="summary-label">Accuracy %</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-number" id="time-spent">0:00</span>
+                <span class="summary-label">Time Spent</span>
             </div>
         </div>
 
-        <!-- Interactive Exercises Panel -->
-        <div class="content-panel" id="exercises-panel">
-            <div class="exercises-container">
-                <!-- Exercise 1: Term Matching -->
-                <div class="exercise-card">
-                    <div class="exercise-header">
-                        <div class="exercise-icon">🔤</div>
-                        <div class="exercise-title">Term Matching Game</div>
-                    </div>
-                    <div style="color: var(--color-muted); margin-bottom: 20px;">Drag terms to match with their correct definitions</div>
-                    
-                    <div class="matching-game" id="matching-game">
-                        <!-- Terms will be populated by JavaScript -->
-                    </div>
-                    
-                    <div style="text-align: center; margin-top: 20px;">
-                        <button class="activity-btn" onclick="checkMatching()" style="background: var(--color-primary); color: white;">
-                            Check Matches
-                        </button>
-                        <button class="activity-btn" onclick="resetMatching()" style="margin-left: 10px;">
-                            Reset Game
-                        </button>
-                    </div>
-                    
-                    <div id="matching-feedback" style="margin-top: 15px; font-weight: 600;"></div>
+        <!-- Activity Grid -->
+        <div class="activity-grid">
+            <!-- Activity 1: HIPAA Matching (Drag & Drop) -->
+            <section class="activity-card" id="activity-1">
+                <div class="activity-header">
+                    <span class="activity-number">Activity 1</span>
+                    <span class="activity-status">Not Started</span>
+                </div>
+                <h3 class="activity-title">HIPAA Concepts Matching</h3>
+                <p class="activity-description">
+                    Drag each HIPAA term into the correct category. Match key privacy and security concepts to their definitions and understand the regulatory framework that protects patient information.
+                </p>
+
+                <div class="drag-source" id="drag-source">
+                    <div class="duty-card" draggable="true" data-correct="privacy">PHI (Protected Health Information)</div>
+                    <div class="duty-card" draggable="true" data-correct="privacy">Minimum Necessary Principle</div>
+                    <div class="duty-card" draggable="true" data-correct="privacy">Business Associate</div>
+                    <div class="duty-card" draggable="true" data-correct="security">Breach Notification</div>
+                    <div class="duty-card" draggable="true" data-correct="security">Privacy Officer Role</div>
+                    <div class="duty-card" draggable="true" data-correct="security">Notice of Privacy Practices</div>
                 </div>
 
-                <!-- Exercise 2: Fill in the Blanks -->
-                <div class="exercise-card">
-                    <div class="exercise-header">
-                        <div class="exercise-icon">✍️</div>
-                        <div class="exercise-title">Fill in the Blanks</div>
+                <div class="dropzone-grid">
+                    <div class="dropzone" id="dropzone-privacy" data-category="privacy">
+                        <div class="dropzone-title">Privacy Rule</div>
+                        <div class="dropzone-content"></div>
                     </div>
-                    <div style="color: var(--color-muted); margin-bottom: 20px;">Complete the compliance statements by dragging words into the blanks</div>
-                    
-                    <div class="fill-blank">
-                        <div class="sentence">
-                            The HIPAA <span class="blank" data-answer="Privacy" id="blank1"></span> Rule establishes standards for protecting 
-                            <span class="blank" data-answer="PHI" id="blank2"></span> (Protected Health Information). 
-                            Under the <span class="blank" data-answer="minimum" id="blank3"></span> necessary rule, 
-                            only the information needed for the purpose should be disclosed.
-                        </div>
-                        
-                        <div class="word-bank" id="word-bank">
-                            <!-- Word options will be populated by JavaScript -->
-                        </div>
+                    <div class="dropzone" id="dropzone-security" data-category="security">
+                        <div class="dropzone-title">Security & Breach Rule</div>
+                        <div class="dropzone-content"></div>
                     </div>
-                    
-                    <div style="text-align: center; margin-top: 20px;">
-                        <button class="activity-btn" onclick="checkFillBlank()" style="background: var(--color-primary); color: white;">
-                            Check Answers
-                        </button>
-                        <button class="activity-btn" onclick="resetFillBlank()" style="margin-left: 10px;">
-                            Reset Exercise
-                        </button>
-                    </div>
-                    
-                    <div id="fillblank-feedback" style="margin-top: 15px; font-weight: 600;"></div>
                 </div>
 
-                <!-- Exercise 3: Compliance Categories -->
-                <div class="exercise-card">
-                    <div class="exercise-header">
-                        <div class="exercise-icon">📋</div>
-                        <div class="exercise-title">Compliance Categories</div>
-                    </div>
-                    <div style="color: var(--color-muted); margin-bottom: 20px;">Sort items into the correct compliance categories</div>
-                    
-                    <div style="margin: 20px 0;">
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
-                            <div class="category-box" data-category="administrative" style="background: rgba(93, 109, 250, 0.1); padding: 15px; border-radius: var(--radius-sm); text-align: center; font-weight: 700; color: var(--color-primary);">
-                                Administrative
-                            </div>
-                            <div class="category-box" data-category="physical" style="background: rgba(93, 109, 250, 0.1); padding: 15px; border-radius: var(--radius-sm); text-align: center; font-weight: 700; color: var(--color-primary);">
-                                Physical
-                            </div>
-                            <div class="category-box" data-category="technical" style="background: rgba(93, 109, 250, 0.1); padding: 15px; border-radius: var(--radius-sm); text-align: center; font-weight: 700; color: var(--color-primary);">
-                                Technical
-                            </div>
-                        </div>
-                        
-                        <div id="sortable-items" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-                            <!-- Sortable items will be populated by JavaScript -->
-                        </div>
-                    </div>
-                    
-                    <div style="text-align: center; margin-top: 20px;">
-                        <button class="activity-btn" onclick="checkCategories()" style="background: var(--color-primary); color: white;">
-                            Check Sorting
-                        </button>
-                        <button class="activity-btn" onclick="resetCategories()" style="margin-left: 10px;">
-                            Reset
-                        </button>
-                    </div>
-                    
-                    <div id="category-feedback" style="margin-top: 15px; font-weight: 600;"></div>
+                <div id="activity1-result" class="completion-badge">
+                    <span class="badge-checkmark">✓</span>
+                    <div class="badge-text">Activity 1 Complete!</div>
                 </div>
-            </div>
+
+                <button class="btn" id="check-btn-1" onclick="checkActivity1()">Check Answers</button>
+            </section>
+
+            <!-- Activity 2: HIPAA Compliance Scenarios -->
+            <section class="activity-card" id="activity-2">
+                <div class="activity-header">
+                    <span class="activity-number">Activity 2</span>
+                    <span class="activity-status">Not Started</span>
+                </div>
+                <h3 class="activity-title">HIPAA Compliance Scenarios</h3>
+                <p class="activity-description">
+                    Evaluate realistic healthcare workplace scenarios and select the compliant response. Learn proper procedures for handling patient information and breach situations.
+                </p>
+
+                <div class="scenario-container">
+                    <div class="scenario">
+                        <div class="scenario-title">
+                            <span class="scenario-icon">📠</span>
+                            Scenario 1: Misdirected Fax
+                        </div>
+                        <div class="scenario-content">
+                            You receive a fax containing a patient's laboratory results. Upon review, you notice the fax was intended for a different clinic and was delivered to the wrong facility. The patient information is clearly visible. What is your immediate action?
+                        </div>
+                    </div>
+                    <div class="options-container">
+                        <label class="option-label" data-scenario="1" data-answer="A">
+                            <input type="radio" name="scenario1" class="option-radio" value="A">
+                            <div class="option-text">Discard the fax immediately and do nothing further; it's not addressed to your clinic.</div>
+                        </label>
+                        <label class="option-label" data-scenario="1" data-answer="B">
+                            <input type="radio" name="scenario1" class="option-radio" value="B">
+                            <div class="option-text">Notify your Privacy Officer, document the incident, attempt to contact the sending facility to confirm receipt, and securely shred the misdirected fax.</div>
+                        </label>
+                        <label class="option-label" data-scenario="1" data-answer="C">
+                            <input type="radio" name="scenario1" class="option-radio" value="C">
+                            <div class="option-text">Place the fax in the patient's chart since you received it and it contains medical information.</div>
+                        </label>
+                        <label class="option-label" data-scenario="1" data-answer="D">
+                            <input type="radio" name="scenario1" class="option-radio" value="D">
+                            <div class="option-text">Call the other clinic and verbally read the results to them over the phone.</div>
+                        </label>
+                    </div>
+                    <button class="btn" onclick="submitScenario(1, 'B')">Submit Response</button>
+                    <div class="feedback-message" id="feedback-1"></div>
+                </div>
+
+                <div class="scenario-container">
+                    <div class="scenario">
+                        <div class="scenario-title">
+                            <span class="scenario-icon">💻</span>
+                            Scenario 2: Unauthorized EHR Access
+                        </div>
+                        <div class="scenario-content">
+                            You notice a colleague accessing patient records for a patient they are not assigned to treat. When questioned, they say they "need to check on a friend's health status." The patient data is clearly unrelated to any care they provide. How do you respond?
+                        </div>
+                    </div>
+                    <div class="options-container">
+                        <label class="option-label" data-scenario="2" data-answer="A">
+                            <input type="radio" name="scenario2" class="option-radio" value="A">
+                            <div class="option-text">Ignore it; your colleague likely has a valid reason and it's not your responsibility to monitor access.</div>
+                        </label>
+                        <label class="option-label" data-scenario="2" data-answer="B">
+                            <input type="radio" name="scenario2" class="option-radio" value="B">
+                            <div class="option-text">Immediately report the unauthorized access to your Privacy Officer and management. Document what you observed without judgment.</div>
+                        </label>
+                        <label class="option-label" data-scenario="2" data-answer="C">
+                            <input type="radio" name="scenario2" class="option-radio" value="C">
+                            <div class="option-text">Confront your colleague privately and tell them to delete any records they accessed.</div>
+                        </label>
+                        <label class="option-label" data-scenario="2" data-answer="D">
+                            <input type="radio" name="scenario2" class="option-radio" value="D">
+                            <div class="option-text">Assume personal relationships with patients justify access to their records if the staff member is curious.</div>
+                        </label>
+                    </div>
+                    <button class="btn" onclick="submitScenario(2, 'B')">Submit Response</button>
+                    <div class="feedback-message" id="feedback-2"></div>
+                </div>
+
+                <div class="scenario-container">
+                    <div class="scenario">
+                        <div class="scenario-title">
+                            <span class="scenario-icon">⚠️</span>
+                            Scenario 3: Potential Data Breach
+                        </div>
+                        <div class="scenario-content">
+                            A staff member reports that their laptop, which contains cached patient information, was lost during commute. The device contained names, addresses, and medical record numbers from approximately 50 patients. The laptop was password-protected but not encrypted. What should occur?
+                        </div>
+                    </div>
+                    <div class="options-container">
+                        <label class="option-label" data-scenario="3" data-answer="A">
+                            <input type="radio" name="scenario3" class="option-radio" value="A">
+                            <div class="option-text">Wait to see if anyone finds the device before taking action; it's still password-protected.</div>
+                        </label>
+                        <label class="option-label" data-scenario="3" data-answer="B">
+                            <input type="radio" name="scenario3" class="option-radio" value="B">
+                            <div class="option-text">Immediately report to management, conduct a breach risk assessment, notify affected patients per HIPAA timeline (without unreasonable delay), file required reports with HHS if necessary, and document all actions taken.</div>
+                        </label>
+                        <label class="option-label" data-scenario="3" data-answer="C">
+                            <input type="radio" name="scenario3" class="option-radio" value="C">
+                            <div class="option-text">Only notify patients if the device is actually recovered and data is confirmed accessed.</div>
+                        </label>
+                        <label class="option-label" data-scenario="3" data-answer="D">
+                            <input type="radio" name="scenario3" class="option-radio" value="D">
+                            <div class="option-text">Have IT remotely wipe the device and consider the matter closed since the laptop is gone.</div>
+                        </label>
+                    </div>
+                    <button class="btn" onclick="submitScenario(3, 'B')">Submit Response</button>
+                    <div class="feedback-message" id="feedback-3"></div>
+                </div>
+
+                <div id="activity2-result" class="completion-badge">
+                    <span class="badge-checkmark">✓</span>
+                    <div class="badge-text">Activity 2 Complete!</div>
+                </div>
+            </section>
+
+            <!-- Activity 3: HIPAA Knowledge Check -->
+            <section class="activity-card" id="activity-3">
+                <div class="activity-header">
+                    <span class="activity-number">Activity 3</span>
+                    <span class="activity-status">Not Started</span>
+                </div>
+                <h3 class="activity-title">Knowledge Check</h3>
+                <p class="activity-description">
+                    Test your comprehension of HIPAA Privacy Rule, Security Rule, and Breach Notification Rule. You must score at least 4/5 to mark this activity complete.
+                </p>
+
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">1. Which of the following is considered Protected Health Information (PHI) under HIPAA?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="A">
+                                <span class="quiz-option-text">A) Only information visible on hospital ID badges</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="B">
+                                <span class="quiz-option-text">B) Any individually identifiable health information, including patient names, medical record numbers, and diagnoses</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="C">
+                                <span class="quiz-option-text">C) Only information stored in electronic systems, not paper records</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="D">
+                                <span class="quiz-option-text">D) Information that is more than 5 years old</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">2. What does the "Minimum Necessary" principle require?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="A">
+                                <span class="quiz-option-text">A) Organizations must limit access to PHI to only the amount reasonably necessary to accomplish the intended purpose</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="B">
+                                <span class="quiz-option-text">B) Physicians must keep only minimal notes on patients</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="C">
+                                <span class="quiz-option-text">C) Only nurses are required to follow data access restrictions</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="D">
+                                <span class="quiz-option-text">D) Patients must authorize every access to their records</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">3. A Business Associate in HIPAA context is:</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="A">
+                                <span class="quiz-option-text">A) A fellow employee in the clinic</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="B">
+                                <span class="quiz-option-text">B) An external vendor or service provider who handles PHI on behalf of a covered entity</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="C">
+                                <span class="quiz-option-text">C) Any healthcare provider treating the patient</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="D">
+                                <span class="quiz-option-text">D) The patient's family members</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">4. What is the patient's right regarding their Notice of Privacy Practices?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="A">
+                                <span class="quiz-option-text">A) To refuse to receive one</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="B">
+                                <span class="quiz-option-text">B) To receive a copy and understand how their PHI may be used and disclosed</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="C">
+                                <span class="quiz-option-text">C) To demand that all their information be deleted</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="D">
+                                <span class="quiz-option-text">D) It is optional and healthcare providers may choose to provide it</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">5. When must a patient be notified of a HIPAA breach?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="A">
+                                <span class="quiz-option-text">A) Within 30 days after the breach is discovered</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="B">
+                                <span class="quiz-option-text">B) Without unreasonable delay and without more than 60 calendar days after discovery of the breach</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="C">
+                                <span class="quiz-option-text">C) Only if more than 500 patients are affected</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="D">
+                                <span class="quiz-option-text">D) It is optional based on the healthcare provider's judgment</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn" id="submit-quiz" onclick="submitQuiz()">Check Answers</button>
+                <div id="quiz-result" class="completion-badge">
+                    <span class="badge-checkmark">✓</span>
+                    <div class="badge-text">Knowledge Check Complete!</div>
+                    <div class="badge-subtext" id="quiz-score"></div>
+                </div>
+            </section>
         </div>
-
-        <!-- Progress Tracking Panel -->
-        <div class="content-panel" id="progress-panel">
-            <div class="progress-section">
-                <div class="progress-title">📊 Your Learning Progress</div>
-                
-                <div class="mastery-levels">
-                    <div class="mastery-card" id="compliance-mastery">
-                        <div class="mastery-topic">Compliance Basics</div>
-                        <div class="mastery-progress">0%</div>
-                        <div class="mastery-label">Mastery Level</div>
-                    </div>
-                    <div class="mastery-card" id="privacy-mastery">
-                        <div class="mastery-topic">Privacy Rule</div>
-                        <div class="mastery-progress">0%</div>
-                        <div class="mastery-label">Mastery Level</div>
-                    </div>
-                    <div class="mastery-card" id="security-mastery">
-                        <div class="mastery-topic">Security Safeguards</div>
-                        <div class="mastery-progress">0%</div>
-                        <div class="mastery-label">Mastery Level</div>
-                    </div>
-                    <div class="mastery-card" id="fraud-mastery">
-                        <div class="mastery-topic">Fraud Prevention</div>
-                        <div class="mastery-progress">0%</div>
-                        <div class="mastery-label">Mastery Level</div>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 30px;">
-                    <button class="nav-btn" onclick="generateProgressReport()" style="background: var(--color-success);">
-                        📄 Generate Progress Report
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+    </main>
 
     <script>
-        // Learning Platform State
-        const learningState = {
-            currentTopic: 'compliance',
-            flashcardDeck: [],
-            currentCardIndex: 0,
-            masteredCards: new Set(),
-            simulationProgress: 0,
-            exerciseScores: {},
-            topicMastery: {
-                compliance: 0,
-                privacy: 0,
-                security: 0,
-                fraud: 0,
-                enforcement: 0,
-                practice: 0
-            }
-        };
-
-        // Flashcard Data
-        const flashcardData = {
-            compliance: [
-                { term: "Compliance", definition: "Adherence to laws, regulations, and guidelines governing healthcare operations", example: "Implementing policies to ensure patient privacy and accurate billing" },
-                { term: "HIPAA", definition: "Health Insurance Portability and Accountability Act of 1996", example: "Federal law establishing privacy and security standards for healthcare" },
-                { term: "Title I", definition: "Insurance Reform - ensures coverage continuity and protects pre-existing conditions", example: "Prevents insurance denial based on health status" },
-                { term: "Title II", definition: "Administrative Simplification - establishes privacy/security standards for PHI", example: "Mandates electronic transaction standards and patient privacy protections" },
-                { term: "Covered Entity", definition: "Healthcare providers, plans, and clearinghouses transmitting health information electronically", example: "Hospitals, insurance companies, pharmacy benefit managers" }
-            ],
-            privacy: [
-                { term: "PHI", definition: "Protected Health Information - any identifiable health information", example: "Medical records, billing information, conversations about treatment" },
-                { term: "Privacy Rule", definition: "HIPAA provision establishing PHI protection standards", example: "Requires patient authorization for certain disclosures" },
-                { term: "Minimum Necessary", definition: "Principle limiting PHI use/disclosure to only what's needed", example: "Sharing only relevant test results with a specialist" },
-                { term: "Authorization", definition: "Written patient permission for PHI use/disclosure beyond TPO", example: "Consent form for releasing records to a lawyer" },
-                { term: "NPP", definition: "Notice of Privacy Practices - explains how PHI is used and patient rights", example: "Document given to patients at first visit" }
-            ],
-            security: [
-                { term: "Security Rule", definition: "HIPAA provision establishing safeguards for electronic PHI", example: "Requires encryption, access controls, and audit trails" },
-                { term: "Administrative Safeguards", definition: "Policies/procedures for security management and workforce training", example: "Security training programs and incident response plans" },
-                { term: "Physical Safeguards", definition: "Measures to protect electronic systems and facilities", example: "Locked server rooms and secure workstation areas" },
-                { term: "Technical Safeguards", definition: "Technology and policies protecting ePHI and controlling access", example: "Encryption, passwords, and audit controls" },
-                { term: "Risk Analysis", definition: "Process to identify vulnerabilities to ePHI confidentiality", example: "Annual assessment of security threats and weaknesses" }
-            ],
-            fraud: [
-                { term: "Fraud", definition: "Intentional deception for unauthorized benefit", example: "Billing for services not rendered" },
-                { term: "Abuse", definition: "Practices inconsistent with sound medical/business standards", example: "Excessive charges or unnecessary services" },
-                { term: "False Claims Act", definition: "Law allowing government to recover funds from fraudulent claims", example: "Whistleblower lawsuits against Medicare fraud" },
-                { term: "Stark Law", definition: "Prohibits physician self-referrals to entities with financial relationships", example: "Doctor referring patients to own imaging center" },
-                { term: "Anti-Kickback Statute", definition: "Prohibits improper incentives for Medicare/Medicaid referrals", example: "Paying doctors for patient referrals" }
-            ]
-        };
-
-        // Initialize Platform
-        document.addEventListener('DOMContentLoaded', function() {
-            // Navigation Setup
-            document.querySelectorAll('.nav-tab').forEach(tab => {
-                tab.addEventListener('click', function() {
-                    const tabId = this.dataset.tab;
-                    switchTab(tabId);
-                });
-            });
-
-            // Initialize Flashcards
-            loadFlashcards('compliance');
-            
-            // Initialize Exercises
-            setupMatchingGame();
-            setupFillBlank();
-            setupCategorySort();
-            
-            // Update Stats
-            updateUserStats();
-        });
-
-        // Tab Navigation
-        function switchTab(tabId) {
-            // Update active tab
-            document.querySelectorAll('.nav-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
-            
-            // Show correct panel
-            document.querySelectorAll('.content-panel').forEach(panel => {
-                panel.classList.remove('active');
-            });
-            document.getElementById(`${tabId}-panel`).classList.add('active');
-        }
-
-        // Flashcard Functions
-        function loadFlashcards(topic) {
-            learningState.currentTopic = topic;
-            learningState.flashcardDeck = [...flashcardData[topic]];
-            learningState.currentCardIndex = 0;
-            shuffleArray(learningState.flashcardDeck);
-            displayCurrentCard();
-        }
-
-        function displayCurrentCard() {
-            const card = learningState.flashcardDeck[learningState.currentCardIndex];
-            const flashcard = document.getElementById('flashcard');
-            
-            document.getElementById('card-term').textContent = card.term;
-            document.getElementById('card-definition').textContent = card.definition;
-            
-            // Reset card to front
-            flashcard.classList.remove('flipped');
-            
-            // Update counters
-            document.getElementById('current-card').textContent = learningState.currentCardIndex + 1;
-            document.getElementById('total-cards').textContent = learningState.flashcardDeck.length;
-            
-            // Update mastery badge
-            const masteryBadge = document.getElementById('mastery-badge');
-            if (learningState.masteredCards.has(card.term)) {
-                masteryBadge.textContent = '✅ Mastered';
-                masteryBadge.style.background = 'rgba(0, 184, 148, 0.1)';
-                masteryBadge.style.color = 'var(--color-success)';
-            } else {
-                masteryBadge.textContent = '📚 Learning';
-                masteryBadge.style.background = 'rgba(93, 109, 250, 0.1)';
-                masteryBadge.style.color = 'var(--color-primary)';
-            }
-            
-            // Update button states
-            document.getElementById('prev-btn').disabled = learningState.currentCardIndex === 0;
-            document.getElementById('next-btn').disabled = learningState.currentCardIndex === learningState.flashcardDeck.length - 1;
-        }
-
-        function flipCard() {
-            document.getElementById('flashcard').classList.toggle('flipped');
-        }
-
-        function nextCard() {
-            if (learningState.currentCardIndex < learningState.flashcardDeck.length - 1) {
-                learningState.currentCardIndex++;
-                displayCurrentCard();
-            }
-        }
-
-        function prevCard() {
-            if (learningState.currentCardIndex > 0) {
-                learningState.currentCardIndex--;
-                displayCurrentCard();
-            }
-        }
-
-        function markMastered() {
-            const currentCard = learningState.flashcardDeck[learningState.currentCardIndex];
-            learningState.masteredCards.add(currentCard.term);
-            displayCurrentCard();
-            updateUserStats();
-            updateTopicMastery();
-        }
-
-        function shuffleCards() {
-            shuffleArray(learningState.flashcardDeck);
-            learningState.currentCardIndex = 0;
-            displayCurrentCard();
-        }
-
-        // Simulation Functions
-        let currentSimulation = 1;
-
-        function selectDecision(simNumber, choice) {
-            const cards = document.querySelectorAll(`#sim-${simNumber} .decision-card`);
+        const quizAnswers = { q1: 'B', q2: 'A', q3: 'B', q4: 'B', q5: 'B' };
+        let activitiesCompleted = 0, totalAccuracy = 0, startTime = Date.now(), draggedCard = null;
+        setInterval(() => {
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed % 60;
+            document.getElementById('time-spent').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+        function setupDragAndDrop() {
+            const cards = document.querySelectorAll('.duty-card');
+            const dropzones = document.querySelectorAll('.dropzone');
             cards.forEach(card => {
-                card.classList.remove('selected', 'incorrect');
-                const decision = card.querySelector('.decision-text').textContent.charAt(0);
-                
-                if (decision === choice) {
-                    if (choice === 'C') {
-                        card.classList.add('selected');
-                    } else {
-                        card.classList.add('incorrect');
-                    }
-                }
-                
-                if (decision === 'C') {
-                    card.classList.add('selected');
-                }
+                card.addEventListener('dragstart', (e) => { draggedCard = card; card.classList.add('dragging'); e.dataTransfer.effectAllowed = 'move'; });
+                card.addEventListener('dragend', () => { card.classList.remove('dragging'); });
             });
-            
-            // Show feedback
-            document.getElementById('feedback-panel').classList.add('show');
-            
-            // Update progress
-            learningState.simulationProgress = Math.max(learningState.simulationProgress, simNumber);
-            updateUserStats();
-            updateTopicMastery();
-        }
-
-        function nextSimulation() {
-            document.getElementById(`sim-${currentSimulation}`).style.display = 'none';
-            currentSimulation = Math.min(3, currentSimulation + 1);
-            document.getElementById(`sim-${currentSimulation}`).style.display = 'block';
-            document.getElementById('feedback-panel').classList.remove('show');
-            updateSimulationButtons();
-        }
-
-        function prevSimulation() {
-            document.getElementById(`sim-${currentSimulation}`).style.display = 'none';
-            currentSimulation = Math.max(1, currentSimulation - 1);
-            document.getElementById(`sim-${currentSimulation}`).style.display = 'block';
-            document.getElementById('feedback-panel').classList.remove('show');
-            updateSimulationButtons();
-        }
-
-        function updateSimulationButtons() {
-            document.getElementById('prev-sim-btn').disabled = currentSimulation === 1;
-            document.getElementById('next-sim-btn').disabled = currentSimulation === 3;
-        }
-
-        // Exercise Functions
-        function setupMatchingGame() {
-            const terms = [
-                { term: "PHI", definition: "Protected Health Information" },
-                { term: "HIPAA", definition: "Health Insurance Portability and Accountability Act" },
-                { term: "HITECH", definition: "Health Information Technology for Economic and Clinical Health Act" },
-                { term: "NPP", definition: "Notice of Privacy Practices" },
-                { term: "RAC", definition: "Recovery Audit Contractor" }
-            ];
-            
-            // Shuffle terms and definitions
-            const shuffledTerms = [...terms].sort(() => Math.random() - 0.5);
-            const shuffledDefs = [...terms.map(t => t.definition)].sort(() => Math.random() - 0.5);
-            
-            const gameContainer = document.getElementById('matching-game');
-            gameContainer.innerHTML = '';
-            
-            // Add terms
-            shuffledTerms.forEach((item, index) => {
-                const termDiv = document.createElement('div');
-                termDiv.className = 'matching-item';
-                termDiv.textContent = item.term;
-                termDiv.draggable = true;
-                termDiv.dataset.type = 'term';
-                termDiv.dataset.value = item.term;
-                termDiv.addEventListener('dragstart', handleDragStart);
-                gameContainer.appendChild(termDiv);
-            });
-            
-            // Add definitions
-            shuffledDefs.forEach((def, index) => {
-                const defDiv = document.createElement('div');
-                defDiv.className = 'matching-item';
-                defDiv.textContent = def;
-                defDiv.draggable = true;
-                defDiv.dataset.type = 'definition';
-                defDiv.dataset.value = def;
-                defDiv.addEventListener('dragstart', handleDragStart);
-                defDiv.addEventListener('dragover', handleDragOver);
-                defDiv.addEventListener('drop', handleDrop);
-                gameContainer.appendChild(defDiv);
-            });
-        }
-
-        let dragElement = null;
-
-        function handleDragStart(e) {
-            dragElement = this;
-            this.classList.add('dragging');
-        }
-
-        function handleDragOver(e) {
-            e.preventDefault();
-        }
-
-        function handleDrop(e) {
-            e.preventDefault();
-            if (dragElement.dataset.type !== this.dataset.type) {
-                // Check if match is correct
-                const terms = flashcardData.compliance.concat(flashcardData.privacy)
-                    .concat(flashcardData.security).concat(flashcardData.fraud);
-                
-                const termObj = terms.find(t => t.term === dragElement.dataset.value);
-                const defObj = terms.find(t => t.definition === this.dataset.value);
-                
-                if (termObj && defObj && termObj.term === defObj.term) {
-                    dragElement.classList.add('matched');
-                    this.classList.add('matched');
-                    dragElement.style.opacity = '0.5';
-                    this.style.opacity = '0.5';
-                    dragElement.draggable = false;
-                    this.draggable = false;
-                }
-            }
-            dragElement.classList.remove('dragging');
-            dragElement = null;
-        }
-
-        function checkMatching() {
-            const matched = document.querySelectorAll('.matching-item.matched').length;
-            const total = document.querySelectorAll('.matching-item').length;
-            const score = (matched / total) * 100;
-            
-            const feedback = document.getElementById('matching-feedback');
-            if (score === 100) {
-                feedback.textContent = '🎉 Perfect! All matches are correct!';
-                feedback.style.color = 'var(--color-success)';
-                learningState.exerciseScores.matching = score;
-                updateTopicMastery();
-            } else {
-                feedback.textContent = `📊 ${Math.round(score)}% correct. Keep trying!`;
-                feedback.style.color = 'var(--color-warning)';
-            }
-        }
-
-        function resetMatching() {
-            setupMatchingGame();
-            document.getElementById('matching-feedback').textContent = '';
-        }
-
-        function setupFillBlank() {
-            const words = ['Privacy', 'PHI', 'minimum', 'Security', 'electronic', 'authorization'];
-            const shuffledWords = [...words].sort(() => Math.random() - 0.5);
-            
-            const wordBank = document.getElementById('word-bank');
-            wordBank.innerHTML = '';
-            
-            shuffledWords.forEach(word => {
-                const wordDiv = document.createElement('div');
-                wordDiv.className = 'word-option';
-                wordDiv.textContent = word;
-                wordDiv.draggable = true;
-                wordDiv.dataset.word = word;
-                wordDiv.addEventListener('dragstart', function(e) {
-                    e.dataTransfer.setData('text/plain', word);
-                });
-                wordBank.appendChild(wordDiv);
-            });
-            
-            // Setup blank drop zones
-            document.querySelectorAll('.blank').forEach(blank => {
-                blank.addEventListener('dragover', function(e) {
-                    e.preventDefault();
-                });
-                
-                blank.addEventListener('drop', function(e) {
-                    e.preventDefault();
-                    const word = e.dataTransfer.getData('text/plain');
-                    if (word === this.dataset.answer) {
-                        this.textContent = word;
-                        this.classList.add('filled');
+            dropzones.forEach(zone => {
+                zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('hover'); });
+                zone.addEventListener('dragleave', () => { zone.classList.remove('hover'); });
+                zone.addEventListener('drop', (e) => {
+                    e.preventDefault(); zone.classList.remove('hover');
+                    if (draggedCard && !draggedCard.classList.contains('placed')) {
+                        const content = zone.querySelector('.dropzone-content');
+                        const clone = draggedCard.cloneNode(true);
+                        clone.draggable = false; clone.classList.add('placed'); clone.style.cursor = 'default';
+                        clone.dataset.original = draggedCard.dataset.correct;
+                        clone.dataset.target = zone.dataset.category;
+                        content.appendChild(clone);
+                        draggedCard.style.opacity = '0.5'; draggedCard.draggable = false;
                     }
                 });
             });
         }
-
-        function checkFillBlank() {
+        function checkActivity1() {
+            const placedCards = document.querySelectorAll('.duty-card.placed');
             let correct = 0;
-            let total = 0;
-            
-            document.querySelectorAll('.blank').forEach(blank => {
-                total++;
-                if (blank.textContent === blank.dataset.answer) {
-                    correct++;
-                    blank.style.borderBottomColor = 'var(--color-success)';
-                } else {
-                    blank.style.borderBottomColor = 'var(--color-error)';
-                    if (!blank.textContent) {
-                        blank.textContent = blank.dataset.answer;
-                        blank.style.color = 'var(--color-error)';
-                    }
-                }
+            placedCards.forEach(card => {
+                const isCorrect = card.dataset.original === card.dataset.target;
+                if (isCorrect) { correct++; card.classList.add('correct'); } else { card.classList.add('incorrect'); }
             });
-            
-            const score = (correct / total) * 100;
-            const feedback = document.getElementById('fillblank-feedback');
-            
-            if (score === 100) {
-                feedback.textContent = '✅ Perfect! All blanks filled correctly!';
-                feedback.style.color = 'var(--color-success)';
-                learningState.exerciseScores.fillblank = score;
-                updateTopicMastery();
-            } else {
-                feedback.textContent = `📝 ${correct}/${total} correct. Review the correct answers above.`;
-                feedback.style.color = 'var(--color-warning)';
+            const accuracy = Math.round((correct / 6) * 100);
+            totalAccuracy = (totalAccuracy + accuracy) / 2;
+            document.getElementById('accuracy-rate').textContent = Math.round(totalAccuracy) + '%';
+            if (correct === 6) {
+                document.getElementById('activity1-result').classList.add('show');
+                document.getElementById('activity-1').classList.add('completed');
+                document.querySelector('#activity-1 .activity-status').textContent = 'Complete';
+                activitiesCompleted++; updateProgressTracker(1); updateActivityCount();
+            }
+            document.getElementById('check-btn-1').disabled = true;
+        }
+        function submitScenario(scenarioNum, correctAnswer) {
+            const selected = document.querySelector(`input[name="scenario${scenarioNum}"]:checked`);
+            if (!selected) return;
+            const feedback = document.getElementById(`feedback-${scenarioNum}`);
+            const selectedAnswer = selected.value;
+            const isCorrect = selectedAnswer === correctAnswer;
+            const messages = {
+                1: { B: "Correct! HIPAA requires notification of misdirected PHI and documentation of the incident.", A: "Incorrect. You must follow breach protocol and notify your Privacy Officer.", C: "Incorrect. You cannot place another patient's data in your records.", D: "Incorrect. Verbal transmission violates security safeguards." },
+                2: { B: "Correct! Unauthorized access must be reported immediately to your Privacy Officer and management.", A: "Incorrect. You have a duty to report unauthorized access.", C: "Incorrect. This should be reported to management, not handled personally.", D: "Incorrect. Personal relationships do not justify unauthorized record access." },
+                3: { B: "Correct! Potential breaches require immediate reporting, risk assessment, and patient notification per HIPAA timelines.", A: "Incorrect. You must act immediately on potential breaches.", C: "Incorrect. Patient notification is required regardless of whether the device is recovered.", D: "Incorrect. Device wiping does not satisfy HIPAA breach notification requirements." }
+            };
+            feedback.textContent = messages[scenarioNum][selectedAnswer];
+            feedback.classList.add('show', isCorrect ? 'correct' : 'incorrect');
+            if (isCorrect) { totalAccuracy = (totalAccuracy + 100) / 2; } else { totalAccuracy = (totalAccuracy + 0) / 2; }
+            document.getElementById('accuracy-rate').textContent = Math.round(totalAccuracy) + '%';
+            const allOptions = document.querySelectorAll(`[data-scenario="${scenarioNum}"]`);
+            allOptions.forEach(opt => opt.querySelector('input').disabled = true);
+            const allAnswered = document.querySelectorAll('.scenario-container').length === document.querySelectorAll('.feedback-message.show').length;
+            if (allAnswered) {
+                document.getElementById('activity2-result').classList.add('show');
+                document.getElementById('activity-2').classList.add('completed');
+                document.querySelector('#activity-2 .activity-status').textContent = 'Complete';
+                activitiesCompleted++; updateProgressTracker(2); updateActivityCount();
             }
         }
-
-        function resetFillBlank() {
-            document.querySelectorAll('.blank').forEach(blank => {
-                blank.textContent = '';
-                blank.classList.remove('filled');
-                blank.style.borderBottomColor = 'var(--color-primary)';
-                blank.style.color = 'inherit';
+        function submitQuiz() {
+            let correct = 0;
+            Object.keys(quizAnswers).forEach(question => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === quizAnswers[question]) { correct++; selected.closest('.quiz-option').classList.add('correct'); } else if (selected) { selected.closest('.quiz-option').classList.add('incorrect'); }
+                if (selected) { selected.disabled = true; }
             });
-            document.getElementById('fillblank-feedback').textContent = '';
-        }
-
-        function setupCategorySort() {
-            const items = [
-                { text: "Security training programs", category: "administrative" },
-                { text: "Encryption software", category: "technical" },
-                { text: "Locked server rooms", category: "physical" },
-                { text: "Password policies", category: "administrative" },
-                { text: "Firewall configuration", category: "technical" },
-                { text: "Workstation placement", category: "physical" },
-                { text: "Incident response plans", category: "administrative" },
-                { text: "Biometric access", category: "technical" },
-                { text: "Secure disposal bins", category: "physical" },
-                { text: "Risk assessment procedures", category: "administrative" }
-            ];
-            
-            const shuffledItems = [...items].sort(() => Math.random() - 0.5);
-            const container = document.getElementById('sortable-items');
-            container.innerHTML = '';
-            
-            shuffledItems.forEach(item => {
-                const itemDiv = document.createElement('div');
-                itemDiv.className = 'word-option';
-                itemDiv.textContent = item.text;
-                itemDiv.draggable = true;
-                itemDiv.dataset.category = item.category;
-                itemDiv.addEventListener('dragstart', function(e) {
-                    e.dataTransfer.setData('text/plain', item.text);
-                    e.dataTransfer.setData('category', item.category);
-                });
-                container.appendChild(itemDiv);
-            });
-            
-            // Setup category drop zones
-            document.querySelectorAll('.category-box').forEach(box => {
-                box.addEventListener('dragover', function(e) {
-                    e.preventDefault();
-                });
-                
-                box.addEventListener('drop', function(e) {
-                    e.preventDefault();
-                    const text = e.dataTransfer.getData('text/plain');
-                    const category = e.dataTransfer.getData('category');
-                    
-                    if (category === this.dataset.category) {
-                        const itemDiv = document.createElement('div');
-                        itemDiv.textContent = text;
-                        itemDiv.style.background = 'white';
-                        itemDiv.style.padding = '8px';
-                        itemDiv.style.margin = '5px';
-                        itemDiv.style.borderRadius = '4px';
-                        this.appendChild(itemDiv);
-                    }
-                });
-            });
-        }
-
-        function checkCategories() {
-            // This would check if items are in correct categories
-            const feedback = document.getElementById('category-feedback');
-            feedback.textContent = '✅ Great job! Items sorted correctly.';
-            feedback.style.color = 'var(--color-success)';
-            learningState.exerciseScores.categories = 100;
-            updateTopicMastery();
-        }
-
-        function resetCategories() {
-            setupCategorySort();
-            document.getElementById('category-feedback').textContent = '';
-        }
-
-        // Progress Tracking
-        function updateUserStats() {
-            const masteryScore = calculateMasteryScore();
-            const cardsMastered = learningState.masteredCards.size;
-            const simsCompleted = learningState.simulationProgress;
-            
-            document.getElementById('mastery-score').textContent = `${masteryScore}%`;
-            document.getElementById('cards-mastered').textContent = cardsMastered;
-            document.getElementById('sims-completed').textContent = simsCompleted;
-        }
-
-        function calculateMasteryScore() {
-            let totalScore = 0;
-            let count = 0;
-            
-            // Add flashcard mastery
-            const totalCards = Object.values(flashcardData).flat().length;
-            totalScore += (learningState.masteredCards.size / totalCards) * 40; // 40% weight
-            
-            // Add simulation progress
-            totalScore += (learningState.simulationProgress / 3) * 30; // 30% weight
-            
-            // Add exercise scores
-            const exerciseScores = Object.values(learningState.exerciseScores);
-            if (exerciseScores.length > 0) {
-                const avgExercise = exerciseScores.reduce((a, b) => a + b) / exerciseScores.length;
-                totalScore += avgExercise * 0.3; // 30% weight
+            const accuracy = Math.round((correct / 5) * 100);
+            totalAccuracy = (totalAccuracy + accuracy) / 2;
+            document.getElementById('accuracy-rate').textContent = Math.round(totalAccuracy) + '%';
+            document.getElementById('quiz-score').textContent = `Score: ${correct}/5 (${accuracy}%)`;
+            if (correct >= 4) {
+                document.getElementById('quiz-result').classList.add('show');
+                document.getElementById('activity-3').classList.add('completed');
+                document.querySelector('#activity-3 .activity-status').textContent = 'Complete';
+                activitiesCompleted++; updateProgressTracker(3); updateActivityCount();
             }
-            
-            return Math.round(totalScore);
+            document.getElementById('submit-quiz').disabled = true;
         }
-
-        function updateTopicMastery() {
-            // Update each topic's mastery level
-            Object.keys(learningState.topicMastery).forEach(topic => {
-                // Calculate topic-specific mastery
-                let topicScore = 0;
-                
-                // Flashcard mastery for this topic
-                const topicCards = flashcardData[topic] || [];
-                const masteredInTopic = topicCards.filter(card => 
-                    learningState.masteredCards.has(card.term)
-                ).length;
-                
-                if (topicCards.length > 0) {
-                    topicScore += (masteredInTopic / topicCards.length) * 100;
+        function updateActivityCount() { document.getElementById('activities-completed').textContent = activitiesCompleted; }
+        function updateProgressTracker(step) {
+            const stepEl = document.querySelector(`.progress-step[data-step="${step}"]`);
+            if (stepEl) {
+                stepEl.classList.remove('active'); stepEl.classList.add('completed');
+                if (step < 3) {
+                    const nextStep = document.querySelector(`.progress-step[data-step="${step + 1}"]`);
+                    if (nextStep) nextStep.classList.add('active');
                 }
-                
-                learningState.topicMastery[topic] = topicScore;
-                
-                // Update display
-                const masteryCard = document.getElementById(`${topic}-mastery`);
-                if (masteryCard) {
-                    const progressElement = masteryCard.querySelector('.mastery-progress');
-                    progressElement.textContent = `${Math.round(topicScore)}%`;
-                    
-                    if (topicScore >= 80) {
-                        masteryCard.classList.add('completed');
-                    } else {
-                        masteryCard.classList.remove('completed');
-                    }
-                }
-            });
-            
-            updateUserStats();
-        }
-
-        function generateProgressReport() {
-            const report = `
-HIPAA Mastery Progress Report
-=============================
-Generated: ${new Date().toLocaleDateString()}
-
-Overall Mastery Score: ${calculateMasteryScore()}%
-
-Topic Breakdown:
-${Object.entries(learningState.topicMastery).map(([topic, score]) => 
-    `• ${topic.charAt(0).toUpperCase() + topic.slice(1)}: ${Math.round(score)}%`
-).join('\n')}
-
-Achievements:
-• Flash Cards Mastered: ${learningState.masteredCards.size}
-• Simulations Completed: ${learningState.simulationProgress}/3
-• Exercises Attempted: ${Object.keys(learningState.exerciseScores).length}
-
-Keep up the great work! Continue practicing to reach 100% mastery.
-            `;
-            
-            alert(report);
-        }
-
-        // Activity Starters
-        function startFlashcards(topic) {
-            switchTab('flashcards');
-            loadFlashcards(topic);
-        }
-
-        function startSimulation(topic) {
-            switchTab('simulations');
-            // Reset to first simulation
-            document.querySelectorAll('.simulation-scenario').forEach((sim, index) => {
-                sim.style.display = index === 0 ? 'block' : 'none';
-            });
-            currentSimulation = 1;
-            updateSimulationButtons();
-        }
-
-        function startExercise(topic) {
-            switchTab('exercises');
-        }
-
-        // Utility Functions
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
             }
-            return array;
         }
+        document.addEventListener('DOMContentLoaded', setupDragAndDrop);
     </script>
+<script>
+(function() {
+  var dragSrc = null, cloneEl = null, lastTarget = null;
+  function pt(e){ return e.touches ? e.touches[0] : e.changedTouches[0]; }
+  document.addEventListener("touchstart", function(e){
+    var el = e.target.closest("[draggable='true']");
+    if(!el) return;
+    dragSrc = el;
+    dragSrc._dt = { data:{}, getData:function(k){return this.data[k]||"";}, setData:function(k,v){this.data[k]=v;} };
+    var ev = new Event("dragstart",{bubbles:true,cancelable:true});
+    ev.dataTransfer = dragSrc._dt;
+    el.dispatchEvent(ev);
+    cloneEl = el.cloneNode(true);
+    var r = el.getBoundingClientRect();
+    Object.assign(cloneEl.style, {position:"fixed",top:r.top+"px",left:r.left+"px",width:r.width+"px",opacity:"0.7",pointerEvents:"none",zIndex:9999,boxShadow:"0 8px 24px rgba(0,0,0,0.2)",borderRadius:"8px"});
+    document.body.appendChild(cloneEl);
+    e.preventDefault();
+  }, {passive:false});
+  document.addEventListener("touchmove", function(e){
+    if(!dragSrc) return;
+    var t = pt(e);
+    if(cloneEl){ cloneEl.style.top=(t.clientY-30)+"px"; cloneEl.style.left=(t.clientX-60)+"px"; }
+    var over = document.elementFromPoint(t.clientX, t.clientY);
+    if(over && over !== lastTarget){
+      if(lastTarget){ var lev=new Event("dragleave",{bubbles:true}); lastTarget.dispatchEvent(lev); }
+      lastTarget = over;
+      var ov=new Event("dragover",{bubbles:true,cancelable:true}); ov.dataTransfer=dragSrc._dt; over.dispatchEvent(ov);
+    }
+    e.preventDefault();
+  }, {passive:false});
+  document.addEventListener("touchend", function(e){
+    if(!dragSrc) return;
+    if(cloneEl){ cloneEl.remove(); cloneEl=null; }
+    var t = pt(e);
+    var dropEl = document.elementFromPoint(t.clientX, t.clientY);
+    if(dropEl){ var ev=new Event("drop",{bubbles:true,cancelable:true}); ev.dataTransfer=dragSrc._dt; dropEl.dispatchEvent(ev); }
+    var de=new Event("dragend",{bubbles:true}); dragSrc.dispatchEvent(de);
+    dragSrc=null; lastTarget=null;
+  }, {passive:false});
+})();
+</script>
 </body>
 </html>
