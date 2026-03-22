@@ -223,7 +223,7 @@
                         <label class="option-label" data-scenario="1" data-answer="C"><input type="radio" name="scenario1" class="option-radio" value="C"><div class="option-text">99203 (Low-complexity established patient)</div></label>
                         <label class="option-label" data-scenario="1" data-answer="D"><input type="radio" name="scenario1" class="option-radio" value="D"><div class="option-text">99204 (Moderate-complexity new patient)</div></label>
                     </div>
-                    <button class="btn" onclick="submitScenario(1, 'A')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(1, 'C')">Submit Response</button>
                     <div class="feedback-message" id="feedback-1"></div>
                 </div>
 
@@ -236,7 +236,7 @@
                         <label class="option-label" data-scenario="2" data-answer="C"><div class="option-text">99215 (High-complexity established patient)</div></label>
                         <label class="option-label" data-scenario="2" data-answer="D"><input type="radio" name="scenario2" class="option-radio" value="D"><div class="option-text">99205 (High-complexity new patient)</div></label>
                     </div>
-                    <button class="btn" onclick="submitScenario(2, 'C')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(2, 'A')">Submit Response</button>
                     <div class="feedback-message" id="feedback-2"></div>
                 </div>
 
@@ -249,7 +249,7 @@
                         <label class="option-label" data-scenario="3" data-answer="C"><input type="radio" name="scenario3" class="option-radio" value="C"><div class="option-text">99214 (Moderate-complexity established patient)</div></label>
                         <label class="option-label" data-scenario="3" data-answer="D"><input type="radio" name="scenario3" class="option-radio" value="D"><div class="option-text">99215 (High-complexity established patient)</div></label>
                     </div>
-                    <button class="btn" onclick="submitScenario(3, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(3, 'D')">Submit Response</button>
                     <div class="feedback-message" id="feedback-3"></div>
                 </div>
 
@@ -264,52 +264,42 @@
                 <div class="quiz-container">
                     <div class="quiz-question">
                         <div class="quiz-question-text">1. According to 2021 E/M guidelines, which component is PRIMARY for determining code level?</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q1" value="A"><span class="quiz-option-text">A) Medical Decision Making (MDM) complexity</span></label>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q1" value="A"><span class="quiz-option-text">A) Documentation length</span></label>
                             <label class="quiz-option"><input type="radio" name="q1" value="B"><span class="quiz-option-text">B) Time spent with patient</span></label>
-                            <label class="quiz-option"><input type="radio" name="q1" value="C"><span class="quiz-option-text">C) Documentation length</span></label>
-                            <label class="quiz-option"><input type="radio" name="q1" value="D"><span class="quiz-option-text">D) Patient's insurance type</span></label>
-                        </div>
+                            <label class="quiz-option"><input type="radio" name="q1" value="C"><span class="quiz-option-text">C) Medical Decision Making (MDM) complexity</span></label>
+                            <label class="quiz-option"><input type="radio" name="q1" value="D"><span class="quiz-option-text">D) Patient's insurance type</span></label></div>
                     </div>
 
                     <div class="quiz-question">
                         <div class="quiz-question-text">2. The difference between 99202 and 99212 is:</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q2" value="A"><span class="quiz-option-text">A) Patient status: 99202 is new, 99212 is established</span></label>
-                            <label class="quiz-option"><input type="radio" name="q2" value="B"><span class="quiz-option-text">B) Provider type: 99202 for nurses, 99212 for physicians</span></label>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q2" value="A"><span class="quiz-option-text">A) Provider type: 99202 for nurses, 99212 for physicians</span></label>
+                            <label class="quiz-option"><input type="radio" name="q2" value="B"><span class="quiz-option-text">B) Patient status: 99202 is new, 99212 is established</span></label>
                             <label class="quiz-option"><input type="radio" name="q2" value="C"><span class="quiz-option-text">C) Insurance type: 99202 for Medicare, 99212 for private</span></label>
-                            <label class="quiz-option"><input type="radio" name="q2" value="D"><span class="quiz-option-text">D) Time constraints: 99202 always takes less than 30 minutes</span></label>
-                        </div>
+                            <label class="quiz-option"><input type="radio" name="q2" value="D"><span class="quiz-option-text">D) Time constraints: 99202 always takes less than 30 minutes</span></label></div>
                     </div>
 
                     <div class="quiz-question">
                         <div class="quiz-question-text">3. Medical Decision Making (MDM) in E/M coding includes assessment of:</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q3" value="A"><span class="quiz-option-text">A) Number of diagnoses, complexity of workup, and risk management</span></label>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q3" value="A"><span class="quiz-option-text">A) Number of diagnoses, complexity of workup, and risk management</span></label>
                             <label class="quiz-option"><input type="radio" name="q3" value="B"><span class="quiz-option-text">B) Patient's age and gender</span></label>
                             <label class="quiz-option"><input type="radio" name="q3" value="C"><span class="quiz-option-text">C) Length of the chart note in words</span></label>
-                            <label class="quiz-option"><input type="radio" name="q3" value="D"><span class="quiz-option-text">D) The number of referrals sent</span></label>
-                        </div>
+                            <label class="quiz-option"><input type="radio" name="q3" value="D"><span class="quiz-option-text">D) The number of referrals sent</span></label></div>
                     </div>
 
                     <div class="quiz-question">
                         <div class="quiz-question-text">4. When can time be the ONLY determining factor for E/M code level?</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q4" value="A"><span class="quiz-option-text">A) Always; time is the primary factor in all visits</span></label>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q4" value="A"><span class="quiz-option-text">A) Always; time is the primary factor in all visits</span></label>
                             <label class="quiz-option"><input type="radio" name="q4" value="B"><span class="quiz-option-text">B) For new patient visits over 100 minutes</span></label>
-                            <label class="quiz-option"><input type="radio" name="q4" value="C"><span class="quiz-option-text">C) When >50% of the visit is spent on counseling or care coordination</span></label>
-                            <label class="quiz-option"><input type="radio" name="q4" value="D"><span class="quiz-option-text">D) For established patient offices visits only</span></label>
-                        </div>
+                            <label class="quiz-option"><input type="radio" name="q4" value="C"><span class="quiz-option-text">C) For established patient offices visits only</span></label>
+                            <label class="quiz-option"><input type="radio" name="q4" value="D"><span class="quiz-option-text">D) When >50% of the visit is spent on counseling or care coordination</span></label></div>
                     </div>
 
                     <div class="quiz-question">
                         <div class="quiz-question-text">5. CPT codes 99211-99215 are used for:</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q5" value="A"><span class="quiz-option-text">A) New patient office visits</span></label>
-                            <label class="quiz-option"><input type="radio" name="q5" value="B"><span class="quiz-option-text">B) Established patient office visits</span></label>
-                            <label class="quiz-option"><input type="radio" name="q5" value="C"><span class="quiz-option-text">C) Telephone consultations</span></label>
-                            <label class="quiz-option"><input type="radio" name="q5" value="D"><span class="quiz-option-text">D) Emergency department visits</span></label>
-                        </div>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q5" value="A"><span class="quiz-option-text">A) New patient office visits</span></label>
+                            <label class="quiz-option"><input type="radio" name="q5" value="B"><span class="quiz-option-text">B) Telephone consultations</span></label>
+                            <label class="quiz-option"><input type="radio" name="q5" value="C"><span class="quiz-option-text">C) Established patient office visits</span></label>
+                            <label class="quiz-option"><input type="radio" name="q5" value="D"><span class="quiz-option-text">D) Emergency department visits</span></label></div>
                     </div>
                 </div>
 
@@ -320,7 +310,7 @@
     </main>
 
     <script>
-        const quizAnswers = { q1: 'A', q2: 'A', q3: 'A', q4: 'C', q5: 'B' };
+        const quizAnswers = { q1: 'C', q2: 'B', q3: 'A', q4: 'D', q5: 'C' };
         let activitiesCompleted = 0, totalAccuracy = 0, startTime = Date.now(), draggedCard = null;
         setInterval(() => {
             const elapsed = Math.floor((Date.now() - startTime) / 1000);
