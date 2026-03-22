@@ -555,11 +555,11 @@
                     <div class="options-container">
                         <label class="option-label" data-scenario="1" data-answer="A">
                             <input type="radio" name="scenario1" class="option-radio" value="A">
-                            <div class="option-text">Modifier -59 (Distinct Procedural Service) or -91 if bilateral</div>
+                            <div class="option-text">No modifier needed; one code covers all polyp removals</div>
                         </label>
                         <label class="option-label" data-scenario="1" data-answer="B">
                             <input type="radio" name="scenario1" class="option-radio" value="B">
-                            <div class="option-text">No modifier needed; one code covers all polyp removals</div>
+                            <div class="option-text">Modifier -59 (Distinct Procedural Service) or -91 if bilateral</div>
                         </label>
                         <label class="option-label" data-scenario="1" data-answer="C">
                             <input type="radio" name="scenario1" class="option-radio" value="C">
@@ -591,7 +591,7 @@
                         </label>
                         <label class="option-label" data-scenario="2" data-answer="B">
                             <input type="radio" name="scenario2" class="option-radio" value="B">
-                            <div class="option-text">CPT 99215 (High complexity) — comprehensive visit with complex MDM</div>
+                            <div class="option-text">CPT 99397 (Preventive care) — always used for wellness visits</div>
                         </label>
                         <label class="option-label" data-scenario="2" data-answer="C">
                             <input type="radio" name="scenario2" class="option-radio" value="C">
@@ -599,10 +599,10 @@
                         </label>
                         <label class="option-label" data-scenario="2" data-answer="D">
                             <input type="radio" name="scenario2" class="option-radio" value="D">
-                            <div class="option-text">CPT 99397 (Preventive care) — always used for wellness visits</div>
+                            <div class="option-text">CPT 99215 (High complexity) — comprehensive visit with complex MDM</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(2, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(2, 'D')">Submit Response</button>
                     <div class="feedback-message" id="feedback-2"></div>
                 </div>
 
@@ -658,11 +658,11 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="A">
-                                <span class="quiz-option-text">A) Current Procedural Terminology</span>
+                                <span class="quiz-option-text">B)  Certified Pathology Treatment</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="B">
-                                <span class="quiz-option-text">B) Certified Pathology Treatment</span>
+                                <span class="quiz-option-text">A)  Current Procedural Terminology</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="C">
@@ -684,7 +684,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="B">
-                                <span class="quiz-option-text">B) To increase the reimbursement rate for procedures</span>
+                                <span class="quiz-option-text">D)  Modifiers are optional and rarely used in practice</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="C">
@@ -692,7 +692,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="D">
-                                <span class="quiz-option-text">D) Modifiers are optional and rarely used in practice</span>
+                                <span class="quiz-option-text">B)  To increase the reimbursement rate for procedures</span>
                             </label>
                         </div>
                     </div>
@@ -706,7 +706,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="B">
-                                <span class="quiz-option-text">B) 10000-69999</span>
+                                <span class="quiz-option-text">B)  10000-69999</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="C">
@@ -728,11 +728,11 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="B">
-                                <span class="quiz-option-text">B) The age of the patient being seen</span>
+                                <span class="quiz-option-text">C)  The type of insurance the patient has</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="C">
-                                <span class="quiz-option-text">C) The type of insurance the patient has</span>
+                                <span class="quiz-option-text">B)  The age of the patient being seen</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="D">
@@ -746,11 +746,11 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="A">
-                                <span class="quiz-option-text">A) Indicates a significant, separately identifiable E/M service on the same day</span>
+                                <span class="quiz-option-text">B)  Means the procedure is 25% discounted for volume billing</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="B">
-                                <span class="quiz-option-text">B) Means the procedure is 25% discounted for volume billing</span>
+                                <span class="quiz-option-text">A)  Indicates a significant, separately identifiable E/M service on the same day</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="C">
@@ -775,7 +775,7 @@
     </main>
 
     <script>
-        const quizAnswers = { q1: 'A', q2: 'A', q3: 'A', q4: 'A', q5: 'A' };
+        const quizAnswers = { q1: 'A', q2: 'D', q3: 'B', q4: 'C', q5: 'A' };
         let activitiesCompleted = 0, totalAccuracy = 0, startTime = Date.now(), draggedCard = null;
 
         setInterval(() => {
