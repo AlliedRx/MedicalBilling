@@ -225,7 +225,7 @@
                         <label class="option-label" data-scenario="1" data-answer="C"><input type="radio" name="scenario1" class="option-radio" value="C"><div class="option-text">Do it once but refuse next time to find a compromise.</div></label>
                         <label class="option-label" data-scenario="1" data-answer="D"><input type="radio" name="scenario1" class="option-radio" value="D"><div class="option-text">Bill the higher code but document it in your notes secretly.</div></label>
                     </div>
-                    <button class="btn" onclick="submitScenario(1, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(1, 'A')">Submit Response</button>
                     <div class="feedback-message" id="feedback-1"></div>
                 </div>
 
@@ -238,7 +238,7 @@
                         <label class="option-label" data-scenario="2" data-answer="C"><input type="radio" name="scenario2" class="option-radio" value="C"><div class="option-text">Accept but report to a friend who works at a competitor.</div></label>
                         <label class="option-label" data-scenario="2" data-answer="D"><input type="radio" name="scenario2" class="option-radio" value="D"><div class="option-text">Ignore it; enforcement is very rare in healthcare.</div></label>
                     </div>
-                    <button class="btn" onclick="submitScenario(2, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(2, 'D')">Submit Response</button>
                     <div class="feedback-message" id="feedback-2"></div>
                 </div>
 
@@ -251,7 +251,7 @@
                         <label class="option-label" data-scenario="3" data-answer="C"><input type="radio" name="scenario3" class="option-radio" value="C"><div class="option-text">Tell your coworker they should fix it themselves.</div></label>
                         <label class="option-label" data-scenario="3" data-answer="D"><input type="radio" name="scenario3" class="option-radio" value="D"><div class="option-text">Wait to see if insurance questions the charges first.</div></label>
                     </div>
-                    <button class="btn" onclick="submitScenario(3, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(3, 'C')">Submit Response</button>
                     <div class="feedback-message" id="feedback-3"></div>
                 </div>
 
@@ -266,52 +266,42 @@
                 <div class="quiz-container">
                     <div class="quiz-question">
                         <div class="quiz-question-text">1. What is the primary difference between healthcare fraud and abuse?</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q1" value="A"><span class="quiz-option-text">A) Fraud is intentional; abuse is unintentional or reckless</span></label>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q1" value="A"><span class="quiz-option-text">A) Fraud is intentional; abuse is unintentional or reckless</span></label>
                             <label class="quiz-option"><input type="radio" name="q1" value="B"><span class="quiz-option-text">B) Fraud applies to Medicare only; abuse applies to all insurance</span></label>
                             <label class="quiz-option"><input type="radio" name="q1" value="C"><span class="quiz-option-text">C) Abuse is more serious than fraud</span></label>
-                            <label class="quiz-option"><input type="radio" name="q1" value="D"><span class="quiz-option-text">D) They are the same thing with different names</span></label>
-                        </div>
+                            <label class="quiz-option"><input type="radio" name="q1" value="D"><span class="quiz-option-text">D) They are the same thing with different names</span></label></div>
                     </div>
 
                     <div class="quiz-question">
                         <div class="quiz-question-text">2. The Anti-Kickback Statute prohibits:</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q2" value="A"><span class="quiz-option-text">A) Remuneration (money, gifts, services) given in exchange for patient referrals</span></label>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q2" value="A"><span class="quiz-option-text">A) Physician employment agreements with hospitals</span></label>
                             <label class="quiz-option"><input type="radio" name="q2" value="B"><span class="quiz-option-text">B) Offering competitive prices for services</span></label>
-                            <label class="quiz-option"><input type="radio" name="q2" value="C"><span class="quiz-option-text">C) Physician employment agreements with hospitals</span></label>
-                            <label class="quiz-option"><input type="radio" name="q2" value="D"><span class="quiz-option-text">D) Professional marketing and advertising</span></label>
-                        </div>
+                            <label class="quiz-option"><input type="radio" name="q2" value="C"><span class="quiz-option-text">C) Remuneration (money, gifts, services) given in exchange for patient referrals</span></label>
+                            <label class="quiz-option"><input type="radio" name="q2" value="D"><span class="quiz-option-text">D) Professional marketing and advertising</span></label></div>
                     </div>
 
                     <div class="quiz-question">
                         <div class="quiz-question-text">3. The Stark Law regulates:</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q3" value="A"><span class="quiz-option-text">A) Physician self-referrals and financial relationships with entities providing designated health services</span></label>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q3" value="A"><span class="quiz-option-text">A) Patient complaints and grievance procedures</span></label>
                             <label class="quiz-option"><input type="radio" name="q3" value="B"><span class="quiz-option-text">B) Only nursing conduct and scope of practice</span></label>
                             <label class="quiz-option"><input type="radio" name="q3" value="C"><span class="quiz-option-text">C) Insurance company pricing and coverage decisions</span></label>
-                            <label class="quiz-option"><input type="radio" name="q3" value="D"><span class="quiz-option-text">D) Patient complaints and grievance procedures</span></label>
-                        </div>
+                            <label class="quiz-option"><input type="radio" name="q3" value="D"><span class="quiz-option-text">D) Physician self-referrals and financial relationships with entities providing designated health services</span></label></div>
                     </div>
 
                     <div class="quiz-question">
                         <div class="quiz-question-text">4. What protections does the Federal False Claims Act provide?</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q4" value="A"><span class="quiz-option-text">A) It is purely civil law with no criminal penalties</span></label>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q4" value="A"><span class="quiz-option-text">A) It is purely civil law with no criminal penalties</span></label>
                             <label class="quiz-option"><input type="radio" name="q4" value="B"><span class="quiz-option-text">B) It allows whistleblowers to report fraud and provides protections against retaliation and financial recovery</span></label>
                             <label class="quiz-option"><input type="radio" name="q4" value="C"><span class="quiz-option-text">C) It only applies to intentional fraud, never recklessness</span></label>
-                            <label class="quiz-option"><input type="radio" name="q4" value="D"><span class="quiz-option-text">D) Healthcare providers are exempt from its provisions</span></label>
-                        </div>
+                            <label class="quiz-option"><input type="radio" name="q4" value="D"><span class="quiz-option-text">D) Healthcare providers are exempt from its provisions</span></label></div>
                     </div>
 
                     <div class="quiz-question">
                         <div class="quiz-question-text">5. A compliance program's primary purpose is to:</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q5" value="A"><span class="quiz-option-text">A) Make billing faster without regard to accuracy</span></label>
-                            <label class="quiz-option"><input type="radio" name="q5" value="B"><span class="quiz-option-text">B) Prevent, detect, and correct fraud and abuse while ensuring legal and ethical operations</span></label>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q5" value="A"><span class="quiz-option-text">A) Prevent, detect, and correct fraud and abuse while ensuring legal and ethical operations</span></label>
+                            <label class="quiz-option"><input type="radio" name="q5" value="B"><span class="quiz-option-text">B) Make billing faster without regard to accuracy</span></label>
                             <label class="quiz-option"><input type="radio" name="q5" value="C"><span class="quiz-option-text">C) Provide legal cover for violations without consequences</span></label>
-                            <label class="quiz-option"><input type="radio" name="q5" value="D"><span class="quiz-option-text">D) Maximize profit at the expense of patient care</span></label>
-                        </div>
+                            <label class="quiz-option"><input type="radio" name="q5" value="D"><span class="quiz-option-text">D) Maximize profit at the expense of patient care</span></label></div>
                     </div>
                 </div>
 
@@ -322,7 +312,7 @@
     </main>
 
     <script>
-        const quizAnswers = { q1: 'A', q2: 'A', q3: 'A', q4: 'B', q5: 'B' };
+        const quizAnswers = { q1: 'A', q2: 'C', q3: 'D', q4: 'B', q5: 'A' };
         let activitiesCompleted = 0, totalAccuracy = 0, startTime = Date.now(), draggedCard = null;
         setInterval(() => {
             const elapsed = Math.floor((Date.now() - startTime) / 1000);
