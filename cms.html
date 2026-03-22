@@ -896,7 +896,7 @@
                             <div class="option-text">Check that medical record number appears in Box 21</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(1, 'A')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(1, 'B')">Submit Response</button>
                     <div class="feedback-message" id="feedback-1"></div>
                 </div>
 
@@ -928,7 +928,7 @@
                             <div class="option-text">Submit an identical claim without changes; errors resolve on resubmission</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(2, 'A')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(2, 'C')">Submit Response</button>
                     <div class="feedback-message" id="feedback-2"></div>
                 </div>
 
@@ -984,7 +984,7 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="A">
-                                <span class="quiz-option-text">A) MM | DD | CCYY</span>
+                                <span class="quiz-option-text">D) MMDDYY</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="B">
@@ -996,7 +996,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="D">
-                                <span class="quiz-option-text">D) MMDDYY</span>
+                                <span class="quiz-option-text">A) MM | DD | CCYY</span>
                             </label>
                         </div>
                     </div>
@@ -1006,7 +1006,7 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="A">
-                                <span class="quiz-option-text">A) PPO (Preferred Provider Organization)</span>
+                                <span class="quiz-option-text">C) Indemnity Insurance</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="B">
@@ -1014,7 +1014,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="C">
-                                <span class="quiz-option-text">C) Indemnity Insurance</span>
+                                <span class="quiz-option-text">A) PPO (Preferred Provider Organization)</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="D">
@@ -1050,11 +1050,11 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="A">
-                                <span class="quiz-option-text">A) 99201-99499 (E/M Services)</span>
+                                <span class="quiz-option-text">B) 10000-69999 (Surgery)</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="B">
-                                <span class="quiz-option-text">B) 10000-69999 (Surgery)</span>
+                                <span class="quiz-option-text">A) 99201-99499 (E/M Services)</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="C">
@@ -1072,7 +1072,7 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="A">
-                                <span class="quiz-option-text">A) Indicates the quantity or frequency of service performed</span>
+                                <span class="quiz-option-text">D) Records the claim submission date</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="B">
@@ -1084,7 +1084,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="D">
-                                <span class="quiz-option-text">D) Records the claim submission date</span>
+                                <span class="quiz-option-text">A) Indicates the quantity or frequency of service performed</span>
                             </label>
                         </div>
                     </div>
@@ -1102,11 +1102,11 @@
 
     <script>
         const quizAnswers = {
-            q1: 'A',
-            q2: 'B',
-            q3: 'A',
-            q4: 'A',
-            q5: 'A'
+            q1: 'D', 
+            q2: 'C', 
+            q3: 'A', 
+            q4: 'B', 
+            q5: 'D'
         };
 
         let activitiesCompleted = 0;
@@ -1207,15 +1207,15 @@
 
             const messages = {
                 1: {
-                    A: "Correct! Both NPIs must be verified for proper provider identification.",
-                    B: "Incorrect. Insurance name belongs in Box 1c and other fields, not Box 1.",
+                    A: "Incorrect. Insurance name belongs in Box 1c and other fields, not Box 1.",
+                    B: "Correct! Both NPIs must be verified for proper provider identification.",
                     C: "Incorrect. SSN is in Box 2, but provider NPIs are critical to verify.",
                     D: "Incorrect. Medical record numbers are not on the CMS-1500 form."
                 },
                 2: {
-                    A: "Correct! Box 19 is designed to support medical necessity appeals.",
+                    A: "Incorrect. Pre-authorization denials can be appealed with supporting documentation.",
                     B: "Incorrect. Documentation in Box 19 is specifically required for medical necessity justification.",
-                    C: "Incorrect. Pre-authorization denials can be appealed with supporting documentation.",
+                    C: "Correct! Box 19 is designed to support medical necessity appeals.",
                     D: "Incorrect. Pre-auth denials require corrected information, not blind resubmission."
                 },
                 3: {
