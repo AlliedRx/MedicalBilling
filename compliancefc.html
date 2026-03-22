@@ -930,11 +930,11 @@
                     <div class="options-container">
                         <label class="option-label" data-scenario="2" data-answer="A">
                             <input type="radio" name="scenario2" class="option-radio" value="A">
-                            <div class="option-text">Ignore it; your colleague likely has a valid reason and it's not your responsibility to monitor access.</div>
+                            <div class="option-text">Immediately report the unauthorized access to your Privacy Officer and management. Document what you observed without judgment.</div>
                         </label>
                         <label class="option-label" data-scenario="2" data-answer="B">
                             <input type="radio" name="scenario2" class="option-radio" value="B">
-                            <div class="option-text">Immediately report the unauthorized access to your Privacy Officer and management. Document what you observed without judgment.</div>
+                            <div class="option-text">Ignore it; your colleague likely has a valid reason and it's not your responsibility to monitor access.</div>
                         </label>
                         <label class="option-label" data-scenario="2" data-answer="C">
                             <input type="radio" name="scenario2" class="option-radio" value="C">
@@ -945,7 +945,7 @@
                             <div class="option-text">Assume personal relationships with patients justify access to their records if the staff member is curious.</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(2, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(2, 'A')">Submit Response</button>
                     <div class="feedback-message" id="feedback-2"></div>
                 </div>
 
@@ -966,18 +966,18 @@
                         </label>
                         <label class="option-label" data-scenario="3" data-answer="B">
                             <input type="radio" name="scenario3" class="option-radio" value="B">
-                            <div class="option-text">Immediately report to management, conduct a breach risk assessment, notify affected patients per HIPAA timeline (without unreasonable delay), file required reports with HHS if necessary, and document all actions taken.</div>
+                            <div class="option-text">Only notify patients if the device is actually recovered and data is confirmed accessed.</div>
                         </label>
                         <label class="option-label" data-scenario="3" data-answer="C">
                             <input type="radio" name="scenario3" class="option-radio" value="C">
-                            <div class="option-text">Only notify patients if the device is actually recovered and data is confirmed accessed.</div>
+                            <div class="option-text">Immediately report to management, conduct a breach risk assessment, notify affected patients per HIPAA timeline (without unreasonable delay), file required reports with HHS if necessary, and document all actions taken.</div>
                         </label>
                         <label class="option-label" data-scenario="3" data-answer="D">
                             <input type="radio" name="scenario3" class="option-radio" value="D">
                             <div class="option-text">Have IT remotely wipe the device and consider the matter closed since the laptop is gone.</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(3, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(3, 'C')">Submit Response</button>
                     <div class="feedback-message" id="feedback-3"></div>
                 </div>
 
@@ -1008,7 +1008,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="B">
-                                <span class="quiz-option-text">B) Any individually identifiable health information, including patient names, medical record numbers, and diagnoses</span>
+                                <span class="quiz-option-text">B)  Any individually identifiable health information, including patient names, medical record numbers, and diagnoses</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="C">
@@ -1030,7 +1030,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="B">
-                                <span class="quiz-option-text">B) Physicians must keep only minimal notes on patients</span>
+                                <span class="quiz-option-text">D)  Patients must authorize every access to their records</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="C">
@@ -1038,7 +1038,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="D">
-                                <span class="quiz-option-text">D) Patients must authorize every access to their records</span>
+                                <span class="quiz-option-text">B)  Physicians must keep only minimal notes on patients</span>
                             </label>
                         </div>
                     </div>
@@ -1052,11 +1052,11 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="B">
-                                <span class="quiz-option-text">B) An external vendor or service provider who handles PHI on behalf of a covered entity</span>
+                                <span class="quiz-option-text">C)  Any healthcare provider treating the patient</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="C">
-                                <span class="quiz-option-text">C) Any healthcare provider treating the patient</span>
+                                <span class="quiz-option-text">B)  An external vendor or service provider who handles PHI on behalf of a covered entity</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="D">
@@ -1070,11 +1070,11 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="A">
-                                <span class="quiz-option-text">A) To refuse to receive one</span>
+                                <span class="quiz-option-text">B)  To receive a copy and understand how their PHI may be used and disclosed</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="B">
-                                <span class="quiz-option-text">B) To receive a copy and understand how their PHI may be used and disclosed</span>
+                                <span class="quiz-option-text">A)  To refuse to receive one</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="C">
@@ -1096,7 +1096,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="B">
-                                <span class="quiz-option-text">B) Without unreasonable delay and without more than 60 calendar days after discovery of the breach</span>
+                                <span class="quiz-option-text">B)  Without unreasonable delay and without more than 60 calendar days after discovery of the breach</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="C">
@@ -1121,7 +1121,7 @@
     </main>
 
     <script>
-        const quizAnswers = { q1: 'B', q2: 'A', q3: 'B', q4: 'B', q5: 'B' };
+        const quizAnswers = { q1: 'B', q2: 'D', q3: 'C', q4: 'A', q5: 'B' };
         let activitiesCompleted = 0, totalAccuracy = 0, startTime = Date.now(), draggedCard = null;
         setInterval(() => {
             const elapsed = Math.floor((Date.now() - startTime) / 1000);
