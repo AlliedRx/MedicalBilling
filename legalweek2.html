@@ -969,7 +969,7 @@
                             <div class="option-text">Tell the patient what you overheard so they can decide if they want to pursue action.</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(2, 'A')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(2, 'D')">Submit Response</button>
                     <div class="feedback-message" id="feedback-2"></div>
                 </div>
 
@@ -1002,7 +1002,7 @@
                             <div class="option-text">Search online drug databases and tell the patient what you find.</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(3, 'C')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(3, 'A')">Submit Response</button>
                     <div class="feedback-message" id="feedback-3"></div>
                 </div>
 
@@ -1052,7 +1052,7 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="A">
-                                <span class="quiz-option-text">A) A professional healthcare provider breaches duty of care and causes patient harm</span>
+                                <span class="quiz-option-text">D) Any time a patient is dissatisfied with care</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="B">
@@ -1064,7 +1064,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="D">
-                                <span class="quiz-option-text">D) Any time a patient is dissatisfied with care</span>
+                                <span class="quiz-option-text">A) A professional healthcare provider breaches duty of care and causes patient harm</span>
                             </label>
                         </div>
                     </div>
@@ -1096,7 +1096,7 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="A">
-                                <span class="quiz-option-text">A) Right to refuse treatment after understanding risks and benefits</span>
+                                <span class="quiz-option-text">C) Right to refuse insurance coverage</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="B">
@@ -1104,7 +1104,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="C">
-                                <span class="quiz-option-text">C) Right to refuse insurance coverage</span>
+                                <span class="quiz-option-text">A) Right to refuse treatment after understanding risks and benefits</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="D">
@@ -1149,10 +1149,10 @@
     <script>
         // Quiz answer key
         const quizAnswers = {
-            q1: 'A',
-            q2: 'A',
-            q3: 'A',
-            q4: 'A',
+            q1: 'B', 
+            q2: 'D', 
+            q3: 'A', 
+            q4: 'C', 
             q5: 'B'
         };
 
@@ -1267,14 +1267,14 @@
                     D: "Incorrect. The procedure should not be delayed; the physician should discuss and obtain consent."
                 },
                 2: {
-                    A: "Correct! HIPAA violations must be reported through proper channels to protect patient privacy and ensure compliance.",
+                    A: "Incorrect. You should use official channels, not inform the patient directly about coworker violations.",
                     B: "Incorrect. You have an obligation to report HIPAA breaches.",
                     C: "Incorrect. Casual conversations do not address serious privacy violations.",
-                    D: "Incorrect. You should use official channels, not inform the patient directly about coworker violations."
+                    D: "Correct! HIPAA violations must be reported through proper channels to protect patient privacy and ensure compliance."
                 },
                 3: {
-                    C: "Correct! Medical decisions and opinions are outside a medical assistant's scope of practice. Always defer to the physician.",
-                    A: "Incorrect. Offering medical opinions exceeds your professional scope and could constitute practicing medicine without a license.",
+                    C: "Incorrect. Offering medical opinions exceeds your professional scope and could constitute practicing medicine without a license.",
+                    A: "Correct! Medical decisions and opinions are outside a medical assistant's scope of practice. Always defer to the physician.",
                     B: "Incorrect. All medications require professional medical judgment.",
                     D: "Incorrect. Online research does not substitute for physician expertise and exceeds scope of practice."
                 }
