@@ -543,7 +543,7 @@
                         </label>
                         <label class="option-label" data-scenario="1" data-answer="B">
                             <input type="radio" name="scenario1" class="option-radio" value="B">
-                            <div class="option-text">Email the results directly to patient's personal email</div>
+                            <div class="option-text">Text results to their phone for immediate notification</div>
                         </label>
                         <label class="option-label" data-scenario="1" data-answer="C">
                             <input type="radio" name="scenario1" class="option-radio" value="C">
@@ -551,10 +551,10 @@
                         </label>
                         <label class="option-label" data-scenario="1" data-answer="D">
                             <input type="radio" name="scenario1" class="option-radio" value="D">
-                            <div class="option-text">Text results to their phone for immediate notification</div>
+                            <div class="option-text">Email the results directly to patient's personal email</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(1, 'A')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(1, 'D')">Submit Response</button>
                     <div class="feedback-message" id="feedback-1"></div>
                 </div>
 
@@ -586,7 +586,7 @@
                             <div class="option-text">Email yourself a summary to keep personal records separate from EHR</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(2, 'A')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(2, 'B')">Submit Response</button>
                     <div class="feedback-message" id="feedback-2"></div>
                 </div>
 
@@ -607,18 +607,18 @@
                         </label>
                         <label class="option-label" data-scenario="3" data-answer="B">
                             <input type="radio" name="scenario3" class="option-radio" value="B">
-                            <div class="option-text">Reply by text with full appointment details immediately</div>
+                            <div class="option-text">Ignore the text and wait for them to call the office</div>
                         </label>
                         <label class="option-label" data-scenario="3" data-answer="C">
                             <input type="radio" name="scenario3" class="option-radio" value="C">
-                            <div class="option-text">Ignore the text and wait for them to call the office</div>
+                            <div class="option-text">Reply by text with full appointment details immediately</div>
                         </label>
                         <label class="option-label" data-scenario="3" data-answer="D">
                             <input type="radio" name="scenario3" class="option-radio" value="D">
                             <div class="option-text">Forward the request to the EMR without responding to patient</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(3, 'A')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(3, 'C')">Submit Response</button>
                     <div class="feedback-message" id="feedback-3"></div>
                 </div>
 
@@ -646,7 +646,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="B">
-                                <span class="quiz-option-text">B) Personal text messages</span>
+                                <span class="quiz-option-text">D)  Social media messaging</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="C">
@@ -654,7 +654,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="D">
-                                <span class="quiz-option-text">D) Social media messaging</span>
+                                <span class="quiz-option-text">B)  Personal text messages</span>
                             </label>
                         </div>
                     </div>
@@ -668,7 +668,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="B">
-                                <span class="quiz-option-text">B) Only if the communication is negative or results in a complaint</span>
+                                <span class="quiz-option-text">B)  Only if the communication is negative or results in a complaint</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="C">
@@ -690,11 +690,11 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="B">
-                                <span class="quiz-option-text">B) Acknowledge receipt and redirect to secure EHR portal</span>
+                                <span class="quiz-option-text">C)  Ignore the request entirely</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="C">
-                                <span class="quiz-option-text">C) Ignore the request entirely</span>
+                                <span class="quiz-option-text">B)  Acknowledge receipt and redirect to secure EHR portal</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="D">
@@ -708,11 +708,11 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="A">
-                                <span class="quiz-option-text">A) Professional tone, correct spelling/grammar, and clear documentation</span>
+                                <span class="quiz-option-text">B)  Informal language is acceptable in written communications</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="B">
-                                <span class="quiz-option-text">B) Informal language is acceptable in written communications</span>
+                                <span class="quiz-option-text">A)  Professional tone, correct spelling/grammar, and clear documentation</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="C">
@@ -734,7 +734,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="B">
-                                <span class="quiz-option-text">B) No authorization is needed for any communication method</span>
+                                <span class="quiz-option-text">D)  Verbal authorization over the phone is sufficient</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="C">
@@ -742,7 +742,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="D">
-                                <span class="quiz-option-text">D) Verbal authorization over the phone is sufficient</span>
+                                <span class="quiz-option-text">B)  No authorization is needed for any communication method</span>
                             </label>
                         </div>
                     </div>
@@ -759,7 +759,7 @@
     </main>
 
     <script>
-        const quizAnswers = { q1: 'A', q2: 'A', q3: 'B', q4: 'A', q5: 'A' };
+        const quizAnswers = { q1: 'D', q2: 'B', q3: 'C', q4: 'A', q5: 'D' };
         let activitiesCompleted = 0, totalAccuracy = 0, startTime = Date.now(), draggedCard = null;
 
         setInterval(() => {
