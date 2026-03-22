@@ -845,18 +845,18 @@
                         </label>
                         <label class="option-label" data-scenario="1" data-answer="B">
                             <input type="radio" name="scenario1" class="option-radio" value="B">
-                            <div class="option-text">Defend the office by explaining that refill requests take time and the patient should be more patient.</div>
+                            <div class="option-text">Tell the patient their attitude is unacceptable and transfer them to the manager.</div>
                         </label>
                         <label class="option-label" data-scenario="1" data-answer="C">
                             <input type="radio" name="scenario1" class="option-radio" value="C">
-                            <div class="option-text">Tell the patient their attitude is unacceptable and transfer them to the manager.</div>
+                            <div class="option-text">Defend the office by explaining that refill requests take time and the patient should be more patient.</div>
                         </label>
                         <label class="option-label" data-scenario="1" data-answer="D">
                             <input type="radio" name="scenario1" class="option-radio" value="D">
                             <div class="option-text">Ask them to call back when they're calmer and less emotional.</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(1, 'A')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(1, 'C')">Submit Response</button>
                     <div class="feedback-message" id="feedback-1"></div>
                 </div>
 
@@ -873,11 +873,11 @@
                     <div class="options-container">
                         <label class="option-label" data-scenario="2" data-answer="A">
                             <input type="radio" name="scenario2" class="option-radio" value="A">
-                            <div class="option-text">Tell the patient the refills are exhausted and they need to call their pharmacy to speak with the pharmacist.</div>
+                            <div class="option-text">Document the request with patient's name, phone number, medication name, and dosage. Tell them you'll have the physician review it and call them back within a specified time.</div>
                         </label>
                         <label class="option-label" data-scenario="2" data-answer="B">
                             <input type="radio" name="scenario2" class="option-radio" value="B">
-                            <div class="option-text">Document the request with patient's name, phone number, medication name, and dosage. Tell them you'll have the physician review it and call them back within a specified time.</div>
+                            <div class="option-text">Tell the patient the refills are exhausted and they need to call their pharmacy to speak with the pharmacist.</div>
                         </label>
                         <label class="option-label" data-scenario="2" data-answer="C">
                             <input type="radio" name="scenario2" class="option-radio" value="C">
@@ -888,7 +888,7 @@
                             <div class="option-text">Ask the patient's symptoms to determine if they actually still need the medication.</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(2, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(2, 'A')">Submit Response</button>
                     <div class="feedback-message" id="feedback-2"></div>
                 </div>
 
@@ -909,7 +909,7 @@
                         </label>
                         <label class="option-label" data-scenario="3" data-answer="B">
                             <input type="radio" name="scenario3" class="option-radio" value="B">
-                            <div class="option-text">Use their voice to identify them and pull up their chart to save time.</div>
+                            <div class="option-text">Ask what type of appointment they need before asking for their name.</div>
                         </label>
                         <label class="option-label" data-scenario="3" data-answer="C">
                             <input type="radio" name="scenario3" class="option-radio" value="C">
@@ -917,10 +917,10 @@
                         </label>
                         <label class="option-label" data-scenario="3" data-answer="D">
                             <input type="radio" name="scenario3" class="option-radio" value="D">
-                            <div class="option-text">Ask what type of appointment they need before asking for their name.</div>
+                            <div class="option-text">Use their voice to identify them and pull up their chart to save time.</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(3, 'A')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(3, 'D')">Submit Response</button>
                     <div class="feedback-message" id="feedback-3"></div>
                 </div>
 
@@ -950,11 +950,11 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="B">
-                                <span class="quiz-option-text">B) Ask permission to place them on hold and provide estimated wait time</span>
+                                <span class="quiz-option-text">C)  Automatically place them on hold without asking</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="C">
-                                <span class="quiz-option-text">C) Automatically place them on hold without asking</span>
+                                <span class="quiz-option-text">B)  Ask permission to place them on hold and provide estimated wait time</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="D">
@@ -972,7 +972,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="B">
-                                <span class="quiz-option-text">B) Patient's current medications</span>
+                                <span class="quiz-option-text">D)  All of the above require patient verification first</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="C">
@@ -980,7 +980,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="D">
-                                <span class="quiz-option-text">D) All of the above require patient verification first</span>
+                                <span class="quiz-option-text">B)  Patient's current medications</span>
                             </label>
                         </div>
                     </div>
@@ -990,11 +990,11 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="A">
-                                <span class="quiz-option-text">A) Only the caller's name is necessary</span>
+                                <span class="quiz-option-text">B)  Caller's name, time, date, phone number, message, and your initials</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="B">
-                                <span class="quiz-option-text">B) Caller's name, time, date, phone number, message, and your initials</span>
+                                <span class="quiz-option-text">A)  Only the caller's name is necessary</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="C">
@@ -1016,7 +1016,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="B">
-                                <span class="quiz-option-text">B) Identify the office name, your name, and offer assistance professionally</span>
+                                <span class="quiz-option-text">B)  Identify the office name, your name, and offer assistance professionally</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="C">
@@ -1038,11 +1038,11 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="B">
-                                <span class="quiz-option-text">B) Ask if they're family and share if they say yes</span>
+                                <span class="quiz-option-text">C)  Politely decline and suggest they have the patient contact the office</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="C">
-                                <span class="quiz-option-text">C) Politely decline and suggest they have the patient contact the office</span>
+                                <span class="quiz-option-text">B)  Ask if they're family and share if they say yes</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="D">
@@ -1063,7 +1063,7 @@
     </main>
 
     <script>
-        const quizAnswers = { q1: 'B', q2: 'D', q3: 'B', q4: 'B', q5: 'C' };
+        const quizAnswers = { q1: 'C', q2: 'D', q3: 'A', q4: 'B', q5: 'C' };
         let activitiesCompleted = 0, totalAccuracy = 0, startTime = Date.now(), draggedCard = null;
 
         setInterval(() => {
