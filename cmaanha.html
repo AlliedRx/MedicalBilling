@@ -447,9 +447,66 @@
             font-weight: 600;
             margin-left: 10px;
         }
-    </style>
+    
+        /* ── Mobile sidebar responsive fix ── */
+        .hamburger-btn {
+            display: none;
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            z-index: 1000;
+            background: #5D6DFA;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            font-size: 18px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(93,109,250,0.3);
+        }
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 900;
+        }
+        @media (max-width: 768px) {
+            .hamburger-btn { display: flex; }
+            .content-wrapper { flex-direction: column; min-height: unset; }
+            .sidebar, nav.sidebar {
+                position: fixed !important;
+                top: 0; left: 0;
+                width: 280px !important;
+                height: 100vh;
+                z-index: 950;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                overflow-y: auto;
+                padding-top: 60px !important;
+            }
+            .sidebar.open, nav.sidebar.open { transform: translateX(0); }
+            .sidebar-overlay.open { display: block; }
+            .main-content, .content-main, section.main {
+                width: 100% !important;
+                padding: 16px !important;
+            }
+            .header { padding: 60px 16px 16px !important; }
+        }
+        @media (max-width: 480px) {
+            body { font-size: 15px; }
+            .content-grid, .card-grid, .objectives-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        </style>
 </head>
 <body>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">&#9776;</button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <main class="page" aria-labelledby="nha-exam-heading">
         <!-- LEFT COLUMN -->
         <section class="column" aria-label="NHA Exam Information">
@@ -636,6 +693,31 @@
                 observer.observe(item);
             });
         });
+    </script>
+<script>
+    // Mobile sidebar toggle
+    (function() {
+        var btn = document.getElementById('hamburgerBtn');
+        var overlay = document.getElementById('sidebarOverlay');
+        var sidebar = document.querySelector('.sidebar, nav.sidebar');
+        if (!btn || !sidebar) return;
+        btn.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('open');
+        });
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('open');
+        });
+        // Close when nav link clicked
+        var links = sidebar.querySelectorAll('a');
+        links.forEach(function(link) {
+            link.addEventListener('click', function() {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('open');
+            });
+        });
+    })();
     </script>
 </body>
 </html>
