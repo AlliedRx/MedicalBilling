@@ -223,7 +223,7 @@
                         <label class="option-label" data-scenario="1" data-answer="C"><div class="option-text">3 tablets</div></label>
                         <label class="option-label" data-scenario="1" data-answer="D"><input type="radio" name="scenario1" class="option-radio" value="D"><div class="option-text">0.5 tablets</div></label>
                     </div>
-                    <button class="btn" onclick="submitScenario(1, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(1, 'D')">Submit Response</button>
                     <div class="feedback-message" id="feedback-1"></div>
                 </div>
 
@@ -236,7 +236,7 @@
                         <label class="option-label" data-scenario="2" data-answer="C"><div class="option-text">44 kg (no conversion needed)</div></label>
                         <label class="option-label" data-scenario="2" data-answer="D"><input type="radio" name="scenario2" class="option-radio" value="D"><div class="option-text">2 kg</div></label>
                     </div>
-                    <button class="btn" onclick="submitScenario(2, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(2, 'C')">Submit Response</button>
                     <div class="feedback-message" id="feedback-2"></div>
                 </div>
 
@@ -264,52 +264,42 @@
                 <div class="quiz-container">
                     <div class="quiz-question">
                         <div class="quiz-question-text">1. How many milliliters are in 2 liters?</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q1" value="A"><span class="quiz-option-text">A) 200 mL</span></label>
-                            <label class="quiz-option"><input type="radio" name="q1" value="B"><span class="quiz-option-text">B) 2,000 mL</span></label>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q1" value="A"><span class="quiz-option-text">A) 200 mL</span></label>
+                            <label class="quiz-option"><input type="radio" name="q1" value="B"><span class="quiz-option-text">B) 0.2 mL</span></label>
                             <label class="quiz-option"><input type="radio" name="q1" value="C"><span class="quiz-option-text">C) 20 mL</span></label>
-                            <label class="quiz-option"><input type="radio" name="q1" value="D"><span class="quiz-option-text">D) 0.2 mL</span></label>
-                        </div>
+                            <label class="quiz-option"><input type="radio" name="q1" value="D"><span class="quiz-option-text">D) 2,000 mL</span></label></div>
                     </div>
 
                     <div class="quiz-question">
                         <div class="quiz-question-text">2. A patient weighs 154 pounds. What is their approximate weight in kilograms?</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q2" value="A"><span class="quiz-option-text">A) 70 kg (154 ÷ 2.2)</span></label>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q2" value="A"><span class="quiz-option-text">A) 70 kg (154 ÷ 2.2)</span></label>
                             <label class="quiz-option"><input type="radio" name="q2" value="B"><span class="quiz-option-text">B) 338.8 kg (154 × 2.2)</span></label>
                             <label class="quiz-option"><input type="radio" name="q2" value="C"><span class="quiz-option-text">C) 154 kg (direct conversion)</span></label>
-                            <label class="quiz-option"><input type="radio" name="q2" value="D"><span class="quiz-option-text">D) 7 kg</span></label>
-                        </div>
+                            <label class="quiz-option"><input type="radio" name="q2" value="D"><span class="quiz-option-text">D) 7 kg</span></label></div>
                     </div>
 
                     <div class="quiz-question">
                         <div class="quiz-question-text">3. A prescription calls for 15 mL of liquid medication. How many teaspoons is this?</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q3" value="A"><span class="quiz-option-text">A) 1 tsp (1 tsp = 5 mL, 15÷5=3 tsp, but standard is rounded)</span></label>
-                            <label class="quiz-option"><input type="radio" name="q3" value="B"><span class="quiz-option-text">B) 3 teaspoons (15 mL ÷ 5 mL/tsp)</span></label>
-                            <label class="quiz-option"><input type="radio" name="q3" value="C"><span class="quiz-option-text">C) 1 tablespoon (15 mL = 1 tbsp)</span></label>
-                            <label class="quiz-option"><input type="radio" name="q3" value="D"><span class="quiz-option-text">D) 75 teaspoons</span></label>
-                        </div>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q3" value="A"><span class="quiz-option-text">A) 1 tsp (1 tsp = 5 mL, 15÷5=3 tsp, but standard is rounded)</span></label>
+                            <label class="quiz-option"><input type="radio" name="q3" value="B"><span class="quiz-option-text">B) 1 tablespoon (15 mL = 1 tbsp)</span></label>
+                            <label class="quiz-option"><input type="radio" name="q3" value="C"><span class="quiz-option-text">C) 3 teaspoons (15 mL ÷ 5 mL/tsp)</span></label>
+                            <label class="quiz-option"><input type="radio" name="q3" value="D"><span class="quiz-option-text">D) 75 teaspoons</span></label></div>
                     </div>
 
                     <div class="quiz-question">
                         <div class="quiz-question-text">4. A medication order is 250 mg. The available medication is 500 mg per mL. How many mL should be given?</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q4" value="A"><span class="quiz-option-text">A) 0.5 mL (250÷500)</span></label>
-                            <label class="quiz-option"><input type="radio" name="q4" value="B"><span class="quiz-option-text">B) 2 mL (500÷250)</span></label>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q4" value="A"><span class="quiz-option-text">A) 2 mL (500÷250)</span></label>
+                            <label class="quiz-option"><input type="radio" name="q4" value="B"><span class="quiz-option-text">B) 0.5 mL (250÷500)</span></label>
                             <label class="quiz-option"><input type="radio" name="q4" value="C"><span class="quiz-option-text">C) 1 mL</span></label>
-                            <label class="quiz-option"><input type="radio" name="q4" value="D"><span class="quiz-option-text">D) 250 mL</span></label>
-                        </div>
+                            <label class="quiz-option"><input type="radio" name="q4" value="D"><span class="quiz-option-text">D) 250 mL</span></label></div>
                     </div>
 
                     <div class="quiz-question">
                         <div class="quiz-question-text">5. A metric unit of measurement for 1/1000th of a gram is a:</div>
-                        <div class="quiz-options">
-                            <label class="quiz-option"><input type="radio" name="q5" value="A"><span class="quiz-option-text">A) Microgram (mcg)</span></label>
-                            <label class="quiz-option"><input type="radio" name="q5" value="B"><span class="quiz-option-text">B) Milligram (mg)</span></label>
+                        <div class="quiz-options"><label class="quiz-option"><input type="radio" name="q5" value="A"><span class="quiz-option-text">A) Microgram (mcg)</span></label>
+                            <label class="quiz-option"><input type="radio" name="q5" value="B"><span class="quiz-option-text">B) Nanogram (ng)</span></label>
                             <label class="quiz-option"><input type="radio" name="q5" value="C"><span class="quiz-option-text">C) Kilogram (kg)</span></label>
-                            <label class="quiz-option"><input type="radio" name="q5" value="D"><span class="quiz-option-text">D) Nanogram (ng)</span></label>
-                        </div>
+                            <label class="quiz-option"><input type="radio" name="q5" value="D"><span class="quiz-option-text">D) Milligram (mg)</span></label></div>
                     </div>
                 </div>
 
@@ -320,7 +310,7 @@
     </main>
 
     <script>
-        const quizAnswers = { q1: 'B', q2: 'A', q3: 'B', q4: 'A', q5: 'B' };
+        const quizAnswers = { q1: 'D', q2: 'A', q3: 'C', q4: 'B', q5: 'D' };
         let activitiesCompleted = 0, totalAccuracy = 0, startTime = Date.now(), draggedCard = null;
         setInterval(() => {
             const elapsed = Math.floor((Date.now() - startTime) / 1000);
