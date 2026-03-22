@@ -922,7 +922,7 @@
                             <div class="option-text">Ignore the comment and continue your duties; appearance doesn't affect your competence.</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(1, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(1, 'A')">Submit Response</button>
                     <div class="feedback-message" id="feedback-1"></div>
                 </div>
 
@@ -956,7 +956,7 @@
                             <div class="option-text">Tell your colleague to ask the patient directly and stay out of it.</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(2, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(2, 'C')">Submit Response</button>
                     <div class="feedback-message" id="feedback-2"></div>
                 </div>
 
@@ -1018,11 +1018,11 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="A">
-                                <span class="quiz-option-text">A) Taking patient vital signs</span>
+                                <span class="quiz-option-text">A) Prescribing medications</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="B">
-                                <span class="quiz-option-text">B) Prescribing medications</span>
+                                <span class="quiz-option-text">B) Taking patient vital signs</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="C">
@@ -1040,7 +1040,7 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="A">
-                                <span class="quiz-option-text">A) Scope defines what you CAN do; standards define HOW WELL you should do it</span>
+                                <span class="quiz-option-text">A) Scope applies to nurses; standards apply to medical assistants</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="B">
@@ -1048,7 +1048,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="C">
-                                <span class="quiz-option-text">C) Scope applies to nurses; standards apply to medical assistants</span>
+                                <span class="quiz-option-text">C) Scope defines what you CAN do; standards define HOW WELL you should do it</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="D">
@@ -1088,7 +1088,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="B">
-                                <span class="quiz-option-text">B) Administering injections under physician supervision after proper training</span>
+                                <span class="quiz-option-text">B) Practicing independently without physician supervision</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="C">
@@ -1096,7 +1096,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="D">
-                                <span class="quiz-option-text">D) Practicing independently without physician supervision</span>
+                                <span class="quiz-option-text">D) Administering injections under physician supervision after proper training</span>
                             </label>
                         </div>
                     </div>
@@ -1106,11 +1106,11 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="A">
-                                <span class="quiz-option-text">A) Beneficence</span>
+                                <span class="quiz-option-text">A) Autonomy</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="B">
-                                <span class="quiz-option-text">B) Autonomy</span>
+                                <span class="quiz-option-text">B) Beneficence</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="C">
@@ -1137,11 +1137,11 @@
     <script>
         // Quiz answer key
         const quizAnswers = {
-            q1: 'B',
-            q2: 'A',
+            q1: 'A',
+            q2: 'C',
             q3: 'B',
-            q4: 'B',
-            q5: 'B'
+            q4: 'D',
+            q5: 'A'
         };
 
         // Activity tracking
@@ -1249,15 +1249,15 @@
 
             const messages = {
                 1: {
-                    B: "Correct! Professional appearance builds patient trust and credibility.",
-                    A: "Incorrect. Uniforms establish professional credibility and trust.",
+                    B: "Incorrect. Uniforms establish professional credibility and trust.",
+                    A: "Correct! Professional appearance builds patient trust and credibility.",
                     C: "Incorrect. You should address this personally, not deflect.",
                     D: "Incorrect. Professional presentation matters in healthcare settings."
                 },
                 2: {
-                    B: "Correct! Patient confidentiality applies in all circumstances, including with friends.",
+                    B: "Incorrect. Any patient information shared without consent violates confidentiality.",
                     A: "Incorrect. Personal relationships don't override HIPAA requirements.",
-                    C: "Incorrect. Any patient information shared without consent violates confidentiality.",
+                    C: "Correct! Patient confidentiality applies in all circumstances, including with friends.",
                     D: "Incorrect. You have a responsibility to protect patient information."
                 },
                 3: {
