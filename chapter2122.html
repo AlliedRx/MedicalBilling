@@ -2,978 +2,1242 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 21.1: Medical Emergencies</title>
+    <title>Lesson 21.1: Medical Emergencies in Healthcare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-        }
-        
-        body {
-            background-color: #f0f4f8;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .container {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            padding: 30px;
-            margin-bottom: 25px;
-            border-top: 4px solid #5D6DFA; border-radius: 12px;
-            position: relative;
-        }
-        
-        h1 {
-            color: #4C5CDD;
-            border-bottom: 3px solid #5D6DFA;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        
-        h2 {
-            color: #5D6DFA;
-            margin: 25px 0 15px 0;
-            padding-bottom: 8px;
-            border-bottom: 1px dashed #a3d9e3;
-        }
-        
-        h3 {
-            color: #3aa6b9;
-            margin: 18px 0 10px 0;
-        }
-        
-        .learning-objectives {
-            background-color: #F0F1FF;
-            border-top: 4px solid #5D6DFA; border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-        
-        .learning-objectives h3 {
-            margin-top: 0;
-        }
-        
-        .learning-objectives ul {
-            padding-left: 20px;
-        }
-        
-        .learning-objectives li {
-            margin-bottom: 8px;
-        }
-        
-        .emergency-card {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 15px 0;
-            border: 1px solid #e1e1e1;
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .emergency-card h3 {
-            color: #d64545;
-            display: flex;
-            align-items: center;
-        }
-        
-        .emergency-card h3:before {
-            content: "⚠️";
-            margin-right: 10px;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        
-        th {
-            background-color: #5D6DFA;
-            color: white;
-            text-align: left;
-            padding: 12px;
-        }
-        
-        td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        tr:nth-child(even) {
-            background-color: #f2f9fb;
-        }
-        
-        .steps {
-            background-color: #fff9e6;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-            border-top: 4px solid #5D6DFA; border-radius: 12px;
-        }
-        
-        .steps ol {
-            padding-left: 20px;
-        }
-        
-        .steps li {
-            margin-bottom: 10px;
-        }
-        
-        .key-term {
-            background-color: #e8f7ff;
-            padding: 3px 8px;
-            border-radius: 3px;
-            font-weight: bold;
-            color: #4C5CDD;
-            transition: background-color 0.2s;
-        }
-        
-        .note {
-            background-color: #f0ffe6;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-            border-top: 4px solid #5D6DFA; border-radius: 12px;
-        }
-        
-        .warning {
-            background-color: #ffe6e6;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-            border-top: 4px solid #5D6DFA; border-radius: 12px;
-        }
-        
-        .checklist {
-            background-color: #F5F6FF;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        
-        .checklist h3 {
-            margin-top: 0;
-        }
-        
-        .checklist-item {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .checklist-item:before {
-            content: "✓";
-            color: #6bc950;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        /* Custom Notification Toast */
-        #toast {
-            visibility: hidden;
-            min-width: 250px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            border-radius: 5px;
-            padding: 16px;
-            position: fixed;
-            z-index: 100;
-            left: 50%;
-            top: 30px;
-            transform: translateX(-50%);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        #toast.show {
-            visibility: visible;
-            animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        }
-
-        @keyframes fadein { from {top: 0; opacity: 0;} to {top: 30px; opacity: 1;} }
-        @keyframes fadeout { from {top: 30px; opacity: 1;} to {top: 0; opacity: 0;} }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                padding: 20px;
-            }
-            
-            table {
-                font-size: 14px;
-            }
-            
-            th, td {
-                padding: 8px;
-            }
-        }
-            table { width: 100%; border-collapse: collapse; }
-        .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0; }
-        @media (max-width: 768px) { th, td { padding: 8px 6px; font-size: 14px; } }
-        
-        /* ═══════════════════════════════════════════════════
-           AlliedRx Premium Design System — Applied Override
-           ═══════════════════════════════════════════════════ */
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
         :root {
             --color-primary: #5D6DFA;
             --color-primary-soft: #A5AFFF;
             --color-accent: #7C6CF0;
-            --color-dark: #4C5CDD;
+            --color-success: #00b894;
+            --color-error: #e17055;
+            --color-warning: #fdcb6e;
             --color-bg: #F7F7F7;
-            --color-surface: #ffffff;
-            --color-text: #1e2033;
-            --color-muted: #6b7280;
-            --color-success: #10b981;
-            --color-warning: #f59e0b;
-            --color-error: #e74c3c;
-            --color-border: rgba(15,23,42,0.07);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 18px;
-            --radius-xl: 24px;
-            --shadow-sm: 0 2px 8px rgba(93,109,250,0.08);
-            --shadow-md: 0 8px 24px rgba(23,10,61,0.10);
-            --shadow-lg: 0 18px 45px rgba(23,10,61,0.14);
-            --gradient-primary: linear-gradient(135deg, #5D6DFA 0%, #7C6CF0 100%);
-            --gradient-card: linear-gradient(135deg, rgba(93,109,250,0.06) 0%, rgba(255,255,255,0.98) 100%);
+            --color-text: #2b2b2b;
+            --color-muted: #6c6880;
+            --color-dark: #0c0a18;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 12px;
+            --shadow-soft: 0 18px 45px rgba(23, 10, 61, 0.18);
+            --shadow-hover: 0 25px 50px rgba(93, 109, 250, 0.15);
+            --shadow-card: 0 12px 30px rgba(15, 23, 42, 0.1);
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
         body {
-            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
-            background: radial-gradient(circle at 0% 0%, #ffffff 0%, #F5F6FF 45%, #F7F7F7 100%) !important;
+            font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+            padding: 24px;
+            background: var(--color-bg);
             color: var(--color-text);
-            line-height: 1.65;
-            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: 100%;
+            line-height: 1.5;
         }
 
-        /* ── Container ── */
-        .container {
-            max-width: 1100px;
+        @media (max-width: 600px) {
+            body { padding: 12px; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes checkmarkPop {
+            0% { transform: scale(0); opacity: 0; }
+            70% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .page {
+            width: 100%;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 24px 20px;
-        }
-
-        /* ── Header upgrade ── */
-        header, .header {
-            background: var(--gradient-primary) !important;
-            border-radius: var(--radius-xl) !important;
-            padding: 28px 32px !important;
-            box-shadow: var(--shadow-lg) !important;
-            margin-bottom: 28px !important;
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            padding: 28px 30px 32px;
             position: relative;
             overflow: hidden;
-        }
-        header::before, .header::before {
-            content: '';
-            position: absolute;
-            top: -40px; right: -40px;
-            width: 200px; height: 200px;
-            background: rgba(255,255,255,0.07);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        header h1, .header h1 {
-            font-size: clamp(1.4rem, 3vw, 2rem) !important;
-            font-weight: 800 !important;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            color: #ffffff !important;
-            margin-bottom: 6px !important;
-        }
-        header p, .header p, header .subtitle, .header .subtitle {
-            font-size: 0.95rem;
-            color: rgba(255,255,255,0.82) !important;
-            font-weight: 500;
-        }
-        @media (max-width: 768px) {
-            header, .header { padding: 20px 18px !important; border-radius: var(--radius-lg) !important; }
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        /* ── Card upgrades ── */
-        .card, .content-card, .lesson-card, .topic-card, .info-card,
-        .objective-card, .section-card, .module-card, .concept-card,
-        .learning-card, .feature-card, .term-card, .step-card, .tip-card {
-            background: var(--gradient-card) !important;
-            border: 1px solid var(--color-border) !important;
-            border-radius: var(--radius-lg) !important;
-            box-shadow: var(--shadow-sm) !important;
-            padding: 20px !important;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border-left: none !important;
-        }
-        .card:hover, .content-card:hover, .lesson-card:hover, .topic-card:hover,
-        .info-card:hover, .objective-card:hover, .concept-card:hover,
-        .learning-card:hover, .feature-card:hover, .term-card:hover, .step-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md) !important;
+        @media (max-width: 900px) {
+            .page { padding: 22px; }
         }
 
-        /* ── Section headers ── */
-        h2, .section-header, .lesson-header {
-            font-size: clamp(1.15rem, 2.5vw, 1.35rem);
-            font-weight: 700;
-            color: var(--color-text);
-            letter-spacing: -0.01em;
-            padding-bottom: 12px;
+        @media (max-width: 480px) {
+            body { padding: 0; }
+            .page {
+                border-radius: 0;
+                box-shadow: none;
+                padding: 18px 14px 22px;
+            }
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
             margin-bottom: 20px;
-            border-bottom: 2px solid rgba(93,109,250,0.15) !important;
-            border-left: none !important;
-        }
-        h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--color-text);
-            margin-bottom: 10px;
+            flex-wrap: wrap;
+            width: 100%;
+            animation: fadeIn 0.6s ease-out 0.2s both;
         }
 
-        /* ── Module/section label chips ── */
-        .module-number, .lesson-number, .step-number, .badge, .section-badge {
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .course-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            max-width: 100%;
+        }
+
+        .course-name {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--color-muted);
+            white-space: normal;
+        }
+
+        .week-label {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 4px 12px;
+            gap: 8px;
+            padding: 4px 10px;
             border-radius: 999px;
-            background: rgba(93,109,250,0.10);
+            background: rgba(93, 109, 250, 0.08);
+            font-size: 0.76rem;
             color: var(--color-primary);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 10px;
+            white-space: normal;
         }
 
-        /* ── Button upgrades ── */
-        button, .btn, .submit-btn, .action-btn, .check-btn, .next-btn,
-        input[type="submit"], input[type="button"] {
-            font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
-            background: var(--gradient-primary) !important;
-            color: #ffffff !important;
-            border: none !important;
-            border-radius: 999px !important;
-            padding: 11px 24px !important;
-            font-size: 0.875rem !important;
-            font-weight: 700 !important;
-            letter-spacing: 0.04em;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(93,109,250,0.30) !important;
-            transition: transform 0.15s ease, box-shadow 0.15s ease !important;
-        }
-        button:hover, .btn:hover, .submit-btn:hover, .action-btn:hover {
-            transform: translateY(-1px) !important;
-            box-shadow: 0 10px 28px rgba(93,109,250,0.40) !important;
-        }
-        button:active { transform: translateY(0) !important; }
-
-        /* ── Quiz / multiple choice options ── */
-        .option, .quiz-option, .answer-option, .choice {
-            border: 2px solid var(--color-border) !important;
-            border-radius: var(--radius-md) !important;
-            padding: 14px 18px !important;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            background: var(--color-surface) !important;
-            margin-bottom: 10px;
-        }
-        .option:hover, .quiz-option:hover, .answer-option:hover, .choice:hover {
-            border-color: var(--color-primary) !important;
-            background: rgba(93,109,250,0.05) !important;
-        }
-        .option.correct, .quiz-option.correct, .answer-option.correct {
-            border-color: var(--color-success) !important;
-            background: rgba(16,185,129,0.08) !important;
-        }
-        .option.incorrect, .quiz-option.incorrect, .answer-option.incorrect {
-            border-color: var(--color-error) !important;
-            background: rgba(231,76,60,0.08) !important;
-        }
-
-        /* ── Table upgrades ── */
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-        th {
-            background: var(--gradient-primary) !important;
-            color: #ffffff !important;
-            padding: 13px 16px !important;
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            text-align: left;
-        }
-        td {
-            padding: 12px 16px !important;
-            border-bottom: 1px solid rgba(15,23,42,0.06);
-            font-size: 0.9rem;
-        }
-        tr:nth-child(even) td { background: rgba(93,109,250,0.03); }
-        tr:last-child td { border-bottom: none; }
-        tr:hover td { background: rgba(93,109,250,0.05); }
-
-        /* ── Progress / stats panels ── */
-        .progress-bar, .progress-fill {
+        .week-label-dot {
+            width: 8px;
+            height: 8px;
             border-radius: 999px;
-            background: var(--gradient-primary) !important;
-            transition: width 0.6s ease;
-        }
-        .progress-track, .progress-container, .progress-wrapper {
-            background: rgba(93,109,250,0.10) !important;
-            border-radius: 999px !important;
-            overflow: hidden;
-        }
-        .stat-card, .stats-card, .stat-box, .metric-card {
-            background: var(--gradient-card) !important;
-            border-radius: var(--radius-lg) !important;
-            border: 1px solid var(--color-border) !important;
-            box-shadow: var(--shadow-sm) !important;
-            padding: 20px !important;
-        }
-        .stat-value, .metric-value, .stat-number {
-            font-size: 2rem !important;
-            font-weight: 800 !important;
-            color: var(--color-primary) !important;
+            background: var(--color-success);
+            flex-shrink: 0;
         }
 
-        /* ── Tabs ── */
-        .tab-btn, .tab-button, .tab, .nav-tab {
-            border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
-            padding: 10px 20px !important;
-            font-weight: 600 !important;
-            font-size: 0.875rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: rgba(93,109,250,0.08);
-            color: var(--color-primary);
-        }
-        .tab-btn.active, .tab-button.active, .tab.active, .nav-tab.active {
-            background: var(--gradient-primary) !important;
-            color: #ffffff !important;
-            box-shadow: 0 4px 12px rgba(93,109,250,0.30);
-        }
-
-        /* ── Input fields ── */
-        input[type="text"], input[type="number"], input[type="email"],
-        select, textarea {
-            border: 2px solid rgba(93,109,250,0.2) !important;
-            border-radius: var(--radius-md) !important;
-            padding: 10px 14px !important;
-            font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
-            font-size: 0.9rem;
-            transition: border-color 0.2s ease;
-            outline: none;
-            width: 100%;
-        }
-        input:focus, select:focus, textarea:focus {
-            border-color: var(--color-primary) !important;
-            box-shadow: 0 0 0 3px rgba(93,109,250,0.12) !important;
-        }
-
-        /* ── Highlight / callout boxes ── */
-        .note, .callout, .highlight-box, .info-box, .tip-box, .warning-box, .important {
-            border-radius: var(--radius-md) !important;
-            padding: 16px 20px !important;
-            border-left: 4px solid var(--color-primary) !important;
-            background: rgba(93,109,250,0.05) !important;
-        }
-
-        /* ── Sidebar nav (in sidebar layout files) ── */
-        nav.sidebar, .sidebar {
-            background: #ffffff !important;
-            border-right: 1px solid var(--color-border) !important;
-            box-shadow: var(--shadow-sm);
-        }
-        nav.sidebar h2, .sidebar h2 {
-            font-size: 0.78rem;
+        .badge-mode {
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: rgba(12, 10, 24, 0.06);
+            border: 1px solid rgba(12, 10, 24, 0.08);
+            font-size: 0.74rem;
             text-transform: uppercase;
             letter-spacing: 0.14em;
             color: var(--color-muted);
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--color-border);
-            margin-bottom: 12px;
-        }
-        .nav-link, .sidebar a {
-            border-radius: var(--radius-sm) !important;
-            padding: 10px 14px !important;
-            font-size: 0.875rem !important;
-            font-weight: 500;
-            transition: all 0.15s ease;
-            display: block;
-            color: var(--color-muted);
-            text-decoration: none;
-        }
-        .nav-link:hover, .sidebar a:hover,
-        .nav-link.active, .sidebar a.active {
-            background: rgba(93,109,250,0.10) !important;
-            color: var(--color-primary) !important;
-        }
-        .nav-link.active, .sidebar a.active {
-            font-weight: 700 !important;
+            white-space: nowrap;
+            transition: all 0.3s ease;
         }
 
-        /* ── Accordion ── */
-        .accordion-header, .accordion-btn, details summary {
-            border-radius: var(--radius-md) !important;
-            padding: 14px 18px !important;
-            background: var(--gradient-card) !important;
-            border: 1px solid var(--color-border) !important;
+        @media (max-width: 480px) {
+            .brand-row { flex-direction: column; align-items: flex-start; }
+            .badge-mode { margin-top: 6px; }
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            line-height: 1.1;
+            color: var(--color-primary);
+            margin-bottom: 6px;
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+
+        .module-subtitle {
+            font-size: 0.98rem;
+            color: var(--color-muted);
+            max-width: 600px;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+
+        .progress-tracker {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding: 0 20px;
+            animation: fadeInUp 0.6s ease-out 0.45s both;
+        }
+
+        .progress-tracker::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50px;
+            right: 50px;
+            height: 3px;
+            background: rgba(12, 10, 24, 0.08);
+            z-index: 1;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid rgba(12, 10, 24, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
             font-weight: 600;
+            color: var(--color-muted);
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active .step-circle {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .progress-step.completed .step-circle {
+            background: var(--color-success);
+            border-color: var(--color-success);
+            color: white;
+        }
+
+        .step-label {
+            font-size: 0.75rem;
+            color: var(--color-muted);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .progress-step.active .step-label {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .progress-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.6s ease-out 0.5s both;
+        }
+
+        .summary-card {
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            border: 1px solid rgba(12, 10, 24, 0.06);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .summary-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--color-primary-soft);
+        }
+
+        .summary-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            display: block;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .summary-label {
+            font-size: 0.8rem;
+            color: var(--color-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .activity-card {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(12, 10, 24, 0.08);
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .activity-card:nth-child(1) { animation-delay: 0.55s; }
+        .activity-card:nth-child(2) { animation-delay: 0.6s; }
+        .activity-card:nth-child(3) { animation-delay: 0.65s; }
+
+        .activity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--color-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--color-primary-soft);
+        }
+
+        .activity-card:hover::before {
+            opacity: 1;
+        }
+
+        .activity-card.completed {
+            border-color: var(--color-success);
+        }
+
+        .activity-card.completed::before {
+            background: var(--color-success);
+            opacity: 1;
+        }
+
+        .activity-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .activity-number {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            background: rgba(93, 109, 250, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .activity-status {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 12px;
+            background: rgba(12, 10, 24, 0.06);
+            color: var(--color-muted);
+        }
+
+        .activity-card.completed .activity-status {
+            background: rgba(0, 184, 148, 0.1);
+            color: var(--color-success);
+        }
+
+        .activity-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 10px;
+        }
+
+        .activity-description {
+            font-size: 0.9rem;
+            color: var(--color-muted);
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .dropzone-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 600px) {
+            .dropzone-grid { grid-template-columns: 1fr; }
+        }
+
+        .dropzone {
+            min-height: 250px;
+            border: 3px dashed rgba(93, 109, 250, 0.3);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            background: rgba(93, 109, 250, 0.02);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .dropzone.hover {
+            border-color: var(--color-primary);
+            background: rgba(93, 109, 250, 0.08);
+            transform: scale(1.02);
+        }
+
+        .dropzone-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(93, 109, 250, 0.2);
+        }
+
+        .dropzone-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-height: 150px;
+        }
+
+        .duty-card {
+            background: white;
+            border: 2px solid rgba(12, 10, 24, 0.1);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            cursor: grab;
+            transition: all 0.3s ease;
+            user-select: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .duty-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-card);
+            transform: translateY(-2px);
+        }
+
+        .duty-card.dragging {
+            opacity: 0.6;
+            transform: scale(0.95);
+            cursor: grabbing;
+        }
+
+        .duty-card.placed {
+            background: rgba(0, 184, 148, 0.08);
+            border-color: var(--color-success);
+            cursor: default;
+        }
+
+        .duty-card.correct {
+            background: rgba(0, 184, 148, 0.15);
+            border-color: var(--color-success);
+        }
+
+        .duty-card.incorrect {
+            background: rgba(225, 112, 85, 0.08);
+            border-color: var(--color-error);
+            animation: shake 0.5s ease;
+        }
+
+        .drag-source {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(12, 10, 24, 0.06);
+        }
+
+        .scenario-container {
+            margin-bottom: 25px;
+        }
+
+        .scenario {
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .scenario-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .scenario-icon {
+            font-size: 1.2rem;
+        }
+
+        .scenario-content {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            line-height: 1.5;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-sm);
+            border: 2px solid rgba(12, 10, 24, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-label:hover {
+            background: rgba(93, 109, 250, 0.05);
+            border-color: var(--color-primary-soft);
+            transform: translateY(-2px);
+        }
+
+        .option-radio {
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .option-text {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            flex: 1;
+        }
+
+        .feedback-message {
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-sm);
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 4px solid var(--color-primary);
+            display: none;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .feedback-message.show {
+            display: block;
+        }
+
+        .feedback-message.correct {
+            border-left-color: var(--color-success);
+            background: rgba(0, 184, 148, 0.05);
+        }
+
+        .feedback-message.incorrect {
+            border-left-color: var(--color-error);
+            background: rgba(225, 112, 85, 0.05);
+        }
+
+        .quiz-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .quiz-question {
+            background: rgba(12, 10, 24, 0.02);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            border: 1px solid rgba(12, 10, 24, 0.06);
+        }
+
+        .quiz-question-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 15px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .quiz-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            background: white;
+            border: 2px solid rgba(12, 10, 24, 0.08);
+            border-radius: var(--radius-sm);
             cursor: pointer;
             transition: all 0.2s ease;
         }
-        .accordion-header:hover, details summary:hover {
-            background: rgba(93,109,250,0.08) !important;
-            border-color: var(--color-primary) !important;
+
+        .quiz-option:hover {
+            border-color: var(--color-primary);
+            background: rgba(93, 109, 250, 0.03);
         }
 
-        /* ── List items ── */
-        li {
-            padding: 4px 0;
-            line-height: 1.65;
+        .quiz-option input[type="radio"] {
+            margin-top: 3px;
+            flex-shrink: 0;
         }
-        ul li::marker { color: var(--color-primary); }
 
-        /* ── Feedback / result messages ── */
-        .feedback, .result, .correct-msg, .incorrect-msg, .score-display {
-            border-radius: var(--radius-md) !important;
-            padding: 14px 18px !important;
+        .quiz-option.correct {
+            background: rgba(0, 184, 148, 0.08);
+            border-color: var(--color-success);
+        }
+
+        .quiz-option.incorrect {
+            background: rgba(225, 112, 85, 0.08);
+            border-color: var(--color-error);
+        }
+
+        .quiz-option-text {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            flex: 1;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
             font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: "Plus Jakarta Sans", system-ui, sans-serif;
         }
 
-        /* ── Animations ── */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .container, .page {
-            animation: fadeUp 0.4s ease both;
-        }
-        @keyframes alliedrx-pulse {
-            0%   { box-shadow: 0 0 0 0 rgba(93,109,250,0.6); }
-            70%  { box-shadow: 0 0 0 10px rgba(93,109,250,0); }
-            100% { box-shadow: 0 0 0 0 rgba(93,109,250,0); }
+        .btn:hover:not(:disabled) {
+            background: #4C5CDD;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(93, 109, 250, 0.3);
         }
 
-        /* ── Mobile overrides ── */
-        @media (max-width: 768px) {
-            .container { padding: 16px 14px; }
-            h1 { font-size: 1.4rem !important; }
-            h2 { font-size: 1.1rem; }
-            .card, .content-card, .lesson-card, .topic-card,
-            .info-card, .objective-card, .concept-card { padding: 16px !important; }
-            button, .btn { padding: 10px 20px !important; }
-        }
-        @media (max-width: 480px) {
-            body { font-size: 15px; }
-            header h1, .header h1 { font-size: 1.25rem !important; }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
-        </style>
+        .completion-badge {
+            background: var(--color-success);
+            color: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .completion-badge.show {
+            display: block;
+        }
+
+        .badge-checkmark {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+            animation: checkmarkPop 0.6s ease;
+        }
+
+        .badge-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .badge-subtext {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .progress-summary { grid-template-columns: 1fr; }
+            .progress-tracker { padding: 0 10px; }
+        }
+    </style>
 </head>
 <body>
-    <div id="toast"></div>
+    <main class="page" aria-labelledby="module-heading">
+        <header class="brand-row">
+            <div class="brand">
+                <div class="course-meta">
+                    <span class="course-name">CCMA • Lesson 21.1</span>
+                    <div class="week-label">
+                        <span class="week-label-dot"></span>
+                        <span>Medical Emergencies in Healthcare</span>
+                    </div>
+                </div>
+            </div>
+            <span class="badge-mode">AlliedRx</span>
+        </header>
 
-    <div class="container">
-        <h1>Lesson 21.1: Medical Emergencies</h1>
-        
-        <div class="learning-objectives">
-            <h3>Learning Objectives</h3>
-            <p>By the end of this lesson, you will be able to:</p>
-            <ul>
-                <li>Identify common healthcare emergencies and describe team roles during emergency response</li>
-                <li>Recognize and describe the use of emergency equipment and supplies</li>
-                <li>Administer first aid for environmental emergencies, burns, poisonings, anaphylaxis, bites/stings, and eye injuries</li>
-                <li>Recognize and respond to diabetic emergencies, including insulin shock</li>
-                <li>Identify musculoskeletal and neurological emergencies and provide first aid for seizures</li>
-                <li>Respond to respiratory emergencies and provide first aid for choking</li>
-                <li>Manage cardiovascular emergencies and provide appropriate first aid including CPR</li>
-            </ul>
-        </div>
-        
-        <h2>Module 1: Introduction to Emergencies in Healthcare</h2>
-        
-        <h3>A. Types of Emergencies in Healthcare Settings</h3>
-        <ul>
-            <li><span class="key-term">Cardiovascular:</span> Cardiac arrest, heart attack, stroke</li>
-            <li><span class="key-term">Respiratory:</span> Choking, asthma attack, respiratory arrest</li>
-            <li><span class="key-term">Neurological:</span> Seizures, syncope (fainting), altered mental status</li>
-            <li><span class="key-term">Traumatic:</span> Falls, fractures, bleeding wounds</li>
-            <li><span class="key-term">Metabolic:</span> Diabetic emergencies, electrolyte imbalances</li>
-            <li><span class="key-term">Environmental:</span> Burns, poisoning, temperature-related issues</li>
-            <li><span class="key-term">Allergic:</span> Anaphylaxis from medications, food, or environmental triggers</li>
-        </ul>
-        
-        <h3>B. Emergency Response Roles</h3>
-        <p><em>Each healthcare setting follows specific protocols (e.g., Code Blue, Rapid Response Team).</em></p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Role</th>
-                    <th>Responsibilities</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>First Responder</strong></td>
-                    <td>Activates emergency response, begins initial assessment, starts basic life support</td>
-                </tr>
-                <tr>
-                    <td><strong>Team Leader</strong></td>
-                    <td>Coordinates the response, assigns roles, makes key decisions, communicates with other teams</td>
-                </tr>
-                <tr>
-                    <td><strong>Airway Manager</strong></td>
-                    <td>Manages airway, provides ventilation, prepares for intubation if needed</td>
-                </tr>
-                <tr>
-                    <td><strong>Compressor</strong></td>
-                    <td>Performs high-quality chest compressions during CPR</td>
-                </tr>
-                <tr>
-                    <td><strong>Medication Nurse</strong></td>
-                    <td>Administers emergency medications as directed, documents all medications given</td>
-                </tr>
-                <tr>
-                    <td><strong>Recorder/Timekeeper</strong></td>
-                    <td>Documents all events, medications, interventions, and times; tracks compression cycles</td>
-                </tr>
-                <tr>
-                    <td><strong>Runner</strong></td>
-                    <td>Retrieves equipment, medications, and supplies; communicates with lab/pharmacy</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <div class="note">
-            <p><strong>Note:</strong> In smaller facilities, team members may assume multiple roles. Always follow your facility's specific emergency response protocols.</p>
-        </div>
-        
-        <h2>Module 2: Emergency Equipment and Supplies</h2>
-        
-        <div class="checklist">
-            <h3>Essential Emergency Equipment</h3>
-            <div class="checklist-item">Automated External Defibrillator (AED)</div>
-            <div class="checklist-item">Emergency Crash Cart</div>
-            <div class="checklist-item">Bag-Valve-Mask (BVM) resuscitator</div>
-            <div class="checklist-item">Suction equipment (portable and wall-mounted)</div>
-            <div class="checklist-item">Oxygen delivery systems (tanks, masks, nasal cannulas)</div>
-            <div class="checklist-item">Splints and immobilization devices</div>
-            <div class="checklist-item">Burn care supplies (sterile dressings, burn gels)</div>
-            <div class="checklist-item">Personal Protective Equipment (PPE)</div>
-        </div>
-        
-        <h3>Crash Cart Contents</h3>
-        <p>Emergency crash carts are standardized and typically contain:</p>
-        <ul>
-            <li>Cardiac monitor/defibrillator</li>
-            <li>Emergency medications (epinephrine, atropine, amiodarone, etc.)</li>
-            <li>IV access supplies and fluids</li>
-            <li>Airway management equipment (endotracheal tubes, laryngoscope)</li>
-            <li>Emergency procedure trays (central line, chest tube)</li>
-            <li>Documentation forms</li>
-        </ul>
-        
-        <div class="warning">
-            <p><strong>Important:</strong> Crash carts must be checked regularly (usually daily) for expired medications and complete supplies. A seal or log indicates when it was last checked.</p>
-        </div>
-        
-        <h2>Module 3: First Aid for Environmental Emergencies</h2>
-        
-        <div class="emergency-card">
-            <h3>Temperature-Related Emergencies</h3>
-            <p><strong>Heat Stroke:</strong> Hot, dry skin; confusion; rapid pulse; possible loss of consciousness</p>
-            <div class="steps">
-                <p><strong>First Aid Steps:</strong></p>
-                <ol>
-                    <li>Move to cool area immediately</li>
-                    <li>Remove excess clothing</li>
-                    <li>Cool with water, ice packs, or wet sheets</li>
-                    <li>Fan the person while wetting skin</li>
-                    <li>Monitor breathing and consciousness</li>
-                    <li>Seek immediate medical attention</li>
-                </ol>
+        <h1 id="module-heading">Medical Emergencies in Healthcare</h1>
+        <p class="module-subtitle">
+            Learn to identify, recognize, and respond to critical medical emergencies in healthcare settings. Master emergency protocols, CPR techniques, and appropriate triage procedures.
+        </p>
+
+        <div class="progress-tracker">
+            <div class="progress-step active" data-step="1">
+                <div class="step-circle">1</div>
+                <div class="step-label">Emergency Types</div>
             </div>
-            
-            <p><strong>Hypothermia:</strong> Shivering, confusion, slurred speech, weak pulse, loss of coordination</p>
-            <div class="steps">
-                <p><strong>First Aid Steps:</strong></p>
-                <ol>
-                    <li>Move to warm area</li>
-                    <li>Remove wet clothing</li>
-                    <li>Warm center of body first (chest, neck, head, groin)</li>
-                    <li>Use warm blankets, skin-to-skin contact</li>
-                    <li>Give warm (not hot) beverages if person is alert</li>
-                    <li>Handle gently - rough handling can cause cardiac arrest</li>
-                </ol>
+            <div class="progress-step" data-step="2">
+                <div class="step-circle">2</div>
+                <div class="step-label">Response Scenarios</div>
+            </div>
+            <div class="progress-step" data-step="3">
+                <div class="step-circle">3</div>
+                <div class="step-label">Knowledge Check</div>
             </div>
         </div>
-        
-        <div class="emergency-card">
-            <h3>Burns</h3>
-            <p><strong>Classifications:</strong></p>
-            <ul>
-                <li><strong>First Degree:</strong> Red, painful, dry (sunburn)</li>
-                <li><strong>Second Degree:</strong> Blisters, swelling, wet appearance</li>
-                <li><strong>Third Degree:</strong> White or charred, leathery, may be painless (nerve damage)</li>
-            </ul>
-            
-            <div class="steps">
-                <p><strong>First Aid for Burns:</strong></p>
-                <ol>
-                    <li>Stop the burning process (remove from source)</li>
-                    <li>Cool the burn with cool (not cold) running water for 10-20 minutes</li>
-                    <li>Remove jewelry or tight items before swelling occurs</li>
-                    <li>Cover with sterile, non-stick dressing</li>
-                    <li>Do not apply ice, butter, or ointments to severe burns</li>
-                    <li>Seek medical attention for severe burns, burns on face/hands/genitals, or chemical/electrical burns</li>
-                </ol>
+
+        <div class="progress-summary">
+            <div class="summary-card">
+                <span class="summary-number" id="activities-completed">0</span>
+                <span class="summary-label">Activities Completed</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-number" id="accuracy-rate">0%</span>
+                <span class="summary-label">Accuracy %</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-number" id="time-spent">0:00</span>
+                <span class="summary-label">Time Spent</span>
             </div>
         </div>
-        
-        <div class="emergency-card">
-            <h3>Poisonings</h3>
-            <p><strong>General Signs:</strong> Nausea, vomiting, difficulty breathing, confusion, seizures, unconsciousness</p>
-            
-            <div class="steps">
-                <p><strong>First Aid Steps:</strong></p>
-                <ol>
-                    <li>Check the scene for safety (chemical fumes, etc.)</li>
-                    <li>Check responsiveness and breathing</li>
-                    <li>Call Poison Control (1-800-222-1222) or emergency services</li>
-                    <li>Have container/package available to identify substance</li>
-                    <li>Do NOT induce vomiting unless directed by medical professional</li>
-                    <li>If chemical is on skin, remove contaminated clothing and rinse skin for 15-20 minutes</li>
-                    <li>If poison is in eyes, rinse eyes with lukewarm water for 15-20 minutes</li>
-                </ol>
-            </div>
+
+        <div class="activity-grid">
+            <section class="activity-card" id="activity-1">
+                <div class="activity-header">
+                    <span class="activity-number">Activity 1</span>
+                    <span class="activity-status">Not Started</span>
+                </div>
+                <h3 class="activity-title">Emergency Type Response Matching</h3>
+                <p class="activity-description">
+                    Match each medical emergency to its appropriate immediate response protocol. Understanding the correct procedures for each emergency type is critical for patient safety and proper triage in clinical settings.
+                </p>
+
+                <div class="drag-source" id="drag-source">
+                    <div class="duty-card" draggable="true" data-correct="anaphylaxis">Anaphylaxis</div>
+                    <div class="duty-card" draggable="true" data-correct="seizure">Seizure</div>
+                    <div class="duty-card" draggable="true" data-correct="syncope">Syncope (Fainting)</div>
+                    <div class="duty-card" draggable="true" data-correct="cardiac">Cardiac Arrest</div>
+                    <div class="duty-card" draggable="true" data-correct="diabetic">Diabetic Emergency</div>
+                    <div class="duty-card" draggable="true" data-correct="respiratory">Respiratory Distress</div>
+                </div>
+
+                <div class="dropzone-grid">
+                    <div class="dropzone" id="dropzone-anaphylaxis" data-category="anaphylaxis">
+                        <div class="dropzone-title">Admin Epinephrine IM</div>
+                        <div class="dropzone-content"></div>
+                    </div>
+                    <div class="dropzone" id="dropzone-seizure" data-category="seizure">
+                        <div class="dropzone-title">Protect Airway, Prevent Injury</div>
+                        <div class="dropzone-content"></div>
+                    </div>
+                    <div class="dropzone" id="dropzone-syncope" data-category="syncope">
+                        <div class="dropzone-title">Lay Flat, Elevate Legs</div>
+                        <div class="dropzone-content"></div>
+                    </div>
+                    <div class="dropzone" id="dropzone-cardiac" data-category="cardiac">
+                        <div class="dropzone-title">Begin CPR, Get AED</div>
+                        <div class="dropzone-content"></div>
+                    </div>
+                    <div class="dropzone" id="dropzone-diabetic" data-category="diabetic">
+                        <div class="dropzone-title">Administer Glucose</div>
+                        <div class="dropzone-content"></div>
+                    </div>
+                    <div class="dropzone" id="dropzone-respiratory" data-category="respiratory">
+                        <div class="dropzone-title">Oxygen, Monitor Vitals</div>
+                        <div class="dropzone-content"></div>
+                    </div>
+                </div>
+
+                <div id="activity1-result" class="completion-badge">
+                    <span class="badge-checkmark">✓</span>
+                    <div class="badge-text">Activity 1 Complete!</div>
+                </div>
+
+                <button class="btn" id="check-btn-1" onclick="checkActivity1()">Check Answers</button>
+            </section>
+
+            <section class="activity-card" id="activity-2">
+                <div class="activity-header">
+                    <span class="activity-number">Activity 2</span>
+                    <span class="activity-status">Not Started</span>
+                </div>
+                <h3 class="activity-title">Emergency Response Scenarios</h3>
+                <p class="activity-description">
+                    Evaluate realistic medical emergency scenarios in a clinic setting and select the most appropriate immediate response. Consider patient safety and proper emergency protocols.
+                </p>
+
+                <div class="scenario-container">
+                    <div class="scenario">
+                        <div class="scenario-title">
+                            <span class="scenario-icon">⚡</span>
+                            Scenario 1: Anaphylaxis During Allergy Test
+                        </div>
+                        <div class="scenario-content">
+                            A patient develops hives, swelling of the face, and difficulty breathing 15 minutes after an allergy skin test. Their blood pressure drops to 88/52 mmHg. What is your FIRST action?
+                        </div>
+                    </div>
+                    <div class="options-container">
+                        <label class="option-label" data-scenario="1" data-answer="A">
+                            <input type="radio" name="scenario1" class="option-radio" value="A">
+                            <div class="option-text">Give the patient an antihistamine tablet and have them sit in the waiting room while you notify the physician.</div>
+                        </label>
+                        <label class="option-label" data-scenario="1" data-answer="B">
+                            <input type="radio" name="scenario1" class="option-radio" value="B">
+                            <div class="option-text">Immediately notify the physician and assist in administering intramuscular epinephrine. Place patient supine with legs elevated.</div>
+                        </label>
+                        <label class="option-label" data-scenario="1" data-answer="C">
+                            <input type="radio" name="scenario1" class="option-radio" value="C">
+                            <div class="option-text">Ask the patient to drink water and rest. Monitor blood pressure every 5 minutes.</div>
+                        </label>
+                        <label class="option-label" data-scenario="1" data-answer="D">
+                            <input type="radio" name="scenario1" class="option-radio" value="D">
+                            <div class="option-text">Call 911 immediately without consulting the physician first.</div>
+                        </label>
+                    </div>
+                    <button class="btn" onclick="submitScenario(1, 'B')">Submit Response</button>
+                    <div class="feedback-message" id="feedback-1"></div>
+                </div>
+
+                <div class="scenario-container">
+                    <div class="scenario">
+                        <div class="scenario-title">
+                            <span class="scenario-icon">🧠</span>
+                            Scenario 2: Patient Having a Seizure
+                        </div>
+                        <div class="scenario-content">
+                            You are entering an exam room when a patient suddenly loses consciousness and begins experiencing uncontrolled muscle contractions. This is their first observed seizure. What should you do?
+                        </div>
+                    </div>
+                    <div class="options-container">
+                        <label class="option-label" data-scenario="2" data-answer="A">
+                            <input type="radio" name="scenario2" class="option-radio" value="A">
+                            <div class="option-text">Attempt to hold the patient down to prevent injury and put something between their teeth.</div>
+                        </label>
+                        <label class="option-label" data-scenario="2" data-answer="B">
+                            <input type="radio" name="scenario2" class="option-radio" value="B">
+                            <div class="option-text">Clear the immediate area of hazards, position patient on their side, protect the airway, time the seizure, and alert the physician immediately.</div>
+                        </label>
+                        <label class="option-label" data-scenario="2" data-answer="C">
+                            <input type="radio" name="scenario2" class="option-radio" value="C">
+                            <div class="option-text">Leave the patient alone and call an ambulance before doing anything else.</div>
+                        </label>
+                        <label class="option-label" data-scenario="2" data-answer="D">
+                            <input type="radio" name="scenario2" class="option-radio" value="D">
+                            <div class="option-text">Administer oxygen and check blood glucose immediately.</div>
+                        </label>
+                    </div>
+                    <button class="btn" onclick="submitScenario(2, 'B')">Submit Response</button>
+                    <div class="feedback-message" id="feedback-2"></div>
+                </div>
+
+                <div class="scenario-container">
+                    <div class="scenario">
+                        <div class="scenario-title">
+                            <span class="scenario-icon">💓</span>
+                            Scenario 3: Cardiac Arrest in the Office
+                        </div>
+                        <div class="scenario-content">
+                            A patient in the waiting room suddenly collapses and is unresponsive. You check for breathing and pulse—none detected. What are your IMMEDIATE actions?
+                        </div>
+                    </div>
+                    <div class="options-container">
+                        <label class="option-label" data-scenario="3" data-answer="A">
+                            <input type="radio" name="scenario3" class="option-radio" value="A">
+                            <div class="option-text">Call for the AED, begin CPR, and continue until EMS arrives or the AED indicates normal rhythm.</div>
+                        </label>
+                        <label class="option-label" data-scenario="3" data-answer="B">
+                            <input type="radio" name="scenario3" class="option-radio" value="B">
+                            <div class="option-text">Wait for the physician to arrive before beginning any intervention.</div>
+                        </label>
+                        <label class="option-label" data-scenario="3" data-answer="C">
+                            <input type="radio" name="scenario3" class="option-radio" value="C">
+                            <div class="option-text">Check blood pressure and try to wake the patient by speaking loudly.</div>
+                        </label>
+                        <label class="option-label" data-scenario="3" data-answer="D">
+                            <input type="radio" name="scenario3" class="option-radio" value="D">
+                            <div class="option-text">Place the patient in recovery position and monitor breathing until EMS arrives.</div>
+                        </label>
+                    </div>
+                    <button class="btn" onclick="submitScenario(3, 'A')">Submit Response</button>
+                    <div class="feedback-message" id="feedback-3"></div>
+                </div>
+
+                <div id="activity2-result" class="completion-badge">
+                    <span class="badge-checkmark">✓</span>
+                    <div class="badge-text">Activity 2 Complete!</div>
+                </div>
+            </section>
+
+            <section class="activity-card" id="activity-3">
+                <div class="activity-header">
+                    <span class="activity-number">Activity 3</span>
+                    <span class="activity-status">Not Started</span>
+                </div>
+                <h3 class="activity-title">Emergency Protocols Knowledge Check</h3>
+                <p class="activity-description">
+                    Test your comprehension of emergency response protocols with this 5-question quiz. You must score at least 4/5 to mark this activity complete.
+                </p>
+
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">1. What is the correct compression-to-ventilation ratio for adult CPR?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="A">
+                                <span class="quiz-option-text">A) 15 compressions to 2 ventilations</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="B">
+                                <span class="quiz-option-text">B) 30 compressions to 2 ventilations</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="C">
+                                <span class="quiz-option-text">C) Continuous chest compressions without ventilation (or 30:2)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="D">
+                                <span class="quiz-option-text">D) 100 compressions to 5 ventilations</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">2. When should you NOT attempt to insert an object between a seizing patient's teeth?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="A">
+                                <span class="quiz-option-text">A) Always insert something to prevent tongue biting</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="B">
+                                <span class="quiz-option-text">B) During active seizure activity, as this can cause jaw fracture and obstruct airway</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="C">
+                                <span class="quiz-option-text">C) Only when the patient is alert</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="D">
+                                <span class="quiz-option-text">D) If you can obtain consent first</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">3. What is the proper depth for chest compressions in adult CPR?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="A">
+                                <span class="quiz-option-text">A) At least 2 inches (5 cm)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="B">
+                                <span class="quiz-option-text">B) Only 1 inch (2.5 cm) to avoid rib fractures</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="C">
+                                <span class="quiz-option-text">C) As deep as possible without concern for injury</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="D">
+                                <span class="quiz-option-text">D) Gentle compressions just to feel the heartbeat</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">4. Which of the following is appropriate for a hypoglycemic patient experiencing confusion and agitation?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="A">
+                                <span class="quiz-option-text">A) Insulin injection to lower blood glucose further</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="B">
+                                <span class="quiz-option-text">B) Fast-acting carbohydrates (juice, glucose tablets) if patient can swallow</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="C">
+                                <span class="quiz-option-text">C) Place patient in recovery position and observe</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="D">
+                                <span class="quiz-option-text">D) Restrict all food and liquids until tested</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">5. What is the first step when responding to any medical emergency in a healthcare facility?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="A">
+                                <span class="quiz-option-text">A) Remain calm and assess the scene for safety hazards</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="B">
+                                <span class="quiz-option-text">B) Immediately move the patient to a stretcher</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="C">
+                                <span class="quiz-option-text">C) Call 911 before assessing the patient</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="D">
+                                <span class="quiz-option-text">D) Document the incident in the medical record</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn" id="submit-quiz" onclick="submitQuiz()">Check Answers</button>
+                <div id="quiz-result" class="completion-badge">
+                    <span class="badge-checkmark">✓</span>
+                    <div class="badge-text">Knowledge Check Complete!</div>
+                    <div class="badge-subtext" id="quiz-score"></div>
+                </div>
+            </section>
         </div>
-        
-        <h2>Module 4: Diabetic Emergencies</h2>
-        
-        <div class="emergency-card">
-            <h3>Insulin Shock (Hypoglycemia)</h3>
-            <p><strong>Causes:</strong> Too much insulin, too little food, excessive exercise</p>
-            <p><strong>Signs & Symptoms:</strong> Confusion, irritability, sweating, trembling, rapid heartbeat, hunger, dizziness, seizures, loss of consciousness</p>
-            
-            <div class="steps">
-                <p><strong>First Aid for Conscious Patient:</strong></p>
-                <ol>
-                    <li>Give 15-20 grams of fast-acting sugar:
-                        <ul>
-                            <li>4 oz fruit juice or regular soda</li>
-                            <li>Glucose tablets/gel</li>
-                            <li>1 tablespoon sugar or honey</li>
-                        </ul>
-                    </li>
-                    <li>Wait 15 minutes and recheck blood sugar if possible</li>
-                    <li>If still low, repeat sugar treatment</li>
-                    <li>Once improved, give complex carbohydrate and protein snack</li>
-                </ol>
-            </div>
-            
-            <div class="steps">
-                <p><strong>First Aid for Unconscious Patient:</strong></p>
-                <ol>
-                    <li>Place in recovery position</li>
-                    <li>Do NOT give anything by mouth</li>
-                    <li>Call emergency services immediately</li>
-                    <li>Administer glucagon injection if trained and available</li>
-                    <li>Monitor breathing and pulse</li>
-                    <li>Be prepared to perform CPR if needed</li>
-                </ol>
-            </div>
-        </div>
-        
-        <h2>Module 5: Musculoskeletal and Neurologic Emergencies</h2>
-        
-        <div class="emergency-card">
-            <h3>Seizures</h3>
-            <p><strong>Types:</strong> Generalized (tonic-clonic), partial (focal), absence</p>
-            
-            <div class="steps">
-                <p><strong>First Aid During Seizure:</strong></p>
-                <ol>
-                    <li>Stay calm and time the seizure</li>
-                    <li>Protect from injury - move furniture, place pillow under head</li>
-                    <li>Turn person on their side (recovery position) to keep airway clear</li>
-                    <li>Loosen tight clothing around neck</li>
-                    <li>Do NOT restrain the person</li>
-                    <li>Do NOT put anything in their mouth</li>
-                    <li>Stay with them until fully alert</li>
-                </ol>
-            </div>
-            
-            <div class="steps">
-                <p><strong>When to Call Emergency Services:</strong></p>
-                <ol>
-                    <li>Seizure lasts more than 5 minutes</li>
-                    <li>Person has difficulty breathing afterwards</li>
-                    <li>Person is injured during seizure</li>
-                    <li>Person is pregnant or has diabetes</li>
-                    <li>Another seizure follows immediately</li>
-                    <li>Seizure occurs in water</li>
-                    <li>Person does not regain consciousness after seizure stops</li>
-                </ol>
-            </div>
-        </div>
-        
-        <h2>Module 6: Respiratory Emergencies</h2>
-        
-        <div class="emergency-card">
-            <h3>Choking (Conscious Adult/Child)</h3>
-            
-            <div class="steps">
-                <p><strong>Signs of Severe Choking:</strong> Cannot breathe, speak, or cough; universal choking sign (hands to throat); blue lips/nails</p>
-                
-                <p><strong>Abdominal Thrusts (Heimlich Maneuver):</strong></p>
-                <ol>
-                    <li>Stand behind person, wrap arms around waist</li>
-                    <li>Make a fist with one hand, thumb side against middle of abdomen, above navel</li>
-                    <li>Grasp fist with other hand</li>
-                    <li>Give quick, inward and upward thrusts</li>
-                    <li>Continue until object is expelled or person becomes unconscious</li>
-                </ol>
-            </div>
-            
-            <div class="warning">
-                <p><strong>For Pregnant or Obese Patients:</strong> Use chest thrusts instead of abdominal thrusts. Place hands at center of chest (same position as for CPR compressions).</p>
-            </div>
-            
-            <div class="steps">
-                <p><strong>For Unconscious Choking Victim:</strong></p>
-                <ol>
-                    <li>Lower to ground, call for help/activate emergency response</li>
-                    <li>Begin CPR starting with chest compressions</li>
-                    <li>Before giving breaths, check mouth for object and remove if visible</li>
-                    <li>Continue cycles of 30 compressions and 2 breaths</li>
-                </ol>
-            </div>
-        </div>
-        
-        <h2>Module 7: Cardiovascular Emergencies</h2>
-        
-        <div class="emergency-card">
-            <h3>Bleeding Wounds</h3>
-            
-            <div class="steps">
-                <p><strong>First Aid for Severe Bleeding:</strong></p>
-                <ol>
-                    <li>Apply direct pressure with sterile dressing or clean cloth</li>
-                    <li>Elevate injured area above heart if no fracture suspected</li>
-                    <li>Apply pressure to pressure points if direct pressure fails</li>
-                    <li>Apply tourniquet only as last resort for life-threatening limb bleeding</li>
-                    <li>Never remove soaked dressing - add more layers on top</li>
-                    <li>Treat for shock - keep person warm and lying down</li>
-                </ol>
-            </div>
-        </div>
-        
-        <div class="emergency-card">
-            <h3>Shock</h3>
-            <p><strong>Signs & Symptoms:</strong> Pale/cool/clammy skin, rapid weak pulse, rapid shallow breathing, nausea, confusion, unconsciousness</p>
-            
-            <div class="steps">
-                <p><strong>First Aid for Shock:</strong></p>
-                <ol>
-                    <li>Call for emergency medical help</li>
-                    <li>Have person lie down on back</li>
-                    <li>Elevate legs about 12 inches (unless head/neck/leg injury suspected)</li>
-                    <li>Keep person warm with blanket</li>
-                    <li>Do not give anything to eat or drink</li>
-                    <li>Monitor breathing and consciousness</li>
-                    <li>Be prepared to perform CPR if needed</li>
-                </ol>
-            </div>
-        </div>
-        
-        <div class="emergency-card">
-            <h3>Cardiopulmonary Resuscitation (CPR)</h3>
-            
-            <div class="steps">
-                <p><strong>Adult CPR Steps (C-A-B):</strong></p>
-                <ol>
-                    <li><strong>Check</strong> for responsiveness and breathing</li>
-                    <li><strong>Call</strong> for help/activate emergency response</li>
-                    <li><strong>Compressions:</strong> Place heel of hand on center of chest, other hand on top
-                        <ul>
-                            <li>Push hard and fast (at least 2 inches deep)</li>
-                            <li>Rate of 100-120 compressions per minute</li>
-                            <li>Allow chest to recoil completely between compressions</li>
-                        </ul>
-                    </li>
-                    <li><strong>Airway:</strong> Tilt head back, lift chin to open airway</li>
-                    <li><strong>Breathing:</strong> Give 2 breaths (1 second each), watching for chest rise</li>
-                    <li>Continue cycles of 30 compressions to 2 breaths</li>
-                    <li>Use AED as soon as available</li>
-                </ol>
-            </div>
-            
-            <div class="note">
-                <p><strong>Note:</strong> For infant/child CPR, compression depth is about ⅓ of chest depth. For infants, use two fingers or two-thumb encircling technique. Rescue breathing for children/infants is particularly important.</p>
-            </div>
-        </div>
-        
-        <div class="warning">
-            <p><strong>Important Disclaimer:</strong> This lesson provides general first aid information. Always follow your facility's specific protocols and your scope of practice. Proper certification (BLS, ACLS, First Aid) is required to perform many of these skills in clinical settings.</p>
-        </div>
-    </div>
-    
+    </main>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Function to show toast notification
-            function showToast(message) {
-                const toast = document.getElementById("toast");
-                toast.textContent = message;
-                toast.className = "show";
-                setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
-            }
+        const quizAnswers = { q1: 'C', q2: 'B', q3: 'A', q4: 'B', q5: 'A' };
+        let activitiesCompleted = 0, totalAccuracy = 0, startTime = Date.now(), draggedCard = null;
 
-            // Click event to highlight emergency cards
-            const emergencyCards = document.querySelectorAll('.emergency-card');
-            emergencyCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    this.style.backgroundColor = '#eef9ff';
-                    setTimeout(() => {
-                        this.style.backgroundColor = '#f9f9f9';
-                    }, 500);
+        setInterval(() => {
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed % 60;
+            document.getElementById('time-spent').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+
+        function setupDragAndDrop() {
+            const cards = document.querySelectorAll('.duty-card');
+            const dropzones = document.querySelectorAll('.dropzone');
+
+            cards.forEach(card => {
+                card.addEventListener('dragstart', (e) => {
+                    draggedCard = card;
+                    card.classList.add('dragging');
+                    e.dataTransfer.effectAllowed = 'move';
+                });
+                card.addEventListener('dragend', () => { card.classList.remove('dragging'); });
+            });
+
+            dropzones.forEach(zone => {
+                zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('hover'); });
+                zone.addEventListener('dragleave', () => { zone.classList.remove('hover'); });
+                zone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    zone.classList.remove('hover');
+                    if (draggedCard && !draggedCard.classList.contains('placed')) {
+                        const content = zone.querySelector('.dropzone-content');
+                        const clone = draggedCard.cloneNode(true);
+                        clone.draggable = false;
+                        clone.classList.add('placed');
+                        clone.style.cursor = 'default';
+                        clone.dataset.original = draggedCard.dataset.correct;
+                        clone.dataset.target = zone.dataset.category;
+                        content.appendChild(clone);
+                        draggedCard.style.opacity = '0.5';
+                        draggedCard.draggable = false;
+                    }
                 });
             });
-            
-            // Smooth hover for key terms
-            const keyTerms = document.querySelectorAll('.key-term');
-            keyTerms.forEach(term => {
-                term.addEventListener('mouseenter', function() {
-                    this.style.backgroundColor = '#d4edf7';
-                });
-                term.addEventListener('mouseleave', function() {
-                    this.style.backgroundColor = '#e8f7ff';
-                });
+        }
+
+        function checkActivity1() {
+            const placedCards = document.querySelectorAll('.duty-card.placed');
+            let correct = 0;
+            placedCards.forEach(card => {
+                const isCorrect = card.dataset.original === card.dataset.target;
+                if (isCorrect) { correct++; card.classList.add('correct'); }
+                else { card.classList.add('incorrect'); }
             });
-        });
+            const accuracy = Math.round((correct / 6) * 100);
+            totalAccuracy = (totalAccuracy + accuracy) / 2;
+            document.getElementById('accuracy-rate').textContent = Math.round(totalAccuracy) + '%';
+            if (correct === 6) {
+                document.getElementById('activity1-result').classList.add('show');
+                document.getElementById('activity-1').classList.add('completed');
+                document.querySelector('#activity-1 .activity-status').textContent = 'Complete';
+                activitiesCompleted++;
+                updateProgressTracker(1);
+                updateActivityCount();
+            }
+            document.getElementById('check-btn-1').disabled = true;
+        }
+
+        function submitScenario(scenarioNum, correctAnswer) {
+            const selected = document.querySelector(`input[name="scenario${scenarioNum}"]:checked`);
+            if (!selected) return;
+            const feedback = document.getElementById(`feedback-${scenarioNum}`);
+            const selectedAnswer = selected.value;
+            const isCorrect = selectedAnswer === correctAnswer;
+            const messages = {
+                1: { B: "Correct! Anaphylaxis is life-threatening and requires immediate IM epinephrine.", A: "Incorrect. Oral antihistamines are too slow. IM epinephrine is first-line.", C: "Incorrect. Water and rest won't address anaphylaxis.", D: "Incorrect. Epinephrine takes priority over 911." },
+                2: { B: "Correct! Clear hazards, protect airway, position on side, time seizure, alert physician.", A: "Incorrect. Restraining can cause fractures and airway obstruction.", C: "Incorrect. Your presence is needed to protect the patient.", D: "Incorrect. Airway safety comes first." },
+                3: { A: "Correct! Begin CPR and get AED immediately—every second counts in cardiac arrest.", B: "Incorrect. Bystander CPR and early AED use are critical to survival.", C: "Incorrect. An unresponsive, pulseless patient needs CPR.", D: "Incorrect. Recovery position is for conscious or breathing patients." }
+            };
+            feedback.textContent = messages[scenarioNum][selectedAnswer];
+            feedback.classList.add('show', isCorrect ? 'correct' : 'incorrect');
+            totalAccuracy = isCorrect ? (totalAccuracy + 100) / 2 : (totalAccuracy + 0) / 2;
+            document.getElementById('accuracy-rate').textContent = Math.round(totalAccuracy) + '%';
+            const allOptions = document.querySelectorAll(`[data-scenario="${scenarioNum}"]`);
+            allOptions.forEach(opt => opt.querySelector('input').disabled = true);
+            const allAnswered = document.querySelectorAll('.scenario-container').length === document.querySelectorAll('.feedback-message.show').length;
+            if (allAnswered) {
+                document.getElementById('activity2-result').classList.add('show');
+                document.getElementById('activity-2').classList.add('completed');
+                document.querySelector('#activity-2 .activity-status').textContent = 'Complete';
+                activitiesCompleted++;
+                updateProgressTracker(2);
+                updateActivityCount();
+            }
+        }
+
+        function submitQuiz() {
+            let correct = 0;
+            Object.keys(quizAnswers).forEach(question => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === quizAnswers[question]) { correct++; selected.closest('.quiz-option').classList.add('correct'); }
+                else if (selected) { selected.closest('.quiz-option').classList.add('incorrect'); }
+                if (selected) { selected.disabled = true; }
+            });
+            const accuracy = Math.round((correct / 5) * 100);
+            totalAccuracy = (totalAccuracy + accuracy) / 2;
+            document.getElementById('accuracy-rate').textContent = Math.round(totalAccuracy) + '%';
+            document.getElementById('quiz-score').textContent = `Score: ${correct}/5 (${accuracy}%)`;
+            if (correct >= 4) {
+                document.getElementById('quiz-result').classList.add('show');
+                document.getElementById('activity-3').classList.add('completed');
+                document.querySelector('#activity-3 .activity-status').textContent = 'Complete';
+                activitiesCompleted++;
+                updateProgressTracker(3);
+                updateActivityCount();
+            }
+            document.getElementById('submit-quiz').disabled = true;
+        }
+
+        function updateActivityCount() { document.getElementById('activities-completed').textContent = activitiesCompleted; }
+
+        function updateProgressTracker(step) {
+            const stepEl = document.querySelector(`.progress-step[data-step="${step}"]`);
+            if (stepEl) {
+                stepEl.classList.remove('active');
+                stepEl.classList.add('completed');
+                if (step < 3) {
+                    const nextStep = document.querySelector(`.progress-step[data-step="${step + 1}"]`);
+                    if (nextStep) nextStep.classList.add('active');
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', setupDragAndDrop);
     </script>
+
+<script>
+(function() {
+  var dragSrc = null, cloneEl = null, lastTarget = null;
+  function pt(e){ return e.touches ? e.touches[0] : e.changedTouches[0]; }
+  document.addEventListener("touchstart", function(e){
+    var el = e.target.closest("[draggable='true']");
+    if(!el) return;
+    dragSrc = el;
+    dragSrc._dt = { data:{}, getData:function(k){return this.data[k]||"";}, setData:function(k,v){this.data[k]=v;} };
+    var ev = new Event("dragstart",{bubbles:true,cancelable:true});
+    ev.dataTransfer = dragSrc._dt;
+    el.dispatchEvent(ev);
+    cloneEl = el.cloneNode(true);
+    var r = el.getBoundingClientRect();
+    Object.assign(cloneEl.style, {position:"fixed",top:r.top+"px",left:r.left+"px",width:r.width+"px",opacity:"0.7",pointerEvents:"none",zIndex:9999,boxShadow:"0 8px 24px rgba(0,0,0,0.2)",borderRadius:"8px"});
+    document.body.appendChild(cloneEl);
+    e.preventDefault();
+  }, {passive:false});
+  document.addEventListener("touchmove", function(e){
+    if(!dragSrc) return;
+    var t = pt(e);
+    if(cloneEl){ cloneEl.style.top=(t.clientY-30)+"px"; cloneEl.style.left=(t.clientX-60)+"px"; }
+    var over = document.elementFromPoint(t.clientX, t.clientY);
+    if(over && over !== lastTarget){
+      if(lastTarget){ var lev=new Event("dragleave",{bubbles:true}); lastTarget.dispatchEvent(lev); }
+      lastTarget = over;
+      var ov=new Event("dragover",{bubbles:true,cancelable:true}); ov.dataTransfer=dragSrc._dt; over.dispatchEvent(ov);
+    }
+    e.preventDefault();
+  }, {passive:false});
+  document.addEventListener("touchend", function(e){
+    if(!dragSrc) return;
+    if(cloneEl){ cloneEl.remove(); cloneEl=null; }
+    var t = pt(e);
+    var dropEl = document.elementFromPoint(t.clientX, t.clientY);
+    if(dropEl){ var ev=new Event("drop",{bubbles:true,cancelable:true}); ev.dataTransfer=dragSrc._dt; dropEl.dispatchEvent(ev); }
+    var de=new Event("dragend",{bubbles:true}); dragSrc.dispatchEvent(de);
+    dragSrc=null; lastTarget=null;
+  }, {passive:false});
+})();
+</script>
 </body>
 </html>
