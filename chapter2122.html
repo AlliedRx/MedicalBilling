@@ -877,18 +877,18 @@
                         </label>
                         <label class="option-label" data-scenario="2" data-answer="B">
                             <input type="radio" name="scenario2" class="option-radio" value="B">
-                            <div class="option-text">Clear the immediate area of hazards, position patient on their side, protect the airway, time the seizure, and alert the physician immediately.</div>
+                            <div class="option-text">Leave the patient alone and call an ambulance before doing anything else.</div>
                         </label>
                         <label class="option-label" data-scenario="2" data-answer="C">
                             <input type="radio" name="scenario2" class="option-radio" value="C">
-                            <div class="option-text">Leave the patient alone and call an ambulance before doing anything else.</div>
+                            <div class="option-text">Clear the immediate area of hazards, position patient on their side, protect the airway, time the seizure, and alert the physician immediately.</div>
                         </label>
                         <label class="option-label" data-scenario="2" data-answer="D">
                             <input type="radio" name="scenario2" class="option-radio" value="D">
                             <div class="option-text">Administer oxygen and check blood glucose immediately.</div>
                         </label>
                     </div>
-                    <button class="btn" onclick="submitScenario(2, 'B')">Submit Response</button>
+                    <button class="btn" onclick="submitScenario(2, 'C')">Submit Response</button>
                     <div class="feedback-message" id="feedback-2"></div>
                 </div>
 
@@ -905,11 +905,11 @@
                     <div class="options-container">
                         <label class="option-label" data-scenario="3" data-answer="A">
                             <input type="radio" name="scenario3" class="option-radio" value="A">
-                            <div class="option-text">Call for the AED, begin CPR, and continue until EMS arrives or the AED indicates normal rhythm.</div>
+                            <div class="option-text">Wait for the physician to arrive before beginning any intervention.</div>
                         </label>
                         <label class="option-label" data-scenario="3" data-answer="B">
                             <input type="radio" name="scenario3" class="option-radio" value="B">
-                            <div class="option-text">Wait for the physician to arrive before beginning any intervention.</div>
+                            <div class="option-text">Call for the AED, begin CPR, and continue until EMS arrives or the AED indicates normal rhythm.</div>
                         </label>
                         <label class="option-label" data-scenario="3" data-answer="C">
                             <input type="radio" name="scenario3" class="option-radio" value="C">
@@ -950,7 +950,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="B">
-                                <span class="quiz-option-text">B) 30 compressions to 2 ventilations</span>
+                                <span class="quiz-option-text">B)  30 compressions to 2 ventilations</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="C">
@@ -972,11 +972,11 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="B">
-                                <span class="quiz-option-text">B) During active seizure activity, as this can cause jaw fracture and obstruct airway</span>
+                                <span class="quiz-option-text">C)  Only when the patient is alert</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="C">
-                                <span class="quiz-option-text">C) Only when the patient is alert</span>
+                                <span class="quiz-option-text">B)  During active seizure activity, as this can cause jaw fracture and obstruct airway</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="D">
@@ -990,11 +990,11 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="A">
-                                <span class="quiz-option-text">A) At least 2 inches (5 cm)</span>
+                                <span class="quiz-option-text">B)  Only 1 inch (2.5 cm) to avoid rib fractures</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="B">
-                                <span class="quiz-option-text">B) Only 1 inch (2.5 cm) to avoid rib fractures</span>
+                                <span class="quiz-option-text">A)  At least 2 inches (5 cm)</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q3" value="C">
@@ -1016,7 +1016,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="B">
-                                <span class="quiz-option-text">B) Fast-acting carbohydrates (juice, glucose tablets) if patient can swallow</span>
+                                <span class="quiz-option-text">D)  Restrict all food and liquids until tested</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="C">
@@ -1024,7 +1024,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="D">
-                                <span class="quiz-option-text">D) Restrict all food and liquids until tested</span>
+                                <span class="quiz-option-text">B)  Fast-acting carbohydrates (juice, glucose tablets) if patient can swallow</span>
                             </label>
                         </div>
                     </div>
@@ -1038,7 +1038,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="B">
-                                <span class="quiz-option-text">B) Immediately move the patient to a stretcher</span>
+                                <span class="quiz-option-text">B)  Immediately move the patient to a stretcher</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="C">
@@ -1063,7 +1063,7 @@
     </main>
 
     <script>
-        const quizAnswers = { q1: 'C', q2: 'B', q3: 'A', q4: 'B', q5: 'A' };
+        const quizAnswers = { q1: 'B', q2: 'C', q3: 'A', q4: 'D', q5: 'B' };
         let activitiesCompleted = 0, totalAccuracy = 0, startTime = Date.now(), draggedCard = null;
 
         setInterval(() => {
