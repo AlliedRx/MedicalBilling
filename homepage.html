@@ -104,6 +104,39 @@
 
   /* ── LABEL ── */
   .mockup-label{position:fixed;top:12px;right:12px;background:#9148fc;color:#fff;font-size:11px;font-weight:700;padding:6px 14px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;z-index:9999;letter-spacing:.04em;}
+
+@media (max-width: 899px) {
+  .hero { padding: 0 24px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 0; }
+  .hero-copy { padding: 48px 0 32px; }
+  .hero-right { display: none; }
+  .hero-card { border-radius: 20px; margin-bottom: 40px; }
+  h1 { font-size: 34px; }
+  .hero-desc { font-size: 14px; }
+  .hero-ctas { flex-direction: column; gap: 12px; }
+  .cta-primary, .cta-secondary { width: 100%; text-align: center; justify-content: center; padding: 15px 24px; }
+  .hero-stats { gap: 16px; flex-wrap: wrap; }
+  .prog-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .test-grid { grid-template-columns: 1fr; }
+  .car-slide { grid-template-columns: 1fr; gap: 14px; }
+  .section { padding: 48px 20px; }
+  .testimonials { padding: 48px 20px; }
+  .cta-section { padding: 60px 20px; }
+  .cta-inner h2 { font-size: 28px; }
+  .cta-btns { flex-direction: column; gap: 12px; align-items: center; }
+  .section-top { flex-direction: column; gap: 12px; align-items: flex-start; }
+  .section-h { font-size: 26px; }
+}
+@media (max-width: 599px) {
+  .hero { padding: 0 16px; }
+  h1 { font-size: 28px; }
+  .hero-stats { gap: 12px; }
+  .stat-n { font-size: 20px; }
+  .prog-grid { grid-template-columns: 1fr; }
+  .hero-ctas { gap: 10px; }
+  .cta-primary, .cta-secondary { font-size: 14px; padding: 14px 20px; }
+  .mockup-label { display: none; }
+}
 </style>
 </head>
 <body>
