@@ -222,7 +222,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .modal-box{background:var(--white);border-radius:16px;width:100%;max-width:680px;max-height:88vh;overflow-y:auto;box-shadow:0 24px 64px rgba(8,13,26,.25);transform:translateY(12px);transition:transform .25s}
 .modal-overlay.open .modal-box{transform:translateY(0)}
 
-.modal-head{background:var(--navy);padding:1.5rem 1.75rem;border-radius:16px 16px 0 0;position:sticky;top:0;z-index:2}
+.modal-head{background:var(--navy);padding:1.5rem 1.75rem;border-radius:16px 16px 0 0;position:sticky;top:0;z-index:4}
 .modal-head-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
 .modal-close{background:rgba(255,255,255,.1);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
 .modal-close:hover{background:rgba(255,255,255,.2)}
@@ -247,7 +247,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .modal-section-label{font-size:.82rem;font-weight:800;color:var(--text)}
 .modal-section-sub{font-size:.72rem;color:var(--sub);margin-left:auto;font-weight:600}
 
-.modal-location{font-size:.78rem;color:var(--sub);background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:.6rem .85rem;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem}
+.modal-location{lont-size:.78rem;color:var(--sub);background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:.6rem .85rem;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem}
 .modal-location svg{width:13px;height:13px;stroke:var(--slate);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
 .week-list{display:flex;flex-direction:column;gap:.3rem}
@@ -742,7 +742,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon blu"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M6.343 15.657A8 8 0 0012 22a8 8 0 005.657-2.343"/></svg></div>
-            <div><div class="prog-name">Phlebotomy Technician</div><div class="prog-cert">CPT · NHA &amp; AMCA Accredited</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>247 enrolled this month</div>
+            <div><div class="prog-name">Phlebotomy Techjician</div><div class="prog-cert">CPT · NHA &amp; AMCA Accredited</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>247 enrolled this month</div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
@@ -842,7 +842,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: April 29, 2026</span>
         <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>16 Weeks · Wednesdays</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>Hybrid (In-Person + Online)</span>
+        <span class="modal-chip">Hybrid (In-Person + Online)</span>
         <span class="modal-chip">Day 10:00–12:00 PM · Eve 6:00–8:00 PM</span>
       </div>
     </div>
@@ -922,6 +922,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
           <div class="modal-section-sub">Weeks 1–5</div>
+        </div>
+        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3–5</div>
         </div>
         <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
         <div class="week-list">
