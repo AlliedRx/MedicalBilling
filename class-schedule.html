@@ -42,7 +42,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .page-layout{display:block;min-height:calc(100vh - 97px)}
 
 /* ── SIDEBAR ── */
-.sidebar{background:var(--white);border-right:1px solid var(--border);padding:2rem 1.5rem;position:fixed;top:97px;left:0;width:270px;height:calc(100vh - 97px);overflow-y:auto;z-index:100}
+.sidebar{background:var(--white);border-right:1px solid var(--border);padding:2rem 1.5rem;position:fixed;top:0;left:0;width:270px;height:100vh;overflow-y:auto;z-index:100}
 .sidebar-section{margin-bottom:2.25rem}
 .sidebar-label{font-size:.62rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--slate);margin-bottom:.85rem;border-left:2px solid var(--purple);padding-left:.5rem}
 .sidebar-link{display:flex;align-items:center;gap:.65rem;padding:.5rem .65rem;border-radius:6px;text-decoration:none;font-size:.83rem;font-weight:600;color:var(--sub);transition:all .2s;margin-bottom:.1rem}
@@ -2265,17 +2265,19 @@ document.querySelectorAll('.course-card[data-card-id] .reg-btn').forEach(btn=>{
 
 initSeats();
 
-/* ── SIDEBAR: track sticky header height so sidebar always aligns below it ── */
+/* ── SIDEBAR: align top flush with bottom of sticky header ── */
 (function(){
   var sidebar = document.querySelector('.sidebar');
   var header  = document.querySelector('.site-header');
   if(!sidebar || !header) return;
   function alignSidebar(){
-    var hBottom = header.getBoundingClientRect().bottom;
+    var hBottom = Math.round(header.getBoundingClientRect().bottom);
     sidebar.style.top    = hBottom + 'px';
     sidebar.style.height = 'calc(100vh - ' + hBottom + 'px)';
   }
+  // Run immediately, after fonts/layout, and on scroll/resize
   alignSidebar();
+  window.addEventListener('load',   alignSidebar);
   window.addEventListener('scroll', alignSidebar, {passive:true});
   window.addEventListener('resize', alignSidebar, {passive:true});
 })();
