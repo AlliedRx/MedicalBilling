@@ -69,6 +69,18 @@
   .pc-badge-time{display:inline-flex;align-items:center;gap:4px;background:#f0fdf4;color:#16a34a;font-size:10px;font-weight:700;padding:4px 10px;border-radius:100px;}
   .pc-enroll{display:block;text-align:center;background:linear-gradient(135deg,#7c3aed,#9148fc);color:#fff;font-size:12px;font-weight:700;padding:10px;border-radius:100px;text-decoration:none;margin-top:auto;box-shadow:0 4px 12px rgba(145,72,252,0.3);}
   .pc-enroll:hover{opacity:0.9;}
+  /* ── TAX SAVINGS BANNER ── */
+  .tax-banner{background:linear-gradient(135deg,#0f0a2e,#1a0a3c);border:1px solid rgba(145,72,252,0.4);border-radius:20px;padding:28px 36px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+  .tax-banner-left{display:flex;align-items:center;gap:16px;}
+  .tax-banner-tag{background:linear-gradient(135deg,#7c3aed,#9148fc);border-radius:12px;padding:10px 16px;font-size:11px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;flex-shrink:0;}
+  .tax-banner-title{font-size:20px;font-weight:900;color:#fff;}
+  .tax-banner-sub{font-size:13px;color:#c4b5fd;margin-top:3px;}
+  .tax-banner-prices{display:flex;gap:24px;flex-wrap:wrap;}
+  .tax-price-item{text-align:center;}
+  .tax-price-label{font-size:11px;color:#fff;text-transform:uppercase;letter-spacing:.06em;}
+  .tax-price-amount{font-size:22px;font-weight:900;color:#c4b5fd;}
+  .tax-price-prog{font-size:10px;color:#fff;}
+  .tax-banner-cta{background:linear-gradient(135deg,#7c3aed,#9148fc);color:#fff;padding:14px 28px;border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 6px 20px rgba(145,72,252,0.4);flex-shrink:0;}
   /* ── TESTIMONIALS – light purple background ── */
   .testimonials{padding:88px 40px;background:#f0ebff;}
   .test-inner{max-width:1200px;margin:0 auto;}
@@ -95,114 +107,151 @@
   /* ── FOOTER – removed ── */
   /* ── LABEL ── */
   .mockup-label{position:fixed;top:12px;right:12px;background:#9148fc;color:#fff;font-size:11px;font-weight:700;padding:6px 14px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;z-index:9999;letter-spacing:.04em;}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width:991px){
-  html,body{overflow-x:hidden;}
-  .hero{padding:0 24px 0;}
-  .hero-inner{grid-template-columns:1fr 280px 260px;}
-  .hero-copy h1{font-size:clamp(26px,4vw,44px);}
-  .hero-photo{height:600px;}
-  .prog-grid{grid-template-columns:repeat(2,1fr);}
-  .section-inner{padding:48px 32px;}
-}
-
-@media (max-width:767px){
-  html,body{overflow-x:hidden;width:100%;}
-  .hero{padding:32px 20px 40px;overflow:hidden;}
-  .hero-inner{display:flex;flex-direction:column;align-items:stretch;}
-  .hero-copy{padding:0 0 20px;order:1;width:100%;}
-  .hero-right{order:2;width:100%;height:260px;}
-  .hero-photo{width:100%;height:100%;border-radius:16px;}
-  .hero-photo img{object-position:top center;}
-  .hero-card{order:3;position:static;transform:none;margin-top:16px;width:100%;max-width:100%;}
-  .hero-copy h1{font-size:clamp(24px,6vw,36px);line-height:1.2;}
-  .hero-desc{font-size:14px;}
-
-  /* ── HERO BUTTONS – preserve pill shape on mobile ── */
-  .hero-ctas{
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    gap:12px;
-    align-items:center;
-    margin-bottom:32px;
-  }
-  .hero-ctas .cta-primary,
-  .hero-ctas .cta-secondary{
-    flex:0 0 auto;          /* do NOT stretch to fill row */
-    width:auto;
-    padding:14px 28px;
-    font-size:14px;
-    border-radius:100px;    /* keep pill */
-    text-align:center;
-    white-space:nowrap;
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+  @media (max-width:991px){
+    html,body{overflow-x:hidden;}
+    .hero{padding:0 24px 0;}
+    .hero-inner{grid-template-columns:1fr 280px 260px;}
+    .hero-copy h1{font-size:clamp(26px,4vw,44px);}
+    .hero-photo{height:600px;}
+    .prog-grid{grid-template-columns:repeat(2,1fr);}
+    .section-inner{padding:48px 32px;}
+    /* Tax banner: 2-column layout on tablet */
+    .tax-banner{padding:24px 28px;gap:16px;}
+    .tax-banner-prices{gap:16px;}
+    .tax-price-amount{font-size:18px;}
   }
 
-  .hero-stats{flex-wrap:wrap;gap:12px 20px;}
-  .program-list{gap:8px;}
-  .prog-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
-  .section-inner{padding:40px 20px;}
-  .section-top{flex-direction:column;align-items:flex-start;gap:8px;}
-  .test-inner{padding:40px 20px;}
-  .cta-inner{padding:40px 20px;text-align:center;}
-  .cta-btns{flex-wrap:wrap;gap:10px;justify-content:center;}
-}
-
-@media (max-width:479px){
-  html,body{overflow-x:hidden;width:100%;}
-  .hero{padding:20px 14px 28px;}
-  .hero-copy h1{font-size:clamp(20px,7.5vw,28px);}
-  .hero-copy p,.hero-desc{font-size:13px;}
-  .hero-right{height:200px;}
-
-  /* ── HERO BUTTONS – pill shape on small mobile ── */
-  .hero-ctas{
-    display:flex;
-    flex-direction:column;
-    align-items:stretch;
-    gap:10px;
-    margin-bottom:28px;
+  @media (max-width:767px){
+    html,body{overflow-x:hidden;width:100%;}
+    .hero{padding:32px 20px 40px;overflow:hidden;}
+    .hero-inner{display:flex;flex-direction:column;align-items:stretch;}
+    .hero-copy{padding:0 0 20px;order:1;width:100%;}
+    .hero-right{order:2;width:100%;height:260px;}
+    .hero-photo{width:100%;height:100%;border-radius:16px;}
+    .hero-photo img{object-position:top center;}
+    .hero-card{order:3;position:static;transform:none;margin-top:16px;width:100%;max-width:100%;}
+    .hero-copy h1{font-size:clamp(24px,6vw,36px);line-height:1.2;}
+    .hero-desc{font-size:14px;}
+    /* ── HERO BUTTONS – preserve pill shape on mobile ── */
+    .hero-ctas{
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap;
+      gap:12px;
+      align-items:center;
+      margin-bottom:32px;
+    }
+    .hero-ctas .cta-primary,
+    .hero-ctas .cta-secondary{
+      flex:0 0 auto;
+      width:auto;
+      padding:14px 28px;
+      font-size:14px;
+      border-radius:100px;
+      text-align:center;
+      white-space:nowrap;
+    }
+    .hero-stats{flex-wrap:wrap;gap:12px 20px;}
+    .program-list{gap:8px;}
+    .prog-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+    .section-inner{padding:40px 20px;}
+    .section-top{flex-direction:column;align-items:flex-start;gap:8px;}
+    .test-inner{padding:40px 20px;}
+    .cta-inner{padding:40px 20px;text-align:center;}
+    .cta-btns{flex-wrap:wrap;gap:10px;justify-content:center;}
+    /* Tax banner: stack vertically on mobile */
+    .tax-banner{
+      flex-direction:column;
+      align-items:stretch;
+      padding:20px 20px;
+      gap:16px;
+      border-radius:16px;
+    }
+    .tax-banner-left{flex-direction:column;align-items:flex-start;gap:10px;}
+    .tax-banner-tag{font-size:10px;padding:8px 12px;}
+    .tax-banner-title{font-size:17px;}
+    .tax-banner-sub{font-size:12px;}
+    .tax-banner-prices{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+    .tax-price-item{
+      background:rgba(255,255,255,0.06);
+      border-radius:10px;
+      padding:10px 12px;
+      text-align:left;
+    }
+    .tax-price-amount{font-size:18px;}
+    .tax-banner-cta{
+      width:100%;
+      text-align:center;
+      padding:14px 20px;
+      font-size:14px;
+    }
   }
-  .hero-ctas .cta-primary,
-  .hero-ctas .cta-secondary{
-    flex:none;
-    width:100%;
-    padding:14px 28px;
-    font-size:14px;
-    border-radius:100px;    /* keep pill */
-    text-align:center;
-    white-space:nowrap;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
 
-  .hero-stats{gap:10px 14px;}
-  .stat-n{font-size:20px;}
-  .stat-l{font-size:10px;}
-  .hero-card{padding:14px;}
-  .prog-item{padding:8px 10px;gap:8px;}
-  .prog-icon{width:28px;height:28px;}
-  .prog-name{font-size:12px;}
-  .prog-cert{font-size:10px;}
-  .hc-cta{font-size:13px;padding:10px;}
-  .prog-grid{grid-template-columns:1fr;}
-  .section-inner{padding:32px 14px;}
-  .section-h{font-size:24px;}
-  .prog-card{padding:16px;}
-  .test-inner{padding:32px 14px;}
-  .cta-section{padding:32px 14px;}
-  .cta-btns{flex-direction:column;gap:10px;}
-  .cta-btns a{width:100%;text-align:center;}
-  .price-badge{font-size:11px;flex-wrap:wrap;gap:4px;}
-}
+  @media (max-width:479px){
+    html,body{overflow-x:hidden;width:100%;}
+    .hero{padding:20px 14px 28px;}
+    .hero-copy h1{font-size:clamp(20px,7.5vw,28px);}
+    .hero-copy p,.hero-desc{font-size:13px;}
+    .hero-right{height:200px;}
+    /* ── HERO BUTTONS – pill shape on small mobile ── */
+    .hero-ctas{
+      display:flex;
+      flex-direction:column;
+      align-items:stretch;
+      gap:10px;
+      margin-bottom:28px;
+    }
+    .hero-ctas .cta-primary,
+    .hero-ctas .cta-secondary{
+      flex:none;
+      width:100%;
+      padding:14px 28px;
+      font-size:14px;
+      border-radius:100px;
+      text-align:center;
+      white-space:nowrap;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .hero-stats{gap:10px 14px;}
+    .stat-n{font-size:20px;}
+    .stat-l{font-size:10px;}
+    .hero-card{padding:14px;}
+    .prog-item{padding:8px 10px;gap:8px;}
+    .prog-icon{width:28px;height:28px;}
+    .prog-name{font-size:12px;}
+    .prog-cert{font-size:10px;}
+    .hc-cta{font-size:13px;padding:10px;}
+    .prog-grid{grid-template-columns:1fr;}
+    .section-inner{padding:32px 14px;}
+    .section-h{font-size:24px;}
+    .prog-card{padding:16px;}
+    .test-inner{padding:32px 14px;}
+    .cta-section{padding:32px 14px;}
+    .cta-btns{flex-direction:column;gap:10px;}
+    .cta-btns a{width:100%;text-align:center;}
+    .price-badge{font-size:11px;flex-wrap:wrap;gap:4px;}
+    /* Tax banner small phone */
+    .tax-banner{padding:16px 14px;gap:12px;}
+    .tax-banner-title{font-size:15px;}
+    .tax-banner-prices{grid-template-columns:1fr 1fr;gap:8px;}
+    .tax-price-amount{font-size:16px;}
+    .tax-price-label{font-size:10px;}
+    .tax-price-prog{font-size:9px;}
+  }
 </style>
 </head>
 <body>
 <div class="mockup-label">Get Board Certified</div>
+
 <!-- Hero -->
 <section class="hero">
   <div class="hero-inner">
@@ -271,42 +320,44 @@
     </div>
   </div>
 </section>
+
 <!-- Programs -->
 <section class="section">
   <div class="section-inner">
     <!-- 2026 Tuition Special Banner -->
-    <div style="background:linear-gradient(135deg,#0f0a2e,#1a0a3c);border:1px solid rgba(145,72,252,0.4);border-radius:20px;padding:28px 36px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
-      <div style="display:flex;align-items:center;gap:16px;">
-        <div style="background:linear-gradient(135deg,#7c3aed,#9148fc);border-radius:12px;padding:10px 16px;font-size:11px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;">2026 Tax Savings Special</div>
+    <div class="tax-banner">
+      <div class="tax-banner-left">
+        <div class="tax-banner-tag">2026 Tax Savings Special</div>
         <div>
-          <div style="font-size:20px;font-weight:900;color:#fff;">Promotional Pricing — Limited Time</div>
-          <div style="font-size:13px;color:#c4b5fd;margin-top:3px;">Start for as little as <strong>$99 down</strong> · No credit check · Zero interest · Payment plans available</div>
+          <div class="tax-banner-title">Promotional Pricing — Limited Time</div>
+          <div class="tax-banner-sub">Start for as little as <strong>$99 down</strong> · No credit check · Zero interest · Payment plans available</div>
         </div>
       </div>
-      <div style="display:flex;gap:24px;flex-wrap:wrap;">
-        <div style="text-align:center;">
-          <div style="font-size:11px;color:#fff;text-transform:uppercase;letter-spacing:.06em;">Group A Programs</div>
-          <div style="font-size:22px;font-weight:900;color:#c4b5fd;">$975 <span style="font-size:13px;text-decoration:line-through;color:rgba(255,255,255,0.35);font-weight:400;">$1,750</span></div>
-          <div style="font-size:10px;color:#fff;">Pharmacy Tech · Admin Asst</div>
+      <div class="tax-banner-prices">
+        <div class="tax-price-item">
+          <div class="tax-price-label">Group A Programs</div>
+          <div class="tax-price-amount">$975 <span style="font-size:13px;text-decoration:line-through;color:rgba(255,255,255,0.35);font-weight:400;">$1,750</span></div>
+          <div class="tax-price-prog">Pharmacy Tech · Admin Asst</div>
         </div>
-        <div style="text-align:center;">
-          <div style="font-size:11px;color:#fff;text-transform:uppercase;letter-spacing:.06em;">Medical Assistant</div>
-          <div style="font-size:22px;font-weight:900;color:#c4b5fd;">$825 <span style="font-size:13px;text-decoration:line-through;color:rgba(255,255,255,0.35);font-weight:400;">$1,750</span></div>
-          <div style="font-size:10px;color:#fff;">Clinical Medical Assistant</div>
+        <div class="tax-price-item">
+          <div class="tax-price-label">Medical Assistant</div>
+          <div class="tax-price-amount">$825 <span style="font-size:13px;text-decoration:line-through;color:rgba(255,255,255,0.35);font-weight:400;">$1,750</span></div>
+          <div class="tax-price-prog">Clinical Medical Assistant</div>
         </div>
-        <div style="text-align:center;">
-          <div style="font-size:11px;color:#fff;text-transform:uppercase;letter-spacing:.06em;">Group B Programs</div>
-          <div style="font-size:22px;font-weight:900;color:#c4b5fd;">$825 <span style="font-size:13px;text-decoration:line-through;color:rgba(255,255,255,0.35);font-weight:400;">$1,450</span></div>
-          <div style="font-size:10px;color:#fff;">Billing · EKG · Phlebotomy</div>
+        <div class="tax-price-item">
+          <div class="tax-price-label">Group B Programs</div>
+          <div class="tax-price-amount">$825 <span style="font-size:13px;text-decoration:line-through;color:rgba(255,255,255,0.35);font-weight:400;">$1,450</span></div>
+          <div class="tax-price-prog">Billing · EKG · Phlebotomy</div>
         </div>
-        <div style="text-align:center;">
-          <div style="font-size:11px;color:#fff;text-transform:uppercase;letter-spacing:.06em;">Dental Program</div>
-          <div style="font-size:22px;font-weight:900;color:#c4b5fd;">$2,499</div>
-          <div style="font-size:10px;color:#fff;">Registered Dental Assistant</div>
+        <div class="tax-price-item">
+          <div class="tax-price-label">Dental Program</div>
+          <div class="tax-price-amount">$2,499</div>
+          <div class="tax-price-prog">Registered Dental Assistant</div>
         </div>
       </div>
-      <a href="https://www.alliedrxtraining.com/tuition-costs" style="background:linear-gradient(135deg,#7c3aed,#9148fc);color:#fff;padding:14px 28px;border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 6px 20px rgba(145,72,252,0.4);">View Payment Plans →</a>
+      <a href="https://www.alliedrxtraining.com/tuition-costs" class="tax-banner-cta">View Payment Plans →</a>
     </div>
+
     <div class="section-top">
       <div>
         <div class="overline">Online Programs</div>
@@ -384,6 +435,7 @@
     </div>
   </div>
 </section>
+
 <!-- Testimonials -->
 <section class="testimonials">
   <div class="test-inner">
@@ -436,31 +488,19 @@
   }
 </style>
 <script>
-  var carIdx = 0;
-  var carTotal = 4;
-  var carAuto;
-  function carRender() {
-    document.getElementById('carTrack').style.transform = 'translateX(-' + (carIdx * 100) + '%)';
-    document.querySelectorAll('.car-dot').forEach(function(d, i) {
-      d.classList.toggle('active', i === carIdx);
-    });
-  }
-  function carMove(dir) {
-    carIdx = (carIdx + dir + carTotal) % carTotal;
-    carRender();
-    resetAuto();
-  }
-  function carGo(i) {
-    carIdx = i;
-    carRender();
-    resetAuto();
-  }
-  function resetAuto() {
-    clearInterval(carAuto);
-    carAuto = setInterval(function(){ carMove(1); }, 8000);
-  }
-  carAuto = setInterval(function(){ carMove(1); }, 8000);
+var carIdx = 0;
+var carTotal = 4;
+var carAuto;
+function carRender() {
+  document.getElementById('carTrack').style.transform = 'translateX(-' + (carIdx * 100) + '%)';
+  document.querySelectorAll('.car-dot').forEach(function(d, i) { d.classList.toggle('active', i === carIdx); });
+}
+function carMove(dir) { carIdx = (carIdx + dir + carTotal) % carTotal; carRender(); resetAuto(); }
+function carGo(i) { carIdx = i; carRender(); resetAuto(); }
+function resetAuto() { clearInterval(carAuto); carAuto = setInterval(function(){ carMove(1); }, 8000); }
+carAuto = setInterval(function(){ carMove(1); }, 8000);
 </script>
+
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner">
@@ -473,5 +513,6 @@
     <div class="price-badge">Learn More: Request Info · Campus Schedule · Tuition · Request Military Funding</div>
   </div>
 </section>
+
 </body>
 </html>
