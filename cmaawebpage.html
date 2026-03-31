@@ -56,6 +56,9 @@ updateActiveNav();
           sidebar.style.setProperty('z-index','100','important');
           var nav = sidebar.querySelector('.sidebar-nav');
           if(nav){nav.style.setProperty('overflow-y','visible','important');nav.style.setProperty('height','auto','important');nav.style.setProperty('flex','none','important');}
+          // Push main content right so it isn't hidden behind the fixed sidebar
+          var main = document.querySelector('.main');
+          if(main){main.style.setProperty('margin-left',w+'px','important');main.style.setProperty('width','calc(100% - '+w+'px)','important');}
         }
         if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fixSidebar);}else{fixSidebar();}
       })();
