@@ -179,4 +179,15 @@ function updateActiveNav(){
 }
 window.addEventListener('scroll',updateActiveNav,{passive:true});
 updateActiveNav();
-</script><div class="mob-enroll-bar"><div class="mob-enroll-bar-text">Start Your Pharmacy Tech Career<span>$99 enrollment fee · 100% online</span></div><a href="https://www.alliedrxtraining.com/register" class="mob-enroll-bar-btn">Enroll Now</a></div></body></html>
+</script><div class="mob-enroll-bar"><div class="mob-enroll-bar-text">Start Your Pharmacy Tech Career<span>$99 enrollment fee · 100% online</span></div><a href="https://www.alliedrxtraining.com/register" class="mob-enroll-bar-btn">Enroll Now</a></div><script>
+(function(){
+  function sendHeight(){
+    var h = document.documentElement.scrollHeight;
+    window.parent.postMessage({type:'iframeHeight',height:h},'*');
+  }
+  sendHeight();
+  window.addEventListener('resize', sendHeight);
+  var obs = new MutationObserver(sendHeight);
+  obs.observe(document.body,{childList:true,subtree:true,attributes:true});
+})();
+</script></body></html>
