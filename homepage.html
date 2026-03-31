@@ -514,5 +514,19 @@ carAuto = setInterval(function(){ carMove(1); }, 8000);
   </div>
 </section>
 
+<script>
+// Auto-resize iframe height for parent Webflow page
+function sendHeight() {
+    var h = document.documentElement.scrollHeight;
+    window.parent.postMessage({ type: 'iframeHeight', height: h }, '*');
+}
+sendHeight();
+window.addEventListener('resize', sendHeight);
+window.addEventListener('load', sendHeight);
+if (window.ResizeObserver) {
+    new ResizeObserver(sendHeight).observe(document.body);
+}
+</script>
+
 </body>
 </html>
