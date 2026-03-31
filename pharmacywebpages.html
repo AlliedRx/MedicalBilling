@@ -181,13 +181,28 @@ window.addEventListener('scroll',updateActiveNav,{passive:true});
 updateActiveNav();
 </script><div class="mob-enroll-bar"><div class="mob-enroll-bar-text">Start Your Pharmacy Tech Career<span>$99 enrollment fee · 100% online</span></div><a href="https://www.alliedrxtraining.com/register" class="mob-enroll-bar-btn">Enroll Now</a></div><script>
 (function(){
-  function sendHeight(){
-    var h = document.documentElement.scrollHeight;
-    window.parent.postMessage({type:'iframeHeight',height:h},'*');
-  }
-  sendHeight();
-  window.addEventListener('resize', sendHeight);
-  var obs = new MutationObserver(sendHeight);
-  obs.observe(document.body,{childList:true,subtree:true,attributes:true});
-})();
+        function sendHeight(){
+          var h = document.documentElement.scrollHeight;
+          window.parent.postMessage({type:'iframeHeight',height:h},'*');
+        }
+        sendHeight();
+        window.addEventListener('resize', sendHeight);
+        var obs = new MutationObserver(sendHeight);
+        obs.observe(document.body,{childList:true,subtree:true,attributes:true});
+        // Sidebar fix: position:fixed keeps sidebar visible when parent Webflow page scrolls
+        function fixSidebar(){
+          var sidebar = document.querySelector('.sidebar');
+          if(!sidebar) return;
+          var w = sidebar.offsetWidth || 248;
+          sidebar.style.setProperty('position','fixed','important');
+          sidebar.style.setProperty('top','0','important');
+          sidebar.style.setProperty('height','100vh','important');
+          sidebar.style.setProperty('width',w+'px','important');
+          sidebar.style.setProperty('overflow-y','auto','important');
+          sidebar.style.setProperty('z-index','100','important');
+          var nav = sidebar.querySelector('.sidebar-nav');
+          if(nav){nav.style.setProperty('overflow-y','visible','important');nav.style.setProperty('height','auto','important');nav.style.setProperty('flex','none','important');}
+        }
+        if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fixSidebar);}else{fixSidebar();}
+      })();
 </script></body></html>
