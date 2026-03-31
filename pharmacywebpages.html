@@ -21,19 +21,63 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f7fc;color:var(--t
 img,iframe,video{max-width:100%}
 
 /* ── LAYOUT ── */
-.page-shell{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;align-items:start}
-.sidebar{position:sticky;top:0;height:100vh;background:#ffffff;border-right:1px solid #e5e7eb;display:flex;flex-direction:column}
+/* Sidebar is fixed; main content gets a left margin equal to sidebar width */
+.page-shell{
+  display:block;
+}
+
+/* ── SIDEBAR ── */
+/* position:fixed keeps it on screen no matter how far the user scrolls */
+.sidebar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:var(--sidebar-w);
+  height:100vh;
+  background:#ffffff;
+  border-right:1px solid #e5e7eb;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  z-index:100;
+}
 .sidebar::-webkit-scrollbar{width:4px}
 .sidebar::-webkit-scrollbar-thumb{background:#9148fc40;border-radius:2px}
-.sidebar-header{padding:1rem 1.25rem .6rem;border-bottom:1px solid #f0ebf7}
+.sidebar-header{
+  padding:1rem 1.25rem .6rem;
+  border-bottom:1px solid #f0ebf7;
+  flex-shrink:0;       /* never compress the header */
+}
 .sidebar-header h4{font-size:.7rem;font-weight:700;color:var(--purple);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
 .sidebar-header p{font-size:.85rem;color:#64748b;font-weight:500}
-.sidebar-nav{flex:1;overflow-y:auto;list-style:none;padding:.5rem 0;min-height:0;scrollbar-width:thin}
+
+/* Nav gets all the leftover vertical space and scrolls */
+.sidebar-nav{
+  flex:1;
+  overflow-y:auto;
+  list-style:none;
+  padding:.5rem 0;
+  min-height:0;        /* CRITICAL: lets flex child shrink below natural height */
+  scrollbar-width:thin;
+}
 .sidebar-nav li a{display:flex;align-items:center;gap:.5rem;color:#64748b;text-decoration:none;padding:.5rem 1.25rem;font-size:.82rem;font-weight:500;border-left:3px solid transparent;transition:all .2s}
 .sidebar-nav li a:hover{color:var(--navy2);padding-left:1.5rem}
 .sidebar-nav li a.active{color:var(--purple);font-weight:700;border-left-color:var(--purple);background:#9148fc0f;padding-left:1.5rem}
 .sidebar-nav li a .nav-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;opacity:.5}
-.sidebar-enroll{margin:.6rem .75rem .75rem;flex-shrink:0;background:var(--navy);border:1.5px solid #9148fc40;border-radius:12px;padding:.75rem;box-shadow:0 4px 20px #0003}
+
+/* Enroll box sits at bottom — shrinks + scrolls if viewport is short */
+.sidebar-enroll{
+  margin:.6rem .75rem .75rem;
+  flex-shrink:1;          /* ALLOW it to shrink when viewport is short */
+  min-height:0;           /* let flexbox compress it */
+  overflow-y:auto;        /* scroll internally if still too tall */
+  background:var(--navy);
+  border:1.5px solid #9148fc40;
+  border-radius:12px;
+  padding:.75rem;
+  box-shadow:0 4px 20px #0003;
+  scrollbar-width:thin;
+}
 .sidebar-enroll h3{font-size:.8rem;font-weight:800;color:#fff;margin-bottom:.5rem;line-height:1.3}
 .sidebar-enroll-price{background:#0000004d;border-radius:8px;padding:.5rem .75rem;text-align:center;margin-bottom:.5rem}
 .sidebar-enroll-price .label{color:var(--slate);font-size:.68rem;font-weight:600;margin-bottom:.1rem}
@@ -45,7 +89,8 @@ img,iframe,video{max-width:100%}
 .btn-outline{display:block;border:1.5px solid #9148fc66;color:var(--lavender);text-decoration:none;text-align:center;padding:7px 16px;border-radius:100px;font-weight:600;font-size:.78rem;transition:all .2s;margin-bottom:.35rem}
 .btn-outline:hover{background:#9148fc26;color:#fff}
 .sidebar-note{font-size:.67rem;color:var(--slate);text-align:center;line-height:1.4}
-.main{background:#fff}
+
+.main{background:#fff;margin-left:var(--sidebar-w)}
 
 /* ── HERO ── */
 .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 45%,#0c1640 100%);position:relative;overflow:hidden;padding:4rem 4.5rem 4.5rem}
@@ -222,15 +267,35 @@ img,iframe,video{max-width:100%}
 .mob-enroll-bar-btn{background:var(--gp);color:#fff;text-decoration:none;padding:12px 20px;border-radius:100px;font-weight:700;font-size:.85rem;white-space:nowrap;flex-shrink:0;min-height:44px;display:flex;align-items:center}
 
 /* ════════════════════════════════
+   SHORT VIEWPORTS — sidebar compact
+   ════════════════════════════════ */
+@media(max-height:750px){
+  .sidebar-enroll{padding:.5rem .6rem;}
+  .sidebar-enroll h3{font-size:.72rem;margin-bottom:.35rem;}
+  .sidebar-enroll-price{padding:.35rem .6rem;margin-bottom:.35rem;}
+  .sidebar-enroll-price .amount{font-size:1rem;}
+  .sidebar-enroll-price .label,.sidebar-enroll-price .sub{font-size:.62rem;}
+  .sidebar-badge{font-size:.62rem;padding:.25rem .4rem;margin-bottom:.35rem;}
+  .btn-enroll{padding:7px 12px;font-size:.75rem;margin-bottom:.25rem;}
+  .btn-outline{padding:5px 12px;font-size:.72rem;margin-bottom:.25rem;}
+  .sidebar-note{font-size:.62rem;}
+  .sidebar-nav li a{padding:.38rem 1.25rem;font-size:.78rem;}
+}
+@media(max-height:620px){
+  .sidebar-header{padding:.6rem 1rem .4rem;}
+  .sidebar-enroll-price{display:none;}  /* hide price box on very short screens */
+  .sidebar-badge{display:none;}
+  .sidebar-note{display:none;}
+}
+
+/* ════════════════════════════════
    RESPONSIVE — TABLET (≤ 900px)
    ════════════════════════════════ */
 @media(max-width:900px){
-  .page-shell{grid-template-columns:1fr}
   .sidebar{display:none}
+  .main{margin-left:0;padding-bottom:72px}
   .mobile-header{display:flex}
   .mob-enroll-bar{display:flex}
-  .main{padding-bottom:72px}
-
   .hero{padding:2rem 1.5rem 3rem}
   .hero-inner{grid-template-columns:1fr;gap:1.75rem}
   .hero-image-panel{display:none}
@@ -238,25 +303,20 @@ img,iframe,video{max-width:100%}
   .hero-stats{gap:1.5rem}
   .hero-ctas{flex-direction:column;align-items:stretch}
   .hero-ctas a{width:100%;text-align:center;padding:14px 20px}
-
   .section{padding:2.5rem 1.5rem}
   .section-title{font-size:1.65rem}
-
   .overview-grid{grid-template-columns:1fr 1fr}
   .modules-grid{grid-template-columns:1fr 1fr}
   .hours-grid{grid-template-columns:repeat(3,1fr)}
   .passrate-grid{grid-template-columns:1fr 1fr}
   .benefits-grid{grid-template-columns:1fr 1fr}
   .approvals-grid{grid-template-columns:1fr 1fr}
-
   .platform-section.section{padding:2rem 1.5rem}
   .platform-inner{grid-template-columns:1fr;gap:1.5rem}
   .platform-copy{padding-top:0}
-
   .bottom-cta{padding:3rem 1.5rem}
   .bottom-cta h2{font-size:1.9rem}
 }
-
 /* ════════════════════════════════
    RESPONSIVE — MOBILE (≤ 600px)
    ════════════════════════════════ */
@@ -268,64 +328,50 @@ img,iframe,video{max-width:100%}
   .hero-stats{gap:.85rem;flex-wrap:wrap;margin-bottom:1.5rem}
   .hero-stat .num{font-size:1.25rem}
   .hero-stat .lbl{font-size:.7rem}
-
   .section{padding:2rem 1rem}
   .section-title{font-size:1.4rem}
   .section-sub{font-size:.875rem;margin-bottom:1.75rem}
-
   .overview-grid{grid-template-columns:1fr}
   .overview-card{padding:1.1rem 1.2rem}
   .overview-card .oc-value{font-size:1rem}
-
   .modules-grid{grid-template-columns:1fr}
   .module-item{padding:.85rem 1rem}
-
   .hours-grid{grid-template-columns:1fr}
   .hour-card{padding:1.4rem 1.25rem}
   .hour-num{font-size:2rem}
-
   .passrate-grid{grid-template-columns:1fr}
   .passrate-pct{font-size:2.8rem}
   .passrate-card{padding:1.5rem 1rem}
-
   .benefits-grid{grid-template-columns:1fr}
   .benefit-item{padding:1rem 1.1rem}
   .benefit-text{font-size:.82rem}
   .benefit-sub{font-size:.75rem}
-
   .admissions-list .admission-text{font-size:.875rem}
   .admissions-list .admission-sub{font-size:.8rem}
   .admission-item{padding:.85rem 1rem}
-
   .approvals-grid{grid-template-columns:1fr 1fr}
-
   .steps-track{flex-direction:column;gap:1.25rem}
   .steps-track::before{display:none}
   .step{padding:0;flex-direction:row;align-items:flex-start;gap:.85rem}
   .step-num{width:44px;height:44px;font-size:.95rem;margin-bottom:0;flex-shrink:0}
   .step-label{font-size:.875rem}
-
   .platform-section.section{padding:1.75rem 1rem}
   .tab-pills{gap:.35rem}
   .platform-tab{padding:.5rem .85rem;font-size:.78rem}
   .content-frame{height:280px}
   .sim-play-btn{width:56px;height:56px}
-
   .course-header{padding:1rem 1.25rem}
   .course-body{padding:1rem 1.25rem}
   .course-body p{font-size:.82rem}
   .course-title{font-size:.95rem}
-
   .bottom-cta{padding:2.5rem 1rem}
   .bottom-cta h2{font-size:1.5rem}
   .bottom-cta .cta-btns{flex-direction:column;align-items:center}
   .bottom-cta .cta-btns a{width:100%;text-align:center;padding:14px 20px}
-
   .hero-accred-strip{font-size:.65rem;padding:.45rem .7rem;gap:.4rem}
   .platform-float-badge{font-size:.7rem;padding:.5rem .85rem;left:12px}
   .mobile-header{height:60px}
 }
-
 /* ════════════════════════════════
    RESPONSIVE — SMALL (≤ 380px)
    ════════════════════════════════ */
@@ -342,17 +388,13 @@ img,iframe,video{max-width:100%}
 }
 </style></head>
 <body>
-
 <svg style="display:none"><defs><symbol id="ico-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
-
 <!-- MOBILE HEADER -->
 <header class="mobile-header">
   <span class="mobile-header-logo">Allied<em>Rx</em> Institute</span>
   <a href="https://www.alliedrxtraining.com/register" class="mobile-header-enroll">Enroll — $99</a>
 </header>
-
 <div class="page-shell">
-
   <!-- SIDEBAR (desktop only) -->
   <aside class="sidebar">
     <div class="sidebar-header">
@@ -384,10 +426,8 @@ img,iframe,video{max-width:100%}
       <p class="sidebar-note">Enroll in minutes. Choose your tuition plan after registration.</p>
     </div>
   </aside>
-
   <!-- MAIN CONTENT -->
   <main class="main">
-
     <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
@@ -416,7 +456,6 @@ img,iframe,video{max-width:100%}
         </div>
       </div>
     </section>
-
     <!-- OVERVIEW -->
     <section class="section bg-white" id="overview">
       <span class="section-label">Program Overview</span>
@@ -430,7 +469,6 @@ img,iframe,video{max-width:100%}
       <p class="program-desc">We provide a top training program that helps you step into this fast-growing healthcare job. As a pharmacy technician, you'll work with pharmacists and other health workers. You might work in a retail pharmacy or a healthcare system. Our online pharmacy technician training program teaches many important topics. You'll learn about medicine orders, how a pharmacy runs, and how to care for patients. You'll also learn to handle insurance claims, help give out medications, and provide great service to patients.</p>
       <p class="program-desc">After finishing our pharmacy tech program you'll be ready to take the Pharmacy Technician Certification Board Exam (PTCB) and or NHA Board Exam ExCPT. This certificate is recognized all over the country and shows you're a skilled pharmacy technician. With this certificate, you'll have more job options and chances to advance your career.</p>
     </section>
-
     <!-- ENROLL STEPS -->
     <section class="section bg-white" id="enroll-steps">
       <span class="section-label">Enrollment Process</span>
@@ -460,7 +498,6 @@ img,iframe,video{max-width:100%}
         </div>
       </div>
     </section>
-
     <!-- PLATFORM -->
     <section class="section platform-section" id="platform">
       <div class="plat-header">
@@ -543,7 +580,6 @@ img,iframe,video{max-width:100%}
         </div>
       </div>
     </section>
-
     <!-- COURSES -->
     <section class="section bg-lav" id="courses">
       <span class="section-label">Curriculum</span>
@@ -564,7 +600,6 @@ img,iframe,video{max-width:100%}
         </div>
       </div>
     </section>
-
     <!-- MODULES -->
     <section class="section bg-white" id="modules">
       <span class="section-label">Learning Outcomes</span>
@@ -585,7 +620,6 @@ img,iframe,video{max-width:100%}
         <div class="module-item"><div class="module-num">12</div><div class="module-text">Drug References Study Format</div></div>
       </div>
     </section>
-
     <!-- HOURS -->
     <section class="section bg-dark" id="hours">
       <span class="section-label" style="color:var(--lavender);">Program Structure</span>
@@ -597,7 +631,6 @@ img,iframe,video{max-width:100%}
         <div class="hour-card"><div class="hour-num">140</div><div class="hour-label">Clinical</div><div class="hour-sub">Supervised pharmacy externship</div></div>
       </div>
     </section>
-
     <!-- PASS RATES -->
     <section class="section bg-white" id="passrates">
       <span class="section-label">Outcomes</span>
@@ -608,7 +641,6 @@ img,iframe,video{max-width:100%}
         <div class="passrate-card"><div class="passrate-exam">ExCPT Exam</div><div class="passrate-pct">100%</div><div class="passrate-label">Program Pass Rate</div><div class="passrate-badge">35% above national average</div></div>
       </div>
     </section>
-
     <!-- BENEFITS -->
     <section class="section bg-lav" id="benefits">
       <span class="section-label">Why AlliedRx</span>
@@ -626,7 +658,6 @@ img,iframe,video{max-width:100%}
         <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><div class="benefit-text">Walgreens Clinical Externship</div><div class="benefit-sub">Hands-on experience at partnered pharmacy locations*</div></div></div>
       </div>
     </section>
-
     <!-- ADMISSIONS -->
     <section class="section bg-white" id="admissions">
       <span class="section-label">Admissions</span>
@@ -642,7 +673,6 @@ img,iframe,video{max-width:100%}
         <div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">High School Diploma or GED</div><div class="admission-sub">Applicants must be attending high school, have a GED certificate, or be a high school graduate</div></div></div>
       </div>
     </section>
-
     <!-- APPROVALS -->
     <section class="section bg-lav" id="approvals">
       <span class="section-label">Accreditation &amp; Approvals</span>
@@ -664,7 +694,6 @@ img,iframe,video{max-width:100%}
         <a class="approval-tag" href="https://floridaspharmacy.gov/" target="_blank" rel="noopener">Florida Board of Pharmacy</a>
       </div>
     </section>
-
     <!-- BOTTOM CTA -->
     <section class="bottom-cta">
       <h2>Launch Your Pharmacy Tech Career</h2>
@@ -673,10 +702,8 @@ img,iframe,video{max-width:100%}
         <a href="https://www.alliedrxtraining.com/military" class="ghost">Military Benefits</a>
       </div>
     </section>
-
   </main>
 </div>
-
 <!-- MOBILE STICKY ENROLL BAR -->
 <div class="mob-enroll-bar">
   <div class="mob-enroll-bar-text">
@@ -685,7 +712,6 @@ img,iframe,video{max-width:100%}
   </div>
   <a href="https://www.alliedrxtraining.com/register" class="mob-enroll-bar-btn">Enroll Now</a>
 </div>
-
 <script>
 function switchTab(n){
   document.querySelectorAll('.platform-tab').forEach(function(t,i){t.classList.toggle('active',i===n)});
@@ -721,5 +747,4 @@ function updateActiveNav(){
 window.addEventListener('scroll',updateActiveNav,{passive:true});
 updateActiveNav();
 </script>
-
 </body></html>
