@@ -1,153 +1,694 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pharmacy Technician Program | AlliedRx Institute of Healthcare</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box}:root{--navy:#080d1a;--navy2:#0a0f28;--purple:#9148fc;--purple-d:#7c3aed;--lavender:#c4b5fd;--lav-light:#f0ebff;--blue:#3b82f6;--blue-light:#60a5fa;--slate:#94a3b8;--text:#1f2937;--sidebar-w:240px;--gp:linear-gradient(135deg,#7c3aed,#9148fc);--gb:linear-gradient(135deg,#60a5fa,#9148fc)}html{scroll-behavior:smooth}body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f7fc;color:var(--text);line-height:1.65}.page-shell{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;align-items:start}.sidebar{position:sticky;top:0;height:100vh;background:#ffffff;border-right:1px solid #e5e7eb;display:flex;flex-direction:column}.sidebar::-webkit-scrollbar{width:4px}.sidebar::-webkit-scrollbar-thumb{background:#9148fc40;border-radius:2px}.sidebar-header{padding:1rem 1.25rem .6rem;border-bottom:1px solid #f0ebf7}.sidebar-header h4{font-size:.7rem;font-weight:700;color:var(--purple);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}.sidebar-header p{font-size:.85rem;color:#64748b;font-weight:500}.sidebar-nav{flex:1;overflow-y:auto;list-style:none;padding:.5rem 0;min-height:0;scrollbar-width:thin}.sidebar-nav li a{display:flex;align-items:center;gap:.5rem;color:#64748b;text-decoration:none;padding:.5rem 1.25rem;font-size:.82rem;font-weight:500;border-left:3px solid transparent;transition:all .2s}.sidebar-nav li a:hover{color:var(--navy2);padding-left:1.5rem}.sidebar-nav li a.active{color:var(--purple);font-weight:700;border-left-color:var(--purple);background:#9148fc0f;padding-left:1.5rem}.sidebar-nav li a .nav-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;opacity:.5}.sidebar-enroll{margin:.6rem .75rem .75rem;flex-shrink:0;background:var(--navy);border:1.5px solid #9148fc40;border-radius:12px;padding:.75rem;box-shadow:0 4px 20px #0003}.sidebar-enroll h3{font-size:.8rem;font-weight:800;color:#fff;margin-bottom:.5rem;line-height:1.3}.sidebar-enroll-price{background:#0000004d;border-radius:8px;padding:.5rem .75rem;text-align:center;margin-bottom:.5rem}.sidebar-enroll-price .label{color:var(--slate);font-size:.68rem;font-weight:600;margin-bottom:.1rem}.sidebar-enroll-price .amount{font-size:1.25rem;font-weight:900;color:#fff}.sidebar-enroll-price .sub{font-size:.68rem;color:var(--slate);margin-top:.1rem}.sidebar-badge{background:#60a5fa14;border:1px solid #60a5fa40;color:var(--blue-light);font-size:.68rem;font-weight:600;padding:.35rem .5rem;border-radius:6px;text-align:center;margin-bottom:.5rem;line-height:1.3}.btn-enroll{display:block;background:var(--gp);color:#fff;text-decoration:none;text-align:center;padding:9px 16px;border-radius:100px;font-weight:700;font-size:.82rem;transition:opacity .2s,transform .2s;margin-bottom:.35rem}.btn-enroll:hover{opacity:.9;transform:scale(1.02)}.btn-outline{display:block;border:1.5px solid #9148fc66;color:var(--lavender);text-decoration:none;text-align:center;padding:7px 16px;border-radius:100px;font-weight:600;font-size:.78rem;transition:all .2s;margin-bottom:.35rem}.btn-outline:hover{background:#9148fc26;color:#fff}.sidebar-note{font-size:.67rem;color:var(--slate);text-align:center;line-height:1.4}.main{background:#fff}.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 45%,#0c1640 100%);position:relative;overflow:hidden;padding:4rem 4.5rem 4.5rem}.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:3.5rem;align-items:center;position:relative;z-index:1;max-width:1200px}.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:#9148fc26;border:1.5px solid #9148fc59;color:var(--lavender);padding:.4rem 1rem;border-radius:100px;font-size:.8rem;font-weight:700;letter-spacing:.03em;margin-bottom:1.25rem}.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--purple)}.hero h1{font-size:2.8rem;font-weight:900;color:#fff;line-height:1.15;margin-bottom:1.25rem;letter-spacing:-.02em}.hero h1 em{font-style:normal;background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hero-desc{color:#94a3b8;font-size:1rem;line-height:1.8;margin-bottom:2rem;max-width:520px}.hero-stats{display:flex;gap:2rem;flex-wrap:nowrap;margin-bottom:2rem;align-items:flex-start}.hero-stat{display:flex;flex-direction:column;flex-shrink:0}.hero-stat .num{font-size:1.6rem;font-weight:900;background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hero-stat .lbl{font-size:.78rem;color:var(--slate);font-weight:600;text-transform:uppercase;letter-spacing:.05em}.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}.hero-ctas .btn-primary-hero{background:var(--gp);color:#fff;text-decoration:none;padding:13px 28px;border-radius:100px;font-weight:700;font-size:.95rem;transition:opacity .2s,transform .2s;box-shadow:0 4px 24px #9148fc59}.hero-ctas .btn-primary-hero:hover{opacity:.9;transform:translateY(-1px)}.hero-ctas .btn-ghost{border:1.5px solid #ffffff33;color:#fff;text-decoration:none;padding:13px 28px;border-radius:100px;font-weight:600;font-size:.95rem;transition:all .2s}.hero-ctas .btn-ghost:hover{background:#ffffff12}.hero-image-panel{position:relative}.hero-image-wrap{border-radius:20px;overflow:hidden;border:1.5px solid #9148fc40;box-shadow:0 20px 60px #00000080;aspect-ratio:3/4;background:linear-gradient(160deg,#0e1230,#1a0e34);display:flex;align-items:center;justify-content:center}.hero-image-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center}.hero-accred-strip{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);max-width:90%;background:#fff;border-radius:12px;padding:.6rem 1rem;display:flex;align-items:center;gap:.65rem;white-space:nowrap;box-shadow:0 4px 20px #00000040;font-size:.75rem;font-weight:700;color:var(--navy2)}.hero-accred-strip .shield{width:24px;height:24px;border-radius:6px;background:var(--gp);display:flex;align-items:center;justify-content:center;flex-shrink:0}.hero-accred-strip .shield svg{width:14px;height:14px}.section{padding:3.5rem 4.5rem;border-bottom:1px solid #f0ebf7}.section.bg-lav{background:var(--lav-light)}.section.bg-dark{background:var(--navy2)}.section.bg-white{background:#fff}.section-label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:.6rem}.section-title{font-size:1.9rem;font-weight:900;color:var(--navy2);line-height:1.2;margin-bottom:1rem;letter-spacing:-.02em}.section-title.light{color:#fff}.section-sub{color:#64748b;font-size:.95rem;line-height:1.7;max-width:680px;margin-bottom:2.5rem}.section-sub.light{color:var(--slate)}.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:.5rem}.overview-card{background:#f8f7fc;border-radius:14px;padding:1.4rem 1.5rem;border:1.5px solid #ede9f7}.overview-card .oc-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--purple);margin-bottom:.4rem}.overview-card .oc-value{font-size:1.15rem;font-weight:800;color:var(--navy2)}.overview-card .oc-sub{font-size:.82rem;color:#64748b;margin-top:.2rem}.program-desc{font-size:.97rem;color:#374151;line-height:1.8;margin-bottom:2rem}.modules-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.module-item{display:flex;align-items:flex-start;gap:.75rem;background:#fff;border-radius:12px;padding:1rem 1.1rem;border:1.5px solid #ede9f7}.module-num{width:28px;height:28px;border-radius:8px;background:var(--gp);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:#fff;flex-shrink:0;margin-top:.1rem}.module-text{font-size:.875rem;font-weight:600;color:var(--navy2);line-height:1.4}.platform-section{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 60%,#100a2e 100%);position:relative;overflow:hidden}.platform-inner{display:grid;grid-template-columns:1fr 1.75fr;gap:2rem;align-items:start;position:relative;z-index:1}.platform-copy{padding-top:4.5rem}.platform-section.section{padding-top:2.5rem;padding-bottom:2.5rem}.platform-copy .section-label{color:var(--lavender)}.platform-copy .section-title{color:#fff}.platform-copy .section-sub{color:var(--slate);margin-bottom:1rem}.platform-features{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem}.platform-feature{display:flex;align-items:flex-start;gap:.7rem;background:#ffffff14;border:1px solid #ffffff26;border-radius:10px;padding:.65rem .9rem;cursor:pointer;transition:all .25s}.platform-feature:hover,.platform-feature.active{background:#9148fc1a;border-color:#9148fc59}.platform-feature.active .pf-icon{background:var(--gp)}.pf-icon{width:30px;height:30px;border-radius:8px;background:#9148fc26;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .25s;color:var(--lavender)}.platform-feature.active .pf-icon{color:#fff}.pf-text strong{display:block;font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.1rem}.pf-text span{font-size:.76rem;color:var(--slate);line-height:1.4}.platform-screen{position:relative}.platform-browser{background:#1e2235;border-radius:16px;overflow:hidden;border:1.5px solid #9148fc33;box-shadow:0 24px 64px #00000099}.platform-browser-bar{background:#151929;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid #ffffff0f}.browser-dot{width:10px;height:10px;border-radius:50%}.browser-dot:nth-child(1){background:#ff5f57}.browser-dot:nth-child(2){background:#febc2e}.browser-dot:nth-child(3){background:#28c840}.browser-url{margin-left:.75rem;background:#ffffff0f;border-radius:6px;padding:.3rem .75rem;font-size:.72rem;color:#64748b;font-family:monospace;flex:1}.platform-browser img{width:100%;display:block}.platform-float-badge{position:absolute;bottom:-16px;left:24px;background:#fff;border-radius:12px;padding:.65rem 1.1rem;display:flex;align-items:center;gap:.6rem;box-shadow:0 8px 24px #0000004d;font-size:.78rem;font-weight:700;color:var(--navy2);white-space:nowrap}.platform-float-badge .live-dot{width:8px;height:8px;border-radius:50%;background:#10b981;animation:pulse-dot 1.5s ease-in-out infinite}@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}.course-cards{display:flex;flex-direction:column;gap:1.25rem}.course-card{background:#fff;border-radius:16px;border:1.5px solid #ede9f7;overflow:hidden}.course-header{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;background:#f8f7fc;border-bottom:1.5px solid #ede9f7}.course-num{width:36px;height:36px;border-radius:10px;background:var(--gp);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;color:#fff;flex-shrink:0}.course-title{font-size:1rem;font-weight:800;color:var(--navy2)}.course-body{padding:1.25rem 1.5rem}.course-body p{font-size:.875rem;color:#374151;line-height:1.7}.hours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:.5rem}.hour-card{background:linear-gradient(160deg,#0e1230,#1a0e34);border-radius:16px;padding:1.75rem 1.5rem;text-align:center;border:1.5px solid #9148fc33}.hour-num{font-size:2.5rem;font-weight:900;background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.4rem}.hour-label{color:#fff;font-size:.95rem;font-weight:700;margin-bottom:.25rem}.hour-sub{color:var(--slate);font-size:.8rem}.passrate-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}.passrate-card{background:#fff;border-radius:20px;border:1.5px solid #ede9f7;padding:2rem;text-align:center;position:relative;overflow:hidden}.passrate-exam{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:.5rem}.passrate-pct{font-size:3.5rem;font-weight:900;background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.4rem}.passrate-label{font-size:.9rem;font-weight:700;color:var(--navy2);margin-bottom:.5rem}.passrate-badge{display:inline-block;background:#05966914;border:1px solid #05966933;color:#059669;font-size:.78rem;font-weight:700;padding:.35rem .85rem;border-radius:100px}.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.benefit-item{display:flex;align-items:flex-start;gap:.85rem;padding:1.1rem 1.25rem;background:#fff;border-radius:12px;border:1.5px solid #ede9f7}.benefit-icon{width:36px;height:36px;border-radius:10px;background:#9148fc14;border:1px solid #9148fc33;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--purple)}.benefit-icon svg{width:18px;height:18px}.benefit-text{font-size:.875rem;font-weight:600;color:var(--navy2);line-height:1.4}.benefit-sub{font-size:.8rem;color:#64748b;margin-top:.2rem}.admissions-list{display:flex;flex-direction:column;gap:.75rem}.admission-item{display:flex;align-items:flex-start;gap:.85rem;padding:1rem 1.25rem;background:#9148fc0d;border:1px solid #9148fc26;border-radius:12px}.admission-check{width:22px;height:22px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem}.admission-check svg{width:12px;height:12px}.admission-text{font-size:.9rem;font-weight:600;color:var(--navy2)}.admission-sub{font-size:.82rem;color:#64748b;margin-top:.15rem}.approvals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.85rem}.approval-tag{text-decoration:none;background:#fff;border:1.5px solid #ede9f7;border-radius:10px;padding:.75rem 1rem;font-size:.82rem;font-weight:600;color:var(--navy2);display:flex;align-items:center;gap:.5rem;transition:border-color .2s}.approval-tag:hover{border-color:rgba(145,72,252,.3)}.approval-tag .approval-dot{width:8px;height:8px;border-radius:50%;background:var(--gp);flex-shrink:0}.steps-track{display:flex;gap:0;position:relative;margin-top:.5rem}.steps-track::before{content:'';position:absolute;top:28px;left:28px;right:28px;height:2px;background:linear-gradient(90deg,var(--purple-d),var(--blue-light));z-index:0}.step{flex:1;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:0 1rem;position:relative;z-index:1}.step-num{width:56px;height:56px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#fff;margin-bottom:1rem;box-shadow:0 4px 20px #9148fc66;border:3px solid #fff}.step:nth-child(2) .step-num{background:linear-gradient(135deg,#1d4ed8,var(--blue))}.step:nth-child(3) .step-num{background:linear-gradient(135deg,#0369a1,var(--blue-light))}.step-label{font-size:.9rem;font-weight:800;color:var(--navy2);margin-bottom:.35rem}.step-sub{font-size:.8rem;color:#64748b;line-height:1.5}.bottom-cta{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 50%,#0c1640 100%);padding:4rem 4.5rem;text-align:center;position:relative;overflow:hidden}.bottom-cta h2{font-size:2.2rem;font-weight:900;color:#fff;margin-bottom:.75rem;letter-spacing:-.02em;position:relative}.bottom-cta .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative}.bottom-cta .cta-btns a.primary{background:var(--gp);color:#fff;text-decoration:none;padding:14px 32px;border-radius:100px;font-weight:700;font-size:1rem;box-shadow:0 4px 24px #9148fc66;transition:opacity .2s,transform .2s}.bottom-cta .cta-btns a.primary:hover{opacity:.9;transform:translateY(-1px)}.bottom-cta .cta-btns a.ghost{border:1.5px solid #ffffff33;color:#fff;text-decoration:none;padding:14px 32px;border-radius:100px;font-weight:600;font-size:1rem;transition:all .2s}.bottom-cta .cta-btns a.ghost:hover{background:#ffffff0f}.platform-tab{background:#ffffff0f;border:1.5px solid #ffffff1f;color:var(--slate);padding:.65rem 1.4rem;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .25s;display:flex;align-items:center;gap:.5rem}.platform-tab:hover{background:#9148fc1f;color:#fff;border-color:rgba(145,72,252,.3)}.platform-tab.active{background:linear-gradient(135deg,#7c3aed40,#9148fc40);border-color:#9148fc80;color:#fff}/* ── TABLET (≤900px) ── */.tab-pills{display:flex;justify-content:center;gap:.6rem;margin-bottom:1.5rem;position:relative;z-index:1;flex-wrap:wrap}.pulse-live{width:7px;height:7px;border-radius:50%;background:#10b981;animation:pulse-dot 1.5s ease-in-out infinite;display:inline-block;flex-shrink:0;}.icon-svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}.sim-overlay{position:absolute;inset:0;background:#080d1a8c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}.sim-play-btn{width:72px;height:72px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px #9148fc33;transition:transform .2s}.live-badge{display:inline-flex;align-items:center;gap:.5rem;background:#10b9821f;border:1px solid #10b98247;color:#34d399;padding:.35rem .85rem;border-radius:100px;font-size:.75rem;font-weight:700}.tab-divider{background:#151929;border-top:1px solid #9148fc33;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem}.tab-divider-label{font-size:.72rem;font-weight:700;color:#94a3b8;letter-spacing:.05em;text-transform:uppercase}.btn-access{display:inline-block;margin-top:1rem;padding:11px 24px;background:var(--gp);color:#fff;text-decoration:none;border-radius:100px;font-weight:700;font-size:.88rem;box-shadow:0 4px 20px #9148fc59;transition:opacity .2s}.plat-header{text-align:center;margin-bottom:1.5rem;position:relative;z-index:1}.plat-sub{color:var(--slate);font-size:.9rem;max-width:520px;margin:0 auto;line-height:1.6}.content-frame{width:100%;height:400px;border:none;display:block}.sim-title{color:#fff;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}.sim-subtitle{color:rgba(196,181,253,.8);font-size:.8rem;margin-top:.25rem}.approval-tag::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gp);flex-shrink:0}.mobile-header{display:none;position:sticky;top:0;z-index:300;background:var(--navy);border-bottom:1px solid #9148fc33;padding:0 1.25rem;height:56px;align-items:center;justify-content:space-between}.mobile-header-logo{font-size:1rem;font-weight:800;color:#fff;letter-spacing:-.02em}.mobile-header-logo em{font-style:normal;color:var(--purple)}.mobile-header-enroll{background:var(--gp);color:#fff;text-decoration:none;padding:7px 16px;border-radius:100px;font-weight:700;font-size:.8rem}.mob-enroll-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;background:var(--navy);border-top:1px solid #9148fc40;padding:.75rem 1.25rem;align-items:center;justify-content:space-between;gap:1rem}.mob-enroll-bar-text{color:#fff;font-size:.85rem;font-weight:700;line-height:1.3}.mob-enroll-bar-text span{display:block;color:var(--slate);font-size:.72rem;font-weight:400}.mob-enroll-bar-btn{background:var(--gp);color:#fff;text-decoration:none;padding:10px 20px;border-radius:100px;font-weight:700;font-size:.85rem;white-space:nowrap;flex-shrink:0}@media(max-width:900px){.page-shell{grid-template-columns:1fr}.sidebar{display:none}.hero{padding:2.5rem 2rem 3rem}.hero-inner{grid-template-columns:1fr;gap:2rem}.hero-image-panel{display:none}.hero h1{font-size:2.2rem}.hero-stats{gap:1.25rem}.section{padding:2.5rem 2rem}.platform-inner{grid-template-columns:1fr;gap:1.5rem}.platform-copy{padding-top:0}.platform-section.section{padding:2rem}.overview-grid{grid-template-columns:1fr 1fr}.modules-grid{grid-template-columns:1fr 1fr}.hours-grid{grid-template-columns:repeat(3,1fr)}.passrate-grid{grid-template-columns:1fr 1fr}.benefits-grid{grid-template-columns:1fr 1fr}.bottom-cta{padding:3rem 2rem}.hero-ctas{flex-direction:column;align-items:flex-start}.hero-ctas a{width:100%;text-align:center}}@media(max-width:600px){.hero{padding:1.75rem 1.25rem 2.5rem}.hero h1{font-size:1.85rem}.hero-badge{font-size:.72rem}.hero-desc{font-size:.9rem}.hero-stats{gap:1rem;flex-wrap:wrap}.hero-stat .num{font-size:1.3rem}.section{padding:2rem 1.25rem}.section-title{font-size:1.5rem}.overview-grid{grid-template-columns:1fr}.modules-grid{grid-template-columns:1fr}.hours-grid{grid-template-columns:1fr}.passrate-grid{grid-template-columns:1fr}.benefits-grid{grid-template-columns:1fr}.steps-track{flex-direction:column;gap:1.5rem}.steps-track::before{display:none}.step{padding:0}.platform-section.section{padding:1.5rem 1.25rem}.platform-inner{grid-template-columns:1fr}.tab-pills{gap:.4rem}.platform-tab{padding:.5rem .9rem;font-size:.8rem}.approvals-grid{grid-template-columns:1fr 1fr}.bottom-cta{padding:2.5rem 1.25rem}.bottom-cta h2{font-size:1.6rem}.bottom-cta .cta-btns{flex-direction:column;align-items:center}.bottom-cta .cta-btns a{width:100%;text-align:center}.passrate-pct{font-size:2.8rem}.course-body p{font-size:.82rem}.hero-accred-strip{font-size:.68rem;padding:.5rem .75rem;gap:.4rem}.platform-float-badge{font-size:.7rem;padding:.5rem .85rem}}@media(max-width:380px){.hero h1{font-size:1.6rem}.section-title{font-size:1.35rem}.approvals-grid{grid-template-columns:1fr}.tab-pills{flex-direction:column;align-items:center}}@media(max-width:900px){.mobile-header{display:flex}}@media(max-width:600px){.content-frame{height:320px}}@media(max-width:768px){.platform-inner{grid-template-columns:1fr}.platform-copy{padding-top:0}.hero h1{font-size:2rem}.hero-stats{gap:1.5rem}}@media(max-width:900px){.mob-enroll-bar{display:flex}.main{padding-bottom:72px}}/* ── COMPREHENSIVE MOBILE RESPONSIVE FIXES ── */
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pharmacy Technician Program | AlliedRx Institute of Healthcare</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden}
+:root{
+  --navy:#080d1a;
+  --navy2:#0a0f28;
+  --purple:#9148fc;
+  --purple-d:#7c3aed;
+  --lavender:#c4b5fd;
+  --lav-light:#f0ebff;
+  --blue:#3b82f6;
+  --blue-light:#60a5fa;
+  --slate:#94a3b8;
+  --text:#1f2937;
+  --sidebar-w:240px;
+  --gp:linear-gradient(135deg,#7c3aed,#9148fc);
+  --gb:linear-gradient(135deg,#60a5fa,#9148fc)
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f7fc;color:var(--text);line-height:1.65}
+img,iframe,video{max-width:100%}
 
-/* Prevent horizontal overflow globally */
-html,body{overflow-x:hidden;max-width:100vw}
-*{box-sizing:border-box}
-img,iframe,video,embed{max-width:100%;height:auto}
-.content-frame{width:100%!important;max-width:100%!important}
+/* ── LAYOUT ── */
+.page-shell{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;align-items:start}
+.sidebar{position:sticky;top:0;height:100vh;background:#ffffff;border-right:1px solid #e5e7eb;display:flex;flex-direction:column}
+.sidebar::-webkit-scrollbar{width:4px}
+.sidebar::-webkit-scrollbar-thumb{background:#9148fc40;border-radius:2px}
+.sidebar-header{padding:1rem 1.25rem .6rem;border-bottom:1px solid #f0ebf7}
+.sidebar-header h4{font-size:.7rem;font-weight:700;color:var(--purple);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.sidebar-header p{font-size:.85rem;color:#64748b;font-weight:500}
+.sidebar-nav{flex:1;overflow-y:auto;list-style:none;padding:.5rem 0;min-height:0;scrollbar-width:thin}
+.sidebar-nav li a{display:flex;align-items:center;gap:.5rem;color:#64748b;text-decoration:none;padding:.5rem 1.25rem;font-size:.82rem;font-weight:500;border-left:3px solid transparent;transition:all .2s}
+.sidebar-nav li a:hover{color:var(--navy2);padding-left:1.5rem}
+.sidebar-nav li a.active{color:var(--purple);font-weight:700;border-left-color:var(--purple);background:#9148fc0f;padding-left:1.5rem}
+.sidebar-nav li a .nav-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;opacity:.5}
+.sidebar-enroll{margin:.6rem .75rem .75rem;flex-shrink:0;background:var(--navy);border:1.5px solid #9148fc40;border-radius:12px;padding:.75rem;box-shadow:0 4px 20px #0003}
+.sidebar-enroll h3{font-size:.8rem;font-weight:800;color:#fff;margin-bottom:.5rem;line-height:1.3}
+.sidebar-enroll-price{background:#0000004d;border-radius:8px;padding:.5rem .75rem;text-align:center;margin-bottom:.5rem}
+.sidebar-enroll-price .label{color:var(--slate);font-size:.68rem;font-weight:600;margin-bottom:.1rem}
+.sidebar-enroll-price .amount{font-size:1.25rem;font-weight:900;color:#fff}
+.sidebar-enroll-price .sub{font-size:.68rem;color:var(--slate);margin-top:.1rem}
+.sidebar-badge{background:#60a5fa14;border:1px solid #60a5fa40;color:var(--blue-light);font-size:.68rem;font-weight:600;padding:.35rem .5rem;border-radius:6px;text-align:center;margin-bottom:.5rem;line-height:1.3}
+.btn-enroll{display:block;background:var(--gp);color:#fff;text-decoration:none;text-align:center;padding:9px 16px;border-radius:100px;font-weight:700;font-size:.82rem;transition:opacity .2s,transform .2s;margin-bottom:.35rem}
+.btn-enroll:hover{opacity:.9;transform:scale(1.02)}
+.btn-outline{display:block;border:1.5px solid #9148fc66;color:var(--lavender);text-decoration:none;text-align:center;padding:7px 16px;border-radius:100px;font-weight:600;font-size:.78rem;transition:all .2s;margin-bottom:.35rem}
+.btn-outline:hover{background:#9148fc26;color:#fff}
+.sidebar-note{font-size:.67rem;color:var(--slate);text-align:center;line-height:1.4}
+.main{background:#fff}
 
-/* ── TABLET 900px ── */
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 45%,#0c1640 100%);position:relative;overflow:hidden;padding:4rem 4.5rem 4.5rem}
+.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:3.5rem;align-items:center;position:relative;z-index:1;max-width:1200px}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:#9148fc26;border:1.5px solid #9148fc59;color:var(--lavender);padding:.4rem 1rem;border-radius:100px;font-size:.8rem;font-weight:700;letter-spacing:.03em;margin-bottom:1.25rem}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--purple)}
+.hero h1{font-size:2.8rem;font-weight:900;color:#fff;line-height:1.15;margin-bottom:1.25rem;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-desc{color:#94a3b8;font-size:1rem;line-height:1.8;margin-bottom:2rem;max-width:520px}
+.hero-stats{display:flex;gap:2rem;flex-wrap:nowrap;margin-bottom:2rem;align-items:flex-start}
+.hero-stat{display:flex;flex-direction:column;flex-shrink:0}
+.hero-stat .num{font-size:1.6rem;font-weight:900;background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-stat .lbl{font-size:.78rem;color:var(--slate);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-ctas .btn-primary-hero{background:var(--gp);color:#fff;text-decoration:none;padding:13px 28px;border-radius:100px;font-weight:700;font-size:.95rem;transition:opacity .2s,transform .2s;box-shadow:0 4px 24px #9148fc59}
+.hero-ctas .btn-primary-hero:hover{opacity:.9;transform:translateY(-1px)}
+.hero-ctas .btn-ghost{border:1.5px solid #ffffff33;color:#fff;text-decoration:none;padding:13px 28px;border-radius:100px;font-weight:600;font-size:.95rem;transition:all .2s}
+.hero-ctas .btn-ghost:hover{background:#ffffff12}
+.hero-image-panel{position:relative}
+.hero-image-wrap{border-radius:20px;overflow:hidden;border:1.5px solid #9148fc40;box-shadow:0 20px 60px #00000080;aspect-ratio:3/4;background:linear-gradient(160deg,#0e1230,#1a0e34);display:flex;align-items:center;justify-content:center}
+.hero-image-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.hero-accred-strip{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);max-width:90%;background:#fff;border-radius:12px;padding:.6rem 1rem;display:flex;align-items:center;gap:.65rem;white-space:nowrap;box-shadow:0 4px 20px #00000040;font-size:.75rem;font-weight:700;color:var(--navy2)}
+.hero-accred-strip .shield{width:24px;height:24px;border-radius:6px;background:var(--gp);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-accred-strip .shield svg{width:14px;height:14px}
+
+/* ── SECTIONS ── */
+.section{padding:3.5rem 4.5rem;border-bottom:1px solid #f0ebf7}
+.section.bg-lav{background:var(--lav-light)}
+.section.bg-dark{background:var(--navy2)}
+.section.bg-white{background:#fff}
+.section-label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:.6rem}
+.section-title{font-size:1.9rem;font-weight:900;color:var(--navy2);line-height:1.2;margin-bottom:1rem;letter-spacing:-.02em}
+.section-title.light{color:#fff}
+.section-sub{color:#64748b;font-size:.95rem;line-height:1.7;max-width:680px;margin-bottom:2.5rem}
+.section-sub.light{color:var(--slate)}
+
+/* ── OVERVIEW ── */
+.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:.5rem}
+.overview-card{background:#f8f7fc;border-radius:14px;padding:1.4rem 1.5rem;border:1.5px solid #ede9f7}
+.overview-card .oc-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--purple);margin-bottom:.4rem}
+.overview-card .oc-value{font-size:1.15rem;font-weight:800;color:var(--navy2)}
+.overview-card .oc-sub{font-size:.82rem;color:#64748b;margin-top:.2rem}
+.program-desc{font-size:.97rem;color:#374151;line-height:1.8;margin-bottom:1.25rem}
+
+/* ── MODULES ── */
+.modules-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.module-item{display:flex;align-items:flex-start;gap:.75rem;background:#fff;border-radius:12px;padding:1rem 1.1rem;border:1.5px solid #ede9f7}
+.module-num{width:28px;height:28px;border-radius:8px;background:var(--gp);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:#fff;flex-shrink:0;margin-top:.1rem}
+.module-text{font-size:.875rem;font-weight:600;color:var(--navy2);line-height:1.4}
+
+/* ── PLATFORM ── */
+.platform-section{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 60%,#100a2e 100%);position:relative;overflow:hidden}
+.platform-section.section{padding-top:2.5rem;padding-bottom:2.5rem}
+.platform-inner{display:grid;grid-template-columns:1fr 1.75fr;gap:2rem;align-items:start;position:relative;z-index:1}
+.platform-copy{padding-top:4.5rem}
+.platform-copy .section-label{color:var(--lavender)}
+.platform-copy .section-title{color:#fff}
+.platform-copy .section-sub{color:var(--slate);margin-bottom:1rem}
+.platform-features{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem}
+.platform-feature{display:flex;align-items:flex-start;gap:.7rem;background:#ffffff14;border:1px solid #ffffff26;border-radius:10px;padding:.65rem .9rem;cursor:pointer;transition:all .25s}
+.platform-feature:hover,.platform-feature.active{background:#9148fc1a;border-color:#9148fc59}
+.platform-feature.active .pf-icon{background:var(--gp)}
+.pf-icon{width:30px;height:30px;border-radius:8px;background:#9148fc26;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .25s;color:var(--lavender)}
+.platform-feature.active .pf-icon{color:#fff}
+.pf-text strong{display:block;font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.1rem}
+.pf-text span{font-size:.76rem;color:var(--slate);line-height:1.4}
+.platform-screen{position:relative}
+.platform-browser{background:#1e2235;border-radius:16px;overflow:hidden;border:1.5px solid #9148fc33;box-shadow:0 24px 64px #00000099}
+.platform-browser-bar{background:#151929;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid #ffffff0f}
+.browser-dot{width:10px;height:10px;border-radius:50%}
+.browser-dot:nth-child(1){background:#ff5f57}
+.browser-dot:nth-child(2){background:#febc2e}
+.browser-dot:nth-child(3){background:#28c840}
+.browser-url{margin-left:.75rem;background:#ffffff0f;border-radius:6px;padding:.3rem .75rem;font-size:.72rem;color:#64748b;font-family:monospace;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.platform-browser img{width:100%;display:block}
+.platform-float-badge{position:absolute;bottom:-16px;left:24px;background:#fff;border-radius:12px;padding:.65rem 1.1rem;display:flex;align-items:center;gap:.6rem;box-shadow:0 8px 24px #0000004d;font-size:.78rem;font-weight:700;color:var(--navy2);white-space:nowrap}
+.platform-float-badge .live-dot{width:8px;height:8px;border-radius:50%;background:#10b981;animation:pulse-dot 1.5s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
+
+/* ── COURSES ── */
+.course-cards{display:flex;flex-direction:column;gap:1.25rem}
+.course-card{background:#fff;border-radius:16px;border:1.5px solid #ede9f7;overflow:hidden}
+.course-header{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;background:#f8f7fc;border-bottom:1.5px solid #ede9f7}
+.course-num{width:36px;height:36px;border-radius:10px;background:var(--gp);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;color:#fff;flex-shrink:0}
+.course-title{font-size:1rem;font-weight:800;color:var(--navy2)}
+.course-body{padding:1.25rem 1.5rem}
+.course-body p{font-size:.875rem;color:#374151;line-height:1.7}
+
+/* ── HOURS ── */
+.hours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:.5rem}
+.hour-card{background:linear-gradient(160deg,#0e1230,#1a0e34);border-radius:16px;padding:1.75rem 1.5rem;text-align:center;border:1.5px solid #9148fc33}
+.hour-num{font-size:2.5rem;font-weight:900;background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.4rem}
+.hour-label{color:#fff;font-size:.95rem;font-weight:700;margin-bottom:.25rem}
+.hour-sub{color:var(--slate);font-size:.8rem}
+
+/* ── PASS RATES ── */
+.passrate-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.passrate-card{background:#fff;border-radius:20px;border:1.5px solid #ede9f7;padding:2rem;text-align:center;position:relative;overflow:hidden}
+.passrate-exam{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:.5rem}
+.passrate-pct{font-size:3.5rem;font-weight:900;background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.4rem}
+.passrate-label{font-size:.9rem;font-weight:700;color:var(--navy2);margin-bottom:.5rem}
+.passrate-badge{display:inline-block;background:#05966914;border:1px solid #05966933;color:#059669;font-size:.78rem;font-weight:700;padding:.35rem .85rem;border-radius:100px}
+
+/* ── BENEFITS ── */
+.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.benefit-item{display:flex;align-items:flex-start;gap:.85rem;padding:1.1rem 1.25rem;background:#fff;border-radius:12px;border:1.5px solid #ede9f7}
+.benefit-icon{width:36px;height:36px;border-radius:10px;background:#9148fc14;border:1px solid #9148fc33;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--purple)}
+.benefit-icon svg{width:18px;height:18px}
+.benefit-text{font-size:.875rem;font-weight:600;color:var(--navy2);line-height:1.4}
+.benefit-sub{font-size:.8rem;color:#64748b;margin-top:.2rem}
+
+/* ── ADMISSIONS ── */
+.admissions-list{display:flex;flex-direction:column;gap:.75rem}
+.admission-item{display:flex;align-items:flex-start;gap:.85rem;padding:1rem 1.25rem;background:#9148fc0d;border:1px solid #9148fc26;border-radius:12px}
+.admission-check{width:22px;height:22px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem}
+.admission-check svg{width:12px;height:12px}
+.admission-text{font-size:.9rem;font-weight:600;color:var(--navy2)}
+.admission-sub{font-size:.82rem;color:#64748b;margin-top:.15rem}
+
+/* ── APPROVALS ── */
+.approvals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.85rem}
+.approval-tag{text-decoration:none;background:#fff;border:1.5px solid #ede9f7;border-radius:10px;padding:.75rem 1rem;font-size:.82rem;font-weight:600;color:var(--navy2);display:flex;align-items:center;gap:.5rem;transition:border-color .2s;min-height:48px}
+.approval-tag:hover{border-color:rgba(145,72,252,.3)}
+.approval-tag::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gp);flex-shrink:0}
+
+/* ── STEPS ── */
+.steps-track{display:flex;gap:0;position:relative;margin-top:.5rem}
+.steps-track::before{content:'';position:absolute;top:28px;left:28px;right:28px;height:2px;background:linear-gradient(90deg,var(--purple-d),var(--blue-light));z-index:0}
+.step{flex:1;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:0 1rem;position:relative;z-index:1}
+.step-num{width:56px;height:56px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#fff;margin-bottom:1rem;box-shadow:0 4px 20px #9148fc66;border:3px solid #fff}
+.step:nth-child(2) .step-num{background:linear-gradient(135deg,#1d4ed8,var(--blue))}
+.step:nth-child(3) .step-num{background:linear-gradient(135deg,#0369a1,var(--blue-light))}
+.step-label{font-size:.9rem;font-weight:800;color:var(--navy2);margin-bottom:.35rem}
+.step-sub{font-size:.8rem;color:#64748b;line-height:1.5}
+
+/* ── BOTTOM CTA ── */
+.bottom-cta{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 50%,#0c1640 100%);padding:4rem 4.5rem;text-align:center;position:relative;overflow:hidden}
+.bottom-cta h2{font-size:2.2rem;font-weight:900;color:#fff;margin-bottom:.75rem;letter-spacing:-.02em;position:relative}
+.bottom-cta .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative}
+.bottom-cta .cta-btns a.primary{background:var(--gp);color:#fff;text-decoration:none;padding:14px 32px;border-radius:100px;font-weight:700;font-size:1rem;box-shadow:0 4px 24px #9148fc66;transition:opacity .2s,transform .2s}
+.bottom-cta .cta-btns a.primary:hover{opacity:.9;transform:translateY(-1px)}
+.bottom-cta .cta-btns a.ghost{border:1.5px solid #ffffff33;color:#fff;text-decoration:none;padding:14px 32px;border-radius:100px;font-weight:600;font-size:1rem;transition:all .2s}
+.bottom-cta .cta-btns a.ghost:hover{background:#ffffff0f}
+
+/* ── PLATFORM TABS ── */
+.platform-tab{background:#ffffff0f;border:1.5px solid #ffffff1f;color:var(--slate);padding:.65rem 1.4rem;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .25s;display:flex;align-items:center;gap:.5rem}
+.platform-tab:hover{background:#9148fc1f;color:#fff;border-color:rgba(145,72,252,.3)}
+.platform-tab.active{background:linear-gradient(135deg,#7c3aed40,#9148fc40);border-color:#9148fc80;color:#fff}
+.tab-pills{display:flex;justify-content:center;gap:.6rem;margin-bottom:1.5rem;position:relative;z-index:1;flex-wrap:wrap}
+.pulse-live{width:7px;height:7px;border-radius:50%;background:#10b981;animation:pulse-dot 1.5s ease-in-out infinite;display:inline-block;flex-shrink:0}
+.icon-svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sim-overlay{position:absolute;inset:0;background:#080d1a8c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+.sim-play-btn{width:72px;height:72px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px #9148fc33;transition:transform .2s;cursor:pointer}
+.live-badge{display:inline-flex;align-items:center;gap:.5rem;background:#10b9821f;border:1px solid #10b98247;color:#34d399;padding:.35rem .85rem;border-radius:100px;font-size:.75rem;font-weight:700}
+.tab-divider{background:#151929;border-top:1px solid #9148fc33;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem}
+.tab-divider-label{font-size:.72rem;font-weight:700;color:#94a3b8;letter-spacing:.05em;text-transform:uppercase}
+.btn-access{display:inline-block;margin-top:1rem;padding:11px 24px;background:var(--gp);color:#fff;text-decoration:none;border-radius:100px;font-weight:700;font-size:.88rem;box-shadow:0 4px 20px #9148fc59;transition:opacity .2s}
+.plat-header{text-align:center;margin-bottom:1.5rem;position:relative;z-index:1}
+.plat-sub{color:var(--slate);font-size:.9rem;max-width:520px;margin:0 auto;line-height:1.6}
+.content-frame{width:100%;height:400px;border:none;display:block}
+.sim-title{color:#fff;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
+.sim-subtitle{color:rgba(196,181,253,.8);font-size:.8rem;margin-top:.25rem}
+
+/* ── MOBILE HEADER ── */
+.mobile-header{display:none;position:sticky;top:0;z-index:300;background:var(--navy);border-bottom:1px solid #9148fc33;padding:0 1.25rem;height:56px;align-items:center;justify-content:space-between}
+.mobile-header-logo{font-size:1rem;font-weight:800;color:#fff;letter-spacing:-.02em}
+.mobile-header-logo em{font-style:normal;color:var(--purple)}
+.mobile-header-enroll{background:var(--gp);color:#fff;text-decoration:none;padding:8px 18px;border-radius:100px;font-weight:700;font-size:.8rem;min-height:44px;display:flex;align-items:center;white-space:nowrap}
+
+/* ── MOBILE ENROLL BAR ── */
+.mob-enroll-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;background:var(--navy);border-top:1px solid #9148fc40;padding:.75rem 1.25rem;align-items:center;justify-content:space-between;gap:1rem}
+.mob-enroll-bar-text{color:#fff;font-size:.85rem;font-weight:700;line-height:1.3}
+.mob-enroll-bar-text span{display:block;color:var(--slate);font-size:.72rem;font-weight:400}
+.mob-enroll-bar-btn{background:var(--gp);color:#fff;text-decoration:none;padding:12px 20px;border-radius:100px;font-weight:700;font-size:.85rem;white-space:nowrap;flex-shrink:0;min-height:44px;display:flex;align-items:center}
+
+/* ════════════════════════════════
+   RESPONSIVE — TABLET (≤ 900px)
+   ════════════════════════════════ */
 @media(max-width:900px){
-  .page-shell{display:block!important;grid-template-columns:none!important}
-  .sidebar{display:none!important}
-  .mobile-header{display:flex!important}
-  .mob-enroll-bar{display:flex!important}
-  .main{padding-bottom:76px!important}
-  .hero{padding:2rem 1.25rem 2.5rem!important}
-  .hero-inner{display:block!important;grid-template-columns:none!important}
-  .hero-image-panel{display:none!important}
-  .hero h1{font-size:2.1rem!important;line-height:1.15}
-  .hero-stats{flex-wrap:wrap!important;gap:1rem!important}
-  .hero-ctas{flex-direction:column!important;align-items:start!important}
-  .hero-ctas a{width:100%!important;text-align:center!important}
-  .section{padding:2.5rem 1.25rem!important}
-  .platform-section.section,.platform-section{padding:2rem 1.25rem!important}
-  .platform-inner{display:block!important;grid-template-columns:none!important}
-  .platform-copy{padding-top:0!important}
-  .overview-grid{grid-template-columns:1fr 1fr!important}
-  .modules-grid{grid-template-columns:1fr 1fr!important}
-  .hours-grid{grid-template-columns:repeat(3,1fr)!important}
-  .passrate-grid{grid-template-columns:1fr 1fr!important}
-  .benefits-grid{grid-template-columns:1fr 1fr!important}
-  .approvals-grid{grid-template-columns:1fr 1fr!important}
-  .course-cards{gap:1rem!important}
-  .tab-pills{flex-wrap:wrap!important;gap:.4rem!important}
-  .platform-tab{font-size:.8rem!important;padding:.5rem .9rem!important}
-  .hero-accred-strip{font-size:.7rem!important;padding:.5rem 1rem!important;gap:.4rem!important;flex-wrap:wrap!important;justify-content:center!important}
-  .bottom-cta{padding:2.5rem 1.25rem!important;text-align:center!important}
-  .bottom-cta h2{font-size:1.75rem!important}
-  .bottom-cta .cta-btns{flex-direction:column!important;align-items:center!important}
-  .bottom-cta .cta-btns a{width:100%!important;max-width:320px!important;text-align:center!important}
-  .steps-track{flex-direction:column!important;gap:1.5rem!important}
-  .steps-track::before{display:none!important}
-  .step{padding:0!important}
-  .platform-float-badge{font-size:.72rem!important;padding:.5rem .85rem!important;white-space:normal!important;max-width:90%!important}
-  .passrate-grid{gap:1rem!important}
-  .hero-inner{gap:0!important}
-  .platform-browser{border-radius:10px!important}
+  .page-shell{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .mobile-header{display:flex}
+  .mob-enroll-bar{display:flex}
+  .main{padding-bottom:72px}
+
+  .hero{padding:2rem 1.5rem 3rem}
+  .hero-inner{grid-template-columns:1fr;gap:1.75rem}
+  .hero-image-panel{display:none}
+  .hero h1{font-size:2.1rem}
+  .hero-stats{gap:1.5rem}
+  .hero-ctas{flex-direction:column;align-items:stretch}
+  .hero-ctas a{width:100%;text-align:center;padding:14px 20px}
+
+  .section{padding:2.5rem 1.5rem}
+  .section-title{font-size:1.65rem}
+
+  .overview-grid{grid-template-columns:1fr 1fr}
+  .modules-grid{grid-template-columns:1fr 1fr}
+  .hours-grid{grid-template-columns:repeat(3,1fr)}
+  .passrate-grid{grid-template-columns:1fr 1fr}
+  .benefits-grid{grid-template-columns:1fr 1fr}
+  .approvals-grid{grid-template-columns:1fr 1fr}
+
+  .platform-section.section{padding:2rem 1.5rem}
+  .platform-inner{grid-template-columns:1fr;gap:1.5rem}
+  .platform-copy{padding-top:0}
+
+  .bottom-cta{padding:3rem 1.5rem}
+  .bottom-cta h2{font-size:1.9rem}
 }
 
-/* ── MOBILE 600px ── */
+/* ════════════════════════════════
+   RESPONSIVE — MOBILE (≤ 600px)
+   ════════════════════════════════ */
 @media(max-width:600px){
-  .hero{padding:1.5rem 1rem 2rem!important}
-  .hero h1{font-size:1.75rem!important;line-height:1.2!important}
-  .hero-badge{font-size:.7rem!important;padding:.35rem .75rem!important}
-  .hero-desc{font-size:.88rem!important}
-  .hero-stats{gap:.75rem!important;flex-wrap:wrap!important}
-  .hero-stat .num{font-size:1.25rem!important}
-  .hero-stat .lbl{font-size:.7rem!important}
-  .section{padding:2rem 1rem!important}
-  .section-label{font-size:.7rem!important}
-  .section-title{font-size:1.45rem!important;line-height:1.2!important}
-  .section-sub{font-size:.875rem!important}
-  .overview-grid{grid-template-columns:1fr!important}
-  .overview-card{padding:1rem!important}
-  .modules-grid{grid-template-columns:1fr!important}
-  .hours-grid{grid-template-columns:1fr!important}
-  .passrate-grid{grid-template-columns:1fr!important}
-  .benefits-grid{grid-template-columns:1fr!important}
-  .approvals-grid{grid-template-columns:1fr 1fr!important}
-  .course-header{padding:1rem!important}
-  .course-body{padding:1rem!important}
-  .course-body p{font-size:.82rem!important}
-  .course-title{font-size:.9rem!important}
-  .benefit-item{padding:.85rem 1rem!important}
-  .benefit-text{font-size:.82rem!important}
-  .benefit-sub{font-size:.75rem!important}
-  .hour-card{padding:1.25rem 1rem!important}
-  .hour-num{font-size:2rem!important}
-  .passrate-pct{font-size:2.75rem!important}
-  .passrate-card{padding:1.5rem 1rem!important}
-  .bottom-cta{padding:2rem 1rem!important}
-  .bottom-cta h2{font-size:1.5rem!important}
-  .content-frame{height:300px!important}
-  .platform-section.section,.platform-section{padding:1.75rem 1rem!important}
-  .tab-pills{gap:.35rem!important}
-  .platform-tab{font-size:.75rem!important;padding:.45rem .75rem!important}
-  .platform-features{gap:.4rem!important}
-  .platform-feature{padding:.55rem .75rem!important}
-  .pf-text strong{font-size:.78rem!important}
-  .pf-text span{font-size:.72rem!important}
-  .pf-icon{width:26px!important;height:26px!important}
-  .admission-item{padding:.85rem 1rem!important}
-  .admission-text{font-size:.85rem!important}
-  .module-item{padding:.85rem 1rem!important}
-  .module-text{font-size:.82rem!important}
-  .module-num{width:24px!important;height:24px!important;font-size:.7rem!important}
-  .step-num{width:44px!important;height:44px!important;font-size:1rem!important}
-  .step-label{font-size:.9rem!important}
-  .step-sub{font-size:.8rem!important}
-  .platform-float-badge{bottom:-12px!important;left:12px!important;padding:.45rem .75rem!important;font-size:.68rem!important;border-radius:8px!important}
-  .hero-accred-strip span{font-size:.68rem!important}
-  .mob-enroll-bar-text{font-size:.8rem!important}
-  .tab-divider-label{font-size:.72rem!important}
-  .tab-divider{padding:.4rem .75rem!important}
+  .hero{padding:1.5rem 1rem 2.5rem}
+  .hero h1{font-size:1.75rem;letter-spacing:-.01em}
+  .hero-badge{font-size:.7rem;padding:.35rem .85rem}
+  .hero-desc{font-size:.875rem;margin-bottom:1.5rem}
+  .hero-stats{gap:.85rem;flex-wrap:wrap;margin-bottom:1.5rem}
+  .hero-stat .num{font-size:1.25rem}
+  .hero-stat .lbl{font-size:.7rem}
+
+  .section{padding:2rem 1rem}
+  .section-title{font-size:1.4rem}
+  .section-sub{font-size:.875rem;margin-bottom:1.75rem}
+
+  .overview-grid{grid-template-columns:1fr}
+  .overview-card{padding:1.1rem 1.2rem}
+  .overview-card .oc-value{font-size:1rem}
+
+  .modules-grid{grid-template-columns:1fr}
+  .module-item{padding:.85rem 1rem}
+
+  .hours-grid{grid-template-columns:1fr}
+  .hour-card{padding:1.4rem 1.25rem}
+  .hour-num{font-size:2rem}
+
+  .passrate-grid{grid-template-columns:1fr}
+  .passrate-pct{font-size:2.8rem}
+  .passrate-card{padding:1.5rem 1rem}
+
+  .benefits-grid{grid-template-columns:1fr}
+  .benefit-item{padding:1rem 1.1rem}
+  .benefit-text{font-size:.82rem}
+  .benefit-sub{font-size:.75rem}
+
+  .admissions-list .admission-text{font-size:.875rem}
+  .admissions-list .admission-sub{font-size:.8rem}
+  .admission-item{padding:.85rem 1rem}
+
+  .approvals-grid{grid-template-columns:1fr 1fr}
+
+  .steps-track{flex-direction:column;gap:1.25rem}
+  .steps-track::before{display:none}
+  .step{padding:0;flex-direction:row;align-items:flex-start;gap:.85rem}
+  .step-num{width:44px;height:44px;font-size:.95rem;margin-bottom:0;flex-shrink:0}
+  .step-label{font-size:.875rem}
+
+  .platform-section.section{padding:1.75rem 1rem}
+  .tab-pills{gap:.35rem}
+  .platform-tab{padding:.5rem .85rem;font-size:.78rem}
+  .content-frame{height:280px}
+  .sim-play-btn{width:56px;height:56px}
+
+  .course-header{padding:1rem 1.25rem}
+  .course-body{padding:1rem 1.25rem}
+  .course-body p{font-size:.82rem}
+  .course-title{font-size:.95rem}
+
+  .bottom-cta{padding:2.5rem 1rem}
+  .bottom-cta h2{font-size:1.5rem}
+  .bottom-cta .cta-btns{flex-direction:column;align-items:center}
+  .bottom-cta .cta-btns a{width:100%;text-align:center;padding:14px 20px}
+
+  .hero-accred-strip{font-size:.65rem;padding:.45rem .7rem;gap:.4rem}
+  .platform-float-badge{font-size:.7rem;padding:.5rem .85rem;left:12px}
+  .mobile-header{height:60px}
 }
 
-/* ── SMALL PHONE 380px ── */
+/* ════════════════════════════════
+   RESPONSIVE — SMALL (≤ 380px)
+   ════════════════════════════════ */
 @media(max-width:380px){
-  .hero h1{font-size:1.5rem!important}
-  .section-title{font-size:1.3rem!important}
-  .hero-stats{gap:.6rem!important}
-  .hero-stat .num{font-size:1.1rem!important}
-  .approvals-grid{grid-template-columns:1fr!important}
-  .tab-pills{flex-direction:column!important;align-items:start!important}
-  .platform-tab{text-align:center!important}
-  .bottom-cta h2{font-size:1.3rem!important}
-  .section{padding:1.75rem .9rem!important}
-  .hero{padding:1.25rem .9rem 1.75rem!important}
-  .course-header{gap:.75rem!important}
-  .course-num{width:30px!important;height:30px!important;font-size:.75rem!important}
-  .benefit-item{gap:.65rem!important}
-  .overview-grid{gap:.75rem!important}
+  .hero h1{font-size:1.5rem}
+  .section-title{font-size:1.25rem}
+  .approvals-grid{grid-template-columns:1fr}
+  .tab-pills{flex-direction:column;align-items:center}
+  .platform-tab{width:100%;justify-content:center}
+  .hero-stats{gap:.65rem}
+  .hero-stat .num{font-size:1.1rem}
+  .section{padding:1.75rem .9rem}
+  .hero{padding:1.25rem .9rem 1.75rem}
 }
-/* END COMPREHENSIVE MOBILE */
-</style></head><body><svg style="display:none"><defs><symbol id="ico-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg><header class="mobile-header"><span class="mobile-header-logo">Allied<em>Rx</em> Institute</span><a href="https://www.alliedrxtraining.com/register" class="mobile-header-enroll">Enroll — $99</a></header><div class="page-shell"><aside class="sidebar"><div class="sidebar-header"><h4>Pharmacy Technician</h4><p>CPhT Certification Program</p></div><ul class="sidebar-nav"><li><a href="#overview" class="active"><span class="nav-dot"></span> Program Overview</a></li><li><a href="#enroll-steps"><span class="nav-dot"></span> How to Enroll</a></li><li><a href="#platform"><span class="nav-dot"></span> Inside the Platform</a></li><li><a href="#courses"><span class="nav-dot"></span> Courses</a></li><li><a href="#modules"><span class="nav-dot"></span> What You'll Learn</a></li><li><a href="#hours"><span class="nav-dot"></span> Clock Hours</a></li><li><a href="#passrates"><span class="nav-dot"></span> Pass Rates</a></li><li><a href="#benefits"><span class="nav-dot"></span> Program Benefits</a></li><li><a href="#admissions"><span class="nav-dot"></span> Admissions</a></li><li><a href="#approvals"><span class="nav-dot"></span> Approvals</a></li></ul><div class="sidebar-enroll"><h3>Start Your Pharmacy Tech Career</h3><div class="sidebar-enroll-price"><div class="label">Enrollment Fee</div><div class="amount">$99</div><div class="sub">Due today at registration</div></div><div class="sidebar-badge">✓ ASHP/ACPE Accredited Program<br>100% Online · Self-Paced</div><a href="https://www.alliedrxtraining.com/register" class="btn-enroll">Enroll Now</a><a href="https://www.alliedrxtraining.com/getmoreinfo" class="btn-outline">Learn More</a><p class="sidebar-note">Enroll in minutes. Choose your tuition plan after registration.</p></div></aside><main class="main"><section class="hero"><div class="hero-inner"><div class="hero-copy"><div class="hero-badge"><span class="dot"></span>
-ASHP/ACPE Accredited · Nationally Recognized
-</div><h1>Become a<br><em>Certified Pharmacy Technician</em></h1><p class="hero-desc">Launch a rewarding healthcare career with our 400-hour CPhT program. 100% online and self-paced — preparing you for both the PTCB and ExCPT national certification exams.</p><div class="hero-stats"><div class="hero-stat"><span class="num">400</span><span class="lbl">Clock Hours</span></div><div class="hero-stat"><span class="num">100%</span><span class="lbl">ExCPT Pass Rate</span></div><div class="hero-stat"><span class="num">80%</span><span class="lbl">PTCB Pass Rate</span></div></div><div class="hero-ctas"><a href="https://www.alliedrxtraining.com/register" class="btn-primary-hero">Enroll Now — $99 Today</a><a href="https://www.alliedrxtraining.com/getmoreinfo" class="btn-ghost">Explore Program</a></div></div><div class="hero-image-panel"><div class="hero-image-wrap"><img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/65df65a940b79eeec6cc7715_Untitled%20(4).png" alt="Pharmacy Technician Program" /></div><div class="hero-accred-strip"><div class="shield"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-ASHP/ACPE Nationally Accredited Program
-</div></div></div></section><section class="section bg-white" id="overview"><span class="section-label">Program Overview</span><h2 class="section-title">Everything You Need to Know</h2><div class="overview-grid" style="margin-bottom:2rem;"><div class="overview-card"><div class="oc-label">Total Clock Hours</div><div class="oc-value">400 Hours</div><div class="oc-sub">180 didactic · 80 simulation · 140 clinical</div></div><div class="overview-card"><div class="oc-label">Format</div><div class="oc-value">100% Online</div><div class="oc-sub">Self-paced with flexible scheduling</div></div><div class="overview-card"><div class="oc-label">Certification Prep</div><div class="oc-value">PTCB &amp; ExCPT</div><div class="oc-sub">Dual national exam preparation included</div></div><div class="overview-card"><div class="oc-label">Accreditation</div><div class="oc-value">ASHP / ACPE</div><div class="oc-sub">Nationally recognized · Employer accepted</div></div></div><p class="program-desc">We provide a top training program that helps you step into this fast-growing healthcare job. As a pharmacy technician, you'll work with pharmacists and other health workers. You might work in a retail pharmacy or a healthcare system. Our online pharmacy technician training program teaches many important topics. You'll learn about medicine orders, how a pharmacy runs, and how to care for patients. You'll also learn to handle insurance claims, help give out medications, and provide great service to patients.</p><p class="program-desc">After finishing our pharmacy tech program you'll be ready to take the Pharmacy Technician Certification Board Exam (PTCB) and or NHA Board Exam ExCPT. This certificate is recognized all over the country and shows you're a skilled pharmacy technician. With this certificate, you'll have more job options and chances to advance your career.</p></section><section class="section bg-white" id="enroll-steps"><span class="section-label">Enrollment Process</span><h2 class="section-title">Get Started in 3 Simple Steps</h2><p class="section-sub">From registration to your first class — takes less than 10 minutes.</p><div class="steps-track"><div class="step"><div class="step-num">1</div><div class="step-label">Register &amp; Pay Enrollment Fee</div><div class="step-sub">Complete your registration online. Pay the $99 enrollment fee, which covers your background check and drug test processing.</div></div><div class="step"><div class="step-num">2</div><div class="step-label">Complete Orientation</div><div class="step-sub">Log into your student portal and complete the short orientation module to activate your account and choose your tuition plan.</div></div><div class="step"><div class="step-num">3</div><div class="step-label">Add Your First Class</div><div class="step-sub">Add your first course in the portal. Your first tuition payment ($99 down) is due when you add your class. Then start learning!</div></div></div></section><section class="section platform-section" id="platform" ><div class="plat-header"><span class="section-label" style="color:var(--lavender);">Student Experience</span><h2 class="section-title" style="color:#fff;max-width:600px;margin:0 auto .5rem;">A Peek Inside Your Classroom</h2><p class="plat-sub">Our modern platform is built for working adults — structured, intuitive, and packed with real-world activities.</p></div><div class="tab-pills"><button class="platform-tab active" onclick="switchTab(0)" id="tab-0">Patient Communication</button><button class="platform-tab" onclick="switchTab(1)" id="tab-1">Medication Safety</button><button class="platform-tab" onclick="switchTab(2)" id="tab-2"><span class="pulse-live"></span>
-Try the Simulation
-</button></div><div class="platform-inner" style="position:relative;z-index:1;"><div class="platform-copy"><div id="features-0" class="platform-tab-content"><div class="platform-features"><div class="platform-feature active" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><div class="pf-text"><strong>Structured Chapter Navigation</strong><span>Progress through modules at your own pace with a clear, visual roadmap</span></div></div><div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="pf-text"><strong>Interactive Patient Scenarios</strong><span>Practice adapting communication for hospice care, language barriers, and hearing-impaired patients</span></div></div><div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="pf-text"><strong>Professional Writing Practice</strong><span>Rewrite informal messages into clear, professional pharmacy documentation</span></div></div><div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="pf-text"><strong>Live Progress Tracking</strong><span>Visual progress bar and completion checkmarks keep you motivated and on track</span></div></div><div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg></div><div class="pf-text"><strong>Ask AI Support</strong><span>Built-in AI tutor available anytime you need help within a lesson</span></div></div></div></div><div id="features-1" class="platform-tab-content" style="display:none;"><div class="platform-features"><div class="platform-feature active" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div class="pf-text"><strong>Dangerous Abbreviation Drills</strong><span>Sort TJC "Do Not Use" abbreviations interactively to build safety awareness</span></div></div><div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="pf-text"><strong>Prescription Detective Challenges</strong><span>Interpret real handwritten prescriptions with ambiguous abbreviations like Lantus insulin cases</span></div></div><div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M3 3h18v18H3z"/><path d="M9 9h1v6H9z"/><path d="M14 9h1v6h-1z"/></svg></div><div class="pf-text"><strong>Drug &amp; Dosage Form Recognition</strong><span>Decode abbreviations and dosage forms used in real pharmacy workflows</span></div></div><div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="pf-text"><strong>Pharmacokinetics Modules</strong><span>Study how drugs act in the body — absorption, distribution, metabolism, and elimination</span></div></div><div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="pf-text"><strong>Weekly Flash Card Reviews</strong><span>Reinforce Top 200 brand and generic drugs with built-in spaced repetition cards</span></div></div></div></div><div id="features-2" class="platform-tab-content" style="display:none;"><div style="margin-bottom:.75rem;"><div class="live-badge" style="margin-bottom:.65rem"><span class="pulse-live"></span>
-Interactive — No Login Required
-</div></div><div class="platform-features"><div class="platform-feature active" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="pf-text"><strong>Simulated Pharmacy Environment</strong><span>Practice in a fully interactive virtual pharmacy before your clinical externship</span></div></div><div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg></div><div class="pf-text"><strong>Real Dispensing Workflows</strong><span>Process prescriptions, verify orders, and practice dispensing procedures step by step</span></div></div><div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="pf-text"><strong>Safe Practice Environment</strong><span>Make mistakes and learn from them without real-world consequences</span></div></div><div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="pf-text"><strong>Counts Toward Clock Hours</strong><span>Simulation hours contribute to your 80 required simulation clock hours</span></div></div></div></div><a href="https://www.alliedrxtraining.com/register" class="btn-access">Enroll &amp; Get Access →</a></div><div class="platform-screen"><div class="platform-browser"><div class="platform-browser-bar"><div class="browser-dot"></div><div class="browser-dot"></div><div class="browser-dot"></div><div id="browser-url-text" class="browser-url">app.alliedrxtraining.com · Distance Learning Pharmacy Tech Course</div></div><div id="platform-slides" style="position:relative;overflow:hidden;"><div id="platform-img-0" style="display:block;"><img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964f4317a75cfe847972073_Screenshot%202026-01-11%20at%203.13.51%E2%80%AFPM.png" alt="Patient communication activities" style="width:100%;display:block;" /><div class="tab-divider"><span class="pulse-live"></span><span class="tab-divider-label">Try It — Patient Communication Activity</span></div><iframe
-src="https://interactive.alliedrxtraining.com/pharmacy/chapter4commandrole.html"
-class="content-frame"
-allowfullscreen
-></iframe></div><div id="platform-img-1" style="display:none;"><img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964f4308c89d7b64c255119_Screenshot%202026-01-11%20at%203.14.42%E2%80%AFPM.png" alt="Medication safety activities" style="width:100%;display:block;" /><div class="tab-divider"><span class="pulse-live"></span><span class="tab-divider-label">Try It — Brand &amp; Generic Drug Flashcards</span></div><iframe
-src="https://interactive.alliedrxtraining.com/pharmacy/week1flashcards.html"
-class="content-frame"
-allowfullscreen
-></iframe></div><div id="platform-sim" style="display:none;"><div id="sim-preview" style="position:relative;cursor:pointer;" onclick="launchSim()"><img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/662d1220cf62638e99568fac_AlliedRx%20Education%20Event%20Presentation%20Slideshow-p-1600.jpg" alt="Virtual pharmacy simulation" style="width:100%;display:block;" /><div class="sim-overlay"><div class="sim-play-btn"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><div style="text-align:center;"><div class="sim-title">Launch Virtual Pharmacy</div><div class="sim-subtitle">Interactive simulation — microphone &amp; camera optional</div></div><div class="live-badge"><span class="pulse-live"></span>
-No Login Required
-</div></div></div><iframe
-id="sim-iframe"
-allow="microphone; camera"
-class="content-frame" style="height:540px;display:none;"
-allowfullscreen
-></iframe></div></div></div><div class="platform-float-badge" id="platform-badge"><span class="live-dot"></span><span id="badge-text">Live Student Platform</span></div></div></div></section><section class="section bg-lav" id="courses"><span class="section-label">Curriculum</span><h2 class="section-title">3 Courses · Complete Curriculum</h2><p class="section-sub">Each course builds on the last — from foundational pharmacy knowledge to real-world clinical experience.</p><div class="course-cards"><div class="course-card"><div class="course-header"><div class="course-num">01</div><div class="course-title">Basic Pharmacy</div></div><div class="course-body"><p>This is a course all about becoming a Pharmacy Technician. You will learn how to handle prescriptions and explain the laws that affect pharmacies. You will also learn about your role as a Pharmacy Technician and the different ways medicines can be given. We'll teach you how to mix medicines and keep everything clean and germ-free. We'll also talk about the difference between brand-name and generic drugs. You'll also get to learn about SIG codes, a kind of short language used in prescriptions. Lastly, we'll show you how to handle billing and insurance claims for prescriptions. This course will give you everything you need to know to get started as a Pharmacy Technician.</p></div></div><div class="course-card"><div class="course-header"><div class="course-num">02</div><div class="course-title">Pharmacy Calculations</div></div><div class="course-body"><p>This is a course about the important math you need to know as a Certified Pharmacy Technician. You will learn how to use formulas and conversions for pharmacy calculations. Explain the rules of the metric system and the basic units of weight, volume, and length. Describe common equivalents in the metric system. Discuss the apothecary system. Explain the household system. Convert metric measures to their equivalents in the other systems.</p></div></div><div class="course-card"><div class="course-header"><div class="course-num">03</div><div class="course-title">Pharmacy Clinicals</div></div><div class="course-body"><p>This clinical experiential course provides students with hands on experience under the guidance of a Pharmacist at Community Pharmacy. Pre-Requisites: Basic Pharmacy and Pharmacy Calculations.</p></div></div></div></section><section class="section bg-white" id="modules"><span class="section-label">Learning Outcomes</span><h2 class="section-title">What You Will Learn</h2><p class="section-sub">Basic knowledge needed to understand the function of a pharmacy technician, how to prepare, order and stock prescription medications, Patient and Dosage Forms and Routes of Administration, Community and Institutional Pharmacy Settings, Top 200 Drugs, IV Flow Rates, Compounding Drugs, Brand and Generic Prescription Drugs.</p><div class="modules-grid"><div class="module-item"><div class="module-num">1</div><div class="module-text">History of Medicine</div></div><div class="module-item"><div class="module-num">2</div><div class="module-text">Pharmacy Law, Ethics, and Regulatory Agencies</div></div><div class="module-item"><div class="module-num">3</div><div class="module-text">Pharmacy Technicians: Competencies, Associations, Settings &amp; Patient Interaction</div></div><div class="module-item"><div class="module-num">4</div><div class="module-text">Patient &amp; Medication Administration</div></div><div class="module-item"><div class="module-num">5</div><div class="module-text">Institutional Pharmacy Practice</div></div><div class="module-item"><div class="module-num">6</div><div class="module-text">Community Pharmacy Practice</div></div><div class="module-item"><div class="module-num">7</div><div class="module-text">Bulk Repackaging and Non-Sterile Compounding</div></div><div class="module-item"><div class="module-num">8</div><div class="module-text">Aseptic Technique and Sterile Compounding</div></div><div class="module-item"><div class="module-num">9</div><div class="module-text">Advanced Sterile Compounding</div></div><div class="module-item"><div class="module-num">10</div><div class="module-text">Pharmacy Billing and Inventory Management</div></div><div class="module-item"><div class="module-num">11</div><div class="module-text">Medication Safety and Error Prevention</div></div><div class="module-item"><div class="module-num">12</div><div class="module-text">Drug References Study Format</div></div></div></section><section class="section bg-dark" id="hours"><span class="section-label" style="color:var(--lavender);">Program Structure</span><h2 class="section-title light">400 Total Clock Hours</h2><p class="section-sub light">Structured to meet national accreditation standards and employer expectations.</p><div class="hours-grid"><div class="hour-card"><div class="hour-num">180</div><div class="hour-label">Didactic</div><div class="hour-sub">Online coursework &amp; lectures</div></div><div class="hour-card"><div class="hour-num">80</div><div class="hour-label">Simulation</div><div class="hour-sub">Virtual labs &amp; practice scenarios</div></div><div class="hour-card"><div class="hour-num">140</div><div class="hour-label">Clinical</div><div class="hour-sub">Supervised pharmacy externship</div></div></div></section><section class="section bg-white" id="passrates"><span class="section-label">Outcomes</span><h2 class="section-title">Certification Pass Rates</h2><p class="section-sub">AlliedRx graduates consistently outperform the national average on both PTCB and ExCPT exams.</p><div class="passrate-grid"><div class="passrate-card"><div class="passrate-exam">PTCB Exam</div><div class="passrate-pct">80%</div><div class="passrate-label">Program Pass Rate</div><div class="passrate-badge">10% above national average</div></div><div class="passrate-card"><div class="passrate-exam">ExCPT Exam</div><div class="passrate-pct">100%</div><div class="passrate-label">Program Pass Rate</div><div class="passrate-badge">35% above national average</div></div></div></section><section class="section bg-lav" id="benefits"><span class="section-label">Why AlliedRx</span><h2 class="section-title">9 Reasons to Choose This Program</h2><p class="section-sub">Designed for working adults who need flexibility without sacrificing quality.</p><div class="benefits-grid"><div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div><div class="benefit-text">6 Month Access to Learning Content</div><div class="benefit-sub">Full year of access to all course materials</div></div></div><div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="benefit-text">Flexible Schedule</div><div class="benefit-sub">Manage work, family and study in a flexible campus schedule</div></div></div><div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg></div><div><div class="benefit-text">Online Pharmacy Lab Simulations</div><div class="benefit-sub">Practice in a virtual pharmacy environment</div></div></div><div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div><div><div class="benefit-text">Interactive Study Guides and Knowledge Assessments</div><div class="benefit-sub">Engaging tools to reinforce learning</div></div></div><div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="benefit-text">3D Interactive Anatomy Simulations</div><div class="benefit-sub">Visual learning with 3D anatomical models</div></div></div><div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div><div class="benefit-text">Patient Care Simulations</div><div class="benefit-sub">Practice real-world patient scenarios</div></div></div><div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><div><div class="benefit-text">Video Demonstrations</div><div class="benefit-sub">Watch critical skills performed in a medical setting</div></div></div><div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><div><div class="benefit-text">National Board Examination Prep Materials</div><div class="benefit-sub">Comprehensive PTCB &amp; ExCPT exam preparation</div></div></div><div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><div class="benefit-text">Walgreens Clinical Externship</div><div class="benefit-sub">Hands-on experience at partnered pharmacy locations*</div></div></div></div></section><section class="section bg-white" id="admissions"><span class="section-label">Admissions</span><h2 class="section-title">Requirements</h2><p class="section-sub">Simple, straightforward requirements so you can get started quickly.</p><div class="admissions-list"><div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">Must be 18 Years of Age or Older</div><div class="admission-sub">Prospective students must be 18 years of age to register for the Pharmacy Technician Program</div></div></div><div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">Reading Comprehension &amp; Math Assessment</div><div class="admission-sub">Applicants must take a reading comprehension and math assessment test prior to course enrollment. Passing score of 70% or higher required. This is done after registering in the orientation portal.</div></div></div><div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">English Language Proficiency</div><div class="admission-sub">Applicant must have demonstrated English language proficiency (including reading, writing and speaking)</div></div></div><div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">Access to Internet and Computer, Tablet or Mobile Device</div><div class="admission-sub">Required to access the online learning platform</div></div></div><div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">Criminal Background Check &amp; Drug Testing</div><div class="admission-sub">Applicants must complete a criminal background check and drug testing</div></div></div><div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">Registered Pharmacy Technician Trainee (Virginia Only)</div><div class="admission-sub">Registered Pharmacy Technician Trainee with the Virginia Board of Pharmacy (Virginia Only)</div></div></div><div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">High School Diploma or GED</div><div class="admission-sub">Applicants must be attending high school, have a GED certificate, or be a high school graduate</div></div></div></div></section><section class="section bg-lav" id="approvals"><span class="section-label">Accreditation &amp; Approvals</span><h2 class="section-title">Nationally Recognized</h2><p class="section-sub">Our program holds approvals from the leading healthcare and education bodies in the country.</p><div class="approvals-grid"><a class="approval-tag" href="https://www.schev.edu/" target="_blank" rel="noopener">State Council of Higher Education of Virginia (SCHEV)</a><a class="approval-tag" href="https://www.ashp.org/professional-development/technician-program-accreditation" target="_blank" rel="noopener">American Society of Health-system Pharmacists (ASHP) / ACPE Accredited Nationally</a><a class="approval-tag" href="https://mycaa.militaryonesource.mil/mycaa/" target="_blank" rel="noopener">MYCAA Scholarship (Dept. of Defense Approved Institution)</a><a class="approval-tag" href="https://www.dol.gov/agencies/eta/wioa" target="_blank" rel="noopener">WIOA — Workforce Innovative Opportunity Act</a><a class="approval-tag" href="https://www.in.gov/pla/professions/pharmacy-home/pharmacy-board/" target="_blank" rel="noopener">Indiana Board of Pharmacy</a><a class="approval-tag" href="https://www.dhp.virginia.gov/Boards/Pharmacy/" target="_blank" rel="noopener">Virginia Board of Pharmacy</a><a class="approval-tag" href="https://www.nhanow.com" target="_blank" rel="noopener">National Healthcareer Association (NHA)</a><a class="approval-tag" href="https://ptcb.org/" target="_blank" rel="noopener">Pharmacy Technician Certification Board (PTCB)</a><a class="approval-tag" href="https://www.amcaexams.com/" target="_blank" rel="noopener">American Medical Certification Association (AMCA)</a><a class="approval-tag" href="https://www.cool.osd.mil/army/index.html" target="_blank" rel="noopener">Army Credentialing Assistance</a><a class="approval-tag" href="https://afvec.us.af.mil/afvec/af-cool/welcome" target="_blank" rel="noopener">AirForce COOL</a><a class="approval-tag" href="https://health.maryland.gov/pharmacy/pages/index.aspx" target="_blank" rel="noopener">Maryland Board of Pharmacy</a><a class="approval-tag" href="https://floridaspharmacy.gov/" target="_blank" rel="noopener">Florida Board of Pharmacy</a></div></section><section class="bottom-cta"><h2>Launch Your Pharmacy Tech Career</h2><div class="cta-btns"><a href="https://www.alliedrxtraining.com/register" class="primary">Enroll Now — $99 Today</a><a href="https://www.alliedrxtraining.com/military" class="ghost">Military Benefits</a></div></section></main></div><script>
+</style></head>
+<body>
+
+<svg style="display:none"><defs><symbol id="ico-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
+
+<!-- MOBILE HEADER -->
+<header class="mobile-header">
+  <span class="mobile-header-logo">Allied<em>Rx</em> Institute</span>
+  <a href="https://www.alliedrxtraining.com/register" class="mobile-header-enroll">Enroll — $99</a>
+</header>
+
+<div class="page-shell">
+
+  <!-- SIDEBAR (desktop only) -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h4>Pharmacy Technician</h4>
+      <p>CPhT Certification Program</p>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="#overview" class="active"><span class="nav-dot"></span> Program Overview</a></li>
+      <li><a href="#enroll-steps"><span class="nav-dot"></span> How to Enroll</a></li>
+      <li><a href="#platform"><span class="nav-dot"></span> Inside the Platform</a></li>
+      <li><a href="#courses"><span class="nav-dot"></span> Courses</a></li>
+      <li><a href="#modules"><span class="nav-dot"></span> What You'll Learn</a></li>
+      <li><a href="#hours"><span class="nav-dot"></span> Clock Hours</a></li>
+      <li><a href="#passrates"><span class="nav-dot"></span> Pass Rates</a></li>
+      <li><a href="#benefits"><span class="nav-dot"></span> Program Benefits</a></li>
+      <li><a href="#admissions"><span class="nav-dot"></span> Admissions</a></li>
+      <li><a href="#approvals"><span class="nav-dot"></span> Approvals</a></li>
+    </ul>
+    <div class="sidebar-enroll">
+      <h3>Start Your Pharmacy Tech Career</h3>
+      <div class="sidebar-enroll-price">
+        <div class="label">Enrollment Fee</div>
+        <div class="amount">$99</div>
+        <div class="sub">Due today at registration</div>
+      </div>
+      <div class="sidebar-badge">✓ ASHP/ACPE Accredited Program<br>100% Online · Self-Paced</div>
+      <a href="https://www.alliedrxtraining.com/register" class="btn-enroll">Enroll Now</a>
+      <a href="https://www.alliedrxtraining.com/getmoreinfo" class="btn-outline">Learn More</a>
+      <p class="sidebar-note">Enroll in minutes. Choose your tuition plan after registration.</p>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="hero-badge"><span class="dot"></span>ASHP/ACPE Accredited · Nationally Recognized</div>
+          <h1>Become a<br><em>Certified Pharmacy Technician</em></h1>
+          <p class="hero-desc">Launch a rewarding healthcare career with our 400-hour CPhT program. 100% online and self-paced — preparing you for both the PTCB and ExCPT national certification exams.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><span class="num">400</span><span class="lbl">Clock Hours</span></div>
+            <div class="hero-stat"><span class="num">100%</span><span class="lbl">ExCPT Pass Rate</span></div>
+            <div class="hero-stat"><span class="num">80%</span><span class="lbl">PTCB Pass Rate</span></div>
+          </div>
+          <div class="hero-ctas">
+            <a href="https://www.alliedrxtraining.com/register" class="btn-primary-hero">Enroll Now — $99 Today</a>
+            <a href="https://www.alliedrxtraining.com/getmoreinfo" class="btn-ghost">Explore Program</a>
+          </div>
+        </div>
+        <div class="hero-image-panel">
+          <div class="hero-image-wrap">
+            <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/65df65a940b79eeec6cc7715_Untitled%20(4).png" alt="Pharmacy Technician Program" />
+          </div>
+          <div class="hero-accred-strip">
+            <div class="shield"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            ASHP/ACPE Nationally Accredited Program
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section bg-white" id="overview">
+      <span class="section-label">Program Overview</span>
+      <h2 class="section-title">Everything You Need to Know</h2>
+      <div class="overview-grid" style="margin-bottom:2rem;">
+        <div class="overview-card"><div class="oc-label">Total Clock Hours</div><div class="oc-value">400 Hours</div><div class="oc-sub">180 didactic · 80 simulation · 140 clinical</div></div>
+        <div class="overview-card"><div class="oc-label">Format</div><div class="oc-value">100% Online</div><div class="oc-sub">Self-paced with flexible scheduling</div></div>
+        <div class="overview-card"><div class="oc-label">Certification Prep</div><div class="oc-value">PTCB &amp; ExCPT</div><div class="oc-sub">Dual national exam preparation included</div></div>
+        <div class="overview-card"><div class="oc-label">Accreditation</div><div class="oc-value">ASHP / ACPE</div><div class="oc-sub">Nationally recognized · Employer accepted</div></div>
+      </div>
+      <p class="program-desc">We provide a top training program that helps you step into this fast-growing healthcare job. As a pharmacy technician, you'll work with pharmacists and other health workers. You might work in a retail pharmacy or a healthcare system. Our online pharmacy technician training program teaches many important topics. You'll learn about medicine orders, how a pharmacy runs, and how to care for patients. You'll also learn to handle insurance claims, help give out medications, and provide great service to patients.</p>
+      <p class="program-desc">After finishing our pharmacy tech program you'll be ready to take the Pharmacy Technician Certification Board Exam (PTCB) and or NHA Board Exam ExCPT. This certificate is recognized all over the country and shows you're a skilled pharmacy technician. With this certificate, you'll have more job options and chances to advance your career.</p>
+    </section>
+
+    <!-- ENROLL STEPS -->
+    <section class="section bg-white" id="enroll-steps">
+      <span class="section-label">Enrollment Process</span>
+      <h2 class="section-title">Get Started in 3 Simple Steps</h2>
+      <p class="section-sub">From registration to your first class — takes less than 10 minutes.</p>
+      <div class="steps-track">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-label">Register &amp; Pay Enrollment Fee</div>
+            <div class="step-sub">Complete your registration online. Pay the $99 enrollment fee, which covers your background check and drug test processing.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-label">Complete Orientation</div>
+            <div class="step-sub">Log into your student portal and complete the short orientation module to activate your account and choose your tuition plan.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-label">Add Your First Class</div>
+            <div class="step-sub">Add your first course in the portal. Your first tuition payment ($99 down) is due when you add your class. Then start learning!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORM -->
+    <section class="section platform-section" id="platform">
+      <div class="plat-header">
+        <span class="section-label" style="color:var(--lavender);">Student Experience</span>
+        <h2 class="section-title" style="color:#fff;max-width:600px;margin:0 auto .5rem;">A Peek Inside Your Classroom</h2>
+        <p class="plat-sub">Our modern platform is built for working adults — structured, intuitive, and packed with real-world activities.</p>
+      </div>
+      <div class="tab-pills">
+        <button class="platform-tab active" onclick="switchTab(0)" id="tab-0">Patient Communication</button>
+        <button class="platform-tab" onclick="switchTab(1)" id="tab-1">Medication Safety</button>
+        <button class="platform-tab" onclick="switchTab(2)" id="tab-2"><span class="pulse-live"></span> Try the Simulation</button>
+      </div>
+      <div class="platform-inner" style="position:relative;z-index:1;">
+        <div class="platform-copy">
+          <div id="features-0" class="platform-tab-content">
+            <div class="platform-features">
+              <div class="platform-feature active" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><div class="pf-text"><strong>Structured Chapter Navigation</strong><span>Progress through modules at your own pace with a clear, visual roadmap</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="pf-text"><strong>Interactive Patient Scenarios</strong><span>Practice adapting communication for hospice care, language barriers, and hearing-impaired patients</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="pf-text"><strong>Professional Writing Practice</strong><span>Rewrite informal messages into clear, professional pharmacy documentation</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="pf-text"><strong>Live Progress Tracking</strong><span>Visual progress bar and completion checkmarks keep you motivated and on track</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg></div><div class="pf-text"><strong>Ask AI Support</strong><span>Built-in AI tutor available anytime you need help within a lesson</span></div></div>
+            </div>
+          </div>
+          <div id="features-1" class="platform-tab-content" style="display:none;">
+            <div class="platform-features">
+              <div class="platform-feature active" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div class="pf-text"><strong>Dangerous Abbreviation Drills</strong><span>Sort TJC "Do Not Use" abbreviations interactively to build safety awareness</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="pf-text"><strong>Prescription Detective Challenges</strong><span>Interpret real handwritten prescriptions with ambiguous abbreviations like Lantus insulin cases</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M3 3h18v18H3z"/><path d="M9 9h1v6H9z"/><path d="M14 9h1v6h-1z"/></svg></div><div class="pf-text"><strong>Drug &amp; Dosage Form Recognition</strong><span>Decode abbreviations and dosage forms used in real pharmacy workflows</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="pf-text"><strong>Pharmacokinetics Modules</strong><span>Study how drugs act in the body — absorption, distribution, metabolism, and elimination</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="pf-text"><strong>Weekly Flash Card Reviews</strong><span>Reinforce Top 200 brand and generic drugs with built-in spaced repetition cards</span></div></div>
+            </div>
+          </div>
+          <div id="features-2" class="platform-tab-content" style="display:none;">
+            <div style="margin-bottom:.75rem;">
+              <div class="live-badge" style="margin-bottom:.65rem"><span class="pulse-live"></span> Interactive — No Login Required</div>
+            </div>
+            <div class="platform-features">
+              <div class="platform-feature active" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="pf-text"><strong>Simulated Pharmacy Environment</strong><span>Practice in a fully interactive virtual pharmacy before your clinical externship</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg></div><div class="pf-text"><strong>Real Dispensing Workflows</strong><span>Process prescriptions, verify orders, and practice dispensing procedures step by step</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="pf-text"><strong>Safe Practice Environment</strong><span>Make mistakes and learn from them without real-world consequences</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="pf-text"><strong>Counts Toward Clock Hours</strong><span>Simulation hours contribute to your 80 required simulation clock hours</span></div></div>
+            </div>
+          </div>
+          <a href="https://www.alliedrxtraining.com/register" class="btn-access">Enroll &amp; Get Access →</a>
+        </div>
+        <div class="platform-screen">
+          <div class="platform-browser">
+            <div class="platform-browser-bar">
+              <div class="browser-dot"></div><div class="browser-dot"></div><div class="browser-dot"></div>
+              <div id="browser-url-text" class="browser-url">app.alliedrxtraining.com · Distance Learning Pharmacy Tech Course</div>
+            </div>
+            <div id="platform-slides" style="position:relative;overflow:hidden;">
+              <div id="platform-img-0" style="display:block;">
+                <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964f4317a75cfe847972073_Screenshot%202026-01-11%20at%203.13.51%E2%80%AFPM.png" alt="Patient communication activities" style="width:100%;display:block;">
+                <div class="tab-divider"><span class="pulse-live"></span><span class="tab-divider-label">Try It — Patient Communication Activity</span></div>
+                <iframe src="https://interactive.alliedrxtraining.com/pharmacy/chapter4commandrole.html" class="content-frame" allowfullscreen></iframe>
+              </div>
+              <div id="platform-img-1" style="display:none;">
+                <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964f4308c89d7b64c255119_Screenshot%202026-01-11%20at%203.14.42%E2%80%AFPM.png" alt="Medication safety activities" style="width:100%;display:block;">
+                <div class="tab-divider"><span class="pulse-live"></span><span class="tab-divider-label">Try It — Brand &amp; Generic Drug Flashcards</span></div>
+                <iframe src="https://interactive.alliedrxtraining.com/pharmacy/week1flashcards.html" class="content-frame" allowfullscreen></iframe>
+              </div>
+              <div id="platform-sim" style="display:none;">
+                <div id="sim-preview" style="position:relative;cursor:pointer;" onclick="launchSim()">
+                  <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/662d1220cf62638e99568fac_AlliedRx%20Education%20Event%20Presentation%20Slideshow-p-1600.jpg" alt="Virtual pharmacy simulation" style="width:100%;display:block;">
+                  <div class="sim-overlay">
+                    <div class="sim-play-btn"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                    <div style="text-align:center;">
+                      <div class="sim-title">Launch Virtual Pharmacy</div>
+                      <div class="sim-subtitle">Interactive simulation — microphone &amp; camera optional</div>
+                    </div>
+                    <div class="live-badge"><span class="pulse-live"></span> No Login Required</div>
+                  </div>
+                </div>
+                <iframe id="sim-iframe" allow="microphone; camera" class="content-frame" style="height:540px;display:none;" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="platform-float-badge" id="platform-badge"><span class="live-dot"></span><span id="badge-text">Live Student Platform</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="section bg-lav" id="courses">
+      <span class="section-label">Curriculum</span>
+      <h2 class="section-title">3 Courses · Complete Curriculum</h2>
+      <p class="section-sub">Each course builds on the last — from foundational pharmacy knowledge to real-world clinical experience.</p>
+      <div class="course-cards">
+        <div class="course-card">
+          <div class="course-header"><div class="course-num">01</div><div class="course-title">Basic Pharmacy</div></div>
+          <div class="course-body"><p>This is a course all about becoming a Pharmacy Technician. You will learn how to handle prescriptions and explain the laws that affect pharmacies. You will also learn about your role as a Pharmacy Technician and the different ways medicines can be given. We'll teach you how to mix medicines and keep everything clean and germ-free. We'll also talk about the difference between brand-name and generic drugs. You'll also get to learn about SIG codes, a kind of short language used in prescriptions. Lastly, we'll show you how to handle billing and insurance claims for prescriptions. This course will give you everything you need to know to get started as a Pharmacy Technician.</p></div>
+        </div>
+        <div class="course-card">
+          <div class="course-header"><div class="course-num">02</div><div class="course-title">Pharmacy Calculations</div></div>
+          <div class="course-body"><p>This is a course about the important math you need to know as a Certified Pharmacy Technician. You will learn how to use formulas and conversions for pharmacy calculations. Explain the rules of the metric system and the basic units of weight, volume, and length. Describe common equivalents in the metric system. Discuss the apothecary system. Explain the household system. Convert metric measures to their equivalents in the other systems.</p></div>
+        </div>
+        <div class="course-card">
+          <div class="course-header"><div class="course-num">03</div><div class="course-title">Pharmacy Clinicals</div></div>
+          <div class="course-body"><p>This clinical experiential course provides students with hands on experience under the guidance of a Pharmacist at Community Pharmacy. Pre-Requisites: Basic Pharmacy and Pharmacy Calculations.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULES -->
+    <section class="section bg-white" id="modules">
+      <span class="section-label">Learning Outcomes</span>
+      <h2 class="section-title">What You Will Learn</h2>
+      <p class="section-sub">Basic knowledge needed to understand the function of a pharmacy technician, how to prepare, order and stock prescription medications, Patient and Dosage Forms and Routes of Administration, Community and Institutional Pharmacy Settings, Top 200 Drugs, IV Flow Rates, Compounding Drugs, Brand and Generic Prescription Drugs.</p>
+      <div class="modules-grid">
+        <div class="module-item"><div class="module-num">1</div><div class="module-text">History of Medicine</div></div>
+        <div class="module-item"><div class="module-num">2</div><div class="module-text">Pharmacy Law, Ethics, and Regulatory Agencies</div></div>
+        <div class="module-item"><div class="module-num">3</div><div class="module-text">Pharmacy Technicians: Competencies, Associations, Settings &amp; Patient Interaction</div></div>
+        <div class="module-item"><div class="module-num">4</div><div class="module-text">Patient &amp; Medication Administration</div></div>
+        <div class="module-item"><div class="module-num">5</div><div class="module-text">Institutional Pharmacy Practice</div></div>
+        <div class="module-item"><div class="module-num">6</div><div class="module-text">Community Pharmacy Practice</div></div>
+        <div class="module-item"><div class="module-num">7</div><div class="module-text">Bulk Repackaging and Non-Sterile Compounding</div></div>
+        <div class="module-item"><div class="module-num">8</div><div class="module-text">Aseptic Technique and Sterile Compounding</div></div>
+        <div class="module-item"><div class="module-num">9</div><div class="module-text">Advanced Sterile Compounding</div></div>
+        <div class="module-item"><div class="module-num">10</div><div class="module-text">Pharmacy Billing and Inventory Management</div></div>
+        <div class="module-item"><div class="module-num">11</div><div class="module-text">Medication Safety and Error Prevention</div></div>
+        <div class="module-item"><div class="module-num">12</div><div class="module-text">Drug References Study Format</div></div>
+      </div>
+    </section>
+
+    <!-- HOURS -->
+    <section class="section bg-dark" id="hours">
+      <span class="section-label" style="color:var(--lavender);">Program Structure</span>
+      <h2 class="section-title light">400 Total Clock Hours</h2>
+      <p class="section-sub light">Structured to meet national accreditation standards and employer expectations.</p>
+      <div class="hours-grid">
+        <div class="hour-card"><div class="hour-num">180</div><div class="hour-label">Didactic</div><div class="hour-sub">Online coursework &amp; lectures</div></div>
+        <div class="hour-card"><div class="hour-num">80</div><div class="hour-label">Simulation</div><div class="hour-sub">Virtual labs &amp; practice scenarios</div></div>
+        <div class="hour-card"><div class="hour-num">140</div><div class="hour-label">Clinical</div><div class="hour-sub">Supervised pharmacy externship</div></div>
+      </div>
+    </section>
+
+    <!-- PASS RATES -->
+    <section class="section bg-white" id="passrates">
+      <span class="section-label">Outcomes</span>
+      <h2 class="section-title">Certification Pass Rates</h2>
+      <p class="section-sub">AlliedRx graduates consistently outperform the national average on both PTCB and ExCPT exams.</p>
+      <div class="passrate-grid">
+        <div class="passrate-card"><div class="passrate-exam">PTCB Exam</div><div class="passrate-pct">80%</div><div class="passrate-label">Program Pass Rate</div><div class="passrate-badge">10% above national average</div></div>
+        <div class="passrate-card"><div class="passrate-exam">ExCPT Exam</div><div class="passrate-pct">100%</div><div class="passrate-label">Program Pass Rate</div><div class="passrate-badge">35% above national average</div></div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="section bg-lav" id="benefits">
+      <span class="section-label">Why AlliedRx</span>
+      <h2 class="section-title">9 Reasons to Choose This Program</h2>
+      <p class="section-sub">Designed for working adults who need flexibility without sacrificing quality.</p>
+      <div class="benefits-grid">
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div><div class="benefit-text">6 Month Access to Learning Content</div><div class="benefit-sub">Full year of access to all course materials</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="benefit-text">Flexible Schedule</div><div class="benefit-sub">Manage work, family and study in a flexible campus schedule</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg></div><div><div class="benefit-text">Online Pharmacy Lab Simulations</div><div class="benefit-sub">Practice in a virtual pharmacy environment</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div><div><div class="benefit-text">Interactive Study Guides and Knowledge Assessments</div><div class="benefit-sub">Engaging tools to reinforce learning</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="benefit-text">3D Interactive Anatomy Simulations</div><div class="benefit-sub">Visual learning with 3D anatomical models</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div><div class="benefit-text">Patient Care Simulations</div><div class="benefit-sub">Practice real-world patient scenarios</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><div><div class="benefit-text">Video Demonstrations</div><div class="benefit-sub">Watch critical skills performed in a medical setting</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><div><div class="benefit-text">National Board Examination Prep Materials</div><div class="benefit-sub">Comprehensive PTCB &amp; ExCPT exam preparation</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><div class="benefit-text">Walgreens Clinical Externship</div><div class="benefit-sub">Hands-on experience at partnered pharmacy locations*</div></div></div>
+      </div>
+    </section>
+
+    <!-- ADMISSIONS -->
+    <section class="section bg-white" id="admissions">
+      <span class="section-label">Admissions</span>
+      <h2 class="section-title">Requirements</h2>
+      <p class="section-sub">Simple, straightforward requirements so you can get started quickly.</p>
+      <div class="admissions-list">
+        <div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">Must be 18 Years of Age or Older</div><div class="admission-sub">Prospective students must be 18 years of age to register for the Pharmacy Technician Program</div></div></div>
+        <div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">Reading Comprehension &amp; Math Assessment</div><div class="admission-sub">Applicants must take a reading comprehension and math assessment test prior to course enrollment. Passing score of 70% or higher required. This is done after registering in the orientation portal.</div></div></div>
+        <div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">English Language Proficiency</div><div class="admission-sub">Applicant must have demonstrated English language proficiency (including reading, writing and speaking)</div></div></div>
+        <div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">Access to Internet and Computer, Tablet or Mobile Device</div><div class="admission-sub">Required to access the online learning platform</div></div></div>
+        <div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">Criminal Background Check &amp; Drug Testing</div><div class="admission-sub">Applicants must complete a criminal background check and drug testing</div></div></div>
+        <div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">Registered Pharmacy Technician Trainee (Virginia Only)</div><div class="admission-sub">Registered Pharmacy Technician Trainee with the Virginia Board of Pharmacy (Virginia Only)</div></div></div>
+        <div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">High School Diploma or GED</div><div class="admission-sub">Applicants must be attending high school, have a GED certificate, or be a high school graduate</div></div></div>
+      </div>
+    </section>
+
+    <!-- APPROVALS -->
+    <section class="section bg-lav" id="approvals">
+      <span class="section-label">Accreditation &amp; Approvals</span>
+      <h2 class="section-title">Nationally Recognized</h2>
+      <p class="section-sub">Our program holds approvals from the leading healthcare and education bodies in the country.</p>
+      <div class="approvals-grid">
+        <a class="approval-tag" href="https://www.schev.edu/" target="_blank" rel="noopener">State Council of Higher Education of Virginia (SCHEV)</a>
+        <a class="approval-tag" href="https://www.ashp.org/professional-development/technician-program-accreditation" target="_blank" rel="noopener">American Society of Health-system Pharmacists (ASHP) / ACPE Accredited Nationally</a>
+        <a class="approval-tag" href="https://mycaa.militaryonesource.mil/mycaa/" target="_blank" rel="noopener">MYCAA Scholarship (Dept. of Defense Approved Institution)</a>
+        <a class="approval-tag" href="https://www.dol.gov/agencies/eta/wioa" target="_blank" rel="noopener">WIOA — Workforce Innovative Opportunity Act</a>
+        <a class="approval-tag" href="https://www.in.gov/pla/professions/pharmacy-home/pharmacy-board/" target="_blank" rel="noopener">Indiana Board of Pharmacy</a>
+        <a class="approval-tag" href="https://www.dhp.virginia.gov/Boards/Pharmacy/" target="_blank" rel="noopener">Virginia Board of Pharmacy</a>
+        <a class="approval-tag" href="https://www.nhanow.com" target="_blank" rel="noopener">National Healthcareer Association (NHA)</a>
+        <a class="approval-tag" href="https://ptcb.org/" target="_blank" rel="noopener">Pharmacy Technician Certification Board (PTCB)</a>
+        <a class="approval-tag" href="https://www.amcaexams.com/" target="_blank" rel="noopener">American Medical Certification Association (AMCA)</a>
+        <a class="approval-tag" href="https://www.cool.osd.mil/army/index.html" target="_blank" rel="noopener">Army Credentialing Assistance</a>
+        <a class="approval-tag" href="https://afvec.us.af.mil/afvec/af-cool/welcome" target="_blank" rel="noopener">AirForce COOL</a>
+        <a class="approval-tag" href="https://health.maryland.gov/pharmacy/pages/index.aspx" target="_blank" rel="noopener">Maryland Board of Pharmacy</a>
+        <a class="approval-tag" href="https://floridaspharmacy.gov/" target="_blank" rel="noopener">Florida Board of Pharmacy</a>
+      </div>
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="bottom-cta">
+      <h2>Launch Your Pharmacy Tech Career</h2>
+      <div class="cta-btns">
+        <a href="https://www.alliedrxtraining.com/register" class="primary">Enroll Now — $99 Today</a>
+        <a href="https://www.alliedrxtraining.com/military" class="ghost">Military Benefits</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- MOBILE STICKY ENROLL BAR -->
+<div class="mob-enroll-bar">
+  <div class="mob-enroll-bar-text">
+    Start Your Pharmacy Tech Career
+    <span>$99 enrollment fee · 100% online</span>
+  </div>
+  <a href="https://www.alliedrxtraining.com/register" class="mob-enroll-bar-btn">Enroll Now</a>
+</div>
+
+<script>
 function switchTab(n){
-  document.querySelectorAll('.platform-tab').forEach(function(t,i){t.classList.toggle('active',i===n);});
+  document.querySelectorAll('.platform-tab').forEach(function(t,i){t.classList.toggle('active',i===n)});
   document.getElementById('features-0').style.display=n===0?'block':'none';
   document.getElementById('features-1').style.display=n===1?'block':'none';
   document.getElementById('features-2').style.display=n===2?'block':'none';
@@ -167,16 +708,18 @@ function launchSim(){
   f.style.display='block';
 }
 function highlightFeature(el){
-  el.closest('.platform-features').querySelectorAll('.platform-feature').forEach(function(f){f.classList.remove('active');});
+  el.closest('.platform-features').querySelectorAll('.platform-feature').forEach(function(f){f.classList.remove('active')});
   el.classList.add('active');
 }
 var _navLinks=document.querySelectorAll('.sidebar-nav li a');
 var _sections=document.querySelectorAll('section[id]');
 function updateActiveNav(){
   var cur='';
-  _sections.forEach(function(s){if(s.getBoundingClientRect().top<=120)cur=s.id;});
-  _navLinks.forEach(function(l){l.classList.remove('active');if(l.getAttribute('href')==='#'+cur)l.classList.add('active');});
+  _sections.forEach(function(s){if(s.getBoundingClientRect().top<=120)cur=s.id});
+  _navLinks.forEach(function(l){l.classList.remove('active');if(l.getAttribute('href')==='#'+cur)l.classList.add('active')});
 }
 window.addEventListener('scroll',updateActiveNav,{passive:true});
 updateActiveNav();
-</script><div class="mob-enroll-bar"><div class="mob-enroll-bar-text">Start Your Pharmacy Tech Career<span>$99 enrollment fee · 100% online</span></div><a href="https://www.alliedrxtraining.com/register" class="mob-enroll-bar-btn">Enroll Now</a></div></body></html>
+</script>
+
+</body></html>
