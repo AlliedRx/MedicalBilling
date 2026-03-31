@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Medical Assistant (CCMA) Campus Program | AlliedRx Institute of Healthcare</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden}
+:root{
+  --navy:#080d1a;
+  --navy2:#0a0f28;
+  --purple:#9148fc;
+  --purple-d:#7c3aed;
+  --lavender:#c4b5fd;
+  --lav-light:#f0ebff;
+  --blue:#3b82f6;
+  --blue-light:#60a5fa;
+  --slate:#94a3b8;
+  --text:#1f2937;
+  --sidebar-w:240px;
+  --gp:linear-gradient(135deg,#7c3aed,#9148fc);
+  --gb:linear-gradient(135deg,#60a5fa,#9148fc)
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f7fc;color:var(--text);line-height:1.65}
+.page-shell{display:block;min-height:100vh}
+.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;background:#fff;border-right:1px solid #e5e7eb;overflow:hidden;display:flex;flex-direction:column;z-index:100}
+.sidebar::-webkit-scrollbar{width:4px}
+.sidebar::-webkit-scrollbar-thumb{background:#9148fc40;border-radius:2px}
+.sidebar-header{padding:1rem 1.25rem .6rem;border-bottom:1px solid #f0ebf7}
+.sidebar-header h4{font-size:.7rem;font-weight:700;color:var(--purple);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.sidebar-header p{font-size:.85rem;color:#64748b;font-weight:500}
+.sidebar-nav{flex:1;overflow-y:auto;list-style:none;padding:.5rem 0;min-height:0}
+.sidebar-nav li a{display:flex;align-items:center;gap:.5rem;color:#64748b;text-decoration:none;padding:.5rem 1.25rem;font-size:.82rem;font-weight:500;border-left:3px solid transparent;transition:all .2s}
+.sidebar-nav li a:hover{color:var(--navy2);padding-left:1.5rem}
+.sidebar-nav li a.active{color:var(--purple);font-weight:700;border-left-color:var(--purple);background:#9148fc0f;padding-left:1.5rem}
+.sidebar-nav li a .nav-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;opacity:.5}
+.sidebar-enroll{margin:.6rem .75rem .75rem;margin-top:auto;flex-shrink:0;background:var(--navy);border:1.5px solid #9148fc40;border-radius:12px;padding:.75rem;box-shadow:0 4px 20px #0003}
+.sidebar-enroll h3{font-size:.8rem;font-weight:800;color:#fff;margin-bottom:.5rem;line-height:1.3}
+.sidebar-enroll-price{background:#0000004d;border-radius:8px;padding:.5rem .75rem;text-align:center;margin-bottom:.5rem}
+.sidebar-enroll-price .label{color:var(--slate);font-size:.68rem;font-weight:600;margin-bottom:.1rem}
+.sidebar-enroll-price .amount{font-size:1.25rem;font-weight:900;color:#fff}
+.sidebar-enroll-price .sub{font-size:.68rem;color:var(--slate);margin-top:.1rem}
+.sidebar-badge{background:#60a5fa14;border:1px solid #60a5fa40;color:var(--blue-light);font-size:.68rem;font-weight:600;padding:.35rem .5rem;border-radius:6px;text-align:center;margin-bottom:.5rem;line-height:1.3}
+.btn-enroll{display:block;background:var(--gp);color:#fff;text-decoration:none;text-align:center;padding:9px 16px;border-radius:100px;font-weight:700;font-size:.82rem;transition:opacity .2s,transform .2s;margin-bottom:.35rem}
+.btn-enroll:hover{opacity:.9;transform:scale(1.02)}
+.btn-outline{display:block;border:1.5px solid #9148fc66;color:var(--lavender);text-decoration:none;text-align:center;padding:7px 16px;border-radius:100px;font-weight:600;font-size:.78rem;transition:all .2s;margin-bottom:.35rem}
+.btn-outline:hover{background:#9148fc26;color:#fff}
+.sidebar-note{font-size:.67rem;color:var(--slate);text-align:center;line-height:1.4}
+.main{background:#fff;margin-left:var(--sidebar-w)}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 45%,#0c1640 100%);position:relative;overflow:hidden;padding:4rem 4.5rem 4.5rem}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(#9148fc22,transparent 70%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:3.5rem;align-items:center;position:relative;z-index:1;max-width:1200px}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:#9148fc26;border:1.5px solid #9148fc59;color:var(--lavender);padding:.4rem 1rem;border-radius:100px;font-size:.8rem;font-weight:700;letter-spacing:.03em;margin-bottom:1.25rem}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--purple);animation:pulse-dot 1.5s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
+.hero h1{font-size:2.8rem;font-weight:900;color:#fff;line-height:1.15;margin-bottom:1.25rem;letter-spacing:-.02em;max-width:560px}
+.hero h1 em{font-style:normal;background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-desc{color:#94a3b8;font-size:1rem;line-height:1.8;margin-bottom:2rem;max-width:520px}
+.hero-stats{display:flex;gap:2rem;margin-bottom:2rem;flex-wrap:nowrap;align-items:flex-start}
+.hero-stat{display:flex;flex-direction:column;flex-shrink:0}
+.hero-stat .num{font-size:1.6rem;font-weight:900;background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-stat .lbl{font-size:.78rem;color:var(--slate);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary-hero{background:var(--gp);color:#fff;text-decoration:none;padding:13px 28px;border-radius:100px;font-weight:700;font-size:.95rem;box-shadow:0 4px 24px #9148fc59;transition:opacity .2s,transform .2s}
+.btn-primary-hero:hover{opacity:.9;transform:translateY(-1px)}
+.btn-ghost{border:1.5px solid #ffffff33;color:#fff;text-decoration:none;padding:13px 28px;border-radius:100px;font-weight:600;font-size:.95rem;transition:all .2s}
+.btn-ghost:hover{background:#ffffff12}
+.hero-image-panel{position:relative}
+.hero-image-wrap{border-radius:20px;overflow:hidden;border:1.5px solid #9148fc40;box-shadow:0 20px 60px #00000080;aspect-ratio:4/5;background:linear-gradient(160deg,#0e1230,#1a0e34)}
+.hero-image-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:contrast(1.12) saturate(1.15) brightness(1.03);transform:translateZ(0)}
+.hero-accred-strip{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);max-width:90%;background:#fff;border-radius:12px;padding:.6rem 1rem;display:flex;align-items:center;gap:.65rem;white-space:nowrap;box-shadow:0 4px 20px #00000040;font-size:.75rem;font-weight:700;color:var(--navy2)}
+.hero-accred-strip .shield{width:24px;height:24px;border-radius:6px;background:var(--gp);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-accred-strip .shield svg{width:14px;height:14px}
+
+/* campus chip */
+.campus-chip{display:inline-flex;align-items:center;gap:.4rem;background:#10b98122;border:1px solid #10b98144;color:#34d399;padding:.3rem .75rem;border-radius:100px;font-size:.72rem;font-weight:700;margin-bottom:.75rem}
+.campus-chip .live-dot{width:6px;height:6px;border-radius:50%;background:#10b981}
+
+/* ── STAT BANNER ── */
+.stat-banner{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 50%,#0c1640 100%);padding:2rem 4.5rem}
+.stat-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+.stat-item .sn{font-size:2rem;font-weight:900;background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.25rem}
+.stat-item .sl{color:#fff;font-size:.82rem;font-weight:700}
+.stat-item .ss{color:var(--slate);font-size:.72rem;margin-top:.1rem}
+
+/* ── STUDENT STORIES ── */
+.stories-section{padding:4rem 4.5rem;background:#fff}
+.stories-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;gap:1rem;flex-wrap:wrap}
+.stories-header .section-sub{margin-bottom:0}
+.see-all{display:inline-flex;align-items:center;gap:.5rem;background:var(--gp);color:#fff;text-decoration:none;padding:.65rem 1.25rem;border-radius:100px;font-size:.82rem;font-weight:700;white-space:nowrap;transition:opacity .2s;flex-shrink:0}
+.see-all:hover{opacity:.88}
+.stories-scroll{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.story-card{background:#fff;border-radius:20px;border:1.5px solid #ede9f7;overflow:hidden;transition:box-shadow .3s,transform .3s;cursor:pointer}
+.story-card:hover{box-shadow:0 16px 40px #9148fc1a;transform:translateY(-4px)}
+.story-photo{width:100%;height:240px;object-fit:cover;display:block;filter:contrast(1.12) saturate(1.15) brightness(1.03);transform:translateZ(0);transition:transform .35s,filter .35s}
+.story-card:hover .story-photo{transform:scale(1.03);filter:contrast(1.15) saturate(1.2) brightness(1.05)}
+.story-body{padding:1.25rem 1.25rem 1rem}
+.story-cohort{display:inline-block;background:#9148fc0d;border:1px solid #9148fc26;color:var(--purple);font-size:.68rem;font-weight:700;padding:.25rem .65rem;border-radius:100px;margin-bottom:.65rem;letter-spacing:.05em;text-transform:uppercase}
+.story-title{font-size:1rem;font-weight:800;color:var(--navy2);margin-bottom:.4rem;line-height:1.3}
+.story-desc{font-size:.82rem;color:#64748b;line-height:1.65;margin-bottom:.9rem}
+.story-footer{display:flex;align-items:center;gap:.6rem;padding-top:.65rem;border-top:1px solid #f0ebf7}
+.story-avatar{width:32px;height:32px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:#fff;flex-shrink:0}
+.story-who{font-size:.78rem;font-weight:700;color:var(--navy2)}
+.story-role{font-size:.72rem;color:#64748b}
+
+/* ── CAMPUS SECTION ── */
+.campus-section{background:var(--lav-light);padding:4rem 4.5rem}
+.campus-inner{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.campus-copy .section-label{margin-bottom:.5rem}
+.campus-copy .section-title{margin-bottom:.75rem}
+.campus-copy .section-sub{margin-bottom:1.5rem}
+.campus-feature-list{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.75rem}
+.campus-feat{display:flex;align-items:flex-start;gap:.75rem}
+.feat-dot{width:22px;height:22px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+.feat-dot svg{width:11px;height:11px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.feat-text{font-size:.9rem;font-weight:600;color:var(--navy2);line-height:1.4}
+.feat-sub{font-size:.8rem;color:#64748b;margin-top:.1rem}
+.campus-photos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.campus-photo{border-radius:14px;overflow:hidden;position:relative}
+.campus-photo img{width:100%;height:200px;object-fit:cover;display:block;filter:contrast(1.12) saturate(1.15) brightness(1.03);transform:translateZ(0);transition:transform .35s,filter .35s}
+.campus-photo:hover img{transform:scale(1.04);filter:contrast(1.15) saturate(1.2) brightness(1.05)}
+.campus-photo.featured{grid-column:span 2}
+.campus-photo.featured img{height:260px}
+.campus-photo-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,#080d1aaa);padding:.65rem .85rem .55rem;font-size:.75rem;font-weight:700;color:#fff}
+
+/* ── SECTIONS ── */
+.section{padding:3.5rem 4.5rem;border-bottom:1px solid #f0ebf7}
+.section.bg-lav{background:var(--lav-light)}
+.section.bg-dark{background:var(--navy2)}
+.section.bg-white{background:#fff}
+.section-label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:.6rem}
+.section-title{font-size:1.9rem;font-weight:900;color:var(--navy2);line-height:1.2;margin-bottom:1rem;letter-spacing:-.02em}
+.section-title.light{color:#fff}
+.section-sub{color:#64748b;font-size:.95rem;line-height:1.7;max-width:680px;margin-bottom:2.5rem}
+.section-sub.light{color:var(--slate)}
+.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem}
+.overview-card{background:#f8f7fc;border-radius:14px;padding:1.4rem 1.5rem;border:1.5px solid #ede9f7}
+.overview-card .oc-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--purple);margin-bottom:.4rem}
+.overview-card .oc-value{font-size:1.15rem;font-weight:800;color:var(--navy2)}
+.overview-card .oc-sub{font-size:.82rem;color:#64748b;margin-top:.2rem}
+.program-desc{font-size:.97rem;color:#374151;line-height:1.8;margin-bottom:2rem}
+.modules-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.module-item{display:flex;align-items:flex-start;gap:.75rem;background:#fff;border-radius:12px;padding:1rem 1.1rem;border:1.5px solid #ede9f7}
+.module-num{width:28px;height:28px;border-radius:8px;background:var(--gp);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:#fff;flex-shrink:0;margin-top:.1rem}
+.module-text{font-size:.875rem;font-weight:600;color:var(--navy2);line-height:1.4}
+.hours-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;max-width:600px}
+.hour-card{background:linear-gradient(160deg,#0e1230,#1a0e34);border-radius:16px;padding:1.75rem 1.5rem;text-align:center;border:1.5px solid #9148fc33}
+.hour-num{font-size:2.5rem;font-weight:900;background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.4rem}
+.hour-label{color:#fff;font-size:.95rem;font-weight:700;margin-bottom:.25rem}
+.hour-sub{color:var(--slate);font-size:.8rem}
+.passrate-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.passrate-card{background:#fff;border-radius:20px;border:1.5px solid #ede9f7;padding:2rem;text-align:center}
+.passrate-exam{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:.5rem}
+.passrate-pct{font-size:3.5rem;font-weight:900;background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.4rem}
+.passrate-label{font-size:.9rem;font-weight:700;color:var(--navy2);margin-bottom:.5rem}
+.passrate-badge{display:inline-block;background:#05966914;border:1px solid #05966933;color:#059669;font-size:.78rem;font-weight:700;padding:.35rem .85rem;border-radius:100px}
+.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.benefit-item{display:flex;align-items:flex-start;gap:.85rem;padding:1.1rem 1.25rem;background:#fff;border-radius:12px;border:1.5px solid #ede9f7}
+.benefit-icon{width:36px;height:36px;border-radius:10px;background:#9148fc14;border:1px solid #9148fc33;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--purple)}
+.benefit-icon svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.benefit-text{font-size:.875rem;font-weight:600;color:var(--navy2);line-height:1.4}
+.benefit-sub{font-size:.8rem;color:#64748b;margin-top:.2rem}
+.admissions-list{display:flex;flex-direction:column;gap:.75rem}
+.admission-item{display:flex;align-items:flex-start;gap:.85rem;padding:1rem 1.25rem;background:#9148fc0d;border:1px solid #9148fc26;border-radius:12px}
+.admission-check{width:22px;height:22px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem}
+.admission-check svg{width:12px;height:12px}
+.admission-text{font-size:.9rem;font-weight:600;color:var(--navy2)}
+.admission-sub{font-size:.82rem;color:#64748b;margin-top:.15rem}
+.approvals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.85rem}
+.approval-tag{text-decoration:none;background:#fff;border:1.5px solid #ede9f7;border-radius:10px;padding:.75rem 1rem;font-size:.82rem;font-weight:600;color:var(--navy2);display:flex;align-items:center;gap:.5rem;transition:border-color .2s}
+.approval-tag:hover{border-color:rgba(145,72,252,.3)}
+.approval-tag::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gp);flex-shrink:0}
+.steps-track{display:flex;gap:0;position:relative;margin-top:.5rem}
+.steps-track::before{content:'';position:absolute;top:28px;left:28px;right:28px;height:2px;background:linear-gradient(90deg,var(--purple-d),var(--blue-light));z-index:0}
+.step{flex:1;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:0 1rem;position:relative;z-index:1}
+.step-num{width:56px;height:56px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#fff;margin-bottom:1rem;box-shadow:0 4px 20px #9148fc66;border:3px solid #fff}
+.step:nth-child(2) .step-num{background:linear-gradient(135deg,#1d4ed8,var(--blue))}
+.step:nth-child(3) .step-num{background:linear-gradient(135deg,#0369a1,var(--blue-light))}
+.step-label{font-size:.9rem;font-weight:800;color:var(--navy2);margin-bottom:.35rem}
+.step-sub{font-size:.8rem;color:#64748b;line-height:1.5}
+.course-cards{display:flex;flex-direction:column;gap:1.25rem}
+.course-card{background:#fff;border-radius:16px;border:1.5px solid #ede9f7;overflow:hidden}
+.course-header{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;background:#f8f7fc;border-bottom:1.5px solid #ede9f7}
+.course-num{width:36px;height:36px;border-radius:10px;background:var(--gp);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;color:#fff;flex-shrink:0}
+.course-title{font-size:1rem;font-weight:800;color:var(--navy2)}
+.course-body{padding:1.25rem 1.5rem}
+.course-body p{font-size:.875rem;color:#374151;line-height:1.7}
+
+/* Platform section - preserved from original */
+.platform-section{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 60%,#100a2e 100%);position:relative;overflow:hidden}
+.platform-inner{display:grid;grid-template-columns:1fr 1.75fr;gap:2rem;align-items:start;position:relative;z-index:1}
+.platform-copy{padding-top:4.5rem}
+.platform-section.section{padding-top:2.5rem;padding-bottom:2.5rem}
+.platform-copy .section-label{color:var(--lavender)}
+.platform-copy .section-title{color:#fff}
+.platform-copy .section-sub{color:var(--slate);margin-bottom:1rem}
+.platform-features{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem}
+.platform-feature{display:flex;align-items:flex-start;gap:.7rem;background:#ffffff14;border:1px solid #ffffff26;border-radius:10px;padding:.65rem .9rem;cursor:pointer;transition:all .25s}
+.platform-feature:hover,.platform-feature.active{background:#9148fc1a;border-color:#9148fc59}
+.platform-feature.active .pf-icon{background:var(--gp)}
+.pf-icon{width:30px;height:30px;border-radius:8px;background:#9148fc26;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .25s;color:var(--lavender)}
+.platform-feature.active .pf-icon{color:#fff}
+.pf-text strong{display:block;font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.1rem}
+.pf-text span{font-size:.76rem;color:var(--slate);line-height:1.4}
+.platform-screen{position:relative}
+.platform-browser{background:#1e2235;border-radius:16px;overflow:hidden;border:1.5px solid #9148fc33;box-shadow:0 24px 64px #00000099}
+.platform-browser-bar{background:#151929;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid #ffffff0f}
+.browser-dot{width:10px;height:10px;border-radius:50%}
+.browser-dot:nth-child(1){background:#ff5f57}
+.browser-dot:nth-child(2){background:#febc2e}
+.browser-dot:nth-child(3){background:#28c840}
+.browser-url{margin-left:.75rem;background:#ffffff0f;border-radius:6px;padding:.3rem .75rem;font-size:.72rem;color:#64748b;font-family:monospace;flex:1}
+.platform-browser img{width:100%;display:block}
+.platform-float-badge{position:absolute;bottom:-16px;left:24px;background:#fff;border-radius:12px;padding:.65rem 1.1rem;display:flex;align-items:center;gap:.6rem;box-shadow:0 8px 24px #0000004d;font-size:.78rem;font-weight:700;color:var(--navy2);white-space:nowrap}
+.platform-float-badge .live-dot{width:8px;height:8px;border-radius:50%;background:#10b981;animation:pulse-dot 1.5s ease-in-out infinite}
+.platform-tab{background:#ffffff0f;border:1.5px solid #ffffff1f;color:var(--slate);padding:.65rem 1.4rem;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .25s;display:flex;align-items:center;gap:.5rem}
+.platform-tab:hover{background:#9148fc1f;color:#fff;border-color:rgba(145,72,252,.3)}
+.platform-tab.active{background:linear-gradient(135deg,#7c3aed40,#9148fc40);border-color:#9148fc80;color:#fff}
+.tab-pills{display:flex;justify-content:center;gap:.6rem;margin-bottom:1.5rem;position:relative;z-index:1;flex-wrap:wrap}
+.pulse-live{width:7px;height:7px;border-radius:50%;background:#10b981;animation:pulse-dot 1.5s ease-in-out infinite;display:inline-block;flex-shrink:0}
+.icon-svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sim-overlay{position:absolute;inset:0;background:#080d1a8c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+.sim-play-btn{width:72px;height:72px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px #9148fc33;transition:transform .2s}
+.live-badge{display:inline-flex;align-items:center;gap:.5rem;background:#10b9821f;border:1px solid #10b98247;color:#34d399;padding:.35rem .85rem;border-radius:100px;font-size:.75rem;font-weight:700}
+.tab-divider{background:#151929;border-top:1px solid #9148fc33;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem}
+.tab-divider-label{font-size:.72rem;font-weight:700;color:#94a3b8;letter-spacing:.05em;text-transform:uppercase}
+.btn-access{display:inline-block;margin-top:1rem;padding:11px 24px;background:var(--gp);color:#fff;text-decoration:none;border-radius:100px;font-weight:700;font-size:.88rem;box-shadow:0 4px 20px #9148fc59;transition:opacity .2s}
+.plat-header{text-align:center;margin-bottom:1.5rem;position:relative;z-index:1}
+.plat-sub{color:var(--slate);font-size:.9rem;max-width:520px;margin:0 auto;line-height:1.6}
+.content-frame{width:100%;height:400px;border:none;display:block}
+.sim-title{color:#fff;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
+.sim-subtitle{color:rgba(196,181,253,.8);font-size:.8rem;margin-top:.25rem}
+
+.bottom-cta{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 50%,#0c1640 100%);padding:4rem 4.5rem;text-align:center;position:relative;overflow:hidden}
+.bottom-cta h2{font-size:2.2rem;font-weight:900;color:#fff;margin-bottom:.75rem;letter-spacing:-.02em}
+.bottom-cta p{color:var(--slate);font-size:.95rem;margin-bottom:1.75rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-btns a.primary{background:var(--gp);color:#fff;text-decoration:none;padding:14px 32px;border-radius:100px;font-weight:700;font-size:1rem;box-shadow:0 4px 24px #9148fc66;transition:opacity .2s,transform .2s}
+.cta-btns a.primary:hover{opacity:.9;transform:translateY(-1px)}
+.cta-btns a.ghost{border:1.5px solid #ffffff33;color:#fff;text-decoration:none;padding:14px 32px;border-radius:100px;font-weight:600;font-size:1rem;transition:all .2s}
+.cta-btns a.ghost:hover{background:#ffffff0f}
+.mob-enroll-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;background:var(--navy);border-top:1px solid #9148fc40;padding:.75rem 1.25rem;align-items:center;justify-content:space-between;gap:1rem}
+.mob-enroll-bar-text{color:#fff;font-size:.85rem;font-weight:700;line-height:1.3}
+.mob-enroll-bar-text span{display:block;color:var(--slate);font-size:.72rem;font-weight:400}
+.mob-enroll-bar-btn{background:var(--gp);color:#fff;text-decoration:none;padding:10px 20px;border-radius:100px;font-weight:700;font-size:.85rem;white-space:nowrap;flex-shrink:0}
+
+@media(max-width:900px){
+  .page-shell{display:block}
+  .sidebar{display:none}
+  .main{margin-left:0}
+  .hero{padding:2rem 1.5rem 3rem}
+  .hero-inner{grid-template-columns:1fr;gap:2rem}
+  .hero-image-panel{display:none}
+  .hero h1{font-size:2.2rem}
+  .section{padding:2.5rem 1.5rem}
+  .stories-section{padding:2.5rem 1.5rem}
+  .stories-scroll{grid-template-columns:1fr 1fr}
+  .campus-section{padding:2.5rem 1.5rem}
+  .campus-inner{grid-template-columns:1fr;gap:2rem}
+  .stat-banner{padding:1.5rem}
+  .stat-inner{grid-template-columns:1fr 1fr;gap:1.25rem}
+  .overview-grid,.modules-grid,.benefits-grid,.passrate-grid{grid-template-columns:1fr 1fr}
+  .hours-grid{grid-template-columns:1fr 1fr;max-width:100%}
+  .steps-track{flex-direction:column;gap:1.5rem}
+  .steps-track::before{display:none}
+  .platform-inner{grid-template-columns:1fr}
+  .platform-copy{padding-top:0}
+  .bottom-cta{padding:2.5rem 1.5rem}
+  .mob-enroll-bar{display:flex}
+  .main{padding-bottom:72px}
+}
+@media(max-width:600px){
+  .hero h1{font-size:1.9rem}
+  .stories-scroll{grid-template-columns:1fr}
+  .campus-photos{grid-template-columns:1fr}
+  .campus-photo.featured{grid-column:auto}
+  .overview-grid,.modules-grid,.benefits-grid,.passrate-grid,.hours-grid{grid-template-columns:1fr}
+  .section{padding:2rem 1.25rem}
+  .section-title{font-size:1.5rem}
+  .stories-section,.campus-section{padding:2rem 1.25rem}
+  .stat-inner{grid-template-columns:1fr 1fr}
+  .bottom-cta{padding:2rem 1.25rem}
+  .bottom-cta h2{font-size:1.6rem}
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-btns a{width:100%;text-align:center;max-width:320px}
+  .hero-ctas{flex-direction:column;align-items:stretch}
+  .hero-ctas a{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+<svg style="display:none"><defs>
+  <symbol id="ico-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
+
+<div class="page-shell">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h4>Clinical Medical Assistant</h4>
+      <p>CCMA Certification Program</p>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="#overview" class="active"><span class="nav-dot"></span> Program Overview</a></li>
+      <li><a href="#students"><span class="nav-dot"></span> Student Spotlight</a></li>
+      <li><a href="#campus"><span class="nav-dot"></span> Campus Experience</a></li>
+      <li><a href="#enroll-steps"><span class="nav-dot"></span> How to Enroll</a></li>
+      <li><a href="#platform"><span class="nav-dot"></span> Inside the Platform</a></li>
+      <li><a href="#courses"><span class="nav-dot"></span> Courses</a></li>
+      <li><a href="#modules"><span class="nav-dot"></span> What You'll Learn</a></li>
+      <li><a href="#hours"><span class="nav-dot"></span> Clock Hours</a></li>
+      <li><a href="#passrates"><span class="nav-dot"></span> Pass Rates</a></li>
+      <li><a href="#benefits"><span class="nav-dot"></span> Program Benefits</a></li>
+      <li><a href="#admissions"><span class="nav-dot"></span> Admissions</a></li>
+      <li><a href="#approvals"><span class="nav-dot"></span> Approvals</a></li>
+    </ul>
+    <div class="sidebar-enroll">
+      <h3>Start Your Medical Assistant Career</h3>
+      <div class="sidebar-enroll-price">
+        <div class="label">Enrollment Fee</div>
+        <div class="amount">$49</div>
+        <div class="sub">Due today at registration</div>
+      </div>
+      <div class="sidebar-badge">✓ Campus &amp; Online Options<br>NHA &amp; AMCA Recognized</div>
+      <a href="https://www.alliedrxtraining.com/register" class="btn-enroll">Enroll Now</a>
+      <a href="https://www.alliedrxtraining.com/getmoreinfo" class="btn-outline">Learn More</a>
+      <p class="sidebar-note">Enroll in minutes. Choose your tuition plan after registration.</p>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="campus-chip"><span class="live-dot"></span> Campus Hybrid Now Enrolling</div>
+          <div class="hero-badge"><span class="dot"></span>NHA &amp; AMCA Certified · SCHEV Approved</div>
+          <h1>Become a <em>Certified Clinical Medical Assistant</em></h1>
+          <p class="hero-desc">Launch a rewarding healthcare career with our CCMA program. Available 100% online or as a hybrid campus program — preparing you for the NHA and AMCA national certification exams.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><span class="num">400</span><span class="lbl">Clock Hours</span></div>
+            <div class="hero-stat"><span class="num">NHA &amp; AMCA</span><span class="lbl">Certified</span></div>
+            <div class="hero-stat"><span class="num">16 Wk</span><span class="lbl">Program</span></div>
+          </div>
+          <div class="hero-ctas">
+            <a href="https://www.alliedrxtraining.com/register" class="btn-primary-hero">Enroll Now — $49 Today</a>
+            <a href="#students" class="btn-ghost">See Student Stories</a>
+          </div>
+        </div>
+        <div class="hero-image-panel">
+          <div class="hero-image-wrap">
+            <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69cc3399fdad3a6c09c598f9_483636476_1045177204297681_2297820842386594852_n.jpg" alt="CCMA campus students in clinical training" />
+          </div>
+          <div class="hero-accred-strip">
+            <div class="shield"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            SCHEV Approved · NHA &amp; AMCA Certified Program
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAT BANNER -->
+    <div class="stat-banner">
+      <div class="stat-inner">
+        <div class="stat-item"><div class="sn">400</div><div class="sl">Clock Hours</div><div class="ss">Didactic &amp; simulation</div></div>
+        <div class="stat-item"><div class="sn">85%+</div><div class="sl">NHA Pass Rate</div><div class="ss">Above national average</div></div>
+        <div class="stat-item"><div class="sn">16 Wks</div><div class="sl">Program Length</div><div class="ss">Flexible schedules available</div></div>
+        <div class="stat-item"><div class="sn">$49</div><div class="sl">To Enroll Today</div><div class="ss">Tuition plans available</div></div>
+      </div>
+    </div>
+
+    <!-- STUDENT STORY CARDS -->
+    <section class="stories-section" id="students">
+      <div class="stories-header">
+        <div>
+          <span class="section-label">Student Spotlight</span>
+          <h2 class="section-title" style="margin-bottom:.3rem">Our Campus Students</h2>
+          <p class="section-sub">Real faces. Real dedication. Real results. Meet the students who chose to build their healthcare career with AlliedRx.</p>
+        </div>
+        <a href="https://www.alliedrxtraining.com/register" class="see-all">Enroll &amp; Join Them →</a>
+      </div>
+
+      <div class="stories-scroll">
+        <div class="story-card">
+          <img class="story-photo" src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69cc3399d9d3c0e759e7058b_481184130_1037686308380104_8778604915690116197_n.jpg" alt="CCMA student in clinical lab" />
+          <div class="story-body">
+            <span class="story-cohort">Spring 2025</span>
+            <div class="story-title">Campus Lab Session</div>
+            <div class="story-desc">Students building hands-on clinical skills under direct instructor supervision during a campus skills lab session.</div>
+            <div class="story-footer">
+              <div class="story-avatar">A</div>
+              <div><div class="story-who">AlliedRx Campus</div><div class="story-role">Clinical Skills Lab · CCMA Program</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-card">
+          <img class="story-photo" src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69cc3399c9aa2c836b0aa594_480634670_1036910765124325_1814071903169394122_n.jpg" alt="CCMA student practicing" />
+          <div class="story-body">
+            <span class="story-cohort">Spring 2025</span>
+            <div class="story-title">Hands-On Clinical Training</div>
+            <div class="story-desc">Developing real-world confidence with clinical procedures — the kind of skills that only come from in-person practice.</div>
+            <div class="story-footer">
+              <div class="story-avatar">B</div>
+              <div><div class="story-who">AlliedRx Campus</div><div class="story-role">Hands-On Skills Practice</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-card">
+          <img class="story-photo" src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69cc3399fdad3a6c09c598f9_483636476_1045177204297681_2297820842386594852_n.jpg" alt="CCMA student cohort" />
+          <div class="story-body">
+            <span class="story-cohort">Spring 2025</span>
+            <div class="story-title">Our Student Community</div>
+            <div class="story-desc">Learning alongside a cohort of motivated peers makes all the difference. Our students support each other from day one through certification.</div>
+            <div class="story-footer">
+              <div class="story-avatar">C</div>
+              <div><div class="story-who">AlliedRx Campus</div><div class="story-role">Cohort Community · CCMA</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAMPUS HIGHLIGHT -->
+    <section class="campus-section" id="campus">
+      <div class="campus-inner">
+        <div class="campus-copy">
+          <span class="section-label">Campus Experience</span>
+          <h2 class="section-title">Where Online Learning Meets Real Skills</h2>
+          <p class="section-sub">Our hybrid program combines online coursework with hands-on campus lab sessions — giving you the real clinical experience employers expect from a CCMA.</p>
+          <div class="campus-feature-list">
+            <div class="campus-feat">
+              <div class="feat-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div><div class="feat-text">Hands-On Campus Sessions</div><div class="feat-sub">In-person clinical lab sessions covering vital signs, venipuncture, injections &amp; more</div></div>
+            </div>
+            <div class="campus-feat">
+              <div class="feat-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div><div class="feat-text">Online Modules Throughout</div><div class="feat-sub">Complete your didactic coursework online at your own pace alongside campus sessions</div></div>
+            </div>
+            <div class="campus-feat">
+              <div class="feat-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div><div class="feat-text">Fully Equipped Clinical Lab</div><div class="feat-sub">All equipment and supplies provided — mannequins, practice arms, EKG machines &amp; more</div></div>
+            </div>
+            <div class="campus-feat">
+              <div class="feat-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div><div class="feat-text">NHA &amp; AMCA Certification Outcome</div><div class="feat-sub">Same dual nationally recognized credentials whether you choose online or campus</div></div>
+            </div>
+          </div>
+          <a href="https://www.alliedrxtraining.com/register" class="btn-primary-hero" style="display:inline-block;">Enroll in Campus Program →</a>
+        </div>
+        <div class="campus-photos">
+          <div class="campus-photo featured">
+            <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69cc3399d9d3c0e759e7058b_481184130_1037686308380104_8778604915690116197_n.jpg" alt="CCMA campus lab" />
+            <div class="campus-photo-label">AlliedRx Clinical Skills Lab</div>
+          </div>
+          <div class="campus-photo">
+            <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69cc3399c9aa2c836b0aa594_480634670_1036910765124325_1814071903169394122_n.jpg" alt="Student practicing clinical skills" />
+            <div class="campus-photo-label">Hands-On Practice</div>
+          </div>
+          <div class="campus-photo">
+            <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69cc3399fdad3a6c09c598f9_483636476_1045177204297681_2297820842386594852_n.jpg" alt="CCMA student cohort" />
+            <div class="campus-photo-label">Spring 2025 Cohort</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Overview -->
+    <section class="section bg-white" id="overview">
+      <span class="section-label">Program Overview</span>
+      <h2 class="section-title">Everything You Need to Know</h2>
+      <div class="overview-grid">
+        <div class="overview-card"><div class="oc-label">Total Clock Hours</div><div class="oc-value">400 Hours</div><div class="oc-sub">300 didactic + 100 lab/simulation</div></div>
+        <div class="overview-card"><div class="oc-label">Format</div><div class="oc-value">Online · Hybrid</div><div class="oc-sub">100% Online or Hybrid Campus</div></div>
+        <div class="overview-card"><div class="oc-label">Certification Prep</div><div class="oc-value">NHA &amp; AMCA</div><div class="oc-sub">Dual national exam preparation included</div></div>
+        <div class="overview-card"><div class="oc-label">Duration</div><div class="oc-value">16 Weeks</div><div class="oc-sub">Daytime &amp; evening sessions available</div></div>
+      </div>
+      <p class="program-desc">The Certified Clinical Medical Assistant (CCMA) program prepares you to work in physician offices, clinics, hospitals, and specialty practices. As a CCMA, you will perform both clinical and administrative duties — from taking vital signs and drawing blood to managing patient records and scheduling appointments.</p>
+      <p class="program-desc">The program uses a body systems approach, covering anatomy, medical terminology, and clinical procedures for each system. After completing the program, you will be ready to sit for the NHA CCMA and AMCA certification exams — credentials recognized by employers nationwide.</p>
+    </section>
+
+    <!-- Enrollment Steps -->
+    <section class="section bg-lav" id="enroll-steps">
+      <span class="section-label">Enrollment Process</span>
+      <h2 class="section-title">Get Started in 3 Simple Steps</h2>
+      <p class="section-sub">From registration to your first class — takes less than 10 minutes.</p>
+      <div class="steps-track">
+        <div class="step"><div class="step-num">1</div><div class="step-label">Register &amp; Pay Enrollment Fee</div><div class="step-sub">Complete your registration online. Pay the $49 enrollment fee to get started right away.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-label">Complete Orientation</div><div class="step-sub">Log into your student portal and complete the short orientation module to activate your account and choose your tuition plan.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-label">Add Your First Class</div><div class="step-sub">Add your first course in the portal. Your first tuition payment is due when you add your class. Then start learning!</div></div>
+      </div>
+    </section>
+
+    <!-- Platform -->
+    <section class="section platform-section" id="platform">
+      <div class="plat-header">
+        <span class="section-label" style="color:var(--lavender);">Student Experience</span>
+        <h2 class="section-title" style="color:#fff;max-width:600px;margin:0 auto .5rem;">A Peek Inside Your Classroom</h2>
+        <p class="plat-sub">Our modern platform is built for working adults — structured, intuitive, and packed with real-world activities.</p>
+      </div>
+      <div class="tab-pills">
+        <button class="platform-tab active" onclick="switchTab(0)" id="tab-0">Patient Care</button>
+        <button class="platform-tab" onclick="switchTab(1)" id="tab-1">Clinical Skills</button>
+        <button class="platform-tab" onclick="switchTab(2)" id="tab-2"><span class="pulse-live"></span> Try the Simulation</button>
+      </div>
+      <div class="platform-inner" style="position:relative;z-index:1;">
+        <div class="platform-copy">
+          <div id="features-0" class="platform-tab-content">
+            <div class="platform-features">
+              <div class="platform-feature active" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><div class="pf-text"><strong>Structured Body Systems Navigation</strong><span>Progress through each body system with clear module roadmaps and learning objectives</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="pf-text"><strong>Interactive Patient Scenarios</strong><span>Practice adapting communication and care for diverse patient populations</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="pf-text"><strong>Documentation &amp; EHR Practice</strong><span>Learn proper charting, SOAP notes, and electronic health record workflows</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="pf-text"><strong>Live Progress Tracking</strong><span>Visual progress bar and completion checkmarks keep you motivated and on track</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg></div><div class="pf-text"><strong>Ask AI Support</strong><span>Built-in AI tutor available anytime you need help within a lesson</span></div></div>
+            </div>
+          </div>
+          <div id="features-1" class="platform-tab-content" style="display:none;">
+            <div class="platform-features">
+              <div class="platform-feature active" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div class="pf-text"><strong>Infection Control Drills</strong><span>Practice OSHA-compliant hand hygiene, PPE, and sterilization procedures</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="pf-text"><strong>Diagnostic Procedure Practice</strong><span>Walkthroughs for venipuncture, EKG lead placement, and specimen collection</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="pf-text"><strong>Medication &amp; Injection Modules</strong><span>Learn drug categories, administration routes, and injection techniques safely</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="pf-text"><strong>Certification Exam Prep</strong><span>Timed practice tests for both the NHA CCMA and AMCA certification exams</span></div></div>
+            </div>
+          </div>
+          <div id="features-2" class="platform-tab-content" style="display:none;">
+            <div style="margin-bottom:.75rem;"><div class="live-badge" style="margin-bottom:.65rem"><span class="pulse-live"></span> Interactive — No Login Required</div></div>
+            <div class="platform-features">
+              <div class="platform-feature active" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="pf-text"><strong>Simulated Clinical Environment</strong><span>Practice in a fully interactive virtual setting to reinforce your skills</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="pf-text"><strong>Safe Practice Environment</strong><span>Make mistakes and learn from them without real-world consequences</span></div></div>
+              <div class="platform-feature" onclick="highlightFeature(this)"><div class="pf-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="pf-text"><strong>Counts Toward Clock Hours</strong><span>Simulation hours count toward your required program clock hours</span></div></div>
+            </div>
+          </div>
+          <a href="https://www.alliedrxtraining.com/register" class="btn-access">Enroll &amp; Get Access →</a>
+        </div>
+        <div class="platform-screen">
+          <div class="platform-browser">
+            <div class="platform-browser-bar">
+              <div class="browser-dot"></div><div class="browser-dot"></div><div class="browser-dot"></div>
+              <div id="browser-url-text" class="browser-url">app.alliedrxtraining.com · Clinical Medical Assistant Program</div>
+            </div>
+            <div id="platform-slides" style="position:relative;overflow:hidden;">
+              <div id="platform-img-0" style="display:block;">
+                <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964f4317a75cfe847972073_Screenshot%202026-01-11%20at%203.13.51%E2%80%AFPM.png" alt="Patient communication activity" style="width:100%;display:block;" />
+                <div class="tab-divider"><span class="pulse-live"></span><span class="tab-divider-label">Try It — Patient Communication Activity</span></div>
+                <iframe src="https://interactive.alliedrxtraining.com/week3flashcards.html" class="content-frame" allowfullscreen></iframe>
+              </div>
+              <div id="platform-img-1" style="display:none;">
+                <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964f4308c89d7b64c255119_Screenshot%202026-01-11%20at%203.14.42%E2%80%AFPM.png" alt="Clinical skills activity" style="width:100%;display:block;" />
+                <div class="tab-divider"><span class="pulse-live"></span><span class="tab-divider-label">Try It — Prescription &amp; Medication Prep Simulation</span></div>
+                <iframe src="https://medsim-prescription-prep-880157535064.us-west1.run.app" class="content-frame" allowfullscreen></iframe>
+              </div>
+              <div id="platform-sim" style="display:none;">
+                <div id="sim-preview" style="position:relative;cursor:pointer;" onclick="launchSim()">
+                  <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/662d1220cf62638e99568fac_AlliedRx%20Education%20Event%20Presentation%20Slideshow-p-1600.jpg" alt="Virtual simulation" style="width:100%;display:block;" />
+                  <div class="sim-overlay">
+                    <div class="sim-play-btn"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                    <div style="text-align:center;"><div class="sim-title">Launch Clinical Skills Sim</div><div class="sim-subtitle">Vital signs, assessments &amp; clinical procedures</div></div>
+                    <div class="live-badge"><span class="pulse-live"></span> No Login Required</div>
+                  </div>
+                </div>
+                <iframe id="sim-iframe" allow="microphone; camera" class="content-frame" style="height:540px;display:none;" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="platform-float-badge" id="platform-badge"><span class="live-dot"></span><span id="badge-text">Live Student Platform</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses -->
+    <section class="section bg-lav" id="courses">
+      <span class="section-label">Curriculum</span>
+      <h2 class="section-title">2 Courses · Complete Curriculum</h2>
+      <p class="section-sub">Each course builds on the last — from foundational knowledge to advanced clinical procedures.</p>
+      <div class="course-cards">
+        <div class="course-card"><div class="course-header"><div class="course-num">01</div><div class="course-title">Medical Assisting</div></div><div class="course-body"><p>This course provides a focus on clinical procedures and practices. Students will learn about the responsibilities and duties of medical assistants, as well as the anatomy and physiology of the human body and the importance of maintaining a clean and safe clinical environment. Students will become familiar with vital signs measurement, phlebotomy, sterilization and infection control, and basic laboratory procedures.</p></div></div>
+        <div class="course-card"><div class="course-header"><div class="course-num">02</div><div class="course-title">Fundamentals of Medical Specialties</div></div><div class="course-body"><p>This course provides students with an overview of the various medical specialties and subspecialties within the field of medicine. Through a combination of lectures, discussions, and case studies, students will gain a deeper understanding of specialized areas including cardiology, oncology, neurology, and more — as well as the role of medical assistants in each specialty.</p></div></div>
+      </div>
+    </section>
+
+    <!-- Modules -->
+    <section class="section bg-white" id="modules">
+      <span class="section-label">Learning Outcomes</span>
+      <h2 class="section-title">What You Will Learn</h2>
+      <p class="section-sub">Anatomy using a body systems approach, vital signs and patient assessment, venipuncture and capillary puncture, injections and medication administration, EKG performance, infection control, specimen collection, electronic health records, and NHA CCMA &amp; AMCA exam preparation.</p>
+      <div class="modules-grid">
+        <div class="module-item"><div class="module-num">1</div><div class="module-text">The Medical Assistant</div></div>
+        <div class="module-item"><div class="module-num">2</div><div class="module-text">Safety and Emergency Practices</div></div>
+        <div class="module-item"><div class="module-num">3</div><div class="module-text">The Health Record &amp; Assisting in Ophthalmology and Otolaryngology</div></div>
+        <div class="module-item"><div class="module-num">4</div><div class="module-text">Infection Control &amp; Assisting in Dermatology</div></div>
+        <div class="module-item"><div class="module-num">5</div><div class="module-text">Patient Assessment and Assisting in Gastroenterology</div></div>
+        <div class="module-item"><div class="module-num">6</div><div class="module-text">Patient Education &amp; Assisting in Urology and Male Reproductive</div></div>
+        <div class="module-item"><div class="module-num">7</div><div class="module-text">Vital Signs and Assisting in Obstetrics and Gynecology</div></div>
+        <div class="module-item"><div class="module-num">8</div><div class="module-text">Assisting with the Primary Physical Examination / Pediatrics</div></div>
+        <div class="module-item"><div class="module-num">9</div><div class="module-text">Principles of Pharmacology</div></div>
+        <div class="module-item"><div class="module-num">10</div><div class="module-text">Administering Medications</div></div>
+        <div class="module-item"><div class="module-num">11</div><div class="module-text">Medication Safety and Error Prevention</div></div>
+        <div class="module-item"><div class="module-num">12</div><div class="module-text">Assisting in Pulmonary Medicine</div></div>
+      </div>
+    </section>
+
+    <!-- Clock Hours -->
+    <section class="section bg-dark" id="hours">
+      <span class="section-label" style="color:var(--lavender);">Program Structure</span>
+      <h2 class="section-title light">400 Total Clock Hours</h2>
+      <p class="section-sub light">Structured to meet national accreditation standards and employer expectations.</p>
+      <div class="hours-grid">
+        <div class="hour-card"><div class="hour-num">300</div><div class="hour-label">Didactic</div><div class="hour-sub">Online coursework &amp; lectures</div></div>
+        <div class="hour-card"><div class="hour-num">100</div><div class="hour-label">Lab / Simulation</div><div class="hour-sub">Hands-on skills practice &amp; simulation</div></div>
+      </div>
+    </section>
+
+    <!-- Pass Rates -->
+    <section class="section bg-white" id="passrates">
+      <span class="section-label">Outcomes</span>
+      <h2 class="section-title">Certification Pass Rates</h2>
+      <p class="section-sub">AlliedRx graduates consistently perform above the national average on both the NHA CCMA and AMCA certification exams.</p>
+      <div class="passrate-grid">
+        <div class="passrate-card"><div class="passrate-exam">NHA CCMA Exam</div><div class="passrate-pct">85%+</div><div class="passrate-label">Program Pass Rate</div><div class="passrate-badge">Above national average</div></div>
+        <div class="passrate-card"><div class="passrate-exam">AMCA Exam</div><div class="passrate-pct">88%+</div><div class="passrate-label">Program Pass Rate</div><div class="passrate-badge">Above national average</div></div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section bg-lav" id="benefits">
+      <span class="section-label">Why AlliedRx</span>
+      <h2 class="section-title">Why Choose This Program</h2>
+      <p class="section-sub">Designed for working adults who need flexibility without sacrificing quality.</p>
+      <div class="benefits-grid">
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div><div class="benefit-text">12 Month Access to Learning Content</div><div class="benefit-sub">Full year of access to all course materials</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="benefit-text">Flexible Schedule</div><div class="benefit-sub">Manage work, family, and study with a flexible learning schedule</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><div class="benefit-text">Real Campus Lab</div><div class="benefit-sub">Fully equipped hands-on clinical training space</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg></div><div><div class="benefit-text">Online Simulations</div><div class="benefit-sub">Practice in a virtual clinical environment</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><div><div class="benefit-text">Video Demonstrations</div><div class="benefit-sub">Watch critical skills performed in a real healthcare setting</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><div><div class="benefit-text">NHA &amp; AMCA Exam Prep</div><div class="benefit-sub">Comprehensive dual certification exam preparation included</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><div class="benefit-text">Interactive Study Guides &amp; Assessments</div><div class="benefit-sub">Engaging tools to reinforce learning throughout the program</div></div></div>
+        <div class="benefit-item"><div class="benefit-icon"><svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg></div><div><div class="benefit-text">AI Tutor Support</div><div class="benefit-sub">Built-in AI tutor available anytime within lessons</div></div></div>
+      </div>
+    </section>
+
+    <!-- Admissions -->
+    <section class="section bg-white" id="admissions">
+      <span class="section-label">Admissions</span>
+      <h2 class="section-title">Requirements</h2>
+      <p class="section-sub">Simple, straightforward requirements so you can get started quickly.</p>
+      <div class="admissions-list">
+        <div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">Must be 18 Years of Age or Older</div><div class="admission-sub">Prospective students must be 18 years of age to register for this program</div></div></div>
+        <div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">High School Diploma or GED</div><div class="admission-sub">Applicants must be attending high school, have a GED certificate, or be a high school graduate</div></div></div>
+        <div class="admission-item"><div class="admission-check"><svg viewBox="0 0 24 24"><use href="#ico-check"/></svg></div><div><div class="admission-text">Access to Internet and Computer, Tablet or Mobile Device</div><div class="admission-sub">Required to access the online learning platform</div></div></div>
+      </div>
+    </section>
+
+    <!-- Approvals -->
+    <section class="section bg-lav" id="approvals">
+      <span class="section-label">Accreditation &amp; Approvals</span>
+      <h2 class="section-title">Nationally Recognized</h2>
+      <p class="section-sub">Our program holds approvals from the leading healthcare and education bodies in the country.</p>
+      <div class="approvals-grid">
+        <a class="approval-tag" href="https://www.schev.edu/" target="_blank" rel="noopener">State Council of Higher Education of Virginia (SCHEV)</a>
+        <a class="approval-tag" href="https://www.nhanow.com" target="_blank" rel="noopener">National Healthcareer Association (NHA)</a>
+        <a class="approval-tag" href="https://www.amcaexams.com/" target="_blank" rel="noopener">American Medical Certification Association (AMCA)</a>
+        <a class="approval-tag" href="https://mycaa.militaryonesource.mil/mycaa/" target="_blank" rel="noopener">MYCAA Scholarship (Dept. of Defense Approved)</a>
+        <a class="approval-tag" href="https://www.dol.gov/agencies/eta/wioa" target="_blank" rel="noopener">WIOA — Workforce Innovation Opportunity Act</a>
+        <a class="approval-tag" href="https://www.cool.osd.mil/army/index.html" target="_blank" rel="noopener">Army Credentialing Assistance</a>
+        <a class="approval-tag" href="https://afvec.us.af.mil/afvec/af-cool/welcome" target="_blank" rel="noopener">AirForce COOL</a>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="bottom-cta">
+      <h2>Launch Your Medical Assistant Career</h2>
+      <p>Take the first step toward becoming a Certified Clinical Medical Assistant. Enroll today and join a community of dedicated students.</p>
+      <div class="cta-btns">
+        <a href="https://www.alliedrxtraining.com/register" class="primary">Enroll Now — $49 Today</a>
+        <a href="https://www.alliedrxtraining.com/military" class="ghost">Military Benefits</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Mobile enroll bar -->
+<div class="mob-enroll-bar">
+  <div class="mob-enroll-bar-text">Start Your Medical Assistant Career<span>$49 enrollment fee · Online &amp; Campus Options</span></div>
+  <a href="https://www.alliedrxtraining.com/register" class="mob-enroll-bar-btn">Enroll Now</a>
+</div>
+
+<script>
+function switchTab(n){
+  document.querySelectorAll('.platform-tab').forEach(function(t,i){t.classList.toggle('active',i===n);});
+  document.getElementById('features-0').style.display=n===0?'block':'none';
+  document.getElementById('features-1').style.display=n===1?'block':'none';
+  document.getElementById('features-2').style.display=n===2?'block':'none';
+  document.getElementById('platform-img-0').style.display=n===0?'block':'none';
+  document.getElementById('platform-img-1').style.display=n===1?'block':'none';
+  document.getElementById('platform-sim').style.display=n===2?'block':'none';
+  var urls=['interactive.alliedrxtraining.com - Patient Communication','medsim.alliedrxtraining.com - Prescription Prep','clinical-skills-sim - Vital Signs Simulation'];
+  var badges=['Live Student Platform','Live Student Platform','Live Simulation'];
+  document.getElementById('browser-url-text').textContent=urls[n];
+  document.getElementById('badge-text').textContent=badges[n];
+}
+function launchSim(){
+  document.getElementById('sim-preview').style.display='none';
+  var f=document.getElementById('sim-iframe');
+  f.src='https://clinical-skills-sim-vital-signs-880157535064.us-west1.run.app';
+  f.style.display='block';
+}
+function highlightFeature(el){
+  el.closest('.platform-features').querySelectorAll('.platform-feature').forEach(function(f){f.classList.remove('active');});
+  el.classList.add('active');
+}
+var _navLinks=document.querySelectorAll('.sidebar-nav li a');
+var _sections=document.querySelectorAll('section[id]');
+function updateActiveNav(){
+  var cur='';
+  _sections.forEach(function(s){if(s.getBoundingClientRect().top<=120)cur=s.id;});
+  _navLinks.forEach(function(l){l.classList.remove('active');if(l.getAttribute('href')==='#'+cur)l.classList.add('active');});
+}
+window.addEventListener('scroll',updateActiveNav,{passive:true});
+updateActiveNav();
+</script>
+</body>
+</html>
