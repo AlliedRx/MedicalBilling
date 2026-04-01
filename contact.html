@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us â AlliedRx Institute of Healthcare</title>
+<title>Contact Us — AlliedRx Institute of Healthcare</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -632,7 +632,7 @@ textarea { resize: none; }
 
 
       <p class="hero-desc">
-        Our admissions team is ready to help you take the next step in your healthcare career. Reach out about enrollment, program details, tuition, or scheduling â we're with you every step of the way.
+        Our admissions team is ready to help you take the next step in your healthcare career. Reach out about enrollment, program details, tuition, or scheduling — we're with you every step of the way.
       </p>
 
       <p class="hero-funding">
@@ -867,18 +867,18 @@ var allReviews = [
   { stars:5, text:'"The Pharmacy Tech program gave me everything I needed to pass my PTCB exam on the first try. The instructors genuinely care about your success."', init:'CL', name:'Christopher Lynch', prog:'Pharmacy Technician' },
   { stars:5, text:'"I completed the CMA program in just a few weeks and landed a job at a local clinic right after. AlliedRx truly prepares you for the real world."', init:'JT', name:'Jenna Tucker', prog:'Clinical Medical Assistant' },
   { stars:5, text:'"The Medical Billing & Coding course was comprehensive and flexible. I studied at my own pace while working full-time. Highly recommend!"', init:'DH', name:'Diane Harmon', prog:'Medical Billing & Coding' },
-  { stars:5, text:'"I enrolled in Phlebotomy after years of wanting a career change. AlliedRx made it possible â affordable and thorough training."', init:'TJ', name:'Tamara Jenkins', prog:'Phlebotomy Technician' },
+  { stars:5, text:'"I enrolled in Phlebotomy after years of wanting a career change. AlliedRx made it possible — affordable and thorough training."', init:'TJ', name:'Tamara Jenkins', prog:'Phlebotomy Technician' },
   { stars:5, text:'"EKG Tech training was hands-on and thorough. I passed my NHA exam and got hired within two weeks of completing the course."', init:'MW', name:'Marcus Williams', prog:'EKG Technician' },
   { stars:5, text:'"The Dental Assisting program exceeded my expectations. The curriculum was detailed and the staff support was outstanding."', init:'SR', name:'Sofia Reyes', prog:'Dental Assisting' },
   { stars:5, text:'"AlliedRx helped me transition into healthcare administration quickly. The Medical Admin program was straightforward and career-focused."', init:'KB', name:'Keisha Brown', prog:'Clinical Medical Admin Asst' },
   { stars:5, text:'"I passed my PTCB exam on the first attempt thanks to the Pharmacy Tech program. The study materials were excellent."', init:'EM', name:'Eden Mitiku', prog:'Pharmacy Technician' },
   { stars:5, text:'"The CMA program was well-structured and the instructors were always available to answer questions. I felt fully prepared."', init:'PA', name:'Patrice Anderson', prog:'Clinical Medical Assistant' },
   { stars:5, text:'"Completing the Pharmacy Tech program at AlliedRx was one of the best decisions I\'ve made. Fast-track and worth every penny."', init:'RL', name:'Rebecca Lewis', prog:'Pharmacy Technician' },
-  { stars:4, text:'"Great EKG program â very detailed content. The only thing I\'d improve is more in-person lab time, but overall a solid experience."', init:'AM', name:'Andre Mitchell', prog:'EKG Technician' },
+  { stars:4, text:'"Great EKG program — very detailed content. The only thing I\'d improve is more in-person lab time, but overall a solid experience."', init:'AM', name:'Andre Mitchell', prog:'EKG Technician' },
   { stars:4, text:'"The Phlebotomy program was very good. Instructors were helpful and patient. Would recommend to anyone looking to break into healthcare."', init:'VC', name:'Vanessa Cruz', prog:'Phlebotomy Technician' },
   { stars:5, text:'"I was nervous about going back to school but AlliedRx made it so easy. The online format fit perfectly around my schedule."', init:'LM', name:'Lisa Merritt', prog:'Medical Billing & Coding' },
   { stars:5, text:'"AlliedRx gave me the confidence and credentials I needed. Within a month of graduating I had two job offers on the table."', init:'DW', name:'Damon Wright', prog:'Pharmacy Technician' },
-  { stars:5, text:'"The Phlebotomy instructors were fantastic â patient, knowledgeable, and truly invested in helping students succeed."', init:'NF', name:'Natasha Ford', prog:'Phlebotomy Technician' },
+  { stars:5, text:'"The Phlebotomy instructors were fantastic — patient, knowledgeable, and truly invested in helping students succeed."', init:'NF', name:'Natasha Ford', prog:'Phlebotomy Technician' },
   { stars:5, text:'"I loved the Dental Assisting program. The content was current and relevant, and I felt job-ready the moment I finished."', init:'TH', name:'Tiffany Hall', prog:'Dental Assisting' },
   { stars:5, text:'"The Medical Admin program was perfectly paced. I now work at a busy medical office and use what I learned every single day."', init:'CO', name:'Carmen Ortiz', prog:'Clinical Medical Admin Asst' },
   { stars:5, text:'"AlliedRx\'s EKG program prepared me thoroughly. The practice tests were spot-on for the real NHA exam. Passed first try!"', init:'JP', name:'James Pryor', prog:'EKG Technician' },
@@ -972,7 +972,7 @@ function handleLearnMore(e) {
   fetch('https://formspree.io/f/admissions-alliedrx', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({ name: fn+' '+ln, email: em, phone: ph, program: pr, format: fmt, _subject: 'New Info Request â AlliedRx' })
+    body: JSON.stringify({ name: fn+' '+ln, email: em, phone: ph, program: pr, format: fmt, _subject: 'New Info Request — AlliedRx' })
   }).catch(function(){
     window.location.href = 'mailto:admissions@alliedrxtraining.com?subject=Info+Request&body=' + encodeURIComponent(body);
   });
@@ -986,7 +986,7 @@ function handleInquiry(e) {
   var form = document.getElementById('inquiryForm');
   if (form._gotcha2.value) return;
   var ans = parseInt(document.getElementById('captchaAns').value);
-  if (ans !== captchaA + captchaB) { showToast('Incorrect answer â please try again.'); genCaptcha(); return; }
+  if (ans !== captchaA + captchaB) { showToast('Incorrect answer — please try again.'); genCaptcha(); return; }
   var nm = form.name.value, em = form.email.value;
   var subj = form.subject.value, msg = form.message.value;
   if (isSpam(nm) || isSpam(msg)) { genCaptcha(); return; }
@@ -994,7 +994,7 @@ function handleInquiry(e) {
   fetch('https://formspree.io/f/admissions-alliedrx', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({ name: nm, email: em, subject: subj, message: msg, _subject: 'Inquiry: ' + subj + ' â AlliedRx' })
+    body: JSON.stringify({ name: nm, email: em, subject: subj, message: msg, _subject: 'Inquiry: ' + subj + ' — AlliedRx' })
   }).catch(function(){
     window.location.href = 'mailto:admissions@alliedrxtraining.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
   });
@@ -1002,97 +1002,5 @@ function handleInquiry(e) {
   document.getElementById('iq-success').style.display = 'block';
 }
 </script>
-
-<!-- AlliedRx Footer -->
-<style>
-.arx-footer{background:linear-gradient(160deg,#0d0b2e 0%,#1a1260 60%,#0d0b2e 100%);color:#ccc;padding:64px 32px 0;font-family:'Plus Jakarta Sans',sans-serif;}
-.arx-footer a{color:inherit;text-decoration:none;}
-.arx-footer a:hover{color:#c4b5fd;}
-.arx-footer-cta{background:linear-gradient(135deg,#7c3aed,#9148fc);border-radius:16px;padding:36px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:56px;flex-wrap:wrap;}
-.arx-footer-cta h3{font-size:24px;font-weight:800;color:#fff;margin:0 0 6px;}
-.arx-footer-cta p{font-size:14px;color:rgba(255,255,255,0.8);margin:0;}
-.arx-footer-cta a{background:#fff;color:#7c3aed;font-size:14px;font-weight:700;padding:14px 28px;border-radius:100px;white-space:nowrap;display:inline-block;}
-.arx-footer-cta a:hover{background:#f0ebff;color:#7c3aed;}
-.arx-footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.4fr;gap:40px;padding-bottom:48px;}
-.arx-footer-col h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff;margin:0 0 18px;}
-.arx-footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
-.arx-footer-col ul li a{font-size:14px;color:#b0aac8;}
-.arx-footer-col ul li a:hover{color:#c4b5fd;}
-.arx-footer-brand img{height:48px;width:auto;margin-bottom:16px;display:block;}
-.arx-footer-brand p{font-size:13px;color:#b0aac8;line-height:1.7;max-width:260px;margin-bottom:20px;}
-.arx-footer-social{display:flex;gap:12px;margin-top:4px;}
-.arx-footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:#ccc;transition:background .2s;}
-.arx-footer-social a:hover{background:rgba(145,72,252,0.4);color:#fff;}
-.arx-footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-.arx-footer-bottom p{font-size:12px;color:#6b6880;margin:0;}
-.arx-footer-bottom-links{display:flex;gap:20px;}
-.arx-footer-bottom-links a{font-size:12px;color:#6b6880;}
-.arx-footer-bottom-links a:hover{color:#c4b5fd;}
-@media(max-width:768px){.arx-footer-grid{grid-template-columns:1fr 1fr;}.arx-footer-cta{flex-direction:column;padding:28px 24px;}.arx-footer-cta a{width:100%;text-align:center;}}
-@media(max-width:479px){.arx-footer-grid{grid-template-columns:1fr;}.arx-footer{padding:40px 20px 0;}}
-</style>
-<footer class="arx-footer">
-  <div class="arx-footer-cta">
-    <div><h3>Start Your Healthcare Career Today</h3><p>Accredited programs · Self-paced · Payment plans available · $99 down</p></div>
-    <a href="https://www.alliedrxtraining.com/register" target="_parent">Enroll Now &rarr;</a>
-  </div>
-  <div class="arx-footer-grid">
-    <div class="arx-footer-col arx-footer-brand">
-      <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69caba88d42a3b1a8669dd2a_alliedrx_logo_webflow_hd.png" alt="AlliedRx Institute of Healthcare"/>
-      <p>AlliedRx Institute of Healthcare provides accredited, career-focused healthcare training programs online and on campus.</p>
-      <div class="arx-footer-social">
-        <a href="https://www.facebook.com/alliedrxtraining" target="_blank" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-        <a href="https://www.instagram.com/alliedrxtraining" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-        <a href="https://www.linkedin.com/company/alliedrx" target="_blank" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-        <a href="https://www.youtube.com/@alliedrxtraining" target="_blank" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
-      </div>
-    </div>
-    <div class="arx-footer-col">
-      <h4>Programs</h4>
-      <ul>
-        <li><a href="https://www.alliedrxtraining.com/new-ccma-page" target="_parent">Clinical Medical Assistant</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" target="_parent">Pharmacy Technician</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-medical-billing-page" target="_parent">Medical Billing &amp; Coding</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-ekg-page" target="_parent">EKG Technician</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-phlebotomy-page" target="_parent">Phlebotomy Technician</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-cmaa-page" target="_parent">Medical Admin Assistant</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" target="_parent">Dental Assisting</a></li>
-      </ul>
-    </div>
-    <div class="arx-footer-col">
-      <h4>Tuition &amp; Aid</h4>
-      <ul>
-        <li><a href="https://www.alliedrxtraining.com/tuition-payments" target="_parent">Tuition &amp; Payment Plans</a></li>
-        <li><a href="https://www.alliedrxtraining.com/military-overview" target="_parent">Military Funding</a></li>
-        <li><a href="https://www.alliedrxtraining.com/gainful-disclosures" target="_parent">Gainful Disclosures</a></li>
-        <li><a href="https://www.alliedrxtraining.com/program-accreditation" target="_parent">Accreditation</a></li>
-      </ul>
-      <h4 style="margin-top:28px;">Company</h4>
-      <ul>
-        <li><a href="https://www.alliedrxtraining.com/about" target="_parent">About Us</a></li>
-        <li><a href="https://www.alliedrxtraining.com/partners" target="_parent">Partners</a></li>
-      </ul>
-    </div>
-    <div class="arx-footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:enrollment@alliedrxtraining.com">enrollment@alliedrxtraining.com</a></li>
-        <li><a href="https://www.alliedrxtraining.com/getmoreinfo" target="_parent">Request Information</a></li>
-        <li><a href="https://www.alliedrxtraining.com/register" target="_parent">Enroll Today</a></li>
-        <li><a href="https://academy.alliedrxtraining.com/Student-Portal" target="_blank">Student Portal &ndash; MyAlliedRx</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="arx-footer-bottom">
-    <p>&copy; 2026 AlliedRx Institute of Healthcare. All rights reserved.</p>
-    <div class="arx-footer-bottom-links">
-      <a href="/privacy-policy" target="_parent">Privacy Policy</a>
-      <a href="/terms-of-service" target="_parent">Terms of Service</a>
-      <a href="/gainful-disclosures" target="_parent">Gainful Disclosures</a>
-      <a href="/program-accreditation" target="_parent">Accreditation</a>
-    </div>
-  </div>
-</footer>
-<!-- End AlliedRx Footer -->
 </body>
 </html>
