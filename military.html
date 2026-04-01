@@ -275,15 +275,34 @@
     .step-item p { font-size: 13px; color: var(--light-sub); line-height: 1.6; }
 
     /* Program chips — light */
-    .prog-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-    .prog-chip {
-      background: var(--pale); border: 1.5px solid var(--pale-border);
-      color: var(--purple); font-size: 13px; font-weight: 600;
-      padding: 8px 18px; border-radius: 50px;
-      text-decoration: none; transition: all 0.2s;
+    .prog-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 20px; border: 1px solid var(--pale-border); border-radius: var(--radius); overflow: hidden; }
+    .prog-list-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 20px;
+      background: var(--white);
+      border-bottom: 1px solid var(--pale-border);
+      font-size: 14px; font-weight: 500; color: var(--light-text);
     }
-    .prog-chip:hover { background: var(--purple); color: #fff; border-color: var(--purple); }
-    .program-section:nth-child(even) .prog-chip { background: var(--white); }
+    .prog-list-item:nth-child(odd) { border-right: 1px solid var(--pale-border); }
+    .prog-list-item:nth-last-child(-n+2) { border-bottom: none; }
+    .prog-list-item:last-child:nth-child(odd) { border-right: none; grid-column: 1 / -1; }
+    .program-section:nth-child(even) .prog-list-item { background: var(--white); }
+    .prog-num {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--purple); color: #fff;
+      font-size: 11px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .prog-list-name { font-weight: 600; color: var(--navy); }
+    .prog-list-accred { font-size: 11px; color: var(--light-sub); margin-top: 1px; }
+    @media (max-width: 600px) {
+      .prog-list { grid-template-columns: 1fr; }
+      .prog-list-item:nth-child(odd) { border-right: none; }
+      .prog-list-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--pale-border); }
+      .prog-list-item:last-child { border-bottom: none; }
+      .prog-list-item:last-child:nth-child(odd) { grid-column: auto; }
+    }
 
     /* ══════════════════════════════════════
        COMPARISON TABLE — LIGHT
@@ -466,15 +485,15 @@
       Military Funding Programs
     </div>
     <h1>Fund Your Healthcare<br/>Career Through<br/><span class="accent">Military Benefits</span></h1>
-    <p class="hero-desc">AlliedRx Institute accepts multiple military funding programs — Air Force COOL, Army Credentialing Assistance, and MyCAA — so service members, veterans, and military spouses can earn industry-recognized certifications at little or no cost.</p>
+    <p class="hero-desc">AlliedRx Institute accepts multiple military funding programs — Air Force COOL, Army Credentialing Assistance, and MyCAA — so service members, veterans, and military spouses can earn any of our 7 industry-recognized certifications at little or no cost.</p>
     <div class="hero-btns">
       <a href="https://www.alliedrxtraining.com/military" class="btn-hero-main">Apply for Funding →</a>
       <a href="#compare" class="btn-hero-ghost">Compare Programs</a>
     </div>
     <div class="hero-trust">
-      <div class="hero-trust-item"><div class="hero-trust-val">3</div><div class="hero-trust-label">Military Programs</div></div>
-      <div class="hero-trust-item"><div class="hero-trust-val">$4,500</div><div class="hero-trust-label">Max MyCAA Benefit</div></div>
-      <div class="hero-trust-item"><div class="hero-trust-val">$4,000</div><div class="hero-trust-label">Max Army CA Benefit</div></div>
+      <div class="hero-trust-item"><div class="hero-trust-val">7</div><div class="hero-trust-label">Programs Covered</div></div>
+      <div class="hero-trust-item"><div class="hero-trust-val">$4,500</div><div class="hero-trust-label">Max Benefit</div></div>
+      <div class="hero-trust-item"><div class="hero-trust-val">$0</div><div class="hero-trust-label">Out-of-Pocket</div></div>
     </div>
   </div>
 
@@ -567,15 +586,15 @@
 
     <div style="margin-top:54px;">
       <div class="eyebrow">Programs Covered</div>
-      <h2 class="title">AlliedRx Programs Eligible Under AF COOL</h2>
-      <div class="prog-chips">
-        <a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" class="prog-chip">Pharmacy Technician</a>
-        <a href="https://www.alliedrxtraining.com/new-phlebotomy-page" class="prog-chip">Phlebotomy Technician</a>
-        <a href="https://www.alliedrxtraining.com/new-medical-billing-page" class="prog-chip">Medical Billing &amp; Coding</a>
-        <a href="https://www.alliedrxtraining.com/new-ekg-page" class="prog-chip">EKG Technician</a>
-        <a href="https://www.alliedrxtraining.com/new-ccma-page" class="prog-chip">Clinical Medical Assistant</a>
-        <a href="https://www.alliedrxtraining.com/new-cmaa-page" class="prog-chip">Clinical Medical Admin Asst</a>
-        <a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" class="prog-chip">Registered Dental Assistant</a>
+      <h2 class="title">All 7 AlliedRx Programs Eligible Under AF COOL</h2>
+      <div class="prog-list">
+        <div class="prog-list-item"><div class="prog-num">1</div><div><div class="prog-list-name">Pharmacy Technician</div><div class="prog-list-accred">PTCB &amp; ASHP Accredited</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">2</div><div><div class="prog-list-name">Clinical Medical Assistant</div><div class="prog-list-accred">NHA Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">3</div><div><div class="prog-list-name">Phlebotomy Technician</div><div class="prog-list-accred">NHA &amp; AMCA Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">4</div><div><div class="prog-list-name">Medical Billing &amp; Coding</div><div class="prog-list-accred">NHA | AAPC Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">5</div><div><div class="prog-list-name">EKG Technician</div><div class="prog-list-accred">NHA &amp; AMCA Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">6</div><div><div class="prog-list-name">Clinical Medical Admin Asst</div><div class="prog-list-accred">NHA &amp; AMCA Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">7</div><div><div class="prog-list-name">Registered Dental Assistant</div><div class="prog-list-accred">AMT Accredited</div></div></div>
       </div>
     </div>
   </div>
@@ -631,15 +650,15 @@
 
     <div style="margin-top:54px;">
       <div class="eyebrow">Programs Covered</div>
-      <h2 class="title">AlliedRx Programs Eligible Under Army CA</h2>
-      <div class="prog-chips">
-        <a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" class="prog-chip">Pharmacy Technician</a>
-        <a href="https://www.alliedrxtraining.com/new-phlebotomy-page" class="prog-chip">Phlebotomy Technician</a>
-        <a href="https://www.alliedrxtraining.com/new-medical-billing-page" class="prog-chip">Medical Billing &amp; Coding</a>
-        <a href="https://www.alliedrxtraining.com/new-ekg-page" class="prog-chip">EKG Technician</a>
-        <a href="https://www.alliedrxtraining.com/new-ccma-page" class="prog-chip">Clinical Medical Assistant</a>
-        <a href="https://www.alliedrxtraining.com/new-cmaa-page" class="prog-chip">Clinical Medical Admin Asst</a>
-        <a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" class="prog-chip">Registered Dental Assistant</a>
+      <h2 class="title">All 7 AlliedRx Programs Eligible Under Army CA</h2>
+      <div class="prog-list">
+        <div class="prog-list-item"><div class="prog-num">1</div><div><div class="prog-list-name">Pharmacy Technician</div><div class="prog-list-accred">PTCB &amp; ASHP Accredited</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">2</div><div><div class="prog-list-name">Clinical Medical Assistant</div><div class="prog-list-accred">NHA Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">3</div><div><div class="prog-list-name">Phlebotomy Technician</div><div class="prog-list-accred">NHA &amp; AMCA Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">4</div><div><div class="prog-list-name">Medical Billing &amp; Coding</div><div class="prog-list-accred">NHA | AAPC Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">5</div><div><div class="prog-list-name">EKG Technician</div><div class="prog-list-accred">NHA &amp; AMCA Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">6</div><div><div class="prog-list-name">Clinical Medical Admin Asst</div><div class="prog-list-accred">NHA &amp; AMCA Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">7</div><div><div class="prog-list-name">Registered Dental Assistant</div><div class="prog-list-accred">AMT Accredited</div></div></div>
       </div>
     </div>
   </div>
@@ -695,15 +714,15 @@
 
     <div style="margin-top:54px;">
       <div class="eyebrow">Programs Covered</div>
-      <h2 class="title">AlliedRx Programs Eligible Under MyCAA</h2>
-      <div class="prog-chips">
-        <a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" class="prog-chip">Pharmacy Technician</a>
-        <a href="https://www.alliedrxtraining.com/new-phlebotomy-page" class="prog-chip">Phlebotomy Technician</a>
-        <a href="https://www.alliedrxtraining.com/new-medical-billing-page" class="prog-chip">Medical Billing &amp; Coding</a>
-        <a href="https://www.alliedrxtraining.com/new-ekg-page" class="prog-chip">EKG Technician</a>
-        <a href="https://www.alliedrxtraining.com/new-ccma-page" class="prog-chip">Clinical Medical Assistant</a>
-        <a href="https://www.alliedrxtraining.com/new-cmaa-page" class="prog-chip">Clinical Medical Admin Asst</a>
-        <a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" class="prog-chip">Registered Dental Assistant</a>
+      <h2 class="title">All 7 AlliedRx Programs Eligible Under MyCAA</h2>
+      <div class="prog-list">
+        <div class="prog-list-item"><div class="prog-num">1</div><div><div class="prog-list-name">Pharmacy Technician</div><div class="prog-list-accred">PTCB &amp; ASHP Accredited</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">2</div><div><div class="prog-list-name">Clinical Medical Assistant</div><div class="prog-list-accred">NHA Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">3</div><div><div class="prog-list-name">Phlebotomy Technician</div><div class="prog-list-accred">NHA &amp; AMCA Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">4</div><div><div class="prog-list-name">Medical Billing &amp; Coding</div><div class="prog-list-accred">NHA | AAPC Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">5</div><div><div class="prog-list-name">EKG Technician</div><div class="prog-list-accred">NHA &amp; AMCA Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">6</div><div><div class="prog-list-name">Clinical Medical Admin Asst</div><div class="prog-list-accred">NHA &amp; AMCA Approved</div></div></div>
+        <div class="prog-list-item"><div class="prog-num">7</div><div><div class="prog-list-name">Registered Dental Assistant</div><div class="prog-list-accred">AMT Accredited</div></div></div>
       </div>
     </div>
   </div>
