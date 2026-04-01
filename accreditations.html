@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Program Accreditation & Approvals | AlliedRx Institute of Healthcare</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0d0629;
+    --navy-mid: #1a0f40;
+    --purple: #7c3aed;
+    --purple-light: #a78bfa;
+    --purple-pale: #ede9fe;
+    --pale: #f5f3ff;
+    --white: #ffffff;
+    --text-dark: #1e1b4b;
+    --text-mid: #4c4584;
+    --text-light: #6b7280;
+    --border: #e5e7eb;
+    --green: #059669;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text-dark); line-height: 1.6; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 72px 2.5rem 0;
+    position: relative; overflow: hidden;
+  }
+  .hero-glow-1 {
+    position: absolute; top: -100px; right: 5%;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-glow-2 {
+    position: absolute; bottom: 0; left: -5%;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(124,58,237,0.18); border: 1px solid rgba(167,139,250,0.3);
+    color: var(--purple-light); padding: 6px 16px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  .hero-tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--purple-light); flex-shrink: 0; }
+  .hero-layout { display: grid; grid-template-columns: 1fr 380px; gap: 3rem; align-items: end; }
+  .hero-copy h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900;
+    color: white; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 1.5rem;
+  }
+  .hero-copy h1 .accent { color: var(--purple-light); }
+  .hero-copy p {
+    font-size: 1.05rem; color: rgba(255,255,255,0.65); line-height: 1.75; max-width: 560px;
+  }
+  .hero-sidebar {
+    background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.25);
+    border-radius: 20px; padding: 1.75rem; align-self: end;
+  }
+  .hero-sidebar-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--purple-light); margin-bottom: 1.25rem; }
+  .hero-stat-row { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .hero-stat-row:last-child { border-bottom: none; }
+  .hero-stat-num { font-size: 1.5rem; font-weight: 900; color: white; min-width: 52px; line-height: 1; }
+  .hero-stat-desc { font-size: 12.5px; color: rgba(255,255,255,0.55); line-height: 1.4; }
+
+  /* logo strip */
+  .hero-strip {
+    margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.08);
+    overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    background: rgba(255,255,255,0.03);
+  }
+  .hero-strip::-webkit-scrollbar { display: none; }
+  .hero-strip-inner { display: flex; min-width: max-content; max-width: 1100px; margin: 0 auto; }
+  .hero-strip-item {
+    padding: 16px 24px; border-right: 1px solid rgba(255,255,255,0.07);
+    display: flex; flex-direction: column; gap: 3px;
+  }
+  .hero-strip-name { font-size: 12px; font-weight: 700; color: white; }
+  .hero-strip-abbr { font-size: 11px; color: var(--purple-light); font-weight: 600; }
+
+  /* ── TAB NAV ── */
+  .tab-nav {
+    position: sticky; top: 0; z-index: 90;
+    background: var(--navy); border-bottom: 1px solid rgba(124,58,237,0.18);
+    padding: 0 2.5rem; overflow-x: auto;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .tab-nav::-webkit-scrollbar { display: none; }
+  .tab-nav-inner { display: flex; min-width: max-content; max-width: 1100px; margin: 0 auto; }
+  .tab-btn {
+    padding: 15px 18px; font-size: 13px; font-weight: 600;
+    color: rgba(255,255,255,0.5); background: none; border: none;
+    border-bottom: 3px solid transparent; cursor: pointer;
+    white-space: nowrap; transition: all 0.2s; min-height: 44px;
+  }
+  .tab-btn:hover { color: rgba(255,255,255,0.85); }
+  .tab-btn.active { color: var(--purple-light); border-bottom-color: var(--purple-light); }
+
+  /* ── SECTION SCAFFOLDING ── */
+  .cat-section { padding: 80px 2.5rem; }
+  .cat-section:nth-child(odd) { background: var(--white); }
+  .cat-section:nth-child(even) { background: var(--pale); }
+  .cat-inner { max-width: 1100px; margin: 0 auto; }
+  .cat-label { font-size: 11px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; color: var(--purple); margin-bottom: 0.75rem; }
+  .cat-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; color: var(--text-dark); letter-spacing: -0.4px; margin-bottom: 0.5rem; line-height: 1.2; }
+  .cat-desc { font-size: 1rem; color: var(--text-light); max-width: 680px; line-height: 1.75; margin-bottom: 3rem; }
+
+  /* ── ACCREDITATION CARDS ── */
+  .accred-cards { display: flex; flex-direction: column; gap: 1.5rem; }
+  .accred-card {
+    background: white; border-radius: 20px; border: 1px solid var(--border);
+    overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+  .cat-section:nth-child(even) .accred-card { background: white; }
+
+  .accred-card-header {
+    display: grid; grid-template-columns: 200px 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+  .accred-logo-box {
+    display: flex; align-items: center; justify-content: center;
+    padding: 2rem 1.5rem;
+    background: white;
+    border-right: 1px solid var(--border);
+    min-height: 120px;
+  }
+  .accred-logo-box img {
+    max-width: 140px; max-height: 70px;
+    width: auto; height: auto;
+    object-fit: contain;
+    /* Make logos blend seamlessly — removes white bg on logos that have it */
+    mix-blend-mode: multiply;
+    filter: contrast(1.05);
+  }
+  /* SVG logo fallback for orgs with no clean PNG */
+  .accred-logo-svg {
+    display: flex; align-items: center; justify-content: center;
+    width: 140px; height: 60px;
+  }
+  .accred-logo-text-fallback {
+    font-size: 22px; font-weight: 900; letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--purple), var(--navy));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .accred-card-title-area {
+    padding: 1.5rem 2rem;
+    display: flex; flex-direction: column; justify-content: center; gap: 0.5rem;
+  }
+  .accred-card-name { font-size: 1.2rem; font-weight: 800; color: var(--text-dark); letter-spacing: -0.2px; }
+  .accred-card-abbr {
+    display: inline-flex; align-items: center; gap: 6px; width: fit-content;
+    font-size: 12px; font-weight: 700; color: var(--purple);
+    background: var(--purple-pale); border-radius: 20px; padding: 3px 12px;
+  }
+  .accred-card-website { font-size: 12px; color: var(--text-light); text-decoration: none; }
+  .accred-card-website:hover { color: var(--purple); text-decoration: underline; }
+
+  .accred-card-body { padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .accred-detail-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--purple); margin-bottom: 0.6rem; }
+  .accred-detail-text { font-size: 14px; color: var(--text-dark); line-height: 1.7; }
+  .accred-detail-text ul { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+  .accred-detail-text ul li { display: flex; align-items: flex-start; gap: 8px; }
+  .accred-detail-text ul li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--purple); flex-shrink: 0; margin-top: 7px; }
+
+  .accred-programs-row {
+    padding: 1.25rem 2rem; border-top: 1px solid var(--border);
+    background: var(--pale); display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem;
+  }
+  .accred-programs-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); }
+  .prog-tag {
+    font-size: 12px; font-weight: 600; color: var(--purple);
+    background: white; border: 1px solid var(--purple-pale);
+    padding: 4px 12px; border-radius: 20px;
+  }
+
+  /* ── CTA ── */
+  .cta-section { background: var(--navy); padding: 80px 2.5rem; position: relative; overflow: hidden; }
+  .cta-glow {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 700px; height: 350px; border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(124,58,237,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .cta-left h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 900; color: white; line-height: 1.15; letter-spacing: -0.6px; margin-bottom: 1rem; }
+  .cta-left h2 span { color: var(--purple-light); }
+  .cta-left p { font-size: 1rem; color: rgba(255,255,255,0.62); line-height: 1.75; }
+  .cta-right { display: flex; flex-direction: column; gap: 1rem; }
+  .btn-primary {
+    background: var(--purple); color: white; border: none;
+    padding: 15px 32px; border-radius: 12px; font-size: 15px; font-weight: 700;
+    cursor: pointer; text-decoration: none; text-align: center; display: block;
+    transition: background 0.2s; box-shadow: 0 4px 20px rgba(124,58,237,0.35);
+    min-height: 52px;
+  }
+  .btn-primary:hover { background: #6d28d9; }
+  .btn-ghost {
+    background: transparent; color: rgba(255,255,255,0.8);
+    border: 1.5px solid rgba(255,255,255,0.2);
+    padding: 15px 32px; border-radius: 12px; font-size: 15px; font-weight: 600;
+    cursor: pointer; text-decoration: none; text-align: center; display: block;
+    transition: all 0.2s; min-height: 52px;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .hero-layout { grid-template-columns: 1fr; }
+    .hero-sidebar { max-width: 480px; }
+    .accred-card-body { grid-template-columns: 1fr; }
+    .cta-inner { grid-template-columns: 1fr; gap: 2rem; }
+  }
+  @media (max-width: 767px) {
+    .hero { padding: 48px 1.25rem 0; }
+    .hero-copy h1 { font-size: 2rem; }
+    .tab-nav { padding: 0; }
+    .tab-btn { padding: 13px 13px; font-size: 12px; }
+    .cat-section { padding: 56px 1.25rem; }
+    .accred-card-header { grid-template-columns: 1fr; }
+    .accred-logo-box { border-right: none; border-bottom: 1px solid var(--border); padding: 1.5rem; min-height: 80px; }
+    .accred-card-title-area { padding: 1.25rem; }
+    .accred-card-body { padding: 1.25rem; gap: 1.5rem; }
+    .accred-programs-row { padding: 1rem 1.25rem; }
+    .cta-section { padding: 56px 1.25rem; }
+    .hero-stat-num { font-size: 1.25rem; min-width: 44px; }
+  }
+  @media (max-width: 480px) {
+    .hero-copy h1 { font-size: 1.7rem; letter-spacing: -0.5px; }
+    .accred-logo-box img { max-width: 110px; max-height: 56px; }
+    .cta-left h2 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-inner">
+    <div class="hero-tag"><div class="hero-tag-dot"></div>Accreditation &amp; Approvals</div>
+    <div class="hero-layout">
+      <div class="hero-copy">
+        <h1>Nationally Recognized.<br><span class="accent">Rigorously Accredited.</span></h1>
+        <p>AlliedRx Institute of Healthcare programs are approved and recognized by the nation's leading healthcare certification bodies, military education programs, and state pharmacy boards — giving our graduates credentials that employers trust everywhere.</p>
+      </div>
+      <div class="hero-sidebar">
+        <div class="hero-sidebar-label">Accreditation At a Glance</div>
+        <div class="hero-stat-row">
+          <div class="hero-stat-num">10</div>
+          <div class="hero-stat-desc">accrediting bodies &amp; approving organizations</div>
+        </div>
+        <div class="hero-stat-row">
+          <div class="hero-stat-num">7</div>
+          <div class="hero-stat-desc">nationally certified programs</div>
+        </div>
+        <div class="hero-stat-row">
+          <div class="hero-stat-num">3</div>
+          <div class="hero-stat-desc">state pharmacy board approvals</div>
+        </div>
+        <div class="hero-stat-row">
+          <div class="hero-stat-num">3</div>
+          <div class="hero-stat-desc">military education benefit programs accepted</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-strip">
+    <div class="hero-strip-inner">
+      <div class="hero-strip-item"><span class="hero-strip-name">National Healthcareer Association</span><span class="hero-strip-abbr">NHA</span></div>
+      <div class="hero-strip-item"><span class="hero-strip-name">American Medical Certification Association</span><span class="hero-strip-abbr">AMCA</span></div>
+      <div class="hero-strip-item"><span class="hero-strip-name">American Medical Technologists</span><span class="hero-strip-abbr">AMT</span></div>
+      <div class="hero-strip-item"><span class="hero-strip-name">American Society of Health-System Pharmacists</span><span class="hero-strip-abbr">ASHP</span></div>
+      <div class="hero-strip-item"><span class="hero-strip-name">National Center for Competency Testing</span><span class="hero-strip-abbr">NCCT</span></div>
+      <div class="hero-strip-item"><span class="hero-strip-name">Army Credential Servicing</span><span class="hero-strip-abbr">Army</span></div>
+      <div class="hero-strip-item"><span class="hero-strip-name">Air Force COOL</span><span class="hero-strip-abbr">AF COOL</span></div>
+      <div class="hero-strip-item"><span class="hero-strip-name">MyCAA Spouse Grant</span><span class="hero-strip-abbr">MyCAA</span></div>
+      <div class="hero-strip-item"><span class="hero-strip-name">VA / VBOP / FBOP / MBOP</span><span class="hero-strip-abbr">State Boards</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TAB NAV -->
+<nav class="tab-nav" id="tabNav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" onclick="scrollTo('cert-bodies')">Certification Bodies</button>
+    <button class="tab-btn" onclick="scrollTo('pharmacy')">Pharmacy Accreditation</button>
+    <button class="tab-btn" onclick="scrollTo('military')">Military Programs</button>
+    <button class="tab-btn" onclick="scrollTo('state-boards')">State Board Approvals</button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     SECTION 1: CERTIFICATION BODIES
+═══════════════════════════════════════════ -->
+<section class="cat-section" id="cert-bodies">
+  <div class="cat-inner">
+    <div class="cat-label">Healthcare Certification Bodies</div>
+    <h2 class="cat-title">National Certification Organizations</h2>
+    <p class="cat-desc">Our programs align with the exam objectives and standards of the most respected national certification bodies in allied healthcare, ensuring graduates are fully prepared to sit for recognized national exams.</p>
+
+    <div class="accred-cards">
+
+      <!-- NHA -->
+      <div class="accred-card">
+        <div class="accred-card-header">
+          <div class="accred-logo-box">
+            <img src="https://store.nhanow.com/static-assets/header/logo.png" alt="NHA National Healthcareer Association Logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="accred-logo-svg" style="display:none">
+              <span class="accred-logo-text-fallback">nha</span>
+            </div>
+          </div>
+          <div class="accred-card-title-area">
+            <div class="accred-card-name">National Healthcareer Association</div>
+            <div class="accred-card-abbr">NHA</div>
+            <a href="https://www.nhanow.com" target="_blank" class="accred-card-website">nhanow.com ↗</a>
+          </div>
+        </div>
+        <div class="accred-card-body">
+          <div>
+            <div class="accred-detail-label">About NHA</div>
+            <div class="accred-detail-text">Founded in 1989, the National Healthcareer Association (NHA) is one of the largest allied health certification agencies in the United States. NHA administers nationally recognized certification exams across a wide range of healthcare professions, with over 1.1 million certifications awarded to date. NHA credentials are widely accepted by employers across hospital systems, clinics, and long-term care facilities nationwide. AlliedRx programs are designed to fully align with NHA exam blueprints, ensuring graduates are exam-ready from day one.</div>
+          </div>
+          <div>
+            <div class="accred-detail-label">NHA Certifications We Prepare You For</div>
+            <div class="accred-detail-text">
+              <ul>
+                <li>CCMA – Certified Clinical Medical Assistant</li>
+                <li>CMAA – Certified Medical Administrative Assistant</li>
+                <li>CPT – Certified Phlebotomy Technician</li>
+                <li>CET – Certified EKG Technician</li>
+                <li>CBCS – Certified Billing &amp; Coding Specialist</li>
+                <li>ExCPT – Exam for the Certification of Pharmacy Technicians</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accred-programs-row">
+          <span class="accred-programs-label">Applies To:</span>
+          <span class="prog-tag">Clinical Medical Assistant</span>
+          <span class="prog-tag">Medical Admin Assistant</span>
+          <span class="prog-tag">Phlebotomy Technician</span>
+          <span class="prog-tag">EKG Technician</span>
+          <span class="prog-tag">Medical Billing &amp; Coding</span>
+          <span class="prog-tag">Pharmacy Technician</span>
+        </div>
+      </div>
+
+      <!-- AMCA -->
+      <div class="accred-card">
+        <div class="accred-card-header">
+          <div class="accred-logo-box">
+            <img src="https://www.amcaexams.com/wp-content/uploads/2022/07/logo.png" alt="AMCA Logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="accred-logo-svg" style="display:none">
+              <span class="accred-logo-text-fallback">AMCA</span>
+            </div>
+          </div>
+          <div class="accred-card-title-area">
+            <div class="accred-card-name">American Medical Certification Association</div>
+            <div class="accred-card-abbr">AMCA</div>
+            <a href="https://www.amcaexams.com" target="_blank" class="accred-card-website">amcaexams.com ↗</a>
+          </div>
+        </div>
+        <div class="accred-card-body">
+          <div>
+            <div class="accred-detail-label">About AMCA</div>
+            <div class="accred-detail-text">The American Medical Certification Association (AMCA) is a nationally recognized certification body dedicated to advancing the standards of the allied healthcare profession. AMCA certifications are widely respected across hospitals, physician offices, urgent care centers, and outpatient clinics. AMCA is committed to working collaboratively with training programs — like AlliedRx — to ensure curriculum rigor and student readiness for national certification examinations. AMCA has certified professionals in all 50 states and is accredited by the National Commission for Certifying Agencies (NCCA).</div>
+          </div>
+          <div>
+            <div class="accred-detail-label">AMCA Certifications We Prepare You For</div>
+            <div class="accred-detail-text">
+              <ul>
+                <li>CMAC – Certified Medical Administrative Assistant</li>
+                <li>CMA – Certified Medical Assistant</li>
+                <li>CEHRS – Certified EHR Specialist</li>
+                <li>CBCS – Certified Billing &amp; Coding Specialist</li>
+                <li>CPT – Certified Phlebotomy Technician</li>
+                <li>CECT – Certified EKG/Cardiac Technician</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accred-programs-row">
+          <span class="accred-programs-label">Applies To:</span>
+          <span class="prog-tag">Clinical Medical Assistant</span>
+          <span class="prog-tag">Medical Admin Assistant</span>
+          <span class="prog-tag">Phlebotomy Technician</span>
+          <span class="prog-tag">EKG Technician</span>
+          <span class="prog-tag">Medical Billing &amp; Coding</span>
+        </div>
+      </div>
+
+      <!-- AMT -->
+      <div class="accred-card">
+        <div class="accred-card-header">
+          <div class="accred-logo-box">
+            <img src="https://americanmedtech.org/Portals/0/logo%20transparent%203.png" alt="AMT American Medical Technologists Logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="accred-logo-svg" style="display:none">
+              <span class="accred-logo-text-fallback">AMT</span>
+            </div>
+          </div>
+          <div class="accred-card-title-area">
+            <div class="accred-card-name">American Medical Technologists</div>
+            <div class="accred-card-abbr">AMT</div>
+            <a href="https://americanmedtech.org" target="_blank" class="accred-card-website">americanmedtech.org ↗</a>
+          </div>
+        </div>
+        <div class="accred-card-body">
+          <div>
+            <div class="accred-detail-label">About AMT</div>
+            <div class="accred-detail-text">American Medical Technologists (AMT) is a nonprofit certification agency and professional membership association representing over 100,000 credentialed professionals. Founded in 1939, AMT is one of the oldest and most respected certification organizations in the healthcare industry. AMT is accredited by the National Commission for Certifying Agencies (NCCA) and offers multiple allied health credentials. AMT credentials are recognized by federal and state government agencies, hospitals, and major healthcare systems throughout the country. Membership in AMT provides ongoing professional development, peer networking, and continuing education resources.</div>
+          </div>
+          <div>
+            <div class="accred-detail-label">AMT Certifications We Prepare You For</div>
+            <div class="accred-detail-text">
+              <ul>
+                <li>RMA – Registered Medical Assistant</li>
+                <li>RPT – Registered Phlebotomy Technician</li>
+                <li>CMAS – Certified Medical Administrative Specialist</li>
+                <li>RBCS – Registered Billing &amp; Coding Specialist</li>
+                <li>MT – Medical Technologist</li>
+                <li>MLT – Medical Laboratory Technician</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accred-programs-row">
+          <span class="accred-programs-label">Applies To:</span>
+          <span class="prog-tag">Clinical Medical Assistant</span>
+          <span class="prog-tag">Medical Admin Assistant</span>
+          <span class="prog-tag">Phlebotomy Technician</span>
+          <span class="prog-tag">Medical Billing &amp; Coding</span>
+        </div>
+      </div>
+
+      <!-- NCCT -->
+      <div class="accred-card">
+        <div class="accred-card-header">
+          <div class="accred-logo-box">
+            <img src="https://www.ncctinc.com/content/img/logos/Full-Color-Logo_draft.png" alt="NCCT National Center for Competency Testing Logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="accred-logo-svg" style="display:none">
+              <span class="accred-logo-text-fallback">NCCT</span>
+            </div>
+          </div>
+          <div class="accred-card-title-area">
+            <div class="accred-card-name">National Center for Competency Testing</div>
+            <div class="accred-card-abbr">NCCT</div>
+            <a href="https://www.ncctinc.com" target="_blank" class="accred-card-website">ncctinc.com ↗</a>
+          </div>
+        </div>
+        <div class="accred-card-body">
+          <div>
+            <div class="accred-detail-label">About NCCT</div>
+            <div class="accred-detail-text">The National Center for Competency Testing (NCCT) has been providing certification services to the healthcare community since 1989. NCCT's mission is to promote professional excellence in healthcare through competency-based testing and credentialing. NCCT certification examinations are psychometrically validated and continuously updated to reflect current industry practice standards. NCCT is accredited by the National Commission for Certifying Agencies (NCCA) — the gold standard for professional certification programs. AlliedRx programs integrate NCCT exam content domains directly into course curricula to maximize graduate exam performance.</div>
+          </div>
+          <div>
+            <div class="accred-detail-label">NCCT Certifications We Prepare You For</div>
+            <div class="accred-detail-text">
+              <ul>
+                <li>NCMA – National Certified Medical Assistant</li>
+                <li>NCPT – National Certified Phlebotomy Technician</li>
+                <li>NCET – National Certified EKG Technician</li>
+                <li>NCICS – National Certified Insurance &amp; Coding Specialist</li>
+                <li>NCMOA – National Certified Medical Office Assistant</li>
+                <li>NCPhT – National Certified Pharmacy Technician</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accred-programs-row">
+          <span class="accred-programs-label">Applies To:</span>
+          <span class="prog-tag">Clinical Medical Assistant</span>
+          <span class="prog-tag">Phlebotomy Technician</span>
+          <span class="prog-tag">EKG Technician</span>
+          <span class="prog-tag">Medical Billing &amp; Coding</span>
+          <span class="prog-tag">Pharmacy Technician</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 2: PHARMACY ACCREDITATION
+═══════════════════════════════════════════ -->
+<section class="cat-section" id="pharmacy">
+  <div class="cat-inner">
+    <div class="cat-label">Pharmacy Program Accreditation</div>
+    <h2 class="cat-title">ASHP / ACPE Pharmacy Accreditation</h2>
+    <p class="cat-desc">Our Pharmacy Technician program meets the rigorous standards set by the American Society of Health-System Pharmacists and the Pharmacy Technician Certification Board — ensuring our graduates are among the most prepared in the field.</p>
+
+    <div class="accred-cards">
+
+      <!-- ASHP -->
+      <div class="accred-card">
+        <div class="accred-card-header">
+          <div class="accred-logo-box" style="background:#1a3a5c;">
+            <img src="https://www.ashp.org/-/media/assets/home-page/logo.png" alt="ASHP Logo"
+              style="mix-blend-mode:normal;"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="accred-logo-svg" style="display:none">
+              <span class="accred-logo-text-fallback">ASHP</span>
+            </div>
+          </div>
+          <div class="accred-card-title-area">
+            <div class="accred-card-name">American Society of Health-System Pharmacists</div>
+            <div class="accred-card-abbr">ASHP</div>
+            <a href="https://www.ashp.org" target="_blank" class="accred-card-website">ashp.org ↗</a>
+          </div>
+        </div>
+        <div class="accred-card-body">
+          <div>
+            <div class="accred-detail-label">About ASHP</div>
+            <div class="accred-detail-text">The American Society of Health-System Pharmacists (ASHP) is one of the most prestigious pharmacy organizations in the world, representing more than 60,000 pharmacy professionals. ASHP sets the standard for pharmacy technician training through its rigorous accreditation standards — developed jointly with the Accreditation Council for Pharmacy Education (ACPE). ASHP-accredited programs are the most widely respected by hospital pharmacy employers and are required for entry into many health-system pharmacy settings. AlliedRx's Pharmacy Technician program is developed in alignment with ASHP/ACPE model curriculum standards, covering pharmacology, sterile/non-sterile compounding, pharmacy law, and medication safety.</div>
+          </div>
+          <div>
+            <div class="accred-detail-label">Why ASHP Accreditation Matters</div>
+            <div class="accred-detail-text">
+              <ul>
+                <li>Required by most hospital and health-system pharmacy employers</li>
+                <li>Recognized by the Pharmacy Technician Certification Board (PTCB)</li>
+                <li>ASHP-trained techs may qualify for advanced roles and higher pay</li>
+                <li>Curriculum covers sterile compounding, IV admixture &amp; medication safety</li>
+                <li>Prepares graduates for the national PTCE certification exam</li>
+                <li>Accepted across VA hospitals, military pharmacies, and retail chains</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accred-programs-row">
+          <span class="accred-programs-label">Applies To:</span>
+          <span class="prog-tag">Pharmacy Technician</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 3: MILITARY PROGRAMS
+═══════════════════════════════════════════ -->
+<section class="cat-section" id="military">
+  <div class="cat-inner">
+    <div class="cat-label">Military Education Benefits</div>
+    <h2 class="cat-title">Military &amp; Spouse Education Programs</h2>
+    <p class="cat-desc">AlliedRx is proud to support those who serve. Our programs are approved for multiple military education benefit programs, allowing active duty service members, veterans, and military spouses to earn nationally recognized healthcare credentials with little to no out-of-pocket cost.</p>
+
+    <div class="accred-cards">
+
+      <!-- ARMY -->
+      <div class="accred-card">
+        <div class="accred-card-header">
+          <div class="accred-logo-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Seal_of_the_United_States_Department_of_the_Army.svg/240px-Seal_of_the_United_States_Department_of_the_Army.svg.png" alt="U.S. Army Logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="accred-logo-svg" style="display:none">
+              <span class="accred-logo-text-fallback" style="font-size:14px;">U.S. Army</span>
+            </div>
+          </div>
+          <div class="accred-card-title-area">
+            <div class="accred-card-name">Army Credential Assistance Program (Army CA)</div>
+            <div class="accred-card-abbr">Army CA</div>
+            <a href="https://www.cool.osd.mil/army/" target="_blank" class="accred-card-website">cool.osd.mil/army ↗</a>
+          </div>
+        </div>
+        <div class="accred-card-body">
+          <div>
+            <div class="accred-detail-label">About Army CA</div>
+            <div class="accred-detail-text">The Army Credentialing Assistance (CA) program provides funding for active duty Army Soldiers to earn civilian credentials, licenses, and certifications that relate to their Military Occupational Specialty (MOS). Soldiers can receive up to $4,000 per fiscal year to pay for approved training programs and certification exams. AlliedRx's healthcare programs are approved under Army CA, allowing active duty Soldiers to earn their healthcare credentials at no out-of-pocket cost. The program covers both the training program and the national certification exam fees through a streamlined reimbursement process via ArmyIgnitED.</div>
+          </div>
+          <div>
+            <div class="accred-detail-label">Benefit Details</div>
+            <div class="accred-detail-text">
+              <ul>
+                <li>Up to $4,000 per fiscal year for credentialing</li>
+                <li>Covers both training program fees and exam costs</li>
+                <li>Available to active duty Army Soldiers</li>
+                <li>MOS-aligned programs receive priority funding</li>
+                <li>Administered through ArmyIgnitED portal</li>
+                <li>No minimum service requirement for initial enrollment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accred-programs-row">
+          <span class="accred-programs-label">Eligible Programs:</span>
+          <span class="prog-tag">All 7 AlliedRx Programs</span>
+        </div>
+      </div>
+
+      <!-- AIR FORCE COOL -->
+      <div class="accred-card">
+        <div class="accred-card-header">
+          <div class="accred-logo-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Seal_of_the_United_States_Air_Force.svg/240px-Seal_of_the_United_States_Air_Force.svg.png" alt="U.S. Air Force Logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="accred-logo-svg" style="display:none">
+              <span class="accred-logo-text-fallback" style="font-size:12px;">USAF COOL</span>
+            </div>
+          </div>
+          <div class="accred-card-title-area">
+            <div class="accred-card-name">Air Force Credentialing Opportunities On-Line (COOL)</div>
+            <div class="accred-card-abbr">AF COOL</div>
+            <a href="https://www.cool.osd.mil/usaf/" target="_blank" class="accred-card-website">cool.osd.mil/usaf ↗</a>
+          </div>
+        </div>
+        <div class="accred-card-body">
+          <div>
+            <div class="accred-detail-label">About AF COOL</div>
+            <div class="accred-detail-text">The Air Force Credentialing Opportunities On-Line (AF COOL) program helps active duty Air Force and Space Force personnel earn civilian credentials and certifications that map to their Air Force Specialty Codes (AFSCs). The program funds the cost of approved credential exams and, in many cases, associated preparatory training. AlliedRx programs are recognized under AF COOL, giving Airmen and Guardians a clear pathway to earning civilian healthcare credentials while on active duty. This is especially valuable for those in medical, administrative, and technical AFSCs who plan to transition to civilian healthcare careers.</div>
+          </div>
+          <div>
+            <div class="accred-detail-label">Benefit Details</div>
+            <div class="accred-detail-text">
+              <ul>
+                <li>Funds civilian credential exams directly related to AFSC</li>
+                <li>Covers training prep programs and exam registration</li>
+                <li>Available to active duty Air Force &amp; Space Force members</li>
+                <li>AFSC crosswalk tool helps identify eligible credentials</li>
+                <li>No out-of-pocket cost for approved programs</li>
+                <li>Supports transition to civilian healthcare employment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accred-programs-row">
+          <span class="accred-programs-label">Eligible Programs:</span>
+          <span class="prog-tag">All 7 AlliedRx Programs</span>
+        </div>
+      </div>
+
+      <!-- MYCAA -->
+      <div class="accred-card">
+        <div class="accred-card-header">
+          <div class="accred-logo-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Flag_of_the_United_States.svg/240px-Flag_of_the_United_States.svg.png" alt="MyCAA Military Spouse Program"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="accred-logo-svg" style="display:none">
+              <span class="accred-logo-text-fallback" style="font-size:14px;">MyCAA</span>
+            </div>
+          </div>
+          <div class="accred-card-title-area">
+            <div class="accred-card-name">My Career Advancement Account Scholarship (MyCAA)</div>
+            <div class="accred-card-abbr">MyCAA</div>
+            <a href="https://mycaa.militaryonesource.mil" target="_blank" class="accred-card-website">mycaa.militaryonesource.mil ↗</a>
+          </div>
+        </div>
+        <div class="accred-card-body">
+          <div>
+            <div class="accred-detail-label">About MyCAA</div>
+            <div class="accred-detail-text">The My Career Advancement Account (MyCAA) Scholarship is a workforce development program administered by the Department of Defense that provides up to $4,000 in financial assistance to eligible military spouses pursuing portable careers. AlliedRx Institute of Healthcare is an approved MyCAA institution, making our healthcare programs accessible to military spouses at little to no cost. The program is designed to help spouses build sustainable, portable careers that can move with the family during PCS assignments. Healthcare credentials — like those offered by AlliedRx — are among the most portable and in-demand career pathways available to military spouses.</div>
+          </div>
+          <div>
+            <div class="accred-detail-label">Benefit Details</div>
+            <div class="accred-detail-text">
+              <ul>
+                <li>Up to $4,000 in scholarship funding (lifetime maximum)</li>
+                <li>Available to spouses of active duty E-1 to E-5, W-1 to W-2, O-1 to O-2</li>
+                <li>Covers tuition for approved portable career programs</li>
+                <li>Can be combined with other financial aid</li>
+                <li>Healthcare credentials qualify as portable career pathways</li>
+                <li>Apply through Military OneSource at no cost</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accred-programs-row">
+          <span class="accred-programs-label">Eligible Programs:</span>
+          <span class="prog-tag">All 7 AlliedRx Programs</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 4: STATE BOARD APPROVALS
+═══════════════════════════════════════════ -->
+<section class="cat-section" id="state-boards">
+  <div class="cat-inner">
+    <div class="cat-label">State Pharmacy Board Approvals</div>
+    <h2 class="cat-title">State-Level Regulatory Approvals</h2>
+    <p class="cat-desc">AlliedRx's Pharmacy Technician program has received formal approval from multiple state boards of pharmacy, confirming that our curriculum meets state-specific educational requirements for pharmacy technician registration and licensure.</p>
+
+    <div class="accred-cards">
+
+      <!-- VBOP -->
+      <div class="accred-card">
+        <div class="accred-card-header">
+          <div class="accred-logo-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Flag_of_Virginia.svg/240px-Flag_of_Virginia.svg.png" alt="Virginia Board of Pharmacy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="accred-logo-svg" style="display:none">
+              <span class="accred-logo-text-fallback" style="font-size:14px;">VBOP</span>
+            </div>
+          </div>
+          <div class="accred-card-title-area">
+            <div class="accred-card-name">Virginia Board of Pharmacy</div>
+            <div class="accred-card-abbr">VBOP</div>
+            <a href="https://www.dhp.virginia.gov/pharmacy/" target="_blank" class="accred-card-website">dhp.virginia.gov/pharmacy ↗</a>
+          </div>
+        </div>
+        <div class="accred-card-body">
+          <div>
+            <div class="accred-detail-label">About VBOP Approval</div>
+            <div class="accred-detail-text">The Virginia Board of Pharmacy (VBOP) regulates the practice of pharmacy in the Commonwealth of Virginia and oversees pharmacy technician training program requirements. AlliedRx has received VBOP approval, meaning our Pharmacy Technician curriculum meets Virginia's state-mandated educational requirements for pharmacy technician registration. Graduates completing our program in Virginia can use their training certificate as part of their state registration application, streamlining the path to employment in Virginia pharmacies, hospitals, and health systems.</div>
+          </div>
+          <div>
+            <div class="accred-detail-label">What VBOP Approval Means for You</div>
+            <div class="accred-detail-text">
+              <ul>
+                <li>Meets Virginia's educational requirements for PhT registration</li>
+                <li>Recognized by Virginia retail chains, hospitals &amp; health systems</li>
+                <li>Allows graduates to register with the Virginia Board upon completion</li>
+                <li>Curriculum covers Virginia-specific pharmacy law requirements</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accred-programs-row">
+          <span class="accred-programs-label">Applies To:</span>
+          <span class="prog-tag">Pharmacy Technician</span>
+        </div>
+      </div>
+
+      <!-- FBOP -->
+      <div class="accred-card">
+        <div class="accred-card-header">
+          <div class="accred-logo-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Flag_of_Florida.svg/240px-Flag_of_Florida.svg.png" alt="Florida Board of Pharmacy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="accred-logo-svg" style="display:none">
+              <span class="accred-logo-text-fallback" style="font-size:14px;">FBOP</span>
+            </div>
+          </div>
+          <div class="accred-card-title-area">
+            <div class="accred-card-name">Florida Board of Pharmacy</div>
+            <div class="accred-card-abbr">FBOP</div>
+            <a href="https://floridaspharmacy.gov" target="_blank" class="accred-card-website">floridaspharmacy.gov ↗</a>
+          </div>
+        </div>
+        <div class="accred-card-body">
+          <div>
+            <div class="accred-detail-label">About FBOP Approval</div>
+            <div class="accred-detail-text">The Florida Board of Pharmacy (FBOP) is a division of the Florida Department of Health and is responsible for regulating the practice of pharmacy and pharmacy technicians throughout the state of Florida. AlliedRx's Pharmacy Technician program has been formally approved by the FBOP, confirming our curriculum satisfies Florida's training hour requirements and content standards. This approval is especially significant given Florida's large and growing healthcare workforce market. Graduates can cite FBOP-approved training as part of their application to work as a registered pharmacy technician in the state of Florida.</div>
+          </div>
+          <div>
+            <div class="accred-detail-label">What FBOP Approval Means for You</div>
+            <div class="accred-detail-text">
+              <ul>
+                <li>Meets Florida's 160-hour pharmacy technician training requirement</li>
+                <li>Recognized by Florida pharmacies, hospitals &amp; long-term care facilities</li>
+                <li>Supports registration with the Florida Department of Health</li>
+                <li>Florida has one of the nation's largest pharmacy job markets</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accred-programs-row">
+          <span class="accred-programs-label">Applies To:</span>
+          <span class="prog-tag">Pharmacy Technician</span>
+        </div>
+      </div>
+
+      <!-- MBOP -->
+      <div class="accred-card">
+        <div class="accred-card-header">
+          <div class="accred-logo-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Flag_of_Maryland.svg/240px-Flag_of_Maryland.svg.png" alt="Maryland Board of Pharmacy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="accred-logo-svg" style="display:none">
+              <span class="accred-logo-text-fallback" style="font-size:14px;">MBOP</span>
+            </div>
+          </div>
+          <div class="accred-card-title-area">
+            <div class="accred-card-name">Maryland Board of Pharmacy</div>
+            <div class="accred-card-abbr">MBOP</div>
+            <a href="https://health.maryland.gov/mdbop/" target="_blank" class="accred-card-website">health.maryland.gov/mdbop ↗</a>
+          </div>
+        </div>
+        <div class="accred-card-body">
+          <div>
+            <div class="accred-detail-label">About MBOP Approval</div>
+            <div class="accred-detail-text">The Maryland Board of Pharmacy (MBOP) is a division of the Maryland Department of Health that licenses and regulates pharmacists and pharmacy technicians in the state of Maryland. AlliedRx's Pharmacy Technician program is approved by the MBOP, meaning our training meets Maryland's specific educational and clinical hour requirements for pharmacy technician licensure. Maryland has a robust healthcare economy driven by its proximity to federal health agencies, major university hospital systems, and a dense network of specialty pharmacies — making this approval especially valuable for graduates in the DC metro region.</div>
+          </div>
+          <div>
+            <div class="accred-detail-label">What MBOP Approval Means for You</div>
+            <div class="accred-detail-text">
+              <ul>
+                <li>Meets Maryland's pharmacy technician education requirements</li>
+                <li>Recognized by hospitals, federal agencies &amp; specialty pharmacies</li>
+                <li>DC metro area has high demand for licensed pharmacy technicians</li>
+                <li>Supports Maryland Board licensure application upon completion</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accred-programs-row">
+          <span class="accred-programs-label">Applies To:</span>
+          <span class="prog-tag">Pharmacy Technician</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <div class="cta-left">
+      <h2>Earn Credentials<br><span>Employers Trust.</span></h2>
+      <p>AlliedRx's nationally accredited programs give you the certifications, credentials, and state approvals needed to launch a healthcare career with confidence — anywhere in the country.</p>
+    </div>
+    <div class="cta-right">
+      <a href="/enroll" class="btn-primary">Enroll Now</a>
+      <a href="/programs" class="btn-ghost">Browse All Programs</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  function scrollTo(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      const offset = 50;
+      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }
+  const tabs = document.querySelectorAll('.tab-btn');
+  const sectionIds = ['cert-bodies','pharmacy','military','state-boards'];
+  window.addEventListener('scroll', () => {
+    let active = 0;
+    sectionIds.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 160) active = i;
+    });
+    tabs.forEach((t, i) => t.classList.toggle('active', i === active));
+  });
+</script>
+</body>
+</html>
