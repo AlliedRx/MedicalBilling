@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — AlliedRx Institute of Healthcare</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: #06061a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* NAV hidden */
+nav { display: none; }
+
+/* HERO */
+.hero {
+  background: linear-gradient(160deg, #06061a 0%, #0d0730 55%, #130840 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 620px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  right: -80px;
+  top: -60px;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(ellipse, rgba(100,60,220,0.22) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 560px;
+  gap: 0;
+  align-items: stretch;
+  min-height: 620px;
+  position: relative;
+}
+
+/* LEFT */
+.hero-left {
+  padding: 56px 40px 56px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(145,72,252,0.15);
+  border: 1px solid rgba(145,72,252,0.35);
+  color: #c4b5fd;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 100px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+.badge-dot { width: 6px; height: 6px; background: #9148fc; border-radius: 50%; }
+
+h1 {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+h1 .purple-text {
+  background: linear-gradient(135deg, #c4b5fd, #9148fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-tagline {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+.hero-tagline span { color: #a78bfa; }
+
+.hero-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.65;
+  max-width: 520px;
+  margin-bottom: 10px;
+}
+
+.hero-funding {
+  font-size: 13px;
+  color: #fff;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 42px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 30px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 15px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.22s;
+  border: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(145,72,252,0.45);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(145,72,252,0.55); }
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.28);
+}
+.btn-outline:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.5); }
+
+/* Stats */
+.stats-bar { display: flex; gap: 0; }
+.stat-item {
+  padding: 0 28px 0 0;
+  margin-right: 28px;
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-size: 22px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #c4b5fd, #9148fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+.stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+}
+
+/* RIGHT: image behind, card in front */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.hero-img-wrap {
+  position: absolute;
+  right: -280px;
+  top: 0;
+  bottom: 0;
+  width: calc(100% + 280px);
+  overflow: hidden;
+}
+.hero-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, #06061a 0%, rgba(6,6,26,0.05) 18%),
+    linear-gradient(to top, rgba(6,6,26,0.55) 0%, transparent 35%);
+}
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top 20%;
+  display: block;
+}
+
+/* Program card */
+.program-card {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 336px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px 22px 18px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.45), 0 0 0 1px rgba(0,0,0,0.06);
+}
+.card-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6d28d9;
+  margin-bottom: 12px;
+}
+.program-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+.program-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 12px;
+  background: #f8f7ff;
+  border: 1px solid #ede9fe;
+  text-decoration: none;
+  transition: all 0.18s;
+}
+.program-row:hover { background: #ede9fe; border-color: #c4b5fd; }
+.prog-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.prog-icon svg { width: 15px; height: 15px; }
+.prog-info { flex: 1; min-width: 0; }
+.prog-name { font-size: 12px; font-weight: 700; color: #1a1a2e; line-height: 1.2; }
+.prog-accred { font-size: 9.5px; color: #7c3aed; font-weight: 600; margin-top: 1px; }
+.prog-chevron { color: #a78bfa; flex-shrink: 0; }
+.prog-chevron svg { width: 13px; height: 13px; }
+
+.card-enroll-btn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(145,72,252,0.4);
+  transition: all 0.2s;
+}
+.card-enroll-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(145,72,252,0.5); }
+.card-fine-print {
+  font-size: 10px;
+  color: #9ca3af;
+  text-align: center;
+  margin-top: 7px;
+}
+
+/* PROMO BAND */
+.promo-band {
+  background: #0e0a2a;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 24px 48px;
+}
+.promo-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.promo-tag {
+  background: rgba(145,72,252,0.18);
+  border: 1px solid rgba(145,72,252,0.38);
+  color: #c4b5fd;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.promo-content { flex: 1; }
+.promo-title { font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.01em; font-family: "Plus Jakarta Sans", sans-serif; }
+.promo-title span { color: #a78bfa; }
+.promo-sub { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 3px; font-family: "Plus Jakarta Sans", sans-serif; }
+.promo-cta {
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
+  color: #fff;
+  border: none;
+  padding: 11px 24px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(145,72,252,0.35);
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 72px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9148fc;
+  margin-bottom: 10px;
+}
+.section-title {
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.section-title .accent { color: #a78bfa; }
+.section-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.contact-tiles { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.contact-tile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 16px 18px;
+  transition: all 0.2s;
+}
+.contact-tile:hover { background: rgba(145,72,252,0.07); border-color: rgba(145,72,252,0.28); }
+.tile-icon {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, rgba(145,72,252,0.18), rgba(196,181,253,0.12));
+  border: 1px solid rgba(145,72,252,0.28);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.tile-icon svg { width: 19px; height: 19px; color: #a78bfa; }
+.tile-info { flex: 1; }
+.tile-label { font-size: 10.5px; font-weight: 700; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+.tile-value { font-size: 15px; font-weight: 700; color: #fff; }
+.tile-sub { font-size: 12px; color: rgba(255,255,255,0.38); margin-top: 2px; }
+.tile-action {
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
+  color: #fff;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+.tile-action:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(145,72,252,0.45); }
+
+.edu-tile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(145,72,252,0.07);
+  border: 1px solid rgba(145,72,252,0.22);
+  border-radius: 16px;
+  padding: 14px 18px;
+}
+.edu-tile-text { flex: 1; }
+.edu-tile-label { font-size: 13px; font-weight: 700; color: #c4b5fd; }
+.edu-tile-sub { font-size: 11.5px; color: rgba(255,255,255,0.38); margin-top: 2px; }
+
+.hours-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+.hours-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hours-title svg { color: #9148fc; width: 14px; height: 14px; }
+.hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.hours-day, .hours-time {
+  font-size: 13px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.hours-day { color: rgba(255,255,255,0.42); }
+.hours-time { font-weight: 600; color: rgba(255,255,255,0.72); text-align: right; }
+.hours-note { font-size: 11px; color: rgba(255,255,255,0.28); margin-top: 12px; }
+
+/* FORMS */
+.forms-col { display: flex; flex-direction: column; gap: 18px; }
+.form-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 20px;
+  padding: 28px;
+  backdrop-filter: blur(10px);
+}
+.form-card-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.01em; }
+.form-card-sub { font-size: 13px; color: rgba(255,255,255,0.42); margin-bottom: 20px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px; }
+
+label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.06em; }
+
+input, select, textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.11);
+  border-radius: 10px;
+  padding: 11px 13px;
+  color: #fff;
+  font-size: 14px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  outline: none;
+  transition: border 0.2s, background 0.2s;
+}
+input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.28); }
+input:focus, select:focus, textarea:focus {
+  border-color: rgba(145,72,252,0.6);
+  background: rgba(145,72,252,0.06);
+}
+select option { background: #1a0a3e; color: #fff; }
+textarea { resize: none; }
+
+.captcha-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 10px;
+  padding: 10px 13px;
+  margin-bottom: 12px;
+}
+.captcha-q { font-size: 14px; color: rgba(255,255,255,0.65); flex: 1; }
+.captcha-input { width: 70px; margin-bottom: 0; text-align: center; flex-shrink: 0; }
+
+.form-submit {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(145,72,252,0.45);
+  transition: all 0.22s;
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(145,72,252,0.55); }
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 24px 16px;
+}
+.form-success-icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+.form-success-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+.form-success-sub { font-size: 13px; color: rgba(255,255,255,0.5); }
+
+.hp-field { display: none !important; }
+
+/* REVIEWS */
+.reviews-section {
+  background: linear-gradient(180deg, #0a0620 0%, #06061a 100%);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 72px 48px;
+}
+.reviews-inner { max-width: 1360px; margin: 0 auto; }
+.reviews-header { text-align: center; margin-bottom: 44px; }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.review-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 22px;
+  transition: all 0.2s;
+}
+.review-card:hover { background: rgba(145,72,252,0.06); border-color: rgba(145,72,252,0.25); }
+.review-stars { display: flex; gap: 2px; margin-bottom: 10px; font-size: 14px; color: #f59e0b; }
+.review-text { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.65; margin-bottom: 16px; }
+.review-author { display: flex; align-items: center; gap: 10px; }
+.review-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+.review-name { font-size: 13px; font-weight: 700; color: #fff; }
+.review-program { font-size: 11px; color: #9148fc; font-weight: 600; margin-top: 1px; }
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: #1a0a3e;
+  border: 1px solid rgba(145,72,252,0.4);
+  color: #c4b5fd;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  white-space: nowrap;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+@media (max-width: 1080px) {
+  .hero-inner { grid-template-columns: 1fr 440px; }
+  .program-card { width: 300px; }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 820px) {
+  .hero-inner { grid-template-columns: 1fr; min-height: auto; }
+  .hero-right { display: none; }
+  .hero-left { padding: 44px 0; }
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .contact-section { grid-template-columns: 1fr; padding: 44px 20px; }
+  .reviews-section { padding: 48px 20px; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .hero-inner { padding-left: 20px; padding-right: 20px; }
+  .promo-band { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="badge-pill">
+        <span class="badge-dot"></span>
+        Admissions &amp; Support
+      </div>
+
+      <h1>Contact Us<br><span class="purple-text">We're Here to Help</span><br>You Start Your Journey</h1>
+
+      <p class="hero-tagline">
+        Get <span>Certified.</span> Get <span>Hired.</span> Start <span>Today.</span>
+      </p>
+
+      <p class="hero-desc">
+        Our admissions team is ready to help you take the next step in your healthcare career. Reach out about enrollment, program details, tuition, or scheduling — we're with you every step of the way.
+      </p>
+
+      <p class="hero-funding">
+        Military Funding Accepted &nbsp;&middot;&nbsp; WIOA Approved &nbsp;&middot;&nbsp; Payment Plans &amp; Scholarships Available
+      </p>
+
+      <div class="hero-btns">
+        <a href="tel:18663486920" class="btn btn-primary" onclick="copyPhone(event)">Contact to Learn More &nbsp;&rarr;</a>
+        <a href="tel:18663486920" class="btn btn-outline" onclick="copyPhone(event)">Call 1-866-348-6920</a>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-num">5,000+</div>
+          <div class="stat-label">Graduates</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">94%</div>
+          <div class="stat-label">Job Placement</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">7</div>
+          <div class="stat-label">Cert. Programs</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">Guided</div>
+          <div class="stat-label">Student Support</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: image behind, program card in front -->
+    <div class="hero-right">
+      <div class="hero-img-wrap">
+        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69cd2035d43560a2baa2b945_ceo.png" alt="AlliedRx Healthcare Professional">
+      </div>
+
+      <div class="program-card">
+        <div class="card-label">Choose Your Program</div>
+        <div class="program-list">
+
+          <a href="https://www.alliedrxtraining.com/programs/pharmacy-technician" class="program-row">
+            <div class="prog-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 12h6M12 9v6"/></svg>
+            </div>
+            <div class="prog-info">
+              <div class="prog-name">Pharmacy Technician</div>
+              <div class="prog-accred">PTCB &amp; ASHP Accredited</div>
+            </div>
+            <div class="prog-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+          </a>
+
+          <a href="https://www.alliedrxtraining.com/programs/clinical-medical-assistant" class="program-row">
+            <div class="prog-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div class="prog-info">
+              <div class="prog-name">Clinical Medical Assistant</div>
+              <div class="prog-accred">NHA Approved</div>
+            </div>
+            <div class="prog-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+          </a>
+
+          <a href="https://www.alliedrxtraining.com/programs/medical-billing-coding" class="program-row">
+            <div class="prog-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div class="prog-info">
+              <div class="prog-name">Medical Billing &amp; Coding</div>
+              <div class="prog-accred">NHA | AAPC Approved</div>
+            </div>
+            <div class="prog-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+          </a>
+
+          <a href="https://www.alliedrxtraining.com/programs/ekg-technician" class="program-row">
+            <div class="prog-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div class="prog-info">
+              <div class="prog-name">EKG Technician</div>
+              <div class="prog-accred">NHA &amp; AMCA Approved</div>
+            </div>
+            <div class="prog-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+          </a>
+
+          <a href="https://www.alliedrxtraining.com/programs/dental-assisting" class="program-row">
+            <div class="prog-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M12 2C8.5 2 6 5 6 8c0 3 2 5 2 8h8c0-3 2-5 2-8 0-3-2.5-6-6-6z"/></svg>
+            </div>
+            <div class="prog-info">
+              <div class="prog-name">Dental Assisting</div>
+              <div class="prog-accred">AMT Accredited</div>
+            </div>
+            <div class="prog-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+          </a>
+
+          <a href="https://www.alliedrxtraining.com/programs/phlebotomy-technician" class="program-row">
+            <div class="prog-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><line x1="12" y1="2" x2="12" y2="8"/><path d="M5 12a7 7 0 0 0 14 0"/><line x1="8" y1="16" x2="8" y2="22"/><line x1="16" y1="16" x2="16" y2="22"/></svg>
+            </div>
+            <div class="prog-info">
+              <div class="prog-name">Phlebotomy Technician</div>
+              <div class="prog-accred">NHA &amp; AMCA Approved</div>
+            </div>
+            <div class="prog-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+          </a>
+
+          <a href="https://www.alliedrxtraining.com/programs/medical-admin-assistant" class="program-row">
+            <div class="prog-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"/></svg>
+            </div>
+            <div class="prog-info">
+              <div class="prog-name">Clinical Medical Admin Asst</div>
+              <div class="prog-accred">NHA &amp; AMCA Approved</div>
+            </div>
+            <div class="prog-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+          </a>
+
+        </div>
+
+        <button class="card-enroll-btn" onclick="document.getElementById('learn-more-form').scrollIntoView({behavior:'smooth'})">Enroll Now</button>
+        <div class="card-fine-print">$49 Registration Fee &nbsp;&middot;&nbsp; Excludes Pharmacy Tech</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROMO BAND -->
+<div class="promo-band">
+  <div class="promo-inner">
+    <div class="promo-tag">2026 Open Enrollment</div>
+    <div class="promo-content">
+      <div class="promo-title">Classes Starting Soon &mdash; <span>Limited Seats Available</span></div>
+      <div class="promo-sub">Start for as little as $99 down &nbsp;&middot;&nbsp; No credit check &nbsp;&middot;&nbsp; Zero interest &nbsp;&middot;&nbsp; Payment plans available</div>
+    </div>
+    <a href="https://www.alliedrxtraining.com/tuition-payments" target="_blank" class="promo-cta">View Payment Plans &nbsp;&rarr;</a>
+  </div>
+</div>
+
+<!-- CONTACT + FORMS -->
+<section class="contact-section">
+
+  <!-- LEFT INFO -->
+  <div>
+    <div class="section-eyebrow">We're Here for You</div>
+    <h2 class="section-title">Questions?<br><span style="color:rgba(255,255,255,0.55); font-size:0.75em; font-weight:700; font-family:'Plus Jakarta Sans',sans-serif;">Our Admissions Team is Ready</span></h2>
+    <p class="section-desc">Our admissions team is available Monday through Friday, 9:00 AM &ndash; 5:00 PM EST. Connect with us instantly by phone or live chat &mdash; no forms needed.</p>
+
+    <div class="contact-tiles">
+
+      <div class="contact-tile">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.74a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="tile-info">
+          <div class="tile-label">Phone</div>
+          <div class="tile-value">1-866-348-6920</div>
+          <div class="tile-sub">Mon&ndash;Fri 9am&ndash;5pm EST</div>
+        </div>
+        <a href="tel:18663486920" class="tile-action" onclick="copyPhone(event)">Call Now</a>
+      </div>
+
+      <div class="contact-tile">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="tile-info">
+          <div class="tile-label">Email</div>
+          <div class="tile-value">admission@alliedrxtraining.com</div>
+          <div class="tile-sub">We respond within 1 business day</div>
+        </div>
+        <a href="mailto:admission@alliedrxtraining.com" class="tile-action">Email Us</a>
+      </div>
+
+      <div class="edu-tile">
+        <div class="tile-icon" style="background: linear-gradient(135deg, rgba(145,72,252,0.18), rgba(196,181,253,0.12)); border: 1px solid rgba(145,72,252,0.28);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="edu-tile-text">
+          <div class="edu-tile-label">Education Verification</div>
+          <div class="edu-tile-sub">Employers &amp; background check agencies &mdash; verify credentials via our secure online form</div>
+        </div>
+        <a href="https://airtable.com/appIvEzGipsRCSUwr/pagRVUF9dIg7I2gwk/form" target="_blank" class="tile-action">Verify Credentials &nbsp;&rarr;</a>
+      </div>
+
+    </div>
+
+    <div class="hours-card">
+      <div class="hours-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Office Hours
+      </div>
+      <div class="hours-grid">
+        <div class="hours-day">Monday &ndash; Friday</div>
+        <div class="hours-time">9:00 AM &ndash; 5:00 PM EST</div>
+        <div class="hours-day">Saturday</div>
+        <div class="hours-time">Closed</div>
+        <div class="hours-day">Sunday</div>
+        <div class="hours-time">Closed</div>
+      </div>
+      <div class="hours-note">Student Support Portal available 24/7 via myAlliedRx</div>
+    </div>
+
+    <!-- Special Announcements -->
+    <div style="margin-top:18px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.4); border-radius:16px; padding:22px 24px; display:flex; align-items:flex-start; gap:16px;">
+      <div style="flex-shrink:0; margin-top:3px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#34d399; margin-bottom:7px; font-family:'Plus Jakarta Sans',sans-serif;">Special Announcement</div>
+        <div style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.65; font-family:'Plus Jakarta Sans',sans-serif;">Our offices will be closed in observance of the <strong style="color:#fff;">Easter Holiday</strong>. We will resume normal business hours the following business day.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Reach Us -->
+  <div class="forms-col">
+
+    <div class="form-card" style="text-align:center; padding: 40px 32px;">
+      <div style="font-size:13px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#9148fc; margin-bottom:12px;">We're Here for You</div>
+      <h3 style="font-size:26px; font-weight:900; color:#fff; letter-spacing:-0.02em; margin-bottom:10px; line-height:1.15;">Ready to Talk?<br><span style="background:linear-gradient(135deg,#c4b5fd,#9148fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Reach Us by Chat or Phone</span></h3>
+      <p style="font-size:14px; color:rgba(255,255,255,0.5); line-height:1.7; max-width:340px; margin:0 auto 28px;">Our admissions team is available Monday through Friday, 9:00 AM &ndash; 5:00 PM EST. Connect with us instantly by phone or live chat &mdash; no forms needed.</p>
+
+      <div style="font-size:12px; color:rgba(255,255,255,0.3); line-height:1.6; margin-bottom:28px;">
+        Closed on weekends &nbsp;&middot;&nbsp; Student Support Portal available 24/7 via myAlliedRx
+      </div>
+
+      <!-- Graduates heading + controls -->
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+        <div style="font-size:11px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#9148fc;">What Our Graduates Say</div>
+        <div style="display:flex; gap:6px;">
+          <button onclick="rotateReviews(-1)" style="width:28px;height:28px;border-radius:50%;background:rgba(145,72,252,0.15);border:1px solid rgba(145,72,252,0.35);color:#c4b5fd;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;">&#8592;</button>
+          <button onclick="rotateReviews(1)" style="width:28px;height:28px;border-radius:50%;background:rgba(145,72,252,0.15);border:1px solid rgba(145,72,252,0.35);color:#c4b5fd;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;">&#8594;</button>
+        </div>
+      </div>
+
+      <!-- Reviews rotating 2x2 grid -->
+      <div id="reviewGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:10px; text-align:left;">
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// REVIEWS DATA
+var allReviews = [
+  { stars:5, text:'"The Pharmacy Tech program gave me everything I needed to pass my PTCB exam on the first try. The instructors genuinely care about your success."', init:'CL', name:'Christopher Lynch', prog:'Pharmacy Technician' },
+  { stars:5, text:'"I completed the CMA program in just a few weeks and landed a job at a local clinic right after. AlliedRx truly prepares you for the real world."', init:'JT', name:'Jenna Tucker', prog:'Clinical Medical Assistant' },
+  { stars:5, text:'"The Medical Billing & Coding course was comprehensive and flexible. I studied at my own pace while working full-time. Highly recommend!"', init:'DH', name:'Diane Harmon', prog:'Medical Billing & Coding' },
+  { stars:5, text:'"I enrolled in Phlebotomy after years of wanting a career change. AlliedRx made it possible — affordable and thorough training."', init:'TJ', name:'Tamara Jenkins', prog:'Phlebotomy Technician' },
+  { stars:5, text:'"EKG Tech training was hands-on and thorough. I passed my NHA exam and got hired within two weeks of completing the course."', init:'MW', name:'Marcus Williams', prog:'EKG Technician' },
+  { stars:5, text:'"The Dental Assisting program exceeded my expectations. The curriculum was detailed and the staff support was outstanding."', init:'SR', name:'Sofia Reyes', prog:'Dental Assisting' },
+  { stars:5, text:'"AlliedRx helped me transition into healthcare administration quickly. The Medical Admin program was straightforward and career-focused."', init:'KB', name:'Keisha Brown', prog:'Clinical Medical Admin Asst' },
+  { stars:5, text:'"I passed my PTCB exam on the first attempt thanks to the Pharmacy Tech program. The study materials were excellent."', init:'EM', name:'Eden Mitiku', prog:'Pharmacy Technician' },
+  { stars:5, text:'"The CMA program was well-structured and the instructors were always available to answer questions. I felt fully prepared."', init:'PA', name:'Patrice Anderson', prog:'Clinical Medical Assistant' },
+  { stars:5, text:'"Completing the Pharmacy Tech program at AlliedRx was one of the best decisions I\'ve made. Fast-track and worth every penny."', init:'RL', name:'Rebecca Lewis', prog:'Pharmacy Technician' },
+  { stars:4, text:'"Great EKG program — very detailed content. The only thing I\'d improve is more in-person lab time, but overall a solid experience."', init:'AM', name:'Andre Mitchell', prog:'EKG Technician' },
+  { stars:4, text:'"The Phlebotomy program was very good. Instructors were helpful and patient. Would recommend to anyone looking to break into healthcare."', init:'VC', name:'Vanessa Cruz', prog:'Phlebotomy Technician' },
+  { stars:5, text:'"I was nervous about going back to school but AlliedRx made it so easy. The online format fit perfectly around my schedule."', init:'LM', name:'Lisa Merritt', prog:'Medical Billing & Coding' },
+  { stars:5, text:'"AlliedRx gave me the confidence and credentials I needed. Within a month of graduating I had two job offers on the table."', init:'DW', name:'Damon Wright', prog:'Pharmacy Technician' },
+  { stars:5, text:'"The Phlebotomy instructors were fantastic — patient, knowledgeable, and truly invested in helping students succeed."', init:'NF', name:'Natasha Ford', prog:'Phlebotomy Technician' },
+  { stars:5, text:'"I loved the Dental Assisting program. The content was current and relevant, and I felt job-ready the moment I finished."', init:'TH', name:'Tiffany Hall', prog:'Dental Assisting' },
+  { stars:5, text:'"The Medical Admin program was perfectly paced. I now work at a busy medical office and use what I learned every single day."', init:'CO', name:'Carmen Ortiz', prog:'Clinical Medical Admin Asst' },
+  { stars:5, text:'"AlliedRx\'s EKG program prepared me thoroughly. The practice tests were spot-on for the real NHA exam. Passed first try!"', init:'JP', name:'James Pryor', prog:'EKG Technician' },
+  { stars:5, text:'"The CMA program was exactly what I needed. Flexible, affordable, and the support staff is amazing. Best investment I\'ve made."', init:'BT', name:'Brenda Torres', prog:'Clinical Medical Assistant' },
+  { stars:5, text:'"I had zero background in healthcare. After the Phlebotomy program I was certified and employed within 6 weeks. AlliedRx is the real deal."', init:'RG', name:'Ronald Green', prog:'Phlebotomy Technician' },
+  { stars:5, text:'"The Billing & Coding course covered everything in depth. My employer was impressed with my knowledge right from day one on the job."', init:'MK', name:'Monica King', prog:'Medical Billing & Coding' },
+  { stars:5, text:'"As a military spouse I needed a fast path to employment. The Pharmacy Tech program at AlliedRx was the perfect solution."', init:'AS', name:'Angela Simmons', prog:'Pharmacy Technician' },
+  { stars:5, text:'"AlliedRx\'s Dental Assisting course set me apart from other candidates. I got hired at a dental office before I even finished the program."', init:'YB', name:'Yvonne Barnes', prog:'Dental Assisting' },
+  { stars:5, text:'"The EKG Tech program was thorough and the online format was super convenient. I\'m now working at a cardiology clinic I love."', init:'TC', name:'Tyrone Campbell', prog:'EKG Technician' }
+];
+
+var reviewIndex = 0;
+
+function starsHTML(n) {
+  var s = '';
+  for (var i = 1; i <= 5; i++) s += (i <= n ? '&#9733;' : '&#9734;');
+  return s;
+}
+
+function renderReviews() {
+  var grid = document.getElementById('reviewGrid');
+  if (!grid) return;
+  var html = '';
+  for (var i = 0; i < 4; i++) {
+    var r = allReviews[(reviewIndex + i) % allReviews.length];
+    html += '<div class="review-card" style="transition:opacity 0.4s;">' +
+      '<div class="review-stars">' + starsHTML(r.stars) + '</div>' +
+      '<p class="review-text">' + r.text + '</p>' +
+      '<div class="review-author"><div class="review-avatar">' + r.init + '</div>' +
+      '<div><div class="review-name">' + r.name + '</div>' +
+      '<div class="review-program">' + r.prog + '</div></div></div></div>';
+  }
+  grid.style.opacity = '0';
+  setTimeout(function() {
+    grid.innerHTML = html;
+    grid.style.opacity = '1';
+  }, 200);
+}
+
+function rotateReviews(dir) {
+  reviewIndex = (reviewIndex + dir * 4 + allReviews.length) % allReviews.length;
+  renderReviews();
+}
+
+// Auto-rotate every 7s
+setInterval(function() { rotateReviews(1); }, 7000);
+renderReviews();
+
+// CAPTCHA
+let captchaA, captchaB;
+function genCaptcha() {
+  captchaA = Math.floor(Math.random() * 9) + 1;
+  captchaB = Math.floor(Math.random() * 9) + 1;
+  document.getElementById('captchaQ').textContent = 'What is ' + captchaA + ' + ' + captchaB + '?';
+  document.getElementById('captchaAns').value = '';
+}
+genCaptcha();
+
+// SPAM
+var SPAM = ['casino','viagra','cialis','loan','bitcoin','crypto','seo','mortgage','make money fast','work from home','free money','click here'];
+function isSpam(t) { var l = t.toLowerCase(); return SPAM.some(function(w){ return l.indexOf(w) > -1; }); }
+
+// TOAST
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 3000);
+}
+
+// COPY PHONE
+function copyPhone(e) {
+  if (navigator.clipboard) {
+    e.preventDefault();
+    navigator.clipboard.writeText('18663486920').then(function(){
+      showToast('Phone number copied!');
+    }).catch(function(){ window.location.href = 'tel:18663486920'; });
+  }
+}
+
+// LEARN MORE
+function handleLearnMore(e) {
+  e.preventDefault();
+  var form = document.getElementById('learnMoreForm');
+  if (form._gotcha.value) return;
+  var fn = form.first_name.value, ln = form.last_name.value;
+  var em = form.email.value, ph = form.phone.value;
+  var pr = form.program.value, fmt = form.format.value;
+  if (isSpam(fn + ' ' + ln) || isSpam(em)) return;
+  var body = 'Name: ' + fn + ' ' + ln + '\nEmail: ' + em + '\nPhone: ' + ph + '\nProgram: ' + pr + '\nFormat: ' + fmt;
+  fetch('https://formspree.io/f/admissions-alliedrx', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ name: fn+' '+ln, email: em, phone: ph, program: pr, format: fmt, _subject: 'New Info Request — AlliedRx' })
+  }).catch(function(){
+    window.location.href = 'mailto:admissions@alliedrxtraining.com?subject=Info+Request&body=' + encodeURIComponent(body);
+  });
+  form.style.display = 'none';
+  document.getElementById('lm-success').style.display = 'block';
+}
+
+// INQUIRY
+function handleInquiry(e) {
+  e.preventDefault();
+  var form = document.getElementById('inquiryForm');
+  if (form._gotcha2.value) return;
+  var ans = parseInt(document.getElementById('captchaAns').value);
+  if (ans !== captchaA + captchaB) { showToast('Incorrect answer — please try again.'); genCaptcha(); return; }
+  var nm = form.name.value, em = form.email.value;
+  var subj = form.subject.value, msg = form.message.value;
+  if (isSpam(nm) || isSpam(msg)) { genCaptcha(); return; }
+  var body = 'Name: ' + nm + '\nEmail: ' + em + '\nSubject: ' + subj + '\n\n' + msg;
+  fetch('https://formspree.io/f/admissions-alliedrx', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ name: nm, email: em, subject: subj, message: msg, _subject: 'Inquiry: ' + subj + ' — AlliedRx' })
+  }).catch(function(){
+    window.location.href = 'mailto:admissions@alliedrxtraining.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+  });
+  form.style.display = 'none';
+  document.getElementById('iq-success').style.display = 'block';
+}
+</script>
+</body>
+</html>
