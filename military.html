@@ -41,9 +41,9 @@
     .btn-cta-primary, .btn-cta-ghost, .funding-card,
     .prog-chip { -webkit-tap-highlight-color: transparent; }
 
-    /* ââââââââââââââââââââââââââââââââââââââ
-       HERO â DARK
-    ââââââââââââââââââââââââââââââââââââââ */
+    /* ══════════════════════════════════════
+       HERO — DARK
+    ══════════════════════════════════════ */
     .hero {
       display: grid;
       grid-template-columns: 1fr 300px 380px;
@@ -121,7 +121,7 @@
     .hero-trust-val { font-size: 26px; font-weight: 900; color: #fff; }
     .hero-trust-label { font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 3px; }
 
-    /* Hero center â photo */
+    /* Hero center — photo */
     .hero-center {
       position: relative; z-index: 2;
       display: flex; align-items: flex-end; justify-content: center;
@@ -139,7 +139,7 @@
       mask-composite: intersect; -webkit-mask-composite: source-in;
     }
 
-    /* Hero right â funding cards panel */
+    /* Hero right — funding cards panel */
     .hero-right {
       background: rgba(255,255,255,0.04);
       border-left: 1px solid rgba(255,255,255,0.08);
@@ -166,9 +166,9 @@
     .funding-card-text p { font-size: 11px; color: rgba(255,255,255,0.5); line-height: 1.5; }
     .funding-card-badge { margin-left: auto; flex-shrink: 0; align-self: flex-start; font-size: 9px; font-weight: 700; padding: 3px 8px; border-radius: 50px; background: rgba(124,58,237,0.25); color: var(--purple-light); letter-spacing: 0.06em; text-transform: uppercase; }
 
-    /* ââââââââââââââââââââââââââââââââââââââ
-       STICKY TAB NAV â DARK
-    ââââââââââââââââââââââââââââââââââââââ */
+    /* ══════════════════════════════════════
+       STICKY TAB NAV — DARK
+    ══════════════════════════════════════ */
     .tab-nav {
       background: rgba(13,6,41,0.97);
       border-bottom: 1px solid rgba(255,255,255,0.07);
@@ -184,9 +184,9 @@
     .tab-link:hover { color: rgba(255,255,255,0.85); border-color: rgba(124,58,237,0.35); }
     .tab-link.active { color: var(--purple-light); border-color: var(--purple); }
 
-    /* ââââââââââââââââââââââââââââââââââââââ
-       SECTION DIVIDER â DARK STRIPE
-    ââââââââââââââââââââââââââââââââââââââ */
+    /* ══════════════════════════════════════
+       SECTION DIVIDER — DARK STRIPE
+    ══════════════════════════════════════ */
     .section-divider {
       background: var(--navy);
       padding: 22px 48px;
@@ -195,9 +195,9 @@
     .divider-line { flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
     .divider-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple-light); white-space: nowrap; }
 
-    /* ââââââââââââââââââââââââââââââââââââââ
-       PROGRAM SECTIONS â LIGHT BACKGROUND
-    ââââââââââââââââââââââââââââââââââââââ */
+    /* ══════════════════════════════════════
+       PROGRAM SECTIONS — LIGHT BACKGROUND
+    ══════════════════════════════════════ */
     .program-section { padding: 80px 48px; }
     .program-section:nth-child(even) { background: var(--pale); }
     .program-section:nth-child(odd)  { background: var(--white); }
@@ -230,7 +230,7 @@
     }
     .btn-portal:hover { background: var(--purple); color: #fff; border-color: var(--purple); }
 
-    /* Info cards â right column, light sections */
+    /* Info cards — right column, light sections */
     .info-stack { display: flex; flex-direction: column; gap: 12px; }
     .info-card {
       background: var(--white); border: 1px solid var(--pale-border);
@@ -243,11 +243,11 @@
     .info-card p { font-size: 13px; color: var(--light-sub); line-height: 1.6; }
     .info-card .amount { font-size: 28px; font-weight: 900; color: var(--purple); line-height: 1; margin-bottom: 6px; }
 
-    /* Eyebrow + title â light context */
+    /* Eyebrow + title — light context */
     .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--purple); margin-bottom: 10px; }
     h2.title { font-size: clamp(20px, 2.2vw, 30px); font-weight: 800; line-height: 1.15; color: var(--navy); margin-bottom: 12px; letter-spacing: -0.02em; }
 
-    /* Eligibility grid â light */
+    /* Eligibility grid — light */
     .elig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
     .elig-item {
       display: flex; align-items: flex-start; gap: 12px;
@@ -261,7 +261,7 @@
     .elig-check { width: 20px; height: 20px; border-radius: 50%; background: var(--purple); flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
     .elig-check svg { display: block; }
 
-    /* Steps â light */
+    /* Steps — light */
     .steps-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 14px; position: relative; }
     .steps-row::after {
       content: ''; position: absolute;
@@ -274,7 +274,7 @@
     .step-item h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
     .step-item p { font-size: 13px; color: var(--light-sub); line-height: 1.6; }
 
-    /* Program chips â light */
+    /* Program chips — light */
     .prog-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 20px; border: 1px solid var(--pale-border); border-radius: var(--radius); overflow: hidden; }
     .prog-list-item {
       display: flex; align-items: center; gap: 14px;
@@ -304,9 +304,9 @@
       .prog-list-item:last-child:nth-child(odd) { grid-column: auto; }
     }
 
-    /* ââââââââââââââââââââââââââââââââââââââ
-       COMPARISON TABLE â LIGHT
-    ââââââââââââââââââââââââââââââââââââââ */
+    /* ══════════════════════════════════════
+       COMPARISON TABLE — LIGHT
+    ══════════════════════════════════════ */
     .compare-section { background: var(--white); padding: 96px 48px; border-top: 1px solid var(--pale-border); }
     .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 44px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 4px 28px rgba(124,58,237,0.08); }
     .compare-table th { background: var(--navy); color: #fff; padding: 18px 22px; font-size: 12px; font-weight: 700; text-align: left; letter-spacing: 0.05em; text-transform: uppercase; }
@@ -319,9 +319,9 @@
     .check-yes { color: var(--green); font-weight: 700; }
     .check-no  { color: #9ca3af; }
 
-    /* ââââââââââââââââââââââââââââââââââââââ
-       CTA SECTION â DARK
-    ââââââââââââââââââââââââââââââââââââââ */
+    /* ══════════════════════════════════════
+       CTA SECTION — DARK
+    ══════════════════════════════════════ */
     .cta-section {
       background: linear-gradient(135deg, var(--navy-light) 0%, #2d1280 50%, var(--navy-light) 100%);
       padding: 96px 48px;
@@ -348,15 +348,15 @@
     .btn-cta-ghost { background: transparent; color: rgba(255,255,255,0.8); border: 1.5px solid rgba(255,255,255,0.22); padding: 15px 36px; border-radius: 50px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
     .btn-cta-ghost:hover { border-color: rgba(255,255,255,0.55); color: #fff; }
 
-    /* ââââââââââââââââââââââââââââââââââââââ
+    /* ══════════════════════════════════════
        RESPONSIVE
-    ââââââââââââââââââââââââââââââââââââââ */
-    /* ââ TABLET (1200px) ââ */
+    ══════════════════════════════════════ */
+    /* ══ TABLET (1200px) ══ */
     @media (max-width: 1200px) {
       .hero { grid-template-columns: 1fr 240px 340px; }
     }
 
-    /* ââ TABLET (1024px) ââ */
+    /* ══ TABLET (1024px) ══ */
     @media (max-width: 1024px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-center, .hero-right { display: none; }
@@ -372,7 +372,7 @@
       .tab-nav-inner { padding: 0 40px; }
     }
 
-    /* ââ MOBILE (767px) ââ */
+    /* ══ MOBILE (767px) ══ */
     @media (max-width: 767px) {
       /* Hero */
       .hero-left { padding: 48px 20px 52px; }
@@ -453,7 +453,7 @@
       }
     }
 
-    /* ââ SMALL MOBILE (480px) ââ */
+    /* ══ SMALL MOBILE (480px) ══ */
     @media (max-width: 480px) {
       .hero-left { padding: 40px 16px 48px; }
       .hero h1 { font-size: 26px; }
@@ -474,9 +474,9 @@
 </head>
 <body>
 
-<!-- ââââââââââââââââââââââââââââââââââââââ
-     HERO â DARK
-ââââââââââââââââââââââââââââââââââââââ -->
+<!-- ══════════════════════════════════════
+     HERO — DARK
+══════════════════════════════════════ -->
 <div class="hero">
   <div class="hero-left">
     <div class="hero-eyebrow">
@@ -485,9 +485,9 @@
       Military Funding Programs
     </div>
     <h1>Fund Your Healthcare<br/>Career Through<br/><span class="accent">Military Benefits</span></h1>
-    <p class="hero-desc">AlliedRx Institute accepts multiple military funding programs â Air Force COOL, Army Credentialing Assistance, and MyCAA â so service members, veterans, and military spouses can earn any of our 7 industry-recognized certifications at little or no cost.</p>
+    <p class="hero-desc">AlliedRx Institute accepts multiple military funding programs — Air Force COOL, Army Credentialing Assistance, and MyCAA — so service members, veterans, and military spouses can earn any of our 7 industry-recognized certifications at little or no cost.</p>
     <div class="hero-btns">
-      <a href="https://www.alliedrxtraining.com/military" class="btn-hero-main">Apply for Funding â</a>
+      <a href="https://www.alliedrxtraining.com/military" class="btn-hero-main">Apply for Funding →</a>
       <a href="#compare" class="btn-hero-ghost">Compare Programs</a>
     </div>
     <div class="hero-trust">
@@ -523,9 +523,9 @@
   </div>
 </div>
 
-<!-- ââââââââââââââââââââââââââââââââââââââ
-     STICKY TAB NAV â DARK
-ââââââââââââââââââââââââââââââââââââââ -->
+<!-- ══════════════════════════════════════
+     STICKY TAB NAV — DARK
+══════════════════════════════════════ -->
 <div class="tab-nav">
   <div class="tab-nav-inner">
     <a href="#airforce" class="tab-link active">Air Force COOL</a>
@@ -536,9 +536,9 @@
   </div>
 </div>
 
-<!-- ââââââââââââââââââââââââââââââââââââââ
-     AIR FORCE COOL â LIGHT
-ââââââââââââââââââââââââââââââââââââââ -->
+<!-- ══════════════════════════════════════
+     AIR FORCE COOL — LIGHT
+══════════════════════════════════════ -->
 <div id="airforce" class="section-divider">
   <div class="section-divider-inner">
     <div class="divider-line"></div><div class="divider-label">Air Force COOL</div><div class="divider-line"></div>
@@ -549,11 +549,11 @@
   <div class="inner">
     <div class="program-header">
       <div>
-        <div class="program-tag">Active Duty â Air Force &amp; Space Force</div>
+        <div class="program-tag">Active Duty — Air Force &amp; Space Force</div>
         <h2>Air Force COOL Credentialing Assistance</h2>
-        <p>The Air Force Credentialing Opportunities On-Line (COOL) program helps active duty Air Force and Space Force members earn nationally recognized civilian credentials that align with their military training and occupation â at no cost to the service member.</p>
+        <p>The Air Force Credentialing Opportunities On-Line (COOL) program helps active duty Air Force and Space Force members earn nationally recognized civilian credentials that align with their military training and occupation — at no cost to the service member.</p>
         <p>AlliedRx Institute is an approved provider under Air Force COOL. Our accelerated healthcare certification programs are designed to align with military occupational skills and help transitioning airmen build civilian careers in healthcare.</p>
-        <a href="https://afvec.us.af.mil/afvec/Public/COOL/Overview.aspx" target="_blank" class="btn-portal">Visit AF COOL Portal â</a>
+        <a href="https://afvec.us.af.mil/afvec/Public/COOL/Overview.aspx" target="_blank" class="btn-portal">Visit AF COOL Portal →</a>
       </div>
       <div class="info-stack">
         <div class="info-card"><h4>Funding Amount</h4><div class="amount">Up to $4,500</div><p>Per credential attempt, covering exam fees, training, and certification costs.</p></div>
@@ -600,9 +600,9 @@
   </div>
 </div>
 
-<!-- ââââââââââââââââââââââââââââââââââââââ
-     ARMY CA â LIGHT (alt bg)
-ââââââââââââââââââââââââââââââââââââââ -->
+<!-- ══════════════════════════════════════
+     ARMY CA — LIGHT (alt bg)
+══════════════════════════════════════ -->
 <div id="army" class="section-divider">
   <div class="section-divider-inner">
     <div class="divider-line"></div><div class="divider-label">Army Credentialing Assistance</div><div class="divider-line"></div>
@@ -613,11 +613,11 @@
   <div class="inner">
     <div class="program-header">
       <div>
-        <div class="program-tag">Active Duty â U.S. Army Soldiers</div>
+        <div class="program-tag">Active Duty — U.S. Army Soldiers</div>
         <h2>Army Credentialing Assistance (CA) Program</h2>
         <p>The Army Credentialing Assistance (CA) program provides active duty Soldiers with up to $4,000 per fiscal year to pursue civilian credentials and certifications that complement their Military Occupational Specialty (MOS). The program is designed to enhance Soldiers' marketability after service and strengthen their current military skills.</p>
         <p>AlliedRx Institute is registered on the Army COOL portal as an approved training provider. Our programs are mapped to relevant MOS codes so Soldiers can quickly verify eligibility and apply through the GoArmyEd / ArmyIgnitED portal.</p>
-        <a href="https://www.cool.osd.mil/army" target="_blank" class="btn-portal">Visit Army COOL Portal â</a>
+        <a href="https://www.cool.osd.mil/army" target="_blank" class="btn-portal">Visit Army COOL Portal →</a>
       </div>
       <div class="info-stack">
         <div class="info-card"><h4>Annual Funding Cap</h4><div class="amount">$4,000</div><p>Per fiscal year for eligible active duty Soldiers. Covers tuition, exam fees, and certification costs.</p></div>
@@ -664,9 +664,9 @@
   </div>
 </div>
 
-<!-- ââââââââââââââââââââââââââââââââââââââ
-     MyCAA â LIGHT
-ââââââââââââââââââââââââââââââââââââââ -->
+<!-- ══════════════════════════════════════
+     MyCAA — LIGHT
+══════════════════════════════════════ -->
 <div id="mycaa" class="section-divider">
   <div class="section-divider-inner">
     <div class="divider-line"></div><div class="divider-label">MyCAA Scholarship</div><div class="divider-line"></div>
@@ -678,15 +678,15 @@
     <div class="program-header">
       <div>
         <div class="program-tag">Military Spouses</div>
-        <h2>MyCAA â My Career Advancement Account Scholarship</h2>
-        <p>The My Career Advancement Account (MyCAA) Scholarship is a workforce development program that provides up to $4,500 in financial assistance to eligible military spouses who want to pursue portable careers â careers that can move with the family as the service member is reassigned.</p>
-        <p>AlliedRx healthcare certifications are the perfect fit for MyCAA recipients. Our programs are portable, fast to complete, and lead to in-demand careers that thrive in any location â whether near a base or across the country.</p>
-        <a href="https://mycaa.militaryonesource.mil" target="_blank" class="btn-portal">Visit MyCAA Portal â</a>
+        <h2>MyCAA — My Career Advancement Account Scholarship</h2>
+        <p>The My Career Advancement Account (MyCAA) Scholarship is a workforce development program that provides up to $4,500 in financial assistance to eligible military spouses who want to pursue portable careers — careers that can move with the family as the service member is reassigned.</p>
+        <p>AlliedRx healthcare certifications are the perfect fit for MyCAA recipients. Our programs are portable, fast to complete, and lead to in-demand careers that thrive in any location — whether near a base or across the country.</p>
+        <a href="https://mycaa.militaryonesource.mil" target="_blank" class="btn-portal">Visit MyCAA Portal →</a>
       </div>
       <div class="info-stack">
         <div class="info-card"><h4>Scholarship Amount</h4><div class="amount">Up to $4,500</div><p>Total scholarship. Up to $2,000 per academic year for portable career programs.</p></div>
         <div class="info-card"><h4>Who Qualifies</h4><p>Spouses of active duty service members in pay grades E-1 through E-5, W-1 through W-2, and O-1 through O-2 across all branches.</p></div>
-        <div class="info-card"><h4>Portable Careers</h4><p>AlliedRx programs qualify as portable careers â healthcare credentials are recognized nationwide and remain valuable wherever military life takes you.</p></div>
+        <div class="info-card"><h4>Portable Careers</h4><p>AlliedRx programs qualify as portable careers — healthcare credentials are recognized nationwide and remain valuable wherever military life takes you.</p></div>
       </div>
     </div>
 
@@ -707,7 +707,7 @@
       <div class="steps-row">
         <div class="step-item"><div class="step-dot">1</div><h4>Create Your Account</h4><p>Register at MilitaryOneSource.mil and create your MyCAA account using your sponsor's SSN and branch of service.</p></div>
         <div class="step-item"><div class="step-dot">2</div><h4>Choose Your Program</h4><p>Select an AlliedRx healthcare certification program and confirm it qualifies as a portable career under MyCAA guidelines.</p></div>
-        <div class="step-item"><div class="step-dot">3</div><h4>Submit Your Request</h4><p>Apply for MyCAA financial assistance through the portal. AlliedRx's school code will be required â contact our team for details.</p></div>
+        <div class="step-item"><div class="step-dot">3</div><h4>Submit Your Request</h4><p>Apply for MyCAA financial assistance through the portal. AlliedRx's school code will be required — contact our team for details.</p></div>
         <div class="step-item"><div class="step-dot">4</div><h4>Start Your Program</h4><p>Once approved, enroll at AlliedRx. Tuition is paid directly to the school on your behalf.</p></div>
       </div>
     </div>
@@ -728,9 +728,9 @@
   </div>
 </div>
 
-<!-- ââââââââââââââââââââââââââââââââââââââ
-     COMPARISON TABLE â LIGHT
-ââââââââââââââââââââââââââââââââââââââ -->
+<!-- ══════════════════════════════════════
+     COMPARISON TABLE — LIGHT
+══════════════════════════════════════ -->
 <div id="compare" class="compare-section">
   <div class="inner">
     <div class="eyebrow">Side-by-Side Comparison</div>
@@ -748,7 +748,7 @@
       <tbody>
         <tr><td>Who Is Eligible</td><td>Active duty Air Force &amp; Space Force members</td><td>Active duty Army Soldiers</td><td>Military spouses (all branches)</td></tr>
         <tr><td>Maximum Benefit</td><td>Up to $4,500 per credential</td><td>Up to $4,000 per fiscal year</td><td>Up to $4,500 total ($2,000/yr)</td></tr>
-        <tr><td>Pay Grade Restriction</td><td class="check-no">None specified</td><td class="check-no">None (E-1 to O-10)</td><td>Sponsor E-1âE-5, W-1âW-2, O-1âO-2</td></tr>
+        <tr><td>Pay Grade Restriction</td><td class="check-no">None specified</td><td class="check-no">None (E-1 to O-10)</td><td>Sponsor E-1–E-5, W-1–W-2, O-1–O-2</td></tr>
         <tr><td>Application Portal</td><td>AFVEC / myLearning</td><td>ArmyIgnitED</td><td>MilitaryOneSource / MyCAA</td></tr>
         <tr><td>Commander Approval Required</td><td class="check-yes">Yes</td><td class="check-yes">Yes</td><td class="check-no">No</td></tr>
         <tr><td>Tuition Paid Directly to School</td><td class="check-yes">Yes</td><td class="check-yes">Yes</td><td class="check-yes">Yes</td></tr>
@@ -760,22 +760,22 @@
   </div>
 </div>
 
-<!-- ââââââââââââââââââââââââââââââââââââââ
-     CTA â DARK
-ââââââââââââââââââââââââââââââââââââââ -->
+<!-- ══════════════════════════════════════
+     CTA — DARK
+══════════════════════════════════════ -->
 <div id="contact" class="cta-section">
   <div class="cta-inner">
-    <div class="cta-eyebrow">â Military Admissions</div>
+    <div class="cta-eyebrow">★ Military Admissions</div>
     <h2>Ready to Use Your <span>Military Benefits?</span></h2>
-    <p>Our military admissions team is here to help you navigate the funding process from start to finish â at no cost to you. We'll guide you every step of the way.</p>
+    <p>Our military admissions team is here to help you navigate the funding process from start to finish — at no cost to you. We'll guide you every step of the way.</p>
     <div class="cta-checklist">
       <div class="cta-check-item"><div class="cta-check-dot"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Air Force COOL, Army CA &amp; MyCAA all accepted</div>
-      <div class="cta-check-item"><div class="cta-check-dot"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Tuition paid directly â no out-of-pocket costs</div>
-      <div class="cta-check-item"><div class="cta-check-dot"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Certify in as little as 4â12 weeks</div>
+      <div class="cta-check-item"><div class="cta-check-dot"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Tuition paid directly — no out-of-pocket costs</div>
+      <div class="cta-check-item"><div class="cta-check-dot"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Certify in as little as 4–12 weeks</div>
       <div class="cta-check-item"><div class="cta-check-dot"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Dedicated military admissions support</div>
     </div>
     <div class="cta-btns">
-      <a href="https://www.alliedrxtraining.com/military" class="btn-cta-primary">Apply for Military Funding â</a>
+      <a href="https://www.alliedrxtraining.com/military" class="btn-cta-primary">Apply for Military Funding →</a>
       <a href="https://www.alliedrxtraining.com/military" class="btn-cta-ghost">Learn More</a>
     </div>
   </div>
@@ -795,97 +795,5 @@
     });
   });
 </script>
-
-<!-- AlliedRx Footer -->
-<style>
-.arx-footer{background:linear-gradient(160deg,#0d0b2e 0%,#1a1260 60%,#0d0b2e 100%);color:#ccc;padding:64px 32px 0;font-family:'Plus Jakarta Sans',sans-serif;}
-.arx-footer a{color:inherit;text-decoration:none;}
-.arx-footer a:hover{color:#c4b5fd;}
-.arx-footer-cta{background:linear-gradient(135deg,#7c3aed,#9148fc);border-radius:16px;padding:36px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:56px;flex-wrap:wrap;}
-.arx-footer-cta h3{font-size:24px;font-weight:800;color:#fff;margin:0 0 6px;}
-.arx-footer-cta p{font-size:14px;color:rgba(255,255,255,0.8);margin:0;}
-.arx-footer-cta a{background:#fff;color:#7c3aed;font-size:14px;font-weight:700;padding:14px 28px;border-radius:100px;white-space:nowrap;display:inline-block;}
-.arx-footer-cta a:hover{background:#f0ebff;color:#7c3aed;}
-.arx-footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.4fr;gap:40px;padding-bottom:48px;}
-.arx-footer-col h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff;margin:0 0 18px;}
-.arx-footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
-.arx-footer-col ul li a{font-size:14px;color:#b0aac8;}
-.arx-footer-col ul li a:hover{color:#c4b5fd;}
-.arx-footer-brand img{height:48px;width:auto;margin-bottom:16px;display:block;}
-.arx-footer-brand p{font-size:13px;color:#b0aac8;line-height:1.7;max-width:260px;margin-bottom:20px;}
-.arx-footer-social{display:flex;gap:12px;margin-top:4px;}
-.arx-footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:#ccc;transition:background .2s;}
-.arx-footer-social a:hover{background:rgba(145,72,252,0.4);color:#fff;}
-.arx-footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-.arx-footer-bottom p{font-size:12px;color:#6b6880;margin:0;}
-.arx-footer-bottom-links{display:flex;gap:20px;}
-.arx-footer-bottom-links a{font-size:12px;color:#6b6880;}
-.arx-footer-bottom-links a:hover{color:#c4b5fd;}
-@media(max-width:768px){.arx-footer-grid{grid-template-columns:1fr 1fr;}.arx-footer-cta{flex-direction:column;padding:28px 24px;}.arx-footer-cta a{width:100%;text-align:center;}}
-@media(max-width:479px){.arx-footer-grid{grid-template-columns:1fr;}.arx-footer{padding:40px 20px 0;}}
-</style>
-<footer class="arx-footer">
-  <div class="arx-footer-cta">
-    <div><h3>Start Your Healthcare Career Today</h3><p>Accredited programs · Self-paced · Payment plans available · $99 down</p></div>
-    <a href="https://www.alliedrxtraining.com/register" target="_parent">Enroll Now &rarr;</a>
-  </div>
-  <div class="arx-footer-grid">
-    <div class="arx-footer-col arx-footer-brand">
-      <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69caba88d42a3b1a8669dd2a_alliedrx_logo_webflow_hd.png" alt="AlliedRx Institute of Healthcare"/>
-      <p>AlliedRx Institute of Healthcare provides accredited, career-focused healthcare training programs online and on campus.</p>
-      <div class="arx-footer-social">
-        <a href="https://www.facebook.com/alliedrxtraining" target="_blank" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-        <a href="https://www.instagram.com/alliedrxtraining" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-        <a href="https://www.linkedin.com/company/alliedrx" target="_blank" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-        <a href="https://www.youtube.com/@alliedrxtraining" target="_blank" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
-      </div>
-    </div>
-    <div class="arx-footer-col">
-      <h4>Programs</h4>
-      <ul>
-        <li><a href="https://www.alliedrxtraining.com/new-ccma-page" target="_parent">Clinical Medical Assistant</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" target="_parent">Pharmacy Technician</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-medical-billing-page" target="_parent">Medical Billing &amp; Coding</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-ekg-page" target="_parent">EKG Technician</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-phlebotomy-page" target="_parent">Phlebotomy Technician</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-cmaa-page" target="_parent">Medical Admin Assistant</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" target="_parent">Dental Assisting</a></li>
-      </ul>
-    </div>
-    <div class="arx-footer-col">
-      <h4>Tuition &amp; Aid</h4>
-      <ul>
-        <li><a href="https://www.alliedrxtraining.com/tuition-payments" target="_parent">Tuition &amp; Payment Plans</a></li>
-        <li><a href="https://www.alliedrxtraining.com/military-overview" target="_parent">Military Funding</a></li>
-        <li><a href="https://www.alliedrxtraining.com/gainful-disclosures" target="_parent">Gainful Disclosures</a></li>
-        <li><a href="https://www.alliedrxtraining.com/program-accreditation" target="_parent">Accreditation</a></li>
-      </ul>
-      <h4 style="margin-top:28px;">Company</h4>
-      <ul>
-        <li><a href="https://www.alliedrxtraining.com/about" target="_parent">About Us</a></li>
-        <li><a href="https://www.alliedrxtraining.com/partners" target="_parent">Partners</a></li>
-      </ul>
-    </div>
-    <div class="arx-footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:enrollment@alliedrxtraining.com">enrollment@alliedrxtraining.com</a></li>
-        <li><a href="https://www.alliedrxtraining.com/getmoreinfo" target="_parent">Request Information</a></li>
-        <li><a href="https://www.alliedrxtraining.com/register" target="_parent">Enroll Today</a></li>
-        <li><a href="https://academy.alliedrxtraining.com/Student-Portal" target="_blank">Student Portal &ndash; MyAlliedRx</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="arx-footer-bottom">
-    <p>&copy; 2026 AlliedRx Institute of Healthcare. All rights reserved.</p>
-    <div class="arx-footer-bottom-links">
-      <a href="/privacy-policy" target="_parent">Privacy Policy</a>
-      <a href="/terms-of-service" target="_parent">Terms of Service</a>
-      <a href="/gainful-disclosures" target="_parent">Gainful Disclosures</a>
-      <a href="/program-accreditation" target="_parent">Accreditation</a>
-    </div>
-  </div>
-</footer>
-<!-- End AlliedRx Footer -->
 </body>
 </html>
