@@ -14,12 +14,12 @@
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
 
-/* ââ BANNER ââ */
+/* ── BANNER ── */
 .banner{background:var(--navy);padding:.45rem 3rem;display:flex;align-items:center;justify-content:center;gap:2.5rem;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.04em;text-transform:uppercase}
 .banner a{color:var(--lavender);text-decoration:none}
 .banner-sep{opacity:.3}
 
-/* ââ HEADER ââ */
+/* ── HEADER ── */
 .site-header{background:var(--white);border-bottom:2px solid var(--navy);padding:0 2rem;height:auto;min-height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(8,13,26,.08);flex-wrap:wrap;gap:.5rem;padding-top:.6rem;padding-bottom:.6rem}
 .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
 .logo img{height:28px}
@@ -38,10 +38,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .btn-navy{text-decoration:none;padding:8px 18px;border-radius:6px;font-weight:700;font-size:.8rem;background:var(--navy);color:#fff;transition:all .2s}
 .btn-navy:hover{background:var(--navy2)}
 
-/* ââ LAYOUT ââ */
+/* ── LAYOUT ── */
 .page-layout{display:block;min-height:calc(100vh - 97px)}
 
-/* ââ SIDEBAR ââ */
+/* ── SIDEBAR ── */
 .sidebar{background:var(--white);border-right:1px solid var(--border);padding:2rem 1.5rem;position:fixed;top:0;left:0;width:270px;height:100vh;overflow-y:auto;z-index:100}
 .sidebar-section{margin-bottom:2.25rem}
 .sidebar-label{font-size:.62rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--slate);margin-bottom:.85rem;border-left:2px solid var(--purple);padding-left:.5rem}
@@ -61,12 +61,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .fund-links{display:flex;flex-direction:column;gap:.2rem}
 .fund-lnk{display:flex;align-items:center;gap:.4rem;font-size:.73rem;color:rgba(255,255,255,.55);text-decoration:none;padding:.3rem .4rem;border-radius:5px;transition:all .2s}
 .fund-lnk:hover{color:#fff;background:rgba(255,255,255,.07)}
-.fund-lnk::before{content:'â';font-size:.65rem;color:var(--lavender)}
+.fund-lnk::before{content:'↗';font-size:.65rem;color:var(--lavender)}
 
-/* ââ MAIN CONTENT ââ */
+/* ── MAIN CONTENT ── */
 .main-content{background:var(--bg);margin-left:270px}
 
-/* ââ PAGE HERO (navy) ââ */
+/* ── PAGE HERO (navy) ── */
 .page-hero{background:var(--navy2);position:relative;overflow:hidden;padding:2.75rem 3rem 2.5rem}
 .page-hero::after{content:'SPRING 2026';position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:'Plus Jakarta Sans',sans-serif;font-size:7rem;font-weight:900;color:rgba(255,255,255,.08);white-space:nowrap;pointer-events:none;letter-spacing:-.02em}
 .hero-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
@@ -82,7 +82,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .h-stat-num span{color:var(--lavender)}
 .h-stat-lbl{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-top:.1rem}
 
-/* ââ FILTER ââ */
+/* ── FILTER ── */
 .filter-bar{background:var(--white);border-bottom:1px solid var(--border);padding:.9rem 3rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;box-shadow:0 1px 0 var(--border)}
 .filter-label{font-size:.68rem;font-weight:800;color:var(--slate);text-transform:uppercase;letter-spacing:.1em}
 .pills{display:flex;gap:.4rem;flex-wrap:wrap}
@@ -91,7 +91,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .pill.active{background:var(--navy);border-color:var(--navy);color:#fff}
 .pill-sep{width:1px;height:22px;background:var(--border);margin:0 .2rem}
 
-/* ââ URGENCY COUNTDOWN BANNER ââ */
+/* ── URGENCY COUNTDOWN BANNER ── */
 .urgency-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;background:linear-gradient(90deg,#1a0533,#0f1045);border:1px solid rgba(145,72,252,.35);border-radius:10px;padding:.75rem 1.25rem;margin-bottom:1.25rem}
 .urgency-left{display:flex;align-items:center;gap:.65rem}
 .urgency-pulse{width:9px;height:9px;border-radius:50%;background:#ff4444;box-shadow:0 0 0 0 rgba(255,68,68,.4);animation:pulse-ring 1.4s infinite}
@@ -105,11 +105,11 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .cd-sep{font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.4);margin-bottom:.3rem}
 .urgency-closed{font-size:.75rem;font-weight:700;color:#ff9999;padding:.3rem .75rem;background:rgba(255,68,68,.15);border:1px solid rgba(255,68,68,.3);border-radius:6px}
 
-/* ââ SEAT SCARCITY ââ */
+/* ── SEAT SCARCITY ── */
 .filling-fast{display:inline-flex;align-items:center;gap:.3rem;font-size:.65rem;font-weight:700;color:#d97706;background:#fffbeb;border:1px solid #fde68a;border-radius:4px;padding:.15rem .45rem;margin-top:.2rem}
 .filling-fast svg{width:10px;height:10px;fill:#d97706}
 
-/* ââ SESSION BLOCKS ââ */
+/* ── SESSION BLOCKS ── */
 .session-block{margin:2rem 2.5rem}
 .session-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
 .session-accent{width:4px;height:36px;border-radius:2px}
@@ -157,7 +157,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .abtn.line{border:1.5px solid var(--border-d);color:var(--sub)}
 .abtn.line:hover{border-color:var(--navy);color:var(--navy)}
 
-/* ââ ONLINE PROGRAMS SECTION ââ */
+/* ── ONLINE PROGRAMS SECTION ── */
 .online-section{margin:0 2.5rem 2rem}
 .online-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
 .online-accent{width:4px;height:36px;border-radius:2px;background:var(--teal)}
@@ -169,7 +169,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .online-intro p{font-size:.83rem;color:var(--teal);font-weight:600}
 .online-intro p span{color:var(--text)}
 
-/* ââ ONLINE URGENCY BANNER ââ */
+/* ── ONLINE URGENCY BANNER ── */
 .online-urgency{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;background:linear-gradient(90deg,#0a2e1a,#062818);border:1px solid rgba(16,185,129,.3);border-radius:10px;padding:.75rem 1.25rem;margin-bottom:1.25rem}
 .online-urgency-left{display:flex;align-items:center;gap:.65rem}
 .online-urgency-label{font-size:.75rem;font-weight:700;color:rgba(255,255,255,.85)}
@@ -185,17 +185,17 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 
 
 
-/* ââ START TODAY PULSE ââ */
+/* ── START TODAY PULSE ── */
 .abtn.fill.pulse-enroll{position:relative;overflow:visible}
 .abtn.fill.pulse-enroll::after{content:'';position:absolute;inset:-3px;border-radius:8px;border:2px solid var(--purple);opacity:0;animation:enroll-pulse 2s ease-out infinite}
 @keyframes enroll-pulse{0%{opacity:.7;transform:scale(1)}70%{opacity:0;transform:scale(1.12)}100%{opacity:0}}
 
-/* ââ MONTH DIVIDER ââ */
+/* ── MONTH DIVIDER ── */
 .month-div{display:flex;align-items:center;gap:1rem;padding:2rem 2.5rem 1rem}
 .month-div-line{flex:1;height:1px;background:var(--border-d)}
 .month-div-lbl{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--slate);padding:0 .5rem}
 
-/* ââ INFO SESSION BANNER ââ */
+/* ── INFO SESSION BANNER ── */
 .info-banner{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.75rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;margin:1.5rem 0}
 .ib-left{display:flex;align-items:center;gap:1.1rem}
 .ib-icon{width:46px;height:46px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -209,18 +209,18 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .ib-btn.line{border:1.5px solid var(--border-d);color:var(--sub)}
 .ib-btn.line:hover{border-color:var(--navy);color:var(--navy)}
 
-/* ââ SCHEDULE DETAIL BUTTON on cards ââ */
+/* ── SCHEDULE DETAIL BUTTON on cards ── */
 .sched-detail-btn{display:inline-flex;align-items:center;gap:.35rem;font-size:.7rem;font-weight:700;color:var(--purple-d);background:#f0ebff;border:1px solid #d8cffa;padding:.25rem .65rem;border-radius:5px;cursor:pointer;transition:all .2s;margin-top:.5rem;white-space:nowrap}
 .sched-detail-btn:hover{background:#e9e0ff;border-color:var(--purple)}
 .sched-detail-btn svg{width:12px;height:12px;stroke:var(--purple-d);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 
-/* ââ MODAL OVERLAY ââ */
+/* ── MODAL OVERLAY ── */
 .modal-overlay{position:fixed;inset:0;background:rgba(8,13,26,.6);backdrop-filter:blur(4px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .25s}
 .modal-overlay.open{opacity:1;pointer-events:all}
 .modal-box{background:var(--white);border-radius:16px;width:100%;max-width:680px;max-height:88vh;overflow-y:auto;box-shadow:0 24px 64px rgba(8,13,26,.25);transform:translateY(12px);transition:transform .25s}
 .modal-overlay.open .modal-box{transform:translateY(0)}
 
-/* ââ INLINE DETAIL PANEL ââ */
+/* ── INLINE DETAIL PANEL ── */
 .inline-panel{display:none;grid-column:1/-1;background:var(--white);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 32px rgba(8,13,26,.1);margin:.25rem 0 .75rem;overflow:hidden;animation:panelIn .22s ease}
 .inline-panel.open{display:block}
 @keyframes panelIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
@@ -276,7 +276,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .mfbtn.line{border:1.5px solid var(--border-d);color:var(--sub);background:transparent}
 .mfbtn.line:hover{border-color:var(--navy);color:var(--navy)}
 
-/* ââ FUNDING ââ */
+/* ── FUNDING ── */
 .funding{background:var(--navy);padding:2.5rem}
 .funding-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
 .funding-head h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:700;color:#fff}
@@ -291,18 +291,18 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .fund-desc{font-size:.74rem;color:rgba(255,255,255,.5);line-height:1.5;margin-bottom:.6rem}
 .fund-cta{font-size:.73rem;font-weight:700;color:var(--lavender)}
 
-/* âââââââââââââââââââââââââââââââââââââââ
-   RESPONSIVE â Large tablet / small laptop (â¤1280px)
-âââââââââââââââââââââââââââââââââââââââ */
+/* ═══════════════════════════════════════
+   RESPONSIVE — Large tablet / small laptop (≤1280px)
+═══════════════════════════════════════ */
 @media(max-width:1280px){
   .card-inner{grid-template-columns:2.5fr 1.4fr 1.4fr .9fr 1.1fr 1.3fr;gap:.75rem}
   .session-block{margin:2rem 1.75rem}
   .online-section{margin:0 1.75rem 2rem}
 }
 
-/* âââââââââââââââââââââââââââââââââââââââ
-   RESPONSIVE â Tablet (â¤1024px)
-âââââââââââââââââââââââââââââââââââââââ */
+/* ═══════════════════════════════════════
+   RESPONSIVE — Tablet (≤1024px)
+═══════════════════════════════════════ */
 @media(max-width:1024px){
   /* Hide sidebar, full-width main */
   .page-layout{display:block}
@@ -342,9 +342,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   .filter-bar{padding:.75rem 1.5rem;gap:.65rem}
 }
 
-/* âââââââââââââââââââââââââââââââââââââââ
-   RESPONSIVE â Mobile (â¤640px)
-âââââââââââââââââââââââââââââââââââââââ */
+/* ═══════════════════════════════════════
+   RESPONSIVE — Mobile (≤640px)
+═══════════════════════════════════════ */
 @media(max-width:640px){
   /* Banner: hide separators, stack neatly */
   .banner{flex-wrap:wrap;gap:.3rem .8rem;padding:.5rem 1rem;justify-content:center}
@@ -431,9 +431,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   .online-intro{padding:.75rem 1rem;font-size:.8rem}
 }
 
-/* âââââââââââââââââââââââââââââââââââââââ
-   RESPONSIVE â Small mobile (â¤380px)
-âââââââââââââââââââââââââââââââââââââââ */
+/* ═══════════════════════════════════════
+   RESPONSIVE — Small mobile (≤380px)
+═══════════════════════════════════════ */
 @media(max-width:380px){
   .page-hero h1{font-size:1.15rem}
   .urgency-countdown{flex-wrap:wrap;gap:.3rem}
@@ -475,8 +475,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <span class="hero-tag sem">Spring 2026</span>
         <span class="hero-tag open"><span class="pulse"></span>Enrollment Open</span>
       </div>
-      <h1>Course Registration â Spring 2026</h1>
-      <p>Virginia campus hybrid programs and online self-paced courses. Register early â seats are limited for campus sessions.</p>
+      <h1>Course Registration — Spring 2026</h1>
+      <p>Virginia campus hybrid programs and online self-paced courses. Register early — seats are limited for campus sessions.</p>
       <div class="hero-stats">
         <div><div class="h-stat-num"><span>2</span></div><div class="h-stat-lbl">Campus Programs</div></div>
         <div><div class="h-stat-num"><span>7</span></div><div class="h-stat-lbl">Online Programs</div></div>
@@ -507,14 +507,14 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="session-header">
         <div class="session-accent" style="background:#3b82f6"></div>
         <h2>April 2026 Session</h2>
-        <div class="session-header-meta">Starts April 25/29 Â· 4 Sections</div>
+        <div class="session-header-meta">Starts April 25/29 · 4 Sections</div>
       </div>
 
       <!-- APRIL URGENCY COUNTDOWN -->
       <div class="urgency-bar">
         <div class="urgency-left">
           <div class="urgency-pulse"></div>
-          <div class="urgency-label">Registration closes <strong>April 18, 2026</strong> â secure your seat before this session fills</div>
+          <div class="urgency-label">Registration closes <strong>April 18, 2026</strong> — secure your seat before this session fills</div>
         </div>
         <div class="urgency-countdown" id="cd-april"></div>
       </div>
@@ -523,10 +523,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-            <div><div class="prog-name">Clinical Medical Assistant</div><div class="prog-cert">CCMA Â· NHA &amp; AMCA Approved</div></div>
+            <div><div class="prog-name">Clinical Medical Assistant</div><div class="prog-cert">CCMA · NHA &amp; AMCA Approved</div></div>
           </div>
           <div><div class="card-date">Apr 29, 2026</div><div class="card-day">Wednesdays</div></div>
-          <div class="sched-tags"><span class="stag d">Day Â· 10:00amâ1:00pm</span><span class="stag e">Evening Â· 6:00pmâ9:00pm</span></div>
+          <div class="sched-tags"><span class="stag d">Day · 10:00am–1:00pm</span><span class="stag e">Evening · 6:00pm–9:00pm</span></div>
           <div><span class="type-tag campus">Campus</span></div>
           <div class="seats-wrap">
             <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n lo seat-count">7</span><div class="seat-bar"><div class="seat-fill lo seat-fill-bar" style="width:14%"></div></div></div>
@@ -541,10 +541,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon blu"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M6.343 15.657A8 8 0 0012 22a8 8 0 005.657-2.343"/></svg></div>
-            <div><div class="prog-name">Phlebotomy Technician</div><div class="prog-cert">CPT Â· NHA &amp; AMCA Accredited</div></div>
+            <div><div class="prog-name">Phlebotomy Technician</div><div class="prog-cert">CPT · NHA &amp; AMCA Accredited</div></div>
           </div>
           <div><div class="card-date">Apr 29, 2026</div><div class="card-day">Wednesdays</div></div>
-          <div class="sched-tags"><span class="stag d">Day Â· 10:00amâ1:00pm</span><span class="stag e">Evening Â· 6:00pmâ9:00pm</span></div>
+          <div class="sched-tags"><span class="stag d">Day · 10:00am–1:00pm</span><span class="stag e">Evening · 6:00pm–9:00pm</span></div>
           <div><span class="type-tag campus">Campus</span></div>
           <div class="seats-wrap">
             <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n lo seat-count">4</span><div class="seat-bar"><div class="seat-fill lo seat-fill-bar" style="width:10%"></div></div></div>
@@ -559,10 +559,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon blu"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M6.343 15.657A8 8 0 0012 22a8 8 0 005.657-2.343"/></svg></div>
-            <div><div class="prog-name">Phlebotomy â Weekend Fast Track</div><div class="prog-cert">CPT Â· 12-Week Program</div></div>
+            <div><div class="prog-name">Phlebotomy — Weekend Fast Track</div><div class="prog-cert">CPT · 12-Week Program</div></div>
           </div>
           <div><div class="card-date">Apr 25, 2026</div><div class="card-day">Saturdays</div></div>
-          <div class="sched-tags"><span class="stag w">Weekend Â· 10:00amâ12:00pm</span></div>
+          <div class="sched-tags"><span class="stag w">Weekend · 10:00am–12:00pm</span></div>
           <div><span class="type-tag weekend">Weekend</span></div>
           <div class="seats-wrap">
             <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n lo seat-count">4</span><div class="seat-bar"><div class="seat-fill lo seat-fill-bar" style="width:10%"></div></div></div>
@@ -577,10 +577,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-            <div><div class="prog-name">Clinical Medical Asst â Weekend</div><div class="prog-cert">CCMA Â· 8-Week Program</div></div>
+            <div><div class="prog-name">Clinical Medical Asst — Weekend</div><div class="prog-cert">CCMA · 8-Week Program</div></div>
           </div>
           <div><div class="card-date">Apr 25, 2026</div><div class="card-day">Saturdays</div></div>
-          <div class="sched-tags"><span class="stag w">Weekend Â· 10:00amâ11:30am</span></div>
+          <div class="sched-tags"><span class="stag w">Weekend · 10:00am–11:30am</span></div>
           <div><span class="type-tag weekend">Weekend</span></div>
           <div class="seats-wrap">
             <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n lo seat-count">6</span><div class="seat-bar"><div class="seat-fill lo seat-fill-bar" style="width:15%"></div></div></div>
@@ -604,14 +604,14 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="session-header">
         <div class="session-accent" style="background:#9148fc"></div>
         <h2>May 2026 Session</h2>
-        <div class="session-header-meta">Starts May 27/30 Â· 4 Sections</div>
+        <div class="session-header-meta">Starts May 27/30 · 4 Sections</div>
       </div>
 
       <!-- MAY URGENCY COUNTDOWN -->
       <div class="urgency-bar">
         <div class="urgency-left">
           <div class="urgency-pulse"></div>
-          <div class="urgency-label">Registration closes <strong>May 18, 2026</strong> â spots are filling quickly, reserve yours today</div>
+          <div class="urgency-label">Registration closes <strong>May 18, 2026</strong> — spots are filling quickly, reserve yours today</div>
         </div>
         <div class="urgency-countdown" id="cd-may"></div>
       </div>
@@ -620,10 +620,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-            <div><div class="prog-name">Clinical Medical Assistant</div><div class="prog-cert">CCMA Â· NHA &amp; AMCA Approved</div></div>
+            <div><div class="prog-name">Clinical Medical Assistant</div><div class="prog-cert">CCMA · NHA &amp; AMCA Approved</div></div>
           </div>
           <div><div class="card-date">May 27, 2026</div><div class="card-day">Wednesdays</div></div>
-          <div class="sched-tags"><span class="stag d">Day Â· 10:00amâ1:00pm</span><span class="stag e">Evening Â· 6:00pmâ9:00pm</span></div>
+          <div class="sched-tags"><span class="stag d">Day · 10:00am–1:00pm</span><span class="stag e">Evening · 6:00pm–9:00pm</span></div>
           <div><span class="type-tag campus">Campus</span></div>
           <div class="seats-wrap">
             <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n md seat-count">10</span><div class="seat-bar"><div class="seat-fill md seat-fill-bar" style="width:50%"></div></div></div>
@@ -637,10 +637,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon blu"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M6.343 15.657A8 8 0 0012 22a8 8 0 005.657-2.343"/></svg></div>
-            <div><div class="prog-name">Phlebotomy Technician</div><div class="prog-cert">CPT Â· NHA &amp; AMCA Accredited</div></div>
+            <div><div class="prog-name">Phlebotomy Technician</div><div class="prog-cert">CPT · NHA &amp; AMCA Accredited</div></div>
           </div>
           <div><div class="card-date">May 27, 2026</div><div class="card-day">Wednesdays</div></div>
-          <div class="sched-tags"><span class="stag d">Day Â· 10:00amâ1:00pm</span><span class="stag e">Evening Â· 6:00pmâ9:00pm</span></div>
+          <div class="sched-tags"><span class="stag d">Day · 10:00am–1:00pm</span><span class="stag e">Evening · 6:00pm–9:00pm</span></div>
           <div><span class="type-tag campus">Campus</span></div>
           <div class="seats-wrap">
             <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n md seat-count">10</span><div class="seat-bar"><div class="seat-fill md seat-fill-bar" style="width:50%"></div></div></div>
@@ -654,10 +654,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon blu"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M6.343 15.657A8 8 0 0012 22a8 8 0 005.657-2.343"/></svg></div>
-            <div><div class="prog-name">Phlebotomy â Weekend Fast Track</div><div class="prog-cert">CPT Â· 12-Week Program</div></div>
+            <div><div class="prog-name">Phlebotomy — Weekend Fast Track</div><div class="prog-cert">CPT · 12-Week Program</div></div>
           </div>
           <div><div class="card-date">May 30, 2026</div><div class="card-day">Saturdays</div></div>
-          <div class="sched-tags"><span class="stag w">Weekend Â· 10:00amâ12:00pm</span></div>
+          <div class="sched-tags"><span class="stag w">Weekend · 10:00am–12:00pm</span></div>
           <div><span class="type-tag weekend">Weekend</span></div>
           <div class="seats-wrap">
             <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n md seat-count">10</span><div class="seat-bar"><div class="seat-fill md seat-fill-bar" style="width:50%"></div></div></div>
@@ -671,10 +671,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-            <div><div class="prog-name">Clinical Medical Asst â Weekend</div><div class="prog-cert">CCMA Â· 8-Week Program</div></div>
+            <div><div class="prog-name">Clinical Medical Asst — Weekend</div><div class="prog-cert">CCMA · 8-Week Program</div></div>
           </div>
           <div><div class="card-date">May 30, 2026</div><div class="card-day">Saturdays</div></div>
-          <div class="sched-tags"><span class="stag w">Weekend Â· 10:00amâ11:30am</span></div>
+          <div class="sched-tags"><span class="stag w">Weekend · 10:00am–11:30am</span></div>
           <div><span class="type-tag weekend">Weekend</span></div>
           <div class="seats-wrap">
             <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n md seat-count">10</span><div class="seat-bar"><div class="seat-fill md seat-fill-bar" style="width:50%"></div></div></div>
@@ -695,19 +695,19 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
     <div id="online" class="online-section">
       <div class="online-header">
         <div class="online-accent"></div>
-        <h2>Online Programs â Open Enrollment</h2>
-        <div class="online-header-meta">7 Programs Â· Enroll Anytime</div>
+        <h2>Online Programs — Open Enrollment</h2>
+        <div class="online-header-meta">7 Programs · Enroll Anytime</div>
       </div>
       <div class="online-intro">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-        <p><span>Self-paced, 100% online programs â </span>start any time, study on your schedule. Accredited certifications accepted nationwide.</p>
+        <p><span>Self-paced, 100% online programs — </span>start any time, study on your schedule. Accredited certifications accepted nationwide.</p>
       </div>
 
       <!-- ONLINE URGENCY: limited-time pricing countdown -->
       <div class="online-urgency">
         <div class="online-urgency-left">
           <div class="urgency-pulse"></div>
-          <div class="online-urgency-label">ð Limited enrollment pricing â <strong>enroll by April 30</strong> and lock in the discounted rate before it increases</div>
+          <div class="online-urgency-label">🎓 Limited enrollment pricing — <strong>enroll by April 30</strong> and lock in the discounted rate before it increases</div>
         </div>
         <div style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap">
           <div class="online-urgency-price">
@@ -723,7 +723,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-            <div><div class="prog-name">Clinical Medical Assistant</div><div class="prog-cert">CCMA Â· NHA &amp; AMCA Approved</div></div>
+            <div><div class="prog-name">Clinical Medical Assistant</div><div class="prog-cert">CCMA · NHA &amp; AMCA Approved</div></div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
@@ -737,7 +737,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon blu"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M6.343 15.657A8 8 0 0012 22a8 8 0 005.657-2.343"/></svg></div>
-            <div><div class="prog-name">Phlebotomy Technician</div><div class="prog-cert">CPT Â· NHA &amp; AMCA Accredited</div></div>
+            <div><div class="prog-name">Phlebotomy Technician</div><div class="prog-cert">CPT · NHA &amp; AMCA Accredited</div></div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
@@ -751,7 +751,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
-            <div><div class="prog-name">Pharmacy Technician</div><div class="prog-cert">CPhT Â· ASHP Accredited</div></div>
+            <div><div class="prog-name">Pharmacy Technician</div><div class="prog-cert">CPhT · ASHP Accredited</div></div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
@@ -765,7 +765,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon blu"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-            <div><div class="prog-name">EKG Technician</div><div class="prog-cert">CET Â· NHA Approved</div></div>
+            <div><div class="prog-name">EKG Technician</div><div class="prog-cert">CET · NHA Approved</div></div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
@@ -779,7 +779,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-            <div><div class="prog-name">Medical Billing &amp; Coding</div><div class="prog-cert">CBCS Â· NHA Approved</div></div>
+            <div><div class="prog-name">Medical Billing &amp; Coding</div><div class="prog-cert">CBCS · NHA Approved</div></div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
@@ -793,7 +793,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h5l5 5v11a2 2 0 01-2 2z"/></svg></div>
-            <div><div class="prog-name">Medical Admin Assistant</div><div class="prog-cert">CMAA Â· NHA Approved</div></div>
+            <div><div class="prog-name">Medical Admin Assistant</div><div class="prog-cert">CMAA · NHA Approved</div></div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
@@ -807,7 +807,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <div><div class="prog-name">Registered Dental Assistant</div><div class="prog-cert">RDA Â· DANB Approved</div></div>
+            <div><div class="prog-name">Registered Dental Assistant</div><div class="prog-cert">RDA · DANB Approved</div></div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
@@ -819,9 +819,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 
     </div>
 
-<!-- ââââââââââââââââââââââââââââââââââââââââââ
+<!-- ══════════════════════════════════════════
      MODALS
-ââââââââââââââââââââââââââââââââââââââââââ -->
+══════════════════════════════════════════ -->
 
 <!-- MODAL: CCMA April Weekday -->
 <div class="modal-overlay" id="modal-ccma-apr-wd">
@@ -830,15 +830,15 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag ccma">CCMA Program</div>
-          <h2>Clinical Medical Assistant â Weekday Cohort</h2>
+          <h2>Clinical Medical Assistant — Weekday Cohort</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-ccma-apr-wd')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-ccma-apr-wd')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: April 29, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>16 Weeks Â· Wednesdays</span>
+        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>16 Weeks · Wednesdays</span>
         <span class="modal-chip"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">Day 10:00â12:00 PM Â· Eve 6:00â8:00 PM</span>
+        <span class="modal-chip">Day 10:00–12:00 PM · Eve 6:00–8:00 PM</span>
       </div>
     </div>
     <div class="modal-body">
@@ -850,9 +850,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1â5</div>
+          <div class="modal-section-sub">Weeks 1–5</div>
         </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus â 2105 East Parham Road, Henrico, VA</div>
+        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">April 29, 2026</span><span class="week-badge lab">Lab</span></div>
           <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">May 6, 2026</span><span class="week-badge lab">Lab</span></div>
@@ -866,7 +866,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1â16</div>
+          <div class="modal-section-sub">Weeks 1–16</div>
         </div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">April 29, 2026</span><span class="week-badge online">Online</span></div>
@@ -879,7 +879,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="week-row"><span class="week-num">Week 8</span><span class="week-date">June 17, 2026</span><span class="week-badge online">Online</span></div>
           <div class="week-row"><span class="week-num">Week 9</span><span class="week-date">June 24, 2026</span><span class="week-badge online">Online</span></div>
           <div class="week-row"><span class="week-num">Week 10</span><span class="week-date">July 1, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">â</span><span class="week-date">July 4, 2026 â Independence Day</span><span class="week-badge holiday">Holiday</span></div>
+          <div class="week-row"><span class="week-num">—</span><span class="week-date">July 4, 2026 — Independence Day</span><span class="week-badge holiday">Holiday</span></div>
           <div class="week-row"><span class="week-num">Week 11</span><span class="week-date">July 8, 2026</span><span class="week-badge online">Online</span></div>
           <div class="week-row"><span class="week-num">Week 12</span><span class="week-date">July 15, 2026</span><span class="week-badge online">Online</span></div>
           <div class="week-row"><span class="week-num">Week 13</span><span class="week-date">July 22, 2026</span><span class="week-badge online">Online</span></div>
@@ -891,7 +891,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
       <button class="mfbtn line" onclick="closeModal('modal-ccma-apr-wd')">Close</button>
     </div>
   </div>
@@ -904,15 +904,15 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag phleb">Phlebotomy Program</div>
-          <h2>Phlebotomy Technician â Weekday Cohort</h2>
+          <h2>Phlebotomy Technician — Weekday Cohort</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-phleb-apr-wd')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-phleb-apr-wd')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: April 29, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12 Weeks Â· Wednesdays</span>
+        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12 Weeks · Wednesdays</span>
         <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">Day 10:00â1:00 PM Â· Eve 6:00â9:00 PM</span>
+        <span class="modal-chip">Day 10:00–1:00 PM · Eve 6:00–9:00 PM</span>
       </div>
     </div>
     <div class="modal-body">
@@ -924,9 +924,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1â5</div>
+          <div class="modal-section-sub">Weeks 1–5</div>
         </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus â 2105 East Parham Road, Henrico, VA</div>
+        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">April 29, 2026</span><span class="week-badge lab">Lab</span></div>
           <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">May 6, 2026</span><span class="week-badge lab">Lab</span></div>
@@ -940,7 +940,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1â12</div>
+          <div class="modal-section-sub">Weeks 1–12</div>
         </div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">April 29, 2026</span><span class="week-badge online">Online</span></div>
@@ -960,7 +960,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
       <button class="mfbtn line" onclick="closeModal('modal-phleb-apr-wd')">Close</button>
     </div>
   </div>
@@ -973,15 +973,15 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag phleb">Phlebotomy Program</div>
-          <h2>Phlebotomy â Weekend Fast Track Cohort</h2>
+          <h2>Phlebotomy — Weekend Fast Track Cohort</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-phleb-apr-wknd')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-phleb-apr-wknd')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: April 25, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12 Weeks Â· Saturdays</span>
+        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12 Weeks · Saturdays</span>
         <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">10:00 AM â 12:00 PM</span>
+        <span class="modal-chip">10:00 AM – 12:00 PM</span>
       </div>
     </div>
     <div class="modal-body">
@@ -993,9 +993,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1â5</div>
+          <div class="modal-section-sub">Weeks 1–5</div>
         </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus â 2105 East Parham Road, Henrico, VA</div>
+        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">April 25, 2026</span><span class="week-badge lab">Lab</span></div>
           <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">May 2, 2026</span><span class="week-badge lab">Lab</span></div>
@@ -1009,7 +1009,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1â12</div>
+          <div class="modal-section-sub">Weeks 1–12</div>
         </div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">April 25, 2026</span><span class="week-badge online">Online</span></div>
@@ -1029,7 +1029,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
       <button class="mfbtn line" onclick="closeModal('modal-phleb-apr-wknd')">Close</button>
     </div>
   </div>
@@ -1042,15 +1042,15 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag ccma">CCMA Program</div>
-          <h2>Clinical Medical Asst â Weekend Cohort</h2>
+          <h2>Clinical Medical Asst — Weekend Cohort</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-ccma-apr-wknd')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-ccma-apr-wknd')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: April 25, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>8 Weeks Â· Saturdays</span>
+        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>8 Weeks · Saturdays</span>
         <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">10:00 AM â 11:30 AM</span>
+        <span class="modal-chip">10:00 AM – 11:30 AM</span>
       </div>
     </div>
     <div class="modal-body">
@@ -1062,9 +1062,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1â5</div>
+          <div class="modal-section-sub">Weeks 1–5</div>
         </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus â 2105 East Parham Road, Henrico, VA</div>
+        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">April 25, 2026</span><span class="week-badge lab">Lab</span></div>
           <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">May 2, 2026</span><span class="week-badge lab">Lab</span></div>
@@ -1078,7 +1078,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1â8</div>
+          <div class="modal-section-sub">Weeks 1–8</div>
         </div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">April 25, 2026</span><span class="week-badge online">Online</span></div>
@@ -1094,7 +1094,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
       <button class="mfbtn line" onclick="closeModal('modal-ccma-apr-wknd')">Close</button>
     </div>
   </div>
@@ -1107,15 +1107,15 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag ccma">CCMA Program</div>
-          <h2>Clinical Medical Assistant â Weekday Cohort</h2>
+          <h2>Clinical Medical Assistant — Weekday Cohort</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-ccma-may-wd')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-ccma-may-wd')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: May 27, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>16 Weeks Â· Wednesdays</span>
+        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>16 Weeks · Wednesdays</span>
         <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">Day 10:00â12:00 PM Â· Eve 6:00â8:00 PM</span>
+        <span class="modal-chip">Day 10:00–12:00 PM · Eve 6:00–8:00 PM</span>
       </div>
     </div>
     <div class="modal-body">
@@ -1127,9 +1127,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1â5</div>
+          <div class="modal-section-sub">Weeks 1–5</div>
         </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus â 2105 East Parham Road, Henrico, VA</div>
+        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 27, 2026</span><span class="week-badge lab">Lab</span></div>
           <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">June 3, 2026</span><span class="week-badge lab">Lab</span></div>
@@ -1143,7 +1143,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1â16</div>
+          <div class="modal-section-sub">Weeks 1–16</div>
         </div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 27, 2026</span><span class="week-badge online">Online</span></div>
@@ -1152,7 +1152,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">June 17, 2026</span><span class="week-badge online">Online</span></div>
           <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">June 24, 2026</span><span class="week-badge online">Online</span></div>
           <div class="week-row"><span class="week-num">Week 6</span><span class="week-date">July 1, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">â</span><span class="week-date">July 4, 2026 â Independence Day</span><span class="week-badge holiday">Holiday</span></div>
+          <div class="week-row"><span class="week-num">—</span><span class="week-date">July 4, 2026 — Independence Day</span><span class="week-badge holiday">Holiday</span></div>
           <div class="week-row"><span class="week-num">Week 7</span><span class="week-date">July 8, 2026</span><span class="week-badge online">Online</span></div>
           <div class="week-row"><span class="week-num">Week 8</span><span class="week-date">July 15, 2026</span><span class="week-badge online">Online</span></div>
           <div class="week-row"><span class="week-num">Week 9</span><span class="week-date">July 22, 2026</span><span class="week-badge online">Online</span></div>
@@ -1168,7 +1168,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
       <button class="mfbtn line" onclick="closeModal('modal-ccma-may-wd')">Close</button>
     </div>
   </div>
@@ -1181,15 +1181,15 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag phleb">Phlebotomy Program</div>
-          <h2>Phlebotomy Technician â Weekday Cohort</h2>
+          <h2>Phlebotomy Technician — Weekday Cohort</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-phleb-may-wd')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-phleb-may-wd')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: May 27, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12 Weeks Â· Wednesdays</span>
+        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12 Weeks · Wednesdays</span>
         <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">Day 10:00â1:00 PM Â· Eve 6:00â9:00 PM</span>
+        <span class="modal-chip">Day 10:00–1:00 PM · Eve 6:00–9:00 PM</span>
       </div>
     </div>
     <div class="modal-body">
@@ -1201,9 +1201,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1â5</div>
+          <div class="modal-section-sub">Weeks 1–5</div>
         </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus â 2105 East Parham Road, Henrico, VA</div>
+        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 27, 2026</span><span class="week-badge lab">Lab</span></div>
           <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">June 3, 2026</span><span class="week-badge lab">Lab</span></div>
@@ -1217,7 +1217,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1â12</div>
+          <div class="modal-section-sub">Weeks 1–12</div>
         </div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 27, 2026</span><span class="week-badge online">Online</span></div>
@@ -1237,7 +1237,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
       <button class="mfbtn line" onclick="closeModal('modal-phleb-may-wd')">Close</button>
     </div>
   </div>
@@ -1250,15 +1250,15 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag phleb">Phlebotomy Program</div>
-          <h2>Phlebotomy â Weekend Fast Track Cohort</h2>
+          <h2>Phlebotomy — Weekend Fast Track Cohort</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-phleb-may-wknd')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-phleb-may-wknd')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: May 30, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12 Weeks Â· Saturdays</span>
+        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12 Weeks · Saturdays</span>
         <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">10:00 AM â 12:00 PM</span>
+        <span class="modal-chip">10:00 AM – 12:00 PM</span>
       </div>
     </div>
     <div class="modal-body">
@@ -1270,9 +1270,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1â5</div>
+          <div class="modal-section-sub">Weeks 1–5</div>
         </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus â 2105 East Parham Road, Henrico, VA</div>
+        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 30, 2026</span><span class="week-badge lab">Lab</span></div>
           <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">June 6, 2026</span><span class="week-badge lab">Lab</span></div>
@@ -1286,7 +1286,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1â12</div>
+          <div class="modal-section-sub">Weeks 1–12</div>
         </div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 30, 2026</span><span class="week-badge online">Online</span></div>
@@ -1306,7 +1306,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
       <button class="mfbtn line" onclick="closeModal('modal-phleb-may-wknd')">Close</button>
     </div>
   </div>
@@ -1319,15 +1319,15 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag ccma">CCMA Program</div>
-          <h2>Clinical Medical Asst â Weekend Cohort</h2>
+          <h2>Clinical Medical Asst — Weekend Cohort</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-ccma-may-wknd')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-ccma-may-wknd')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: May 30, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>8 Weeks Â· Saturdays</span>
+        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>8 Weeks · Saturdays</span>
         <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">10:00 AM â 11:30 AM</span>
+        <span class="modal-chip">10:00 AM – 11:30 AM</span>
       </div>
     </div>
     <div class="modal-body">
@@ -1339,9 +1339,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1â5</div>
+          <div class="modal-section-sub">Weeks 1–5</div>
         </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus â 2105 East Parham Road, Henrico, VA</div>
+        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 30, 2026</span><span class="week-badge lab">Lab</span></div>
           <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">June 6, 2026</span><span class="week-badge lab">Lab</span></div>
@@ -1355,7 +1355,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="modal-section-head">
           <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1â8</div>
+          <div class="modal-section-sub">Weeks 1–8</div>
         </div>
         <div class="week-list">
           <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 30, 2026</span><span class="week-badge online">Online</span></div>
@@ -1371,7 +1371,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
       <button class="mfbtn line" onclick="closeModal('modal-ccma-may-wknd')">Close</button>
     </div>
   </div>
@@ -1384,14 +1384,14 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag ccma">Dental Assistant Program</div>
-          <h2>Registered Dental Assistant â Online</h2>
+          <h2>Registered Dental Assistant — Online</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-rda-online')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-rda-online')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">RDA Â· DANB Approved</span>
+        <span class="modal-chip">RDA · DANB Approved</span>
       </div>
     </div>
     <div class="modal-body">
@@ -1426,10 +1426,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="modal-section-label">What's Included</div>
         </div>
         <div class="week-list">
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Full access to your digital ebook</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Full access to your digital ebook</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
         </div>
       </div>
 
@@ -1457,7 +1457,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
       <button class="mfbtn line" onclick="closeModal('modal-rda-online')">Close</button>
     </div>
   </div>
@@ -1470,14 +1470,14 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag ccma">Medical Billing Program</div>
-          <h2>Medical Billing &amp; Coding â Online</h2>
+          <h2>Medical Billing &amp; Coding — Online</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-mbc-online')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-mbc-online')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">CBCS Â· NHA Approved</span>
+        <span class="modal-chip">CBCS · NHA Approved</span>
       </div>
     </div>
     <div class="modal-body">
@@ -1513,10 +1513,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="modal-section-label">What's Included</div>
         </div>
         <div class="week-list">
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Full access to your digital ebook</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Full access to your digital ebook</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
         </div>
       </div>
 
@@ -1544,7 +1544,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
       <button class="mfbtn line" onclick="closeModal('modal-mbc-online')">Close</button>
     </div>
   </div>
@@ -1557,14 +1557,14 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag ccma">Phlebotomy Program</div>
-          <h2>Phlebotomy Technician â Online</h2>
+          <h2>Phlebotomy Technician — Online</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-phleb-online')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-phleb-online')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">CPT Â· NHA &amp; AMCA Accredited</span>
+        <span class="modal-chip">CPT · NHA &amp; AMCA Accredited</span>
       </div>
     </div>
     <div class="modal-body">
@@ -1601,10 +1601,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="modal-section-label">What's Included</div>
         </div>
         <div class="week-list">
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Full access to your digital ebook</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Full access to your digital ebook</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
         </div>
       </div>
 
@@ -1632,7 +1632,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
       <button class="mfbtn line" onclick="closeModal('modal-phleb-online')">Close</button>
     </div>
   </div>
@@ -1645,14 +1645,14 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag ccma">CMAA Program</div>
-          <h2>Medical Administrative Assistant â Online</h2>
+          <h2>Medical Administrative Assistant — Online</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-cmaa-online')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-cmaa-online')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">CMAA Â· NHA Approved</span>
+        <span class="modal-chip">CMAA · NHA Approved</span>
       </div>
     </div>
     <div class="modal-body">
@@ -1687,9 +1687,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="modal-section-label">What's Included</div>
         </div>
         <div class="week-list">
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
         </div>
       </div>
 
@@ -1717,7 +1717,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
       <button class="mfbtn line" onclick="closeModal('modal-cmaa-online')">Close</button>
     </div>
   </div>
@@ -1730,14 +1730,14 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag ccma">EKG Tech Program</div>
-          <h2>EKG Technician â Online</h2>
+          <h2>EKG Technician — Online</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-ekg-online')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-ekg-online')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">CET Â· NHA Approved</span>
+        <span class="modal-chip">CET · NHA Approved</span>
       </div>
     </div>
     <div class="modal-body">
@@ -1772,10 +1772,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="modal-section-label">What's Included</div>
         </div>
         <div class="week-list">
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Full access to your digital ebook</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Full access to your digital ebook</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
         </div>
       </div>
 
@@ -1803,7 +1803,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
       <button class="mfbtn line" onclick="closeModal('modal-ekg-online')">Close</button>
     </div>
   </div>
@@ -1816,14 +1816,14 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag ccma">CCMA Program</div>
-          <h2>Clinical Medical Assistant â Online</h2>
+          <h2>Clinical Medical Assistant — Online</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-ccma-online')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-ccma-online')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">CCMA Â· NHA &amp; AMCA Approved</span>
+        <span class="modal-chip">CCMA · NHA &amp; AMCA Approved</span>
       </div>
     </div>
     <div class="modal-body">
@@ -1858,10 +1858,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="modal-section-label">What's Included</div>
         </div>
         <div class="week-list">
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Full access to your digital ebook</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Full access to your digital ebook</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
         </div>
       </div>
 
@@ -1889,7 +1889,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
       <button class="mfbtn line" onclick="closeModal('modal-ccma-online')">Close</button>
     </div>
   </div>
@@ -1902,15 +1902,15 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="modal-head-top">
         <div>
           <div class="modal-prog-tag ccma">Pharmacy Tech Program</div>
-          <h2>Pharmacy Technician â Online</h2>
+          <h2>Pharmacy Technician — Online</h2>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-pharmt-online')">â</button>
+        <button class="modal-close" onclick="closeModal('modal-pharmt-online')">✕</button>
       </div>
       <div class="modal-meta-row">
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
         <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>14-Week Program</span>
         <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">ASHP Accredited Â· CPhT</span>
+        <span class="modal-chip">ASHP Accredited · CPhT</span>
       </div>
     </div>
     <div class="modal-body">
@@ -1947,9 +1947,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="modal-section-label">What's Included</div>
         </div>
         <div class="week-list">
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">â</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
+          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
         </div>
       </div>
 
@@ -1977,12 +1977,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="week-row"><span class="week-badge lab">Req</span><span class="week-date">Criminal background check</span></div>
           <div class="week-row"><span class="week-badge lab">Req</span><span class="week-date">Drug testing requirements</span></div>
         </div>
-        <div class="modal-note" style="margin-top:.75rem"><strong>Trainee License Required</strong> â Students in Virginia, Ohio, and Texas must obtain a trainee license from their respective Board of Pharmacy before clinical participation. Students in other states should check with their Board of Pharmacy to confirm requirements.</div>
+        <div class="modal-note" style="margin-top:.75rem"><strong>Trainee License Required</strong> — Students in Virginia, Ohio, and Texas must obtain a trainee license from their respective Board of Pharmacy before clinical participation. Students in other states should check with their Board of Pharmacy to confirm requirements.</div>
       </div>
 
     </div>
     <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now â</a>
+      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
       <button class="mfbtn line" onclick="closeModal('modal-pharmt-online')">Close</button>
     </div>
   </div>
@@ -1992,32 +1992,32 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
     <div class="funding">
       <div class="funding-head">
         <h3>Funding &amp; Scholarship Options</h3>
-        <a href="/tuition-costs">View all tuition options â</a>
+        <a href="/tuition-costs">View all tuition options →</a>
       </div>
       <div class="fund-grid">
         <a href="https://www.alliedrxtraining.com/military" class="fund-card">
           <span class="fund-badge mil">Military</span>
           <div class="fund-name">ArmyCA</div>
           <div class="fund-desc">Army Career Account for active-duty soldiers. Registration fee waived.</div>
-          <div class="fund-cta">Apply for ArmyCA â</div>
+          <div class="fund-cta">Apply for ArmyCA →</div>
         </a>
         <a href="https://www.alliedrxtraining.com/military" class="fund-card">
           <span class="fund-badge mil">Military Spouse</span>
           <div class="fund-name">MyCAA Scholarship</div>
           <div class="fund-desc">Up to $4,000 for eligible military spouses. Registration fee waived.</div>
-          <div class="fund-cta">Apply for MyCAA â</div>
+          <div class="fund-cta">Apply for MyCAA →</div>
         </a>
         <a href="https://www.alliedrxtraining.com/military" class="fund-card">
           <span class="fund-badge mil">Air Force</span>
           <div class="fund-name">Air Force COOL</div>
           <div class="fund-desc">Certification funding for enlisted Air Force personnel. Fee waived.</div>
-          <div class="fund-cta">Apply for AF COOL â</div>
+          <div class="fund-cta">Apply for AF COOL →</div>
         </a>
         <a href="https://www.alliedrxtraining.com/grants" class="fund-card">
           <span class="fund-badge civ">Civilian</span>
           <div class="fund-name">WIOA Grants</div>
           <div class="fund-desc">Workforce funding for qualifying Virginia students through WIOA.</div>
-          <div class="fund-cta">Apply for WIOA â</div>
+          <div class="fund-cta">Apply for WIOA →</div>
         </a>
       </div>
     </div>
@@ -2025,7 +2025,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   </main>
 </div>
 <script>
-/* ââ FILTER PILLS ââ */
+/* ── FILTER PILLS ── */
 (function(){
   var typePills    = document.querySelectorAll('.filter-bar .pills:first-of-type .pill');
   var sessionPills = document.querySelectorAll('.filter-bar .pills:last-of-type .pill');
@@ -2081,7 +2081,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       typePills.forEach(function(x){ x.classList.remove('active'); });
       p.classList.add('active');
       activeType = p.textContent.trim().toLowerCase();
-      // Switching to Online â clear session filter
+      // Switching to Online — clear session filter
       if(activeType === 'online'){
         sessionPills.forEach(function(x){ x.classList.remove('active'); });
         activeSession = 'all';
@@ -2112,7 +2112,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   });
 })();
 
-/* ââ MODALS ââ */
+/* ── MODALS ── */
 function openModal(id, btn){
   var el = document.getElementById(id);
   if(!el) return;
@@ -2164,7 +2164,7 @@ document.addEventListener('keydown',function(e){
   if(e.key==='Escape') document.querySelectorAll('.modal-overlay.open').forEach(o=>closeModal(o.id));
 });
 
-/* ââ COUNTDOWN TIMERS ââ */
+/* ── COUNTDOWN TIMERS ── */
 function buildCountdown(targetDate, containerId){
   const el = document.getElementById(containerId);
   if(!el) return;
@@ -2198,7 +2198,7 @@ buildCountdown(new Date('2026-05-18T23:59:00-05:00'), 'cd-may');
 // Online pricing expires April 30, 2026 at 11:59pm ET
 buildCountdown(new Date('2026-04-30T23:59:00-05:00'), 'cd-online');
 
-/* ââ SEAT CLICK TRACKING ââ */
+/* ── SEAT CLICK TRACKING ── */
 // Base seat counts per card (truth source = data-seats on .course-card)
 // localStorage key: "seats_<card-id>" stores how many clicks (registrations) have happened
 function initSeats(){
@@ -2265,7 +2265,7 @@ document.querySelectorAll('.course-card[data-card-id] .reg-btn').forEach(btn=>{
 
 initSeats();
 
-/* ââ SIDEBAR: align top flush with bottom of sticky header ââ */
+/* ── SIDEBAR: align top flush with bottom of sticky header ── */
 (function(){
   var sidebar = document.querySelector('.sidebar');
   var header  = document.querySelector('.site-header');
@@ -2282,7 +2282,7 @@ initSeats();
   window.addEventListener('resize', alignSidebar, {passive:true});
 })();
 
-/* ââ AUTO-RESIZE FOR IFRAME EMBED ââ */
+/* ── AUTO-RESIZE FOR IFRAME EMBED ── */
 function sendHeight(){
   var h = document.documentElement.scrollHeight;
   window.parent.postMessage({ scheduleHeight: h }, '*');
@@ -2292,96 +2292,4 @@ window.addEventListener('resize', sendHeight);
 // Also fire after any filter/modal interaction that may change height
 document.addEventListener('click', function(){ setTimeout(sendHeight, 50); });
 </script>
-
-<!-- AlliedRx Footer -->
-<style>
-.arx-footer{background:linear-gradient(160deg,#0d0b2e 0%,#1a1260 60%,#0d0b2e 100%);color:#ccc;padding:64px 32px 0;font-family:'Plus Jakarta Sans',sans-serif;}
-.arx-footer a{color:inherit;text-decoration:none;}
-.arx-footer a:hover{color:#c4b5fd;}
-.arx-footer-cta{background:linear-gradient(135deg,#7c3aed,#9148fc);border-radius:16px;padding:36px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:56px;flex-wrap:wrap;}
-.arx-footer-cta h3{font-size:24px;font-weight:800;color:#fff;margin:0 0 6px;}
-.arx-footer-cta p{font-size:14px;color:rgba(255,255,255,0.8);margin:0;}
-.arx-footer-cta a{background:#fff;color:#7c3aed;font-size:14px;font-weight:700;padding:14px 28px;border-radius:100px;white-space:nowrap;display:inline-block;}
-.arx-footer-cta a:hover{background:#f0ebff;color:#7c3aed;}
-.arx-footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.4fr;gap:40px;padding-bottom:48px;}
-.arx-footer-col h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff;margin:0 0 18px;}
-.arx-footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
-.arx-footer-col ul li a{font-size:14px;color:#b0aac8;}
-.arx-footer-col ul li a:hover{color:#c4b5fd;}
-.arx-footer-brand img{height:48px;width:auto;margin-bottom:16px;display:block;}
-.arx-footer-brand p{font-size:13px;color:#b0aac8;line-height:1.7;max-width:260px;margin-bottom:20px;}
-.arx-footer-social{display:flex;gap:12px;margin-top:4px;}
-.arx-footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:#ccc;transition:background .2s;}
-.arx-footer-social a:hover{background:rgba(145,72,252,0.4);color:#fff;}
-.arx-footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-.arx-footer-bottom p{font-size:12px;color:#6b6880;margin:0;}
-.arx-footer-bottom-links{display:flex;gap:20px;}
-.arx-footer-bottom-links a{font-size:12px;color:#6b6880;}
-.arx-footer-bottom-links a:hover{color:#c4b5fd;}
-@media(max-width:768px){.arx-footer-grid{grid-template-columns:1fr 1fr;}.arx-footer-cta{flex-direction:column;padding:28px 24px;}.arx-footer-cta a{width:100%;text-align:center;}}
-@media(max-width:479px){.arx-footer-grid{grid-template-columns:1fr;}.arx-footer{padding:40px 20px 0;}}
-</style>
-<footer class="arx-footer">
-  <div class="arx-footer-cta">
-    <div><h3>Start Your Healthcare Career Today</h3><p>Accredited programs · Self-paced · Payment plans available · $99 down</p></div>
-    <a href="https://www.alliedrxtraining.com/register" target="_parent">Enroll Now &rarr;</a>
-  </div>
-  <div class="arx-footer-grid">
-    <div class="arx-footer-col arx-footer-brand">
-      <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69caba88d42a3b1a8669dd2a_alliedrx_logo_webflow_hd.png" alt="AlliedRx Institute of Healthcare"/>
-      <p>AlliedRx Institute of Healthcare provides accredited, career-focused healthcare training programs online and on campus.</p>
-      <div class="arx-footer-social">
-        <a href="https://www.facebook.com/alliedrxtraining" target="_blank" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-        <a href="https://www.instagram.com/alliedrxtraining" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-        <a href="https://www.linkedin.com/company/alliedrx" target="_blank" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-        <a href="https://www.youtube.com/@alliedrxtraining" target="_blank" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
-      </div>
-    </div>
-    <div class="arx-footer-col">
-      <h4>Programs</h4>
-      <ul>
-        <li><a href="https://www.alliedrxtraining.com/new-ccma-page" target="_parent">Clinical Medical Assistant</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" target="_parent">Pharmacy Technician</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-medical-billing-page" target="_parent">Medical Billing &amp; Coding</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-ekg-page" target="_parent">EKG Technician</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-phlebotomy-page" target="_parent">Phlebotomy Technician</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-cmaa-page" target="_parent">Medical Admin Assistant</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" target="_parent">Dental Assisting</a></li>
-      </ul>
-    </div>
-    <div class="arx-footer-col">
-      <h4>Tuition &amp; Aid</h4>
-      <ul>
-        <li><a href="https://www.alliedrxtraining.com/tuition-payments" target="_parent">Tuition &amp; Payment Plans</a></li>
-        <li><a href="https://www.alliedrxtraining.com/military-overview" target="_parent">Military Funding</a></li>
-        <li><a href="https://www.alliedrxtraining.com/gainful-disclosures" target="_parent">Gainful Disclosures</a></li>
-        <li><a href="https://www.alliedrxtraining.com/program-accreditation" target="_parent">Accreditation</a></li>
-      </ul>
-      <h4 style="margin-top:28px;">Company</h4>
-      <ul>
-        <li><a href="https://www.alliedrxtraining.com/about" target="_parent">About Us</a></li>
-        <li><a href="https://www.alliedrxtraining.com/partners" target="_parent">Partners</a></li>
-      </ul>
-    </div>
-    <div class="arx-footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:enrollment@alliedrxtraining.com">enrollment@alliedrxtraining.com</a></li>
-        <li><a href="https://www.alliedrxtraining.com/getmoreinfo" target="_parent">Request Information</a></li>
-        <li><a href="https://www.alliedrxtraining.com/register" target="_parent">Enroll Today</a></li>
-        <li><a href="https://academy.alliedrxtraining.com/Student-Portal" target="_blank">Student Portal &ndash; MyAlliedRx</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="arx-footer-bottom">
-    <p>&copy; 2026 AlliedRx Institute of Healthcare. All rights reserved.</p>
-    <div class="arx-footer-bottom-links">
-      <a href="/privacy-policy" target="_parent">Privacy Policy</a>
-      <a href="/terms-of-service" target="_parent">Terms of Service</a>
-      <a href="/gainful-disclosures" target="_parent">Gainful Disclosures</a>
-      <a href="/program-accreditation" target="_parent">Accreditation</a>
-    </div>
-  </div>
-</footer>
-<!-- End AlliedRx Footer -->
 </body></html>
