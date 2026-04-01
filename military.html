@@ -33,7 +33,13 @@
       --radius-lg:     20px;
     }
 
-    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--light-text); line-height: 1.6; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--light-text); line-height: 1.6; -webkit-text-size-adjust: 100%; }
+    /* Ensure buttons meet 44px min touch target */
+    .btn-hero-main, .btn-hero-ghost, .btn-portal,
+    .btn-cta-primary, .btn-cta-ghost { min-height: 44px; }
+    .tab-link, .btn-hero-main, .btn-hero-ghost, .btn-portal,
+    .btn-cta-primary, .btn-cta-ghost, .funding-card,
+    .prog-chip { -webkit-tap-highlight-color: transparent; }
 
     /* ══════════════════════════════════════
        HERO — DARK
@@ -108,7 +114,7 @@
       transition: all 0.2s;
     }
     .btn-hero-ghost:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
-    .hero-trust { display: flex; }
+    .hero-trust { display: flex; flex-wrap: wrap; }
     .hero-trust-item { text-align: center; padding: 0 22px; border-right: 1px solid rgba(255,255,255,0.1); }
     .hero-trust-item:first-child { padding-left: 0; }
     .hero-trust-item:last-child { border-right: none; }
@@ -326,39 +332,124 @@
     /* ══════════════════════════════════════
        RESPONSIVE
     ══════════════════════════════════════ */
+    /* ══ TABLET (1200px) ══ */
     @media (max-width: 1200px) {
-      .hero { grid-template-columns: 1fr 260px 360px; }
+      .hero { grid-template-columns: 1fr 240px 340px; }
     }
+
+    /* ══ TABLET (1024px) ══ */
     @media (max-width: 1024px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-center, .hero-right { display: none; }
-      .hero-left { padding: 72px 48px; }
-      .program-header { grid-template-columns: 1fr; gap: 40px; }
+      .hero-left { padding: 64px 40px; }
+      .program-header { grid-template-columns: 1fr; gap: 36px; }
       .steps-row { grid-template-columns: repeat(2,1fr); gap: 28px; }
       .steps-row::after { display: none; }
       .elig-grid { grid-template-columns: 1fr; }
       .compare-table th, .compare-table td { padding: 14px 16px; }
+      .program-section, .compare-section { padding: 64px 40px; }
+      .cta-section { padding: 80px 40px; }
+      .section-divider { padding: 20px 40px; }
+      .tab-nav-inner { padding: 0 40px; }
     }
+
+    /* ══ MOBILE (767px) ══ */
     @media (max-width: 767px) {
-      .hero-left { padding: 52px 24px; }
-      .hero h1 { font-size: 32px; }
+      /* Hero */
+      .hero-left { padding: 48px 20px 52px; }
+      .hero h1 { font-size: 30px; letter-spacing: -0.02em; }
       .hero-desc { font-size: 14px; max-width: 100%; margin-bottom: 28px; }
-      .hero-btns { flex-direction: column; }
-      .hero-trust { flex-wrap: wrap; gap: 14px; }
-      .hero-trust-item { border-right: none; padding: 0 12px; }
-      .tab-nav-inner { padding: 0 16px; overflow-x: auto; }
-      .tab-link { padding: 15px 16px; font-size: 12px; }
-      .program-section, .compare-section, .cta-section { padding: 56px 24px; }
-      .section-divider { padding: 18px 24px; }
-      .steps-row { grid-template-columns: 1fr; }
-      .compare-table { display: block; overflow-x: auto; }
-      h2.title { font-size: 22px; }
-      .cta-checklist { flex-direction: column; align-items: center; }
+      .hero-eyebrow { font-size: 10px; }
+      .hero-btns { flex-direction: column; gap: 10px; }
+      .btn-hero-main, .btn-hero-ghost {
+        padding: 15px 24px; text-align: center;
+        font-size: 15px; display: block; width: 100%;
+      }
+      .hero-trust { flex-wrap: wrap; gap: 0; row-gap: 16px; }
+      .hero-trust-item {
+        border-right: none; border-bottom: none;
+        padding: 0 16px; flex: 0 0 33%;
+        text-align: center;
+      }
+      .hero-trust-val { font-size: 22px; }
+
+      /* Tab nav */
+      .tab-nav-inner {
+        padding: 0 12px; overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .tab-nav-inner::-webkit-scrollbar { display: none; }
+      .tab-link { padding: 14px 14px; font-size: 12px; white-space: nowrap; }
+
+      /* Section divider */
+      .section-divider { padding: 16px 20px; }
+
+      /* Program sections */
+      .program-section, .compare-section { padding: 48px 20px; }
+      .cta-section { padding: 56px 20px; }
+      .program-header { gap: 32px; }
+      .program-header h2 { font-size: 22px; }
+      .program-header p { font-size: 13px; }
+      .btn-portal { padding: 12px 22px; font-size: 13px; width: 100%; text-align: center; display: block; }
+
+      /* Info cards */
+      .info-card { padding: 16px 18px; }
+      .info-card .amount { font-size: 24px; }
+
+      /* Eligibility */
+      .elig-grid { gap: 8px; }
+      .elig-item { padding: 12px 14px; font-size: 13px; }
+
+      /* Steps */
+      .steps-row { grid-template-columns: 1fr; gap: 24px; }
+      .step-item { padding: 0; }
+      .step-dot { width: 36px; height: 36px; font-size: 14px; margin-bottom: 12px; }
+      .step-item h4 { font-size: 14px; }
+      .step-item p { font-size: 13px; }
+
+      /* Program chips */
+      .prog-chips { gap: 8px; }
+      .prog-chip { font-size: 12px; padding: 7px 14px; }
+
+      /* Titles */
+      h2.title { font-size: 20px; }
+      .eyebrow { font-size: 10px; }
+
+      /* Compare table */
+      .compare-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; font-size: 12px; }
+      .compare-table th, .compare-table td { padding: 12px 14px; white-space: nowrap; }
+      .compare-table td:first-child { white-space: normal; min-width: 120px; }
+
+      /* CTA */
+      .cta-inner { padding: 0; }
+      .cta-section h2 { font-size: 26px; }
+      .cta-section p { font-size: 14px; }
+      .cta-checklist { flex-direction: column; align-items: stretch; gap: 8px; }
+      .cta-check-item { font-size: 13px; padding: 10px 14px; }
+      .cta-btns { flex-direction: column; gap: 10px; }
+      .btn-cta-primary, .btn-cta-ghost {
+        padding: 15px 24px; font-size: 15px;
+        display: block; text-align: center; width: 100%;
+      }
     }
+
+    /* ══ SMALL MOBILE (480px) ══ */
     @media (max-width: 480px) {
-      .hero-left { padding: 40px 20px; }
-      .hero h1 { font-size: 28px; }
-      .program-section, .compare-section, .cta-section { padding: 48px 20px; }
+      .hero-left { padding: 40px 16px 48px; }
+      .hero h1 { font-size: 26px; }
+      .hero-trust-item { flex: 0 0 50%; padding: 0 12px; }
+      .hero-trust-val { font-size: 20px; }
+      .hero-trust-label { font-size: 9px; }
+      .program-section, .compare-section, .cta-section { padding: 40px 16px; }
+      .section-divider { padding: 14px 16px; }
+      .tab-link { padding: 13px 12px; font-size: 11px; }
+      .info-card .amount { font-size: 22px; }
+      .program-header h2 { font-size: 20px; }
+      h2.title { font-size: 18px; }
+      .prog-chip { font-size: 11px; padding: 6px 12px; }
+      .cta-section h2 { font-size: 22px; }
+      .elig-item { font-size: 12px; padding: 11px 12px; }
     }
   </style>
 </head>
