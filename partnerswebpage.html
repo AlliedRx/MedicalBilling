@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner with AlliedRx | Employer & Academic Partnerships</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:        #0d0629;
+  --navy-mid:    #1a0f40;
+  --navy-edge:   #120836;
+  --purple:      #7c3aed;
+  --purple-mid:  #6d28d9;
+  --purple-light:#a78bfa;
+  --purple-pale: #ede9fe;
+  --pale:        #f5f3ff;
+  --white:       #ffffff;
+  --text:        #1e1b4b;
+  --mid:         #4c4875;
+  --light:       #6b6b8e;
+  --border:      #e2e0f0;
+  --green:       #059669;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); color: var(--text); line-height: 1.6; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+/* Ambient glow orbs */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px; left: -80px;
+  width: 600px; height: 600px;
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: 30%;
+  width: 500px; height: 500px;
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Subtle grid */
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+}
+
+.hero-left {
+  flex: 1;
+  min-width: 0;
+  padding: 72px 56px 72px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Image column between copy and form */
+.hero-image {
+  width: 280px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.hero-right {
+  width: 420px;
+  flex-shrink: 0;
+  background: var(--white);
+  position: relative;
+  z-index: 3;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Hero left content */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--purple-light);
+  margin-bottom: 1.75rem;
+}
+.eyebrow-line { width: 28px; height: 2px; background: var(--purple); border-radius: 2px; }
+
+h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2.6rem, 4.5vw, 4rem);
+  font-weight: 800;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 1.5rem;
+}
+h1 em { font-style: normal; color: var(--purple-light); }
+
+.hero-sub {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.8;
+  max-width: 440px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-pillars {
+  display: flex; flex-direction: column; gap: 14px;
+  margin-bottom: 3rem;
+}
+.pillar {
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.pillar-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--purple); flex-shrink: 0; margin-top: 7px;
+}
+.pillar-text { font-size: 14px; color: rgba(255,255,255,0.62); line-height: 1.5; }
+.pillar-text strong { color: white; font-weight: 600; }
+
+.hero-divider {
+  width: 40px; height: 2px; background: rgba(255,255,255,0.12);
+  margin-bottom: 2rem;
+}
+
+.hero-stats { display: flex; gap: 2.5rem; }
+.stat-item { display: flex; flex-direction: column; gap: 2px; }
+.stat-num {
+  font-size: 2rem; font-weight: 800; color: white; line-height: 1;
+  letter-spacing: -1px;
+}
+.stat-label { font-size: 11px; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: 0.8px; }
+
+/* ── FORM PANEL ── */
+.fp-label {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--purple);
+  margin-bottom: 0.5rem;
+}
+.fp-title {
+  font-size: 1.65rem; font-weight: 800;
+  color: var(--text); line-height: 1.2;
+  letter-spacing: -0.5px; margin-bottom: 0.4rem;
+}
+.fp-sub {
+  font-size: 13.5px; color: var(--light);
+  margin-bottom: 1.5rem; line-height: 1.6;
+}
+.fp-divider { width: 100%; height: 1px; background: var(--border); margin-bottom: 1.5rem; }
+
+form { display: flex; flex-direction: column; gap: 13px; }
+
+.field { display: flex; flex-direction: column; gap: 4px; }
+.field label {
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.8px; color: var(--mid);
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px; color: var(--text);
+  background: var(--pale);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none; -webkit-appearance: none; appearance: none;
+}
+.field input::placeholder { color: #b0aec8; }
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.12);
+  background: white;
+}
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237c3aed' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center;
+  background-color: var(--pale); padding-right: 36px; cursor: pointer;
+}
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+/* Programs checkboxes */
+.progs-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--mid); margin-bottom: 6px; }
+.progs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.prog-item {
+  display: flex; align-items: center; gap: 7px;
+  padding: 8px 10px; border: 1.5px solid var(--border);
+  border-radius: 7px; cursor: pointer;
+  transition: all 0.12s; user-select: none;
+}
+.prog-item:hover { border-color: var(--purple); background: var(--purple-pale); }
+.prog-item input[type="checkbox"] {
+  width: 14px; height: 14px; accent-color: var(--purple);
+  cursor: pointer; flex-shrink: 0;
+  margin: 0; padding: 0; background: white; border: none; box-shadow: none;
+}
+.prog-item input[type="checkbox"]:focus { box-shadow: none; }
+.prog-item span { font-size: 12px; font-weight: 600; color: var(--mid); line-height: 1.3; }
+
+.submit-btn {
+  width: 100%;
+  padding: 14px 20px;
+  background: var(--purple);
+  color: white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px; font-weight: 700;
+  border: none; border-radius: 8px; cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: 2px;
+}
+.submit-btn:hover { background: var(--purple-mid); transform: translateY(-1px); }
+.fp-note { font-size: 11.5px; color: var(--light); text-align: center; margin-top: 6px; }
+
+/* ── VALUE PROPS ── */
+.value-section { padding: 90px 80px; background: var(--pale); }
+.value-inner { max-width: 1140px; margin: 0 auto; }
+.section-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--purple);
+  margin-bottom: 1rem; display: flex; align-items: center; gap: 12px;
+}
+.section-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--purple); border-radius: 2px; }
+.section-heading {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--text); line-height: 1.15;
+  letter-spacing: -1px; margin-bottom: 1rem;
+  max-width: 600px;
+}
+.section-desc { font-size: 15.5px; color: var(--light); max-width: 580px; line-height: 1.8; margin-bottom: 3.5rem; }
+
+.value-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.value-card {
+  padding: 2.5rem 2rem;
+  background: white;
+  border: 1px solid var(--border);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.value-card:first-child { border-radius: 12px 0 0 12px; }
+.value-card:last-child { border-radius: 0 12px 12px 0; }
+.value-card:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(124,58,237,0.1); z-index: 1; position: relative; border-radius: 12px; }
+.value-num {
+  font-size: 3.5rem; font-weight: 900; color: var(--purple-pale);
+  line-height: 1; margin-bottom: 1rem;
+}
+.value-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
+.value-card p { font-size: 13.5px; color: var(--light); line-height: 1.75; }
+.value-tag {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--purple); margin-bottom: 1rem;
+}
+
+/* ── TWO-COL: PROGRAMS + WHY ── */
+.two-col { padding: 90px 80px; background: white; }
+.two-col-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+
+.prog-list { display: flex; flex-direction: column; margin-top: 2.5rem; }
+.prog-row {
+  display: grid; grid-template-columns: 1fr auto auto;
+  gap: 1rem; align-items: center;
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+}
+.prog-row:first-child { border-top: 1px solid var(--border); }
+.prog-row-name { font-size: 14.5px; font-weight: 700; color: var(--text); }
+.prog-row-cert {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+  text-transform: uppercase; color: var(--purple);
+  padding: 3px 8px; background: var(--purple-pale);
+  border-radius: 100px; white-space: nowrap;
+}
+.prog-row-sal { font-size: 14px; font-weight: 700; color: var(--green); white-space: nowrap; }
+
+.benefits-col { padding-top: 0.5rem; }
+.benefit-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 1.25rem 0; border-bottom: 1px solid var(--border);
+}
+.benefit-item:first-child { padding-top: 0; }
+.benefit-num {
+  font-size: 1.5rem; font-weight: 900; color: var(--purple-pale);
+  line-height: 1; flex-shrink: 0; margin-top: 2px;
+}
+.benefit-text h4 { font-size: 14.5px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.benefit-text p { font-size: 13px; color: var(--light); line-height: 1.6; }
+
+/* ── DARK BAND ── */
+.dark-band {
+  background: var(--navy);
+  padding: 70px 80px;
+  position: relative; overflow: hidden;
+}
+.dark-band::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -50px;
+  width: 500px; height: 500px;
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+.dark-band-inner {
+  max-width: 1140px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: center; position: relative; z-index: 1;
+}
+.dark-band h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800;
+  color: white; line-height: 1.1; letter-spacing: -1px; margin-bottom: 1rem;
+}
+.dark-band p { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 2rem; }
+.dark-band-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--purple-light); font-size: 14px; font-weight: 700;
+  text-decoration: none; letter-spacing: 0.3px;
+  border-bottom: 2px solid var(--purple-light); padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.dark-band-link:hover { color: white; border-color: white; }
+.dark-band-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.db-stat {
+  padding: 1.75rem;
+  border: 1px solid rgba(124,58,237,0.2); border-radius: 12px;
+  background: rgba(124,58,237,0.08);
+}
+.db-stat-num {
+  font-size: 2.5rem; font-weight: 900; color: white; line-height: 1;
+  letter-spacing: -1px; margin-bottom: 6px;
+}
+.db-stat-label { font-size: 12px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600; }
+
+/* ── TYPES SECTION ── */
+.types-section {
+  padding: 90px 80px;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.types-section::before {
+  content: '';
+  position: absolute;
+  top: -150px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.types-inner { max-width: 1140px; margin: 0 auto; position: relative; z-index: 1; }
+.types-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; margin-top: 3rem; }
+.type-card {
+  padding: 2.5rem;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-top: 1px solid rgba(255,255,255,0.28);
+  border-radius: 20px !important;
+  cursor: default;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  box-shadow: 0 8px 32px rgba(13,6,41,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+.type-card:hover {
+  background: rgba(124,58,237,0.22);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border-color: rgba(167,139,250,0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 24px 56px rgba(13,6,41,0.5), 0 0 0 1px rgba(167,139,250,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+/* individual corner radii handled by border-radius: 16px !important on .type-card */
+.type-number {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--purple-light);
+  margin-bottom: 1rem;
+}
+.type-card h3 { font-size: 1.15rem; font-weight: 700; color: white; margin-bottom: 0.6rem; }
+.type-card p { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 1.25rem; }
+.type-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.type-bullets li {
+  font-size: 13px; color: rgba(255,255,255,0.6);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.type-bullets li::before { content: '—'; color: var(--purple-light); flex-shrink: 0; }
+
+/* ── STATS BAND ── */
+.stats-band {
+  background: var(--purple);
+  padding: 50px 80px;
+}
+.stats-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
+.band-stat { text-align: center; }
+.band-num {
+  font-size: 3rem; font-weight: 900; color: white; line-height: 1;
+  letter-spacing: -1px;
+}
+.band-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ── BOTTOM CTA ── */
+.bottom-cta {
+  background: var(--navy);
+  padding: 90px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.bottom-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; height: 400px;
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+.bottom-cta-inner { max-width: 620px; margin: 0 auto; position: relative; z-index: 1; }
+.bottom-cta h2 {
+  font-size: clamp(2rem,4vw,3rem);
+  font-weight: 800;
+  color: white;
+  line-height: 1.15; margin-bottom: 1rem; letter-spacing: -1px;
+}
+.bottom-cta p { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.75; margin-bottom: 2.5rem; }
+.cta-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--purple); color: white;
+  font-size: 15px; font-weight: 700;
+  padding: 16px 32px; border-radius: 10px;
+  text-decoration: none; letter-spacing: 0.3px;
+  transition: background 0.2s, transform 0.15s;
+}
+.cta-link:hover { background: var(--purple-mid); transform: translateY(-2px); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1200px) {
+  .hero { flex-direction: column; min-height: auto; }
+  .hero-left { max-width: 100%; padding: 64px 48px 48px; }
+  .hero-image { display: none; }
+  .hero-right { width: 100%; padding: 48px; border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
+  .value-section, .two-col, .types-section, .dark-band { padding: 64px 48px; }
+}
+@media (max-width: 1024px) {
+  h1 { font-size: 3rem; }
+  .value-grid { grid-template-columns: 1fr 1fr; }
+  .value-card:first-child { border-radius: 12px 0 0 12px; }
+  .value-card:last-child { border-radius: 0 0 12px 12px; }
+  .two-col-inner { grid-template-columns: 1fr; gap: 3.5rem; }
+  .dark-band-inner { grid-template-columns: 1fr; gap: 3rem; }
+}
+@media (max-width: 767px) {
+  .hero-left { padding: 48px 24px 40px; }
+  .hero-right { padding: 40px 24px; }
+  .value-section, .two-col, .types-section, .dark-band { padding: 56px 24px; }
+  .form-row-2 { grid-template-columns: 1fr; }
+  .progs-grid { grid-template-columns: 1fr; }
+  .value-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .value-card { border-radius: 12px !important; }
+  .types-grid { grid-template-columns: 1fr; }
+  .type-card { border-radius: 16px !important; }
+  .dark-band-stats { grid-template-columns: 1fr 1fr; }
+  .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+  .prog-row { grid-template-columns: 1fr auto; }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 2.2rem; letter-spacing: -0.5px; }
+  .dark-band-stats { grid-template-columns: 1fr; }
+  .prog-row-cert { display: none; }
+  .db-stat-num { font-size: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+
+  <div class="hero-left">
+    <div class="eyebrow"><span class="eyebrow-line"></span> Employer &amp; Academic Partnerships</div>
+    <h1>Train Your Team.<br><em>Expand</em> Your<br>Institution.</h1>
+    <p class="hero-sub">AlliedRx delivers nationally accredited healthcare certifications to your employees and students — built for employers, community colleges, and workforce programs.</p>
+
+    <div class="hero-pillars">
+      <div class="pillar">
+        <span class="pillar-dot"></span>
+        <span class="pillar-text"><strong>Employer Upskilling</strong> — Group enrollment, custom cohorts, flexible scheduling</span>
+      </div>
+      <div class="pillar">
+        <span class="pillar-dot"></span>
+        <span class="pillar-text"><strong>Academic Partners</strong> — Expand your catalog with accredited allied health programs</span>
+      </div>
+      <div class="pillar">
+        <span class="pillar-dot"></span>
+        <span class="pillar-text"><strong>Workforce Development</strong> — WIOA-eligible, ETPL-approved, grant-compatible</span>
+      </div>
+      <div class="pillar">
+        <span class="pillar-dot"></span>
+        <span class="pillar-text"><strong>Recruitment Pipeline</strong> — Hire certified graduates before they even finish</span>
+      </div>
+    </div>
+
+    <div class="hero-divider"></div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">98%</span>
+        <span class="stat-label">Placement Rate</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">7</span>
+        <span class="stat-label">Programs</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">8–16</span>
+        <span class="stat-label">Weeks to Cert.</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">100+</span>
+        <span class="stat-label">Partners</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE -->
+  <div class="hero-image">
+    <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69b70e06b71e11c465986ed9_Untitled%20design.png" alt="AlliedRx healthcare professional">
+  </div>
+
+  <!-- FORM -->
+  <div class="hero-right" id="partner-form">
+    <div class="fp-label">Partnership Request</div>
+    <h2 class="fp-title">Start the conversation.</h2>
+    <p class="fp-sub">Our team responds within 1 business day.</p>
+    <div class="fp-divider"></div>
+
+    <form id="partnerForm" onsubmit="handleSubmit(event)">
+
+      <div class="field">
+        <label for="orgName">Organization Name *</label>
+        <input type="text" id="orgName" name="Organization Name" placeholder="Hospital, college, agency…" required>
+      </div>
+
+      <div class="field">
+        <label for="repName">Your Name *</label>
+        <input type="text" id="repName" name="Organization Representative Name" placeholder="First and last name" required>
+      </div>
+
+      <div class="form-row-2">
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="Email" placeholder="you@org.com" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="Phone" placeholder="(555) 000-0000">
+        </div>
+      </div>
+
+      <div class="form-row-2">
+        <div class="field">
+          <label for="partnerType">Partnership Type *</label>
+          <select id="partnerType" name="Partnership Type" required>
+            <option value="" disabled selected>Select…</option>
+            <option value="Employer / Healthcare Organization">Employer / Healthcare Org</option>
+            <option value="Community College / Academic Institution">Community College</option>
+            <option value="Workforce Development Board">Workforce Development Board</option>
+            <option value="Staffing / Recruiting Firm">Staffing / Recruiting</option>
+            <option value="Government / Public Agency">Government / Agency</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="website">Website</label>
+          <input type="url" id="website" name="Organizations Website" placeholder="https://…">
+        </div>
+      </div>
+
+      <div>
+        <div class="progs-label">Programs of Interest</div>
+        <div class="progs-grid">
+          <label class="prog-item">
+            <input type="checkbox" name="Programs of Interest" value="Pharmacy Technician">
+            <span>Pharmacy Technician</span>
+          </label>
+          <label class="prog-item">
+            <input type="checkbox" name="Programs of Interest" value="Phlebotomy Technician">
+            <span>Phlebotomy Tech</span>
+          </label>
+          <label class="prog-item">
+            <input type="checkbox" name="Programs of Interest" value="Medical Billing & Coding">
+            <span>Medical Billing &amp; Coding</span>
+          </label>
+          <label class="prog-item">
+            <input type="checkbox" name="Programs of Interest" value="EKG Technician">
+            <span>EKG Technician</span>
+          </label>
+          <label class="prog-item">
+            <input type="checkbox" name="Programs of Interest" value="Clinical Medical Assistant">
+            <span>Clinical Med. Assistant</span>
+          </label>
+          <label class="prog-item">
+            <input type="checkbox" name="Programs of Interest" value="Registered Dental Assistant">
+            <span>Dental Assistant</span>
+          </label>
+          <label class="prog-item" style="grid-column:span 2;">
+            <input type="checkbox" name="Programs of Interest" value="Medical Administrative Assistant">
+            <span>Medical Administrative Assistant</span>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Request →</button>
+      <p class="fp-note">We respond within 1 business day · enrollment@alliedrxtraining.com</p>
+    </form>
+
+    <!-- Success state -->
+    <div id="formSuccess" style="display:none; padding: 2rem 0; text-align: center;">
+      <div style="width:52px;height:52px;border-radius:50%;background:var(--purple-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.4rem;color:var(--purple);">✓</div>
+      <h3 style="font-size:1.4rem; font-weight:800; color:var(--text); margin-bottom:0.5rem;">Request Received</h3>
+      <p style="font-size:14px; color:var(--light); line-height:1.7;">Our partnerships team will be in touch within 1 business day.</p>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- VALUE PROPS -->
+<section class="value-section">
+  <div class="value-inner">
+    <div class="section-eyebrow">Why Partner with AlliedRx</div>
+    <h2 class="section-heading">The Infrastructure You Need.<br>The Outcomes You Want.</h2>
+    <p class="section-desc">We bring fully developed, accredited programs so you can focus on your mission — not building curriculum from scratch.</p>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-num">01</div>
+        <div class="value-tag">Accredited</div>
+        <h3>Nationally Recognized Credentials</h3>
+        <p>NHA, AMT, and ASHP-aligned programs with state board approvals in Virginia, Florida, and Maryland. Accepted by hospitals, clinics, and health systems nationwide.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <div class="value-tag">Flexible</div>
+        <h3>Delivery on Your Terms</h3>
+        <p>Online, hybrid, or on-site cohorts. Evenings, weekends, or custom scheduling. Co-branded portals and white-label options for academic partners.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <div class="value-tag">Supported</div>
+        <h3>Dedicated Partnership Support</h3>
+        <p>Every partner gets a dedicated account manager, progress reporting, and outcome documentation. WIOA-eligible for workforce development programs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TWO-COL: PROGRAMS + WHY -->
+<section class="two-col">
+  <div class="two-col-inner">
+
+    <!-- Programs -->
+    <div>
+      <div class="section-eyebrow">Available Programs</div>
+      <h2 class="section-heading">7 programs ready<br>to deploy today</h2>
+
+      <div class="prog-list">
+        <div class="prog-row">
+          <span class="prog-row-name">Pharmacy Technician</span>
+          <span class="prog-row-cert">NHA · PTCB</span>
+          <span class="prog-row-sal">$43,460</span>
+        </div>
+        <div class="prog-row">
+          <span class="prog-row-name">Phlebotomy Technician</span>
+          <span class="prog-row-cert">NHA · CPT</span>
+          <span class="prog-row-sal">$43,660</span>
+        </div>
+        <div class="prog-row">
+          <span class="prog-row-name">Medical Billing &amp; Coding</span>
+          <span class="prog-row-cert">NHA · CEHRS</span>
+          <span class="prog-row-sal">$50,250</span>
+        </div>
+        <div class="prog-row">
+          <span class="prog-row-name">EKG Technician</span>
+          <span class="prog-row-cert">AMT · CET</span>
+          <span class="prog-row-sal">$67,260</span>
+        </div>
+        <div class="prog-row">
+          <span class="prog-row-name">Clinical Medical Assistant</span>
+          <span class="prog-row-cert">NHA · CCMA</span>
+          <span class="prog-row-sal">$44,200</span>
+        </div>
+        <div class="prog-row">
+          <span class="prog-row-name">Clinical Med. Admin Asst.</span>
+          <span class="prog-row-cert">NHA · CCMA</span>
+          <span class="prog-row-sal">$44,200</span>
+        </div>
+        <div class="prog-row">
+          <span class="prog-row-name">Registered Dental Assistant</span>
+          <span class="prog-row-cert">DANB · RDA</span>
+          <span class="prog-row-sal">Board Approved</span>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--light);margin-top:10px;">Salaries per Bureau of Labor Statistics 2024</p>
+    </div>
+
+    <!-- Why AlliedRx -->
+    <div class="benefits-col">
+      <div class="section-eyebrow">Why AlliedRx</div>
+      <h2 class="section-heading">Built for partners,<br>not just students</h2>
+
+      <div>
+        <div class="benefit-item">
+          <div class="benefit-num">01</div>
+          <div class="benefit-text">
+            <h4>Nationally Accredited Credentials</h4>
+            <p>NHA, AMT, and ASHP-aligned programs. State board approved in VA, FL, and MD. Recognized by hospitals and health systems nationwide.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-num">02</div>
+          <div class="benefit-text">
+            <h4>Delivery on Your Terms</h4>
+            <p>Online, hybrid, or on-site. Evening and weekend cohorts. Co-branded portals and white-label options for academic institutions.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-num">03</div>
+          <div class="benefit-text">
+            <h4>Dedicated Account Support</h4>
+            <p>A dedicated account manager, progress dashboards, and WIOA-compliant outcome reporting — included with every partnership.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-num">04</div>
+          <div class="benefit-text">
+            <h4>Fast Time-to-Launch</h4>
+            <p>Most partnerships are active within 2–4 weeks of initial contact. No lengthy procurement cycles or curriculum development timelines.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PARTNER TYPES -->
+<section class="types-section">
+  <div class="types-inner">
+    <div class="section-eyebrow" style="color:var(--purple-light);">Who We Work With</div>
+    <h2 class="section-heading" style="color:white; letter-spacing:-1px;">Four Pathways to Partnership</h2>
+
+    <div class="types-grid">
+      <div class="type-card">
+        <div class="type-number">01 — Employer Upskilling</div>
+        <h3>Train Your Workforce</h3>
+        <p>Invest in your team with group certifications on your schedule. Reduce turnover and increase internal mobility.</p>
+        <ul class="type-bullets">
+          <li>Group enrollment discounts (5+ employees)</li>
+          <li>Custom cohort scheduling</li>
+          <li>Tuition reimbursement compatible</li>
+        </ul>
+      </div>
+      <div class="type-card">
+        <div class="type-number">02 — Academic Partner</div>
+        <h3>Expand Your Catalog</h3>
+        <p>Add high-demand healthcare programs to your CE or workforce division without building from scratch.</p>
+        <ul class="type-bullets">
+          <li>Co-branded or white-label curriculum</li>
+          <li>Revenue share models available</li>
+        </ul>
+      </div>
+      <div class="type-card">
+        <div class="type-number">03 — Workforce Development</div>
+        <h3>Grant-Ready Training</h3>
+        <p>WIOA-eligible, ETPL-approved programs with full outcome reporting for WDBs and American Job Centers.</p>
+        <ul class="type-bullets">
+          <li>WIOA Title I &amp; II eligible</li>
+          <li>Case manager coordination</li>
+          <li>Performance data reporting</li>
+        </ul>
+      </div>
+      <div class="type-card">
+        <div class="type-number">04 — Recruitment Pipeline</div>
+        <h3>Hire Certified Graduates</h3>
+        <p>Access our pre-certified graduate pool before completion. Background-cleared, exam-ready, and job-eager.</p>
+        <ul class="type-bullets">
+          <li>Priority graduate access</li>
+          <li>Hire-train agreements</li>
+          <li>Negotiable rates for hiring our students</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- DARK BAND -->
+<div class="dark-band">
+  <div class="dark-band-inner">
+    <div>
+      <h2>A proven partner for healthcare workforce development.</h2>
+      <p>AlliedRx has helped employers upskill their teams, colleges expand their catalogs, and workforce boards meet placement targets — across Virginia, Florida, Maryland, and beyond.</p>
+      <a href="#partner-form" class="dark-band-link">Request a partnership ↑</a>
+    </div>
+    <div class="dark-band-stats">
+      <div class="db-stat">
+        <div class="db-stat-num">98%</div>
+        <div class="db-stat-label">Placement Rate</div>
+      </div>
+      <div class="db-stat">
+        <div class="db-stat-num">8–16</div>
+        <div class="db-stat-label">Weeks to Cert.</div>
+      </div>
+      <div class="db-stat">
+        <div class="db-stat-num">7</div>
+        <div class="db-stat-label">Programs</div>
+      </div>
+      <div class="db-stat">
+        <div class="db-stat-num">100+</div>
+        <div class="db-stat-label">Partners</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = {};
+
+  ['Organization Name','Organization Representative Name','Email','Phone','Partnership Type','Organizations Website'].forEach(name => {
+    const el = form.querySelector(`[name="${name}"]`);
+    if (el && el.value) data[name] = el.value;
+  });
+
+  const checked = Array.from(form.querySelectorAll('[name="Programs of Interest"]:checked')).map(cb => cb.value);
+  if (checked.length) data['Programs of Interest'] = checked;
+
+  fetch('https://api.airtable.com/v0/appWZEx9nOvDgiBb2/Table%201', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer YOUR_AIRTABLE_API_KEY'
+    },
+    body: JSON.stringify({ fields: data })
+  })
+  .then(() => {
+    document.getElementById('partnerForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  })
+  .catch(() => {
+    window.open('https://airtable.com/appWZEx9nOvDgiBb2/pagxHRy79WUXZ2O66/form', '_blank');
+  });
+}
+</script>
+
+</body>
+</html>
