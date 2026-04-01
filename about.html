@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | AlliedRx Institute of Healthcare</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:        #0d0629;
+  --navy-mid:    #1a0f40;
+  --purple:      #7c3aed;
+  --purple-mid:  #6d28d9;
+  --purple-light:#a78bfa;
+  --purple-pale: #ede9fe;
+  --pale:        #f5f3ff;
+  --white:       #ffffff;
+  --text:        #1e1b4b;
+  --mid:         #4c4875;
+  --light:       #6b6b8e;
+  --border:      #e2e0f0;
+  --green:       #059669;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); color: var(--text); line-height: 1.6; }
+
+/* ══════════════════════════════
+   HERO
+══════════════════════════════ */
+.hero {
+  background: var(--navy);
+  min-height: 92vh;
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  position: relative;
+  overflow: hidden;
+  align-items: stretch;
+}
+
+/* Glow orbs */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -140px; left: -80px;
+  width: 680px; height: 680px;
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.22) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: 38%;
+  width: 480px; height: 480px;
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Grid overlay */
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.016) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.016) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none; z-index: 0;
+}
+
+.hero-copy {
+  padding: 100px 64px 100px 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--purple-light);
+  margin-bottom: 2rem;
+}
+.kicker-line { width: 28px; height: 2px; background: var(--purple); border-radius: 2px; }
+
+.hero-copy h1 {
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-weight: 900;
+  color: white;
+  line-height: 1.0;
+  letter-spacing: -2.5px;
+  margin-bottom: 1.75rem;
+  max-width: 680px;
+}
+.hero-copy h1 span { color: var(--purple-light); }
+
+.hero-lead {
+  font-size: 17px; font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8; max-width: 520px;
+  margin-bottom: 3rem;
+}
+
+.hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 3.5rem; }
+.chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 7px 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(124,58,237,0.3);
+  border-radius: 100px;
+  font-size: 12.5px; font-weight: 600;
+  color: rgba(255,255,255,0.7);
+}
+.chip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--purple-light); }
+
+.hero-stats { display: flex; gap: 3rem; }
+.h-stat { display: flex; flex-direction: column; gap: 3px; }
+.h-stat-num {
+  font-size: 2.2rem; font-weight: 900; color: white;
+  line-height: 1; letter-spacing: -1px;
+}
+.h-stat-label { font-size: 11px; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+
+/* CEO image panel */
+.hero-image {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-image::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, var(--navy) 0%, transparent 30%);
+  z-index: 1; pointer-events: none;
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.hero-image-caption {
+  position: absolute;
+  bottom: 2rem; left: 2rem; right: 2rem;
+  z-index: 2;
+  background: rgba(13,6,41,0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+}
+.caption-name { font-size: 14px; font-weight: 800; color: white; }
+.caption-title { font-size: 11.5px; color: var(--purple-light); font-weight: 600; letter-spacing: 0.3px; margin-top: 2px; }
+
+/* ══════════════════════════════
+   MISSION BAND
+══════════════════════════════ */
+.mission {
+  background: var(--purple);
+  padding: 56px 80px;
+  position: relative; overflow: hidden;
+}
+.mission::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.mission-inner {
+  max-width: 1140px; margin: 0 auto;
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 3.5rem; align-items: center;
+  position: relative; z-index: 1;
+}
+.mission-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: rgba(255,255,255,0.6);
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  white-space: nowrap;
+}
+.mission-text {
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  font-weight: 700; color: white;
+  line-height: 1.5; letter-spacing: -0.3px;
+}
+.mission-text em { font-style: normal; color: rgba(255,255,255,0.65); font-weight: 400; }
+
+/* ══════════════════════════════
+   WHO WE ARE — two col
+══════════════════════════════ */
+.who {
+  padding: 100px 80px;
+  background: var(--white);
+}
+.who-inner {
+  max-width: 1140px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 7rem; align-items: start;
+}
+.section-kicker {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--purple);
+  margin-bottom: 1.1rem;
+}
+.kicker-bar { width: 24px; height: 2px; background: var(--purple); border-radius: 2px; flex-shrink: 0; }
+.section-h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800; color: var(--text);
+  line-height: 1.1; letter-spacing: -1px;
+  margin-bottom: 1.25rem;
+}
+.section-p { font-size: 15.5px; color: var(--light); line-height: 1.85; margin-bottom: 1.25rem; }
+
+.who-pillars { display: flex; flex-direction: column; gap: 0; margin-top: 0.5rem; }
+.who-pillar {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1.4rem 0; border-bottom: 1px solid var(--border);
+}
+.who-pillar:first-child { border-top: 1px solid var(--border); }
+.pillar-icon-box {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--purple-pale);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.pillar-icon-box svg { width: 20px; height: 20px; stroke: var(--purple); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.pillar-body h4 { font-size: 14.5px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.pillar-body p { font-size: 13px; color: var(--light); line-height: 1.65; }
+
+/* ══════════════════════════════
+   TECH / VALUES — dark section
+══════════════════════════════ */
+.values {
+  padding: 100px 80px;
+  background: var(--navy);
+  position: relative; overflow: hidden;
+}
+.values::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -80px;
+  width: 600px; height: 600px;
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+.values::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -60px;
+  width: 400px; height: 400px;
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+.values-inner { max-width: 1140px; margin: 0 auto; position: relative; z-index: 1; }
+.values-header { max-width: 640px; margin-bottom: 4rem; }
+.values-header .section-kicker { color: var(--purple-light); }
+.values-header .section-kicker .kicker-bar { background: var(--purple-light); }
+.values-header .section-h2 { color: white; }
+.values-header .section-p { color: rgba(255,255,255,0.5); }
+
+.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.value-card {
+  padding: 2.25rem 2rem;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-radius: 18px;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 8px 24px rgba(13,6,41,0.25), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.value-card:hover {
+  background: rgba(124,58,237,0.18);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(13,6,41,0.45), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+.value-card-num {
+  font-size: 11px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--purple-light);
+  margin-bottom: 1.1rem;
+}
+.value-card h3 { font-size: 1.05rem; font-weight: 700; color: white; margin-bottom: 0.6rem; }
+.value-card p { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.75; }
+
+/* ══════════════════════════════
+   ACCREDITATIONS STRIP
+══════════════════════════════ */
+.accred {
+  background: var(--pale);
+  padding: 64px 80px;
+}
+.accred-inner { max-width: 1140px; margin: 0 auto; }
+.accred-top { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; gap: 2rem; }
+.accred-top .section-h2 { margin-bottom: 0; }
+.accred-top p { font-size: 14px; color: var(--light); max-width: 380px; line-height: 1.7; text-align: right; }
+.accred-pills { display: flex; flex-wrap: wrap; gap: 12px; }
+.accred-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  font-size: 13px; font-weight: 700; color: var(--text);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.accred-pill:hover { border-color: var(--purple); box-shadow: 0 4px 16px rgba(124,58,237,0.1); }
+.accred-pill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
+
+/* ══════════════════════════════
+   TECHNOLOGY FEATURE ROW
+══════════════════════════════ */
+.tech {
+  padding: 100px 80px;
+  background: white;
+}
+.tech-inner { max-width: 1140px; margin: 0 auto; }
+.tech-header { max-width: 640px; margin-bottom: 4rem; }
+.tech-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.tech-card {
+  padding: 2rem 1.75rem;
+  background: var(--pale);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.tech-card:hover { box-shadow: 0 8px 28px rgba(124,58,237,0.1); transform: translateY(-3px); }
+.tech-card-num {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--purple-pale);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 800; color: var(--purple);
+  margin-bottom: 1.1rem;
+}
+.tech-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+.tech-card p { font-size: 13px; color: var(--light); line-height: 1.7; }
+
+/* ══════════════════════════════
+   PARTNERS BAND
+══════════════════════════════ */
+.partners-band {
+  padding: 56px 80px;
+  background: white;
+  border-top: 1px solid var(--border);
+}
+.partners-inner { max-width: 1140px; margin: 0 auto; }
+.partners-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--light);
+  text-align: center; margin-bottom: 2rem;
+}
+.partners-logos {
+  display: flex; align-items: center; justify-content: center;
+  gap: 3rem; flex-wrap: wrap;
+}
+.partner-name {
+  font-size: 17px; font-weight: 800; color: var(--border);
+  letter-spacing: -0.5px; transition: color 0.2s;
+}
+.partner-name:hover { color: var(--mid); }
+
+/* ══════════════════════════════
+   BOTTOM CTA
+══════════════════════════════ */
+.cta-section {
+  padding: 100px 80px;
+  background: var(--navy-mid);
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px; height: 500px;
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.25) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cta-inner { max-width: 620px; margin: 0 auto; position: relative; z-index: 1; }
+.cta-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--purple-light);
+  margin-bottom: 1.25rem;
+}
+.cta-section h2 {
+  font-size: clamp(2rem, 4vw, 3rem); font-weight: 900;
+  color: white; line-height: 1.08; letter-spacing: -1.5px;
+  margin-bottom: 1.1rem;
+}
+.cta-section p { font-size: 16px; color: rgba(255,255,255,0.52); line-height: 1.8; margin-bottom: 2.5rem; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--purple); color: white;
+  font-size: 15px; font-weight: 700; letter-spacing: 0.3px;
+  padding: 15px 32px; border-radius: 10px; text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--purple-mid); transform: translateY(-2px); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.08); color: white;
+  font-size: 15px; font-weight: 700; letter-spacing: 0.3px;
+  padding: 15px 32px; border-radius: 10px; text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: background 0.2s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.14); }
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 1200px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-image { height: 480px; }
+  .hero-image::before { background: linear-gradient(to bottom, transparent 50%, var(--navy) 100%); }
+  .hero-copy { padding: 80px 48px 60px; }
+  .who, .values, .accred, .tech, .partners-band, .cta-section { padding: 72px 48px; }
+  .mission { padding: 48px; }
+  .who-inner { gap: 4rem; }
+  .tech-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 1024px) {
+  .who-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .mission-inner { grid-template-columns: 1fr; gap: 1rem; }
+  .mission-label { writing-mode: horizontal-tb; transform: none; }
+  .accred-top { flex-direction: column; align-items: flex-start; }
+  .accred-top p { text-align: left; }
+}
+@media (max-width: 767px) {
+  .hero-copy { padding: 64px 24px 48px; }
+  .hero-image { height: 380px; }
+  .who, .values, .accred, .tech, .partners-band, .cta-section { padding: 56px 24px; }
+  .mission { padding: 40px 24px; }
+  .values-grid { grid-template-columns: 1fr; }
+  .tech-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 2rem; flex-wrap: wrap; }
+  .partners-logos { gap: 2rem; }
+}
+@media (max-width: 480px) {
+  .hero-copy h1 { font-size: 2.6rem; letter-spacing: -1.5px; }
+  .cta-btns { flex-direction: column; align-items: center; }
+  .h-stat-num { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section class="hero">
+  <div class="hero-grid"></div>
+
+  <div class="hero-copy">
+    <div class="hero-kicker"><span class="kicker-line"></span> About AlliedRx</div>
+    <h1>Healthcare Education<br>Built for the<br><span>Next Generation.</span></h1>
+    <p class="hero-lead">We're a nationally accredited healthcare training institute rooted in community access and driven by technology — preparing students for board-certified credentials in weeks, not years.</p>
+
+    <div class="hero-chips">
+      <span class="chip"><span class="chip-dot"></span> 3D Interactive Learning</span>
+      <span class="chip"><span class="chip-dot"></span> Patient Care Simulations</span>
+      <span class="chip"><span class="chip-dot"></span> Board Exam Prep</span>
+      <span class="chip"><span class="chip-dot"></span> Online &amp; Campus Courses</span>
+      <span class="chip"><span class="chip-dot"></span> Military Funding Available</span>
+    </div>
+
+    <div class="hero-stats">
+      <div class="h-stat">
+        <span class="h-stat-num">3,000+</span>
+        <span class="h-stat-label">Student Graduates</span>
+      </div>
+      <div class="h-stat">
+        <span class="h-stat-num">10+</span>
+        <span class="h-stat-label">Certifications</span>
+      </div>
+      <div class="h-stat">
+        <span class="h-stat-num">98%</span>
+        <span class="h-stat-label">Placement Rate</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69cd2035d43560a2baa2b945_ceo.png" alt="AlliedRx Leadership">
+    <div class="hero-image-caption">
+      <div class="caption-name">AlliedRx Institute of Healthcare</div>
+      <div class="caption-title">Director of Communications</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     MISSION BAND
+══════════════════════════════ -->
+<div class="mission">
+  <div class="mission-inner">
+    <div class="mission-label">Our Mission</div>
+    <div class="mission-text">
+      To make <strong>nationally recognized healthcare credentials</strong> accessible to every student — regardless of background — through <strong>innovative technology, rigorous curriculum,</strong> and <em>an unwavering commitment to community.</em>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════
+     WHO WE ARE
+══════════════════════════════ -->
+<section class="who">
+  <div class="who-inner">
+
+    <div>
+      <div class="section-kicker"><span class="kicker-bar"></span> Who We Are</div>
+      <h2 class="section-h2">Grassroots roots.<br>University standards.</h2>
+      <p class="section-p">AlliedRx Institute of Healthcare was built on a simple belief: quality healthcare training shouldn't be locked behind years of prerequisites or mountains of debt. We started as a community-first initiative to close the gap between aspiring healthcare workers and the credentials employers actually hire for.</p>
+      <p class="section-p">Today we combine that grassroots mission with accredited curriculum, immersive technology, and a faculty that's been in the field — delivering programs that rival four-year institutions in outcome quality while staying accessible, flexible, and fast.</p>
+    </div>
+
+    <div class="who-pillars">
+      <div class="who-pillar">
+        <div class="pillar-icon-box">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="pillar-body">
+          <h4>Nationally Accredited</h4>
+          <p>Accredited through NHA, AMT, AMCA, ASHP, and certified to operate by the State Council of Higher Education of Virginia.</p>
+        </div>
+      </div>
+      <div class="who-pillar">
+        <div class="pillar-icon-box">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="pillar-body">
+          <h4>Certification in Weeks, Not Years</h4>
+          <p>Our streamlined curriculum focuses only on the core material needed to pass board exams — no fluff, no filler.</p>
+        </div>
+      </div>
+      <div class="who-pillar">
+        <div class="pillar-icon-box">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="pillar-body">
+          <h4>Community-First Philosophy</h4>
+          <p>Born from the communities we serve. We actively partner with workforce boards, employers, and military programs to remove barriers to entry.</p>
+        </div>
+      </div>
+      <div class="who-pillar">
+        <div class="pillar-icon-box">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="pillar-body">
+          <h4>Technology-Driven Learning</h4>
+          <p>From 3D simulations to gamified board prep, we use the latest in EdTech to ensure students don't just pass exams — they're ready for the floor.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     VALUES / WHAT DRIVES US
+══════════════════════════════ -->
+<section class="values">
+  <div class="values-inner">
+    <div class="values-header">
+      <div class="section-kicker"><span class="kicker-bar"></span> What Drives Us</div>
+      <h2 class="section-h2">Built different.<br>For a reason.</h2>
+      <p class="section-p">Every decision we make — from curriculum design to tuition pricing — is filtered through three commitments that define who we are.</p>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-card-num">01 — Access</div>
+        <h3>Healthcare Training for Everyone</h3>
+        <p>No pre-requisites. $99 down payment to start. Payment plans, WIOA grants, military funding, and more — because financial barriers shouldn't determine who gets to work in healthcare.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card-num">02 — Excellence</div>
+        <h3>Outcomes That Speak for Themselves</h3>
+        <p>98% placement rate. 3,000+ graduates hired by Bon Secours, VCU, PharMerica, Walgreens, Fresenius, and hundreds more. We measure our success by your employment.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card-num">03 — Innovation</div>
+        <h3>Technology That Transforms Learning</h3>
+        <p>3D patient simulations, immersive pharmacy environments, interactive clinical videos, and AI-driven board exam prep — we bring the future of healthcare education into your home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     TECHNOLOGY FEATURES
+══════════════════════════════ -->
+<section class="tech">
+  <div class="tech-inner">
+    <div class="tech-header">
+      <div class="section-kicker"><span class="kicker-bar"></span> Learning Technology</div>
+      <h2 class="section-h2">Classroom-quality training.<br>Delivered anywhere.</h2>
+      <p class="section-p" style="color:var(--light); font-size:15.5px; line-height:1.85;">We've built a learning environment that goes far beyond recorded lectures — one that puts students inside the clinical experience before they ever step on a floor.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="tech-card-num">01</div>
+        <h3>Patient Care Simulations</h3>
+        <p>3D interactive simulations place students directly in patient care scenarios — drawing labs, processing prescriptions, and performing clinical assessments from home.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-card-num">02</div>
+        <h3>Immersive Learning</h3>
+        <p>From simulated pharmacies to medical billing environments, students gain hands-on experience in every area of their program before certification.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-card-num">03</div>
+        <h3>Interactive Video Curriculum</h3>
+        <p>Clinically validated, scenario-based video lessons that test comprehension in real time — not passive watching, but active learning at every step.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-card-num">04</div>
+        <h3>Board Exam Prep</h3>
+        <p>Gamified study tools, adaptive practice tests, and exam-blueprint-aligned review modules so students walk into certification exams with confidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     ACCREDITATIONS
+══════════════════════════════ -->
+<section class="accred">
+  <div class="accred-inner">
+    <div class="accred-top">
+      <div>
+        <div class="section-kicker"><span class="kicker-bar"></span> Accreditation &amp; Approvals</div>
+        <h2 class="section-h2">Credentials employers<br>recognize and trust.</h2>
+      </div>
+      <p>Our programs are accredited through the nation's leading healthcare certification bodies and approved by state education authorities.</p>
+    </div>
+    <div class="accred-pills">
+      <span class="accred-pill"><span class="accred-pill-dot"></span> National Healthcareer Association (NHA)</span>
+      <span class="accred-pill"><span class="accred-pill-dot"></span> American Medical Technologist (AMT)</span>
+      <span class="accred-pill"><span class="accred-pill-dot"></span> American Medical Certification Assoc. (AMCA)</span>
+      <span class="accred-pill"><span class="accred-pill-dot"></span> ASHP — Pharmacy Technician Programs</span>
+      <span class="accred-pill"><span class="accred-pill-dot"></span> American Red Cross</span>
+      <span class="accred-pill"><span class="accred-pill-dot"></span> SCHEV — State of Virginia Certified</span>
+      <span class="accred-pill"><span class="accred-pill-dot"></span> NCCT — National Center for Competency Testing</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     EMPLOYER PARTNERS
+══════════════════════════════ -->
+<div class="partners-band">
+  <div class="partners-inner">
+    <p class="partners-label">Trusted by graduates now working at</p>
+    <div class="partners-logos">
+      <span class="partner-name">Bon Secours</span>
+      <span class="partner-name">VCU Health</span>
+      <span class="partner-name">PharMerica</span>
+      <span class="partner-name">Walgreens</span>
+      <span class="partner-name">Fresenius</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════
+     BOTTOM CTA
+══════════════════════════════ -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">Start Your Journey</div>
+    <h2>Your healthcare career starts here.</h2>
+    <p>Join 3,000+ graduates who launched their careers through AlliedRx — with the credentials employers trust and the flexibility your life demands.</p>
+    <div class="cta-btns">
+      <a href="#" class="btn-primary">Enroll Today →</a>
+      <a href="#" class="btn-ghost">Explore Programs</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
