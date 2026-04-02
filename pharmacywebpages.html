@@ -747,4 +747,22 @@ function updateActiveNav(){
 window.addEventListener('scroll',updateActiveNav,{passive:true});
 updateActiveNav();
 </script>
+
+<!-- AlliedRx Footer Loader -->
+<script>
+(function(){
+  var d=document.createElement('div');
+  fetch('https://alliedrx.github.io/MedicalBilling/footer.html')
+    .then(function(r){return r.text();})
+    .then(function(html){
+      var parser=new DOMParser();
+      var doc=parser.parseFromString(html,'text/html');
+      var footer=doc.querySelector('footer');
+      if(footer){document.body.appendChild(footer);}
+      var style=doc.querySelector('style');
+      if(style){document.head.appendChild(style);}
+    });
+})();
+</script>
+<!-- End AlliedRx Footer Loader -->
 </body></html>
