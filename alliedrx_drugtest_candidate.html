@@ -3,743 +3,134 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AlliedRx Lab DrugTest</title>
+<title>SecureSwab — Drug Screening Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
   :root {
-    --blue: #1a4fa0;
-    --blue-light: #2563eb;
-    --blue-dark: #0f2d5e;
-    --green: #16a34a;
-    --red: #dc2626;
-    --yellow: #d97706;
-    --gray: #f1f5f9;
-    --border: #cbd5e1;
-    --text: #1e293b;
+    --blue: #5d6dfa;
+    --blue-light: #818cf8;
+    --blue-dark: #0b0b2c;
+    --navy: #1a1a2e;
+    --accent: #3434ff;
+    --green: #12b76a;
+    --red: #f04438;
+    --yellow: #f79009;
+    --gray: #f0f0f8;
+    --border: #2c2c5e;
+    --border-light: #e0e0f0;
+    --text: #0b0b2c;
+    --text-muted: #69697b;
     --white: #ffffff;
+    --card-bg: #ffffff;
+    --body-bg: #f5f7ff;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #e8f0fe 0%, #f0f7ff 100%);
-    min-height: 100vh;
-    color: var(--text);
-  }
-  header {
-    background: var(--blue-dark);
-    color: white;
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  }
-  header img { width: 48px; height: 48px; border-radius: 8px; }
-  header h1 { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.5px; }
-  header p { font-size: 0.78rem; opacity: 0.8; }
-  .logo-box {
-    background: var(--blue-light);
-    width: 48px; height: 48px;
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem; font-weight: 900; color: white;
-  }
-
-  .container { max-width: 680px; margin: 32px auto; padding: 0 16px 60px; }
-
-  /* Progress Bar */
-  .progress-wrap { margin-bottom: 28px; }
-  .progress-labels { display: flex; justify-content: space-between; font-size: 0.72rem; color: #64748b; margin-bottom: 6px; }
-  .progress-bar { background: #dbe4ef; border-radius: 99px; height: 8px; overflow: hidden; }
-  .progress-fill { background: linear-gradient(90deg, var(--blue), var(--blue-light)); height: 100%; border-radius: 99px; transition: width 0.5s ease; }
-
-  /* Step Cards */
-  .step-card {
-    background: white;
-    border-radius: 16px;
-    padding: 32px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-    display: none;
-    animation: fadeIn 0.3s ease;
-  }
-  .step-card.active { display: block; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-
-  .step-icon { font-size: 2.8rem; margin-bottom: 12px; text-align: center; }
-  h2 { font-size: 1.35rem; font-weight: 700; color: var(--blue-dark); margin-bottom: 8px; text-align: center; }
-  .subtitle { text-align: center; color: #64748b; font-size: 0.9rem; margin-bottom: 24px; line-height: 1.5; }
-
-  /* Form */
-  .form-group { margin-bottom: 18px; }
-  label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-  input[type=text], input[type=email], input[type=date] {
-    width: 100%; padding: 11px 14px; border: 1.5px solid var(--border);
-    border-radius: 8px; font-size: 0.95rem; outline: none; transition: border 0.2s;
-  }
-  input:focus { border-color: var(--blue-light); }
-
-  /* Buttons */
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 12px 28px; border-radius: 10px; font-size: 0.95rem;
-    font-weight: 600; cursor: pointer; border: none; transition: all 0.2s;
-    text-decoration: none;
-  }
-  .btn-primary {
-    background: linear-gradient(135deg, var(--blue), var(--blue-light));
-    color: white; width: 100%; justify-content: center; margin-top: 8px;
-    box-shadow: 0 4px 12px rgba(26,79,160,0.3);
-  }
-  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(26,79,160,0.4); }
-  .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-  .btn-danger { background: var(--red); color: white; justify-content: center; width: 100%; margin-top: 8px; }
-  .btn-success { background: var(--green); color: white; justify-content: center; width: 100%; margin-top: 8px; }
-  .btn-secondary { background: var(--gray); color: var(--text); border: 1.5px solid var(--border); }
-
-  /* Upload Zone */
-  .upload-zone {
-    border: 2.5px dashed var(--border); border-radius: 12px;
-    padding: 32px 20px; text-align: center; cursor: pointer;
-    transition: all 0.2s; background: var(--gray); position: relative;
-  }
-  .upload-zone:hover { border-color: var(--blue-light); background: #eff6ff; }
-  .upload-zone input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
-  .upload-zone .icon { font-size: 2.2rem; margin-bottom: 8px; }
-  .upload-zone p { font-size: 0.88rem; color: #64748b; }
-  .upload-zone.uploaded { border-color: var(--green); background: #f0fdf4; }
-  .upload-preview { max-width: 100%; max-height: 200px; border-radius: 8px; margin-top: 12px; }
-
-  /* Video */
-  video { width: 100%; border-radius: 12px; background: #000; margin-bottom: 12px; }
-  .video-controls { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
-  .rec-indicator {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: #fef2f2; color: var(--red); font-size: 0.82rem;
-    font-weight: 700; padding: 4px 12px; border-radius: 99px; border: 1px solid #fecaca;
-  }
-  .rec-dot { width: 8px; height: 8px; background: var(--red); border-radius: 50%; animation: blink 1s infinite; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
-  /* Timer */
-  .timer-box {
-    background: linear-gradient(135deg, var(--blue-dark), var(--blue));
-    color: white; border-radius: 16px; padding: 28px;
-    text-align: center; margin-bottom: 20px;
-  }
-  .timer-display { font-size: 4rem; font-weight: 800; letter-spacing: 4px; font-variant-numeric: tabular-nums; }
-  .timer-label { font-size: 0.85rem; opacity: 0.8; margin-top: 4px; }
-  .timer-ring { position: relative; display: inline-block; margin-bottom: 8px; }
-  .progress-circle { transform: rotate(-90deg); }
-
-  /* Status Badge */
-  .status-badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 6px 16px; border-radius: 99px; font-weight: 700; font-size: 0.88rem;
-  }
-  .badge-clear { background: #dcfce7; color: #15803d; }
-  .badge-flagged { background: #fee2e2; color: #b91c1c; }
-  .badge-inconclusive { background: #fef9c3; color: #92400e; }
-  .badge-pending { background: #e0f2fe; color: #0369a1; }
-
-  /* Results Panel */
-  .results-panel { margin-top: 20px; }
-  .panel-row {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 12px 16px; border-radius: 10px; margin-bottom: 8px;
-    background: var(--gray);
-  }
-  .drug-name { font-weight: 700; font-size: 0.95rem; }
-  .drug-full { font-size: 0.78rem; color: #64748b; }
-
-  /* Info Box */
-  .info-box {
-    background: #eff6ff; border-left: 4px solid var(--blue-light);
-    border-radius: 8px; padding: 14px 16px; margin-bottom: 20px; font-size: 0.88rem;
-    line-height: 1.6; color: #1e40af;
-  }
-  .warning-box {
-    background: #fffbeb; border-left: 4px solid #f59e0b;
-    border-radius: 8px; padding: 14px 16px; margin-bottom: 20px; font-size: 0.88rem;
-    line-height: 1.6; color: #92400e;
-  }
-
-  /* Loading overlay */
-  .loading-overlay {
-    position: fixed; inset: 0; background: rgba(0,0,0,0.5);
-    display: none; align-items: center; justify-content: center; z-index: 999;
-  }
-  .loading-overlay.show { display: flex; }
-  .loading-card { background: white; border-radius: 16px; padding: 40px; text-align: center; max-width: 300px; }
-  .spinner { width: 48px; height: 48px; border: 5px solid #e2e8f0; border-top-color: var(--blue); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* Completion */
-  .completion-icon { font-size: 5rem; text-align: center; margin-bottom: 16px; }
-  .submission-id { font-family: monospace; background: var(--gray); padding: 8px 16px; border-radius: 8px; font-size: 0.9rem; color: var(--blue-dark); text-align: center; margin: 12px 0; }
-
-  /* Responsive */
-  @media(max-width: 480px) {
-    .step-card { padding: 20px; }
-    .timer-display { font-size: 3rem; }
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <div class="logo-box">Rx</div>
-  <div>
-    <h1>AlliedRx Lab DrugTest</h1>
-    <p>Secure Oral Drug Screening Portal</p>
-  </div>
-</header>
-
-<div class="container">
-  <!-- Progress -->
-  <div class="progress-wrap">
-    <div class="progress-labels">
-      <span id="stepLabel">Step 1 of 7</span>
-      <span id="stepName">Candidate Info</span>
-    </div>
-    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:14%"></div></div>
-  </div>
-
-  <!-- STEP 1: Candidate Info -->
-  <div class="step-card active" id="step1">
-    <div class="step-icon">📋</div>
-    <h2>Candidate Information</h2>
-    <p class="subtitle">Please enter your information before beginning the drug screening process.</p>
-    <div class="form-group">
-      <label>Full Legal Name *</label>
-      <input type="text" id="candName" placeholder="First Middle Last" />
-    </div>
-    <div class="form-group">
-      <label>Email Address</label>
-      <input type="email" id="candEmail" placeholder="you@example.com" />
-    </div>
-    <div class="form-group">
-      <label>Date of Birth *</label>
-      <input type="date" id="candDob" />
-    </div>
-    <div class="info-box">
-      ℹ️ Your session will be <strong>video recorded</strong> for compliance purposes. By continuing, you consent to this recording.
-    </div>
-    <button class="btn btn-primary" onclick="startSession()">Begin Screening →</button>
-  </div>
-
-  <!-- STEP 2: ID Upload -->
-  <div class="step-card" id="step2">
-    <div class="step-icon">🪪</div>
-    <h2>Upload Government ID</h2>
-    <p class="subtitle">Upload a clear photo of your government-issued photo ID (driver's license, passport, or state ID).</p>
-    <div class="upload-zone" id="idUploadZone" onclick="document.getElementById('idFileInput').click()">
-      <input type="file" id="idFileInput" accept="image/*" onchange="handleIdUpload(event)" />
-      <div class="icon">📷</div>
-      <p><strong>Click to upload or take a photo</strong></p>
-      <p>JPG, PNG accepted • Max 10MB</p>
-      <img id="idPreview" class="upload-preview" style="display:none" />
-    </div>
-    <button class="btn btn-primary" id="idNextBtn" onclick="uploadIdAndContinue()" disabled>Next: Start Recording →</button>
-  </div>
-
-  <!-- STEP 3: Video Recording Start -->
-  <div class="step-card" id="step3">
-    <div class="step-icon">📹</div>
-    <h2>Start Video Recording</h2>
-    <p class="subtitle">Your camera will be used to record this session. Please ensure you are in a well-lit area and your face is visible.</p>
-    <video id="liveVideo" autoplay muted playsinline></video>
-    <div class="video-controls">
-      <button class="btn btn-primary" id="startRecBtn" onclick="startRecording()" style="flex:1">▶ Start Recording</button>
-    </div>
-    <div id="recStatus" style="display:none">
-      <span class="rec-indicator"><span class="rec-dot"></span> RECORDING IN PROGRESS</span>
-    </div>
-    <div class="info-box" style="margin-top:16px">
-      📌 Keep your face visible throughout the entire process. This recording will be reviewed by AlliedRx staff.
-    </div>
-  </div>
-
-  <!-- STEP 4: Oral Swab Timer (5 min) -->
-  <div class="step-card" id="step4">
-    <div class="step-icon">🧪</div>
-    <h2>Oral Swab — Hold in Mouth</h2>
-    <p class="subtitle">Place the oral swab <strong>under your tongue or between your cheek and gum</strong>. Hold it in place for the full 5 minutes.</p>
-    <div class="timer-box">
-      <div class="timer-display" id="swabTimer">5:00</div>
-      <div class="timer-label">minutes remaining — keep swab in mouth</div>
-    </div>
-    <div class="warning-box">⚠️ Do NOT remove the swab until the timer reaches 0:00. Do NOT eat, drink, or smoke.</div>
-    <button class="btn btn-primary" id="startSwabBtn" onclick="startSwabTimer()">▶ Start Swab Timer</button>
-    <button class="btn btn-primary" id="swabDoneBtn" onclick="goToStep(5)" disabled style="background: var(--green); display:none">✓ Swab Complete — Place in Container →</button>
-  </div>
-
-  <!-- STEP 5: Container Timer (5 min) -->
-  <div class="step-card" id="step5">
-    <div class="step-icon">🧫</div>
-    <h2>Place Swab in Container</h2>
-    <p class="subtitle">Remove the swab from your mouth and place it into the collection container. Snap the lid shut and wait 5 minutes for the results to develop.</p>
-    <div class="timer-box">
-      <div class="timer-display" id="containerTimer">5:00</div>
-      <div class="timer-label">minutes remaining — wait for results to develop</div>
-    </div>
-    <div class="info-box">🔬 Keep the container on a flat surface. Do not shake or tilt.</div>
-    <button class="btn btn-primary" id="startContainerBtn" onclick="startContainerTimer()">▶ Start Container Timer</button>
-    <button class="btn btn-primary" id="containerDoneBtn" onclick="goToStep(6)" disabled style="background: var(--green); display:none">✓ Results Ready — Take Photos →</button>
-  </div>
-
-  <!-- STEP 6: Photo Capture -->
-  <div class="step-card" id="step6">
-    <div class="step-icon">📸</div>
-    <h2>Photograph Your Container</h2>
-    <p class="subtitle">Take clear, well-lit photos of both the <strong>front</strong> and <strong>back</strong> of the test container. Hold it up close so the result strips are clearly visible.</p>
-
-    <label style="font-weight:700; margin-bottom:8px; display:block">📸 Container FRONT (result strips side)</label>
-    <div class="upload-zone" id="frontZone" onclick="document.getElementById('frontInput').click()">
-      <input type="file" id="frontInput" accept="image/*" capture="environment" onchange="handlePhoto('front', event)" />
-      <div class="icon">🔍</div>
-      <p><strong>Tap to take photo of FRONT</strong></p>
-      <p>Show all result lines clearly</p>
-      <img id="frontPreview" class="upload-preview" style="display:none" />
-    </div>
-
-    <label style="font-weight:700; margin: 20px 0 8px; display:block">📸 Container BACK (label/lot number side)</label>
-    <div class="upload-zone" id="backZone" onclick="document.getElementById('backInput').click()">
-      <input type="file" id="backInput" accept="image/*" capture="environment" onchange="handlePhoto('back', event)" />
-      <div class="icon">🔍</div>
-      <p><strong>Tap to take photo of BACK</strong></p>
-      <p>Show the label and lot number</p>
-      <img id="backPreview" class="upload-preview" style="display:none" />
-    </div>
-
-    <div class="info-box" style="margin-top:20px">
-      💡 Tip: Good lighting is essential. Avoid glare and ensure all 5 test lines are visible on the front photo.
-    </div>
-    <button class="btn btn-primary" id="photoNextBtn" onclick="uploadPhotosAndScan()" disabled>🔬 Submit & Scan Results →</button>
-  </div>
-
-  <!-- STEP 7: Results -->
-  <div class="step-card" id="step7">
-    <div class="completion-icon" id="resultIcon">⏳</div>
-    <h2 id="resultTitle">Processing Results...</h2>
-    <p class="subtitle" id="resultSubtitle">Gemini AI is analyzing your test container images. Please wait.</p>
-
-    <div id="overallStatusWrap" style="text-align:center; margin: 16px 0; display:none">
-      <span class="status-badge" id="overallBadge">—</span>
-    </div>
-
-    <div class="results-panel" id="panelResults" style="display:none">
-      <div class="panel-row" id="row_thc">
-        <div><div class="drug-name">THC</div><div class="drug-full">Marijuana / Cannabis</div></div>
-        <span class="status-badge" id="badge_thc">—</span>
-      </div>
-      <div class="panel-row" id="row_coc">
-        <div><div class="drug-name">COC</div><div class="drug-full">Cocaine</div></div>
-        <span class="status-badge" id="badge_coc">—</span>
-      </div>
-      <div class="panel-row" id="row_opi">
-        <div><div class="drug-name">OPI</div><div class="drug-full">Opiates / Morphine</div></div>
-        <span class="status-badge" id="badge_opi">—</span>
-      </div>
-      <div class="panel-row" id="row_met">
-        <div><div class="drug-name">MET</div><div class="drug-full">Methamphetamine</div></div>
-        <span class="status-badge" id="badge_met">—</span>
-      </div>
-      <div class="panel-row" id="row_amp">
-        <div><div class="drug-name">AMP</div><div class="drug-full">Amphetamine</div></div>
-        <span class="status-badge" id="badge_amp">—</span>
-      </div>
-    </div>
-
-    <div class="submission-id" id="submissionIdBox" style="display:none">
-      Submission ID: <strong id="submissionIdVal">—</strong>
-    </div>
-    <div class="info-box" id="resultInfoBox" style="display:none">
-      ✅ Your submission has been received. AlliedRx staff will review your results. You will be contacted if further action is needed.
-    </div>
-  </div>
-</div>
-
-<!-- Loading Overlay -->
-<div class="loading-overlay" id="loadingOverlay">
-  <div class="loading-card">
-    <div class="spinner"></div>
-    <p id="loadingText" style="font-weight:600; color: var(--text)">Processing...</p>
-  </div>
-</div>
-
-<script>
-// ============================================================
-// CONFIGURATION — Replace with your actual keys
-// ============================================================
-const SUPABASE_URL    = 'https://hhzggarfpslftqwvjuiq.supabase.co';
-const SUPABASE_ANON   = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhoemdnYXJmcHNsZnRxd3ZqdWlxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2MTQ2MjMsImV4cCI6MjA4NzE5MDYyM30.g0LPJbXE-79WUvY8vNLbilhX7OxYWtwE9Iih-aoPXrg';
-const GEMINI_API_KEY  = 'AIzaSyDHAQL7kdN6lNBcBok1eNB8dG7wwo6E6io';
-const BUCKET          = 'drugtest-files';
-
-// ============================================================
-const { createClient } = supabase;
-const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
-
-// App State
-let state = {
-  step: 1,
-  submissionId: null,
-  candidateName: '',
-  candidateEmail: '',
-  candidateDob: '',
-  idFile: null,
-  frontFile: null,
-  backFile: null,
-  mediaStream: null,
-  mediaRecorder: null,
-  recordedChunks: [],
-  swabTimerInterval: null,
-  containerTimerInterval: null,
-  frontB64: null,
-  backB64: null,
-};
-
-const STEPS = [
-  { label: 'Candidate Info', pct: 14 },
-  { label: 'Upload ID', pct: 28 },
-  { label: 'Start Recording', pct: 42 },
-  { label: 'Oral Swab (5 min)', pct: 57 },
-  { label: 'Container (5 min)', pct: 71 },
-  { label: 'Take Photos', pct: 85 },
-  { label: 'Results', pct: 100 },
-];
-
-function goToStep(n) {
-  document.querySelectorAll('.step-card').forEach(c => c.classList.remove('active'));
-  document.getElementById('step' + n).classList.add('active');
-  state.step = n;
-  document.getElementById('stepLabel').textContent = `Step ${n} of 7`;
-  document.getElementById('stepName').textContent = STEPS[n-1].label;
-  document.getElementById('progressFill').style.width = STEPS[n-1].pct + '%';
-  window.scrollTo(0, 0);
-}
-
-function showLoading(text) {
-  document.getElementById('loadingText').textContent = text || 'Processing...';
-  document.getElementById('loadingOverlay').classList.add('show');
-}
-function hideLoading() {
-  document.getElementById('loadingOverlay').classList.remove('show');
-}
-
-// ---- STEP 1: Start session ----
-async function startSession() {
-  const name = document.getElementById('candName').value.trim();
-  const email = document.getElementById('candEmail').value.trim();
-  const dob = document.getElementById('candDob').value;
-  if (!name || !dob) { alert('Please enter your full name and date of birth.'); return; }
-  state.candidateName = name;
-  state.candidateEmail = email;
-  state.candidateDob = dob;
-  showLoading('Creating your session...');
-  const { data, error } = await sb.from('drug_test_submissions').insert({
-    candidate_name: name,
-    candidate_email: email,
-    candidate_dob: dob,
-    overall_status: 'pending',
-  }).select().single();
-  hideLoading();
-  if (error) { alert('Error creating session: ' + error.message); return; }
-  state.submissionId = data.id;
-  goToStep(2);
-}
-
-// ---- STEP 2: ID Upload ----
-function handleIdUpload(e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  state.idFile = file;
-  const reader = new FileReader();
-  reader.onload = ev => {
-    const prev = document.getElementById('idPreview');
-    prev.src = ev.target.result;
-    prev.style.display = 'block';
-    document.getElementById('idUploadZone').classList.add('uploaded');
-  };
-  reader.readAsDataURL(file);
-  document.getElementById('idNextBtn').disabled = false;
-}
-
-async function uploadIdAndContinue() {
-  if (!state.idFile) return;
-  showLoading('Uploading ID...');
-  const ext = state.idFile.name.split('.').pop();
-  const path = `${state.submissionId}/id.${ext}`;
-  const { error } = await sb.storage.from(BUCKET).upload(path, state.idFile, { upsert: true });
-  if (error) { hideLoading(); alert('Upload error: ' + error.message); return; }
-  const { data: urlData } = sb.storage.from(BUCKET).getPublicUrl(path);
-  await sb.from('drug_test_submissions').update({ id_photo_url: urlData.publicUrl }).eq('id', state.submissionId);
-  hideLoading();
-  initCamera();
-  goToStep(3);
-}
-
-// ---- STEP 3: Camera & Recording ----
-async function initCamera() {
-  try {
-    state.mediaStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-    document.getElementById('liveVideo').srcObject = state.mediaStream;
-  } catch(e) {
-    alert('Camera access denied. Please allow camera access and refresh. Error: ' + e.message);
-  }
-}
-
-function startRecording() {
-  if (!state.mediaStream) { alert('Camera not ready.'); return; }
-  state.recordedChunks = [];
-  const opts = MediaRecorder.isTypeSupported('video/webm;codecs=vp9')
-    ? { mimeType: 'video/webm;codecs=vp9' }
-    : { mimeType: 'video/webm' };
-  state.mediaRecorder = new MediaRecorder(state.mediaStream, opts);
-  state.mediaRecorder.ondataavailable = e => { if (e.data.size > 0) state.recordedChunks.push(e.data); };
-  state.mediaRecorder.start(1000);
-  document.getElementById('startRecBtn').disabled = true;
-  document.getElementById('startRecBtn').textContent = '● Recording...';
-  document.getElementById('recStatus').style.display = 'block';
-  setTimeout(() => { goToStep(4); }, 1500);
-}
-
-// ---- STEP 4: Swab Timer ----
-function startSwabTimer() {
-  document.getElementById('startSwabBtn').style.display = 'none';
-  let secs = 300;
-  updateTimerDisplay('swabTimer', secs);
-  state.swabTimerInterval = setInterval(() => {
-    secs--;
-    updateTimerDisplay('swabTimer', secs);
-    if (secs <= 0) {
-      clearInterval(state.swabTimerInterval);
-      document.getElementById('swabDoneBtn').style.display = 'block';
-      document.getElementById('swabDoneBtn').disabled = false;
-      playBeep();
-    }
-  }, 1000);
-}
-
-// ---- STEP 5: Container Timer ----
-function startContainerTimer() {
-  document.getElementById('startContainerBtn').style.display = 'none';
-  let secs = 300;
-  updateTimerDisplay('containerTimer', secs);
-  state.containerTimerInterval = setInterval(() => {
-    secs--;
-    updateTimerDisplay('containerTimer', secs);
-    if (secs <= 0) {
-      clearInterval(state.containerTimerInterval);
-      document.getElementById('containerDoneBtn').style.display = 'block';
-      document.getElementById('containerDoneBtn').disabled = false;
-      playBeep();
-    }
-  }, 1000);
-}
-
-function updateTimerDisplay(id, secs) {
-  const m = Math.floor(secs / 60).toString().padStart(2, '0');
-  const s = (secs % 60).toString().padStart(2, '0');
-  document.getElementById(id).textContent = `${m}:${s}`;
-}
-
-function playBeep() {
-  try {
-    const ctx = new AudioContext();
-    const osc = ctx.createOscillator();
-    osc.connect(ctx.destination);
-    osc.frequency.value = 880;
-    osc.start();
-    setTimeout(() => { osc.stop(); ctx.close(); }, 800);
-  } catch(e) {}
-}
-
-// ---- STEP 6: Photos ----
-function handlePhoto(side, e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  if (side === 'front') state.frontFile = file;
-  else state.backFile = file;
-
-  const reader = new FileReader();
-  reader.onload = ev => {
-    const prev = document.getElementById(side + 'Preview');
-    prev.src = ev.target.result;
-    prev.style.display = 'block';
-    document.getElementById(side + 'Zone').classList.add('uploaded');
-    if (side === 'front') {
-      const arr = ev.target.result.split(',');
-      state.frontB64 = arr[1];
-    } else {
-      const arr = ev.target.result.split(',');
-      state.backB64 = arr[1];
-    }
-    if (state.frontFile && state.backFile) {
-      document.getElementById('photoNextBtn').disabled = false;
-    }
-  };
-  reader.readAsDataURL(file);
-}
-
-async function uploadPhotosAndScan() {
-  if (!state.frontFile || !state.backFile) { alert('Please take both photos.'); return; }
-  goToStep(7);
-  showLoading('Uploading photos...');
-
-  // Upload front
-  const frontExt = state.frontFile.name.split('.').pop();
-  const frontPath = `${state.submissionId}/container_front.${frontExt}`;
-  await sb.storage.from(BUCKET).upload(frontPath, state.frontFile, { upsert: true });
-  const { data: fUrl } = sb.storage.from(BUCKET).getPublicUrl(frontPath);
-
-  // Upload back
-  const backExt = state.backFile.name.split('.').pop();
-  const backPath = `${state.submissionId}/container_back.${backExt}`;
-  await sb.storage.from(BUCKET).upload(backPath, state.backFile, { upsert: true });
-  const { data: bUrl } = sb.storage.from(BUCKET).getPublicUrl(backPath);
-
-  await sb.from('drug_test_submissions').update({
-    container_front_url: fUrl.publicUrl,
-    container_back_url: bUrl.publicUrl,
-  }).eq('id', state.submissionId);
-
-  // Stop recording & upload video
-  document.getElementById('loadingText').textContent = 'Uploading recording...';
-  await stopRecordingAndUpload();
-
-  // Scan with Gemini
-  document.getElementById('loadingText').textContent = 'AI scanning results...';
-  await scanWithGemini();
-
-  hideLoading();
-}
-
-async function stopRecordingAndUpload() {
-  return new Promise(resolve => {
-    if (!state.mediaRecorder || state.mediaRecorder.state === 'inactive') { resolve(); return; }
-    state.mediaRecorder.onstop = async () => {
-      const blob = new Blob(state.recordedChunks, { type: 'video/webm' });
-      const path = `${state.submissionId}/proctoring_video.webm`;
-      const { error } = await sb.storage.from(BUCKET).upload(path, blob, { upsert: true, contentType: 'video/webm' });
-      if (!error) {
-        const { data: vUrl } = sb.storage.from(BUCKET).getPublicUrl(path);
-        await sb.from('drug_test_submissions').update({ video_url: vUrl.publicUrl }).eq('id', state.submissionId);
-      }
-      if (state.mediaStream) state.mediaStream.getTracks().forEach(t => t.stop());
-      resolve();
-    };
-    state.mediaRecorder.stop();
-  });
-}
-
-async function scanWithGemini() {
-  const prompt = `You are analyzing an oral drug test strip result image for AlliedRx Lab.
-This is a Devon Medical / Prime Screen 5-panel oral fluid drug test.
-The test panels are labeled: THC (marijuana), COC (cocaine), OPI (opiates), MET (methamphetamine), AMP (amphetamine).
-
-READING RULES:
-- TWO lines visible (control + test line) = NEGATIVE (drug not detected)
-- ONE line visible (control line only, no test line) = POSITIVE (drug detected)
-- NO lines or only test line = INVALID / INCONCLUSIVE
-
-Analyze the provided container front image carefully.
-Return ONLY a valid JSON object with this exact structure:
-{
-  "thc": "negative" or "positive" or "inconclusive",
-  "coc": "negative" or "positive" or "inconclusive",
-  "opi": "negative" or "positive" or "inconclusive",
-  "met": "negative" or "positive" or "inconclusive",
-  "amp": "negative" or "positive" or "inconclusive",
-  "overall": "clear" or "flagged" or "inconclusive",
-  "confidence": "high" or "medium" or "low",
-  "notes": "brief explanation of what you observed"
-}
-"overall" should be "clear" if ALL panels are negative, "flagged" if ANY panel is positive, "inconclusive" if you cannot determine results.
-Return ONLY the JSON, no other text.`;
-
-  try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{
-            parts: [
-              { text: prompt },
-              { inline_data: { mime_type: 'image/jpeg', data: state.frontB64 } },
-              { text: 'Also here is the container back for reference (label/lot number):' },
-              { inline_data: { mime_type: 'image/jpeg', data: state.backB64 } },
-            ]
-          }],
-          generationConfig: { temperature: 0.1, maxOutputTokens: 512 }
-        })
-      }
-    );
-
-    const json = await response.json();
-    const rawText = json.candidates?.[0]?.content?.parts?.[0]?.text || '';
-    let parsed;
-    try {
-      const cleaned = rawText.replace(/```json|```/g, '').trim();
-      parsed = JSON.parse(cleaned);
-    } catch(e) {
-      parsed = { thc:'inconclusive',coc:'inconclusive',opi:'inconclusive',met:'inconclusive',amp:'inconclusive', overall:'inconclusive', notes: 'Parse error: ' + rawText };
-    }
-
-    // Save results
-    await sb.from('drug_test_submissions').update({
-      result_thc: parsed.thc,
-      result_coc: parsed.coc,
-      result_opi: parsed.opi,
-      result_met: parsed.met,
-      result_amp: parsed.amp,
-      overall_status: parsed.overall,
-      gemini_scan_response: JSON.stringify(parsed),
-    }).eq('id', state.submissionId);
-
-    displayResults(parsed);
-  } catch(e) {
-    console.error('Gemini error:', e);
-    await sb.from('drug_test_submissions').update({ overall_status: 'inconclusive', gemini_scan_response: 'Error: ' + e.message }).eq('id', state.submissionId);
-    displayResults({ thc:'inconclusive',coc:'inconclusive',opi:'inconclusive',met:'inconclusive',amp:'inconclusive', overall:'inconclusive', notes: 'Scan error.' });
-  }
-}
-
-function displayResults(r) {
-  const drugs = ['thc','coc','opi','met','amp'];
-  drugs.forEach(d => {
-    const b = document.getElementById('badge_' + d);
-    b.textContent = r[d] ? r[d].toUpperCase() : '—';
-    b.className = 'status-badge';
-    if (r[d] === 'negative') b.classList.add('badge-clear');
-    else if (r[d] === 'positive') b.classList.add('badge-flagged');
-    else b.classList.add('badge-inconclusive');
-  });
-
-  const overall = r.overall || 'inconclusive';
-  const overallBadge = document.getElementById('overallBadge');
-  overallBadge.textContent = overall === 'clear' ? '✅ CLEAR' : overall === 'flagged' ? '🚩 FLAGGED' : '⚠️ INCONCLUSIVE';
-  overallBadge.className = 'status-badge';
-  if (overall === 'clear') overallBadge.classList.add('badge-clear');
-  else if (overall === 'flagged') overallBadge.classList.add('badge-flagged');
-  else overallBadge.classList.add('badge-inconclusive');
-
-  document.getElementById('resultIcon').textContent = overall === 'clear' ? '✅' : overall === 'flagged' ? '🚩' : '⚠️';
-  document.getElementById('resultTitle').textContent = overall === 'clear' ? 'Test Complete — Clear' : overall === 'flagged' ? 'Test Complete — Flagged' : 'Test Complete — Inconclusive';
-  document.getElementById('resultSubtitle').textContent = overall === 'clear'
-    ? 'No substances detected. Your results have been submitted to AlliedRx staff.'
-    : overall === 'flagged'
-    ? 'One or more substances were detected. Your results have been flagged for staff review.'
-    : 'Results could not be determined clearly. Staff will review your submitted photos.';
-
-  document.getElementById('overallStatusWrap').style.display = 'block';
-  document.getElementById('panelResults').style.display = 'block';
-  document.getElementById('submissionIdBox').style.display = 'block';
-  document.getElementById('submissionIdVal').textContent = state.submissionId;
-  document.getElementById('resultInfoBox').style.display = 'block';
-}
-</script>
-</body>
-</html>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
