@@ -823,7 +823,7 @@ textarea { resize: none; }
       </div>
       <div>
         <div style="font-size:12px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#34d399; margin-bottom:7px; font-family:'Plus Jakarta Sans',sans-serif;">Special Announcement</div>
-        <div style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.65; font-family:'Plus Jakarta Sans',sans-serif;">Our offices will be closed in observance of the <strong style="color:#fff;">Easter Holiday</strong>. We will resume normal business hours the following business day.</div>
+        <div style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.65; font-family:'Plus Jakarta Sans',sans-serif;">Our offices will be closed on <strong style="color:#fff;">April 3, 2026</strong> in observance of the <strong style="color:#fff;">Easter Holiday</strong>. We will resume normal business hours on <strong style="color:#fff;">April 6, 2026</strong>.</div>
       </div>
     </div>
   </div>
@@ -1002,22 +1002,5 @@ function handleInquiry(e) {
   document.getElementById('iq-success').style.display = 'block';
 }
 </script>
-<!-- AlliedRx Footer Loader -->
-<script>
-(function(){
-  fetch('https://alliedrx.github.io/MedicalBilling/footer.html')
-    .then(function(r){return r.text();})
-    .then(function(html){
-      var parser=new DOMParser();
-      var doc=parser.parseFromString(html,'text/html');
-      var footer=doc.querySelector('footer');
-      var style=doc.querySelector('style');
-      var target=document.querySelector('.main')||document.body;
-      if(style){document.head.appendChild(document.adoptNode(style));}
-      if(footer){target.appendChild(document.adoptNode(footer));}
-    });
-})();
-</script>
-<!-- End AlliedRx Footer Loader -->
 </body>
 </html>
