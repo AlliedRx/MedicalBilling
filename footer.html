@@ -1,102 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{margin:0;padding:0;}
-.arx-footer{background:linear-gradient(160deg,#0d0b2e 0%,#1a1260 60%,#0d0b2e 100%);color:#ccc;padding:64px 32px 0;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;line-height:1.6;}
-.arx-footer a{color:inherit;text-decoration:none;}
-.arx-footer a:hover{color:#c4b5fd;}
-.arx-footer-cta{background:linear-gradient(135deg,#7c3aed,#9148fc);border-radius:16px;padding:36px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:56px;flex-wrap:wrap;}
-.arx-footer-cta h3{font-size:22px;font-weight:700;color:#fff;margin-bottom:6px;}
-.arx-footer-cta p{color:rgba(255,255,255,0.85);font-size:14px;}
-.arx-footer-cta-btn{background:#fff;color:#7c3aed;font-weight:700;font-size:15px;padding:14px 28px;border-radius:50px;white-space:nowrap;}
-.arx-footer-cta-btn:hover{opacity:.9;color:#7c3aed;}
-.arx-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
-@media(max-width:900px){.arx-footer-grid{grid-template-columns:1fr 1fr;}.arx-footer-cta{padding:28px 24px;}}
-@media(max-width:560px){.arx-footer-grid{grid-template-columns:1fr;}.arx-footer-cta{flex-direction:column;align-items:flex-start;}}
-.arx-footer-logo{width:160px;margin-bottom:16px;}
-.arx-footer-brand p{color:rgba(255,255,255,0.6);font-size:13px;max-width:260px;margin-bottom:16px;}
-.arx-footer-accred{display:flex;flex-wrap:wrap;gap:8px;}
-.arx-footer-accred span{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,0.7);}
-.arx-footer-col h4{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;}
-.arx-footer-col ul{list-style:none;}
+.arx-footer{background:#ffffff;color:#1a1a2e;padding:64px 40px 0;font-family:'Plus Jakarta Sans',Inter,sans-serif;font-size:14px;line-height:1.6;border-top:1px solid #e5e7eb;}
+.arx-footer-cta{background:linear-gradient(135deg,#4f35d2 0%,#7c3aed 100%);border-radius:16px;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:56px;}
+.arx-footer-cta h2{color:#fff;font-size:26px;font-weight:700;margin:0;}
+.arx-footer-cta p{color:rgba(255,255,255,0.85);margin:6px 0 0;font-size:15px;}
+.arx-footer-cta a{display:inline-block;background:#fff;color:#4f35d2;font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;white-space:nowrap;}
+.arx-footer-cta a:hover{background:#f0edff;}
+.arx-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;}
+.arx-footer-brand img{height:44px;margin-bottom:16px;}
+.arx-footer-brand p{color:#555;font-size:13.5px;line-height:1.65;max-width:240px;margin-bottom:20px;}
+.arx-footer-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+.arx-footer-badge{background:#f3f0ff;color:#4f35d2;border:1px solid #d8d0f7;border-radius:6px;padding:4px 10px;font-size:11.5px;font-weight:600;}
+.arx-footer-col h4{color:#111;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;}
+.arx-footer-col ul{list-style:none;padding:0;margin:0;}
 .arx-footer-col ul li{margin-bottom:10px;}
-.arx-footer-col ul li a{color:rgba(255,255,255,0.75);font-size:13px;}
-.arx-footer-col ul li a:hover{color:#c4b5fd;}
-.arx-footer-contact p{font-size:13px;color:rgba(255,255,255,0.75);margin-bottom:8px;}
-.arx-footer-contact a{color:rgba(255,255,255,0.75);}
-.arx-footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-.arx-footer-bottom p{font-size:12px;color:rgba(255,255,255,0.4);}
+.arx-footer-col ul li a{color:#444;text-decoration:none;font-size:13.5px;}
+.arx-footer-col ul li a:hover{color:#4f35d2;}
+.arx-footer-contact-item{margin-bottom:14px;font-size:13.5px;color:#444;}
+.arx-footer-contact-item strong{display:block;color:#111;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px;}
+.arx-footer-contact-item a{color:#4f35d2;text-decoration:none;}
+.arx-footer-contact-item a:hover{text-decoration:underline;}
+.arx-footer-bottom{border-top:1px solid #e5e7eb;padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.arx-footer-bottom p{color:#888;font-size:12.5px;}
 .arx-footer-bottom-links{display:flex;gap:20px;}
-.arx-footer-bottom-links a{font-size:12px;color:rgba(255,255,255,0.4);}
-.arx-footer-bottom-links a:hover{color:#c4b5fd;}
+.arx-footer-bottom-links a{color:#888;font-size:12.5px;text-decoration:none;}
+.arx-footer-bottom-links a:hover{color:#4f35d2;}
 </style>
-</head>
-<body>
+</head><body>
 <footer class="arx-footer">
+
   <div class="arx-footer-cta">
     <div>
-      <h3>Start Your Healthcare Career Today</h3>
+      <h2>Start Your Healthcare Career Today</h2>
       <p>Accredited programs &middot; Self-paced &middot; Payment plans available &middot; $99 down</p>
     </div>
-    <a class="arx-footer-cta-btn" href="https://www.alliedrxtraining.com/register" target="_parent">Enroll Now &rarr;</a>
+    <a href="https://www.alliedrxtraining.com/register" target="_parent">Enroll Now &rarr;</a>
   </div>
+
   <div class="arx-footer-grid">
     <div class="arx-footer-brand">
-      <img class="arx-footer-logo" src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69caba88d42a3b1a8669dd2a_alliedrx_logo_webflow_hd.png" alt="AlliedRx Institute of Healthcare">
+      <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69caba88d42a3b1a8669dd2a_alliedrx_logo_webflow_hd.png" alt="AlliedRx Institute of Healthcare">
       <p>Nationally accredited healthcare training programs &mdash; online, self-paced, and built for working adults.</p>
-      <div class="arx-footer-accred">
-        <span>NHA Approved</span><span>ASHP/ACPE Accredited</span><span>PTCB Approved</span><span>AMT Accredited</span><span>WIOA Approved</span>
+      <div class="arx-footer-badges">
+        <span class="arx-footer-badge">NHA Approved</span>
+        <span class="arx-footer-badge">ASHP/ACPE Accredited</span>
+        <span class="arx-footer-badge">PTCB Approved</span>
+        <span class="arx-footer-badge">AMT Accredited</span>
+        <span class="arx-footer-badge">WIOA Approved</span>
       </div>
     </div>
+
     <div class="arx-footer-col">
       <h4>Programs</h4>
       <ul>
-        <li><a href="https://www.alliedrxtraining.com/pharmacy-technician" target="_parent">Pharmacy Technician</a></li>
-        <li><a href="https://www.alliedrxtraining.com/clinical-medical-assistant" target="_parent">Clinical Medical Assistant</a></li>
-        <li><a href="https://www.alliedrxtraining.com/medical-billing-coding" target="_parent">Medical Billing &amp; Coding</a></li>
-        <li><a href="https://www.alliedrxtraining.com/ekg-technician" target="_parent">EKG Technician</a></li>
-        <li><a href="https://www.alliedrxtraining.com/phlebotomy" target="_parent">Phlebotomy Technician</a></li>
-        <li><a href="https://www.alliedrxtraining.com/dental-assisting" target="_parent">Dental Assisting</a></li>
+        <li><a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" target="_parent">Pharmacy Technician</a></li>
+        <li><a href="https://www.alliedrxtraining.com/new-ccma-page" target="_parent">Clinical Medical Assistant</a></li>
+        <li><a href="https://www.alliedrxtraining.com/new-medical-billing-page" target="_parent">Medical Billing &amp; Coding</a></li>
+        <li><a href="https://www.alliedrxtraining.com/new-ekg-page" target="_parent">EKG Technician</a></li>
+        <li><a href="https://www.alliedrxtraining.com/new-phlebotomy-page" target="_parent">Phlebotomy Technician</a></li>
+        <li><a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" target="_parent">Dental Assisting</a></li>
+        <li><a href="https://www.alliedrxtraining.com/new-cmaa-page" target="_parent">Medical Administrative Asst.</a></li>
       </ul>
     </div>
+
     <div class="arx-footer-col">
       <h4>Tuition &amp; Info</h4>
       <ul>
-        <li><a href="https://www.alliedrxtraining.com/tuition" target="_parent">Tuition &amp; Fees</a></li>
-        <li><a href="https://www.alliedrxtraining.com/financial-aid" target="_parent">Financial Aid</a></li>
+        <li><a href="https://www.alliedrxtraining.com/tuition-payments" target="_parent">Tuition &amp; Fees</a></li>
+        <li><a href="https://www.alliedrxtraining.com/grants" target="_parent">Financial Aid &amp; Grants</a></li>
         <li><a href="https://www.alliedrxtraining.com/military" target="_parent">Military Benefits</a></li>
-        <li><a href="https://www.alliedrxtraining.com/class-schedule" target="_parent">Class Schedule</a></li>
-        <li><a href="https://www.alliedrxtraining.com/accreditations" target="_parent">Accreditations</a></li>
+        <li><a href="https://www.alliedrxtraining.com/course-catalog" target="_parent">Class Schedule</a></li>
+        <li><a href="https://www.alliedrxtraining.com/program-accreditation" target="_parent">Accreditations</a></li>
         <li><a href="https://www.alliedrxtraining.com/partners" target="_parent">Partners</a></li>
       </ul>
     </div>
+
     <div class="arx-footer-col">
       <h4>Contact</h4>
-      <div class="arx-footer-contact">
-        <p><a href="tel:+18005551234">1-800-555-1234</a></p>
-        <p><a href="mailto:enrollment@alliedrxtraining.com">enrollment@alliedrxtraining.com</a></p>
-        <p style="margin-top:12px;font-size:12px;color:rgba(255,255,255,0.45);">Mon&ndash;Fri 9am&ndash;6pm ET</p>
+      <div class="arx-footer-contact-item">
+        <strong>Phone</strong>
+        <a href="tel:18663486920" target="_parent">1-866-348-6920</a>
       </div>
-      <div style="margin-top:20px;">
-        <h4 style="margin-bottom:12px;">Company</h4>
-        <ul>
-          <li><a href="https://www.alliedrxtraining.com/about" target="_parent">About Us</a></li>
-          <li><a href="https://www.alliedrxtraining.com/contact" target="_parent">Contact</a></li>
-          <li><a href="https://www.alliedrxtraining.com/gainful-disclosure" target="_parent">Gainful Disclosure</a></li>
-        </ul>
+      <div class="arx-footer-contact-item">
+        <strong>Email</strong>
+        <a href="mailto:admission@alliedrxtraining.com" target="_parent">admission@alliedrxtraining.com</a>
       </div>
+      <div class="arx-footer-contact-item">
+        <strong>Hours</strong>
+        Mon&ndash;Fri 9am&ndash;5pm ET
+      </div>
+      <h4 style="margin-top:20px;">Company</h4>
+      <ul style="margin-top:12px;">
+        <li><a href="https://www.alliedrxtraining.com/about" target="_parent">About Us</a></li>
+        <li><a href="https://www.alliedrxtraining.com/contact" target="_parent">Contact</a></li>
+        <li><a href="https://www.alliedrxtraining.com/gainful-disclosures" target="_parent">Gainful Disclosure</a></li>
+      </ul>
     </div>
   </div>
+
   <div class="arx-footer-bottom">
     <p>&copy; 2026 AlliedRx Institute of Healthcare. All rights reserved.</p>
     <div class="arx-footer-bottom-links">
       <a href="https://www.alliedrxtraining.com/privacy-policy" target="_parent">Privacy Policy</a>
-      <a href="https://www.alliedrxtraining.com/terms" target="_parent">Terms of Use</a>
+      <a href="https://www.alliedrxtraining.com/terms-of-use" target="_parent">Terms of Use</a>
     </div>
   </div>
+
 </footer>
-</body>
-</html>
+</body></html>
