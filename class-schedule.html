@@ -11,8 +11,8 @@
   --green:#16a34a;--red:#dc2626;--amber:#d97706;
   --teal:#0891b2;--teal-l:#e0f2fe;--teal-border:#bae6fd;
 }
-html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+html{scroll-behavior:smooth;height:100%}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;height:100%;overflow:hidden}
 
 /* ── BANNER ── */
 .banner{background:var(--navy);padding:.45rem 3rem;display:flex;align-items:center;justify-content:center;gap:2.5rem;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.04em;text-transform:uppercase}
@@ -39,10 +39,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .btn-navy:hover{background:var(--navy2)}
 
 /* ── LAYOUT ── */
-.page-layout{display:flex;align-items:flex-start;min-height:100vh}
+.page-layout{display:flex;align-items:flex-start;height:100vh;overflow:hidden}
 
 /* ── SIDEBAR ── */
-.sidebar{background:var(--white);border-right:1px solid var(--border);padding:2rem 1.5rem;position:sticky;top:0;left:0;width:270px;height:100vh;overflow-y:auto;z-index:100;flex-shrink:0}
+.sidebar{background:var(--white);border-right:1px solid var(--border);padding:2rem 1.5rem;position:relative;top:0;left:0;width:270px;height:100vh;overflow-y:auto;z-index:100;flex-shrink:0}
 .sidebar-section{margin-bottom:2.25rem}
 .sidebar-label{font-size:.62rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--slate);margin-bottom:.85rem;border-left:2px solid var(--purple);padding-left:.5rem}
 .sidebar-link{display:flex;align-items:center;gap:.65rem;padding:.5rem .65rem;border-radius:6px;text-decoration:none;font-size:.83rem;font-weight:600;color:var(--sub);transition:all .2s;margin-bottom:.1rem}
@@ -64,7 +64,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .fund-lnk::before{content:'↗';font-size:.65rem;color:var(--lavender)}
 
 /* ── MAIN CONTENT ── */
-.main-content{background:var(--bg);flex:1;min-width:0}
+.main-content{background:var(--bg);flex:1;min-width:0;height:100vh;overflow-y:auto}
 
 /* ── PAGE HERO (navy) ── */
 .page-hero{background:var(--navy2);position:relative;overflow:hidden;padding:2.75rem 3rem 2.5rem}
