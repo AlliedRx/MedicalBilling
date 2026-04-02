@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Do I Need a Trainee License? — AlliedRx Orientation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --primary: #5D6DFA;
+  --primary-light: #A5AFFF;
+  --primary-bg: rgba(93,109,250,0.07);
+  --accent: #7C6CF0;
+  --success: #00b894;
+  --success-bg: rgba(0,184,148,0.08);
+  --warn: #e67e22;
+  --warn-bg: rgba(230,126,34,0.09);
+  --danger: #e17055;
+  --text: #1e2030;
+  --muted: #6c6880;
+  --border: rgba(15,23,42,0.1);
+  --bg: #F7F7F7;
+  --card: #ffffff;
+  --radius: 20px;
+  --shadow: 0 16px 42px rgba(23,10,61,0.14);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { width: 100%; overflow-x: hidden; }
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 24px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) { body { padding: 12px; } }
+
+/* ---- Page container ---- */
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px 30px 44px;
+}
+
+@media (max-width: 700px) { .page { padding: 20px 16px 32px; } }
+
+/* ---- Brand row ---- */
+.brand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  height: 44px;
+  width: auto;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.18));
+}
+
+.course-meta span {
+  display: block;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(12,10,24,0.06);
+  border: 1px solid rgba(12,10,24,0.09);
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ---- Page heading ---- */
+.page-title {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.page-subtitle {
+  font-size: 0.97rem;
+  color: var(--muted);
+  margin-bottom: 32px;
+  max-width: 560px;
+}
+
+/* ---- Step labels ---- */
+.step-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+/* ---- Program selector ---- */
+.program-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 560px) {
+  .program-grid { grid-template-columns: 1fr; }
+}
+
+.program-card {
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 20px 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--card);
+  user-select: none;
+}
+
+.program-card:hover {
+  border-color: var(--primary-light);
+  background: var(--primary-bg);
+}
+
+.program-card.selected {
+  border-color: var(--primary);
+  background: var(--primary-bg);
+  box-shadow: 0 0 0 3px rgba(93,109,250,0.15);
+}
+
+.program-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+.program-card.selected .program-card-title {
+  color: var(--primary);
+}
+
+.program-card-desc {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.program-card-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  transition: all 0.2s;
+}
+
+.program-card.selected .program-card-check {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.program-card-check-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.program-card.selected .program-card-check-inner {
+  opacity: 1;
+}
+
+/* ---- State search ---- */
+.state-search-wrap {
+  position: relative;
+  margin-bottom: 30px;
+  display: none;
+}
+
+.state-search-wrap.visible { display: block; }
+
+.state-search-input {
+  width: 100%;
+  padding: 13px 16px 13px 44px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  font-size: 0.97rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--card);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.state-search-input:focus {
+  border-color: var(--primary);
+}
+
+.state-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.state-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  z-index: 100;
+  max-height: 260px;
+  overflow-y: auto;
+  display: none;
+}
+
+.state-dropdown.open { display: block; }
+
+.state-option {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 0.93rem;
+  transition: background 0.15s;
+}
+
+.state-option:hover { background: var(--primary-bg); }
+.state-option.selected { background: var(--primary-bg); font-weight: 600; color: var(--primary); }
+
+/* ---- Result panel ---- */
+.result-panel {
+  display: none;
+  border-radius: 16px;
+  padding: 24px;
+  border: 2px solid var(--border);
+  margin-bottom: 28px;
+}
+
+.result-panel.visible { display: block; }
+
+.result-panel.status-none {
+  border-color: rgba(0,184,148,0.35);
+  background: var(--success-bg);
+}
+
+.result-panel.status-trainee {
+  border-color: rgba(230,126,34,0.35);
+  background: var(--warn-bg);
+}
+
+.result-panel.status-required {
+  border-color: rgba(93,109,250,0.3);
+  background: var(--primary-bg);
+}
+
+.result-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-none .status-dot   { background: var(--success); }
+.status-trainee .status-dot { background: var(--warn); }
+.status-required .status-dot { background: var(--primary); }
+
+.status-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.status-none .status-label     { color: var(--success); }
+.status-trainee .status-label  { color: var(--warn); }
+.status-required .status-label { color: var(--primary); }
+
+.result-state-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.result-body {
+  font-size: 0.93rem;
+  color: var(--text);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+
+.result-action {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 10px 14px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 10px;
+  border-left: 3px solid currentColor;
+}
+
+.status-none .result-action     { border-color: var(--success); color: #00856a; }
+.status-trainee .result-action  { border-color: var(--warn); color: #b35f15; }
+.status-required .result-action { border-color: var(--primary); color: #4050d6; }
+
+/* ---- Checklist ---- */
+.checklist-section {
+  display: none;
+  margin-bottom: 24px;
+}
+
+.checklist-section.visible { display: block; }
+
+.checklist-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+  user-select: none;
+}
+
+.checklist-item:hover { background: var(--primary-bg); }
+
+.checklist-item.checked {
+  background: var(--success-bg);
+  border-color: rgba(0,184,148,0.3);
+}
+
+.check-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: white;
+  transition: all 0.15s;
+  margin-top: 1px;
+}
+
+.checklist-item.checked .check-box {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.check-box-mark { display: none; }
+.checklist-item.checked .check-box-mark { display: block; }
+
+.check-text {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ---- Confirm button ---- */
+.confirm-btn {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, var(--primary), #7c3aed);
+  color: white;
+  font-family: inherit;
+  font-size: 0.97rem;
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 0.4;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.15s;
+  margin-bottom: 16px;
+}
+
+.confirm-btn.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.confirm-btn.active:hover { transform: translateY(-2px); }
+
+.confirm-msg {
+  display: none;
+  background: var(--success-bg);
+  border: 1px solid rgba(0,184,148,0.3);
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: 0.93rem;
+  color: #00856a;
+  font-weight: 600;
+  text-align: center;
+}
+
+.confirm-msg.visible { display: block; }
+
+/* ---- Info sidebar ---- */
+.two-col {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 28px;
+  align-items: start;
+  margin-top: 36px;
+}
+
+@media (max-width: 760px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+/* ---- Info cards ---- */
+.info-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.info-card-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.info-card-body {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.87rem;
+}
+
+.info-row:last-child { border-bottom: none; }
+
+.info-row-label { color: var(--muted); }
+.info-row-value { font-weight: 600; color: var(--text); text-align: right; }
+
+/* ---- Stat pills ---- */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-pill {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-desc {
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+}
+
+/* ---- Alert ---- */
+.alert {
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 0.87rem;
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.alert-warn {
+  background: var(--warn-bg);
+  border: 1px solid rgba(230,126,34,0.3);
+  color: #8c4b0a;
+}
+
+.alert-info {
+  background: var(--primary-bg);
+  border: 1px solid rgba(93,109,250,0.25);
+  color: #3b4cc0;
+}
+
+.alert-title {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* ---- Divider ---- */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 28px 0;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="brand-row">
+    <div class="brand">
+      <img
+        src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/64e9d2f719b1e5258e5d57f5_IMG_1512-p-500.png"
+        class="brand-logo"
+        alt="AlliedRx Training logo"
+      />
+      <div class="course-meta">
+        <span>AlliedRx Training</span>
+        <span>Program Orientation</span>
+      </div>
+    </div>
+    <span class="badge">State Requirements Tool</span>
+  </div>
+
+  <h1 class="page-title">Do I Need a Trainee License?</h1>
+  <p class="page-subtitle">
+    Select your program and your state to find out whether you need to obtain a
+    trainee registration or permit before starting your clinical or pharmacy hours.
+  </p>
+
+  <!-- Step 1: Select Program -->
+  <div class="step-label">Step 1 — Select Your Program</div>
+  <div class="program-grid">
+
+    <div class="program-card" id="card-pharm" onclick="selectProgram('pharmacy')">
+      <div class="program-card-check">
+        <div class="program-card-check-inner"></div>
+      </div>
+      <div class="program-card-title">Pharmacy Technician</div>
+      <div class="program-card-desc">
+        Prepare medications, verify prescriptions, and support pharmacists in retail,
+        hospital, and clinical settings.
+      </div>
+    </div>
+
+    <div class="program-card" id="card-ccma" onclick="selectProgram('ccma')">
+      <div class="program-card-check">
+        <div class="program-card-check-inner"></div>
+      </div>
+      <div class="program-card-title">Clinical Medical Assistant (CCMA)</div>
+      <div class="program-card-desc">
+        Perform clinical procedures — vitals, injections, specimen collection — alongside
+        physicians in outpatient and clinical settings.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Step 2: Select State -->
+  <div class="state-search-wrap" id="stateSearchWrap">
+    <div class="step-label">Step 2 — Search Your State</div>
+    <span class="state-search-icon">&#9906;</span>
+    <input
+      type="text"
+      class="state-search-input"
+      id="stateInput"
+      placeholder="Type a state name..."
+      autocomplete="off"
+      oninput="filterStates(this.value)"
+      onfocus="openDropdown()"
+    />
+    <div class="state-dropdown" id="stateDropdown"></div>
+  </div>
+
+  <!-- Result panel -->
+  <div class="result-panel" id="resultPanel">
+    <div class="result-status-bar">
+      <div class="status-dot"></div>
+      <div class="status-label" id="statusLabel"></div>
+    </div>
+    <div class="result-state-name" id="resultStateName"></div>
+    <div class="result-body" id="resultBody"></div>
+    <div class="result-action" id="resultAction"></div>
+  </div>
+
+  <!-- Checklist -->
+  <div class="checklist-section" id="checklistSection">
+    <div class="checklist-title" id="checklistTitle">Confirm your understanding before continuing:</div>
+    <div id="checklistItems"></div>
+    <button class="confirm-btn" id="confirmBtn" onclick="confirmUnderstanding()">
+      I Understand — Continue to Enrollment
+    </button>
+    <div class="confirm-msg" id="confirmMsg">
+      Confirmed. Your acknowledgment has been recorded. You may continue to your course materials.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Two-column info section -->
+  <div class="two-col">
+
+    <!-- Left: Program comparison -->
+    <div>
+      <div class="info-card">
+        <div class="info-card-title">Pharmacy Technician — Trainee States at a Glance</div>
+        <div class="info-card-body">
+          <p style="margin-bottom:10px;">Several states require students to register as a
+          <strong>Pharmacy Technician Trainee</strong> with their State Board of Pharmacy
+          before performing any pharmacy duties. This registration is separate from the
+          full license you will obtain after passing the PTCB or NHA ExCPT exam.</p>
+          <div class="info-row">
+            <span class="info-row-label">Require trainee registration</span>
+            <span class="info-row-value">11 states + DC</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Require full license only</span>
+            <span class="info-row-value">34 states</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">No state licensure required</span>
+            <span class="info-row-value">5 states</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">National certification</span>
+            <span class="info-row-value">PTCB (PTCE) or NHA (ExCPT)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-title">Clinical Medical Assistant (CCMA) — State Regulations</div>
+        <div class="info-card-body">
+          <p style="margin-bottom:10px;">Unlike pharmacy, the majority of states have
+          <strong>no state licensure requirement</strong> for clinical medical assistants.
+          The NHA CCMA national certification is sufficient to satisfy employer requirements
+          in nearly all states.</p>
+          <div class="info-row">
+            <span class="info-row-label">Require state registration/license</span>
+            <span class="info-row-value">Washington State only</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Require certification for procedures only</span>
+            <span class="info-row-value">~6 states</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">No state requirement</span>
+            <span class="info-row-value">~44 states + DC</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">National certification</span>
+            <span class="info-row-value">NHA CCMA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Tips and notes -->
+    <div>
+      <div class="stat-row">
+        <div class="stat-pill">
+          <span class="stat-number">11</span>
+          <span class="stat-desc">Pharmacy trainee states</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-number">5</span>
+          <span class="stat-desc">No pharmacy license</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-number">1</span>
+          <span class="stat-desc">CCMA license state</span>
+        </div>
+      </div>
+
+      <div class="alert alert-warn">
+        <div class="alert-title">Pharmacy Students — Act Early</div>
+        States like Texas and Arizona require trainee registration
+        <strong>before</strong> you may enter a pharmacy for training hours.
+        Check your state's Board of Pharmacy website as soon as your program begins.
+      </div>
+
+      <div class="alert alert-warn">
+        <div class="alert-title">Washington State — CCMA Students</div>
+        Washington requires clinical medical assistants to register with the
+        WA Department of Health under RCW 18.360 before performing clinical procedures.
+        A Medical Assistant Trainee permit is available for students actively enrolled
+        in a training program.
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-title">Tips for All Students</div>
+        <div class="info-card-body">
+          <div class="info-row">
+            <span class="info-row-label">Check early</span>
+            <span class="info-row-value">Apply for trainee permits before externship</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Verify with employer</span>
+            <span class="info-row-value">Some employers require registration beyond state minimums</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Requirements change</span>
+            <span class="info-row-value">Always confirm with your State Board directly</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">NHA certification</span>
+            <span class="info-row-value">Nationally recognized; satisfies most employer requirements</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end two-col -->
+
+</div><!-- end page -->
+
+<script>
+/* -------------------------------------------------------
+   DATA
+------------------------------------------------------- */
+
+const PHARMACY_STATES = {
+  "Alabama": {
+    status: "required",
+    body: "Alabama requires pharmacy technicians to register with the Alabama Board of Pharmacy before working in a pharmacy. No separate trainee permit exists — you must register as a pharmacy technician before starting work.",
+    action: "Register with the Alabama Board of Pharmacy. After completing your AlliedRx program and passing your PTCB or ExCPT exam, apply at albop.com."
+  },
+  "Alaska": {
+    status: "required",
+    body: "Alaska requires pharmacy technicians to obtain a license from the Alaska Board of Pharmacy. Trainees must be registered before performing pharmacy technician duties.",
+    action: "Register with the Alaska Board of Pharmacy prior to externship. Contact the Board at commerce.alaska.gov for application details."
+  },
+  "Arizona": {
+    status: "trainee",
+    body: "Arizona requires students to register as a Pharmacy Technician Trainee with the Arizona State Board of Pharmacy before performing any pharmacy duties. You will receive a trainee registration card rather than a full license. After completing your program and passing the PTCB or ExCPT exam, you must upgrade to a full Pharmacy Technician license.",
+    action: "Apply for Pharmacy Technician Trainee registration at pharmacy.az.gov before your externship begins. Have your enrollment documentation ready."
+  },
+  "Arkansas": {
+    status: "required",
+    body: "Arkansas requires pharmacy technicians to register with the Arkansas State Board of Pharmacy. Registration must be completed before working in a pharmacy.",
+    action: "Complete your AlliedRx program, pass the PTCB or ExCPT exam, then register at pharmacy.arkansas.gov."
+  },
+  "California": {
+    status: "required",
+    body: "California requires all pharmacy technicians to obtain a license from the California State Board of Pharmacy before working. The Board requires completion of an approved training program and passing the PTCB or ExCPT exam. No separate trainee permit is available.",
+    action: "Register with the California Board of Pharmacy at pharmacy.ca.gov. Ensure your training program is board-approved."
+  },
+  "Colorado": {
+    status: "none",
+    body: "Colorado does not require pharmacy technicians to obtain a state license. Employer standards determine what credentials and training are required. Most employers will still require PTCB or NHA certification.",
+    action: "No state registration is required in Colorado. Focus on completing your AlliedRx program and passing your PTCB or ExCPT exam to meet employer expectations."
+  },
+  "Connecticut": {
+    status: "required",
+    body: "Connecticut requires pharmacy technicians to register with the Connecticut Department of Consumer Protection before working. Proof of education or certification is required for registration.",
+    action: "Register with the CT Department of Consumer Protection after completing your program and passing your national certification exam."
+  },
+  "Delaware": {
+    status: "none",
+    body: "Delaware does not require pharmacy technicians to obtain a state license. A high school diploma or GED is sufficient to meet state requirements. Employers may still require national certification through PTCB or NHA.",
+    action: "No state registration is required in Delaware. Focus on completing your AlliedRx program and national certification for employer eligibility."
+  },
+  "Florida": {
+    status: "required",
+    body: "Florida requires pharmacy technicians to register with the Florida Department of Health Board of Pharmacy. Registration is required before performing pharmacy duties. A background check is required.",
+    action: "Register with the Florida Board of Pharmacy at flhealthsource.gov. Background check and registration must be completed before externship."
+  },
+  "Georgia": {
+    status: "required",
+    body: "Georgia requires pharmacy technicians to register with the Georgia State Board of Pharmacy. Registration must be obtained before working in a pharmacy.",
+    action: "Apply at gbp.georgia.gov after completing your AlliedRx program and passing your national certification exam."
+  },
+  "Hawaii": {
+    status: "none",
+    body: "Hawaii does not require pharmacy technicians to hold a state license. A high school diploma or GED is sufficient for state purposes. Employers may require national certification.",
+    action: "No state registration is required in Hawaii. Complete your AlliedRx program and national certification exam to maximize employment opportunities."
+  },
+  "Idaho": {
+    status: "trainee",
+    body: "Idaho requires pharmacy technician students to register as a Pharmacy Technician-in-Training with the Idaho State Board of Pharmacy before performing pharmacy duties. This registration is active while you complete your training program. After passing your national exam, you must upgrade to full registration.",
+    action: "Register as a Pharmacy Technician-in-Training at bop.idaho.gov before your externship begins. Keep your registration current throughout your program."
+  },
+  "Illinois": {
+    status: "trainee",
+    body: "Illinois allows individuals to begin working in a pharmacy before obtaining a full license, but the license must be obtained within two years of starting employment. There is no separate trainee permit — Illinois effectively treats the first two years as a working trainee period.",
+    action: "You may begin working while pursuing licensure. Register with the Illinois Department of Financial and Professional Regulation at idfpr.illinois.gov within two years of starting work."
+  },
+  "Indiana": {
+    status: "required",
+    body: "Indiana requires pharmacy technicians to register with the Indiana Board of Pharmacy before working. Registration requires a completed application, background check, and fee.",
+    action: "Register with the Indiana Board of Pharmacy at in.gov/pla prior to your externship."
+  },
+  "Iowa": {
+    status: "required",
+    body: "Iowa requires pharmacy technicians to register with the Iowa Board of Pharmacy. Registration must be completed before beginning pharmacy duties.",
+    action: "Apply at pharmacy.iowa.gov after completing your AlliedRx coursework and national certification."
+  },
+  "Kansas": {
+    status: "required",
+    body: "Kansas requires pharmacy technicians to register with the Kansas State Board of Pharmacy. Registration is required before working in a pharmacy setting.",
+    action: "Register at pharmacy.ks.gov once you have completed your AlliedRx training and national certification exam."
+  },
+  "Kentucky": {
+    status: "required",
+    body: "Kentucky requires pharmacy technicians to be registered with the Kentucky Board of Pharmacy before working. Age minimum is 16. Background check required.",
+    action: "Register with the Kentucky Board of Pharmacy at pharmacy.ky.gov. Minimum age is 16."
+  },
+  "Louisiana": {
+    status: "trainee",
+    body: "Louisiana requires pharmacy technician students to obtain a Pharmacy Technician Candidate registration while completing their education and training requirements. This candidate registration allows you to work in a pharmacy under supervision before achieving full certification.",
+    action: "Apply for Pharmacy Technician Candidate registration with the Louisiana Board of Pharmacy at labp.com before beginning your externship or any pharmacy work."
+  },
+  "Maine": {
+    status: "trainee",
+    body: "Maine allows pharmacy technician students to register for on-the-job training status before completing full certification requirements. This registration enables supervised work experience as part of the training process.",
+    action: "Register for trainee/OJT status with the Maine Board of Pharmacy at maine.gov/professionallicensing before your externship."
+  },
+  "Maryland": {
+    status: "required",
+    body: "Maryland requires pharmacy technicians to be registered with the Maryland Board of Pharmacy before working. Minimum age is 16. A background check is required.",
+    action: "Register with the Maryland Board of Pharmacy at mdbop.org. Minimum age is 16."
+  },
+  "Massachusetts": {
+    status: "trainee",
+    body: "Massachusetts offers a Technician-in-Training program that allows students to gain supervised pharmacy experience before completing full certification requirements. Technicians-in-training must be registered with the Massachusetts Board of Registration in Pharmacy.",
+    action: "Register as a Technician-in-Training with the Massachusetts Board of Registration in Pharmacy at mass.gov/pharmacy before your externship hours begin."
+  },
+  "Michigan": {
+    status: "required",
+    body: "Michigan requires pharmacy technicians to be licensed by the Michigan Board of Pharmacy before performing pharmacy duties. Completion of a board-approved training program and passing a national exam are required.",
+    action: "Apply for licensure at michigan.gov/lara after completing your AlliedRx program and passing the PTCB or ExCPT exam."
+  },
+  "Minnesota": {
+    status: "required",
+    body: "Minnesota requires pharmacy technicians to register with the Minnesota Board of Pharmacy before working. National certification is required for registration.",
+    action: "Register at mn.gov/boards/pharmacy after passing your national certification exam."
+  },
+  "Mississippi": {
+    status: "required",
+    body: "Mississippi requires pharmacy technicians to register with the Mississippi Board of Pharmacy before working in a pharmacy.",
+    action: "Register with the Mississippi Board of Pharmacy at mbp.ms.gov after completing your AlliedRx training and certification."
+  },
+  "Missouri": {
+    status: "required",
+    body: "Missouri requires pharmacy technicians to register with the Missouri Board of Pharmacy before performing pharmacy duties.",
+    action: "Register at pr.mo.gov after completing your program and national exam."
+  },
+  "Montana": {
+    status: "trainee",
+    body: "Montana allows pharmacy technician students to work under a provisional license for up to one year while completing training and certification requirements. After one year, you must hold a full pharmacy technician license.",
+    action: "Apply for a Provisional Pharmacy Technician license with the Montana Board of Pharmacy at boards.bsd.dli.mt.gov before beginning your externship."
+  },
+  "Nebraska": {
+    status: "required",
+    body: "Nebraska requires pharmacy technicians to be registered with the Nebraska Board of Pharmacy before working. Completion of a board-approved program or national certification is required.",
+    action: "Register with the Nebraska Board of Pharmacy at dhhs.ne.gov after completing your AlliedRx coursework and exam."
+  },
+  "Nevada": {
+    status: "required",
+    body: "Nevada requires pharmacy technicians to obtain a license from the Nevada State Board of Pharmacy before working. Background check and national certification are required.",
+    action: "Apply at bop.nv.gov after completing your AlliedRx program and passing your national certification exam."
+  },
+  "New Hampshire": {
+    status: "trainee",
+    body: "New Hampshire requires pharmacy technician students to work 80 hours of on-the-job training and then register with the Board of Pharmacy within 15 days of completing those hours. Minimum age is 16. After full training, a pharmacy technician registration is required.",
+    action: "Log your training hours and register with the NH Board of Pharmacy at oplc.nh.gov within 15 days of completing 80 training hours. Minimum age is 16."
+  },
+  "New Jersey": {
+    status: "required",
+    body: "New Jersey requires pharmacy technicians to register with the New Jersey Board of Pharmacy before working. National certification through the PTCB or ExCPT is required.",
+    action: "Register with the NJ Board of Pharmacy at njconsumeraffairs.gov after passing your national certification exam."
+  },
+  "New Mexico": {
+    status: "trainee",
+    body: "New Mexico allows pharmacy technician students to work as non-certified technicians for up to one year while working toward national certification. After one year, full certification and registration are required.",
+    action: "Register with the New Mexico Board of Pharmacy at rld.nm.gov. You may work as a non-certified technician for up to one year while completing your certification process."
+  },
+  "New York": {
+    status: "none",
+    body: "New York does not require pharmacy technicians to hold a state license. Employer policies determine what credentials are needed. National certification through PTCB or NHA is highly recommended and expected by most employers.",
+    action: "No state registration is required in New York. Complete your AlliedRx program and pass your national certification exam to meet employer standards."
+  },
+  "North Carolina": {
+    status: "required",
+    body: "North Carolina requires pharmacy technicians to register with the North Carolina Board of Pharmacy before working. Registration requires a high school diploma or GED plus a background check.",
+    action: "Register with the NC Board of Pharmacy at ncbop.org prior to your externship."
+  },
+  "North Dakota": {
+    status: "required",
+    body: "North Dakota requires pharmacy technicians to register with the North Dakota Board of Pharmacy before working. National certification is required for full registration.",
+    action: "Register at ndbop.org after completing your AlliedRx program and passing your certification exam."
+  },
+  "Ohio": {
+    status: "none",
+    body: "Ohio does not require pharmacy technicians to hold a state license as a baseline requirement. However, many Ohio employers require national certification, and state regulations may change. Always confirm with your prospective employer and check the Ohio State Board of Pharmacy website.",
+    action: "No state registration is currently required in Ohio. Confirm current requirements at pharmacy.ohio.gov and focus on completing your national certification."
+  },
+  "Oklahoma": {
+    status: "trainee",
+    body: "Oklahoma requires pharmacy technician students to obtain a trainee permit before performing pharmacy duties. The permit must be signed by a licensed Oklahoma pharmacist at your training site and submitted to the Oklahoma State Board of Pharmacy.",
+    action: "Obtain a trainee permit application from the Oklahoma Board of Pharmacy at pharmacy.ok.gov. Have a licensed pharmacist at your site co-sign the permit before beginning work."
+  },
+  "Oregon": {
+    status: "required",
+    body: "Oregon requires pharmacy technicians to be registered with the Oregon State Board of Pharmacy before working. National certification is required for registration.",
+    action: "Register with the Oregon Board of Pharmacy at oregon.gov/pharmacy after completing your program and passing your national exam."
+  },
+  "Pennsylvania": {
+    status: "none",
+    body: "Pennsylvania does not require pharmacy technicians to hold a state license. Employer requirements determine the credentials needed. National certification is strongly recommended.",
+    action: "No state registration is required in Pennsylvania. Complete your AlliedRx program and national certification exam to meet employer expectations."
+  },
+  "Rhode Island": {
+    status: "required",
+    body: "Rhode Island requires pharmacy technicians to register with the Rhode Island Board of Pharmacy before working. National certification is required.",
+    action: "Register with the RI Board of Pharmacy at health.ri.gov after passing your national certification exam."
+  },
+  "South Carolina": {
+    status: "required",
+    body: "South Carolina requires pharmacy technicians to register with the South Carolina Board of Pharmacy before working. A background check is required.",
+    action: "Register at llr.sc.gov after completing your AlliedRx program and national certification."
+  },
+  "South Dakota": {
+    status: "required",
+    body: "South Dakota requires pharmacy technicians to be licensed by the South Dakota Board of Pharmacy before working. National certification is required for licensure.",
+    action: "Register with the SD Board of Pharmacy at pharmacy.sd.gov after passing your national certification exam."
+  },
+  "Tennessee": {
+    status: "required",
+    body: "Tennessee requires pharmacy technicians to register with the Tennessee Board of Pharmacy before working. National certification is required for registration.",
+    action: "Register at tn.gov/health/boards/pharmacy after completing your AlliedRx program and passing your PTCB or ExCPT exam."
+  },
+  "Texas": {
+    status: "trainee",
+    body: "Texas requires students to register as a Pharmacy Technician Trainee with the Texas State Board of Pharmacy before beginning any pharmacy duties or training in a Texas pharmacy. The trainee registration is valid for two years and is not renewable. After two years you must obtain full registration. National certification (PTCB or ExCPT) is required for full registration.",
+    action: "Register as a Pharmacy Technician Trainee at pharmacy.texas.gov before your externship begins. Do not begin any pharmacy work until this registration is active."
+  },
+  "Utah": {
+    status: "trainee",
+    body: "Utah requires pharmacy technician students to register as a Pharmacy Technician Trainee with the Utah Division of Occupational and Professional Licensing before working in a pharmacy. After completing at least 180 hours of on-the-job training and passing a national certification exam, you must upgrade to full pharmacy technician designation.",
+    action: "Register as a Pharmacy Technician Trainee at dopl.utah.gov before beginning your externship. Keep documentation of all on-the-job training hours."
+  },
+  "Vermont": {
+    status: "required",
+    body: "Vermont requires pharmacy technicians to register with the Vermont Board of Pharmacy before working. National certification is required.",
+    action: "Register with the Vermont Board of Pharmacy at sec.vermont.gov/professional-regulation after completing your program and certification exam."
+  },
+  "Virginia": {
+    status: "required",
+    body: "Virginia requires pharmacy technicians to be registered with the Virginia Board of Pharmacy before working. Minimum age is 16. National certification is required for registration.",
+    action: "Register with the VA Board of Pharmacy at dhp.virginia.gov. Minimum age is 16."
+  },
+  "Washington": {
+    status: "required",
+    body: "Washington requires pharmacy technicians to be registered with the Washington State Department of Health before working in a pharmacy. National certification through PTCB or ExCPT is required for registration.",
+    action: "Register with the WA Department of Health at doh.wa.gov after completing your AlliedRx program and passing your national certification exam."
+  },
+  "West Virginia": {
+    status: "trainee",
+    body: "West Virginia requires pharmacy technician students to register as a Pharmacy Technician Trainee with the West Virginia Board of Pharmacy before performing pharmacy duties. Trainees must complete an on-the-job training program and pass a state-required competency assessment to upgrade to full registration.",
+    action: "Register as a Pharmacy Technician Trainee with the WV Board of Pharmacy at wvbop.com before your externship. Complete the required OJT hours and competency assessment."
+  },
+  "Wisconsin": {
+    status: "none",
+    body: "Wisconsin does not require pharmacy technicians to hold a state license. There are currently no state licensure requirements for pharmacy technicians in Wisconsin. Employer standards and national certification expectations apply.",
+    action: "No state registration is required in Wisconsin. Complete your AlliedRx program and national certification exam to meet employer requirements."
+  },
+  "Wyoming": {
+    status: "trainee",
+    body: "Wyoming offers a Pharmacy Technician-in-Training permit that allows students to work in a pharmacy for up to two years while pursuing national certification. The permit must be obtained from the Wyoming State Board of Pharmacy before beginning pharmacy work.",
+    action: "Apply for a Technician-in-Training permit at pharmacy.wyo.gov before your externship begins. The permit is valid for two years while you complete your certification requirements."
+  },
+  "District of Columbia": {
+    status: "trainee",
+    body: "The District of Columbia allows pharmacy technician students to register as a Pharmacy Technician Trainee if they are enrolled in a board-approved training program and have not yet passed a national certification exam. Full registration is required after passing the PTCB or ExCPT exam.",
+    action: "Register as a Pharmacy Technician Trainee with the DC Board of Pharmacy at dchealth.dc.gov before beginning your externship."
+  }
+};
+
+const CCMA_STATES = {
+  "Alabama": { status: "clear", body: "Alabama has no state licensure or registration requirement for clinical medical assistants. The NHA CCMA national certification earned through your AlliedRx program is recognized by employers across the state.", action: "No state registration required. Focus on completing your AlliedRx CCMA program and passing the NHA CCMA exam." },
+  "Alaska": { status: "clear", body: "Alaska has no state licensure requirement for clinical medical assistants. NHA CCMA certification is sufficient to meet employer expectations.", action: "No state registration required in Alaska." },
+  "Arizona": { status: "clear", body: "Arizona does not require clinical medical assistants to hold a state license. Employers may require documented training and national certification. Your NHA CCMA credential satisfies most employer standards.", action: "No state registration required. NHA CCMA certification from your AlliedRx program is the standard credential recognized by AZ employers." },
+  "Arkansas": { status: "clear", body: "Arkansas has no state licensure requirement for clinical medical assistants. NHA CCMA certification is the recognized national credential.", action: "No state registration required in Arkansas." },
+  "California": { status: "clear", body: "California does not require state licensure for clinical medical assistants, though supervising physicians may require documentation of training for certain procedures. Your AlliedRx CCMA program and NHA CCMA credential satisfy these requirements.", action: "No state license required. Confirm any site-specific documentation requirements with your externship employer." },
+  "Colorado": { status: "clear", body: "Colorado has no state licensure requirement for clinical medical assistants. NHA CCMA certification from your AlliedRx program meets employer standards.", action: "No state registration required in Colorado." },
+  "Connecticut": { status: "clear", body: "Connecticut does not require state licensure for clinical medical assistants, though completion of an approved training program is required for specific procedures such as vaccine administration. Your AlliedRx CCMA program covers these requirements.", action: "No state license required. Confirm any employer or facility-specific requirements before your externship." },
+  "Delaware": { status: "clear", body: "Delaware has no state licensure requirement for clinical medical assistants. NHA CCMA certification is recognized by employers statewide.", action: "No state registration required in Delaware." },
+  "Florida": { status: "clear", body: "Florida does not require state licensure for clinical medical assistants. NHA CCMA certification is the recognized standard for employers in Florida.", action: "No state registration required. Your NHA CCMA credential is sufficient for Florida employment." },
+  "Georgia": { status: "clear", body: "Georgia has no state licensure requirement for clinical medical assistants. Your NHA CCMA credential from AlliedRx meets employer expectations.", action: "No state registration required in Georgia." },
+  "Hawaii": { status: "clear", body: "Hawaii does not require clinical medical assistants to hold a state license. NHA CCMA certification is sufficient.", action: "No state registration required in Hawaii." },
+  "Idaho": { status: "clear", body: "Idaho has no state licensure requirement for clinical medical assistants. NHA CCMA certification meets employer standards.", action: "No state registration required in Idaho." },
+  "Illinois": { status: "clear", body: "Illinois does not require state licensure for clinical medical assistants. NHA CCMA certification from your AlliedRx program is recognized by employers statewide.", action: "No state registration required in Illinois." },
+  "Indiana": { status: "clear", body: "Indiana has no state licensure requirement for clinical medical assistants. Your NHA CCMA credential is the standard recognized by Indiana employers.", action: "No state registration required in Indiana." },
+  "Iowa": { status: "clear", body: "Iowa does not require state licensure for clinical medical assistants. NHA CCMA certification meets employer standards.", action: "No state registration required in Iowa." },
+  "Kansas": { status: "clear", body: "Kansas has no state licensure requirement for clinical medical assistants. NHA CCMA certification from your AlliedRx program meets employer expectations.", action: "No state registration required in Kansas." },
+  "Kentucky": { status: "clear", body: "Kentucky does not require state licensure for clinical medical assistants. NHA CCMA certification is the recognized employer standard.", action: "No state registration required in Kentucky." },
+  "Louisiana": { status: "clear", body: "Louisiana has no state licensure requirement for clinical medical assistants. NHA CCMA certification is recognized by employers across the state.", action: "No state registration required in Louisiana." },
+  "Maine": { status: "clear", body: "Maine does not require state licensure for clinical medical assistants. NHA CCMA certification meets employer standards.", action: "No state registration required in Maine." },
+  "Maryland": { status: "clear", body: "Maryland has no state licensure requirement for clinical medical assistants. NHA CCMA certification from your AlliedRx program is recognized statewide.", action: "No state registration required in Maryland." },
+  "Massachusetts": { status: "clear", body: "Massachusetts does not require state licensure for clinical medical assistants, though training completion is required for certain procedures such as vaccine administration. Your AlliedRx program covers these requirements.", action: "No state license required. Confirm any facility-specific documentation with your externship site." },
+  "Michigan": { status: "clear", body: "Michigan has no state licensure requirement for clinical medical assistants. NHA CCMA certification is the recognized credential.", action: "No state registration required in Michigan." },
+  "Minnesota": { status: "clear", body: "Minnesota does not require state licensure for clinical medical assistants. NHA CCMA certification meets employer expectations.", action: "No state registration required in Minnesota." },
+  "Mississippi": { status: "clear", body: "Mississippi has no state licensure requirement for clinical medical assistants. NHA CCMA certification from your AlliedRx program is recognized by employers statewide.", action: "No state registration required in Mississippi." },
+  "Missouri": { status: "clear", body: "Missouri does not require state licensure for clinical medical assistants. NHA CCMA certification is the recognized employer standard.", action: "No state registration required in Missouri." },
+  "Montana": { status: "clear", body: "Montana has no state licensure requirement for clinical medical assistants. NHA CCMA certification meets employer standards.", action: "No state registration required in Montana." },
+  "Nebraska": { status: "clear", body: "Nebraska does not require state licensure for clinical medical assistants at baseline, though registration may be required for specific procedures such as medication administration. Confirm with your employer. Your NHA CCMA credential satisfies most requirements.", action: "No state license required for standard CCMA duties. Confirm any additional requirements with your employer or externship site." },
+  "Nevada": { status: "clear", body: "Nevada has no state licensure requirement for clinical medical assistants. NHA CCMA certification from your AlliedRx program is recognized by employers statewide.", action: "No state registration required in Nevada." },
+  "New Hampshire": { status: "clear", body: "New Hampshire does not require state licensure for clinical medical assistants. NHA CCMA certification meets employer expectations.", action: "No state registration required in New Hampshire." },
+  "New Jersey": { status: "clear", body: "New Jersey does not require state licensure for clinical medical assistants as a general rule, but certification is required specifically to administer injections. Your NHA CCMA credential satisfies this requirement.", action: "No separate state license required. Your NHA CCMA certification covers the injection administration requirement." },
+  "New Mexico": { status: "clear", body: "New Mexico has no state licensure requirement for clinical medical assistants. NHA CCMA certification is recognized statewide.", action: "No state registration required in New Mexico." },
+  "New York": { status: "clear", body: "New York does not require state licensure for clinical medical assistants. NHA CCMA certification from your AlliedRx program is the recognized employer standard.", action: "No state registration required in New York." },
+  "North Carolina": { status: "clear", body: "North Carolina has no state licensure requirement for clinical medical assistants. NHA CCMA certification meets employer standards across the state.", action: "No state registration required in North Carolina." },
+  "North Dakota": { status: "clear", body: "North Dakota may require registration for certain clinical procedures such as medication administration. NHA CCMA certification and completion of your AlliedRx program satisfy most requirements. Confirm with your employer.", action: "Confirm any site-specific registration requirements with your employer. NHA CCMA certification covers most North Dakota requirements." },
+  "Ohio": { status: "clear", body: "Ohio has no state licensure requirement for clinical medical assistants. NHA CCMA certification from your AlliedRx program is recognized by Ohio employers.", action: "No state registration required in Ohio." },
+  "Oklahoma": { status: "clear", body: "Oklahoma does not require state licensure for clinical medical assistants. NHA CCMA certification meets employer standards statewide.", action: "No state registration required in Oklahoma." },
+  "Oregon": { status: "clear", body: "Oregon has no state licensure requirement for clinical medical assistants. NHA CCMA certification is the recognized employer credential.", action: "No state registration required in Oregon." },
+  "Pennsylvania": { status: "clear", body: "Pennsylvania does not require state licensure for clinical medical assistants. NHA CCMA certification from your AlliedRx program meets employer expectations statewide.", action: "No state registration required in Pennsylvania." },
+  "Rhode Island": { status: "clear", body: "Rhode Island does not require state licensure for clinical medical assistants, though training completion may be required for specific procedures. Your AlliedRx program covers these requirements.", action: "No state license required. Confirm any facility requirements with your externship site." },
+  "South Carolina": { status: "clear", body: "South Carolina has no state licensure requirement for clinical medical assistants. NHA CCMA certification is recognized statewide.", action: "No state registration required in South Carolina." },
+  "South Dakota": { status: "clear", body: "South Dakota does not require state licensure for clinical medical assistants. NHA CCMA certification meets employer standards.", action: "No state registration required in South Dakota." },
+  "Tennessee": { status: "clear", body: "Tennessee does not require state licensure for clinical medical assistants, though training completion is required for vaccine administration. Your AlliedRx CCMA program covers these requirements.", action: "No state license required. Your AlliedRx training satisfies Tennessee requirements for clinical procedures." },
+  "Texas": { status: "clear", body: "Texas has no state licensure requirement for clinical medical assistants. NHA CCMA certification from your AlliedRx program is recognized by Texas employers.", action: "No state registration required in Texas." },
+  "Utah": { status: "clear", body: "Utah does not require state licensure for clinical medical assistants. NHA CCMA certification meets employer expectations statewide.", action: "No state registration required in Utah." },
+  "Vermont": { status: "clear", body: "Vermont has no state licensure requirement for clinical medical assistants. NHA CCMA certification is the recognized employer credential.", action: "No state registration required in Vermont." },
+  "Virginia": { status: "clear", body: "Virginia does not require state licensure for clinical medical assistants. NHA CCMA certification from your AlliedRx program meets employer standards.", action: "No state registration required in Virginia." },
+  "Washington": {
+    status: "trainee",
+    body: "Washington State is the only state in the U.S. that requires clinical medical assistants to register with the Washington Department of Health under RCW 18.360 before performing clinical procedures. Students actively enrolled in an approved training program may apply for a Medical Assistant Trainee permit, which allows supervised clinical work during training. After completing your program and passing the NHA CCMA exam, you must upgrade to full Medical Assistant-Certified (MA-C) registration with the WA DOH.",
+    action: "Apply for a Medical Assistant Trainee permit at doh.wa.gov before beginning any clinical externship hours. Have your AlliedRx enrollment documentation ready. After completing your program, apply for full MA-C registration."
+  },
+  "West Virginia": { status: "clear", body: "West Virginia has no state licensure requirement for clinical medical assistants. NHA CCMA certification from your AlliedRx program is recognized by employers statewide.", action: "No state registration required in West Virginia." },
+  "Wisconsin": { status: "clear", body: "Wisconsin does not require state licensure for clinical medical assistants. NHA CCMA certification meets employer standards.", action: "No state registration required in Wisconsin." },
+  "Wyoming": { status: "clear", body: "Wyoming has no state licensure requirement for clinical medical assistants. NHA CCMA certification from your AlliedRx program is recognized statewide.", action: "No state registration required in Wyoming." },
+  "District of Columbia": { status: "clear", body: "The District of Columbia does not require state licensure for clinical medical assistants. NHA CCMA certification is the recognized employer standard.", action: "No state registration required in Washington D.C." }
+};
+
+const CHECKS = {
+  pharmacy: {
+    none: [
+      "I understand that my state does not require a pharmacy technician license before working, but I will still complete my AlliedRx program and pass my national certification exam.",
+      "I understand that my employer may still require national certification (PTCB or ExCPT) regardless of state requirements.",
+      "I have reviewed my state's Board of Pharmacy website and confirmed the current licensure status."
+    ],
+    trainee: [
+      "I understand that my state requires a Trainee registration or permit BEFORE I may begin externship or any pharmacy work.",
+      "I will apply for my trainee registration or permit as soon as my program enrollment is confirmed, and will not begin pharmacy duties until it is active.",
+      "I understand that after completing my program and passing my national exam, I must upgrade from trainee status to full pharmacy technician registration."
+    ],
+    required: [
+      "I understand that my state requires full pharmacy technician registration, and I will complete this registration after passing my national certification exam.",
+      "I understand that I cannot begin my externship until I have confirmed my registration status with my state Board of Pharmacy.",
+      "I will verify the current requirements directly with my state Board of Pharmacy before beginning any pharmacy work."
+    ]
+  },
+  ccma: {
+    clear: [
+      "I understand that my state does not require a separate state license or trainee permit for clinical medical assistants.",
+      "I understand that the NHA CCMA certification earned through my AlliedRx program is the nationally recognized credential accepted by employers in my state.",
+      "I will confirm any employer-specific documentation requirements with my externship site before beginning clinical hours."
+    ],
+    trainee: [
+      "I understand that my state requires a Medical Assistant Trainee permit from the Washington Department of Health before I may perform clinical procedures.",
+      "I will apply for my Medical Assistant Trainee permit at doh.wa.gov before beginning any externship hours.",
+      "I understand that after completing my AlliedRx program and passing the NHA CCMA exam, I must apply for full MA-C registration with the WA Department of Health."
+    ]
+  }
+};
+
+const STATUS_LABELS = {
+  none: "No State License Required",
+  trainee: "Trainee Permit Required",
+  required: "Full Registration Required",
+  clear: "No State License Required"
+};
+
+/* -------------------------------------------------------
+   STATE
+------------------------------------------------------- */
+let selectedProgram = null;
+let selectedState = null;
+const allStates = Object.keys(PHARMACY_STATES).sort();
+
+/* -------------------------------------------------------
+   PROGRAM SELECTION
+------------------------------------------------------- */
+function selectProgram(prog) {
+  selectedProgram = prog;
+  selectedState = null;
+
+  document.getElementById('card-pharm').classList.toggle('selected', prog === 'pharmacy');
+  document.getElementById('card-ccma').classList.toggle('selected', prog === 'ccma');
+
+  // Show state search
+  document.getElementById('stateSearchWrap').classList.add('visible');
+  document.getElementById('stateInput').value = '';
+  document.getElementById('stateDropdown').innerHTML = '';
+  document.getElementById('stateDropdown').classList.remove('open');
+
+  // Hide result
+  document.getElementById('resultPanel').className = 'result-panel';
+  document.getElementById('checklistSection').classList.remove('visible');
+  document.getElementById('confirmMsg').classList.remove('visible');
+
+  populateDropdown(allStates);
+}
+
+/* -------------------------------------------------------
+   STATE DROPDOWN
+------------------------------------------------------- */
+function populateDropdown(states) {
+  const dd = document.getElementById('stateDropdown');
+  dd.innerHTML = '';
+  states.forEach(state => {
+    const div = document.createElement('div');
+    div.className = 'state-option' + (state === selectedState ? ' selected' : '');
+    div.textContent = state;
+    div.onclick = () => chooseState(state);
+    dd.appendChild(div);
+  });
+}
+
+function filterStates(val) {
+  const dd = document.getElementById('stateDropdown');
+  dd.classList.add('open');
+  const filtered = allStates.filter(s => s.toLowerCase().includes(val.toLowerCase()));
+  populateDropdown(filtered);
+}
+
+function openDropdown() {
+  if (!selectedProgram) return;
+  document.getElementById('stateDropdown').classList.add('open');
+  populateDropdown(allStates);
+}
+
+document.addEventListener('click', function(e) {
+  const wrap = document.getElementById('stateSearchWrap');
+  if (wrap && !wrap.contains(e.target)) {
+    document.getElementById('stateDropdown').classList.remove('open');
+  }
+});
+
+/* -------------------------------------------------------
+   STATE SELECTION
+------------------------------------------------------- */
+function chooseState(state) {
+  selectedState = state;
+
+  document.getElementById('stateInput').value = state;
+  document.getElementById('stateDropdown').classList.remove('open');
+
+  const data = selectedProgram === 'pharmacy'
+    ? PHARMACY_STATES[state]
+    : CCMA_STATES[state];
+
+  if (!data) return;
+
+  // Result panel
+  const panel = document.getElementById('resultPanel');
+  panel.className = 'result-panel visible status-' + data.status;
+
+  document.getElementById('statusLabel').textContent = STATUS_LABELS[data.status];
+  document.getElementById('resultStateName').textContent = state;
+  document.getElementById('resultBody').textContent = data.body;
+  document.getElementById('resultAction').textContent = 'Next step: ' + data.action;
+
+  // Checklist
+  const checklistSection = document.getElementById('checklistSection');
+  checklistSection.classList.add('visible');
+
+  const programChecks = CHECKS[selectedProgram];
+  const items = programChecks[data.status] || programChecks['clear'] || programChecks['none'] || [];
+
+  const container = document.getElementById('checklistItems');
+  container.innerHTML = '';
+  items.forEach((text, i) => {
+    const div = document.createElement('div');
+    div.className = 'checklist-item';
+    div.id = 'check-' + i;
+    div.onclick = () => toggleCheck(i, items.length);
+    div.innerHTML = `
+      <div class="check-box"><span class="check-box-mark">&#10003;</span></div>
+      <div class="check-text">${text}</div>
+    `;
+    container.appendChild(div);
+  });
+
+  // Reset confirm state
+  document.getElementById('confirmBtn').classList.remove('active');
+  document.getElementById('confirmMsg').classList.remove('visible');
+
+  // Scroll to result
+  panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* -------------------------------------------------------
+   CHECKLIST
+------------------------------------------------------- */
+function toggleCheck(index, total) {
+  const item = document.getElementById('check-' + index);
+  item.classList.toggle('checked');
+
+  const allChecked = document.querySelectorAll('.checklist-item.checked').length === total;
+  const btn = document.getElementById('confirmBtn');
+  if (allChecked) {
+    btn.classList.add('active');
+  } else {
+    btn.classList.remove('active');
+  }
+}
+
+function confirmUnderstanding() {
+  document.getElementById('confirmMsg').classList.add('visible');
+  document.getElementById('confirmBtn').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
