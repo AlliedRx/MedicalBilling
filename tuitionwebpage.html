@@ -1030,5 +1030,22 @@
             new ResizeObserver(sendHeight).observe(document.body);
         }
     </script>
+<!-- AlliedRx Footer Loader -->
+<script>
+(function(){
+  fetch('https://alliedrx.github.io/MedicalBilling/footer.html')
+    .then(function(r){return r.text();})
+    .then(function(html){
+      var parser=new DOMParser();
+      var doc=parser.parseFromString(html,'text/html');
+      var footer=doc.querySelector('footer');
+      var style=doc.querySelector('style');
+      var target=document.querySelector('.main')||document.body;
+      if(style){document.head.appendChild(document.adoptNode(style));}
+      if(footer){target.appendChild(document.adoptNode(footer));}
+    });
+})();
+</script>
+<!-- End AlliedRx Footer Loader -->
 </body>
 </html>
