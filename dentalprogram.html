@@ -31,4 +31,21 @@ function updateActiveNav(){
 }
 window.addEventListener('scroll',updateActiveNav,{passive:true});
 updateActiveNav();
-</script><div class="mob-enroll-bar"><div class="mob-enroll-bar-text">Start Your Dental Assistant Career<span>$49 enrollment fee · 100% online program</span></div><a href="https://www.alliedrxtraining.com/register" class="mob-enroll-bar-btn">Enroll Now</a></div></body></html>
+</script><div class="mob-enroll-bar"><div class="mob-enroll-bar-text">Start Your Dental Assistant Career<span>$49 enrollment fee · 100% online program</span></div><a href="https://www.alliedrxtraining.com/register" class="mob-enroll-bar-btn">Enroll Now</a></div><!-- AlliedRx Footer Loader -->
+<script>
+(function(){
+  fetch('https://alliedrx.github.io/MedicalBilling/footer.html')
+    .then(function(r){return r.text();})
+    .then(function(html){
+      var parser=new DOMParser();
+      var doc=parser.parseFromString(html,'text/html');
+      var footer=doc.querySelector('footer');
+      var style=doc.querySelector('style');
+      var target=document.querySelector('.main')||document.body;
+      if(style){document.head.appendChild(document.adoptNode(style));}
+      if(footer){target.appendChild(document.adoptNode(footer));}
+    });
+})();
+</script>
+<!-- End AlliedRx Footer Loader -->
+</body></html>
