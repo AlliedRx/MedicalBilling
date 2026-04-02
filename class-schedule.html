@@ -2301,7 +2301,13 @@ document.addEventListener('click', function(){ setTimeout(sendHeight, 50); });
       var parser=new DOMParser();
       var doc=parser.parseFromString(html,'text/html');
       var footer=doc.querySelector('footer');
+      var style=doc.querySelector('style');
       var target=document.querySelector('.main-content')||document.querySelector('.main')||document.body;
+      if(style){
+        var safeStyle=document.createElement('style');
+        safeStyle.textContent=style.textContent;
+        document.head.appendChild(safeStyle);
+      }
       if(footer){target.appendChild(document.adoptNode(footer));}
     });
 })();
