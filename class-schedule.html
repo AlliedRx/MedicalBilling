@@ -39,10 +39,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .btn-navy:hover{background:var(--navy2)}
 
 /* ── LAYOUT ── */
-.page-layout{display:block;min-height:calc(100vh - 97px)}
+.page-layout{display:flex;align-items:flex-start;min-height:100vh}
 
 /* ── SIDEBAR ── */
-.sidebar{background:var(--white);border-right:1px solid var(--border);padding:2rem 1.5rem;position:fixed;top:0;left:0;width:270px;height:100vh;overflow-y:auto;z-index:100}
+.sidebar{background:var(--white);border-right:1px solid var(--border);padding:2rem 1.5rem;position:sticky;top:0;left:0;width:270px;height:100vh;overflow-y:auto;z-index:100;flex-shrink:0}
 .sidebar-section{margin-bottom:2.25rem}
 .sidebar-label{font-size:.62rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--slate);margin-bottom:.85rem;border-left:2px solid var(--purple);padding-left:.5rem}
 .sidebar-link{display:flex;align-items:center;gap:.65rem;padding:.5rem .65rem;border-radius:6px;text-decoration:none;font-size:.83rem;font-weight:600;color:var(--sub);transition:all .2s;margin-bottom:.1rem}
@@ -64,7 +64,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .fund-lnk::before{content:'↗';font-size:.65rem;color:var(--lavender)}
 
 /* ── MAIN CONTENT ── */
-.main-content{background:var(--bg);margin-left:270px}
+.main-content{background:var(--bg);flex:1;min-width:0}
 
 /* ── PAGE HERO (navy) ── */
 .page-hero{background:var(--navy2);position:relative;overflow:hidden;padding:2.75rem 3rem 2.5rem}
