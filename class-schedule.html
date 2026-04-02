@@ -2302,8 +2302,13 @@ document.addEventListener('click', function(){ setTimeout(sendHeight, 50); });
       var doc=parser.parseFromString(html,'text/html');
       var footer=doc.querySelector('footer');
       var style=doc.querySelector('style');
-      var target=document.querySelector('.main')||document.body;
-      if(style){document.head.appendChild(document.adoptNode(style));}
+      var target=document.querySelector('.main-content')||document.querySelector('.main')||document.querySelector('.page-layout')||document.body;
+      if(style){
+        // Strip global resets that would bleed into the page
+        var css=style.textContent.replace(/*s*{[^}]*}/g,'').replace(/^bodys*{[^}]*}/m,'');
+        style.textContent=css;
+        document.head.appendChild(document.adoptNode(style));
+      }
       if(footer){target.appendChild(document.adoptNode(footer));}
     });
 })();
