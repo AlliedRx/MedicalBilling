@@ -11,8 +11,8 @@
   --green:#16a34a;--red:#dc2626;--amber:#d97706;
   --teal:#0891b2;--teal-l:#e0f2fe;--teal-border:#bae6fd;
 }
-html{scroll-behavior:smooth;height:100%}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;height:100%;overflow:hidden}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
 
 /* ── BANNER ── */
 .banner{background:var(--navy);padding:.45rem 3rem;display:flex;align-items:center;justify-content:center;gap:2.5rem;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.04em;text-transform:uppercase}
@@ -39,10 +39,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .btn-navy:hover{background:var(--navy2)}
 
 /* ── LAYOUT ── */
-.page-layout{display:flex;align-items:flex-start;height:100vh;overflow:hidden}
+.page-layout{display:grid;grid-template-columns:270px 1fr;min-height:calc(100vh - 97px)}
 
 /* ── SIDEBAR ── */
-.sidebar{background:var(--white);border-right:1px solid var(--border);padding:2rem 1.5rem;position:relative;top:0;left:0;width:270px;height:100vh;overflow-y:auto;z-index:100;flex-shrink:0}
+.sidebar{background:var(--white);border-right:1px solid var(--border);padding:2rem 1.5rem;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto}
 .sidebar-section{margin-bottom:2.25rem}
 .sidebar-label{font-size:.62rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--slate);margin-bottom:.85rem;border-left:2px solid var(--purple);padding-left:.5rem}
 .sidebar-link{display:flex;align-items:center;gap:.65rem;padding:.5rem .65rem;border-radius:6px;text-decoration:none;font-size:.83rem;font-weight:600;color:var(--sub);transition:all .2s;margin-bottom:.1rem}
@@ -64,11 +64,11 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .fund-lnk::before{content:'↗';font-size:.65rem;color:var(--lavender)}
 
 /* ── MAIN CONTENT ── */
-.main-content{background:var(--bg);flex:1;min-width:0;height:100vh;overflow-y:auto}
+.main-content{background:var(--bg)}
 
 /* ── PAGE HERO (navy) ── */
 .page-hero{background:var(--navy2);position:relative;overflow:hidden;padding:2.75rem 3rem 2.5rem}
-.page-hero::after{content:'SPRING 2026';position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:'Plus Jakarta Sans',sans-serif;font-size:7rem;font-weight:900;color:rgba(255,255,255,.08);white-space:nowrap;pointer-events:none;letter-spacing:-.02em}
+.page-hero::after{content:'SPRING 2026';position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:'Plus Jakarta Sans',sans-serif;font-size:7rem;font-weight:900;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none;letter-spacing:-.02em}
 .hero-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
 .hero-tag{font-size:.67rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;border-radius:5px}
 .hero-tag.sem{background:rgba(145,72,252,.18);border:1px solid rgba(145,72,252,.35);color:var(--lavender)}
@@ -78,7 +78,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .page-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.1rem;font-weight:900;color:#fff;letter-spacing:-.01em;margin-bottom:.5rem;position:relative;z-index:1}
 .page-hero p{color:rgba(255,255,255,.6);font-size:.9rem;max-width:580px;position:relative;z-index:1}
 .hero-stats{display:flex;gap:3rem;margin-top:2rem;padding-top:1.75rem;border-top:1px solid rgba(255,255,255,.08);position:relative;z-index:1}
-.h-stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.6rem;font-weight:700;color:#fff}
+.h-stat-num{font-family:'JetBrains Mono',monospace;font-size:1.6rem;font-weight:600;color:#fff}
 .h-stat-num span{color:var(--lavender)}
 .h-stat-lbl{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-top:.1rem}
 
@@ -100,7 +100,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .urgency-label strong{color:#ff9999}
 .urgency-countdown{display:flex;align-items:center;gap:.4rem}
 .cd-unit{display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:.3rem .55rem;min-width:44px}
-.cd-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;line-height:1}
+.cd-num{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;color:#fff;line-height:1}
 .cd-lbl{font-size:.55rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:.15rem}
 .cd-sep{font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.4);margin-bottom:.3rem}
 .urgency-closed{font-size:.75rem;font-weight:700;color:#ff9999;padding:.3rem .75rem;background:rgba(255,68,68,.15);border:1px solid rgba(255,68,68,.3);border-radius:6px}
@@ -128,7 +128,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .card-icon.blu svg{stroke:#3b82f6}
 .prog-name{font-weight:700;color:var(--text);font-size:.88rem;line-height:1.25}
 .prog-cert{font-size:.68rem;color:var(--purple-d);font-weight:600;margin-top:.1rem}
-.card-date{font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:600;color:var(--text)}
+.card-date{font-family:'JetBrains Mono',monospace;font-size:.85rem;font-weight:600;color:var(--text)}
 .card-day{font-size:.7rem;color:var(--sub);margin-top:.1rem}
 .sched-tags{display:flex;flex-direction:column;gap:.25rem}
 .stag{display:inline-flex;align-items:center;gap:.35rem;font-size:.7rem;font-weight:700;padding:.22rem .6rem;border-radius:4px;width:fit-content}
@@ -140,7 +140,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .type-tag.weekend{background:#fef9ee;border:1px solid #fde68a;color:#92400e}
 .type-tag.online{background:#f0fdf4;border:1px solid #bbf7d0;color:#14532d}
 .seats-wrap{display:flex;flex-direction:column;gap:.2rem}
-.seats-n{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem}
+.seats-n{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.9rem}
 .seats-n.lo{color:var(--red)}
 .seats-n.md{color:var(--amber)}
 .seats-n.hi{color:var(--green)}
@@ -183,7 +183,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .online-cd .cd-num{color:#fff}
 .online-cd .cd-sep{color:rgba(255,255,255,.4)}
 
-
+/* ── ENROLL COUNT BADGE ── */
+.enroll-count{display:inline-flex;align-items:center;gap:.3rem;font-size:.65rem;font-weight:700;color:#0891b2;background:#e0f2fe;border:1px solid #bae6fd;border-radius:4px;padding:.15rem .45rem;margin-top:.2rem}
+.enroll-count svg{width:10px;height:10px;fill:#0891b2}
 
 /* ── START TODAY PULSE ── */
 .abtn.fill.pulse-enroll{position:relative;overflow:visible}
@@ -220,15 +222,6 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .modal-box{background:var(--white);border-radius:16px;width:100%;max-width:680px;max-height:88vh;overflow-y:auto;box-shadow:0 24px 64px rgba(8,13,26,.25);transform:translateY(12px);transition:transform .25s}
 .modal-overlay.open .modal-box{transform:translateY(0)}
 
-/* ── INLINE DETAIL PANEL ── */
-.inline-panel{display:none;grid-column:1/-1;background:var(--white);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 32px rgba(8,13,26,.1);margin:.25rem 0 .75rem;overflow:hidden;animation:panelIn .22s ease}
-.inline-panel.open{display:block}
-@keyframes panelIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
-.inline-panel .modal-head{border-radius:12px 12px 0 0}
-.inline-panel .modal-body{padding:1.25rem 1.5rem}
-.inline-panel .modal-footer{padding:.75rem 1.5rem 1rem}
-.course-card.panel-active{border-color:var(--purple);box-shadow:0 0 0 2px rgba(145,72,252,.15)}
-
 .modal-head{background:var(--navy);padding:1.5rem 1.75rem;border-radius:16px 16px 0 0;position:sticky;top:0;z-index:2}
 .modal-head-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
 .modal-close{background:rgba(255,255,255,.1);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
@@ -260,8 +253,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .week-list{display:flex;flex-direction:column;gap:.3rem}
 .week-row{display:flex;align-items:center;gap:.75rem;padding:.35rem .5rem;border-radius:6px;transition:background .15s}
 .week-row:hover{background:var(--bg)}
-.week-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:.65rem;font-weight:700;color:var(--slate);width:52px;flex-shrink:0}
-.week-date{font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;font-weight:600;color:var(--text);flex:1}
+.week-num{font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:700;color:var(--slate);width:52px;flex-shrink:0}
+.week-date{font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:600;color:var(--text);flex:1}
 .week-badge{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.15rem .45rem;border-radius:3px}
 .week-badge.lab{background:#f0ebff;color:var(--purple-d);border:1px solid #d8cffa}
 .week-badge.online{background:#f0fdf4;color:var(--green);border:1px solid #bbf7d0}
@@ -305,9 +298,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 ═══════════════════════════════════════ */
 @media(max-width:1024px){
   /* Hide sidebar, full-width main */
-  .page-layout{display:block}
+  .page-layout{grid-template-columns:1fr}
   .sidebar{display:none}
-  .main-content{margin-left:0}
 
   /* Header compact */
   .site-header{padding:.5rem 1.25rem;gap:.4rem}
@@ -440,6 +432,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   .abtn{min-width:100%}
   .session-block{margin:.75rem .5rem}
 }
+
+/* ── ENROLLMENT STATUS LABELS ── */
+.status-label{display:inline-flex;align-items:center;font-size:.78rem;font-weight:700;padding:.3rem .75rem;border-radius:6px;letter-spacing:.01em}
+.status-label.few-seats{background:#fef3c7;color:#92400e;border:1.5px solid #fcd34d}
+.status-label.open-enrollment{background:#d1fae5;color:#065f46;border:1.5px solid #6ee7b7}
+.status-label.limited-seats{background:#e0f2fe;color:#0369a1;border:1.5px solid #7dd3fc}
 </style></head><body>
 
 
@@ -464,6 +462,20 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" class="sidebar-link">Dental Assistant</a>
       <a href="https://www.alliedrxtraining.com/new-cmaa-page" class="sidebar-link">Medical Admin Assistant</a>
     </div>
+    <div class="sidebar-section">
+      <div class="enroll-cta">
+        <div class="enroll-cta-label">Enrollment Fee</div>
+        <div class="enroll-cta-price">$49</div>
+        <div class="enroll-cta-sub">Payment plans available</div>
+        <a href="https://www.alliedrxtraining.com/register" class="enroll-cta-btn">Register Now →</a>
+        <div class="fund-links">
+          <a href="https://www.alliedrxtraining.com/military" class="fund-lnk">ArmyCA Funding</a>
+          <a href="https://www.alliedrxtraining.com/military" class="fund-lnk">MyCAA Scholarship</a>
+          <a href="https://www.alliedrxtraining.com/military" class="fund-lnk">Air Force COOL</a>
+          <a href="https://www.alliedrxtraining.com/grants" class="fund-lnk">WIOA Grants</a>
+        </div>
+      </div>
+    </div>
   </aside>
 
   <!-- MAIN -->
@@ -482,7 +494,6 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div><div class="h-stat-num"><span>7</span></div><div class="h-stat-lbl">Online Programs</div></div>
         <div><div class="h-stat-num"><span>6</span></div><div class="h-stat-lbl">Session Dates</div></div>
         <div><div class="h-stat-num"><span>$49</span></div><div class="h-stat-lbl">To Enroll</div></div>
-        <div><div class="h-stat-num"><span>$99</span></div><div class="h-stat-lbl">Pharmacy Tech</div></div>
       </div>
     </div>
 
@@ -529,9 +540,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="sched-tags"><span class="stag d">Day · 10:00am–1:00pm</span><span class="stag e">Evening · 6:00pm–9:00pm</span></div>
           <div><span class="type-tag campus">Campus</span></div>
           <div class="seats-wrap">
-            <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n lo seat-count">7</span><div class="seat-bar"><div class="seat-fill lo seat-fill-bar" style="width:14%"></div></div></div>
-            <span class="seat-sub">seats remaining</span>
-            <span class="filling-fast"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Filling Fast</span>
+            <span class="status-label few-seats">Few Seats Remaining</span>
           </div>
           <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill reg-btn pulse-enroll">Register</a><a href="https://www.alliedrxtraining.com/new-ccma-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-ccma-apr-wd')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>View Schedule</button></div>
         </div>
@@ -547,9 +556,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="sched-tags"><span class="stag d">Day · 10:00am–1:00pm</span><span class="stag e">Evening · 6:00pm–9:00pm</span></div>
           <div><span class="type-tag campus">Campus</span></div>
           <div class="seats-wrap">
-            <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n lo seat-count">4</span><div class="seat-bar"><div class="seat-fill lo seat-fill-bar" style="width:10%"></div></div></div>
-            <span class="seat-sub">seats remaining</span>
-            <span class="filling-fast"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Almost Full</span>
+            <span class="status-label few-seats">Few Seats Remaining</span>
           </div>
           <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill reg-btn pulse-enroll">Register</a><a href="https://www.alliedrxtraining.com/new-phlebotomy-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-phleb-apr-wd')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>View Schedule</button></div>
         </div>
@@ -565,9 +572,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="sched-tags"><span class="stag w">Weekend · 10:00am–12:00pm</span></div>
           <div><span class="type-tag weekend">Weekend</span></div>
           <div class="seats-wrap">
-            <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n lo seat-count">4</span><div class="seat-bar"><div class="seat-fill lo seat-fill-bar" style="width:10%"></div></div></div>
-            <span class="seat-sub">seats remaining</span>
-            <span class="filling-fast"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Almost Full</span>
+            <span class="status-label few-seats">Few Seats Remaining</span>
           </div>
           <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill reg-btn pulse-enroll">Register</a><a href="https://www.alliedrxtraining.com/new-phlebotomy-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-phleb-apr-wknd')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>View Schedule</button></div>
         </div>
@@ -583,9 +588,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="sched-tags"><span class="stag w">Weekend · 10:00am–11:30am</span></div>
           <div><span class="type-tag weekend">Weekend</span></div>
           <div class="seats-wrap">
-            <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n lo seat-count">6</span><div class="seat-bar"><div class="seat-fill lo seat-fill-bar" style="width:15%"></div></div></div>
-            <span class="seat-sub">seats remaining</span>
-            <span class="filling-fast"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Filling Fast</span>
+            <span class="status-label few-seats">Few Seats Remaining</span>
           </div>
           <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill reg-btn pulse-enroll">Register</a><a href="https://www.alliedrxtraining.com/new-ccma-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-ccma-apr-wknd')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>View Schedule</button></div>
         </div>
@@ -626,8 +629,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="sched-tags"><span class="stag d">Day · 10:00am–1:00pm</span><span class="stag e">Evening · 6:00pm–9:00pm</span></div>
           <div><span class="type-tag campus">Campus</span></div>
           <div class="seats-wrap">
-            <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n md seat-count">10</span><div class="seat-bar"><div class="seat-fill md seat-fill-bar" style="width:50%"></div></div></div>
-            <span class="seat-sub">seats available</span>
+            <span class="status-label open-enrollment">Open Enrollment</span>
           </div>
           <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill reg-btn pulse-enroll">Register</a><a href="https://www.alliedrxtraining.com/new-ccma-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-ccma-may-wd')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>View Schedule</button></div>
         </div>
@@ -643,8 +645,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="sched-tags"><span class="stag d">Day · 10:00am–1:00pm</span><span class="stag e">Evening · 6:00pm–9:00pm</span></div>
           <div><span class="type-tag campus">Campus</span></div>
           <div class="seats-wrap">
-            <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n md seat-count">10</span><div class="seat-bar"><div class="seat-fill md seat-fill-bar" style="width:50%"></div></div></div>
-            <span class="seat-sub">seats available</span>
+            <span class="status-label open-enrollment">Open Enrollment</span>
           </div>
           <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill reg-btn pulse-enroll">Register</a><a href="https://www.alliedrxtraining.com/new-phlebotomy-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-phleb-may-wd')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>View Schedule</button></div>
         </div>
@@ -660,8 +661,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="sched-tags"><span class="stag w">Weekend · 10:00am–12:00pm</span></div>
           <div><span class="type-tag weekend">Weekend</span></div>
           <div class="seats-wrap">
-            <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n md seat-count">10</span><div class="seat-bar"><div class="seat-fill md seat-fill-bar" style="width:50%"></div></div></div>
-            <span class="seat-sub">seats available</span>
+            <span class="status-label open-enrollment">Open Enrollment</span>
           </div>
           <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill reg-btn pulse-enroll">Register</a><a href="https://www.alliedrxtraining.com/new-phlebotomy-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-phleb-may-wknd')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>View Schedule</button></div>
         </div>
@@ -677,8 +677,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
           <div class="sched-tags"><span class="stag w">Weekend · 10:00am–11:30am</span></div>
           <div><span class="type-tag weekend">Weekend</span></div>
           <div class="seats-wrap">
-            <div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n md seat-count">10</span><div class="seat-bar"><div class="seat-fill md seat-fill-bar" style="width:50%"></div></div></div>
-            <span class="seat-sub">seats available</span>
+            <span class="status-label open-enrollment">Open Enrollment</span>
           </div>
           <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill reg-btn pulse-enroll">Register</a><a href="https://www.alliedrxtraining.com/new-ccma-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-ccma-may-wknd')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>View Schedule</button></div>
         </div>
@@ -723,13 +722,13 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-            <div><div class="prog-name">Clinical Medical Assistant</div><div class="prog-cert">CCMA · NHA &amp; AMCA Approved</div></div>
+            <div><div class="prog-name">Clinical Medical Assistant</div><div class="prog-cert">CCMA · NHA &amp; AMCA Approved</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>312 enrolled this month</div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
           <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n hi">Open</span></div><span class="seat-sub">$49 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-ccma-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-ccma-online',this)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Program Details</button></div>
+          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$49 to enroll</span></div>
+          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-ccma-page" class="abtn line">Info</a></div>
         </div>
       </div>
 
@@ -737,13 +736,13 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon blu"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M6.343 15.657A8 8 0 0012 22a8 8 0 005.657-2.343"/></svg></div>
-            <div><div class="prog-name">Phlebotomy Technician</div><div class="prog-cert">CPT · NHA &amp; AMCA Accredited</div></div>
+            <div><div class="prog-name">Phlebotomy Technician</div><div class="prog-cert">CPT · NHA &amp; AMCA Accredited</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>247 enrolled this month</div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
           <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n hi">Open</span></div><span class="seat-sub">$49 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/100-online-phlebotomy-technician-program" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-phleb-online',this)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Program Details</button></div>
+          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$49 to enroll</span></div>
+          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/100-online-phlebotomy-technician-program" class="abtn line">Info</a></div>
         </div>
       </div>
 
@@ -751,13 +750,13 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
-            <div><div class="prog-name">Pharmacy Technician</div><div class="prog-cert">CPhT · ASHP Accredited</div></div>
+            <div><div class="prog-name">Pharmacy Technician</div><div class="prog-cert">CPhT · ExCPT Approved</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>189 enrolled this month</div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
           <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n hi">Open</span></div><span class="seat-sub">$99 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-pharmt-online',this)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Program Details</button></div>
+          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$99 to enroll</span></div>
+          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" class="abtn line">Info</a></div>
         </div>
       </div>
 
@@ -765,13 +764,13 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon blu"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-            <div><div class="prog-name">EKG Technician</div><div class="prog-cert">CET · NHA Approved</div></div>
+            <div><div class="prog-name">EKG Technician</div><div class="prog-cert">CET · NHA Approved</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>143 enrolled this month</div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
           <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n hi">Open</span></div><span class="seat-sub">$49 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-ekg-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-ekg-online',this)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Program Details</button></div>
+          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$49 to enroll</span></div>
+          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-ekg-page" class="abtn line">Info</a></div>
         </div>
       </div>
 
@@ -779,13 +778,13 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-            <div><div class="prog-name">Medical Billing &amp; Coding</div><div class="prog-cert">CBCS · NHA Approved</div></div>
+            <div><div class="prog-name">Medical Billing &amp; Coding</div><div class="prog-cert">CBCS · NHA Approved</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>201 enrolled this month</div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
           <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n hi">Open</span></div><span class="seat-sub">$49 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-medical-billing-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-mbc-online',this)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Program Details</button></div>
+          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$49 to enroll</span></div>
+          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-medical-billing-page" class="abtn line">Info</a></div>
         </div>
       </div>
 
@@ -793,13 +792,13 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h5l5 5v11a2 2 0 01-2 2z"/></svg></div>
-            <div><div class="prog-name">Medical Admin Assistant</div><div class="prog-cert">CMAA · NHA Approved</div></div>
+            <div><div class="prog-name">Medical Admin Assistant</div><div class="prog-cert">CMAA · NHA Approved</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>178 enrolled this month</div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
           <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n hi">Open</span></div><span class="seat-sub">$49 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-cmaa-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-cmaa-online',this)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Program Details</button></div>
+          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$49 to enroll</span></div>
+          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-cmaa-page" class="abtn line">Info</a></div>
         </div>
       </div>
 
@@ -807,13 +806,13 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="card-inner">
           <div class="card-prog">
             <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <div><div class="prog-name">Registered Dental Assistant</div><div class="prog-cert">RDA · DANB Approved</div></div>
+            <div><div class="prog-name">Registered Dental Assistant</div><div class="prog-cert">RDA · DANB Approved</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>156 enrolled this month</div>
           </div>
           <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
           <div class="sched-tags"><span class="stag d">100% Online</span></div>
           <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><div style="display:flex;align-items:center;gap:.4rem"><span class="seats-n hi">Open</span></div><span class="seat-sub">$49 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-rda-online',this)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Program Details</button></div>
+          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$49 to enroll</span></div>
+          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" class="abtn line">Info</a></div>
         </div>
       </div>
 
@@ -842,11 +841,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-body">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/6964f728605c00098bea0b82_Image%201-11-26%20at%203.17%E2%80%AFPM.jpeg" alt="CCMA program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/66a7aa0eeaf706ff0f9550ef_64f403c75c8901d87e2cc475_Untitled%2520design-19.png" alt="CCMA training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
+      <div class="modal-section">
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
@@ -916,11 +911,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-body">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/69aef9d63f8f143859a53099_6964f82afb813b3e10b22d3b_Screenshot%25202026-01-11%2520at%25202.26.46%25E2%2580%25AFPM.png" alt="Phlebotomy program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/69aef9d73f8f143859a5309e_6964f841c73c75da2acfeb88_Screenshot%25202026-01-11%2520at%25202.24.52%25E2%2580%25AFPM.png" alt="Phlebotomy training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
+      <div class="modal-section">
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
@@ -985,11 +976,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-body">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/69aef9d63f8f143859a53099_6964f82afb813b3e10b22d3b_Screenshot%25202026-01-11%2520at%25202.26.46%25E2%2580%25AFPM.png" alt="Phlebotomy program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/69aef9d73f8f143859a5309e_6964f841c73c75da2acfeb88_Screenshot%25202026-01-11%2520at%25202.24.52%25E2%2580%25AFPM.png" alt="Phlebotomy training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
+      <div class="modal-section">
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
@@ -1054,11 +1041,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-body">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/6964f728605c00098bea0b82_Image%201-11-26%20at%203.17%E2%80%AFPM.jpeg" alt="CCMA program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/66a7aa0eeaf706ff0f9550ef_64f403c75c8901d87e2cc475_Untitled%2520design-19.png" alt="CCMA training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
+      <div class="modal-section">
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
@@ -1119,11 +1102,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-body">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/6964f728605c00098bea0b82_Image%201-11-26%20at%203.17%E2%80%AFPM.jpeg" alt="CCMA program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/66a7aa0eeaf706ff0f9550ef_64f403c75c8901d87e2cc475_Untitled%2520design-19.png" alt="CCMA training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
+      <div class="modal-section">
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
@@ -1193,11 +1172,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-body">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/69aef9d63f8f143859a53099_6964f82afb813b3e10b22d3b_Screenshot%25202026-01-11%2520at%25202.26.46%25E2%2580%25AFPM.png" alt="Phlebotomy program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/69aef9d73f8f143859a5309e_6964f841c73c75da2acfeb88_Screenshot%25202026-01-11%2520at%25202.24.52%25E2%2580%25AFPM.png" alt="Phlebotomy training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
+      <div class="modal-section">
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
@@ -1262,11 +1237,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-body">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/69aef9d63f8f143859a53099_6964f82afb813b3e10b22d3b_Screenshot%25202026-01-11%2520at%25202.26.46%25E2%2580%25AFPM.png" alt="Phlebotomy program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/69aef9d73f8f143859a5309e_6964f841c73c75da2acfeb88_Screenshot%25202026-01-11%2520at%25202.24.52%25E2%2580%25AFPM.png" alt="Phlebotomy training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
+      <div class="modal-section">
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
@@ -1331,11 +1302,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
     <div class="modal-body">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/6964f728605c00098bea0b82_Image%201-11-26%20at%203.17%E2%80%AFPM.jpeg" alt="CCMA program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/66a7aa0eeaf706ff0f9550ef_64f403c75c8901d87e2cc475_Untitled%2520design-19.png" alt="CCMA training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
+      <div class="modal-section">
         <div class="modal-section-head">
           <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <div class="modal-section-label">In-Person Lab Sessions</div>
@@ -1373,617 +1340,6 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
     <div class="modal-footer">
       <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
       <button class="mfbtn line" onclick="closeModal('modal-ccma-may-wknd')">Close</button>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: Registered Dental Assistant Online -->
-<div class="inline-panel" id="modal-rda-online">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
-        <div>
-          <div class="modal-prog-tag ccma">Dental Assistant Program</div>
-          <h2>Registered Dental Assistant — Online</h2>
-        </div>
-        <button class="modal-close" onclick="closeModal('modal-rda-online')">✕</button>
-      </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">RDA · DANB Approved</span>
-      </div>
-    </div>
-    <div class="modal-body">
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/698654f7ebbf766df4650cb5_Image%202-5-26%20at%202.51%E2%80%AFPM-p-1600.png" alt="Dental Assistant program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/698654f818a2558d5cdc0bfc_Image%202-5-26%20at%202.49%E2%80%AFPM-p-1600.png" alt="Dental Assistant training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">About the Program</div>
-        </div>
-        <div class="modal-note" style="margin-top:.5rem">Prepare for a career in dental care through comprehensive online training covering dental procedures, patient care, and clinical fundamentals. Prepares students for the DANB Registered Dental Assistant (RDA) exam.</div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-          <div class="modal-section-label">Program Highlights</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">Online</span><span class="week-date">100% Online Program</span></div>
-          <div class="week-row"><span class="week-badge lab">Skills</span><span class="week-date">Dental procedures, patient care, and clinical fundamentals</span></div>
-          <div class="week-row"><span class="week-badge lab">Cert</span><span class="week-date">Prepares for the DANB Registered Dental Assistant (RDA) exam</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <div class="modal-section-label">What's Included</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Full access to your digital ebook</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">How It Works</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">1</span><span class="week-date">Complete orientation to add your course</span></div>
-          <div class="week-row"><span class="week-num">2</span><span class="week-date">Access your training through the AlliedRx Learning Portal</span></div>
-          <div class="week-row"><span class="week-num">3</span><span class="week-date">Complete coursework on your own schedule</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div class="modal-section-label">Admission Requirements</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge lab">Req</span><span class="week-date">Must be 18 years of age or older</span></div>
-        </div>
-      </div>
-
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-rda-online')">Close</button>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: Medical Billing & Coding Online -->
-<div class="inline-panel" id="modal-mbc-online">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
-        <div>
-          <div class="modal-prog-tag ccma">Medical Billing Program</div>
-          <h2>Medical Billing &amp; Coding — Online</h2>
-        </div>
-        <button class="modal-close" onclick="closeModal('modal-mbc-online')">✕</button>
-      </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">CBCS · NHA Approved</span>
-      </div>
-    </div>
-    <div class="modal-body">
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964f2b171cbe25dc01112b6_Screenshot%202026-01-12%20at%207.24.19%E2%80%AFAM-p-1600.png" alt="Medical Billing program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964f2d4b39c2dcacff775da_Screenshot%202026-01-11%20at%202.26.49%E2%80%AFPM-p-2000.png" alt="Medical Billing training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">About the Program</div>
-        </div>
-        <div class="modal-note" style="margin-top:.5rem">Build a career in healthcare administration by learning coding systems and insurance processing. Prepares students for both the NHA Certified Billing and Coding Specialist (CBCS) and the AAPC Certified Billing and Coding Professional (CBCP) exams.</div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-          <div class="modal-section-label">Program Highlights</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">Online</span><span class="week-date">100% Online Program</span></div>
-          <div class="week-row"><span class="week-badge lab">Skills</span><span class="week-date">ICD-10, CPT, and billing procedures</span></div>
-          <div class="week-row"><span class="week-badge lab">Cert</span><span class="week-date">Prepares for NHA Certified Billing and Coding Specialist (CBCS) exam</span></div>
-          <div class="week-row"><span class="week-badge lab">Cert</span><span class="week-date">Also prepares for AAPC Certified Billing and Coding Professional (CBCP) certification</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <div class="modal-section-label">What's Included</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Full access to your digital ebook</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">How It Works</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">1</span><span class="week-date">Complete orientation to add your course</span></div>
-          <div class="week-row"><span class="week-num">2</span><span class="week-date">Access your training through the AlliedRx Learning Portal</span></div>
-          <div class="week-row"><span class="week-num">3</span><span class="week-date">Complete coursework on your own schedule</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div class="modal-section-label">Admission Requirements</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge lab">Req</span><span class="week-date">Must be 18 years of age or older</span></div>
-        </div>
-      </div>
-
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-mbc-online')">Close</button>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: Phlebotomy Technician Online -->
-<div class="inline-panel" id="modal-phleb-online">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
-        <div>
-          <div class="modal-prog-tag ccma">Phlebotomy Program</div>
-          <h2>Phlebotomy Technician — Online</h2>
-        </div>
-        <button class="modal-close" onclick="closeModal('modal-phleb-online')">✕</button>
-      </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">CPT · NHA &amp; AMCA Accredited</span>
-      </div>
-    </div>
-    <div class="modal-body">
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/69aef9d63f8f143859a53099_6964f82afb813b3e10b22d3b_Screenshot%25202026-01-11%2520at%25202.26.46%25E2%2580%25AFPM.png" alt="Phlebotomy program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/69aef9d73f8f143859a5309e_6964f841c73c75da2acfeb88_Screenshot%25202026-01-11%2520at%25202.24.52%25E2%2580%25AFPM.png" alt="Phlebotomy training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">About the Program</div>
-        </div>
-        <div class="modal-note" style="margin-top:.5rem">Learn blood collection techniques and patient interaction through structured online training. Prepares students for the NHA Certified Phlebotomy Technician (CPT) exam.</div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-          <div class="modal-section-label">Program Highlights</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">Online</span><span class="week-date">100% Online Program</span></div>
-          <div class="week-row"><span class="week-badge lab">Skills</span><span class="week-date">Venipuncture theory and procedures</span></div>
-          <div class="week-row"><span class="week-badge lab">Support</span><span class="week-date">Clinical guidance available</span></div>
-          <div class="week-row"><span class="week-badge lab">Cert</span><span class="week-date">Prepares for the NHA Certified Phlebotomy Technician (CPT) exam</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <div class="modal-section-label">What's Included</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Full access to your digital ebook</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">How It Works</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">1</span><span class="week-date">Complete orientation to add your course</span></div>
-          <div class="week-row"><span class="week-num">2</span><span class="week-date">Access your training through the AlliedRx Learning Portal</span></div>
-          <div class="week-row"><span class="week-num">3</span><span class="week-date">Complete coursework on your own schedule</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div class="modal-section-label">Admission Requirements</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge lab">Req</span><span class="week-date">Must be 18 years of age or older</span></div>
-        </div>
-      </div>
-
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-phleb-online')">Close</button>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: Medical Administrative Assistant Online -->
-<div class="inline-panel" id="modal-cmaa-online">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
-        <div>
-          <div class="modal-prog-tag ccma">CMAA Program</div>
-          <h2>Medical Administrative Assistant — Online</h2>
-        </div>
-        <button class="modal-close" onclick="closeModal('modal-cmaa-online')">✕</button>
-      </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">CMAA · NHA Approved</span>
-      </div>
-    </div>
-    <div class="modal-body">
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69ca725a8f82d95ee89a614a_Screenshot%202026-03-30%20at%208.52.33%E2%80%AFAM.png" alt="CMAA program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69ca725adcc3b72cd44c78ef_Screenshot%202026-03-30%20at%208.53.26%E2%80%AFAM.png" alt="CMAA training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">About the Program</div>
-        </div>
-        <div class="modal-note" style="margin-top:.5rem">Prepare for front-office healthcare roles managing patient scheduling, records, and communication. Prepares students for the NHA Certified Medical Administrative Assistant (CMAA) exam.</div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-          <div class="modal-section-label">Program Highlights</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">Online</span><span class="week-date">100% Online Program</span></div>
-          <div class="week-row"><span class="week-badge lab">Skills</span><span class="week-date">Administrative procedures and EHR systems</span></div>
-          <div class="week-row"><span class="week-badge lab">Cert</span><span class="week-date">Prepares for the NHA Certified Medical Administrative Assistant (CMAA) exam</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <div class="modal-section-label">What's Included</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">How It Works</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">1</span><span class="week-date">Complete orientation to add your course</span></div>
-          <div class="week-row"><span class="week-num">2</span><span class="week-date">Access your training through the AlliedRx Learning Portal</span></div>
-          <div class="week-row"><span class="week-num">3</span><span class="week-date">Complete coursework on your own schedule</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div class="modal-section-label">Admission Requirements</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge lab">Req</span><span class="week-date">Must be 18 years of age or older</span></div>
-        </div>
-      </div>
-
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-cmaa-online')">Close</button>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: EKG Technician Online -->
-<div class="inline-panel" id="modal-ekg-online">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
-        <div>
-          <div class="modal-prog-tag ccma">EKG Tech Program</div>
-          <h2>EKG Technician — Online</h2>
-        </div>
-        <button class="modal-close" onclick="closeModal('modal-ekg-online')">✕</button>
-      </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">CET · NHA Approved</span>
-      </div>
-    </div>
-    <div class="modal-body">
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964e8f61ec7d4ab131bad10_Screenshot%202026-01-11%20at%202.15.07%E2%80%AFPM.png" alt="EKG program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964e8f660190dd5cde29978_Screenshot%202026-01-11%20at%202.17.07%E2%80%AFPM.png" alt="EKG training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">About the Program</div>
-        </div>
-        <div class="modal-note" style="margin-top:.5rem">Train in cardiac monitoring and diagnostic testing through simulation-based learning. Prepares students for the NHA Certified EKG Technician (CET) exam.</div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-          <div class="modal-section-label">Program Highlights</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">Online</span><span class="week-date">100% Online Program</span></div>
-          <div class="week-row"><span class="week-badge lab">Skills</span><span class="week-date">ECG interpretation and cardiac procedures</span></div>
-          <div class="week-row"><span class="week-badge lab">Cert</span><span class="week-date">Prepares for the NHA Certified EKG Technician (CET) exam</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <div class="modal-section-label">What's Included</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Full access to your digital ebook</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">How It Works</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">1</span><span class="week-date">Complete orientation to add your course</span></div>
-          <div class="week-row"><span class="week-num">2</span><span class="week-date">Access your training through the AlliedRx Learning Portal</span></div>
-          <div class="week-row"><span class="week-num">3</span><span class="week-date">Complete coursework on your own schedule</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div class="modal-section-label">Admission Requirements</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge lab">Req</span><span class="week-date">Must be 18 years of age or older</span></div>
-        </div>
-      </div>
-
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-ekg-online')">Close</button>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: Clinical Medical Assistant Online -->
-<div class="inline-panel" id="modal-ccma-online">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
-        <div>
-          <div class="modal-prog-tag ccma">CCMA Program</div>
-          <h2>Clinical Medical Assistant — Online</h2>
-        </div>
-        <button class="modal-close" onclick="closeModal('modal-ccma-online')">✕</button>
-      </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">CCMA · NHA &amp; AMCA Approved</span>
-      </div>
-    </div>
-    <div class="modal-body">
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/6964f728605c00098bea0b82_Image%201-11-26%20at%203.17%E2%80%AFPM.jpeg" alt="CCMA program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb0907c/66a7aa0eeaf706ff0f9550ef_64f403c75c8901d87e2cc475_Untitled%2520design-19.png" alt="CCMA training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">About the Program</div>
-        </div>
-        <div class="modal-note" style="margin-top:.5rem">Prepare for a career in patient care through simulation-based training and real-world clinical scenarios. Prepares students for the NHA Certified Clinical Medical Assistant (CCMA) exam.</div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-          <div class="modal-section-label">Program Highlights</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">Online</span><span class="week-date">100% Online Program</span></div>
-          <div class="week-row"><span class="week-badge lab">Skills</span><span class="week-date">Patient care, vitals, EHR, and clinical procedures</span></div>
-          <div class="week-row"><span class="week-badge lab">Cert</span><span class="week-date">Prepares for the NHA Certified Clinical Medical Assistant (CCMA) exam</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <div class="modal-section-label">What's Included</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Full access to your digital ebook</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">How It Works</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">1</span><span class="week-date">Complete orientation to add your course</span></div>
-          <div class="week-row"><span class="week-num">2</span><span class="week-date">Access your training through the AlliedRx Learning Portal</span></div>
-          <div class="week-row"><span class="week-num">3</span><span class="week-date">Complete coursework on your own schedule</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div class="modal-section-label">Admission Requirements</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge lab">Req</span><span class="week-date">Must be 18 years of age or older</span></div>
-        </div>
-      </div>
-
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-ccma-online')">Close</button>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: Pharmacy Technician Online -->
-<div class="inline-panel" id="modal-pharmt-online">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
-        <div>
-          <div class="modal-prog-tag ccma">Pharmacy Tech Program</div>
-          <h2>Pharmacy Technician — Online</h2>
-        </div>
-        <button class="modal-close" onclick="closeModal('modal-pharmt-online')">✕</button>
-      </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>100% Online</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>14-Week Program</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Begins After Enrollment &amp; Orientation</span>
-        <span class="modal-chip">ASHP Accredited · CPhT</span>
-      </div>
-    </div>
-    <div class="modal-body">
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964f4317a75cfe847972073_Screenshot%202026-01-11%20at%203.13.51%E2%80%AFPM.png" alt="Pharmacy Tech program" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-        <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964f430f08871d87b550bda_Screenshot%202026-01-11%20at%203.15.18%E2%80%AFPM.png" alt="Pharmacy Tech training" style="width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;display:block">
-      </div>
-<div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">About the Program</div>
-        </div>
-        <div class="modal-note" style="margin-top:.5rem">Prepare for a pharmacy career with AlliedRx's comprehensive online program featuring simulation-based training and real-world pharmacy workflow.</div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-          <div class="modal-section-label">Program Highlights</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">Online</span><span class="week-date">100% Online Program</span></div>
-          <div class="week-row"><span class="week-badge online">14 Weeks</span><span class="week-date">Structured 14-week program</span></div>
-          <div class="week-row"><span class="week-badge lab">Skills</span><span class="week-date">Medication preparation, labeling, and pharmacy workflow</span></div>
-          <div class="week-row"><span class="week-badge lab">Simulation</span><span class="week-date">Simulation-based training for real-world application</span></div>
-          <div class="week-row"><span class="week-badge lab">Clinical</span><span class="week-date">Clinical rotation at Walgreens or contracted pharmacies in your area</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <div class="modal-section-label">What's Included</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Interactive simulations and real-world activities</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">National board exam preparation</span></div>
-          <div class="week-row"><span class="week-badge online">✓</span><span class="week-date">Up to 6 months of access to complete the program</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">How It Works</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">1</span><span class="week-date">Complete orientation to add your course</span></div>
-          <div class="week-row"><span class="week-num">2</span><span class="week-date">Access your training through the AlliedRx Learning Portal</span></div>
-          <div class="week-row"><span class="week-num">3</span><span class="week-date">Complete coursework on your own schedule</span></div>
-        </div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div class="modal-section-label">Admission Requirements</div>
-          <div class="modal-section-sub">Completed after registration</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-badge lab">Req</span><span class="week-date">Complete enrollment documents and orientation</span></div>
-          <div class="week-row"><span class="week-badge lab">Req</span><span class="week-date">Proof of high school diploma or equivalent (if applicable)</span></div>
-          <div class="week-row"><span class="week-badge lab">Req</span><span class="week-date">Criminal background check</span></div>
-          <div class="week-row"><span class="week-badge lab">Req</span><span class="week-date">Drug testing requirements</span></div>
-        </div>
-        <div class="modal-note" style="margin-top:.75rem"><strong>Trainee License Required</strong> — Students in Virginia, Ohio, and Texas must obtain a trainee license from their respective Board of Pharmacy before clinical participation. Students in other states should check with their Board of Pharmacy to confirm requirements.</div>
-      </div>
-
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Enroll Now →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-pharmt-online')">Close</button>
     </div>
   </div>
 </div>
@@ -2113,46 +1469,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 })();
 
 /* ── MODALS ── */
-function openModal(id, btn){
-  var el = document.getElementById(id);
-  if(!el) return;
-  // Inline panel: move it into the cards grid after the clicked card
-  if(el.classList.contains('inline-panel')){
-    // Close any other open inline panel
-    document.querySelectorAll('.inline-panel.open').forEach(function(p){
-      if(p.id !== id){ p.classList.remove('open'); p._sourceCard && p._sourceCard.classList.remove('panel-active'); }
-    });
-    var card = btn ? btn.closest('.course-card') : null;
-    var grid = card ? card.parentNode : null;
-    if(card && grid){
-      // Insert panel after the card if not already there
-      if(el.nextElementSibling !== card.nextElementSibling || el.parentNode !== grid){
-        grid.insertBefore(el, card.nextSibling);
-      }
-      el._sourceCard = card;
-      card.classList.add('panel-active');
-    }
-    el.classList.toggle('open');
-    if(el.classList.contains('open')){
-      setTimeout(function(){ el.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 50);
-    } else {
-      card && card.classList.remove('panel-active');
-    }
-    return;
-  }
-  // Standard overlay modal
-  el.classList.add('open');
+function openModal(id){
+  document.getElementById(id).classList.add('open');
   document.body.style.overflow='hidden';
 }
 function closeModal(id){
-  var el = document.getElementById(id);
-  if(!el) return;
-  if(el.classList.contains('inline-panel')){
-    el.classList.remove('open');
-    el._sourceCard && el._sourceCard.classList.remove('panel-active');
-    return;
-  }
-  el.classList.remove('open');
+  document.getElementById(id).classList.remove('open');
   document.body.style.overflow='';
 }
 document.querySelectorAll('.modal-overlay').forEach(o=>{
@@ -2198,119 +1520,6 @@ buildCountdown(new Date('2026-05-18T23:59:00-05:00'), 'cd-may');
 // Online pricing expires April 30, 2026 at 11:59pm ET
 buildCountdown(new Date('2026-04-30T23:59:00-05:00'), 'cd-online');
 
-/* ── SEAT CLICK TRACKING ── */
-// Base seat counts per card (truth source = data-seats on .course-card)
-// localStorage key: "seats_<card-id>" stores how many clicks (registrations) have happened
-function initSeats(){
-  document.querySelectorAll('.course-card[data-card-id]').forEach(card=>{
-    const id = card.getAttribute('data-card-id');
-    const base = parseInt(card.getAttribute('data-seats'), 10);
-    const clicks = parseInt(localStorage.getItem('seats_'+id)||'0', 10);
-    const remaining = Math.max(0, base - clicks);
-    updateSeatDisplay(card, remaining, base);
-  });
-}
 
-function updateSeatDisplay(card, remaining, base){
-  const numEl = card.querySelector('.seat-count');
-  const barEl = card.querySelector('.seat-fill-bar');
-  if(!numEl) return;
-  const pct = base > 0 ? Math.round((remaining / base) * 100) : 0;
-  numEl.textContent = remaining > 0 ? remaining : '0';
-  // color thresholds
-  const lo = remaining <= 5;
-  const md = remaining > 5 && remaining <= 10;
-  numEl.className = 'seats-n seat-count ' + (remaining===0?'lo':lo?'lo':md?'md':'hi');
-  if(barEl){
-    barEl.style.width = pct+'%';
-    barEl.className = 'seat-fill seat-fill-bar ' + (remaining===0?'lo':lo?'lo':md?'md':'hi');
-  }
-  // sub-label
-  const sub = card.querySelector('.seat-sub');
-  if(sub) sub.textContent = remaining===0 ? 'waitlist only' : remaining <= 10 ? 'seats remaining' : 'seats available';
-  // filling-fast badge
-  const ff = card.querySelector('.filling-fast');
-  if(ff){
-    if(remaining === 0){ ff.innerHTML = '<svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Waitlist Only'; ff.style.color='#dc2626'; ff.style.background='#fef2f2'; ff.style.borderColor='#fca5a5'; }
-    else if(remaining <= 3){ ff.innerHTML = '<svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Almost Full'; }
-    else if(remaining <= 7){ ff.innerHTML = '<svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Filling Fast'; }
-    else { ff.style.display='none'; }
-  }
-  // disable button if full
-  const btn = card.querySelector('.reg-btn');
-  if(btn && remaining === 0){
-    btn.textContent = 'Join Waitlist';
-    btn.style.background = 'var(--slate)';
-    btn.style.pointerEvents = 'none';
-    btn.style.opacity = '.7';
-  }
-}
-
-// Wire up register buttons to decrement seats
-document.querySelectorAll('.course-card[data-card-id] .reg-btn').forEach(btn=>{
-  btn.addEventListener('click', function(e){
-    const card = this.closest('.course-card[data-card-id]');
-    if(!card) return;
-    const id = card.getAttribute('data-card-id');
-    const base = parseInt(card.getAttribute('data-seats'), 10);
-    const clicks = parseInt(localStorage.getItem('seats_'+id)||'0', 10);
-    const remaining = Math.max(0, base - clicks);
-    if(remaining > 0){
-      localStorage.setItem('seats_'+id, clicks+1);
-      updateSeatDisplay(card, remaining-1, base);
-    }
-    // navigation continues normally via href
-  });
-});
-
-initSeats();
-
-/* ── SIDEBAR: align top flush with bottom of sticky header ── */
-(function(){
-  var sidebar = document.querySelector('.sidebar');
-  var header  = document.querySelector('.site-header');
-  if(!sidebar || !header) return;
-  function alignSidebar(){
-    var hBottom = Math.round(header.getBoundingClientRect().bottom);
-    sidebar.style.top    = hBottom + 'px';
-    sidebar.style.height = 'calc(100vh - ' + hBottom + 'px)';
-  }
-  // Run immediately, after fonts/layout, and on scroll/resize
-  alignSidebar();
-  window.addEventListener('load',   alignSidebar);
-  window.addEventListener('scroll', alignSidebar, {passive:true});
-  window.addEventListener('resize', alignSidebar, {passive:true});
-})();
-
-/* ── AUTO-RESIZE FOR IFRAME EMBED ── */
-function sendHeight(){
-  var h = document.documentElement.scrollHeight;
-  window.parent.postMessage({ scheduleHeight: h }, '*');
-}
-window.addEventListener('load', sendHeight);
-window.addEventListener('resize', sendHeight);
-// Also fire after any filter/modal interaction that may change height
-document.addEventListener('click', function(){ setTimeout(sendHeight, 50); });
 </script>
-<!-- AlliedRx Footer Loader -->
-<script>
-(function(){
-  fetch('https://alliedrx.github.io/MedicalBilling/footer.html')
-    .then(function(r){return r.text();})
-    .then(function(html){
-      var parser=new DOMParser();
-      var doc=parser.parseFromString(html,'text/html');
-      var footer=doc.querySelector('footer');
-      var style=doc.querySelector('style');
-      var target=document.querySelector('.main-content')||document.querySelector('.main')||document.body;
-      if(style){
-        var safeStyle=document.createElement('style');
-        safeStyle.textContent=style.textContent;
-        document.head.appendChild(safeStyle);
-      }
-      if(footer){target.appendChild(document.adoptNode(footer));}
-    });
-})();
-</script>
-<!-- End AlliedRx Footer Loader -->
 </body></html>
