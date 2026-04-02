@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Do I Need a Trainee Registration? — Pharmacy Technician Orientation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --primary:      #5D6DFA;
+  --primary-soft: #A5AFFF;
+  --primary-bg:   rgba(93,109,250,0.07);
+  --success:      #00b894;
+  --success-bg:   rgba(0,184,148,0.08);
+  --warn:         #e67e22;
+  --warn-bg:      rgba(230,126,34,0.09);
+  --text:         #1e2030;
+  --muted:        #6c6880;
+  --border:       rgba(15,23,42,0.1);
+  --bg:           #F7F7F7;
+  --card:         #ffffff;
+  --radius-lg:    22px;
+  --radius-md:    14px;
+  --shadow:       0 18px 45px rgba(23,10,61,0.14);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; overflow-x: hidden; }
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 24px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) { body { padding: 12px; } }
+
+/* ---- Container ---- */
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 34px 32px 48px;
+}
+
+@media (max-width: 700px) { .page { padding: 22px 16px 36px; } }
+
+/* ---- Brand ---- */
+.brand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+
+.brand-logo {
+  height: 44px;
+  width: auto;
+  filter: drop-shadow(0 3px 7px rgba(0,0,0,0.18));
+}
+
+.course-meta span {
+  display: block;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(12,10,24,0.06);
+  border: 1px solid rgba(12,10,24,0.09);
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ---- Heading ---- */
+.page-title {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  font-size: 0.96rem;
+  color: var(--muted);
+  max-width: 560px;
+  margin-bottom: 34px;
+}
+
+/* ---- Step label ---- */
+.step-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+/* ---- State search ---- */
+.state-search-wrap {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 1.05rem;
+  pointer-events: none;
+}
+
+.state-input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.97rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--card);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.state-input:focus { border-color: var(--primary); }
+
+.state-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0; right: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  z-index: 100;
+  max-height: 270px;
+  overflow-y: auto;
+}
+
+.state-dropdown.open { display: block; }
+
+.state-opt {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 0.92rem;
+  transition: background 0.12s;
+}
+
+.state-opt:hover          { background: var(--primary-bg); }
+.state-opt.is-selected    { background: var(--primary-bg); font-weight: 700; color: var(--primary); }
+
+/* ---- Result panel ---- */
+.result-panel {
+  display: none;
+  border-radius: var(--radius-md);
+  padding: 24px 22px;
+  border: 2px solid var(--border);
+  margin-bottom: 28px;
+}
+
+.result-panel.visible { display: block; }
+
+.result-panel.r-none     { border-color: rgba(0,184,148,0.4);  background: var(--success-bg); }
+.result-panel.r-trainee  { border-color: rgba(230,126,34,0.4); background: var(--warn-bg); }
+.result-panel.r-required { border-color: rgba(93,109,250,0.35); background: var(--primary-bg); }
+
+/* Status bar */
+.status-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+
+.status-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+.r-none .status-dot     { background: var(--success); }
+.r-trainee .status-dot  { background: var(--warn); }
+.r-required .status-dot { background: var(--primary); }
+
+.status-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.r-none .status-tag     { color: var(--success); }
+.r-trainee .status-tag  { color: var(--warn); }
+.r-required .status-tag { color: var(--primary); }
+
+.result-state { font-size: 1.22rem; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+
+.result-body { font-size: 0.92rem; line-height: 1.68; margin-bottom: 14px; }
+
+.result-action {
+  font-size: 0.87rem;
+  font-weight: 600;
+  padding: 11px 14px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.04);
+  border-left: 3px solid;
+}
+
+.r-none .result-action     { border-color: var(--success); color: #007d62; }
+.r-trainee .result-action  { border-color: var(--warn);    color: #a0530d; }
+.r-required .result-action { border-color: var(--primary); color: #3d4dca; }
+
+/* ---- Checklist ---- */
+.checklist-wrap { display: none; margin-bottom: 24px; }
+.checklist-wrap.visible { display: block; }
+
+.checklist-heading { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.14s;
+  user-select: none;
+}
+
+.check-item:hover { background: var(--primary-bg); }
+
+.check-item.ticked {
+  background: var(--success-bg);
+  border-color: rgba(0,184,148,0.3);
+}
+
+.check-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.74rem;
+  color: white;
+  margin-top: 1px;
+  transition: all 0.15s;
+}
+
+.check-item.ticked .check-box {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.tick-mark { display: none; }
+.check-item.ticked .tick-mark { display: block; }
+
+.check-text { font-size: 0.88rem; line-height: 1.5; }
+
+/* ---- Confirm ---- */
+.confirm-btn {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, var(--primary), #7c3aed);
+  color: white;
+  font-family: inherit;
+  font-size: 0.97rem;
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 0.38;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.15s;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.confirm-btn.ready { opacity: 1; pointer-events: auto; }
+.confirm-btn.ready:hover { transform: translateY(-2px); }
+
+.confirm-msg {
+  display: none;
+  background: var(--success-bg);
+  border: 1px solid rgba(0,184,148,0.3);
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: 0.92rem;
+  color: #00785d;
+  font-weight: 600;
+  text-align: center;
+}
+
+.confirm-msg.visible { display: block; }
+
+/* ---- Divider ---- */
+.divider { height: 1px; background: var(--border); margin: 34px 0; }
+
+/* ---- Two-column info ---- */
+.two-col {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ---- Info cards ---- */
+.info-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.info-card:last-child { margin-bottom: 0; }
+
+.info-card-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.87rem;
+}
+
+.info-row:last-child { border-bottom: none; }
+.info-row-label { color: var(--muted); flex-shrink: 0; max-width: 55%; }
+.info-row-value { font-weight: 600; color: var(--text); text-align: right; }
+
+/* ---- Stats ---- */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-pill {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 10px;
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.stat-lbl {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+}
+
+/* ---- Alerts ---- */
+.alert {
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 0.87rem;
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.alert-warn {
+  background: var(--warn-bg);
+  border: 1px solid rgba(230,126,34,0.3);
+  color: #7e4410;
+}
+
+.alert-info {
+  background: var(--primary-bg);
+  border: 1px solid rgba(93,109,250,0.25);
+  color: #3444b8;
+}
+
+.alert b { font-weight: 700; }
+
+/* ---- Trainee states list ---- */
+.trainee-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.trainee-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.77rem;
+  font-weight: 600;
+}
+
+.trainee-pill.tp-trainee  { background: rgba(230,126,34,0.12); color: #8c4b0a; }
+.trainee-pill.tp-none     { background: rgba(0,184,148,0.12);  color: #006a52; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Brand row -->
+  <div class="brand-row">
+    <div class="brand">
+      <img
+        src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/64e9d2f719b1e5258e5d57f5_IMG_1512-p-500.png"
+        class="brand-logo"
+        alt="AlliedRx Training"
+      />
+      <div class="course-meta">
+        <span>AlliedRx Training</span>
+        <span>Pharmacy Technician Program — Orientation</span>
+      </div>
+    </div>
+    <span class="badge">State Requirements Tool</span>
+  </div>
+
+  <!-- Heading -->
+  <h1 class="page-title">Do I Need a Trainee Registration?</h1>
+  <p class="page-subtitle">
+    Pharmacy technician licensing requirements vary significantly by state. Some states require
+    a trainee registration or permit <strong>before</strong> you may perform any pharmacy duties.
+    Others require full registration only after passing your national exam. A few states have
+    no licensure requirement at all. Search your state below to find out exactly what applies to you.
+  </p>
+
+  <!-- State search -->
+  <div class="step-label">Search Your State</div>
+  <div class="state-search-wrap">
+    <span class="search-icon">&#9906;</span>
+    <input
+      type="text"
+      id="stateInput"
+      class="state-input"
+      placeholder="Type a state or territory name..."
+      autocomplete="off"
+      oninput="filterStates(this.value)"
+      onfocus="openDrop()"
+    />
+    <div class="state-dropdown" id="stateDrop"></div>
+  </div>
+
+  <!-- Result -->
+  <div class="result-panel" id="resultPanel">
+    <div class="status-bar">
+      <div class="status-dot"></div>
+      <span class="status-tag" id="statusTag"></span>
+    </div>
+    <div class="result-state" id="resultState"></div>
+    <div class="result-body" id="resultBody"></div>
+    <div class="result-action" id="resultAction"></div>
+  </div>
+
+  <!-- Checklist -->
+  <div class="checklist-wrap" id="checklistWrap">
+    <div class="checklist-heading">Confirm your understanding before continuing:</div>
+    <div id="checklistItems"></div>
+    <button class="confirm-btn" id="confirmBtn" onclick="doConfirm()">
+      I Understand — Continue to My Course
+    </button>
+    <div class="confirm-msg" id="confirmMsg">
+      Confirmed. Your acknowledgment has been recorded. You may continue to your course materials.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Info section -->
+  <div class="two-col">
+
+    <!-- Left -->
+    <div>
+      <div class="info-card">
+        <div class="info-card-title">Understanding the Three Categories</div>
+        <div class="info-row">
+          <span class="info-row-label">Trainee Registration Required</span>
+          <span class="info-row-value">Register as a trainee BEFORE starting pharmacy duties</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Full Registration Required</span>
+          <span class="info-row-value">Register after passing PTCB or ExCPT — no separate trainee step</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">No State License Required</span>
+          <span class="info-row-value">No state registration needed; employer standards and national certification apply</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">National certification</span>
+          <span class="info-row-value">PTCB (PTCE exam) or NHA (ExCPT exam) — recognized nationwide</span>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-title">States Requiring Trainee Registration</div>
+        <p style="font-size:0.87rem;color:var(--muted);margin-bottom:12px;">
+          The following states require a specific trainee, provisional, or candidate registration
+          before you may begin supervised pharmacy duties. Apply early — some states take
+          4 to 6 weeks to process applications.
+        </p>
+        <div class="trainee-list">
+          <span class="trainee-pill tp-trainee">Arizona</span>
+          <span class="trainee-pill tp-trainee">District of Columbia</span>
+          <span class="trainee-pill tp-trainee">Idaho</span>
+          <span class="trainee-pill tp-trainee">Illinois</span>
+          <span class="trainee-pill tp-trainee">Louisiana</span>
+          <span class="trainee-pill tp-trainee">Maine</span>
+          <span class="trainee-pill tp-trainee">Massachusetts</span>
+          <span class="trainee-pill tp-trainee">Montana</span>
+          <span class="trainee-pill tp-trainee">New Hampshire</span>
+          <span class="trainee-pill tp-trainee">New Mexico</span>
+          <span class="trainee-pill tp-trainee">Ohio</span>
+          <span class="trainee-pill tp-trainee">Oklahoma</span>
+          <span class="trainee-pill tp-trainee">Oregon</span>
+          <span class="trainee-pill tp-trainee">Pennsylvania</span>
+          <span class="trainee-pill tp-trainee">Texas</span>
+          <span class="trainee-pill tp-trainee">Utah</span>
+          <span class="trainee-pill tp-trainee">Virginia</span>
+          <span class="trainee-pill tp-trainee">West Virginia</span>
+          <span class="trainee-pill tp-trainee">Wyoming</span>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-title">States with No Licensure Requirement</div>
+        <p style="font-size:0.87rem;color:var(--muted);margin-bottom:12px;">
+          These five states have no state registration for pharmacy technicians. Your employer
+          will still likely require national certification through PTCB or NHA.
+        </p>
+        <div class="trainee-list">
+          <span class="trainee-pill tp-none">Colorado</span>
+          <span class="trainee-pill tp-none">Delaware</span>
+          <span class="trainee-pill tp-none">Hawaii</span>
+          <span class="trainee-pill tp-none">New York</span>
+          <span class="trainee-pill tp-none">Wisconsin</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div>
+      <div class="stat-row">
+        <div class="stat-pill">
+          <span class="stat-num">19</span>
+          <span class="stat-lbl">Trainee permit states</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">27</span>
+          <span class="stat-lbl">Full registration states</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">5</span>
+          <span class="stat-lbl">No license required</span>
+        </div>
+      </div>
+
+      <div class="alert alert-warn">
+        <b>Apply Early in Trainee States</b><br>
+        Texas and Ohio require the trainee registration to be active <em>before</em>
+        you perform any pharmacy duties. Texas processing takes up to 6 weeks and
+        Ohio requires fingerprinting through a WebCheck provider.
+        Do not wait until your externship begins.
+      </div>
+
+      <div class="alert alert-info">
+        <b>Pennsylvania and Ohio Added Trainee Requirements</b><br>
+        Both states recently introduced mandatory trainee registrations.
+        Pennsylvania added a $15 trainee registration (min. age 16).
+        Ohio added a $40 trainee registration effective September 2025
+        (valid 18 months, non-renewable).
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-title">Key Tips for All Students</div>
+        <div class="info-row">
+          <span class="info-row-label">Check your state board early</span>
+          <span class="info-row-value">Apply for trainee status at program start, not at externship</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Requirements change</span>
+          <span class="info-row-value">Always confirm with your State Board of Pharmacy directly</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Background checks</span>
+          <span class="info-row-value">Most states require fingerprinting or criminal history review</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">After your exam</span>
+          <span class="info-row-value">Upgrade from trainee to full registration in your state</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Employer requirements</span>
+          <span class="info-row-value">Employers may require more than the state minimum</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end two-col -->
+
+</div><!-- end page -->
+
+<script>
+/* -----------------------------------------------
+   STATE DATA
+----------------------------------------------- */
+const STATES = {
+
+  /* ---- TRAINEE PERMIT REQUIRED ---- */
+  "Arizona": {
+    s: "trainee",
+    body: "Arizona requires all pharmacy technician students to register as a Pharmacy Technician Trainee with the Arizona State Board of Pharmacy before performing any pharmacy duties. You will receive a trainee registration card rather than a full license. The fee is $25. After completing your AlliedRx program and passing the PTCB or NHA ExCPT exam, you must upgrade to a full Pharmacy Technician license.",
+    action: "Apply for Pharmacy Technician Trainee registration at pharmacy.az.gov before your externship begins. Have your program enrollment documentation and a valid photo ID ready."
+  },
+  "District of Columbia": {
+    s: "trainee",
+    body: "The District of Columbia allows pharmacy technician students to register as a Pharmacy Technician Trainee with the DC Board of Pharmacy if they are enrolled in a board-approved training program and have not yet passed a national certification exam. Full registration is required after passing the PTCB or ExCPT exam.",
+    action: "Register as a Pharmacy Technician Trainee with the DC Board of Pharmacy at dchealth.dc.gov before beginning your externship."
+  },
+  "Idaho": {
+    s: "trainee",
+    body: "Idaho requires a Pharmacy Technician-in-Training registration from the Idaho Board of Pharmacy before you may begin any on-site pharmacy training or duties. The registration is valid for one year. This applies to students enrolled in a training program that includes pharmacy on-site work.",
+    action: "Register as a Pharmacy Technician-in-Training at bop.idaho.gov before your externship begins. Registration is required prior to any on-site pharmacy hours."
+  },
+  "Illinois": {
+    s: "trainee",
+    body: "Illinois allows individuals to begin working in a pharmacy before obtaining a full license, but you must obtain full licensure within two years of starting employment. There is no separate named trainee permit — Illinois treats your first two years as a working trainee period supervised by your employer. Do not let the two-year window lapse without obtaining full registration.",
+    action: "You may begin working while pursuing certification. Apply for your pharmacy technician license with the Illinois Department of Financial and Professional Regulation at idfpr.illinois.gov within two years of starting work."
+  },
+  "Louisiana": {
+    s: "trainee",
+    body: "Louisiana requires pharmacy technician students to obtain a Pharmacy Technician Candidate registration with the Louisiana Board of Pharmacy while they are completing their education and training requirements. This candidate status allows supervised work before achieving full certification and registration.",
+    action: "Apply for Pharmacy Technician Candidate registration with the Louisiana Board of Pharmacy at labp.com before beginning any pharmacy externship hours."
+  },
+  "Maine": {
+    s: "trainee",
+    body: "Maine allows pharmacy technician students to obtain on-the-job training registration status with the Maine Board of Pharmacy before completing full certification requirements. This registration enables supervised work experience as part of the training process.",
+    action: "Register for trainee/OJT status with the Maine Board of Pharmacy at maine.gov/professionallicensing before your externship begins."
+  },
+  "Massachusetts": {
+    s: "trainee",
+    body: "Massachusetts offers a Technician-in-Training program that allows students to gain supervised pharmacy experience before completing national certification requirements. You must register in this program with the Massachusetts Board of Registration in Pharmacy before performing pharmacy duties.",
+    action: "Register as a Technician-in-Training with the Massachusetts Board of Registration in Pharmacy at mass.gov/pharmacy before your externship hours begin."
+  },
+  "Montana": {
+    s: "trainee",
+    body: "Montana allows pharmacy technician students to work under a Provisional Pharmacy Technician license for up to one year while completing training and national certification requirements. After one year, you must hold a full pharmacy technician license.",
+    action: "Apply for a Provisional Pharmacy Technician license with the Montana Board of Pharmacy at boards.bsd.dli.mt.gov before beginning your externship."
+  },
+  "New Hampshire": {
+    s: "trainee",
+    body: "New Hampshire requires pharmacy technician students to complete 80 hours of on-the-job training, then register with the New Hampshire Board of Pharmacy within 15 days of completing those hours. Minimum age is 16. After completing the full training program and passing the national exam, full pharmacy technician registration is required.",
+    action: "Begin your 80 hours of supervised OJT, then register with the NH Board of Pharmacy at oplc.nh.gov within 15 days of completing those hours. Minimum age is 16."
+  },
+  "New Mexico": {
+    s: "trainee",
+    body: "New Mexico allows pharmacy technician students to work as non-certified technicians for up to one year while working toward national certification. After one year, full certification and Board registration are required. This one-year period effectively serves as a supervised trainee window.",
+    action: "Register with the New Mexico Board of Pharmacy at rld.nm.gov. You may begin working while pursuing your national certification, but must be fully certified and registered within one year."
+  },
+  "Ohio": {
+    s: "trainee",
+    body: "Ohio requires a Pharmacy Technician Trainee registration from the Ohio Board of Pharmacy BEFORE performing any pharmacy technician duties. The registration fee is $40 (effective September 30, 2025). Registration is valid for 18 months and is not renewable — if additional time is needed, you must apply for an 18-month reinstatement before your registration expires. Fingerprinting through an Ohio WebCheck provider is required. You must have an active status before beginning any pharmacy work — a Pending or In-Review status does not authorize work.",
+    action: "Apply at elicense.ohio.gov well before your externship. Allow 10 to 15 business days for processing. Complete your fingerprinting at an Ohio WebCheck provider as part of the application."
+  },
+  "Oklahoma": {
+    s: "trainee",
+    body: "Oklahoma requires pharmacy technician students to obtain a trainee permit from the Oklahoma State Board of Pharmacy before performing pharmacy duties. The permit must be co-signed by a licensed Oklahoma pharmacist at your training site and submitted to the Board.",
+    action: "Obtain a trainee permit application from the Oklahoma Board of Pharmacy at pharmacy.ok.gov. Have a licensed pharmacist at your externship site co-sign the permit before beginning work."
+  },
+  "Oregon": {
+    s: "trainee",
+    body: "Oregon offers a one-year Pharmacy Technician license for students who have not yet passed a national certification exam. You must obtain this license from the Oregon Board of Pharmacy before performing pharmacy duties. After one year, you must upgrade to a Certified Oregon Pharmacy Technician (COPT) license by passing the PTCB or ExCPT exam.",
+    action: "Apply for the one-year Pharmacy Technician license at oregon.gov/pharmacy before your externship begins. Plan to pass your national certification exam before the one-year license expires."
+  },
+  "Pennsylvania": {
+    s: "trainee",
+    body: "Pennsylvania requires a Pharmacy Technician Trainee registration from the Bureau of Professional and Occupational Affairs before performing pharmacy duties. The registration fee is $15. Registration is valid for two years, or until you obtain full pharmacy technician registration, whichever comes first. Minimum age is 16. A criminal history record check and completion of 3 hours of board-approved child abuse recognition continuing education are required for initial registration.",
+    action: "Apply for Pharmacy Technician Trainee registration through the PA Bureau of Professional and Occupational Affairs at pa.gov. Have your enrollment documentation ready. Minimum age is 16."
+  },
+  "Texas": {
+    s: "trainee",
+    body: "Texas requires all students to register as a Pharmacy Technician Trainee with the Texas State Board of Pharmacy BEFORE beginning any pharmacy training or duties. This registration is a one-time issuance — it cannot be renewed, extended, or transferred. If you already hold PTCB or ExCPT certification, do NOT apply for the trainee registration; apply directly for full registration instead. Processing takes a minimum of six weeks. Fingerprinting for a criminal background check is required as part of the application.",
+    action: "Apply for Pharmacy Technician Trainee registration at pharmacy.texas.gov as soon as your program begins. Do not wait — allow at least six weeks for processing. Do not begin any pharmacy duties until your registration is active."
+  },
+  "Utah": {
+    s: "trainee",
+    body: "Utah requires pharmacy technician students to register as a Pharmacy Technician Trainee with the Utah Division of Occupational and Professional Licensing before working in a pharmacy. After completing a minimum of 180 hours of on-the-job training and passing a national certification exam, you must upgrade to full pharmacy technician designation.",
+    action: "Register as a Pharmacy Technician Trainee at dopl.utah.gov before your externship begins. Keep documentation of all on-the-job training hours throughout your program."
+  },
+  "Virginia": {
+    s: "trainee",
+    body: "Virginia requires students enrolled in a pharmacy technician training program to register as a Pharmacy Technician Trainee with the Virginia Board of Pharmacy before performing pharmacy duties under supervision. Registration is valid for up to two years and is not renewable. Registration becomes invalid if you stop being actively enrolled in the program. You must be directly monitored by a licensed pharmacist at all times.",
+    action: "Apply for Pharmacy Technician Trainee registration with the Virginia Board of Pharmacy at dhp.virginia.gov before your externship begins. Registration is only available to students actively enrolled in a training program."
+  },
+  "West Virginia": {
+    s: "trainee",
+    body: "West Virginia requires pharmacy technician students to register as a Pharmacy Technician Trainee with the West Virginia Board of Pharmacy before performing pharmacy duties. Trainees must be currently engaged in a board-approved technician training program and work under the direct supervision of a licensed pharmacist.",
+    action: "Apply for Pharmacy Technician Trainee registration at wvbop.com before your externship begins. Ensure your AlliedRx program is recognized by the West Virginia Board of Pharmacy."
+  },
+  "Wyoming": {
+    s: "trainee",
+    body: "Wyoming offers a Pharmacy Technician-in-Training permit that allows students to work in a pharmacy for up to two years while pursuing national certification. You must obtain this permit from the Wyoming State Board of Pharmacy before beginning pharmacy duties.",
+    action: "Apply for the Technician-in-Training permit at pharmacy.wyo.gov before your externship begins. The permit is valid for two years while you complete your certification requirements."
+  },
+
+  /* ---- NO STATE LICENSE REQUIRED ---- */
+  "Colorado": {
+    s: "none",
+    body: "Colorado does not require pharmacy technicians to obtain a state license or registration. There is no state board regulation over who can and cannot work as a pharmacy technician in Colorado — it is left to individual employers to establish credential requirements. Most employers will still require national certification through PTCB or NHA.",
+    action: "No state registration required in Colorado. Focus on completing your AlliedRx program and passing your PTCB or ExCPT exam to meet employer expectations."
+  },
+  "Delaware": {
+    s: "none",
+    body: "Delaware has no licensure or registration requirement for pharmacy technicians. You only need a high school diploma or GED to satisfy state requirements. Employers may still require national certification through PTCB or NHA as a condition of employment.",
+    action: "No state registration required in Delaware. Complete your AlliedRx program and national certification exam to maximize your employment opportunities."
+  },
+  "Hawaii": {
+    s: "none",
+    body: "Hawaii does not require pharmacy technicians to hold a state license or registration. National certification is not mandated by the state but is strongly encouraged and expected by most employers.",
+    action: "No state registration required in Hawaii. Complete your AlliedRx program and national certification exam to meet employer standards."
+  },
+  "New York": {
+    s: "none",
+    body: "New York does not require pharmacy technicians to hold a state license. Employer policies determine what credentials are needed. National certification through PTCB or NHA is highly recommended and expected by most New York employers.",
+    action: "No state registration required in New York. Complete your AlliedRx program and pass your national certification exam to meet employer requirements."
+  },
+  "Wisconsin": {
+    s: "none",
+    body: "Wisconsin has no licensure requirements for pharmacy technicians. There is no state board regulation requiring registration. Employers establish their own credential and certification standards.",
+    action: "No state registration required in Wisconsin. Complete your AlliedRx program and national certification exam to meet employer expectations."
+  },
+
+  /* ---- FULL REGISTRATION REQUIRED ---- */
+  "Alabama": {
+    s: "required",
+    body: "Alabama requires pharmacy technicians to register with the Alabama Board of Pharmacy before working. Registration requires passing the PTCB or ExCPT national exam. There is no separate trainee permit — you register after completing your program and passing your exam.",
+    action: "After completing your AlliedRx program and passing your national exam, register with the Alabama Board of Pharmacy at albop.com."
+  },
+  "Alaska": {
+    s: "required",
+    body: "Alaska requires pharmacy technicians to register with the Alaska Board of Pharmacy before working. You must complete an on-the-job training program and obtain registration. National certification is required.",
+    action: "Register with the Alaska Board of Pharmacy at commerce.alaska.gov after completing your training and national certification."
+  },
+  "Arkansas": {
+    s: "required",
+    body: "Arkansas requires pharmacy technicians to register with the Arkansas State Board of Pharmacy before working. No separate trainee permit exists. Registration requires passing the national certification exam.",
+    action: "Register with the Arkansas State Board of Pharmacy at pharmacy.arkansas.gov after completing your AlliedRx program and passing your PTCB or ExCPT exam."
+  },
+  "California": {
+    s: "required",
+    body: "California requires all pharmacy technicians to hold a license from the California State Board of Pharmacy before working. There is no separate trainee license. You must complete an approved training program and pass the PTCB or ExCPT exam to qualify for licensure.",
+    action: "Apply for your Pharmacy Technician license at pharmacy.ca.gov after completing your AlliedRx program and passing your national exam."
+  },
+  "Connecticut": {
+    s: "required",
+    body: "Connecticut requires pharmacy technicians to register with the Connecticut Department of Consumer Protection before working. No separate trainee permit exists. Certification is not required for initial registration, but most employers expect it.",
+    action: "Register with the CT Department of Consumer Protection at portal.ct.gov after completing your AlliedRx program."
+  },
+  "Florida": {
+    s: "required",
+    body: "Florida requires all pharmacy technicians to register with the Florida Board of Pharmacy before working. You must complete a Board-approved training program. No separate trainee permit exists. A background check is required.",
+    action: "Register with the Florida Board of Pharmacy at floridaspharmacy.gov after completing your AlliedRx program."
+  },
+  "Georgia": {
+    s: "required",
+    body: "Georgia requires pharmacy technicians to register with the Georgia Board of Pharmacy before working. Georgia does not have a separate trainee registration category. National certification is not required for initial registration, though employers typically expect it.",
+    action: "Register with the Georgia Board of Pharmacy at gbp.georgia.gov after completing your AlliedRx program."
+  },
+  "Indiana": {
+    s: "required",
+    body: "Indiana requires pharmacy technicians to register with the Indiana Professional Licensing Agency before working. You must have completed a board-approved training program or have passed the PTCB or ExCPT exam. No separate trainee permit exists.",
+    action: "Register with the Indiana Professional Licensing Agency at in.gov/pla after completing your AlliedRx program and national certification."
+  },
+  "Iowa": {
+    s: "required",
+    body: "Iowa requires pharmacy technicians to register with the Iowa Board of Pharmacy before working. No separate trainee permit exists. Registration requires completion of training and passing a national exam.",
+    action: "Register with the Iowa Board of Pharmacy at pharmacy.iowa.gov after completing your AlliedRx program and national exam."
+  },
+  "Kansas": {
+    s: "required",
+    body: "Kansas requires pharmacy technicians to register with the Kansas State Board of Pharmacy before working. No separate trainee permit exists. Passing a national or state board exam is required for registration.",
+    action: "Register with the Kansas Board of Pharmacy at pharmacy.ks.gov after completing your AlliedRx program and passing your certification exam."
+  },
+  "Kentucky": {
+    s: "required",
+    body: "Kentucky requires pharmacy technicians to register with the Kentucky Board of Pharmacy before working. Minimum age is 16. Within six months of employment, trainees must be trained by a licensed pharmacist in specific tasks. No separate pre-employment trainee permit exists.",
+    action: "Register with the Kentucky Board of Pharmacy at pharmacy.ky.gov before beginning pharmacy work. Minimum age is 16."
+  },
+  "Maryland": {
+    s: "required",
+    body: "Maryland requires pharmacy technicians to be trained, certified, and registered before working. Registration is with the Maryland Board of Pharmacy. Minimum age is 16. No separate trainee permit exists.",
+    action: "Register with the Maryland Board of Pharmacy at mdbop.org after completing your AlliedRx program and national certification. Minimum age is 16."
+  },
+  "Michigan": {
+    s: "required",
+    body: "Michigan requires pharmacy technicians to be licensed by the Michigan Board of Pharmacy before working. You must complete an approved training program and pass a national certification exam. No separate trainee license exists.",
+    action: "Apply for your pharmacy technician license at michigan.gov/lara after completing your AlliedRx program and passing your national exam."
+  },
+  "Minnesota": {
+    s: "required",
+    body: "Minnesota requires pharmacy technicians to register with the Minnesota Board of Pharmacy before working. National certification is required for registration. No separate trainee permit exists.",
+    action: "Register with the Minnesota Board of Pharmacy at mn.gov/boards/pharmacy after passing your national certification exam."
+  },
+  "Mississippi": {
+    s: "required",
+    body: "Mississippi requires pharmacy technicians to register with the Mississippi Board of Pharmacy before working. No separate trainee permit exists. Registration requires completion of a training program.",
+    action: "Register with the Mississippi Board of Pharmacy at mbp.ms.gov after completing your AlliedRx program and national certification."
+  },
+  "Missouri": {
+    s: "required",
+    body: "Missouri requires pharmacy technicians to register with the Missouri Board of Pharmacy before working. No separate trainee permit exists.",
+    action: "Register with the Missouri Board of Pharmacy at pr.mo.gov after completing your AlliedRx program and national exam."
+  },
+  "Nebraska": {
+    s: "required",
+    body: "Nebraska requires pharmacy technicians to register with the Nebraska Department of Health and Human Services before working. Completion of a board-approved program or national certification is required. No separate trainee permit exists.",
+    action: "Register with the Nebraska DHHS at dhhs.ne.gov after completing your AlliedRx program and national exam."
+  },
+  "Nevada": {
+    s: "required",
+    body: "Nevada requires pharmacy technicians to obtain a license from the Nevada State Board of Pharmacy before working. A background check and national certification are required. No separate trainee permit exists.",
+    action: "Apply for your pharmacy technician license at bop.nv.gov after completing your AlliedRx program and passing your national exam."
+  },
+  "New Jersey": {
+    s: "required",
+    body: "New Jersey requires pharmacy technicians to register with the New Jersey Board of Pharmacy before working. National certification through PTCB or ExCPT is required. No separate trainee permit exists.",
+    action: "Register with the NJ Board of Pharmacy at njconsumeraffairs.gov after passing your national certification exam."
+  },
+  "North Carolina": {
+    s: "required",
+    body: "North Carolina requires pharmacy technicians to obtain a technician license from the North Carolina Board of Pharmacy before working. A background check is required. No separate trainee permit exists.",
+    action: "Register with the NC Board of Pharmacy at ncbop.org before beginning pharmacy duties."
+  },
+  "North Dakota": {
+    s: "required",
+    body: "North Dakota requires pharmacy technicians to register with the North Dakota Board of Pharmacy before working. National certification is required for registration. No separate trainee permit exists.",
+    action: "Register with the ND Board of Pharmacy at ndbop.org after completing your AlliedRx program and national exam."
+  },
+  "Rhode Island": {
+    s: "required",
+    body: "Rhode Island requires pharmacy technicians to register with the Rhode Island Board of Pharmacy before working. National certification is required. No separate trainee permit exists.",
+    action: "Register with the RI Board of Pharmacy at health.ri.gov after passing your national certification exam."
+  },
+  "South Carolina": {
+    s: "required",
+    body: "South Carolina requires pharmacy technicians to register with the South Carolina Board of Pharmacy before working. A background check is required. No separate trainee permit exists.",
+    action: "Register at llr.sc.gov after completing your AlliedRx program and national certification."
+  },
+  "South Dakota": {
+    s: "required",
+    body: "South Dakota requires pharmacy technicians to be licensed by the South Dakota Board of Pharmacy before working. National certification is required for licensure. No separate trainee permit exists.",
+    action: "Register with the SD Board of Pharmacy at pharmacy.sd.gov after passing your national certification exam."
+  },
+  "Tennessee": {
+    s: "required",
+    body: "Tennessee requires pharmacy technicians to register with the Tennessee Board of Pharmacy before beginning work. Candidates must apply for registration before commencing employment. National certification is required. No separate trainee permit exists.",
+    action: "Register with the Tennessee Board of Pharmacy at tn.gov/health/boards/pharmacy before your externship begins."
+  },
+  "Vermont": {
+    s: "required",
+    body: "Vermont requires pharmacy technicians to register with the Vermont Board of Pharmacy before working. National certification is required. No separate trainee permit exists.",
+    action: "Register with the Vermont Board of Pharmacy at sec.vermont.gov/professional-regulation after completing your program and national exam."
+  },
+  "Washington": {
+    s: "required",
+    body: "Washington State requires pharmacy technicians to register with the Washington State Department of Health before working. National certification through PTCB or ExCPT is required for registration. No separate trainee permit exists.",
+    action: "Register with the WA Department of Health at doh.wa.gov after completing your AlliedRx program and passing your national exam."
+  }
+};
+
+/* Label text per status */
+const TAGS = {
+  trainee:  "Trainee Registration Required",
+  none:     "No State License Required",
+  required: "Full Registration Required"
+};
+
+/* Checklists per status */
+const CHECKLISTS = {
+  trainee: [
+    "I understand that my state requires a trainee registration or permit BEFORE I may begin any pharmacy externship or supervised duties.",
+    "I will apply for my trainee registration as soon as my program enrollment is confirmed, and will not begin pharmacy duties until my registration is active.",
+    "I understand that after completing my AlliedRx program and passing my national certification exam, I must upgrade from trainee status to full pharmacy technician registration."
+  ],
+  none: [
+    "I understand that my state does not require a pharmacy technician license or registration.",
+    "I understand that my employer may still require national certification (PTCB or ExCPT) as a condition of employment, regardless of state requirements.",
+    "I have noted the current status at my state's Board of Pharmacy website and will re-check before beginning my externship, as requirements can change."
+  ],
+  required: [
+    "I understand that my state requires full pharmacy technician registration, which I will obtain after completing my AlliedRx program and passing my national certification exam.",
+    "I understand that I should confirm my registration status with my state Board of Pharmacy before beginning any externship hours.",
+    "I will check my state Board of Pharmacy's website directly to confirm the current application process, fees, and any background check requirements."
+  ]
+};
+
+/* -----------------------------------------------
+   DOM / LOGIC
+----------------------------------------------- */
+const allStates = Object.keys(STATES).sort();
+let currentState = null;
+
+function filterStates(val) {
+  const dd = document.getElementById('stateDrop');
+  dd.classList.add('open');
+  const filtered = allStates.filter(s => s.toLowerCase().includes(val.toLowerCase()));
+  renderDrop(filtered);
+}
+
+function openDrop() {
+  const dd = document.getElementById('stateDrop');
+  dd.classList.add('open');
+  renderDrop(allStates);
+}
+
+function renderDrop(list) {
+  const dd = document.getElementById('stateDrop');
+  dd.innerHTML = '';
+  list.forEach(state => {
+    const d = document.createElement('div');
+    d.className = 'state-opt' + (state === currentState ? ' is-selected' : '');
+    d.textContent = state;
+    d.onclick = () => pickState(state);
+    dd.appendChild(d);
+  });
+}
+
+document.addEventListener('click', e => {
+  const wrap = document.querySelector('.state-search-wrap');
+  if (wrap && !wrap.contains(e.target)) {
+    document.getElementById('stateDrop').classList.remove('open');
+  }
+});
+
+function pickState(state) {
+  currentState = state;
+  document.getElementById('stateInput').value = state;
+  document.getElementById('stateDrop').classList.remove('open');
+
+  const d = STATES[state];
+  const panel = document.getElementById('resultPanel');
+  panel.className = 'result-panel visible r-' + d.s;
+
+  document.getElementById('statusTag').textContent  = TAGS[d.s];
+  document.getElementById('resultState').textContent = state;
+  document.getElementById('resultBody').textContent  = d.body;
+  document.getElementById('resultAction').textContent = 'Next step: ' + d.action;
+
+  // Build checklist
+  const wrap = document.getElementById('checklistWrap');
+  wrap.classList.add('visible');
+
+  const items = CHECKLISTS[d.s];
+  const container = document.getElementById('checklistItems');
+  container.innerHTML = '';
+  items.forEach((txt, i) => {
+    const div = document.createElement('div');
+    div.className = 'check-item';
+    div.id = 'ci-' + i;
+    div.onclick = () => toggleItem(i, items.length);
+    div.innerHTML = `
+      <div class="check-box"><span class="tick-mark">&#10003;</span></div>
+      <div class="check-text">${txt}</div>`;
+    container.appendChild(div);
+  });
+
+  // Reset confirm state
+  const btn = document.getElementById('confirmBtn');
+  btn.classList.remove('ready');
+  btn.style.display = 'block';
+  document.getElementById('confirmMsg').classList.remove('visible');
+
+  // Scroll to result
+  panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function toggleItem(idx, total) {
+  document.getElementById('ci-' + idx).classList.toggle('ticked');
+  const ticked = document.querySelectorAll('.check-item.ticked').length;
+  const btn = document.getElementById('confirmBtn');
+  ticked === total ? btn.classList.add('ready') : btn.classList.remove('ready');
+}
+
+function doConfirm() {
+  document.getElementById('confirmBtn').style.display = 'none';
+  document.getElementById('confirmMsg').classList.add('visible');
+}
+</script>
+
+</body>
+</html>
