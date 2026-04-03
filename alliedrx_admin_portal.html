@@ -132,7 +132,7 @@
   @keyframes spin { to { transform: rotate(360deg); } }
 
   /* ======= MODAL ======= */
-  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); display: none; align-items: flex-start; justify-content: center; z-index: 1000; padding: 20px; overflow-y: auto; }
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); display: none; align-items: flex-start;#justify-content: center; z-index: 1000; padding: 20px; overflow-y: auto; }
   .modal-overlay.open { display: flex; }
   .modal { background: white; border-radius: 18px; width: 100%; max-width: 860px; box-shadow: 0 20px 60px rgba(0,0,0,0.25); margin: auto; animation: slideUp 0.2s ease; }
   @keyframes slideUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
@@ -159,7 +159,7 @@
   .photo-card-lbl { padding: 7px 10px; font-size: 0.75rem; font-weight: 700; color: var(--blue-dark); background: #ebebff; }
   .photo-card img { width: 100%; height: 150px; object-fit: cover; cursor: pointer; display: block; transition: transform 0.2s; }
   .photo-card img:hover { transform: scale(1.03); }
-  .no-photo { height: 150px; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; color: #94a3b8; }
+  .no-photo { height: 150px; display: flex; align-items: center;#justify-content: center; font-size: 0.78rem; color: #94a3b8; }
   .video-section { margin-bottom: 22px; }
   .video-section h3 { font-size: 0.74rem; font-weight: 800; color: var(--blue-dark); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.7px; }
   .video-section video { width: 100%; border-radius: 10px; background: #000; max-height: 340px; }
@@ -174,7 +174,7 @@
   .override-info { background: #ede9fe; border-radius: 8px; padding: 8px 12px; font-size: 0.8rem; color: #6d28d9; margin-bottom: 10px; }
 
   /* ======= LIGHTBOX ======= */
-  .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center; z-index: 2000; cursor: zoom-out; }
+  .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: none; align-items: center;#justify-content: center; z-index: 2000; cursor: zoom-out; }
   .lightbox.open { display: flex; }
   .lightbox img { max-width: 95vw; max-height: 92vh; border-radius: 8px; object-fit: contain; }
   .lb-close { position: fixed; top: 18px; right: 22px; background: white; border: none; border-radius: 50%; width: 38px; height: 38px; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
@@ -218,7 +218,7 @@
     <div class="auth-panel" id="panel-register">
       <input type="text" id="regName" placeholder="Your full name" />
       <input type="email" id="regEmail" placeholder="Staff email address" />
-      <input type="password" id="regPass" placeholder="Password (min 8 characters)" />
+  #   <input type="password" id="regPass" placeholder="Password (min 8 characters)" />
       <input type="password" id="regPass2" placeholder="Confirm password" />
       <button class="auth-btn" id="regBtn" onclick="doRegister()">Create Staff Account →</button>
       <div class="auth-error" id="regError"></div>
@@ -408,7 +408,7 @@
 
 <script>
 const SUPABASE_URL  = 'https://hhzggarfpslftqwvjuiq.supabase.co';
-const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhoemdnYXJmcHNsZnRxd3VqdWlxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2MTQ2MjMsImV4cCI6MjA4NzE5MDYyM30.g0LPJbXE-79WUvY8vNLbilhX7OxYWtwE9Iih-aoPXrg';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhoemdnYXJmcHNsZnRxd3ZqdWlxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2MTQ2MjMsImV4cCI6MjA4NzE5MDYyM30.g0LPJbXE-79WUvY8vNLbilhX7OxYWtwE9Iih-aoPXrg';
 const TABLE = 'drug_test_results';
 
 const { createClient } = supabase;
@@ -526,8 +526,6 @@ function updateStats() {
   document.getElementById('statClear').textContent = allData.filter(s => f(s) === 'clear').length;
   document.getElementById('statFlagged').textContent = allData.filter(s => f(s) === 'flagged').length;
   document.getElementById('statInconclusive').textContent = allData.filter(s => f(s) === 'inconclusive').length;
-}
-textContent = allData.filter(s => f(s) === 'inconclusive').length;
   document.getElementById('statPending').textContent = allData.filter(s => f(s) === 'pending').length;
 }
 
@@ -585,7 +583,7 @@ function renderTableRows(tbodyId, rows) {
     const overrideCell = s.disposition ? '<span class="badge bg-override" style="font-size:0.7rem">OVR</span>' : '—';
     return `<tr>
       <td><div class="cand-name">${esc((s.first_name||'') + ' ' + (s.last_name||''))}</div><div class="cand-email">${esc(s.email||'')}</div></td>
-      <td style="font-size:0.78rem;white-space:nowraw">${s.created_at ? new Date(s.created_at).toLocaleString() : '—'}</td>
+      <td style="font-size:0.78rem;white-space:nowrap">${s.created_at ? new Date(s.created_at).toLocaleString() : '—'}</td>
       <td><span class="badge ${bc}">${es.toUpperCase()}</span></td>
       ${drugCells}
       <td>${overrideCell}</td>
