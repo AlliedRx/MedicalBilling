@@ -5,7 +5,78 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SecureSwab — Drug Screening Portal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel=" var(--blue); }
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root {
+    --blue: #5d6dfa;
+    --blue-light: #818cf8;
+    --blue-dark: #0b0b2c;
+    --navy: #1a1a2e;
+    --accent: #3434ff;
+    --green: #12b76a;
+    --red: #f04438;
+    --yellow: #f79009;
+    --gray: #f0f0f8;
+    --border: #2c2c5e;
+    --border-light: #e0e0f0;
+    --text: #0b0b2c;
+    --text-muted: #69697b;
+    --white: #ffffff;
+    --card-bg: #ffffff;
+    --body-bg: #f5f7ff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
+    background: var(--body-bg);
+    min-height: 100vh;
+    color: var(--text);
+  }
+  header {
+    background: var(--blue-dark);
+    color: white;
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  header img { width: 48px; height: 48px; border-radius: 8px; }
+  header h1 { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.3px; }
+  header p { font-size: 0.75rem; opacity: 0.65; font-weight: 500; margin-top: 2px; }
+  .logo-box {
+    background: var(--blue);
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 900; color: white;
+    letter-spacing: -0.5px;
+  }
+
+  .container { max-width: 680px; margin: 32px auto; padding: 0 16px 60px; }
+
+  /* Progress Bar */
+  .progress-wrap { margin-bottom: 28px; }
+  .progress-labels { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; }
+  .progress-bar { background: #dde0f8; border-radius: 99px; height: 6px; overflow: hidden; }
+  .progress-fill { background: linear-gradient(90deg, var(--accent), var(--blue)); height: 100%; border-radius: 99px; transition: width 0.5s ease; }
+
+  /* Step Cards */
+  .step-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 2px 24px rgba(11,11,44,0.08);
+    border: 1px solid rgba(93,109,250,0.1);
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+  .step-card.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .step-icon { width: 56px; height: 56px; background: linear-gradient(135deg, #eef0ff, #e0e4ff); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+  .step-icon svg { width: 26px; height: 26px; color: var(--blue); }
   h2 { font-size: 1.4rem; font-weight: 800; color: var(--blue-dark); margin-bottom: 8px; text-align: center; letter-spacing: -0.3px; }
   .subtitle { text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px; line-height: 1.6; }
 
@@ -690,46 +761,6 @@ Return ONLY the JSON, no other text.`;
 
 function displayResults(r) {
   const drugs = ['thc','coc','opi','met','amp'];
-  drugs.forEach(d => {
-    const b = document.getElementById('badge_' + d);
-    b.textContent = r[d] ? r[d].toUpperCase() : '—';
-    b.className = 'status-badge';
-    if (r[d] === 'negative') b.classList.add('badge-clear');
-    else if (r[d] === 'positive') b.classList.add('badge-flagged');
-    else b.classList.add('badge-inconclusive');
-  });
-
-  const overall = r.overall || 'inconclusive';
-  const overallBadge = document.getElementById('overallBadge');
-  overallBadge.textContent = overall === 'clear' ? 'CLEAR' : overall === 'flagged' ? 'FLAGGED' : 'INCONCLUSIVE';
-  overallBadge.className = 'status-badge';
-  if (overall === 'clear') overallBadge.classList.add('badge-clear');
-  else if (overall === 'flagged') overallBadge.classList.add('badge-flagged');
-  else overallBadge.classList.add('badge-inconclusive');
-
-  const ri = document.getElementById('resultIcon');
-  ri.innerHTML = overall === 'clear'
-    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
-    : overall === 'flagged'
-    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>'
-    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
-  document.getElementById('resultTitle').textContent = overall === 'clear' ? 'Test Complete — Clear' : overall === 'flagged' ? 'Test Complete — Flagged' : 'Test Complete — Inconclusive';
-  document.getElementById('resultSubtitle').textContent = overall === 'clear'
-    ? 'No substances detected. Your results have been submitted to SecureSwab staff.'
-    : overall === 'flagged'
-    ? 'One or more substances were detected. Your results have been flagged for staff review.'
-    : 'Results could not be determined clearly. Staff will review your submitted photos.';
-
-  document.getElementById('overallStatusWrap').style.display = 'block';
-  document.getElementById('panelResults').style.display = 'block';
-  document.getElementById('submissionIdBox').style.display = 'block';
-  document.getElementById('submissionIdVal').textContent = state.submissionId;
-  document.getElementById('resultInfoBox').style.display = 'block';
-}
-</script>
-</body>
-</html>
-'met','amp'];
   drugs.forEach(d => {
     const b = document.getElementById('badge_' + d);
     b.textContent = r[d] ? r[d].toUpperCase() : '—';
