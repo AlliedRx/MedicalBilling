@@ -218,7 +218,7 @@
     <div class="auth-panel" id="panel-register">
       <input type="text" id="regName" placeholder="Your full name" />
       <input type="email" id="regEmail" placeholder="Staff email address" />
-  2   <input type="password" id="regPass" placeholder="Password (min 8 characters)" />
+      <input type="password" id="regPass" placeholder="Password (min 8 characters)" />
       <input type="password" id="regPass2" placeholder="Confirm password" />
       <button class="auth-btn" id="regBtn" onclick="doRegister()">Create Staff Account →</button>
       <div class="auth-error" id="regError"></div>
@@ -408,8 +408,8 @@
 
 <script>
 const SUPABASE_URL  = 'https://hhzggarfpslftqwvjuiq.supabase.co';
-const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhoemdnYXJmcHNsZnRxd3ZqdWlxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2MTQ2MjMsImV4cCI6MjA4NzE5MDYyM30.g0LPJbXE-79WUvY8vNLbilhX7OxYWtwE9Iih-aoPXrg';
-const TABLE = 'Pharmacy Technician Drugscreen Results';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhoemdnYXJmcHNsZnRxd3VqdWlxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2MTQ2MjMsImV4cCI6MjA4NzE5MDYyM30.g0LPJbXE-79WUvY8vNLbilhX7OxYWtwE9Iih-aoPXrg';
+const TABLE = 'drug_test_results';
 
 const { createClient } = supabase;
 const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
@@ -526,11 +526,13 @@ function updateStats() {
   document.getElementById('statClear').textContent = allData.filter(s => f(s) === 'clear').length;
   document.getElementById('statFlagged').textContent = allData.filter(s => f(s) === 'flagged').length;
   document.getElementById('statInconclusive').textContent = allData.filter(s => f(s) === 'inconclusive').length;
+}
+textContent = allData.filter(s => f(s) === 'inconclusive').length;
   document.getElementById('statPending').textContent = allData.filter(s => f(s) === 'pending').length;
 }
 
 function effectiveStatus(s) {
-  return s.manual_override ? (s.override_status || s.overall_status) : (s.overall_status || 'pending');
+  return s.disposition ? s.disposition : (s.outcome || 'pending');
 }
 
 function renderFiltered() {
@@ -539,8 +541,8 @@ function renderFiltered() {
   const from = document.getElementById('filterFrom').value;
   const to = document.getElementById('filterTo').value;
   const rows = allData.filter(s => {
-    const name = (s.candidate_name || '').toLowerCase();
-    const email = (s.candidate_email || '').toLowerCase();
+    const name = ((s.first_name||'') + ' ' + (s.last_name||'')).toLowerCase();
+    const email = (s.email || '').toLowerCase();
     const d = s.created_at ? s.created_at.slice(0,10) : '';
     return (!q || name.includes(q) || email.includes(q))
       && (!st || effectiveStatus(s) === st)
@@ -580,10 +582,10 @@ function renderTableRows(tbodyId, rows) {
       const lbl = v === 'negative' ? 'NEG' : v === 'positive' ? 'POS' : v === 'inconclusive' ? 'INC' : '—';
       return `<td><span class="badge ${cls}" style="font-size:0.7rem">${lbl}</span></td>`;
     }).join('');
-    const overrideCell = s.manual_override ? '<span class="badge bg-override" style="font-size:0.7rem">OVR</span>' : '—';
+    const overrideCell = s.disposition ? '<span class="badge bg-override" style="font-size:0.7rem">OVR</span>' : '—';
     return `<tr>
-      <td><div class="cand-name">${esc(s.candidate_name)}</div><div class="cand-email">${esc(s.candidate_email||'')}</div></td>
-      <td style="font-size:0.78rem;white-space:nowrap">${s.created_at ? new Date(s.created_at).toLocaleString() : '—'}</td>
+      <td><div class="cand-name">${esc((s.first_name||'') + ' ' + (s.last_name||''))}</div><div class="cand-email">${esc(s.email||'')}</div></td>
+      <td style="font-size:0.78rem;white-space:nowraw">${s.created_at ? new Date(s.created_at).toLocaleString() : '—'}</td>
       <td><span class="badge ${bc}">${es.toUpperCase()}</span></td>
       ${drugCells}
       <td>${overrideCell}</td>
@@ -609,11 +611,11 @@ function openDetail(id) {
   const s = allData.find(x => x.id === id);
   if (!s) return;
   currentRecord = s;
-  document.getElementById('mTitle').textContent = s.candidate_name || 'Unknown Candidate';
+  document.getElementById('mTitle').textContent = (s.first_name||'') + ' ' + (s.last_name||'') || 'Unknown Candidate';
   document.getElementById('mSub').textContent = 'ID: ' + s.id;
-  document.getElementById('dName').textContent = s.candidate_name || '—';
-  document.getElementById('dEmail').textContent = s.candidate_email || '—';
-  document.getElementById('dDob').textContent = s.candidate_dob || '—';
+  document.getElementById('dName').textContent = (s.first_name||'') + ' ' + (s.last_name||'');
+  document.getElementById('dEmail').textContent = s.email || '—';
+  document.getElementById('dDob').textContent = s.dob || '—';
   document.getElementById('dDate').textContent = s.created_at ? new Date(s.created_at).toLocaleString() : '—';
   document.getElementById('dId').textContent = s.id;
 
@@ -623,9 +625,9 @@ function openDetail(id) {
   ob.className = 'badge ' + badgeClass(es);
 
   let gemini = {};
-  try { gemini = JSON.parse(s.gemini_scan_response || '{}'); } catch(e){}
+  try { gemini = JSON.parse(s.raw_analysis_data || '{}'); } catch(e){}
   document.getElementById('dConf').textContent = gemini.confidence || '—';
-  document.getElementById('dNotes').textContent = gemini.notes || s.gemini_scan_response || '—';
+  document.getElementById('dNotes').textContent = gemini.notes || s.raw_analysis_data || '—';
 
   ['thc','coc','opi','met','amp'].forEach(d => {
     const v = s['result_' + d] || 'pending';
@@ -646,9 +648,9 @@ function openDetail(id) {
   document.getElementById('ovStatus').value = '';
   document.getElementById('ovNote').value = '';
   const oi = document.getElementById('overrideInfo');
-  if (s.manual_override) {
+  if (s.disposition) {
     oi.style.display = 'block';
-    oi.textContent = `Overridden to "${s.override_status}" by ${s.override_by||'staff'} on ${s.override_at ? new Date(s.override_at).toLocaleString() : '—'}. Note: ${s.override_note||'—'}`;
+    oi.textContent = `Overridden to "${s.disposition}" by ${s.reviewer_name||'staff'}. Note: ${s.finalized ? 'Finalized' : 'Pending'}`;
   } else { oi.style.display = 'none'; }
 
   document.getElementById('detailModal').classList.add('open');
@@ -674,12 +676,11 @@ async function saveOverride() {
   if (!newStatus) { showToast('Please select a new status.'); return; }
   if (!note) { showToast('Please enter a reason for the override.'); return; }
   const { error } = await sb.from(TABLE).update({
-    manual_override: true,
-    override_status: newStatus,
-    override_note: note,
-    override_by: staffEmail,
-    override_at: new Date().toISOString(),
-    overall_status: newStatus,
+    disposition: newStatus,
+    reviewer_name: staffEmail,
+    outcome: newStatus,
+    finalized: true,
+    updated_at: new Date().toISOString(),
   }).eq('id', currentRecord.id);
   if (error) { showToast('Error: ' + error.message); return; }
   showToast('Override saved!');
