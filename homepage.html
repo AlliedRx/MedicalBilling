@@ -18,19 +18,16 @@
   /* Text column – pad top so words sit up high */
   .hero-copy{padding:72px 0 48px;align-self:center;}
   /* Photo column – sits at bottom, grows upward */
-  .hero-right{position:relative;display:flex;align-items:flex-end;justify-content:center;z-index:1;overflow:visible;grid-column:2/4;}
+  .hero-right{position:relative;display:flex;align-items:flex-end;justify-content:center;z-index:2;overflow:visible;}
   .hero-photo{width:100%;height:780px;border-radius:22px 22px 0 0;overflow:visible;z-index:1;box-shadow:0 28px 72px rgba(0,0,0,0.6);}
   .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
   /* Card column – locked to bottom, no movement */
   .hero-card{
-    position:absolute;
-    top:40px;
-    right:0;
-    width:360px;
+    position:relative;
     transform:none !important;
     transition:none !important;
     will-change:auto !important;
-    z-index:3;
+    z-index:1;
     background:#ffffff;
     border:1px solid #e8e4fb;
     border-radius:20px 20px 0 0;
