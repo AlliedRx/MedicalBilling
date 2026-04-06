@@ -70,58 +70,37 @@
   .section-h{font-size:34px;font-weight:800;color:#0f172a;line-height:1.2;}
   .section-sub{font-size:15px;color:#64748b;line-height:1.7;max-width:420px;margin-top:8px;}
   .view-all{font-size:13px;font-weight:700;color:#7c3aed;text-decoration:none;}
-  .prog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-  .prog-card{background:#fff;border:1px solid #e8e4fb;border-radius:20px;padding:24px;transition:border-color .2s,transform .2s,box-shadow .2s;cursor:pointer;display:flex;flex-direction:column;}
-  .prog-card:hover{border-color:#9148fc;transform:translateY(-4px);box-shadow:0 16px 40px rgba(145,72,252,0.12);}
-  .pc-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(145,72,252,0.18));display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
-  .pc-title{font-size:15px;font-weight:800;color:#0f172a;margin-bottom:6px;line-height:1.3;}
-  .pc-desc{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:14px;flex:1;}
-  .pc-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
-  .pc-badge{display:inline-flex;align-items:center;gap:4px;background:rgba(145,72,252,0.08);color:#7c3aed;font-size:10px;font-weight:700;padding:4px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.04em;}
-  .pc-badge-time{display:inline-flex;align-items:center;gap:4px;background:#f0fdf4;color:#16a34a;font-size:10px;font-weight:700;padding:4px 10px;border-radius:100px;}
-  .pc-enroll{display:block;text-align:center;background:linear-gradient(135deg,#7c3aed,#9148fc);color:#fff;font-size:12px;font-weight:700;padding:10px;border-radius:100px;text-decoration:none;margin-top:auto;box-shadow:0 4px 12px rgba(145,72,252,0.3);}
-  .pc-enroll:hover{opacity:0.9;}
-  /* ── TAX SAVINGS BANNER ── */
-  .tax-banner{background:linear-gradient(135deg,#0f0a2e,#1a0a3c);border:1px solid rgba(145,72,252,0.4);border-radius:20px;padding:28px 36px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
-  .tax-banner-left{display:flex;align-items:center;gap:16px;}
-  .tax-banner-tag{background:linear-gradient(135deg,#7c3aed,#9148fc);border-radius:12px;padding:10px 16px;font-size:11px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;flex-shrink:0;}
-  .tax-banner-title{font-size:20px;font-weight:900;color:#fff;}
-  .tax-banner-sub{font-size:13px;color:#c4b5fd;margin-top:3px;}
-  .tax-banner-prices{display:flex;gap:24px;flex-wrap:wrap;}
-  .tax-price-item{text-align:center;}
-  .tax-price-label{font-size:11px;color:#fff;text-transform:uppercase;letter-spacing:.06em;}
-  .tax-price-amount{font-size:22px;font-weight:900;color:#c4b5fd;}
-  .tax-price-prog{font-size:10px;color:#fff;}
-  .tax-banner-cta{background:linear-gradient(135deg,#7c3aed,#9148fc);color:#fff;padding:14px 28px;border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 6px 20px rgba(145,72,252,0.4);flex-shrink:0;}
-  /* ── TESTIMONIALS – light purple background ── */
-  .testimonials{padding:88px 40px;background:#f0ebff;}
-  .test-inner{max-width:1200px;margin:0 auto;}
-  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
-  .test-card{background:#fff;border:1px solid #ddd6fe;border-radius:16px;padding:28px;transition:border-color .2s,box-shadow .2s;}
-  .test-card:hover{border-color:#9148fc;box-shadow:0 8px 28px rgba(145,72,252,0.1);}
-  .stars{color:#f59e0b;font-size:13px;letter-spacing:2px;margin-bottom:14px;}
-  .test-q{font-size:13px;color:#475569;line-height:1.8;font-style:italic;margin-bottom:20px;}
-  .test-by{display:flex;align-items:center;gap:12px;}
-  .test-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#5d6dfa);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;}
-  .test-nm{font-size:13px;font-weight:700;color:#0f172a;}
-  .test-pr{font-size:11px;color:#7c3aed;margin-top:2px;}
-  /* Override overline/section-h colors inside testimonials */
-  .testimonials .overline{color:#7c3aed;}
-  .testimonials .section-h{color:#0f172a;}
-  /* ── CTA SECTION ── */
-  .cta-section{padding:100px 40px;background:linear-gradient(135deg,#0f0a2e,#1a0a3c);}
-  .cta-inner{max-width:700px;margin:0 auto;text-align:center;}
-  .cta-inner h2{font-size:44px;font-weight:900;color:#fff;line-height:1.1;margin-bottom:18px;}
-  .cta-inner h2 em{font-style:normal;color:#c4b5fd;}
-  .cta-inner p{font-size:16px;color:rgba(255,255,255,0.55);margin-bottom:36px;line-height:1.7;}
-  .cta-btns{display:flex;gap:14px;justify-content:center;}
-  .price-badge{display:inline-block;background:rgba(145,72,252,0.2);border:1px solid rgba(145,72,252,0.3);color:#c4b5fd;font-size:12px;font-weight:700;padding:6px 16px;border-radius:100px;margin-top:20px;}
-  /* ── FOOTER – removed ── */
-  /* ── LABEL ── */
-  .mockup-label{position:fixed;top:12px;right:12px;background:#9148fc;color:#fff;font-size:11px;font-weight:700;padding:6px 14px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;z-index:9999;letter-spacing:.04em;}
-  /* ============================================================
-     RESPONSIVE
-  ============================================================ */
+  .prog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .prog-card{background:#faf9ff;border-radius:18px;border:1.5px solid #ebe8fb;display:flex;flex-direction:row;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;cursor:pointer;min-height:130px;}
+  .prog-card:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(91,76,204,.12);border-color:#a78bfa;background:#fff;}
+  .card-accent{width:76px;flex-shrink:0;background:linear-gradient(180deg,#7c6cdb 0%,#5b4ccc 100%);display:flex;align-items:center;justify-content:center;}
+  .card-accent.v2{background:linear-gradient(180deg,#9b8ce8 0%,#7c6cdb 100%);}
+  .card-accent.v3{background:linear-gradient(180deg,#5b4ccc 0%,#3730a3 100%);}
+  .accent-icon{width:44px;height:44px;border-radius:13px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.26);display:flex;align-items:center;justify-content:center;}
+  .card-content{flex:1;padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;min-width:0;}
+  .card-top-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:6px;}
+  .card-title{font-size:14.5px;font-weight:800;color:#0f172a;line-height:1.3;}
+  .badge-accred{font-size:10px;font-weight:700;color:#5b4ccc;background:#f0eeff;padding:3px 9px;border-radius:999px;border:1px solid #ddd6fe;white-space:nowrap;flex-shrink:0;}
+  .card-desc{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:12px;flex:1;}
+  .card-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .badge-pace{font-size:10.5px;font-weight:600;color:#059669;background:#ecfdf5;padding:3px 10px;border-radius:999px;border:1px solid #a7f3d0;}
+  .card-btn{display:inline-block;padding:8px 18px;border-radius:9px;background:linear-gradient(135deg,#7c6cdb,#5b4ccc);color:#fff;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;transition:opacity .2s;box-shadow:0 3px 10px rgba(91,76,204,.22);}
+  .card-btn:hover{opacity:.88;}
+  .cta-card{background:linear-gradient(135deg,#5b4ccc,#7c6cdb);border-color:transparent;}
+  .cta-card:hover{background:linear-gradient(135deg,#5b4ccc,#7c6cdb);border-color:transparent;box-shadow:0 16px 44px rgba(91,76,204,.3);}
+  .cta-card .card-accent{background:rgba(255,255,255,.1);border-right:1px solid rgba(255,255,255,.12);}
+  .cta-card .accent-icon{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.3);}
+  .cta-card .card-title{color:#fff;font-size:15px;}
+  .cta-card .card-desc{color:rgba(255,255,255,.78);font-size:12.5px;}
+  .cta-schedule-btn{display:inline-block;padding:8px 18px;border-radius:9px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.3);color:#fff;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background .2s;}
+  .cta-schedule-btn:hover{background:rgba(255,255,255,.25);}
+  .tax-banner{background:linear-gradient(135deg,#0f0a2e,#1a0a3c);border:1px solid rgba(145,72,252,.4);border-radius:20px;padding:22px 32px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .tax-banner-left{display:flex;align-items:center;gap:14px;}
+  .tax-banner-tag{background:linear-gradient(135deg,#7c3aed,#9148fc);border-radius:10px;padding:8px 14px;font-size:11px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;flex-shrink:0;}
+  .tax-banner-title{font-size:17px;font-weight:800;color:#fff;}
+  .tax-banner-sub{font-size:12.5px;color:#c4b5fd;margin-top:3px;}
+  .tax-banner-cta{background:linear-gradient(135deg,#7c3aed,#9148fc);color:#fff;padding:10px 22px;border-radius:12px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;}
+  
   @media (max-width:991px){
     html,body{overflow-x:hidden;}
     .hero{padding:0 24px 0;}
@@ -336,37 +315,15 @@
   <div class="section-inner">
     <!-- 2026 Tuition Special Banner -->
     <div class="tax-banner">
-      <div class="tax-banner-left">
-        <div class="tax-banner-tag">2026 Tax Savings Special</div>
-        <div>
-          <div class="tax-banner-title">Promotional Pricing — Limited Time</div>
-          <div class="tax-banner-sub">Start for as little as <strong>$99 down</strong> · No credit check · Zero interest · Payment plans available</div>
+        <div class="tax-banner-left">
+          <div class="tax-banner-tag">Grant</div>
+          <div>
+            <div class="tax-banner-title">Tuition Grant Discount</div>
+            <div class="tax-banner-sub">Start for as little as $99 down &middot; No credit check &middot; Zero interest &middot; Payment plans available</div>
+          </div>
         </div>
+        <a href="https://www.alliedrxtraining.com/tuition-payments" target="_parent" class="tax-banner-cta">View Payment Plans</a>
       </div>
-      <div class="tax-banner-prices">
-        <div class="tax-price-item">
-          <div class="tax-price-label">Group A Programs</div>
-          <div class="tax-price-amount">$975 <span style="font-size:13px;text-decoration:line-through;color:rgba(255,255,255,0.35);font-weight:400;">$1,750</span></div>
-          <div class="tax-price-prog">Pharmacy Tech · Admin Asst</div>
-        </div>
-        <div class="tax-price-item">
-          <div class="tax-price-label">Medical Assistant</div>
-          <div class="tax-price-amount">$825 <span style="font-size:13px;text-decoration:line-through;color:rgba(255,255,255,0.35);font-weight:400;">$1,750</span></div>
-          <div class="tax-price-prog">Clinical Medical Assistant</div>
-        </div>
-        <div class="tax-price-item">
-          <div class="tax-price-label">Group B Programs</div>
-          <div class="tax-price-amount">$825 <span style="font-size:13px;text-decoration:line-through;color:rgba(255,255,255,0.35);font-weight:400;">$1,450</span></div>
-          <div class="tax-price-prog">Billing · EKG · Phlebotomy</div>
-        </div>
-        <div class="tax-price-item">
-          <div class="tax-price-label">Dental Program</div>
-          <div class="tax-price-amount">$2,499</div>
-          <div class="tax-price-prog">Registered Dental Assistant</div>
-        </div>
-      </div>
-      <a href="https://www.alliedrxtraining.com/tuition-payments" class="tax-banner-cta">View Payment Plans →</a>
-    </div>
     <div class="section-top">
       <div>
         <div class="overline">Online Programs</div>
@@ -376,72 +333,105 @@
       <a href="#" class="view-all">View All Programs →</a>
     </div>
     <div class="prog-grid">
-      <div class="prog-card">
-        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v3"/><circle cx="18" cy="18" r="4"/><path d="m15.5 15.5 5 5"/></svg></div>
-        <div class="pc-title">Pharmacy Technician</div>
-        <div class="pc-desc">Prepare for the CPhT exam. Learn medication dispensing, pharmacy law, and compounding in our PTCB-accredited program.</div>
-        <div class="pc-meta"><span class="pc-badge">PTCB & ASHP</span><span class="pc-badge-time">⏱ Self-Paced</span></div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:12px;"><span style="font-size:20px;font-weight:900;color:#7c3aed;">$975</span><span style="font-size:11px;text-decoration:line-through;color:#94a3b8;">$1,750</span><span style="font-size:10px;background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:100px;">or $99 down</span></div>
-        <a href="https://www.alliedrxtraining.com/register" class="pc-enroll">Enroll Now →</a>
-      </div>
-      <div class="prog-card">
-        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg></div>
-        <div class="pc-title">Phlebotomy Technician</div>
-        <div class="pc-desc">Learn venipuncture, specimen handling, and patient interaction. Get CPT board certified and start working in labs and clinics.</div>
-        <div class="pc-meta"><span class="pc-badge">NHA & AMCA</span><span class="pc-badge-time">⏱ Self-Paced</span></div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:12px;"><span style="font-size:20px;font-weight:900;color:#7c3aed;">$825</span><span style="font-size:11px;text-decoration:line-through;color:#94a3b8;">$1,450</span><span style="font-size:10px;background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:100px;">or $99 down</span></div>
-        <a href="https://www.alliedrxtraining.com/register" class="pc-enroll">Enroll Now →</a>
-      </div>
-      <div class="prog-card">
-        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></div>
-        <div class="pc-title">Medical Billing & Coding</div>
-        <div class="pc-desc">Master ICD-10, CPT coding, and insurance claims. Launch a remote-friendly career in healthcare revenue management.</div>
-        <div class="pc-meta"><span class="pc-badge">NHA | AAPC</span><span class="pc-badge-time">⏱ Self-Paced</span></div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:12px;"><span style="font-size:20px;font-weight:900;color:#7c3aed;">$825</span><span style="font-size:11px;text-decoration:line-through;color:#94a3b8;">$1,450</span><span style="font-size:10px;background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:100px;">or $99 down</span></div>
-        <a href="https://www.alliedrxtraining.com/register" class="pc-enroll">Enroll Now →</a>
-      </div>
-      <div class="prog-card">
-        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-        <div class="pc-title">EKG Technician</div>
-        <div class="pc-desc">Get certified to perform electrocardiograms and cardiac monitoring. Work in hospitals, clinics, and cardiac care facilities.</div>
-        <div class="pc-meta"><span class="pc-badge">NHA & AMCA</span><span class="pc-badge-time">⏱ Self-Paced</span></div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:12px;"><span style="font-size:20px;font-weight:900;color:#7c3aed;">$825</span><span style="font-size:11px;text-decoration:line-through;color:#94a3b8;">$1,450</span><span style="font-size:10px;background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:100px;">or $99 down</span></div>
-        <a href="https://www.alliedrxtraining.com/register" class="pc-enroll">Enroll Now →</a>
-      </div>
-      <div class="prog-card">
-        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></div>
-        <div class="pc-title">Clinical Medical Assistant</div>
-        <div class="pc-desc">Earn your CCMA certification. Perform patient care, clinical procedures, and assist providers in real healthcare settings.</div>
-        <div class="pc-meta"><span class="pc-badge">NHA Approved</span><span class="pc-badge-time">⏱ Self-Paced</span></div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:12px;"><span style="font-size:20px;font-weight:900;color:#7c3aed;">$825</span><span style="font-size:11px;text-decoration:line-through;color:#94a3b8;">$1,750</span><span style="font-size:10px;background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:100px;">or $99 down</span></div>
-        <a href="https://www.alliedrxtraining.com/register" class="pc-enroll">Enroll Now →</a>
-      </div>
-      <div class="prog-card">
-        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
-        <div class="pc-title">Medical Administrative Assistant</div>
-        <div class="pc-desc">Manage health records, scheduling, and front-office operations. Become a certified CMAA and step into healthcare administration.</div>
-        <div class="pc-meta"><span class="pc-badge">NHA & AMCA</span><span class="pc-badge-time">⏱ Self-Paced</span></div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:12px;"><span style="font-size:20px;font-weight:900;color:#7c3aed;">$825</span><span style="font-size:11px;text-decoration:line-through;color:#94a3b8;">$1,750</span><span style="font-size:10px;background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:100px;">or $99 down</span></div>
-        <a href="https://www.alliedrxtraining.com/register" class="pc-enroll">Enroll Now →</a>
-      </div>
-      <div class="prog-card">
-        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-2.4 0-4.5 1.5-5.5 3.5C5.5 7.5 4 8 3 9c-1 1-1 3 0 5 .8 1.6 1.5 3.5 1.8 5 .3 1.4 1 2 2 2s1.5-.8 2-2l.7-2.5c.3-1 .8-1.5 2.5-1.5s2.2.5 2.5 1.5l.7 2.5c.5 1.2 1 2 2 2s1.7-.6 2-2c.3-1.5 1-3.4 1.8-5 1-2 1-4 0-5-1-1-2.5-1.5-3.5-3.5C16.5 3.5 14.4 2 12 2z"/></svg></div>
-        <div class="pc-title">Registered Dental Assistant</div>
-        <div class="pc-desc">Assist dentists with procedures, radiography, and infection control. Earn your RDA credential and work in dental offices nationwide.</div>
-        <div class="pc-meta"><span class="pc-badge">AMT Accredited</span><span class="pc-badge-time">⏱ Self-Paced</span></div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:12px;"><span style="font-size:20px;font-weight:900;color:#7c3aed;">$2,499</span><span style="font-size:10px;background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:100px;">or $99 down</span></div>
-        <a href="https://www.alliedrxtraining.com/register" class="pc-enroll">Enroll Now →</a>
-      </div>
-      <div class="prog-card" style="background:linear-gradient(135deg,#0f0a2e,#1a0a3c);border-color:rgba(145,72,252,0.4);justify-content:center;align-items:center;text-align:center;gap:16px;">
-        <div style="width:48px;height:48px;border-radius:14px;background:rgba(145,72,252,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <div class="prog-card">
+      <div class="card-accent "><div class="accent-icon">pharmacy</div></div>
+      <div class="card-content">
+        <div>
+          <div class="card-top-row"><div class="card-title">Pharmacy Technician</div><span class="badge-accred">PTCB &amp; ASHP</span></div>
+          <div class="card-desc">Prepare for the CPhT exam. Learn medication dispensing, pharmacy law, and compounding in our PTCB-accredited program.</div>
         </div>
-        <div style="font-size:15px;font-weight:800;color:#fff;margin-bottom:6px;">Campus — Virginia</div>
-        <div style="font-size:13px;font-weight:700;color:#fff;line-height:2;margin-bottom:8px;">Clinical Medical Assistant<br>Phlebotomy Technician</div>
-        <div style="font-size:12px;color:#fff;font-weight:600;margin-bottom:14px;margin-top:8px;">Day · Evening · Weekend sessions</div>
-        <a href="https://www.alliedrxtraining.com/course-catalog" class="pc-enroll" style="background:linear-gradient(135deg,#7c3aed,#9148fc);">View Schedule →</a>
+        <div class="card-footer">
+          <span class="badge-pace">Self-Paced</span>
+          <a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" target="_parent" class="card-btn">Enroll Now</a>
+        </div>
       </div>
     </div>
+    <div class="prog-card">
+      <div class="card-accent v2"><div class="accent-icon">phlebotomy</div></div>
+      <div class="card-content">
+        <div>
+          <div class="card-top-row"><div class="card-title">Phlebotomy Technician</div><span class="badge-accred">NHA &amp; AMCA</span></div>
+          <div class="card-desc">Learn venipuncture, specimen handling, and patient interaction. Get CPT board certified and career-ready fast.</div>
+        </div>
+        <div class="card-footer">
+          <span class="badge-pace">Self-Paced</span>
+          <a href="https://www.alliedrxtraining.com/new-phlebotomy-page" target="_parent" class="card-btn">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="prog-card">
+      <div class="card-accent v3"><div class="accent-icon">billing</div></div>
+      <div class="card-content">
+        <div>
+          <div class="card-top-row"><div class="card-title">Medical Billing &amp; Coding</div><span class="badge-accred">NHA | AAPC</span></div>
+          <div class="card-desc">Master ICD-10, CPT coding, and insurance claims. Launch a remote-friendly career in healthcare administration.</div>
+        </div>
+        <div class="card-footer">
+          <span class="badge-pace">Self-Paced</span>
+          <a href="https://www.alliedrxtraining.com/new-medical-billing-page" target="_parent" class="card-btn">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="prog-card">
+      <div class="card-accent "><div class="accent-icon">ekg</div></div>
+      <div class="card-content">
+        <div>
+          <div class="card-top-row"><div class="card-title">EKG Technician</div><span class="badge-accred">NHA &amp; AMCA</span></div>
+          <div class="card-desc">Get certified to perform electrocardiograms and cardiac monitoring. Work in hospitals, clinics, and cardiology offices.</div>
+        </div>
+        <div class="card-footer">
+          <span class="badge-pace">Self-Paced</span>
+          <a href="https://www.alliedrxtraining.com/new-ekg-page" target="_parent" class="card-btn">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="prog-card">
+      <div class="card-accent v2"><div class="accent-icon">ccma</div></div>
+      <div class="card-content">
+        <div>
+          <div class="card-top-row"><div class="card-title">Clinical Medical Assistant</div><span class="badge-accred">NHA Approved</span></div>
+          <div class="card-desc">Earn your CCMA certification. Perform patient care, clinical procedures, and assist providers in real healthcare settings.</div>
+        </div>
+        <div class="card-footer">
+          <span class="badge-pace">Self-Paced</span>
+          <a href="https://www.alliedrxtraining.com/new-ccma-page" target="_parent" class="card-btn">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="prog-card">
+      <div class="card-accent v3"><div class="accent-icon">admin</div></div>
+      <div class="card-content">
+        <div>
+          <div class="card-top-row"><div class="card-title">Medical Administrative Assistant</div><span class="badge-accred">NHA &amp; AMCA</span></div>
+          <div class="card-desc">Manage health records, scheduling, and front-office operations. Become a certified medical administrator.</div>
+        </div>
+        <div class="card-footer">
+          <span class="badge-pace">Self-Paced</span>
+          <a href="https://www.alliedrxtraining.com/new-cmaa-page" target="_parent" class="card-btn">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="prog-card">
+      <div class="card-accent "><div class="accent-icon">dental</div></div>
+      <div class="card-content">
+        <div>
+          <div class="card-top-row"><div class="card-title">Registered Dental Assistant</div><span class="badge-accred">AMT Accredited</span></div>
+          <div class="card-desc">Assist dentists with procedures, radiography, and infection control. Earn your RDA credential nationwide.</div>
+        </div>
+        <div class="card-footer">
+          <span class="badge-pace">Self-Paced</span>
+          <a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" target="_parent" class="card-btn">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="prog-card cta-card">
+      <div class="card-accent" style="background:rgba(255,255,255,.1);border-right:1px solid rgba(255,255,255,.12);"><div class="accent-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div></div>
+      <div class="card-content">
+        <div><div class="card-top-row" style="margin-bottom:6px;"><div class="card-title">View Full Schedule</div></div><div class="card-desc">See all upcoming start dates and choose your session.</div></div>
+        <div class="card-footer"><span style="font-size:11px;color:rgba(255,255,255,.55);font-weight:500;">Now enrolling &mdash; April &amp; May</span><a href="https://www.alliedrxtraining.com/course-catalog" target="_parent" class="cta-schedule-btn">View Schedule</a></div>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 <!-- Testimonials -->
