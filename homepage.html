@@ -238,10 +238,39 @@
     .tax-price-label{font-size:10px;}
     .tax-price-prog{font-size:9px;}
   }
+
+.mockup-label{position:fixed;top:14px;right:20px;background:#5b4ccc;color:#fff;padding:9px 22px;border-radius:999px;font-size:13px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;z-index:1000;box-shadow:0 4px 14px rgba(91,76,204,.35);cursor:pointer;text-decoration:none;display:inline-block;}.mockup-label:hover{background:#4c3db5;}
+.campus-badge{display:flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:rgba(255,255,255,.9);margin-top:8px;letter-spacing:.04em;text-transform:uppercase;}
+.campus-dot{width:6px;height:6px;border-radius:50%;background:#a3e635;flex-shrink:0;}
+.tax-banner{background:#fff!important;border:none!important;border-left:6px solid #5b4ccc!important;border-radius:12px!important;box-shadow:0 2px 16px rgba(91,76,204,.08)!important;}
+.tax-banner-title{color:#0f172a!important;}.tax-banner-sub{color:#475569!important;}
+.tax-banner-tag{background:linear-gradient(135deg,#7c3aed,#5b4ccc);color:#fff;}
+.accent-icon{display:flex;align-items:center;justify-content:center;}
+.testi{padding:72px 0;background:linear-gradient(135deg,#0f0a2e 0%,#1a1144 50%,#0d0a28 100%);}
+.testi-inner{max-width:1140px;margin:0 auto;padding:0 24px;}.testi-header{text-align:center;margin-bottom:48px;}
+.testi-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(91,76,204,.2);border:1px solid rgba(91,76,204,.4);padding:6px 16px;border-radius:999px;font-size:12px;font-weight:700;color:#a78bfa;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;}
+.testi-title{font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;line-height:1.2;margin:0 0 12px;}.testi-title em{color:#a78bfa;font-style:normal;}
+.testi-sub{color:rgba(255,255,255,.6);font-size:16px;margin:0;}.testi-layout{display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start;}
+.testi-featured{position:relative;background:rgba(255,255,255,.07);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:36px;min-height:280px;overflow:hidden;}
+.testi-featured::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#5b4ccc,#a78bfa,#5b4ccc);}
+.testi-quote-mark{font-size:80px;line-height:.8;color:#5b4ccc;opacity:.3;font-family:Georgia,serif;position:absolute;top:20px;left:28px;}
+.testi-featured-text{font-size:18px;line-height:1.7;color:rgba(255,255,255,.9);font-style:italic;margin:0 0 28px;position:relative;z-index:1;padding-top:16px;}
+.testi-author{display:flex;align-items:center;gap:14px;}.testi-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#5b4ccc,#a78bfa);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;flex-shrink:0;}
+.testi-name{font-weight:700;color:#fff;font-size:15px;margin:0 0 2px;}.testi-prog{font-size:12px;color:#a78bfa;font-weight:600;}
+.testi-fade{animation:testiFade .4s ease;}@keyframes testiFade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.testi-mini-grid{display:flex;flex-direction:column;gap:12px;}.testi-mini{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;cursor:pointer;transition:all .25s;position:relative;}
+.testi-mini.active,.testi-mini:hover{background:rgba(91,76,204,.15);border-color:rgba(91,76,204,.4);}
+.testi-mini.active::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#5b4ccc;border-radius:3px 0 0 3px;}
+.testi-mini-text{font-size:12px;color:rgba(255,255,255,.7);line-height:1.5;margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.testi-mini-author{display:flex;align-items:center;gap:8px;}.testi-mini-avatar{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#5b4ccc,#a78bfa);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;}
+.testi-mini-name{font-size:11px;font-weight:700;color:rgba(255,255,255,.7);}
+.testi-dots{display:flex;justify-content:center;gap:8px;margin-top:32px;}.testi-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .3s;}
+.testi-dot.active{background:#5b4ccc;width:24px;border-radius:4px;}
+@media(max-width:768px){.testi-layout{grid-template-columns:1fr;}.testi-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.testi-featured-text{font-size:15px;}}
 </style>
 </head>
 <body>
-<div class="mockup-label">Get Board Certified</div>
+<a class="mockup-label" href="https://www.alliedrxtraining.com/register">Get Board Certified →</a>
 <!-- Hero -->
 <section class="hero">
   <div class="hero-inner">
@@ -312,204 +341,65 @@
 </section>
 <!-- Programs -->
 <section class="section">
-  <div class="section-inner">
-    <!-- 2026 Tuition Special Banner -->
-    <div class="tax-banner">
-        <div class="tax-banner-left">
-          <div class="tax-banner-tag">Grant</div>
-          <div>
-            <div class="tax-banner-title">Tuition Grant Discount</div>
-            <div class="tax-banner-sub">Start for as little as $99 down &middot; No credit check &middot; Zero interest &middot; Payment plans available</div>
-          </div>
-        </div>
-        <a href="https://www.alliedrxtraining.com/tuition-payments" target="_parent" class="tax-banner-cta">View Payment Plans</a>
-      </div>
-    <div class="section-top">
-      <div>
-        <div class="overline">Online Programs</div>
-        <div class="section-h">Healthcare Programs</div>
-        <div class="section-sub">Choose from seven accredited online programs, each designed to get you career-ready fast in weeks.</div>
-      </div>
-      <a href="#" class="view-all">View All Programs →</a>
-    </div>
-    <div class="prog-grid">
-    <div class="prog-card">
-      <div class="card-accent "><div class="accent-icon">pharmacy</div></div>
-      <div class="card-content">
-        <div>
-          <div class="card-top-row"><div class="card-title">Pharmacy Technician</div><span class="badge-accred">PTCB &amp; ASHP</span></div>
-          <div class="card-desc">Prepare for the CPhT exam. Learn medication dispensing, pharmacy law, and compounding in our PTCB-accredited program.</div>
-        </div>
-        <div class="card-footer">
-          <span class="badge-pace">Self-Paced</span>
-          <a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" target="_parent" class="card-btn">Enroll Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="prog-card">
-      <div class="card-accent v2"><div class="accent-icon">phlebotomy</div></div>
-      <div class="card-content">
-        <div>
-          <div class="card-top-row"><div class="card-title">Phlebotomy Technician</div><span class="badge-accred">NHA &amp; AMCA</span></div>
-          <div class="card-desc">Learn venipuncture, specimen handling, and patient interaction. Get CPT board certified and career-ready fast.</div>
-        </div>
-        <div class="card-footer">
-          <span class="badge-pace">Self-Paced</span>
-          <a href="https://www.alliedrxtraining.com/new-phlebotomy-page" target="_parent" class="card-btn">Enroll Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="prog-card">
-      <div class="card-accent v3"><div class="accent-icon">billing</div></div>
-      <div class="card-content">
-        <div>
-          <div class="card-top-row"><div class="card-title">Medical Billing &amp; Coding</div><span class="badge-accred">NHA | AAPC</span></div>
-          <div class="card-desc">Master ICD-10, CPT coding, and insurance claims. Launch a remote-friendly career in healthcare administration.</div>
-        </div>
-        <div class="card-footer">
-          <span class="badge-pace">Self-Paced</span>
-          <a href="https://www.alliedrxtraining.com/new-medical-billing-page" target="_parent" class="card-btn">Enroll Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="prog-card">
-      <div class="card-accent "><div class="accent-icon">ekg</div></div>
-      <div class="card-content">
-        <div>
-          <div class="card-top-row"><div class="card-title">EKG Technician</div><span class="badge-accred">NHA &amp; AMCA</span></div>
-          <div class="card-desc">Get certified to perform electrocardiograms and cardiac monitoring. Work in hospitals, clinics, and cardiology offices.</div>
-        </div>
-        <div class="card-footer">
-          <span class="badge-pace">Self-Paced</span>
-          <a href="https://www.alliedrxtraining.com/new-ekg-page" target="_parent" class="card-btn">Enroll Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="prog-card">
-      <div class="card-accent v2"><div class="accent-icon">ccma</div></div>
-      <div class="card-content">
-        <div>
-          <div class="card-top-row"><div class="card-title">Clinical Medical Assistant</div><span class="badge-accred">NHA Approved</span></div>
-          <div class="card-desc">Earn your CCMA certification. Perform patient care, clinical procedures, and assist providers in real healthcare settings.</div>
-        </div>
-        <div class="card-footer">
-          <span class="badge-pace">Self-Paced</span>
-          <a href="https://www.alliedrxtraining.com/new-ccma-page" target="_parent" class="card-btn">Enroll Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="prog-card">
-      <div class="card-accent v3"><div class="accent-icon">admin</div></div>
-      <div class="card-content">
-        <div>
-          <div class="card-top-row"><div class="card-title">Medical Administrative Assistant</div><span class="badge-accred">NHA &amp; AMCA</span></div>
-          <div class="card-desc">Manage health records, scheduling, and front-office operations. Become a certified medical administrator.</div>
-        </div>
-        <div class="card-footer">
-          <span class="badge-pace">Self-Paced</span>
-          <a href="https://www.alliedrxtraining.com/new-cmaa-page" target="_parent" class="card-btn">Enroll Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="prog-card">
-      <div class="card-accent "><div class="accent-icon">dental</div></div>
-      <div class="card-content">
-        <div>
-          <div class="card-top-row"><div class="card-title">Registered Dental Assistant</div><span class="badge-accred">AMT Accredited</span></div>
-          <div class="card-desc">Assist dentists with procedures, radiography, and infection control. Earn your RDA credential nationwide.</div>
-        </div>
-        <div class="card-footer">
-          <span class="badge-pace">Self-Paced</span>
-          <a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" target="_parent" class="card-btn">Enroll Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="prog-card cta-card">
-      <div class="card-accent" style="background:rgba(255,255,255,.1);border-right:1px solid rgba(255,255,255,.12);"><div class="accent-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div></div>
-      <div class="card-content">
-        <div><div class="card-top-row" style="margin-bottom:6px;"><div class="card-title">View Full Schedule</div></div><div class="card-desc">See all upcoming start dates and choose your session.</div></div>
-        <div class="card-footer"><span style="font-size:11px;color:rgba(255,255,255,.55);font-weight:500;">Now enrolling &mdash; April &amp; May</span><a href="https://www.alliedrxtraining.com/course-catalog" target="_parent" class="cta-schedule-btn">View Schedule</a></div>
-      </div>
-    </div>
-  </div>
-  </div>
+<div class="container">
+<div class="prog-intro">
+  <div class="section-badge">Programs</div>
+  <h2 class="section-title">Board-Certified <em>Healthcare Careers</em></h2>
+  <p class="section-sub">Nationally recognized certifications. Flexible schedules. Start for as little as $99 down.</p>
+</div>
+<a href="https://www.alliedrxtraining.com/tuition-payments" class="tax-banner" style="display:flex;align-items:center;gap:16px;padding:18px 24px;margin-bottom:32px;text-decoration:none;border-radius:12px;">
+  <span class="tax-banner-tag" style="padding:4px 12px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap;">GRANT</span>
+  <div style="flex:1;"><div class="tax-banner-title" style="font-weight:700;font-size:15px;margin:0 0 2px;">Tuition Grant Discount</div><div class="tax-banner-sub" style="font-size:13px;margin:0;">Start for as little as $99 down · Payment plans available</div></div>
+  <span style="color:#5b4ccc;font-weight:700;font-size:13px;white-space:nowrap;">Learn More →</span>
+</a>
+<div class="prog-grid">
+  <a class="prog-card" href="https://www.alliedrxtraining.com/new-pharmacy-tech-page">
+    <div class="card-accent" style="background:linear-gradient(135deg,#5b4ccc,#7c3aed);">
+      <div class="accent-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="16" y="8" width="16" height="32" rx="4" stroke="white" stroke-width="2.5" fill="none"/><line x1="12" y1="24" x2="36" y2="24" stroke="white" stroke-width="2.5"/><rect x="20" y="14" width="8" height="8" rx="1" stroke="white" stroke-width="2" fill="white" fill-opacity="0.3"/></svg></div>
+      <div class="card-tag">Self-Paced</div></div>
+    <div class="card-body"><div class="card-title">Pharmacy Technician</div><div class="enroll-btn">Enroll Now →</div></div></a>
+  <a class="prog-card" href="https://www.alliedrxtraining.com/new-phlebotomy-page">
+    <div class="card-accent" style="background:linear-gradient(135deg,#dc2626,#ef4444);">
+      <div class="accent-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 8 C24 8 12 22 12 30 C12 37 17.4 42 24 42 C30.6 42 36 37 36 30 C36 22 24 8 24 8Z" stroke="white" stroke-width="2.5" fill="white" fill-opacity="0.25"/></svg></div>
+      <div class="card-tag">Self-Paced</div>
+      <div class="campus-badge"><span class="campus-dot"></span>Hybrid Campus Available</div></div>
+    <div class="card-body"><div class="card-title">Phlebotomy Technician</div><div class="enroll-btn">Enroll Now →</div></div></a>
+  <a class="prog-card" href="https://www.alliedrxtraining.com/new-medical-billing-page">
+    <div class="card-accent" style="background:linear-gradient(135deg,#0ea5e9,#0284c7);">
+      <div class="accent-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="12" y="8" width="24" height="32" rx="3" stroke="white" stroke-width="2.5" fill="none"/><line x1="18" y1="18" x2="30" y2="18" stroke="white" stroke-width="2"/><line x1="18" y1="24" x2="30" y2="24" stroke="white" stroke-width="2"/><line x1="18" y1="30" x2="26" y2="30" stroke="white" stroke-width="2"/></svg></div>
+      <div class="card-tag">Self-Paced</div></div>
+    <div class="card-body"><div class="card-title">Medical Billing &amp; Coding</div><div class="enroll-btn">Enroll Now →</div></div></a>
+  <a class="prog-card" href="https://www.alliedrxtraining.com/new-ekg-page">
+    <div class="card-accent" style="background:linear-gradient(135deg,#10b981,#059669);">
+      <div class="accent-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><polyline points="8,24 16,24 20,14 24,34 28,20 32,28 36,24 40,24" stroke="white" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg></div>
+      <div class="card-tag">Self-Paced</div></div>
+    <div class="card-body"><div class="card-title">EKG Technician</div><div class="enroll-btn">Enroll Now →</div></div></a>
+  <a class="prog-card" href="https://www.alliedrxtraining.com/new-ccma-page">
+    <div class="card-accent" style="background:linear-gradient(135deg,#f59e0b,#d97706);">
+      <div class="accent-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 36 C24 36 10 26 10 18 C10 13 14 10 18 10 C21 10 23 12 24 13 C25 12 27 10 30 10 C34 10 38 13 38 18 C38 26 24 36 24 36Z" stroke="white" stroke-width="2.5" fill="white" fill-opacity="0.25"/></svg></div>
+      <div class="card-tag">Self-Paced</div>
+      <div class="campus-badge"><span class="campus-dot"></span>Hybrid Campus Available</div></div>
+    <div class="card-body"><div class="card-title">Clinical Medical Assistant</div><div class="enroll-btn">Enroll Now →</div></div></a>
+  <a class="prog-card" href="https://www.alliedrxtraining.com/new-cmaa-page">
+    <div class="card-accent" style="background:linear-gradient(135deg,#8b5cf6,#7c3aed);">
+      <div class="accent-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="12" width="32" height="22" rx="3" stroke="white" stroke-width="2.5" fill="none"/><line x1="20" y1="34" x2="28" y2="34" stroke="white" stroke-width="2.5"/><line x1="16" y1="38" x2="32" y2="38" stroke="white" stroke-width="2.5"/><line x1="20" y1="20" x2="28" y2="20" stroke="white" stroke-width="2"/><line x1="24" y1="17" x2="24" y2="23" stroke="white" stroke-width="2"/></svg></div>
+      <div class="card-tag">Self-Paced</div></div>
+    <div class="card-body"><div class="card-title">Medical Administrative Assistant</div><div class="enroll-btn">Enroll Now →</div></div></a>
+  <a class="prog-card" href="https://www.alliedrxtraining.com/new-registered-dental-assistant">
+    <div class="card-accent" style="background:linear-gradient(135deg,#06b6d4,#0891b2);">
+      <div class="accent-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M20 10 C16 10 12 14 12 18 C12 22 14 24 16 26 C18 28 18 32 20 38 C21 41 23 41 24 38 C25 35 25 33 26 38 C27 41 29 41 30 38 C32 32 32 28 34 26 C36 24 38 22 38 18 C38 14 34 10 30 10 C27 10 25 12 24 13 C23 12 22 10 20 10Z" stroke="white" stroke-width="2.5" fill="white" fill-opacity="0.2"/></svg></div>
+      <div class="card-tag">Self-Paced</div></div>
+    <div class="card-body"><div class="card-title">Registered Dental Assistant</div><div class="enroll-btn">Enroll Now →</div></div></a>
+  <a class="prog-card" href="https://www.alliedrxtraining.com/course-catalog">
+    <div class="card-accent" style="background:linear-gradient(135deg,#334155,#1e293b);">
+      <div class="accent-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" opacity="0.7"><rect x="10" y="12" width="28" height="26" rx="3" stroke="white" stroke-width="2.5" fill="none"/><line x1="10" y1="20" x2="38" y2="20" stroke="white" stroke-width="2"/><line x1="18" y1="8" x2="18" y2="16" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="8" x2="30" y2="16" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <div class="card-tag">All Programs</div></div>
+    <div class="card-body"><div class="card-title">View Full Schedule</div><div class="enroll-btn">View Catalog →</div></div></a>
+</div>
+</div>
 </section>
-<!-- Testimonials -->
-<section class="testimonials">
-  <div class="test-inner">
-    <div class="overline">Student Success Stories</div>
-    <div class="section-h">What Our Students Are Saying</div>
-    <div class="carousel-wrap">
-      <button class="car-btn car-prev" onclick="carMove(-1)" aria-label="Previous">&#8592;</button>
-      <button class="car-btn car-next" onclick="carMove(1)" aria-label="Next">&#8594;</button>
-      <div class="car-track" id="carTrack">
-        <div class="car-slide">
-          <div class="test-card"><div class="stars">★★★★★</div><div class="test-q">"AlliedRx helped me apply the certificate I need for success. The Pharmacy Technician program gave me the training to become registered with the state of Florida."</div><div class="test-by"><div class="test-av">C</div><div><div class="test-nm">Christopher Lynch</div><div class="test-pr">Pharmacy Technician</div></div></div></div>
-          <div class="test-card"><div class="stars">★★★★★</div><div class="test-q">"I wanted to learn new experiences and get out of being a CNA. The medical assistant program is helping me gain experience towards becoming an RN. I like to help people and this was the right step."</div><div class="test-by"><div class="test-av">A</div><div><div class="test-nm">Angie Contreras</div><div class="test-pr">Medical Assistant</div></div></div></div>
-          <div class="test-card"><div class="stars">★★★★★</div><div class="test-q">"AlliedRx helped me earn my medical assistant certification through their CCMA program. The training gave me the credentials I needed to advance in the healthcare field."</div><div class="test-by"><div class="test-av">A</div><div><div class="test-nm">Alycia Richardson</div><div class="test-pr">CCMA</div></div></div></div>
-        </div>
-        <div class="car-slide">
-          <div class="test-card"><div class="stars">★★★★★</div><div class="test-q">"The number one thing that made me enroll is the length of the program. I have many responsibilities and AlliedRx gave me a way to advance my career without putting everything else on hold."</div><div class="test-by"><div class="test-av">J</div><div><div class="test-nm">Jenna Tucker</div><div class="test-pr">Clinical Medical Assistant</div></div></div></div>
-          <div class="test-card"><div class="stars">★★★★★</div><div class="test-q">"AlliedRx offered a distant learning version of their Pharmacy Technician Program which helped me greatly. I was able to study at my own pace and still pass my board exam."</div><div class="test-by"><div class="test-av">R</div><div><div class="test-nm">Rebecca Lewis</div><div class="test-pr">Pharmacy Technician</div></div></div></div>
-          <div class="test-card"><div class="stars">★★★★★</div><div class="test-q">"I am a CNA and Medication Aide for 11 years. AlliedRx helped me advance to a Medical Assistant role. The online format worked perfectly with my busy schedule."</div><div class="test-by"><div class="test-av">P</div><div><div class="test-nm">Patrice Anderson</div><div class="test-pr">Medical Assistant</div></div></div></div>
-        </div>
-        <div class="car-slide">
-          <div class="test-card"><div class="stars">★★★★★</div><div class="test-q">"I always had a deep interest in healthcare. AlliedRx gave me the foundation and certification I needed to start a meaningful career in pharmacy."</div><div class="test-by"><div class="test-av">E</div><div><div class="test-nm">Eden Mitiku</div><div class="test-pr">Pharmacy Technician</div></div></div></div>
-          <div class="test-card"><div class="stars">★★★★★</div><div class="test-q">"The EKG Technician program was exactly what I needed. The self-paced format let me study between shifts and I passed my board exam on the first try."</div><div class="test-by"><div class="test-av">M</div><div><div class="test-nm">Marcus Williams</div><div class="test-pr">EKG Technician</div></div></div></div>
-          <div class="test-card"><div class="stars">★★★★★</div><div class="test-q">"As a single mom I needed flexibility. AlliedRx's online phlebotomy program let me study after my kids went to bed. I got certified in 8 weeks and got hired right away."</div><div class="test-by"><div class="test-av">T</div><div><div class="test-nm">Tamara Jenkins</div><div class="test-pr">Phlebotomy Technician</div></div></div></div>
-        </div>
-        <div class="car-slide">
-          <div class="test-card"><div class="stars">★★★★★</div><div class="test-q">"I switched careers at 42 and AlliedRx made it possible. The Medical Billing & Coding program opened doors I never thought were available to me. Now I work remotely from home."</div><div class="test-by"><div class="test-av">D</div><div><div class="test-nm">Diane Harmon</div><div class="test-pr">Medical Billing & Coding</div></div></div></div>
-          <div class="test-card"><div class="stars">★★★★★</div><div class="test-q">"The Dental Assistant program was thorough and well organized. I appreciated how the instructors were always accessible and the content was up to date with industry standards."</div><div class="test-by"><div class="test-av">S</div><div><div class="test-nm">Sofia Reyes</div><div class="test-pr">Registered Dental Assistant</div></div></div></div>
-          <div class="test-card"><div class="stars">★★★★★</div><div class="test-q">"AlliedRx's Medical Admin Assistant program helped me land a front-office position at a major clinic. The payment plan made it easy to afford without taking out any loans."</div><div class="test-by"><div class="test-av">K</div><div><div class="test-nm">Keisha Brown</div><div class="test-pr">Medical Admin Assistant</div></div></div></div>
-        </div>
-      </div>
-    </div>
-    <div class="car-dots" id="carDots">
-      <span class="car-dot active" onclick="carGo(0)"></span>
-      <span class="car-dot" onclick="carGo(1)"></span>
-      <span class="car-dot" onclick="carGo(2)"></span>
-      <span class="car-dot" onclick="carGo(3)"></span>
-    </div>
-  </div>
-</section>
-<style>
-  .carousel-wrap{position:relative;overflow:hidden;margin-top:48px;}
-  .car-track{display:flex;transition:transform .9s cubic-bezier(.4,0,.2,1);will-change:transform;}
-  .car-slide{min-width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0 4px;}
-  .car-btn{display:none;}
-  .car-dots{display:flex;justify-content:center;gap:10px;margin-top:28px;}
-  .car-dot{width:10px;height:10px;border-radius:50%;background:rgba(145,72,252,0.3);cursor:pointer;transition:background .2s,transform .2s;}
-  .car-dot.active{background:#9148fc;transform:scale(1.3);}
-  @media(max-width:767px){
-    .car-slide{grid-template-columns:1fr;gap:14px;}
-  }
-</style>
-<script>
-var carIdx = 0;
-var carTotal = 4;
-var carAuto;
-function carRender() {
-  document.getElementById('carTrack').style.transform = 'translateX(-' + (carIdx * 100) + '%)';
-  document.querySelectorAll('.car-dot').forEach(function(d, i) { d.classList.toggle('active', i === carIdx); });
-}
-function carMove(dir) { carIdx = (carIdx + dir + carTotal) % carTotal; carRender(); resetAuto(); }
-function carGo(i) { carIdx = i; carRender(); resetAuto(); }
-function resetAuto() { clearInterval(carAuto); carAuto = setInterval(function(){ carMove(1); }, 8000); }
-carAuto = setInterval(function(){ carMove(1); }, 8000);
-</script>
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-inner">
-    <h2>Admissions — <em>Now Enrolling</em></h2>
-    <p>Join a Healthcare Program! Register and Get Started Next Semester Starts June 2024. Fall 2024 Enrollment Now Open! Payment Plans Available with $99 Down Payment</p>
-    <div class="cta-btns">
-      <a href="https://www.alliedrxtraining.com/register" class="cta-primary">Get Started</a>
-      <a href="https://www.alliedrxtraining.com/register" class="cta-secondary">Register</a>
-    </div>
-    <div class="price-badge">Learn More: Request Info · Campus Schedule · Tuition · Request Military Funding</div>
-  </div>
-</section>
+<div class="testi"><div class="testi-inner"><div class="testi-header"><div class="testi-badge">★ Student Stories</div><h2 class="testi-title">Real People. <em>Real Results.</em></h2><p class="testi-sub">Hear from graduates who transformed their careers with AlliedRx.</p></div><div class="testi-layout"><div id="testi-featured" class="testi-featured"><div class="testi-quote-mark">“</div><div class="testi-featured-text">AlliedRx changed my life. I went from retail to a hospital pharmacy in just a few months. The self-paced format let me study around my kids' schedule.</div><div class="testi-author"><div class="testi-avatar">M</div><div><div class="testi-name">Maria G.</div><div class="testi-prog">Pharmacy Technician</div></div></div></div><div class="testi-mini-grid" id="testi-mini-grid"><div class="testi-mini" onclick="window._tGo(1)"><div class="testi-mini-text">“I was skeptical about online training but the curriculum is thorough. Passed my …”</div><div class="testi-mini-author"><div class="testi-mini-avatar">J</div><span class="testi-mini-name">James T.</span></div></div><div class="testi-mini" onclick="window._tGo(2)"><div class="testi-mini-text">“The hybrid campus option was perfect. I got online theory at my own pace and han…”</div><div class="testi-mini-author"><div class="testi-mini-avatar">P</div><span class="testi-mini-name">Priya S.</span></div></div><div class="testi-mini" onclick="window._tGo(3)"><div class="testi-mini-text">“Affordable, flexible, and actually respected by employers. The $99 down payment …”</div><div class="testi-mini-author"><div class="testi-mini-avatar">C</div><span class="testi-mini-name">Carlos R.</span></div></div><div class="testi-mini" onclick="window._tGo(4)"><div class="testi-mini-text">“From enrollment to certification in under 6 months. The instructors were respons…”</div><div class="testi-mini-author"><div class="testi-mini-avatar">A</div><span class="testi-mini-name">Ashley W.</span></div></div></div></div><div class="testi-dots" id="testi-dots"><span class="testi-dot active" onclick="window._tGo(0)"></span><span class="testi-dot" onclick="window._tGo(1)"></span><span class="testi-dot" onclick="window._tGo(2)"></span><span class="testi-dot" onclick="window._tGo(3)"></span><span class="testi-dot" onclick="window._tGo(4)"></span><span class="testi-dot" onclick="window._tGo(5)"></span></div></div></div><script>(function(){var rv=[{"n":"Maria G.","i":"M","p":"Pharmacy Technician","q":"AlliedRx changed my life. I went from retail to a hospital pharmacy in just a few months. The self-paced format let me study around my kids' schedule."},{"n":"James T.","i":"J","p":"Medical Billing & Coding","q":"I was skeptical about online training but the curriculum is thorough. Passed my certification exam on the first try and landed a remote job right away."},{"n":"Priya S.","i":"P","p":"Phlebotomy Technician","q":"The hybrid campus option was perfect. I got online theory at my own pace and hands-on lab time. My employer was impressed by my certification."},{"n":"Carlos R.","i":"C","p":"EKG Technician","q":"Affordable, flexible, and actually respected by employers. The $99 down payment made it possible when other programs were out of reach financially."},{"n":"Ashley W.","i":"A","p":"Clinical Medical Assistant","q":"From enrollment to certification in under 6 months. The instructors were responsive and the material was directly applicable to my new job on day one."},{"n":"Dante M.","i":"D","p":"Medical Administrative Assistant","q":"Already had a healthcare job but needed credentials to advance. AlliedRx fit into my busy schedule perfectly. Got promoted within weeks of certifying."}];var cur=0;function render(i,anim){var f=document.getElementById("testi-featured");var mm=document.getElementById("testi-mini-grid");var dd=document.getElementById("testi-dots");if(!f)return;if(anim){f.classList.remove("testi-fade");void f.offsetWidth;f.classList.add("testi-fade");}f.innerHTML='<div class="testi-quote-mark">“<\/div><div class="testi-featured-text">'+rv[i].q+'<\/div><div class="testi-author"><div class="testi-avatar">'+rv[i].i+'<\/div><div><div class="testi-name">'+rv[i].n+'<\/div><div class="testi-prog">'+rv[i].p+'<\/div><\/div><\/div>';if(mm){var m=[];for(var j=0;j<4;j++){var k=(i+1+j)%6;m.push('<div class="testi-mini" onclick="window._tGo('+k+')">'+'<div class="testi-mini-text">“'+rv[k].q.substring(0,80)+'…”<\/div>'+'<div class="testi-mini-author"><div class="testi-mini-avatar">'+rv[k].i+'<\/div><span class="testi-mini-name">'+rv[k].n+'<\/span><\/div><\/div>');}mm.innerHTML=m.join("");}if(dd)dd.innerHTML=rv.map(function(_,j){return'<span class="testi-dot'+(j===i?' active':'')+'" onclick="window._tGo('+j+')">'+'<\/span>';}).join("");}window._tGo=function(i){cur=i;render(i,true);};setInterval(function(){cur=(cur+1)%6;render(cur,true);},5000);})();</script>
+<section class="cta-section"><div class="cta-inner"><h2>Admissions — <em>Now Enrolling</em></h2><p>Join a Healthcare Program! Register and Get Started — Spring 2026 Enrollment Now Open! Payment Plans Available with $99 Down Payment</p><div class="cta-btns"><a href="https://www.alliedrxtraining.com/register" class="cta-primary">Get Started</a><a href="https://www.alliedrxtraining.com/register" class="cta-secondary">Register</a></div><div class="price-badge">Learn More: Request Info · Campus Schedule · Tuition · Request Military Funding</div></div></section>
 <script>
 // Auto-resize iframe height for parent Webflow page
 function sendHeight() {
