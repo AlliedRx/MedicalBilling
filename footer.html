@@ -1,34 +1,69 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-.arx-footer{background:#ffffff;color:#1a1a2e;padding:64px 40px 0;font-family:'Plus Jakarta Sans',Inter,sans-serif;font-size:14px;line-height:1.6;border-top:1px solid #e5e7eb;}
-.arx-footer-cta{background:linear-gradient(135deg,#0d0b2e 0%,#1e1060 50%,#2d1580 100%);border-radius:16px;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:56px;}
-.arx-footer-cta h2{color:#fff;font-size:26px;font-weight:700;margin:0;}
-.arx-footer-cta p{color:rgba(255,255,255,0.85);margin:6px 0 0;font-size:15px;}
-.arx-footer-cta a{display:inline-block;background:#7c3aed;color:#fff;border:2px solid rgba(255,255,255,0.3);font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;white-space:nowrap;}
+.arx-footer{background:#ffffff;color:#1a1a2e;padding:48px 32px 0;font-family:'Plus Jakarta Sans',Inter,sans-serif;font-size:14px;line-height:1.6;border-top:1px solid #e5e7eb;box-sizing:border-box;width:100%;}
+.arx-footer *{box-sizing:border-box;}
+
+/* CTA Banner */
+.arx-footer-cta{background:linear-gradient(135deg,#0d0b2e 0%,#1e1060 50%,#2d1580 100%);border-radius:16px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:52px;}
+.arx-footer-cta h2{color:#fff;font-size:24px;font-weight:700;margin:0;line-height:1.3;}
+.arx-footer-cta p{color:rgba(255,255,255,0.85);margin:6px 0 0;font-size:14px;}
+.arx-footer-cta a{display:inline-block;background:#7c3aed;color:#fff;border:2px solid rgba(255,255,255,0.3);font-weight:700;font-size:15px;padding:13px 26px;border-radius:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;}
 .arx-footer-cta a:hover{background:#6d28d9;border-color:rgba(255,255,255,0.5);}
+
+/* Grid */
 .arx-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;}
-.arx-footer-brand img{height:44px;margin-bottom:16px;}
-.arx-footer-brand p{color:#555;font-size:13.5px;line-height:1.65;max-width:240px;margin-bottom:20px;}
-.arx-footer-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
-.arx-footer-badge{background:#f3f0ff;color:#4f35d2;border:1px solid #d8d0f7;border-radius:6px;padding:4px 10px;font-size:11.5px;font-weight:600;}
-.arx-footer-col h4{color:#111;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;}
+.arx-footer-brand img{height:42px;margin-bottom:14px;display:block;max-width:100%;}
+.arx-footer-brand p{color:#555;font-size:13.5px;line-height:1.65;max-width:240px;margin-bottom:18px;}
+.arx-footer-badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px;}
+.arx-footer-badge{background:#f3f0ff;color:#4f35d2;border:1px solid #d8d0f7;border-radius:6px;padding:4px 10px;font-size:11px;font-weight:600;}
+.arx-footer-col h4{color:#111;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
 .arx-footer-col ul{list-style:none;padding:0;margin:0;}
-.arx-footer-col ul li{margin-bottom:10px;}
+.arx-footer-col ul li{margin-bottom:9px;}
 .arx-footer-col ul li a{color:#444;text-decoration:none;font-size:13.5px;}
 .arx-footer-col ul li a:hover{color:#4f35d2;}
-.arx-footer-contact-item{margin-bottom:14px;font-size:13.5px;color:#444;}
+.arx-footer-contact-item{margin-bottom:13px;font-size:13.5px;color:#444;}
 .arx-footer-contact-item strong{display:block;color:#111;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px;}
 .arx-footer-contact-item a{color:#4f35d2;text-decoration:none;}
 .arx-footer-contact-item a:hover{text-decoration:underline;}
-.arx-footer-bottom{border-top:1px solid #e5e7eb;padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-.arx-footer-bottom p{color:#888;font-size:12.5px;}
-.arx-footer-bottom-links{display:flex;gap:20px;}
-.arx-footer-bottom-links a{color:#888;font-size:12.5px;text-decoration:none;}
+
+/* Bottom bar */
+.arx-footer-bottom{border-top:1px solid #e5e7eb;padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.arx-footer-bottom p{color:#888;font-size:12px;}
+.arx-footer-bottom-links{display:flex;gap:18px;}
+.arx-footer-bottom-links a{color:#888;font-size:12px;text-decoration:none;}
 .arx-footer-bottom-links a:hover{color:#4f35d2;}
+
+/* ── TABLET (max 900px) ── */
+@media(max-width:900px){
+  .arx-footer{padding:40px 24px 0;}
+  .arx-footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  .arx-footer-brand{grid-column:1/-1;}
+  .arx-footer-brand p{max-width:100%;}
+  .arx-footer-cta{padding:28px 32px;}
+  .arx-footer-cta h2{font-size:21px;}
+}
+
+/* ── MOBILE (max 600px) ── */
+@media(max-width:600px){
+  .arx-footer{padding:32px 20px 0;}
+  .arx-footer-cta{padding:24px 22px;border-radius:12px;flex-direction:column;align-items:flex-start;margin-bottom:36px;}
+  .arx-footer-cta h2{font-size:20px;}
+  .arx-footer-cta p{font-size:13px;}
+  .arx-footer-cta a{width:100%;text-align:center;padding:13px 20px;font-size:15px;}
+  .arx-footer-grid{grid-template-columns:1fr;gap:28px;padding-bottom:36px;}
+  .arx-footer-brand{grid-column:auto;}
+  .arx-footer-badges{gap:6px;}
+  .arx-footer-badge{font-size:10.5px;padding:3px 8px;}
+  .arx-footer-col h4{margin-bottom:10px;}
+  .arx-footer-bottom{flex-direction:column;align-items:flex-start;gap:8px;padding:16px 0;}
+  .arx-footer-bottom p{font-size:11.5px;}
+  .arx-footer-bottom-links{gap:14px;}
+  .arx-footer-bottom-links a{font-size:11.5px;}
+}
 </style>
 </head><body>
 <footer class="arx-footer">
-
   <div class="arx-footer-cta">
     <div>
       <h2>Get Certified. Get Hired. Do it Online.</h2>
@@ -36,7 +71,6 @@
     </div>
     <a href="https://www.alliedrxtraining.com/register" target="_parent">Enroll Now &rarr;</a>
   </div>
-
   <div class="arx-footer-grid">
     <div class="arx-footer-brand">
       <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69caba88d42a3b1a8669dd2a_alliedrx_logo_webflow_hd.png" alt="AlliedRx Institute of Healthcare">
@@ -49,7 +83,6 @@
         <span class="arx-footer-badge">WIOA Approved</span>
       </div>
     </div>
-
     <div class="arx-footer-col">
       <h4>Programs</h4>
       <ul>
@@ -59,10 +92,9 @@
         <li><a href="https://www.alliedrxtraining.com/new-ekg-page" target="_parent">EKG Technician</a></li>
         <li><a href="https://www.alliedrxtraining.com/new-phlebotomy-page" target="_parent">Phlebotomy Technician</a></li>
         <li><a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" target="_parent">Dental Assisting</a></li>
-        <li><a href="https://www.alliedrxtraining.com/new-cmaa-page" target="_parent">Medical Administrative Asst.</a></li>
+        <li><a href="https://www.alliedrxtraining.com/new-cmaa-page" target="_parent">Medical Admin Assistant</a></li>
       </ul>
     </div>
-
     <div class="arx-footer-col">
       <h4>Tuition &amp; Info</h4>
       <ul>
@@ -74,7 +106,6 @@
         <li><a href="https://www.alliedrxtraining.com/partners" target="_parent">Partners</a></li>
       </ul>
     </div>
-
     <div class="arx-footer-col">
       <h4>Contact</h4>
       <div class="arx-footer-contact-item">
@@ -90,14 +121,13 @@
         Mon&ndash;Fri 9am&ndash;5pm ET
       </div>
       <h4 style="margin-top:20px;">Company</h4>
-      <ul style="margin-top:12px;">
+      <ul style="margin-top:10px;">
         <li><a href="https://www.alliedrxtraining.com/about" target="_parent">About Us</a></li>
         <li><a href="https://www.alliedrxtraining.com/contact" target="_parent">Contact</a></li>
         <li><a href="https://www.alliedrxtraining.com/gainful-disclosures" target="_parent">Gainful Disclosure</a></li>
       </ul>
     </div>
   </div>
-
   <div class="arx-footer-bottom">
     <p>&copy; 2026 AlliedRx Institute of Healthcare. All rights reserved.</p>
     <div class="arx-footer-bottom-links">
@@ -105,6 +135,5 @@
       <a href="https://www.alliedrxtraining.com/terms-of-use" target="_parent">Terms of Use</a>
     </div>
   </div>
-
 </footer>
 </body></html>
