@@ -10,8 +10,8 @@
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
-  background: #fafafa;
-  color: #0f172a;
+  background: #06061a;
+  color: #fff;
   overflow-x: hidden;
 }
 
@@ -20,7 +20,7 @@ nav { display: none; }
 
 /* HERO */
 .hero {
-  background: linear-gradient(135deg, #f4f5ff 0%, #ffffff 55%, #f0f1ff 100%);
+  background: linear-gradient(160deg, #06061a 0%, #0d0730 55%, #130840 100%);
   position: relative;
   overflow: hidden;
   min-height: 620px;
@@ -32,7 +32,7 @@ nav { display: none; }
   top: -60px;
   width: 900px;
   height: 900px;
-  background: radial-gradient(ellipse, rgba(88,91,252,0.07) 0%, transparent 65%);
+  background: radial-gradient(ellipse, rgba(100,60,220,0.22) 0%, transparent 65%);
   pointer-events: none;
 }
 .hero-inner {
@@ -60,9 +60,9 @@ nav { display: none; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(88,91,252,0.15);
+  background: rgba(145,72,252,0.15);
   border: 1px solid rgba(145,72,252,0.35);
-  color: #a5a7fd;
+  color: #c4b5fd;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -72,18 +72,18 @@ nav { display: none; }
   width: fit-content;
   margin-bottom: 20px;
 }
-.badge-dot { width: 6px; height: 6px; background: #585bfc; border-radius: 50%; }
+.badge-dot { width: 6px; height: 6px; background: #9148fc; border-radius: 50%; }
 
 h1 {
   font-size: clamp(38px, 4.2vw, 54px);
   font-weight: 900;
   line-height: 1.04;
   letter-spacing: -0.025em;
-  color: #0f172a;
+  color: #fff;
   margin-bottom: 16px;
 }
 h1 .purple-text {
-  background: linear-gradient(135deg, #a5a7fd, #585bfc);
+  background: linear-gradient(135deg, #c4b5fd, #9148fc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -92,7 +92,7 @@ h1 .purple-text {
 .hero-tagline {
   font-size: 18px;
   font-weight: 700;
-  color: #0f172a;
+  color: #fff;
   margin-bottom: 14px;
   letter-spacing: -0.01em;
 }
@@ -100,7 +100,7 @@ h1 .purple-text {
 
 .hero-desc {
   font-size: 15px;
-  color: #475569;
+  color: rgba(255,255,255,0.58);
   line-height: 1.65;
   max-width: 520px;
   margin-bottom: 10px;
@@ -108,7 +108,7 @@ h1 .purple-text {
 
 .hero-funding {
   font-size: 13px;
-  color: #475569;
+  color: #fff;
   margin-bottom: 30px;
   line-height: 1.6;
 }
@@ -134,30 +134,30 @@ h1 .purple-text {
   border: none;
 }
 .btn-primary {
-  background: linear-gradient(135deg, #4346d4, #585bfc);
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
   color: #fff;
-  box-shadow: 0 8px 28px rgba(88,91,252,0.45);
+  box-shadow: 0 8px 28px rgba(145,72,252,0.45);
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(88,91,252,0.55); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(145,72,252,0.55); }
 .btn-outline {
   background: transparent;
-  color: #585bfc;
-  border: 1.5px solid #d4d5fe;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.28);
 }
-.btn-outline:hover { background: #eeeffe; border-color: #585bfc; }
+.btn-outline:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.5); }
 
 /* Stats */
 .stats-bar { display: flex; gap: 0; }
 .stat-item {
   padding: 0 28px 0 0;
   margin-right: 28px;
-  border-right: 1px solid #e2e8f0;
+  border-right: 1px solid rgba(255,255,255,0.12);
 }
 .stat-item:last-child { border-right: none; }
 .stat-num {
   font-size: 22px;
   font-weight: 900;
-  background: linear-gradient(135deg, #a5a7fd, #585bfc);
+  background: linear-gradient(135deg, #c4b5fd, #9148fc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -168,7 +168,7 @@ h1 .purple-text {
 .stat-label {
   font-size: 11px;
   font-weight: 600;
-  color: #94a3b8;
+  color: rgba(255,255,255,0.4);
   text-transform: uppercase;
   letter-spacing: 0.07em;
   white-space: nowrap;
@@ -194,7 +194,7 @@ h1 .purple-text {
   inset: 0;
   background:
     linear-gradient(to right, #06061a 0%, rgba(6,6,26,0.05) 18%),
-    linear-gradient(to top, rgba(250,250,250,0.55) 0%, transparent 35%);
+    linear-gradient(to top, rgba(6,6,26,0.55) 0%, transparent 35%);
 }
 .hero-img-wrap img {
   width: 100%;
@@ -244,7 +244,7 @@ h1 .purple-text {
   text-decoration: none;
   transition: all 0.18s;
 }
-.program-row:hover { background: #ede9fe; border-color: #a5a7fd; }
+.program-row:hover { background: #ede9fe; border-color: #c4b5fd; }
 .prog-icon {
   width: 32px;
   height: 32px;
@@ -258,7 +258,7 @@ h1 .purple-text {
 .prog-icon svg { width: 15px; height: 15px; }
 .prog-info { flex: 1; min-width: 0; }
 .prog-name { font-size: 12px; font-weight: 700; color: #1a1a2e; line-height: 1.2; }
-.prog-accred { font-size: 9.5px; color: #4346d4; font-weight: 600; margin-top: 1px; }
+.prog-accred { font-size: 9.5px; color: #7c3aed; font-weight: 600; margin-top: 1px; }
 .prog-chevron { color: #a78bfa; flex-shrink: 0; }
 .prog-chevron svg { width: 13px; height: 13px; }
 
@@ -266,7 +266,7 @@ h1 .purple-text {
   margin-top: 12px;
   width: 100%;
   padding: 12px;
-  background: linear-gradient(135deg, #4346d4, #585bfc);
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
   color: #fff;
   border: none;
   border-radius: 100px;
@@ -287,8 +287,8 @@ h1 .purple-text {
 
 /* PROMO BAND */
 .promo-band {
-  background: #f4f5ff;
-  border-top: 1px solid #e8e4fb;
+  background: #0e0a2a;
+  border-top: 1px solid rgba(255,255,255,0.06);
   padding: 22px 0;
 }
 .promo-inner {
@@ -301,9 +301,9 @@ h1 .purple-text {
   flex-wrap: wrap;
 }
 .promo-tag {
-  background: rgba(88,91,252,0.18);
-  border: 1px solid rgba(88,91,252,0.38);
-  color: #a5a7fd;
+  background: rgba(145,72,252,0.18);
+  border: 1px solid rgba(145,72,252,0.38);
+  color: #c4b5fd;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -315,11 +315,11 @@ h1 .purple-text {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 .promo-content { flex: 1; }
-.promo-title { font-size: 22px; font-weight: 800; color: #0f172a; letter-spacing: -0.01em; font-family: "Plus Jakarta Sans", sans-serif; }
+.promo-title { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.01em; font-family: "Plus Jakarta Sans", sans-serif; }
 .promo-title span { color: #a78bfa; }
-.promo-sub { font-size: 15px; color: #64748b; margin-top: 6px; font-family: "Plus Jakarta Sans", sans-serif; }
+.promo-sub { font-size: 15px; color: rgba(255,255,255,0.55); margin-top: 6px; font-family: "Plus Jakarta Sans", sans-serif; }
 .promo-cta {
-  background: linear-gradient(135deg, #4346d4, #585bfc);
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
   color: #fff;
   border: none;
   padding: 11px 24px;
@@ -348,7 +348,7 @@ h1 .purple-text {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #585bfc;
+  color: #9148fc;
   margin-bottom: 10px;
 }
 .section-title {
@@ -356,13 +356,13 @@ h1 .purple-text {
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #0f172a;
+  color: #fff;
   margin-bottom: 10px;
 }
 .section-title .accent { color: #a78bfa; }
 .section-desc {
   font-size: 15px;
-  color: #64748b;
+  color: rgba(255,255,255,0.52);
   line-height: 1.7;
   margin-bottom: 28px;
 }
@@ -372,18 +372,18 @@ h1 .purple-text {
   display: flex;
   align-items: center;
   gap: 14px;
-  background: rgba(88,91,252,0.04);
-  border: 1px solid rgba(88,91,252,0.12);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
   padding: 16px 18px;
   transition: all 0.2s;
 }
-.contact-tile:hover { background: rgba(88,91,252,0.07); border-color: rgba(88,91,252,0.28); }
+.contact-tile:hover { background: rgba(145,72,252,0.07); border-color: rgba(145,72,252,0.28); }
 .tile-icon {
   width: 42px;
   height: 42px;
-  background: linear-gradient(135deg, rgba(88,91,252,0.18), rgba(196,181,253,0.12));
-  border: 1px solid rgba(88,91,252,0.28);
+  background: linear-gradient(135deg, rgba(145,72,252,0.18), rgba(196,181,253,0.12));
+  border: 1px solid rgba(145,72,252,0.28);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -392,11 +392,11 @@ h1 .purple-text {
 }
 .tile-icon svg { width: 19px; height: 19px; color: #a78bfa; }
 .tile-info { flex: 1; }
-.tile-label { font-size: 10.5px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
-.tile-value { font-size: 15px; font-weight: 700; color: #0f172a; }
-.tile-sub { font-size: 12px; color: #94a3b8; margin-top: 2px; }
+.tile-label { font-size: 10.5px; font-weight: 700; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+.tile-value { font-size: 15px; font-weight: 700; color: #fff; }
+.tile-sub { font-size: 12px; color: rgba(255,255,255,0.38); margin-top: 2px; }
 .tile-action {
-  background: linear-gradient(135deg, #4346d4, #585bfc);
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
   color: #fff;
   border: none;
   padding: 9px 18px;
@@ -410,20 +410,20 @@ h1 .purple-text {
   display: inline-block;
   white-space: nowrap;
 }
-.tile-action:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(88,91,252,0.45); }
+.tile-action:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(145,72,252,0.45); }
 
 .edu-tile {
   display: flex;
   align-items: center;
   gap: 14px;
-  background: rgba(88,91,252,0.07);
+  background: rgba(145,72,252,0.07);
   border: 1px solid rgba(145,72,252,0.22);
   border-radius: 16px;
   padding: 14px 18px;
 }
 .edu-tile-text { flex: 1; }
-.edu-tile-label { font-size: 13px; font-weight: 700; color: #a5a7fd; }
-.edu-tile-sub { font-size: 11.5px; color: #94a3b8; margin-top: 2px; }
+.edu-tile-label { font-size: 13px; font-weight: 700; color: #c4b5fd; }
+.edu-tile-sub { font-size: 11.5px; color: rgba(255,255,255,0.38); margin-top: 2px; }
 
 .hours-card {
   background: rgba(255,255,255,0.03);
@@ -442,52 +442,52 @@ h1 .purple-text {
   align-items: center;
   gap: 8px;
 }
-.hours-title svg { color: #585bfc; width: 14px; height: 14px; }
+.hours-title svg { color: #9148fc; width: 14px; height: 14px; }
 .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
 .hours-day, .hours-time {
   font-size: 13px;
   padding: 5px 0;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.hours-day { color: #94a3b8; }
+.hours-day { color: rgba(255,255,255,0.42); }
 .hours-time { font-weight: 600; color: rgba(255,255,255,0.72); text-align: right; }
 .hours-note { font-size: 11px; color: rgba(255,255,255,0.28); margin-top: 12px; }
 
 /* FORMS */
 .forms-col { display: flex; flex-direction: column; gap: 18px; }
 .form-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
   border-radius: 20px;
   padding: 28px;
   backdrop-filter: blur(10px);
 }
-.form-card-title { font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 4px; letter-spacing: -0.01em; }
-.form-card-sub { font-size: 13px; color: #64748b; margin-bottom: 20px; }
+.form-card-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.01em; }
+.form-card-sub { font-size: 13px; color: rgba(255,255,255,0.42); margin-bottom: 20px; }
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
 .form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px; }
 
-label { font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; }
+label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.06em; }
 
 input, select, textarea {
   width: 100%;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.11);
   border-radius: 10px;
   padding: 11px 13px;
-  color: #0f172a;
+  color: #fff;
   font-size: 14px;
   font-family: "Plus Jakarta Sans", sans-serif;
   outline: none;
   transition: border 0.2s, background 0.2s;
 }
-input::placeholder, textarea::placeholder { color: #94a3b8; }
+input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.28); }
 input:focus, select:focus, textarea:focus {
-  border-color: rgba(88,91,252,0.6);
-  background: rgba(88,91,252,0.06);
+  border-color: rgba(145,72,252,0.6);
+  background: rgba(145,72,252,0.06);
 }
-select option { background: #ffffff; color: #0f172a; }
+select option { background: #1a0a3e; color: #fff; }
 textarea { resize: none; }
 
 .captcha-row {
@@ -506,7 +506,7 @@ textarea { resize: none; }
 .form-submit {
   width: 100%;
   padding: 13px;
-  background: linear-gradient(135deg, #4346d4, #585bfc);
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
   color: #fff;
   border: none;
   border-radius: 100px;
@@ -514,10 +514,10 @@ textarea { resize: none; }
   font-weight: 700;
   font-family: "Plus Jakarta Sans", sans-serif;
   cursor: pointer;
-  box-shadow: 0 8px 28px rgba(88,91,252,0.45);
+  box-shadow: 0 8px 28px rgba(145,72,252,0.45);
   transition: all 0.22s;
 }
-.form-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(88,91,252,0.55); }
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(145,72,252,0.55); }
 
 .form-success {
   display: none;
@@ -527,43 +527,43 @@ textarea { resize: none; }
 .form-success-icon {
   width: 52px;
   height: 52px;
-  background: linear-gradient(135deg, #4346d4, #585bfc);
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 14px;
 }
-.form-success-title { font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 6px; }
-.form-success-sub { font-size: 13px; color: #64748b; }
+.form-success-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+.form-success-sub { font-size: 13px; color: rgba(255,255,255,0.5); }
 
 .hp-field { display: none !important; }
 
 /* REVIEWS */
 .reviews-section {
-  background: #f8f6ff;
-  border-top: 1px solid #e8e4fb;
+  background: linear-gradient(180deg, #0a0620 0%, #06061a 100%);
+  border-top: 1px solid rgba(255,255,255,0.05);
   padding: 72px 48px;
 }
 .reviews-inner { max-width: 1360px; margin: 0 auto; }
 .reviews-header { text-align: center; margin-bottom: 44px; }
 .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .review-card {
-  background: rgba(88,91,252,0.04);
-  border: 1px solid rgba(88,91,252,0.12);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
   padding: 22px;
   transition: all 0.2s;
 }
-.review-card:hover { background: rgba(88,91,252,0.06); border-color: rgba(88,91,252,0.25); }
+.review-card:hover { background: rgba(145,72,252,0.06); border-color: rgba(145,72,252,0.25); }
 .review-stars { display: flex; gap: 2px; margin-bottom: 10px; font-size: 14px; color: #f59e0b; }
-.review-text { font-size: 14px; color: #64748b; line-height: 1.65; margin-bottom: 16px; }
+.review-text { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.65; margin-bottom: 16px; }
 .review-author { display: flex; align-items: center; gap: 10px; }
 .review-avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #4346d4, #585bfc);
+  background: linear-gradient(135deg, #7c3aed, #9148fc);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -573,7 +573,7 @@ textarea { resize: none; }
   flex-shrink: 0;
 }
 .review-name { font-size: 13px; font-weight: 700; color: #fff; }
-.review-program { font-size: 11px; color: #585bfc; font-weight: 600; margin-top: 1px; }
+.review-program { font-size: 11px; color: #9148fc; font-weight: 600; margin-top: 1px; }
 
 /* TOAST */
 .toast {
@@ -583,7 +583,7 @@ textarea { resize: none; }
   transform: translateX(-50%) translateY(80px);
   background: #1a0a3e;
   border: 1px solid rgba(145,72,252,0.4);
-  color: #a5a7fd;
+  color: #c4b5fd;
   padding: 12px 24px;
   border-radius: 100px;
   font-size: 14px;
@@ -657,7 +657,7 @@ textarea { resize: none; }
 
           <a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" class="program-row">
             <div class="prog-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4346d4" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 12h6M12 9v6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 12h6M12 9v6"/></svg>
             </div>
             <div class="prog-info">
               <div class="prog-name">Pharmacy Technician</div>
@@ -668,7 +668,7 @@ textarea { resize: none; }
 
           <a href="https://www.alliedrxtraining.com/new-ccma-page" class="program-row">
             <div class="prog-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4346d4" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
             </div>
             <div class="prog-info">
               <div class="prog-name">Clinical Medical Assistant</div>
@@ -679,7 +679,7 @@ textarea { resize: none; }
 
           <a href="https://www.alliedrxtraining.com/new-medical-billing-page" class="program-row">
             <div class="prog-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4346d4" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
             </div>
             <div class="prog-info">
               <div class="prog-name">Medical Billing &amp; Coding</div>
@@ -690,7 +690,7 @@ textarea { resize: none; }
 
           <a href="https://www.alliedrxtraining.com/new-ekg-page" class="program-row">
             <div class="prog-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4346d4" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
             </div>
             <div class="prog-info">
               <div class="prog-name">EKG Technician</div>
@@ -701,7 +701,7 @@ textarea { resize: none; }
 
           <a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" class="program-row">
             <div class="prog-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4346d4" stroke-width="2"><path d="M12 2C8.5 2 6 5 6 8c0 3 2 5 2 8h8c0-3 2-5 2-8 0-3-2.5-6-6-6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M12 2C8.5 2 6 5 6 8c0 3 2 5 2 8h8c0-3 2-5 2-8 0-3-2.5-6-6-6z"/></svg>
             </div>
             <div class="prog-info">
               <div class="prog-name">Dental Assisting</div>
@@ -712,7 +712,7 @@ textarea { resize: none; }
 
           <a href="https://www.alliedrxtraining.com/new-phlebotomy-page" class="program-row">
             <div class="prog-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4346d4" stroke-width="2"><line x1="12" y1="2" x2="12" y2="8"/><path d="M5 12a7 7 0 0 0 14 0"/><line x1="8" y1="16" x2="8" y2="22"/><line x1="16" y1="16" x2="16" y2="22"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><line x1="12" y1="2" x2="12" y2="8"/><path d="M5 12a7 7 0 0 0 14 0"/><line x1="8" y1="16" x2="8" y2="22"/><line x1="16" y1="16" x2="16" y2="22"/></svg>
             </div>
             <div class="prog-info">
               <div class="prog-name">Phlebotomy Technician</div>
@@ -723,7 +723,7 @@ textarea { resize: none; }
 
           <a href="https://www.alliedrxtraining.com/new-cmaa-page" class="program-row">
             <div class="prog-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4346d4" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"/></svg>
             </div>
             <div class="prog-info">
               <div class="prog-name">Clinical Medical Admin Asst</div>
@@ -788,7 +788,7 @@ textarea { resize: none; }
       </div>
 
       <div class="edu-tile">
-        <div class="tile-icon" style="background: linear-gradient(135deg, rgba(88,91,252,0.18), rgba(196,181,253,0.12)); border: 1px solid rgba(88,91,252,0.28);">
+        <div class="tile-icon" style="background: linear-gradient(135deg, rgba(145,72,252,0.18), rgba(196,181,253,0.12)); border: 1px solid rgba(145,72,252,0.28);">
           <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
         </div>
         <div class="edu-tile-text">
@@ -832,8 +832,8 @@ textarea { resize: none; }
   <div class="forms-col">
 
     <div class="form-card" style="text-align:center; padding: 40px 32px;">
-      <div style="font-size:13px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#585bfc; margin-bottom:12px;">Student Success</div>
-      <h3 style="font-size:26px; font-weight:900; color:#fff; letter-spacing:-0.02em; margin-bottom:10px; line-height:1.15;">Ready to Talk?<br><span style="background:linear-gradient(135deg,#a5a7fd,#585bfc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Reach Us by Chat or Phone</span></h3>
+      <div style="font-size:13px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#9148fc; margin-bottom:12px;">Student Success</div>
+      <h3 style="font-size:26px; font-weight:900; color:#fff; letter-spacing:-0.02em; margin-bottom:10px; line-height:1.15;">Ready to Talk?<br><span style="background:linear-gradient(135deg,#c4b5fd,#9148fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Reach Us by Chat or Phone</span></h3>
       <p style="font-size:14px; color:rgba(255,255,255,0.5); line-height:1.7; max-width:340px; margin:0 auto 28px;">Our admissions team is available Monday through Friday, 9:00 AM &ndash; 5:00 PM EST. Connect with us instantly by phone or live chat &mdash; no forms needed.</p>
 
       <div style="font-size:12px; color:rgba(255,255,255,0.3); line-height:1.6; margin-bottom:28px;">
@@ -842,10 +842,10 @@ textarea { resize: none; }
 
       <!-- Graduates heading + controls -->
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
-        <div style="font-size:11px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#585bfc;">What Our Graduates Say</div>
+        <div style="font-size:11px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#9148fc;">What Our Graduates Say</div>
         <div style="display:flex; gap:6px;">
-          <button onclick="rotateReviews(-1)" style="width:28px;height:28px;border-radius:50%;background:rgba(88,91,252,0.15);border:1px solid rgba(145,72,252,0.35);color:#a5a7fd;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;">&#8592;</button>
-          <button onclick="rotateReviews(1)" style="width:28px;height:28px;border-radius:50%;background:rgba(88,91,252,0.15);border:1px solid rgba(145,72,252,0.35);color:#a5a7fd;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;">&#8594;</button>
+          <button onclick="rotateReviews(-1)" style="width:28px;height:28px;border-radius:50%;background:rgba(145,72,252,0.15);border:1px solid rgba(145,72,252,0.35);color:#c4b5fd;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;">&#8592;</button>
+          <button onclick="rotateReviews(1)" style="width:28px;height:28px;border-radius:50%;background:rgba(145,72,252,0.15);border:1px solid rgba(145,72,252,0.35);color:#c4b5fd;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;">&#8594;</button>
         </div>
       </div>
 
