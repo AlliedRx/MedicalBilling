@@ -10,10 +10,10 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy:        #f4f5ff;
-  --navy-mid:    #0a0c1a;
-  --purple:      #585bfc;
-  --purple-mid:  #4346d4;
+  --navy:        #0d0629;
+  --navy-mid:    #1a0f40;
+  --purple:      #7c3aed;
+  --purple-mid:  #6d28d9;
   --purple-light:#a78bfa;
   --purple-pale: #ede9fe;
   --pale:        #f5f3ff;
@@ -47,7 +47,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); c
   position: absolute;
   top: -140px; left: -80px;
   width: 680px; height: 680px;
-  background: radial-gradient(ellipse at center, rgba(88,91,252,0.07) 0%, transparent 65%);
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.22) 0%, transparent 65%);
   pointer-events: none;
 }
 .hero::after {
@@ -55,7 +55,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); c
   position: absolute;
   bottom: -60px; left: 38%;
   width: 480px; height: 480px;
-  background: radial-gradient(ellipse at center, rgba(88,91,252,0.04) 0%, transparent 65%);
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.1) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -63,8 +63,8 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); c
 .hero-grid {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(88,91,252,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(88,91,252,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.016) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.016) 1px, transparent 1px);
   background-size: 72px 72px;
   pointer-events: none; z-index: 0;
 }
@@ -89,7 +89,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); c
 .hero-copy h1 {
   font-size: clamp(3rem, 5.5vw, 5rem);
   font-weight: 900;
-  color: #0f172a;
+  color: white;
   line-height: 1.0;
   letter-spacing: -2.5px;
   margin-bottom: 1.75rem;
@@ -99,7 +99,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); c
 
 .hero-lead {
   font-size: 17px; font-weight: 400;
-  color: #475569;
+  color: rgba(255,255,255,0.55);
   line-height: 1.8; max-width: 520px;
   margin-bottom: 3rem;
 }
@@ -109,20 +109,20 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); c
   display: inline-flex; align-items: center; gap: 7px;
   padding: 7px 16px;
   background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(88,91,252,0.2);
+  border: 1px solid rgba(124,58,237,0.3);
   border-radius: 100px;
   font-size: 12.5px; font-weight: 600;
-  color: #585bfc;
+  color: rgba(255,255,255,0.7);
 }
 .chip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--purple-light); }
 
 .hero-stats { display: flex; gap: 3rem; }
 .h-stat { display: flex; flex-direction: column; gap: 3px; }
 .h-stat-num {
-  font-size: 2.2rem; font-weight: 900; color: #0f172a;
+  font-size: 2.2rem; font-weight: 900; color: white;
   line-height: 1; letter-spacing: -1px;
 }
-.h-stat-label { font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+.h-stat-label { font-size: 11px; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
 
 /* CEO image panel */
 .hero-image {
@@ -153,11 +153,11 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); c
   background: rgba(13,6,41,0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(88,91,252,0.15);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 14px;
   padding: 1rem 1.25rem;
 }
-.caption-name { font-size: 14px; font-weight: 800; color: #0f172a; }
+.caption-name { font-size: 14px; font-weight: 800; color: white; }
 .caption-title { font-size: 11.5px; color: var(--purple-light); font-weight: 600; letter-spacing: 0.3px; margin-top: 2px; }
 
 /* ══════════════════════════════
@@ -171,7 +171,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); c
 .mission::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, rgba(88,91,252,0.05) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 60%);
   pointer-events: none;
 }
 .mission-inner {
@@ -249,7 +249,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); c
   position: absolute;
   top: -100px; right: -80px;
   width: 600px; height: 600px;
-  background: radial-gradient(ellipse at center, rgba(88,91,252,0.06) 0%, transparent 65%);
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.18) 0%, transparent 65%);
   pointer-events: none;
 }
 .values::after {
@@ -257,40 +257,40 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); c
   position: absolute;
   bottom: -80px; left: -60px;
   width: 400px; height: 400px;
-  background: radial-gradient(ellipse at center, rgba(88,91,252,0.04) 0%, transparent 65%);
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.1) 0%, transparent 65%);
   pointer-events: none;
 }
 .values-inner { max-width: 1140px; margin: 0 auto; position: relative; z-index: 1; }
 .values-header { max-width: 640px; margin-bottom: 4rem; }
 .values-header .section-kicker { color: var(--purple-light); }
 .values-header .section-kicker .kicker-bar { background: var(--purple-light); }
-.values-header .section-h2 { color: #0f172a; }
-.values-header .section-p { color: #64748b; }
+.values-header .section-h2 { color: white; }
+.values-header .section-p { color: rgba(255,255,255,0.5); }
 
 .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .value-card {
   padding: 2.25rem 2rem;
-  background: #ffffff;
+  background: rgba(255,255,255,0.05);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(88,91,252,0.15);
+  border: 1px solid rgba(255,255,255,0.1);
   border-top: 1px solid rgba(255,255,255,0.2);
   border-radius: 18px;
   transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
-  box-shadow: 0 8px 24px rgba(88,91,252,0.10);
+  box-shadow: 0 8px 24px rgba(13,6,41,0.25), inset 0 1px 0 rgba(255,255,255,0.1);
 }
 .value-card:hover {
-  background: rgba(88,91,252,0.06);
+  background: rgba(124,58,237,0.18);
   transform: translateY(-4px);
-  box-shadow: 0 20px 48px rgba(88,91,252,0.15);
+  box-shadow: 0 20px 48px rgba(13,6,41,0.45), inset 0 1px 0 rgba(255,255,255,0.15);
 }
 .value-card-num {
   font-size: 11px; font-weight: 800; letter-spacing: 2px;
   text-transform: uppercase; color: var(--purple-light);
   margin-bottom: 1.1rem;
 }
-.value-card h3 { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 0.6rem; }
-.value-card p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
+.value-card h3 { font-size: 1.05rem; font-weight: 700; color: white; margin-bottom: 0.6rem; }
+.value-card p { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.75; }
 
 /* ══════════════════════════════
    ACCREDITATIONS STRIP
@@ -313,7 +313,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); c
   font-size: 13px; font-weight: 700; color: var(--text);
   transition: border-color 0.15s, box-shadow 0.15s;
 }
-.accred-pill:hover { border-color: var(--purple); box-shadow: 0 4px 16px rgba(88,91,252,0.04); }
+.accred-pill:hover { border-color: var(--purple); box-shadow: 0 4px 16px rgba(124,58,237,0.1); }
 .accred-pill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
 
 /* ══════════════════════════════
@@ -333,7 +333,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); c
   border-radius: 16px;
   transition: box-shadow 0.2s, transform 0.2s;
 }
-.tech-card:hover { box-shadow: 0 8px 28px rgba(88,91,252,0.04); transform: translateY(-3px); }
+.tech-card:hover { box-shadow: 0 8px 28px rgba(124,58,237,0.1); transform: translateY(-3px); }
 .tech-card-num {
   width: 40px; height: 40px; border-radius: 10px;
   background: var(--purple-pale);
@@ -382,7 +382,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); c
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: 800px; height: 500px;
-  background: radial-gradient(ellipse at center, rgba(88,91,252,0.08) 0%, transparent 65%);
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.25) 0%, transparent 65%);
   pointer-events: none;
 }
 .cta-inner { max-width: 620px; margin: 0 auto; position: relative; z-index: 1; }
