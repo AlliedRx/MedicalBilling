@@ -513,7 +513,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       </div>
     </div>
 
-    <!-- APRIL SESSION -->
+    <!-- MAY SESSION -->
     <div id="may" class="session-block">
       <div class="session-header">
         <div class="session-accent" style="background:#3b82f6"></div>
@@ -602,7 +602,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
       <div class="month-div-line"></div>
     </div>
 
-    <!-- MAY SESSION -->
+    <!-- JULY SESSION -->
     <div id="july" class="session-block" style="padding-top:0">
       <div class="session-header">
         <div class="session-accent" style="background:#9148fc"></div>
@@ -1406,7 +1406,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
     });
 
     // Hide campus session blocks if all their cards are hidden
-    ['april','may'].forEach(function(id){
+    ['may','july'].forEach(function(id){
       var block = document.getElementById(id);
       if(!block) return;
       var cards = block.querySelectorAll('.course-card[data-type]');
