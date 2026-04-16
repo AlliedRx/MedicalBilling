@@ -1383,89 +1383,46 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 <script>
 /* ── FILTER PILLS ── */
 (function(){
-  var typePills    = document.querySelectorAll('.filter-bar .pills:first-of-type .pill');
-  var sessionPills = document.querySelectorAll('.filter-bar .pills:last-of-type .pill');
-  var activeType    = 'all';
-  var activeSession = 'all';
+  var SESSIONS = ['may','august'];
 
-  function applyFilters(){
-    // Show/hide individual cards
-    document.querySelectorAll('.course-card[data-type]').forEach(function(card){
-      var t = card.getAttribute('data-type');
-      var s = card.getAttribute('data-session');
-      var show;
-      if(t === 'online'){
-        // Online cards: show when type is 'all' or 'online'; ignore session filter
-        show = (activeType === 'all' || activeType === 'online');
-      } else {
-        var typeOk    = (activeType === 'all' || t === activeType);
-        var sessionOk = (activeSession === 'all' || s === activeSession);
-        show = typeOk && sessionOk;
-      }
-      card.style.display = show ? '' : 'none';
-    });
-
-    // Hide campus session blocks if all their cards are hidden
-    ['may','august'].forEach(function(id){
-      var block = document.getElementById(id);
-      if(!block) return;
-      var cards = block.querySelectorAll('.course-card[data-type]');
-      var anyVisible = false;
-      cards.forEach(function(c){ if(c.style.display !== 'none') anyVisible = true; });
-      block.style.display = anyVisible ? '' : 'none';
-    });
-
-    // Hide online section when type filter excludes online
-    var onlineSection = document.getElementById('online');
-    if(onlineSection){
-      var showOnline = (activeType === 'all' || activeType === 'online');
-      onlineSection.style.display = showOnline ? '' : 'none';
-    }
-
-    // Hide month dividers whose following section is hidden
-    document.querySelectorAll('.month-div').forEach(function(div){
-      var next = div.nextElementSibling;
-      while(next && !next.classList.contains('session-block') && !next.classList.contains('online-section')){
-        next = next.nextElementSibling;
-      }
-      if(next) div.style.display = (next.style.display === 'none') ? 'none' : '';
-    });
+  function showSect(id, on) {
+    var s = document.getElementById(id);
+    var c = document.getElementById('cd-' + id);
+    if (s) s.style.display = on ? '' : 'none';
+    if (c) c.style.display = on ? '' : 'none';
   }
 
-  typePills.forEach(function(p){
-    p.addEventListener('click', function(){
-      typePills.forEach(function(x){ x.classList.remove('active'); });
-      p.classList.add('active');
-      activeType = p.textContent.trim().toLowerCase();
-      // Switching to Online — clear session filter
-      if(activeType === 'online'){
-        sessionPills.forEach(function(x){ x.classList.remove('active'); });
-        activeSession = 'all';
+  document.querySelectorAll('.pill').forEach(function(p) {
+    p.addEventListener('click', function() {
+      document.querySelectorAll('.pill').forEach(function(x){ x.classList.remove('active'); });
+      this.classList.add('active');
+      var f = this.textContent.trim().toLowerCase();
+
+      // Reset all cards to visible
+      document.querySelectorAll('.course-card').forEach(function(c){ c.style.display = ''; });
+
+      if (f === 'all') {
+        SESSIONS.forEach(function(id){ showSect(id, true); });
+        showSect('online', true);
+      } else if (f === 'online') {
+        SESSIONS.forEach(function(id){ showSect(id, false); });
+        showSect('online', true);
+      } else if (SESSIONS.indexOf(f) !== -1) {
+        SESSIONS.forEach(function(id){ showSect(id, id === f); });
+        showSect('online', false);
+      } else if (f === 'campus' || f === 'weekend') {
+        SESSIONS.forEach(function(id){ showSect(id, true); });
+        showSect('online', false);
+        document.querySelectorAll('.course-card').forEach(function(c){
+          c.style.display = (c.dataset.type === f) ? '' : 'none';
+        });
       }
-      applyFilters();
     });
   });
 
-  sessionPills.forEach(function(p){
-    p.addEventListener('click', function(){
-      // Toggle: clicking active session pill resets to all
-      if(p.classList.contains('active')){
-        p.classList.remove('active');
-        activeSession = 'all';
-      } else {
-        sessionPills.forEach(function(x){ x.classList.remove('active'); });
-        p.classList.add('active');
-        activeSession = p.textContent.trim().toLowerCase();
-        // If Online type was active, reset to All
-        if(activeType === 'online'){
-          typePills.forEach(function(x){ x.classList.remove('active'); });
-          typePills[0].classList.add('active');
-          activeType = 'all';
-        }
-      }
-      applyFilters();
-    });
-  });
+  // Set All as active on load
+  var allPill = Array.from(document.querySelectorAll('.pill')).find(function(p){ return p.textContent.trim() === 'All'; });
+  if (allPill) allPill.classList.add('active');
 })();
 
 /* ── MODALS ── */
