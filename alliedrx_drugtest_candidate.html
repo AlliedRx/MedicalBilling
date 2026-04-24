@@ -489,7 +489,9 @@ async function startSession() {
   state.candidateEmail = email;
   state.candidateDob = dob;
   showLoading('Creating your session...');
+  const newId = crypto.randomUUID();
   const { data, error } = await sb.from('drug_test_results').insert({
+    id: newId,
     first_name: name.split(' ')[0], last_name: name.split(' ').slice(1).join(' '),
     email: email,
     dob: dob,
