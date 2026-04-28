@@ -1,1399 +1,1760 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Spring 2026 Course Registry | AlliedRx Institute of Healthcare</title><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Spring 2026 Course Schedule | AlliedRx Institute of Healthcare</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --navy:#080d1a;--navy2:#0a1035;--navy3:#0f1a4a;
-  --purple:#9148fc;--purple-d:#7c3aed;--lavender:#c4b5fd;
-  --gold:#b8892e;--gold-l:#d4a843;--gold-pale:#fdf6e7;
-  --slate:#64748b;--slate-l:#94a3b8;
-  --bg:#f4f5f8;--white:#ffffff;
-  --border:#dde2ef;--border-d:#c8d0e8;
-  --text:#0d1b3e;--sub:#4a5568;
-  --green:#16a34a;--red:#dc2626;--amber:#d97706;
-  --teal:#0891b2;--teal-l:#e0f2fe;--teal-border:#bae6fd;
-}
 html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f8f9;color:#1a1a2e;min-height:100vh}
 
-/* ── BANNER ── */
-.banner{background:var(--navy);padding:.45rem 3rem;display:flex;align-items:center;justify-content:center;gap:2.5rem;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.04em;text-transform:uppercase}
-.banner a{color:var(--lavender);text-decoration:none}
-.banner-sep{opacity:.3}
+/* ── TOP BAR ── */
+.topbar{
+  background:#2d0a6e;
+  padding:.4rem 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.topbar-left{font-size:.68rem;color:rgba(255,255,255,.55);font-weight:500}
+.topbar-links{display:flex;gap:1.25rem}
+.topbar-links a{font-size:.68rem;color:rgba(255,255,255,.6);text-decoration:none;font-weight:500;transition:.15s}
+.topbar-links a:hover{color:#fff}
 
-/* ── HEADER ── */
-.site-header{background:var(--white);border-bottom:2px solid var(--navy);padding:0 2rem;height:auto;min-height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(8,13,26,.08);flex-wrap:wrap;gap:.5rem;padding-top:.6rem;padding-bottom:.6rem}
-.logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
-.logo img{height:28px}
-.header-center{display:flex;flex-direction:column;align-items:center;gap:.2rem}
-.header-nav{display:flex;gap:1.75rem}
-.header-nav a{color:var(--sub);text-decoration:none;font-size:.85rem;font-weight:600;transition:color .2s;padding-bottom:4px}
-.header-nav a:hover{color:var(--navy)}
-.header-nav a.active{color:var(--navy);border-bottom:2px solid var(--purple);font-weight:700}
-/* Pharmacy notice in header */
-.pharmacy-notice{background:linear-gradient(90deg,rgba(145,72,252,.08),rgba(145,72,252,.12),rgba(145,72,252,.08));border:1px solid rgba(145,72,252,.25);border-radius:6px;padding:.3rem 1rem;display:flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:700;color:var(--purple-d)}
-.pharmacy-notice .pn-icon{width:16px;height:16px;stroke:var(--purple-d);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-.pharmacy-notice strong{color:var(--navy)}
-.header-actions{display:flex;gap:.6rem;align-items:center}
-.btn-outline{text-decoration:none;padding:7px 16px;border-radius:6px;font-weight:700;font-size:.8rem;border:1.5px solid var(--border-d);color:var(--sub);transition:all .2s}
-.btn-outline:hover{border-color:var(--navy);color:var(--navy)}
-.btn-navy{text-decoration:none;padding:8px 18px;border-radius:6px;font-weight:700;font-size:.8rem;background:var(--navy);color:#fff;transition:all .2s}
-.btn-navy:hover{background:var(--navy2)}
+/* ── NAV ── */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;height:64px;
+  background:#fff;
+  border-bottom:3px solid #4c1d95;
+  position:sticky;top:0;z-index:200;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.nav-brand{display:flex;flex-direction:column}
+.nav-brand-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:#1a1a2e;letter-spacing:.01em;line-height:1.1}
+.nav-brand-name em{font-style:normal;color:#6d28d9}
+.nav-brand-sub{font-size:.62rem;font-weight:500;color:#9ca3af;letter-spacing:.04em;text-transform:uppercase}
+.nav-links{display:flex;gap:0}
+.nav-links a{
+  color:#6b7280;text-decoration:none;font-size:.78rem;font-weight:600;
+  padding:.5rem 1rem;border-bottom:3px solid transparent;margin-bottom:-3px;
+  transition:.15s;white-space:nowrap;
+}
+.nav-links a:hover{color:#1a1a2e}
+.nav-links a.active{color:#4c1d95;border-bottom-color:#6d28d9;font-weight:700}
+.nav-right{display:flex;align-items:center;gap:.65rem}
+.nav-portal{
+  font-size:.75rem;font-weight:600;color:#4c1d95;text-decoration:none;
+  border:1.5px solid #ede9fe;padding:.4rem 1rem;border-radius:4px;transition:.15s;
+}
+.nav-portal:hover{background:#f5f3ff}
+.nav-enroll{
+  background:#4c1d95;color:#fff;font-weight:700;font-size:.75rem;
+  padding:.45rem 1.1rem;border-radius:4px;border:none;cursor:pointer;
+  transition:.15s;letter-spacing:.01em;
+}
+.nav-enroll:hover{background:#3b0764}
 
-/* ── LAYOUT ── */
-.page-layout{display:grid;grid-template-columns:270px 1fr;min-height:calc(100vh - 97px)}
+/* ── HERO ── */
+.hero{
+  padding:6rem 2.5rem 5rem;
+  position:relative;overflow:hidden;
+  background:#111;
+  min-height:88vh;
+  display:flex;align-items:center;
+}
+.hero-video-wrap{
+  position:absolute;inset:0;z-index:0;
+  overflow:hidden;
+}
+.hero-video-wrap video{
+  width:100%;height:100%;object-fit:cover;
+  display:block;
+}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,
+    rgba(12,12,18,.5) 0%,
+    rgba(18,18,28,.72) 100%);
+}
+.hero-inner{
+  max-width:860px;margin:0 auto;width:100%;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  position:relative;z-index:2;
+}
+.hero-eyebrow{
+  display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(255,255,255,.6);
+  margin-bottom:1.5rem;
+}
+.hero h1{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(3rem,5.5vw,5.2rem);font-weight:900;color:#fff;line-height:1.06;
+  letter-spacing:-.035em;margin-bottom:1.35rem;
+}
+.hero h1 span{
+  display:block;
+  background:linear-gradient(90deg,#a855f7 0%,#818cf8 55%,#6ea8fe 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-sub{
+  color:rgba(255,255,255,.62);font-size:1rem;line-height:1.7;
+  max-width:540px;margin:0 auto 2.75rem;font-weight:400;
+}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.hero-btn-primary{
+  background:#fff;color:#111827;font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:700;font-size:.92rem;
+  padding:.9rem 2.4rem;border-radius:50px;border:none;cursor:pointer;
+  text-decoration:none;transition:background .15s;
+  display:inline-flex;align-items:center;gap:.45rem;
+  letter-spacing:.005em;
+}
+.hero-btn-primary:hover{background:#e8e8e8}
+.hero-btn-secondary{
+  background:rgba(255,255,255,.08);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:600;font-size:.92rem;
+  padding:.9rem 2.4rem;border-radius:50px;
+  border:1.5px solid rgba(255,255,255,.3);cursor:pointer;
+  text-decoration:none;transition:.15s;
+  display:inline-flex;align-items:center;gap:.45rem;
+  backdrop-filter:blur(10px);
+}
+.hero-btn-secondary:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.55)}
+.hero-trust{display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
+.hero-trust-item{
+  font-size:.71rem;color:rgba(255,255,255,.65);font-weight:700;
+  padding:0 1.1rem;
+  border-right:1px solid rgba(255,255,255,.14);
+  white-space:nowrap;
+}
+.hero-trust-item:last-child{border-right:none}
+.hero-trust-item::before{content:'✓\00a0\00a0';color:rgba(168,85,247,.85)}
+
+/* ── ANNOUNCEMENT BAND ── */
+.announce{
+  background:#fff;border-bottom:1px solid #e5e7eb;
+  padding:.55rem 2.5rem;
+  display:flex;align-items:center;justify-content:center;gap:1.5rem;
+}
+.ann-indicator{
+  width:7px;height:7px;border-radius:50%;background:#7c3aed;flex-shrink:0;
+  animation:blink 1.4s infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.ann-text{font-size:.75rem;color:#374151;font-weight:500}
+.ann-text strong{color:#1a1a2e;font-weight:700}
+.ann-cta{
+  margin-left:auto;font-size:.73rem;font-weight:700;color:#4c1d95;
+  text-decoration:none;border:1px solid #ede9fe;padding:.28rem .8rem;border-radius:3px;
+  white-space:nowrap;transition:.15s;
+}
+.ann-cta:hover{background:#f5f3ff}
+
+/* ── PAGE LAYOUT ── */
+.page{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 120px)}
 
 /* ── SIDEBAR ── */
-.sidebar{background:var(--white);border-right:1px solid var(--border);padding:2rem 1.5rem;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto}
-.sidebar-section{margin-bottom:2.25rem}
-.sidebar-label{font-size:.62rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--slate);margin-bottom:.85rem;border-left:2px solid var(--purple);padding-left:.5rem}
-.sidebar-link{display:flex;align-items:center;gap:.65rem;padding:.5rem .65rem;border-radius:6px;text-decoration:none;font-size:.83rem;font-weight:600;color:var(--sub);transition:all .2s;margin-bottom:.1rem}
-.sidebar-link:hover{background:var(--bg);color:var(--navy)}
-.sidebar-link.active{background:#f0ebff;color:var(--purple-d);font-weight:700}
-.sidebar-link .s-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-.sidebar-link .s-count{margin-left:auto;background:var(--border);color:var(--sub);font-size:.63rem;font-weight:800;padding:.1rem .4rem;border-radius:100px}
-.sidebar-link.active .s-count{background:#e9e0ff;color:var(--purple-d)}
+.sidebar{
+  border-right:1px solid #e5e7eb;background:#fff;
+  padding:2rem 0 2rem;
+  position:sticky;top:120px;height:calc(100vh - 120px);overflow-y:auto;
+}
+.sb-section{padding:0 1.25rem;margin-bottom:1.75rem}
+.sb-heading{
+  font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:#9ca3af;padding:0 .5rem;margin-bottom:.65rem;
+}
+.sb-nav-link{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.5rem .75rem;border-radius:5px;margin-bottom:.1rem;
+  text-decoration:none;color:#6b7280;font-size:.8rem;font-weight:600;transition:.12s;
+}
+.sb-nav-link:hover{color:#1a1a2e;background:#f9f8ff}
+.sb-nav-link.active{color:#4c1d95;background:#f5f3ff;font-weight:700}
+.sb-badge{font-size:.64rem;color:#d1d5db;font-weight:700;background:#f5f5f7;padding:.05rem .45rem;border-radius:10px}
+.sb-nav-link.active .sb-badge{background:#ede9fe;color:#7c3aed}
+.sb-rule{height:1px;background:#f3f4f6;margin:1.25rem 0}
+.sb-course-link{
+  display:flex;align-items:center;gap:.5rem;
+  padding:.38rem .75rem;border-radius:5px;
+  text-decoration:none;color:#9ca3af;font-size:.73rem;font-weight:500;
+  transition:.12s;line-height:1.4;
+}
+.sb-course-link:hover{color:#4c1d95;background:#f5f3ff}
+.sb-course-link.sb-active{color:#4c1d95;background:#f0ebff;font-weight:700}
+.sb-course-link .sb-dot{
+  width:4px;height:4px;border-radius:50%;background:#d1d5db;flex-shrink:0;transition:.12s;
+}
+.sb-course-link.sb-active .sb-dot{background:#7c3aed}
+.sb-register-btn{
+  display:block;width:calc(100% - 2.5rem);margin:1.75rem 1.25rem 0;
+  background:#4c1d95;color:#fff;font-weight:700;font-size:.78rem;
+  padding:.65rem;border-radius:5px;border:none;cursor:pointer;
+  text-align:center;letter-spacing:.01em;transition:.15s;
+}
+.sb-register-btn:hover{background:#3b0764}
+/* mobile nav strip - hidden on desktop */
+.mobile-nav-strip{display:none}
 
-.enroll-cta{background:var(--navy);border-radius:12px;padding:1.25rem;margin-top:.5rem}
-.enroll-cta-label{font-size:.62rem;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.25rem}
-.enroll-cta-price{font-size:1.6rem;font-weight:800;color:#fff}
-.enroll-cta-sub{font-size:.72rem;color:rgba(255,255,255,.5);margin-bottom:1rem}
-.enroll-cta-btn{display:block;text-align:center;background:var(--purple);color:#fff;text-decoration:none;padding:10px;border-radius:7px;font-weight:700;font-size:.82rem;transition:all .2s;margin-bottom:.75rem}
-.enroll-cta-btn:hover{background:var(--purple-d)}
-.fund-links{display:flex;flex-direction:column;gap:.2rem}
-.fund-lnk{display:flex;align-items:center;gap:.4rem;font-size:.73rem;color:rgba(255,255,255,.55);text-decoration:none;padding:.3rem .4rem;border-radius:5px;transition:all .2s}
-.fund-lnk:hover{color:#fff;background:rgba(255,255,255,.07)}
-.fund-lnk::before{content:'↗';font-size:.65rem;color:var(--lavender)}
 
 /* ── MAIN CONTENT ── */
-.main-content{background:var(--bg)}
+.main{padding:2rem 2.25rem 4rem;min-width:0;background:#f8f8f9}
 
-/* ── PAGE HERO (navy) ── */
-.page-hero{background:var(--navy2);position:relative;overflow:hidden;padding:2.75rem 3rem 2.5rem}
-.page-hero::after{content:'SPRING 2026';position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:'Plus Jakarta Sans',sans-serif;font-size:7rem;font-weight:900;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none;letter-spacing:-.02em}
-.hero-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
-.hero-tag{font-size:.67rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;border-radius:5px}
-.hero-tag.sem{background:rgba(145,72,252,.18);border:1px solid rgba(145,72,252,.35);color:var(--lavender)}
-.hero-tag.open{background:rgba(22,163,74,.15);border:1px solid rgba(22,163,74,.3);color:#4ade80;display:flex;align-items:center;gap:.4rem}
-.hero-tag.open .pulse{width:5px;height:5px;border-radius:50%;background:#4ade80;animation:pulse 1.5s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.page-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.1rem;font-weight:900;color:#fff;letter-spacing:-.01em;margin-bottom:.5rem;position:relative;z-index:1}
-.page-hero p{color:rgba(255,255,255,.6);font-size:.9rem;max-width:580px;position:relative;z-index:1}
-.hero-stats{display:flex;gap:3rem;margin-top:2rem;padding-top:1.75rem;border-top:1px solid rgba(255,255,255,.08);position:relative;z-index:1}
-.h-stat-num{font-family:'JetBrains Mono',monospace;font-size:1.6rem;font-weight:600;color:#fff}
-.h-stat-num span{color:var(--lavender)}
-.h-stat-lbl{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-top:.1rem}
+/* ── FILTER TABS ── */
+.filter-row{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:2rem;border-bottom:1px solid #e5e7eb;padding-bottom:0;
+}
+.tab-list{display:flex;gap:0}
+.tab-btn{
+  font-size:.78rem;font-weight:600;color:#9ca3af;
+  padding:.65rem 1.1rem;border:none;background:transparent;cursor:pointer;
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+  transition:.15s;white-space:nowrap;
+}
+.tab-btn:hover{color:#374151}
+.tab-btn.active{color:#4c1d95;border-bottom-color:#6d28d9;font-weight:700}
+.tab-count{font-size:.63rem;font-weight:700;background:#f3f4f6;color:#9ca3af;padding:.08rem .42rem;border-radius:10px;margin-left:.3rem;vertical-align:middle}
+.tab-btn.active .tab-count{background:#ede9fe;color:#7c3aed}
 
-/* ── FILTER ── */
-.filter-bar{background:var(--white);border-bottom:1px solid var(--border);padding:.9rem 3rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;box-shadow:0 1px 0 var(--border)}
-.filter-label{font-size:.68rem;font-weight:800;color:var(--slate);text-transform:uppercase;letter-spacing:.1em}
-.pills{display:flex;gap:.4rem;flex-wrap:wrap}
-.pill{padding:.35rem .85rem;border-radius:5px;font-size:.77rem;font-weight:700;cursor:pointer;transition:all .2s;border:1.5px solid var(--border-d);color:var(--sub);background:transparent;font-family:'Plus Jakarta Sans',sans-serif}
-.pill:hover{border-color:var(--navy);color:var(--navy)}
-.pill.active{background:var(--navy);border-color:var(--navy);color:#fff}
-.pill-sep{width:1px;height:22px;background:var(--border);margin:0 .2rem}
+/* ── SECTION HEADER ── */
+.section-header{
+  margin-bottom:1.25rem;
+  padding-bottom:.85rem;
+  border-bottom:1px solid #f0edf8;
+  display:flex;align-items:baseline;justify-content:space-between;
+}
+.sh-left{display:flex;flex-direction:column;gap:.25rem}
+.sh-eyebrow{
+  font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:#7c3aed;
+}
+.sh-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:1.3rem;font-weight:700;color:#1a1a2e;letter-spacing:-.01em;
+}
+.sh-meta{font-size:.72rem;color:#9ca3af;font-weight:500}
 
-/* ── URGENCY COUNTDOWN BANNER ── */
-.urgency-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;background:linear-gradient(90deg,#1a0533,#0f1045);border:1px solid rgba(145,72,252,.35);border-radius:10px;padding:.75rem 1.25rem;margin-bottom:1.25rem}
-.urgency-left{display:flex;align-items:center;gap:.65rem}
-.urgency-pulse{width:9px;height:9px;border-radius:50%;background:#ff4444;box-shadow:0 0 0 0 rgba(255,68,68,.4);animation:pulse-ring 1.4s infinite}
-@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(255,68,68,.5)}70%{box-shadow:0 0 0 8px rgba(255,68,68,0)}100%{box-shadow:0 0 0 0 rgba(255,68,68,0)}}
-.urgency-label{font-size:.75rem;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.02em}
-.urgency-label strong{color:#ff9999}
-.urgency-countdown{display:flex;align-items:center;gap:.4rem}
-.cd-unit{display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:.3rem .55rem;min-width:44px}
-.cd-num{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;color:#fff;line-height:1}
-.cd-lbl{font-size:.55rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:.15rem}
-.cd-sep{font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.4);margin-bottom:.3rem}
-.urgency-closed{font-size:.75rem;font-weight:700;color:#ff9999;padding:.3rem .75rem;background:rgba(255,68,68,.15);border:1px solid rgba(255,68,68,.3);border-radius:6px}
-
-/* ── SEAT SCARCITY ── */
-.filling-fast{display:inline-flex;align-items:center;gap:.3rem;font-size:.65rem;font-weight:700;color:#d97706;background:#fffbeb;border:1px solid #fde68a;border-radius:4px;padding:.15rem .45rem;margin-top:.2rem}
-.filling-fast svg{width:10px;height:10px;fill:#d97706}
-
-/* ── SESSION BLOCKS ── */
-.session-block{margin:2rem 2.5rem}
-.session-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
-.session-accent{width:4px;height:36px;border-radius:2px}
-.session-header h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.15rem;font-weight:700;color:var(--text)}
-.session-header-meta{margin-left:auto;font-size:.72rem;color:var(--sub);font-weight:600;background:var(--white);border:1px solid var(--border);padding:.3rem .75rem;border-radius:5px}
-
-.course-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:1rem;transition:box-shadow .2s}
-.course-card:hover{box-shadow:0 4px 20px rgba(8,13,26,.08)}
-.card-inner{display:grid;grid-template-columns:3fr 1.5fr 1.5fr 1fr 1.2fr 1.4fr;align-items:center;padding:1.1rem 1.5rem;gap:1rem}
-.card-prog{display:flex;align-items:center;gap:.85rem}
-.card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.card-icon.pur{background:#f0ebff;border:1.5px solid #d8cffa}
-.card-icon.blu{background:#eff6ff;border:1.5px solid #bfdbfe}
-.card-icon svg{width:18px;height:18px;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.card-icon.pur svg{stroke:var(--purple)}
-.card-icon.blu svg{stroke:#3b82f6}
-.prog-name{font-weight:700;color:var(--text);font-size:.88rem;line-height:1.25}
-.prog-cert{font-size:.68rem;color:var(--purple-d);font-weight:600;margin-top:.1rem}
-.card-date{font-family:'JetBrains Mono',monospace;font-size:.85rem;font-weight:600;color:var(--text)}
-.card-day{font-size:.7rem;color:var(--sub);margin-top:.1rem}
-.sched-tags{display:flex;flex-direction:column;gap:.25rem}
-.stag{display:inline-flex;align-items:center;gap:.35rem;font-size:.7rem;font-weight:700;padding:.22rem .6rem;border-radius:4px;width:fit-content}
-.stag.d{background:#fef9ee;color:#92400e;border:1px solid #fde68a}
-.stag.e{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe}
-.stag.w{background:#f0fdf4;color:#14532d;border:1px solid #bbf7d0}
-.type-tag{display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .7rem;border-radius:4px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
-.type-tag.campus{background:#f0ebff;border:1px solid #d8cffa;color:#5b21b6}
-.type-tag.weekend{background:#fef9ee;border:1px solid #fde68a;color:#92400e}
-.type-tag.online{background:#f0fdf4;border:1px solid #bbf7d0;color:#14532d}
-.seats-wrap{display:flex;flex-direction:column;gap:.2rem}
-.seats-n{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.9rem}
-.seats-n.lo{color:var(--red)}
-.seats-n.md{color:var(--amber)}
-.seats-n.hi{color:var(--green)}
-.seat-bar{width:52px;height:3px;background:var(--border);border-radius:100px;overflow:hidden}
-.seat-fill{height:100%;border-radius:100px}
-.seat-fill.lo{background:var(--red)}
-.seat-fill.md{background:var(--amber)}
-.seat-fill.hi{background:var(--green)}
-.seat-sub{font-size:.67rem;color:var(--sub)}
-.card-actions{display:flex;gap:.45rem}
-.abtn{text-decoration:none;padding:7px 14px;border-radius:6px;font-size:.77rem;font-weight:700;transition:all .2s;white-space:nowrap}
-.abtn.fill{background:var(--navy);color:#fff}
-.abtn.fill:hover{background:var(--navy2)}
-.abtn.line{border:1.5px solid var(--border-d);color:var(--sub)}
-.abtn.line:hover{border-color:var(--navy);color:var(--navy)}
-
-/* ── ONLINE PROGRAMS SECTION ── */
-.online-section{margin:0 2.5rem 2rem}
-.online-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
-.online-accent{width:4px;height:36px;border-radius:2px;background:var(--teal)}
-.online-header h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.15rem;font-weight:700;color:var(--text)}
-.online-header-meta{margin-left:auto;font-size:.72rem;color:var(--sub);font-weight:600;background:var(--white);border:1px solid var(--border);padding:.3rem .75rem;border-radius:5px}
-
-.online-intro{background:var(--teal-l);border:1px solid var(--teal-border);border-radius:10px;padding:1rem 1.5rem;margin-bottom:1rem;display:flex;align-items:center;gap:.85rem}
-.online-intro svg{width:20px;height:20px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-.online-intro p{font-size:.83rem;color:var(--teal);font-weight:600}
-.online-intro p span{color:var(--text)}
-
-/* ── ONLINE URGENCY BANNER ── */
-.online-urgency{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;background:linear-gradient(90deg,#0a2e1a,#062818);border:1px solid rgba(16,185,129,.3);border-radius:10px;padding:.75rem 1.25rem;margin-bottom:1.25rem}
-.online-urgency-left{display:flex;align-items:center;gap:.65rem}
-.online-urgency-label{font-size:.75rem;font-weight:700;color:rgba(255,255,255,.85)}
-.online-urgency-label strong{color:#6ee7b7}
-.online-urgency-price{display:flex;align-items:center;gap:.75rem}
-.price-was{font-size:.75rem;font-weight:700;color:rgba(255,255,255,.4);text-decoration:line-through}
-.price-now{font-size:1rem;font-weight:800;color:#6ee7b7}
-.price-save{font-size:.68rem;font-weight:700;background:rgba(16,185,129,.2);border:1px solid rgba(16,185,129,.3);color:#6ee7b7;border-radius:4px;padding:.2rem .5rem}
-.online-cd{display:flex;align-items:center;gap:.4rem}
-.online-cd .cd-unit{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
-.online-cd .cd-num{color:#fff}
-.online-cd .cd-sep{color:rgba(255,255,255,.4)}
-
-/* ── ENROLL COUNT BADGE ── */
-.enroll-count{display:inline-flex;align-items:center;gap:.3rem;font-size:.65rem;font-weight:700;color:#0891b2;background:#e0f2fe;border:1px solid #bae6fd;border-radius:4px;padding:.15rem .45rem;margin-top:.2rem}
-.enroll-count svg{width:10px;height:10px;fill:#0891b2}
-
-/* ── START TODAY PULSE ── */
-.abtn.fill.pulse-enroll{position:relative;overflow:visible}
-.abtn.fill.pulse-enroll::after{content:'';position:absolute;inset:-3px;border-radius:8px;border:2px solid var(--purple);opacity:0;animation:enroll-pulse 2s ease-out infinite}
-@keyframes enroll-pulse{0%{opacity:.7;transform:scale(1)}70%{opacity:0;transform:scale(1.12)}100%{opacity:0}}
-
-/* ── MONTH DIVIDER ── */
-.month-div{display:flex;align-items:center;gap:1rem;padding:2rem 2.5rem 1rem}
-.month-div-line{flex:1;height:1px;background:var(--border-d)}
-.month-div-lbl{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--slate);padding:0 .5rem}
-
-/* ── INFO SESSION BANNER ── */
-.info-banner{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.75rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;margin:1.5rem 0}
-.ib-left{display:flex;align-items:center;gap:1.1rem}
-.ib-icon{width:46px;height:46px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.ib-icon svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.ib-text h4{font-size:.93rem;font-weight:700;color:var(--text);margin-bottom:.2rem}
-.ib-text p{font-size:.79rem;color:var(--sub);line-height:1.5}
-.ib-right{display:flex;gap:.6rem;flex-shrink:0}
-.ib-btn{text-decoration:none;padding:9px 20px;border-radius:7px;font-weight:700;font-size:.81rem;transition:all .2s}
-.ib-btn.fill{background:var(--navy);color:#fff}
-.ib-btn.fill:hover{background:var(--navy2)}
-.ib-btn.line{border:1.5px solid var(--border-d);color:var(--sub)}
-.ib-btn.line:hover{border-color:var(--navy);color:var(--navy)}
-
-/* ── SCHEDULE DETAIL BUTTON on cards ── */
-.sched-detail-btn{display:inline-flex;align-items:center;gap:.35rem;font-size:.7rem;font-weight:700;color:var(--purple-d);background:#f0ebff;border:1px solid #d8cffa;padding:.25rem .65rem;border-radius:5px;cursor:pointer;transition:all .2s;margin-top:.5rem;white-space:nowrap}
-.sched-detail-btn:hover{background:#e9e0ff;border-color:var(--purple)}
-.sched-detail-btn svg{width:12px;height:12px;stroke:var(--purple-d);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-
-/* ── MODAL OVERLAY ── */
-.modal-overlay{position:fixed;inset:0;background:rgba(8,13,26,.6);backdrop-filter:blur(4px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .25s}
-.modal-overlay.open{opacity:1;pointer-events:all}
-.modal-box{background:var(--white);border-radius:16px;width:100%;max-width:680px;max-height:88vh;overflow-y:auto;box-shadow:0 24px 64px rgba(8,13,26,.25);transform:translateY(12px);transition:transform .25s}
-.modal-overlay.open .modal-box{transform:translateY(0)}
-
-.modal-head{background:var(--navy);padding:1.5rem 1.75rem;border-radius:16px 16px 0 0;position:sticky;top:0;z-index:2}
-.modal-head-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
-.modal-close{background:rgba(255,255,255,.1);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
-.modal-close:hover{background:rgba(255,255,255,.2)}
-.modal-prog-tag{display:inline-flex;align-items:center;gap:.35rem;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.25rem .7rem;border-radius:4px;margin-bottom:.6rem}
-.modal-prog-tag.ccma{background:rgba(145,72,252,.2);border:1px solid rgba(145,72,252,.4);color:var(--lavender)}
-.modal-prog-tag.phleb{background:rgba(59,130,246,.2);border:1px solid rgba(59,130,246,.4);color:#93c5fd}
-.modal-head h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.35rem}
-.modal-meta-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.5rem}
-.modal-chip{font-size:.68rem;font-weight:600;color:rgba(255,255,255,.65);background:rgba(255,255,255,.08);padding:.22rem .6rem;border-radius:4px;display:flex;align-items:center;gap:.3rem}
-.modal-chip svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.8}
-
-.modal-body{padding:1.5rem 1.75rem}
-.modal-section{margin-bottom:1.5rem}
-.modal-section:last-child{margin-bottom:0}
-.modal-section-head{display:flex;align-items:center;gap:.65rem;margin-bottom:.85rem;padding-bottom:.6rem;border-bottom:1px solid var(--border)}
-.modal-section-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.modal-section-icon.inperson{background:#f0ebff;border:1.5px solid #d8cffa}
-.modal-section-icon.online{background:#f0fdf4;border:1.5px solid #bbf7d0}
-.modal-section-icon svg{width:15px;height:15px;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.modal-section-icon.inperson svg{stroke:var(--purple)}
-.modal-section-icon.online svg{stroke:var(--green)}
-.modal-section-label{font-size:.82rem;font-weight:800;color:var(--text)}
-.modal-section-sub{font-size:.72rem;color:var(--sub);margin-left:auto;font-weight:600}
-
-.modal-location{font-size:.78rem;color:var(--sub);background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:.6rem .85rem;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem}
-.modal-location svg{width:13px;height:13px;stroke:var(--slate);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-
-.week-list{display:flex;flex-direction:column;gap:.3rem}
-.week-row{display:flex;align-items:center;gap:.75rem;padding:.35rem .5rem;border-radius:6px;transition:background .15s}
-.week-row:hover{background:var(--bg)}
-.week-num{font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:700;color:var(--slate);width:52px;flex-shrink:0}
-.week-date{font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:600;color:var(--text);flex:1}
-.week-badge{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.15rem .45rem;border-radius:3px}
-.week-badge.lab{background:#f0ebff;color:var(--purple-d);border:1px solid #d8cffa}
-.week-badge.online{background:#f0fdf4;color:var(--green);border:1px solid #bbf7d0}
-.week-badge.holiday{background:#fef9ee;color:#92400e;border:1px solid #fde68a}
-
-.modal-note{font-size:.77rem;color:var(--sub);line-height:1.6;background:var(--bg);border-left:3px solid var(--purple);border-radius:0 7px 7px 0;padding:.7rem 1rem;margin-top:.85rem}
-
-.modal-footer{padding:1.1rem 1.75rem;border-top:1px solid var(--border);display:flex;gap:.6rem;position:sticky;bottom:0;background:var(--white);border-radius:0 0 16px 16px}
-.mfbtn{text-decoration:none;padding:10px 22px;border-radius:8px;font-weight:700;font-size:.82rem;transition:all .2s;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif}
-.mfbtn.fill{background:var(--navy);color:#fff;flex:1;text-align:center}
-.mfbtn.fill:hover{background:var(--navy2)}
-.mfbtn.line{border:1.5px solid var(--border-d);color:var(--sub);background:transparent}
-.mfbtn.line:hover{border-color:var(--navy);color:var(--navy)}
-
-/* ── FUNDING ── */
-.funding{background:var(--navy);padding:2.5rem}
-.funding-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
-.funding-head h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:700;color:#fff}
-.funding-head a{font-size:.8rem;color:var(--lavender);text-decoration:none;font-weight:600}
-.fund-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.fund-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1.25rem;text-decoration:none;display:block;transition:all .2s}
-.fund-card:hover{background:rgba(145,72,252,.1);border-color:rgba(145,72,252,.35);transform:translateY(-2px)}
-.fund-badge{display:inline-block;font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.2rem .6rem;border-radius:4px;margin-bottom:.75rem}
-.fund-badge.mil{background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.25);color:#4ade80}
-.fund-badge.civ{background:rgba(145,72,252,.15);border:1px solid rgba(145,72,252,.3);color:var(--lavender)}
-.fund-name{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:.3rem}
-.fund-desc{font-size:.74rem;color:rgba(255,255,255,.5);line-height:1.5;margin-bottom:.6rem}
-.fund-cta{font-size:.73rem;font-weight:700;color:var(--lavender)}
-
-/* ═══════════════════════════════════════
-   RESPONSIVE — Large tablet / small laptop (≤1280px)
-═══════════════════════════════════════ */
-@media(max-width:1280px){
-  .card-inner{grid-template-columns:2.5fr 1.4fr 1.4fr .9fr 1.1fr 1.3fr;gap:.75rem}
-  .session-block{margin:2rem 1.75rem}
-  .online-section{margin:0 1.75rem 2rem}
+/* ── SECTION DIVIDER ── */
+.section-divider{
+  display:flex;align-items:center;gap:1rem;
+  margin:2.75rem 0 2rem;
+}
+.section-divider::before,.section-divider::after{content:'';flex:1;height:1px;background:#e5e7eb}
+.sd-label{
+  font-size:.62rem;font-weight:700;color:#9ca3af;letter-spacing:.12em;
+  text-transform:uppercase;white-space:nowrap;
 }
 
-/* ═══════════════════════════════════════
-   RESPONSIVE — Tablet (≤1024px)
-═══════════════════════════════════════ */
-@media(max-width:1024px){
-  /* Hide sidebar, full-width main */
-  .page-layout{grid-template-columns:1fr}
+/* ── COURSE TABLE ── */
+.course-table{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:8px;
+  overflow:hidden;
+  margin-bottom:2rem;
+  box-shadow:0 1px 4px rgba(0,0,0,.04);
+}
+.ct-header{
+  display:grid;
+  grid-template-columns:1fr 1fr 124px;
+  background:#fafafa;
+  border-bottom:2px solid #e5e7eb;
+  padding:0;
+  gap:0;
+}
+.ct-th{
+  font-size:.62rem;font-weight:700;color:#9ca3af;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:.6rem 0;
+}
+.ct-th:first-child{padding-left:1.5rem;}
+.ct-th:nth-child(2){padding-left:0;padding-right:1rem;}
+.ct-th:last-child{padding-left:0;padding-right:1.25rem;}
+
+/* ── COURSE ROW ── */
+.ci{
+  display:grid;
+  grid-template-columns:1fr 1fr 124px;
+  gap:0;
+  border-bottom:1px solid #f3f4f6;
+  transition:background .12s;
+  scroll-margin-top:125px;
+  position:relative;
+}
+.ci:last-child{border-bottom:none}
+.ci:hover{background:#faf9ff}
+.ci.ci-active{background:#f5f2ff !important;box-shadow:inset 3px 0 0 #7c3aed}
+
+/* Left type indicator */
+.ci-type-bar{
+  position:absolute;left:0;top:0;bottom:0;width:3px;
+}
+.ci-type-bar.campus{background:#6d28d9}
+.ci-type-bar.weekend{background:#2563eb}
+.ci-type-bar.online{background:#6d28d9}
+
+/* ── COL 1: Course Info ── */
+.ci-info{padding:1.25rem 0 1.25rem 1.5rem}
+.ci-format-badge{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-size:.58rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  padding:.2rem .55rem;border-radius:3px;margin-bottom:.55rem;
+}
+.ci-format-badge.campus{background:#ede9fe;color:#5b21b6}
+.ci-format-badge.weekend{background:#dbeafe;color:#1d4ed8}
+.ci-format-badge.online{background:#ede9fe;color:#5b21b6}
+.ci-course-name{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:1rem;font-weight:700;color:#1a1a2e;line-height:1.3;margin-bottom:.3rem;
+}
+.ci-credential{font-size:.7rem;color:#9ca3af;font-weight:500;margin-bottom:.2rem}
+.ci-format-detail{font-size:.7rem;color:#6b7280;font-weight:500}
+
+/* ── COL 2: Schedule column ── */
+.ci-sched{padding:1.35rem 1rem 1.35rem 0;display:flex;flex-direction:column;gap:0}
+
+/* Shared key/value rows */
+.ci-sched-info{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.85rem}
+.csi-row{display:flex;align-items:baseline;gap:.65rem}
+.csi-key{
+  font-size:.63rem;font-weight:600;color:#9ca3af;
+  letter-spacing:.01em;min-width:82px;flex-shrink:0;
+}
+.csi-val{font-size:.76rem;font-weight:600;color:#1a1a2e;line-height:1.4}
+
+/* Enrollment meter — used by both online and campus pathway */
+.ci-enroll-meter{display:flex;flex-direction:column;gap:.32rem}
+.ci-pathway-entry{display:flex;flex-direction:column;gap:.32rem;margin-bottom:.65rem}
+.ci-pathway-entry:last-child{margin-bottom:0}
+.cem-track{
+  width:100%;max-width:220px;height:5px;
+  background:#f0edf8;border-radius:3px;overflow:hidden;
+}
+.cem-fill{height:100%;border-radius:3px}
+.cem-fill.lo{background:#7c3aed}
+.cem-fill.md{background:#4c1d95}
+.cem-fill.hi{background:#6d28d9}
+.cem-foot{display:flex;align-items:center;gap:.65rem;max-width:220px}
+.cem-pct{font-size:.68rem;font-weight:700;color:#6b7280}
+.cem-rem{font-size:.68rem;font-weight:600;color:#6b7280}
+.cem-rem.critical{color:#6d28d9;font-weight:700}
+.cem-rem.high{color:#ea580c;font-weight:700}
+.cem-rem.moderate{color:#7c3aed;font-weight:600}
+
+/* ── START TODAY BADGE ── */
+@keyframes startTodayPulse{
+  0%{box-shadow:0 0 0 0 rgba(109,40,217,.55);transform:scale(1)}
+  50%{box-shadow:0 0 0 5px rgba(109,40,217,0);transform:scale(1.07)}
+  100%{box-shadow:0 0 0 0 rgba(109,40,217,0);transform:scale(1)}
+}
+.start-today-badge{
+  display:inline-block;font-size:.58rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:#fff;
+  background:linear-gradient(90deg,#6d28d9,#4c1d95);
+  padding:.1rem .45rem;border-radius:3px;
+  margin-left:.4rem;vertical-align:middle;
+  transition:transform .15s;
+}
+/* Pulse animation on row hover */
+.ci:hover .start-today-badge{
+  animation:startTodayPulse 1s ease-in-out infinite;
+}
+
+/* campus-only legacy — cleared */
+
+/* ── COL 3: Seats ── */
+.ci-seats-col{
+  padding:1.25rem 0;
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:.6rem;
+}
+.seats-figure{
+  display:flex;align-items:baseline;gap:.3rem;
+}
+.seats-num{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:2.1rem;font-weight:700;color:#4c1d95;line-height:1;
+}
+.seats-num.urgent{color:#6d28d9}
+.seats-label{font-size:.62rem;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:.06em}
+.seats-prog{width:100%;max-width:110px;height:3px;background:#ede9fe;border-radius:2px;overflow:hidden}
+.seats-prog-fill{height:100%;border-radius:2px;background:#6d28d9}
+.seats-prog-fill.urgent{background:#6d28d9}
+
+/* ── COL 4: Actions ── */
+.ci-actions{
+  padding:1.25rem 1.25rem 1.25rem 0;
+  display:flex;flex-direction:column;gap:.4rem;justify-content:center;
+}
+.btn-register{
+  background:#4c1d95;color:#fff;font-weight:700;font-size:.75rem;
+  padding:.55rem 0;border-radius:4px;border:none;cursor:pointer;
+  text-align:center;letter-spacing:.01em;transition:.15s;
+  display:block;width:100%;
+}
+.btn-register:hover{background:#3b0764}
+.btn-register.urgent{background:#6d28d9}
+.btn-register.urgent:hover{background:#3b0764}
+.btn-info{
+  background:transparent;color:#6b7280;font-weight:600;font-size:.72rem;
+  padding:.48rem 0;border-radius:4px;border:1px solid #e5e7eb;
+  cursor:pointer;transition:.15s;text-align:center;
+  display:block;width:100%;
+}
+.btn-info:hover{border-color:#7c3aed;color:#4c1d95}
+
+/* ── TUITION NOTICE ── */
+.tuition-notice{
+  background:#fff;border:1px solid #e5e7eb;border-radius:6px;
+  padding:1rem 1.4rem;margin-bottom:1.5rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+}
+.tn-left{display:flex;align-items:center;gap:.85rem}
+.tn-icon{
+  width:36px;height:36px;border-radius:50%;
+  background:#4c1d95;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.tn-icon svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tn-content{}
+.tn-title{font-size:.82rem;font-weight:700;color:#1a1a2e;margin-bottom:.1rem}
+.tn-sub{font-size:.71rem;color:#6b7280;font-weight:400}
+.tn-countdown{display:flex;align-items:center;gap:.2rem}
+.tn-cd-unit{
+  background:#f5f3ff;border:1px solid #ede9fe;border-radius:4px;
+  padding:.35rem .6rem;text-align:center;min-width:46px;
+}
+.tn-cd-num{
+  display:block;font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:1.1rem;font-weight:700;color:#4c1d95;line-height:1;
+}
+.tn-cd-lbl{display:block;font-size:.48rem;font-weight:700;color:#a78bfa;letter-spacing:.07em;text-transform:uppercase;margin-top:.08rem}
+.tn-cd-sep{font-size:.9rem;font-weight:700;color:#ddd6fe;padding-bottom:.2rem}
+
+/* ── REGISTRATION ALERT ── */
+.reg-alert{
+  display:flex;align-items:center;gap:.85rem;
+  background:#f5f3ff;border:1px solid #ede9fe;border-left:3px solid #6d28d9;
+  border-radius:0 5px 5px 0;padding:.75rem 1.1rem;margin-bottom:1.5rem;
+}
+.ra-dot{width:6px;height:6px;border-radius:50%;background:#7c3aed;flex-shrink:0;animation:blink 1.2s infinite}
+.ra-text{font-size:.76rem;color:#7f1d1d;font-weight:500;line-height:1.5}
+.ra-text strong{color:#6d28d9;font-weight:700}
+
+/* ── MODALS ── */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(10,5,30,.5);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1.5rem}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:10px;width:100%;max-width:600px;box-shadow:0 24px 64px rgba(0,0,0,.2);overflow:hidden;animation:mIn .2s ease}
+@keyframes mIn{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-topbar{height:4px}
+.modal-topbar.campus{background:#6d28d9}
+.modal-topbar.weekend{background:#2563eb}
+.modal-topbar.online{background:#6d28d9}
+.modal-head{display:flex;align-items:flex-start;justify-content:space-between;padding:1.5rem 1.5rem .8rem}
+.modal-badge{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem;display:inline-block}
+.modal-badge.campus{background:#ede9fe;color:#5b21b6}
+.modal-badge.weekend{background:#dbeafe;color:#1d4ed8}
+.modal-badge.online{background:#ede9fe;color:#5b21b6}
+.modal-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.25rem;font-weight:700;color:#1a1a2e;line-height:1.3}
+.modal-cred{font-size:.72rem;color:#9ca3af;font-weight:500;margin-top:.2rem}
+.modal-close{background:none;border:none;cursor:pointer;color:#d1d5db;font-size:1.2rem;padding:.25rem;transition:.12s;flex-shrink:0;margin-left:1rem}
+.modal-close:hover{color:#111}
+.modal-body{padding:0 1.5rem 1.5rem;display:flex;flex-direction:column;gap:1rem}
+.modal-lbl{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d1d5db;margin-bottom:.5rem}
+.modal-kv{display:flex;flex-direction:column;gap:.4rem}
+.modal-kv-row{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;padding-bottom:.4rem;border-bottom:1px solid #f9f9f9}
+.modal-kv-row:last-child{border-bottom:none;padding-bottom:0}
+.kv-key{color:#9ca3af;font-weight:500}
+.kv-val{color:#1a1a2e;font-weight:700;text-align:right}
+.modal-hr{height:1px;background:#f3f4f6}
+.modal-desc{font-size:.82rem;color:#4b5563;line-height:1.75;font-weight:400}
+.modal-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.modal-chip{font-size:.72rem;font-weight:600;color:#5b21b6;background:#f5f3ff;border:1px solid #ede9fe;border-radius:3px;padding:.25rem .65rem}
+.modal-seat-row{display:flex;align-items:center;gap:.65rem}
+.modal-seat-track{flex:1;height:4px;background:#f3f4f6;border-radius:2px;overflow:hidden}
+.modal-seat-fill{height:100%;border-radius:2px;background:#6d28d9}
+.modal-seat-txt{font-size:.7rem;font-weight:700;color:#6d28d9;white-space:nowrap}
+.modal-actions{display:grid;grid-template-columns:1fr auto;gap:.5rem;margin-top:.25rem}
+.modal-btn-primary{background:#4c1d95;color:#fff;font-weight:700;font-size:.85rem;padding:.75rem;border-radius:5px;border:none;cursor:pointer;letter-spacing:.01em;transition:.15s}
+.modal-btn-primary:hover{background:#3b0764}
+.modal-btn-ghost{background:transparent;color:#9ca3af;font-size:.82rem;font-weight:600;padding:.75rem 1rem;border-radius:5px;border:1px solid #e5e7eb;cursor:pointer;transition:.12s}
+.modal-btn-ghost:hover{border-color:#7c3aed;color:#4c1d95}
+
+/* ── SCHEDULE TIMELINE ── */
+.sched-meta{display:grid;grid-template-columns:1fr 1fr;gap:.75rem 1.5rem;margin-bottom:1rem}
+.sm-item{display:flex;flex-direction:column;gap:.2rem}
+.sm-item.sm-full{grid-column:1/-1}
+.sm-label{font-size:.57rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d1d5db}
+.sm-val{font-size:.8rem;font-weight:600;color:#1a1a2e;line-height:1.45}
+.sm-val.accent{color:#6d28d9}
+.timeline{display:flex;flex-direction:column;position:relative;max-height:350px;overflow-y:auto;padding-right:.25rem}
+.timeline::before{content:'';position:absolute;left:9px;top:8px;bottom:8px;width:1px;background:#ede9fe}
+.tl-row{display:flex;gap:.85rem;align-items:flex-start;padding:.45rem 0}
+.tl-node{
+  width:19px;height:19px;border-radius:50%;
+  background:#4c1d95;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;position:relative;z-index:1;
+}
+.tl-node-dot{width:7px;height:7px;border-radius:50%;background:#fff}
+.tl-row.last .tl-node{background:#6d28d9}
+.tl-body{flex:1;padding-top:.15rem}
+.tl-wk{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#a78bfa;margin-bottom:.08rem}
+.tl-row.last .tl-wk{color:#a78bfa}
+.tl-topic{font-size:.8rem;font-weight:600;color:#1a1a2e}
+.tl-dates{font-size:.66rem;color:#9ca3af;font-weight:500;margin-top:.06rem}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — TABLET  (≤ 1024 px)
+════════════════════════════════════════════ */
+@media (max-width:1024px){
+  .page{grid-template-columns:200px 1fr}
+  .sidebar{padding:1.25rem 0}
+  .main{padding:1.5rem 1.5rem 3rem}
+  .hero h1{font-size:clamp(2.6rem,5vw,4.5rem)}
+  .hero-trust-item{font-size:.67rem;padding:0 .8rem}
+  .tuition-notice{flex-wrap:wrap;gap:.75rem}
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — MOBILE  (≤ 768 px)
+════════════════════════════════════════════ */
+@media (max-width:768px){
+
+  /* ── TOPBAR ── */
+  .topbar{padding:.4rem 1rem}
+  .topbar-left{display:none}
+  .topbar-links{gap:.65rem}
+  .topbar-links a{font-size:.67rem}
+
+  /* ── NAV ── */
+  .nav{padding:0 1rem;height:56px}
+  .nav-links{display:none}
+  .nav-portal{display:none}
+  .nav-brand-name{font-size:.97rem}
+  .nav-brand-sub{font-size:.57rem}
+  .nav-enroll{font-size:.72rem;padding:.38rem .85rem}
+
+  /* ── HERO ── */
+  .hero{padding:4.5rem 1.25rem 3.5rem;min-height:70vh}
+  .hero h1{font-size:clamp(2.1rem,9vw,3rem);letter-spacing:-.025em;margin-bottom:1rem}
+  .hero-sub{font-size:.9rem;margin-bottom:2rem}
+  .hero-eyebrow{font-size:.65rem;margin-bottom:1.1rem}
+  .hero-btns{flex-direction:column;align-items:center;gap:.75rem;margin-bottom:2rem}
+  .hero-btn-primary,
+  .hero-btn-secondary{width:100%;max-width:320px;justify-content:center;padding:.85rem 1.5rem}
+  .hero-trust{gap:.1rem 0}
+  .hero-trust-item{font-size:.62rem;padding:.3rem .7rem;border-right:none;border-bottom:none}
+
+  /* ── ANNOUNCE ── */
+  .announce{flex-wrap:wrap;padding:.5rem 1rem;gap:.4rem .75rem;justify-content:flex-start}
+  .ann-cta{margin-left:0}
+  .ann-text{font-size:.7rem}
+
+  /* ── PAGE LAYOUT: hide sidebar, full width ── */
+  .page{display:block}
   .sidebar{display:none}
+  .main{padding:1.25rem .9rem 3.5rem}
 
-  /* Header compact */
-  .site-header{padding:.5rem 1.25rem;gap:.4rem}
-  .header-actions{gap:.4rem}
-  .btn-outline{padding:6px 12px;font-size:.75rem}
-  .btn-navy{padding:7px 14px;font-size:.75rem}
-
-  /* Hero */
-  .page-hero{padding:2rem 1.5rem}
-  .hero-stats{gap:1.5rem;flex-wrap:wrap}
-
-  /* Cards: collapse to 2-col on tablet */
-  .card-inner{
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:auto auto auto;
-    gap:.65rem
+  /* ── MOBILE NAV STRIP (replaces sidebar) ── */
+  .mobile-nav-strip{
+    display:flex;
+    gap:.45rem;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    padding:.75rem .9rem;
+    background:#fff;
+    border-bottom:1px solid #e5e7eb;
+    margin-bottom:1.25rem;
+    scrollbar-width:none;
   }
-  .card-prog{grid-column:1/3}
-  .card-actions{grid-column:1/3;justify-content:flex-start}
-
-  /* Session blocks */
-  .session-block{margin:1.5rem 1.5rem}
-  .online-section{margin:0 1.5rem 1.5rem}
-  .funding{padding:1.5rem}
-  .fund-grid{grid-template-columns:1fr 1fr}
-  .month-div{padding:1.5rem 1.5rem .75rem}
-
-  /* Urgency bar */
-  .urgency-bar{flex-direction:column;align-items:flex-start;gap:.6rem}
-
-  /* Filter */
-  .filter-bar{padding:.75rem 1.5rem;gap:.65rem}
-}
-
-/* ═══════════════════════════════════════
-   RESPONSIVE — Mobile (≤640px)
-═══════════════════════════════════════ */
-@media(max-width:640px){
-  /* Banner: hide separators, stack neatly */
-  .banner{flex-wrap:wrap;gap:.3rem .8rem;padding:.5rem 1rem;justify-content:center}
-  .banner-sep{display:none}
-
-  /* Header */
-  .site-header{padding:.5rem 1rem;flex-wrap:wrap;min-height:unset}
-  .logo img{height:24px}
-  .pharmacy-notice{display:none}
-  .header-center{width:100%;order:3}
-  .btn-outline{display:none}
-  .btn-navy{padding:7px 14px;font-size:.78rem}
-
-  /* Hero */
-  .page-hero{padding:1.5rem 1rem 1.25rem}
-  .page-hero h1{font-size:1.35rem;line-height:1.3}
-  .page-hero p{font-size:.85rem}
-  .hero-stats{gap:1rem}
-  .stat-val{font-size:1.4rem}
-  .hero-btns{flex-direction:column;align-items:stretch;gap:.6rem}
-  .hero-btns a{text-align:center}
-
-  /* Filter bar: scrollable pills */
-  .filter-bar{padding:.65rem 1rem;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;gap:.5rem}
-  .filter-label{white-space:nowrap;flex-shrink:0}
-  .pills{flex-wrap:nowrap;flex-shrink:0}
-  .pill-sep{flex-shrink:0}
-
-  /* Session / section spacing */
-  .session-block{margin:1rem .75rem}
-  .online-section{margin:0 .75rem 1rem}
-  .month-div{padding:1.25rem .75rem .5rem}
-  .session-header{gap:.6rem;flex-wrap:wrap}
-  .session-header h2{font-size:1rem}
-  .session-header-meta{font-size:.7rem}
-
-  /* Urgency bar */
-  .urgency-bar{padding:.65rem 1rem;gap:.5rem}
-  .urgency-label{font-size:.7rem}
-  .cd-num{font-size:.9rem}
-  .cd-lbl{font-size:.5rem}
-  .cd-unit{min-width:36px;padding:.25rem .4rem}
-  .cd-sep{font-size:.9rem}
-
-  /* Course card: fully stacked single column */
-  .card-inner{
-    grid-template-columns:1fr !important;
-    grid-template-rows:auto !important;
-    gap:.6rem;
-    padding:.9rem
+  .mobile-nav-strip::-webkit-scrollbar{display:none}
+  .mns-btn{
+    flex-shrink:0;
+    font-size:.7rem;font-weight:700;
+    padding:.42rem .9rem;border-radius:20px;
+    border:1.5px solid #e5e7eb;background:#fff;
+    color:#6b7280;cursor:pointer;white-space:nowrap;
+    transition:.15s;text-decoration:none;display:inline-block;
   }
-  .card-prog{grid-column:unset}
-  .card-actions{grid-column:unset;flex-wrap:wrap;gap:.4rem}
-  .abtn{flex:1;min-width:calc(50% - .2rem);text-align:center;justify-content:center}
-  .sched-detail-btn{width:100%;justify-content:center}
+  .mns-btn.active,.mns-btn:hover{background:#4c1d95;color:#fff;border-color:#4c1d95}
 
-  /* Seat bar narrower */
-  .seat-bar{width:40px}
+  /* ── FILTER TABS ── */
+  .filter-row{
+    overflow-x:auto;-webkit-overflow-scrolling:touch;
+    margin-bottom:1.25rem;scrollbar-width:none;
+  }
+  .filter-row::-webkit-scrollbar{display:none}
+  .tab-list{flex-wrap:nowrap}
+  .tab-btn{font-size:.72rem;padding:.58rem .8rem;white-space:nowrap}
 
-  /* Schedule tags wrap */
-  .sched-tags{flex-wrap:wrap;gap:.3rem}
+  /* ── SECTION HEADER ── */
+  .section-header{flex-direction:column;align-items:flex-start;gap:.2rem;margin-bottom:1rem}
+  .sh-title{font-size:1.1rem}
+  .sh-meta{font-size:.67rem}
 
-  /* Type tag + seats row on mobile */
-  .card-inner > div:nth-child(4),
-  .card-inner > div:nth-child(5){display:inline-flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+  /* ── TUITION NOTICE ── */
+  .tuition-notice{flex-direction:column;align-items:flex-start;gap:.75rem;padding:.85rem 1rem;margin-bottom:1.25rem}
+  .tn-left{align-items:flex-start}
+  .tn-title{font-size:.78rem}
+  .tn-sub{font-size:.67rem}
+  .tn-countdown{justify-content:flex-start}
+  .tn-cd-unit{min-width:38px;padding:.28rem .45rem}
+  .tn-cd-num{font-size:.95rem}
 
-  /* Funding section */
-  .funding{padding:1rem .75rem}
-  .fund-grid{grid-template-columns:1fr}
-  .funding-head{flex-direction:column;gap:.5rem;align-items:flex-start}
-  .fund-card{padding:1rem}
+  /* ── REG ALERT ── */
+  .reg-alert{padding:.65rem .85rem}
+  .ra-text{font-size:.72rem}
 
-  /* Modal */
-  .modal-box{border-radius:12px 12px 0 0;max-height:92vh;width:100%;align-self:flex-end}
-  .modal-overlay{align-items:flex-end;padding:0}
-  .modal-header{padding:1rem 1.25rem .75rem}
-  .modal-body{padding:1rem 1.25rem}
-  .modal-footer{padding:.75rem 1.25rem;flex-direction:column;gap:.5rem}
-  .mfbtn{width:100%;text-align:center;justify-content:center}
+  /* ── COURSE TABLE: kill the header ── */
+  .course-table{border-radius:8px;margin-bottom:1.5rem}
+  .ct-header{display:none}
 
-  /* Online section header */
-  .online-header{gap:.5rem;flex-wrap:wrap}
-  .online-header h2{font-size:1rem}
-  .online-intro{padding:.75rem 1rem;font-size:.8rem}
+  /* ── COURSE ROW: stack as card ── */
+  .ci{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    border-bottom:1px solid #f0edf8;
+    padding:0;
+    position:relative;
+  }
+  .ci:hover{background:#faf9ff}
+  .ci-type-bar{display:block;position:absolute;left:0;top:0;bottom:0;width:3px}
+
+  /* Col 1 – Course info */
+  .ci-info{padding:1rem 1rem 0 1.15rem}
+  .ci-course-name{font-size:.92rem}
+  .ci-credential{font-size:.67rem}
+  .ci-format-detail{font-size:.67rem}
+  .ci-format-badge{font-size:.56rem;margin-bottom:.4rem}
+
+  /* Col 2 – Schedule/enrollment */
+  .ci-sched{
+    padding:.75rem 1rem .65rem 1.15rem;
+    gap:.5rem;
+  }
+  .ci-sched-info{gap:.35rem;margin-bottom:.65rem}
+  .csi-key{min-width:72px;font-size:.61rem}
+  .csi-val{font-size:.72rem}
+  .cem-track{max-width:100%}
+  .cem-foot{max-width:100%;justify-content:space-between}
+
+  /* Col 3 – Actions: side-by-side at bottom */
+  .ci-actions{
+    padding:.65rem 1rem .9rem 1.15rem;
+    flex-direction:row;
+    gap:.5rem;
+    justify-content:stretch;
+  }
+  .btn-register{flex:1;padding:.6rem .5rem;font-size:.74rem}
+  .btn-info{flex:1;padding:.58rem .5rem;font-size:.7rem}
+
+  /* ── MODAL: bottom sheet on mobile ── */
+  .modal-overlay{
+    padding:0;
+    align-items:flex-end;
+  }
+  .modal{
+    width:100%;
+    max-width:100%;
+    max-height:90vh;
+    border-radius:14px 14px 0 0;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    animation:mInMobile .25s ease;
+  }
+  @keyframes mInMobile{
+    from{transform:translateY(40px);opacity:.6}
+    to{transform:translateY(0);opacity:1}
+  }
+  .modal-head{padding:1.1rem 1.1rem .7rem}
+  .modal-body{padding:0 1.1rem 1.5rem;gap:.8rem}
+  .modal-name{font-size:1.1rem}
+  .sched-meta{grid-template-columns:1fr 1fr}
+  .sm-val{font-size:.75rem}
+  .modal-actions{grid-template-columns:1fr;gap:.4rem}
+  .modal-btn-ghost{padding:.65rem 1rem}
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider{margin:2rem 0 1.5rem}
+  .sd-label{font-size:.58rem}
 }
 
-/* ═══════════════════════════════════════
-   RESPONSIVE — Small mobile (≤380px)
-═══════════════════════════════════════ */
-@media(max-width:380px){
-  .page-hero h1{font-size:1.15rem}
-  .urgency-countdown{flex-wrap:wrap;gap:.3rem}
-  .abtn{min-width:100%}
-  .session-block{margin:.75rem .5rem}
+/* ════════════════════════════════════════════
+   RESPONSIVE — SMALL MOBILE  (≤ 400 px)
+════════════════════════════════════════════ */
+@media (max-width:400px){
+  .hero h1{font-size:clamp(1.9rem,10vw,2.6rem)}
+  .hero-trust{flex-direction:column;align-items:center;gap:.15rem}
+  .hero-trust-item{border-right:none}
+  .tab-btn{font-size:.68rem;padding:.52rem .65rem}
+  .csi-key{min-width:64px}
+  .tn-cd-unit{min-width:34px}
+  .tn-cd-num{font-size:.85rem}
 }
+</style>
+</head>
+<body>
 
-/* ── ENROLLMENT STATUS LABELS ── */
-.status-label{display:inline-flex;align-items:center;font-size:.78rem;font-weight:700;padding:.3rem .75rem;border-radius:6px;letter-spacing:.01em}
-.status-label.few-seats{background:#fef3c7;color:#92400e;border:1.5px solid #fcd34d}
-.status-label.open-enrollment{background:#d1fae5;color:#065f46;border:1.5px solid #6ee7b7}
-.status-label.limited-seats{background:#e0f2fe;color:#0369a1;border:1.5px solid #7dd3fc}
-</style></head><body>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-video-wrap">
+    <video id="heroVideo" autoplay muted playsinline></video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Spring 2026 &nbsp;&middot;&nbsp; Now Enrolling</span>
+    <h1>Your Healthcare Career<br><span>Starts Here.</span></h1>
+    <p class="hero-sub">Board-certified programs in allied health. Campus and online formats. Accepted by top employers nationwide.</p>
+    <div class="hero-btns">
+      <a href="https://www.alliedrxtraining.com/register" target="_blank" class="hero-btn-primary">Enroll Today &rarr;</a>
+      <a href="#online-ccma" class="hero-btn-secondary">View Schedule</a>
+    </div>
+    <div class="hero-trust">
+      <span class="hero-trust-item">WIOA Approved</span>
+      <span class="hero-trust-item">Military Funding Accepted</span>
+      <span class="hero-trust-item">Payment Plans Available</span>
+      <span class="hero-trust-item">Board Accredited</span>
+    </div>
+  </div>
+</section>
 
 
 
-<div class="page-layout">
+<!-- PAGE -->
+<div class="page">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-label">2026 Schedule</div>
-      <a href="#may" class="sidebar-link active"><span class="s-dot" style="background:#3b82f6"></span>May Session<span class="s-count">4</span></a>
-      
-      <a href="#online" class="sidebar-link"><span class="s-dot" style="background:#16a34a"></span>Online Programs<span class="s-count">7</span></a>
+    <div class="sb-section">
+      <div class="sb-heading">Pathway</div>
+      <a href="#online" class="sb-nav-link active"><span>Online Programs</span><span class="sb-badge">7</span></a>
+      <a href="#may" class="sb-nav-link"><span>May 2026 Campus</span><span class="sb-badge">4</span></a>
     </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Programs</div>
-      <a href="https://www.alliedrxtraining.com/new-ccma-page" class="sidebar-link">Clinical Medical Asst</a>
-      <a href="https://www.alliedrxtraining.com/new-phlebotomy-page" class="sidebar-link">Phlebotomy Technician</a>
-      <a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" class="sidebar-link">Pharmacy Technician</a>
-      <a href="https://www.alliedrxtraining.com/new-ekg-page" class="sidebar-link">EKG Technician</a>
-      <a href="https://www.alliedrxtraining.com/new-medical-billing-page" class="sidebar-link">Medical Billing &amp; Coding</a>
-      <a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" class="sidebar-link">Dental Assistant</a>
-      <a href="https://www.alliedrxtraining.com/new-cmaa-page" class="sidebar-link">Medical Admin Assistant</a>
+    <div class="sb-rule"></div>
+    <div class="sb-section">
+      <div class="sb-heading">Online Courses</div>
+      <a href="#online-ccma" class="sb-course-link" onclick="sidebarNav(event,'#online-ccma')">
+        <span class="sb-dot"></span>Clinical Medical Asst
+      </a>
+      <a href="#online-phlebotomy" class="sb-course-link" onclick="sidebarNav(event,'#online-phlebotomy')">
+        <span class="sb-dot"></span>Phlebotomy Technician
+      </a>
+      <a href="#online-pharmacy" class="sb-course-link" onclick="sidebarNav(event,'#online-pharmacy')">
+        <span class="sb-dot"></span>Pharmacy Technician
+      </a>
+      <a href="#online-ekg" class="sb-course-link" onclick="sidebarNav(event,'#online-ekg')">
+        <span class="sb-dot"></span>EKG Technician
+      </a>
+      <a href="#online-billing" class="sb-course-link" onclick="sidebarNav(event,'#online-billing')">
+        <span class="sb-dot"></span>Medical Billing &amp; Coding
+      </a>
+      <a href="#online-admin" class="sb-course-link" onclick="sidebarNav(event,'#online-admin')">
+        <span class="sb-dot"></span>Medical Administrative Assistant
+      </a>
+      <a href="#online-dental" class="sb-course-link" onclick="sidebarNav(event,'#online-dental')">
+        <span class="sb-dot"></span>Registered Dental Asst
+      </a>
     </div>
-    <div class="sidebar-section">
-      <div class="enroll-cta">
-        <div class="enroll-cta-label">Enrollment Fee</div>
-        <div class="enroll-cta-price">$49</div>
-        <div class="enroll-cta-sub">Payment plans available</div>
-        <a href="https://www.alliedrxtraining.com/register" class="enroll-cta-btn">Register Now →</a>
-        <div class="fund-links">
-          <a href="https://www.alliedrxtraining.com/military" class="fund-lnk">ArmyCA Funding</a>
-          <a href="https://www.alliedrxtraining.com/military" class="fund-lnk">MyCAA Scholarship</a>
-          <a href="https://www.alliedrxtraining.com/military" class="fund-lnk">Air Force COOL</a>
-          <a href="https://www.alliedrxtraining.com/grants" class="fund-lnk">WIOA Grants</a>
-        </div>
-      </div>
-    </div>
+    <a href="https://www.alliedrxtraining.com/register" target="_blank" class="sb-register-btn">Register Now &rarr;</a>
   </aside>
 
+
+  <!-- MOBILE NAV STRIP (visible only on mobile) -->
+  <div class="mobile-nav-strip">
+    <a href="#online" class="mns-btn active" onclick="mobileNav(this,'online')">Online (7)</a>
+    <a href="#may" class="mns-btn" onclick="mobileNav(this,'may')">May Campus (4)</a>
+    <a href="#online-ccma" class="mns-btn" onclick="sidebarNav(event,'#online-ccma')">CCMA</a>
+    <a href="#online-phlebotomy" class="mns-btn" onclick="sidebarNav(event,'#online-phlebotomy')">Phlebotomy</a>
+    <a href="#online-pharmacy" class="mns-btn" onclick="sidebarNav(event,'#online-pharmacy')">Pharmacy</a>
+    <a href="#online-ekg" class="mns-btn" onclick="sidebarNav(event,'#online-ekg')">EKG</a>
+    <a href="#online-billing" class="mns-btn" onclick="sidebarNav(event,'#online-billing')">Med Billing</a>
+    <a href="#online-admin" class="mns-btn" onclick="sidebarNav(event,'#online-admin')">Med Admin</a>
+    <a href="#online-dental" class="mns-btn" onclick="sidebarNav(event,'#online-dental')">Dental</a>
+    <a href="https://www.alliedrxtraining.com/register" target="_blank" class="mns-btn" style="background:#4c1d95;color:#fff;border-color:#4c1d95">Enroll →</a>
+  </div>
+
   <!-- MAIN -->
-  <main class="main-content">
+  <main class="main">
 
-    <!-- PAGE HERO -->
-    <div class="page-hero">
-      <div class="hero-meta">
-        <span class="hero-tag sem">Spring 2026</span>
-        <span class="hero-tag open"><span class="pulse"></span>Enrollment Open</span>
-      </div>
-      <h1>Course Registration</h1>
-      <p>Virginia campus hybrid programs and online self-paced courses. Register early — seats are limited for campus sessions.</p>
-      <div class="hero-stats">
-        <div><div class="h-stat-num"><span>2</span></div><div class="h-stat-lbl">Campus Programs</div></div>
-        <div><div class="h-stat-num"><span>7</span></div><div class="h-stat-lbl">Online Programs</div></div>
-        <div><div class="h-stat-num"><span>6</span></div><div class="h-stat-lbl">Session Dates</div></div>
-        <div><div class="h-stat-num"><span>$49</span></div><div class="h-stat-lbl">To Enroll</div></div>
+    <!-- FILTER TABS -->
+    <div class="filter-row">
+      <div class="tab-list">
+        <button class="tab-btn active" onclick="doTab(this,'all')">All Courses <span class="tab-count">11</span></button>
+        <button class="tab-btn" onclick="doTab(this,'online')">Online <span class="tab-count">7</span></button>
+        <button class="tab-btn" onclick="doTab(this,'may')">May 2026 <span class="tab-count">4</span></button>
+        <button class="tab-btn" onclick="doTab(this,'campus')">Campus</button>
+        <button class="tab-btn" onclick="doTab(this,'weekend')">Weekend</button>
       </div>
     </div>
 
-    <!-- FILTER -->
-    <div class="filter-bar">
-      <span class="filter-label">Filter:</span>
-      <div class="pills">
-        <button class="pill active">All</button>
-        <button class="pill">Campus</button>
-        <button class="pill">Weekend</button>
-        <button class="pill">Online</button>
-      </div>
-      <div class="pill-sep"></div>
-      <div class="pills">
-        <button class="pill">May</button>
-      </div>
-    </div>
+    <!-- ═══════════════════════════
+         ONLINE PROGRAMS
+    ═══════════════════════════ -->
+    <section id="online">
 
-    <!-- MAY SESSION -->
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;background:linear-gradient(120deg,#001a0f,#012d1a,#001a0f);border:1px solid rgba(34,197,94,.35);border-radius:10px;padding:.7rem 1.4rem;margin-bottom:1.1rem;">
-      <div style="display:flex;align-items:center;gap:.75rem;">
-        <span style="background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:5px;padding:.25rem .65rem;font-size:.68rem;font-weight:800;letter-spacing:.1em;color:#fff;text-transform:uppercase;">🌸 Spring 2026</span>
-        <span style="color:#86efac;font-size:.87rem;font-weight:600;">Spring semester enrollment is now open</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">
-        <span style="background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35);border-radius:6px;padding:.3rem .8rem;font-size:.78rem;font-weight:700;color:#4ade80;">May 26 · Weekday</span>
-        <span style="background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35);border-radius:6px;padding:.3rem .8rem;font-size:.78rem;font-weight:700;color:#4ade80;">May 23 · Weekend</span>
-      </div>
-    </div>
-    <div id="may" class="session-block">
-      <div class="session-header">
-        <div class="session-accent" style="background:#3b82f6"></div>
-        <h2>May 2026 Session</h2>
-        <div class="session-header-meta">Starts May 23/26 · 4 Sections</div>
-      </div>
-
-      <!-- APRIL URGENCY COUNTDOWN -->
-      <div class="urgency-bar">
-        <div class="urgency-left">
-          <div class="urgency-pulse"></div>
-          <div class="urgency-label">Registration closes <strong>May 15, 2026</strong> — secure your seat before this session fills</div>
+      <div class="section-header">
+        <div class="sh-left">
+          <span class="sh-eyebrow">Open Enrollment</span>
+          <div class="sh-title">Online Programs</div>
         </div>
-        <div class="urgency-countdown" id="cd-may"></div>
+        <span class="sh-meta">Start today &middot; 7 courses available</span>
       </div>
 
-      <div class="course-card" data-card-id="ccma-apr-wd" data-seats="7" data-type="campus" data-session="may">
-        <div class="card-inner">
-          <div class="card-prog">
-            <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-            <div><div class="prog-name">Clinical Medical Assistant</div><div class="prog-cert">CCMA · NHA &amp; AMCA Approved</div></div>
+      <!-- TUITION NOTICE -->
+      <div class="tuition-notice">
+        <div class="tn-left">
+          <div class="tn-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
-          <div><div class="card-date">May 26, 2026</div><div class="card-day">Wednesdays</div></div>
-          <div class="sched-tags"><span class="stag d">Day · 10:00am–1:00pm</span><span class="stag e">Evening · 6:00pm–9:00pm</span></div>
-          <div><span class="type-tag campus">Campus</span></div>
-          <div class="seats-wrap">
-            <span class="status-label few-seats">Few Seats Remaining</span>
+          <div class="tn-content">
+            <div class="tn-title">Tuition Pricing &mdash; Act Before May 30</div>
+            <div class="tn-sub">Discounted enrollment rate available now. Tuition increases after the deadline.</div>
           </div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill reg-btn pulse-enroll">Register</a><a href="https://www.alliedrxtraining.com/new-ccma-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-ccma-apr-wd')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>View Schedule</button></div>
         </div>
-      </div>
-
-      <div class="course-card" data-card-id="phleb-apr-wd" data-seats="4" data-type="campus" data-session="may">
-        <div class="card-inner">
-          <div class="card-prog">
-            <div class="card-icon blu"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M6.343 15.657A8 8 0 0012 22a8 8 0 005.657-2.343"/></svg></div>
-            <div><div class="prog-name">Phlebotomy Technician</div><div class="prog-cert">CPT · NHA &amp; AMCA Accredited</div></div>
-          </div>
-          <div><div class="card-date">May 26, 2026</div><div class="card-day">Wednesdays</div></div>
-          <div class="sched-tags"><span class="stag d">Day · 10:00am–1:00pm</span><span class="stag e">Evening · 6:00pm–9:00pm</span></div>
-          <div><span class="type-tag campus">Campus</span></div>
-          <div class="seats-wrap">
-            <span class="status-label few-seats">Few Seats Remaining</span>
-          </div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill reg-btn pulse-enroll">Register</a><a href="https://www.alliedrxtraining.com/new-phlebotomy-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-phleb-apr-wd')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>View Schedule</button></div>
-        </div>
-      </div>
-
-      <div class="course-card" data-card-id="phleb-apr-wknd" data-seats="4" data-type="weekend" data-session="may">
-        <div class="card-inner">
-          <div class="card-prog">
-            <div class="card-icon blu"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M6.343 15.657A8 8 0 0012 22a8 8 0 005.657-2.343"/></svg></div>
-            <div><div class="prog-name">Phlebotomy — Weekend Fast Track</div><div class="prog-cert">CPT · 12-Week Program</div></div>
-          </div>
-          <div><div class="card-date">May 23, 2026</div><div class="card-day">Saturdays</div></div>
-          <div class="sched-tags"><span class="stag w">Weekend · 10:00am–12:00pm</span></div>
-          <div><span class="type-tag weekend">Weekend</span></div>
-          <div class="seats-wrap">
-            <span class="status-label few-seats">Few Seats Remaining</span>
-          </div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill reg-btn pulse-enroll">Register</a><a href="https://www.alliedrxtraining.com/new-phlebotomy-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-phleb-apr-wknd')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>View Schedule</button></div>
-        </div>
-      </div>
-
-      <div class="course-card" data-card-id="ccma-apr-wknd" data-seats="6" data-type="weekend" data-session="may">
-        <div class="card-inner">
-          <div class="card-prog">
-            <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-            <div><div class="prog-name">Clinical Medical Asst — Weekend</div><div class="prog-cert">CCMA · 8-Week Program</div></div>
-          </div>
-          <div><div class="card-date">May 23, 2026</div><div class="card-day">Saturdays</div></div>
-          <div class="sched-tags"><span class="stag w">Weekend · 10:00am–11:30am</span></div>
-          <div><span class="type-tag weekend">Weekend</span></div>
-          <div class="seats-wrap">
-            <span class="status-label few-seats">Few Seats Remaining</span>
-          </div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill reg-btn pulse-enroll">Register</a><a href="https://www.alliedrxtraining.com/new-ccma-page" class="abtn line">Info</a><button class="sched-detail-btn" onclick="openModal('modal-ccma-apr-wknd')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>View Schedule</button></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MONTH DIVIDER: MAY -->
-    
-    <!-- ONLINE PROGRAMS SECTION -->
-    
-    <div id="online" class="online-section">
-      <div class="online-header">
-        <div class="online-accent"></div>
-        <h2>Online Programs — Open Enrollment</h2>
-        <div class="online-header-meta">7 Programs · Enroll Anytime</div>
-      </div>
-      <div class="online-intro">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-        <p><span>Self-paced, 100% online programs — </span>start any time, study on your schedule. Accredited certifications accepted nationwide.</p>
-      </div>
-
-      <!-- ONLINE URGENCY: limited-time pricing countdown -->
-      <div class="online-urgency">
-        <div class="online-urgency-left">
-          <div class="urgency-pulse"></div>
-          <div class="online-urgency-label">🎓 Limited enrollment pricing — <strong>enroll by May 30</strong> and lock in the discounted rate before it increases</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap">
-          <div class="online-urgency-price">
-            <span class="price-was">$100</span>
-            <span class="price-now">$49</span>
-            <span class="price-save">Save $51</span>
-          </div>
-          <div class="online-cd" id="cd-online"></div>
-        </div>
-      </div>
-
-      <div class="course-card" data-type="online" data-session="online">
-        <div class="card-inner">
-          <div class="card-prog">
-            <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-            <div><div class="prog-name">Clinical Medical Assistant</div><div class="prog-cert">CCMA · NHA &amp; AMCA Approved</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>312 enrolled this month</div>
-          </div>
-          <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
-          <div class="sched-tags"><span class="stag d">100% Online</span></div>
-          <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$49 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-ccma-page" class="abtn line">Info</a></div>
-        </div>
-      </div>
-
-      <div class="course-card" data-type="online" data-session="online">
-        <div class="card-inner">
-          <div class="card-prog">
-            <div class="card-icon blu"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M6.343 15.657A8 8 0 0012 22a8 8 0 005.657-2.343"/></svg></div>
-            <div><div class="prog-name">Phlebotomy Technician</div><div class="prog-cert">CPT · NHA &amp; AMCA Accredited</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>247 enrolled this month</div>
-          </div>
-          <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
-          <div class="sched-tags"><span class="stag d">100% Online</span></div>
-          <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$49 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/100-online-phlebotomy-technician-program" class="abtn line">Info</a></div>
-        </div>
-      </div>
-
-      <div class="course-card" data-type="online" data-session="online">
-        <div class="card-inner">
-          <div class="card-prog">
-            <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
-            <div><div class="prog-name">Pharmacy Technician</div><div class="prog-cert">CPhT · ExCPT Approved</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>189 enrolled this month</div>
-          </div>
-          <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
-          <div class="sched-tags"><span class="stag d">100% Online</span></div>
-          <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$99 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" class="abtn line">Info</a></div>
-        </div>
-      </div>
-
-      <div class="course-card" data-type="online" data-session="online">
-        <div class="card-inner">
-          <div class="card-prog">
-            <div class="card-icon blu"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-            <div><div class="prog-name">EKG Technician</div><div class="prog-cert">CET · NHA Approved</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>143 enrolled this month</div>
-          </div>
-          <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
-          <div class="sched-tags"><span class="stag d">100% Online</span></div>
-          <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$49 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-ekg-page" class="abtn line">Info</a></div>
-        </div>
-      </div>
-
-      <div class="course-card" data-type="online" data-session="online">
-        <div class="card-inner">
-          <div class="card-prog">
-            <div class="card-icon pur"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-            <div><div class="prog-name">Medical Billing &amp; Coding</div><div class="prog-cert">CBCS · NHA Approved</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>201 enrolled this month</div>
-          </div>
-          <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
-          <div class="sched-tags"><span class="stag d">100% Online</span></div>
-          <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$49 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-medical-billing-page" class="abtn line">Info</a></div>
-        </div>
-      </div>
-
-      <div class="course-card" data-type="online" data-session="online">
-        <div class="card-inner">
-          <div class="card-prog">
-            <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h5l5 5v11a2 2 0 01-2 2z"/></svg></div>
-            <div><div class="prog-name">Medical Admin Assistant</div><div class="prog-cert">CMAA · NHA Approved</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>178 enrolled this month</div>
-          </div>
-          <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
-          <div class="sched-tags"><span class="stag d">100% Online</span></div>
-          <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$49 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-cmaa-page" class="abtn line">Info</a></div>
-        </div>
-      </div>
-
-      <div class="course-card" data-type="online" data-session="online">
-        <div class="card-inner">
-          <div class="card-prog">
-            <div class="card-icon pur"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <div><div class="prog-name">Registered Dental Assistant</div><div class="prog-cert">RDA · DANB Approved</div></div><div class="enroll-count"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>156 enrolled this month</div>
-          </div>
-          <div><div class="card-date">Enroll Anytime</div><div class="card-day">Self-Paced</div></div>
-          <div class="sched-tags"><span class="stag d">100% Online</span></div>
-          <div><span class="type-tag online">Online</span></div>
-          <div class="seats-wrap"><span class="status-label limited-seats">Limited Seats Available</span><span class="seat-sub">$49 to enroll</span></div>
-          <div class="card-actions"><a href="https://www.alliedrxtraining.com/register" class="abtn fill pulse-enroll">Enroll</a><a href="https://www.alliedrxtraining.com/new-registered-dental-assistant" class="abtn line">Info</a></div>
-        </div>
-      </div>
-
-    </div>
-
-<!-- ══════════════════════════════════════════
-     MODALS
-══════════════════════════════════════════ -->
-
-<!-- MODAL: CCMA April Weekday -->
-<div class="modal-overlay" id="modal-ccma-apr-wd">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
         <div>
-          <div class="modal-prog-tag ccma">CCMA Program</div>
-          <h2>Clinical Medical Assistant — Weekday Cohort</h2>
+          <div style="font-size:.57rem;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;text-align:right;margin-bottom:.4rem">Offer ends in</div>
+          <div class="tn-countdown">
+            <div class="tn-cd-unit"><span class="tn-cd-num" id="pdd">33</span><span class="tn-cd-lbl">Days</span></div>
+            <span class="tn-cd-sep">:</span>
+            <div class="tn-cd-unit"><span class="tn-cd-num" id="phh">00</span><span class="tn-cd-lbl">Hrs</span></div>
+            <span class="tn-cd-sep">:</span>
+            <div class="tn-cd-unit"><span class="tn-cd-num" id="pmm">00</span><span class="tn-cd-lbl">Min</span></div>
+          </div>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-ccma-apr-wd')">✕</button>
       </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: May 26, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>16 Weeks · Wednesdays</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">Day 10:00–12:00 PM · Eve 6:00–8:00 PM</span>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1–5</div>
-        </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 26, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">May 6, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">May 13, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">May 20, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">May 26, 2026</span><span class="week-badge lab">Lab</span></div>
-        </div>
-        <div class="modal-note">Hands-on clinical skills, patient care procedures, simulations, and competency-based lab instruction.</div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1–16</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 26, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">May 6, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">May 13, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">May 20, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">May 26, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 6</span><span class="week-date">June 3, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 7</span><span class="week-date">June 10, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 8</span><span class="week-date">June 17, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 9</span><span class="week-date">June 24, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 10</span><span class="week-date">July 1, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">—</span><span class="week-date">July 4, 2026 — Independence Day</span><span class="week-badge holiday">Holiday</span></div>
-          <div class="week-row"><span class="week-num">Week 11</span><span class="week-date">July 8, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 12</span><span class="week-date">July 15, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 13</span><span class="week-date">July 22, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 14</span><span class="week-date">Aug 26, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 15</span><span class="week-date">August 5, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 16</span><span class="week-date">August 12, 2026</span><span class="week-badge online">Online</span></div>
-        </div>
-        <div class="modal-note">All assignments must be completed by the end of Week 16 to be eligible for graduation and certification.</div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-ccma-apr-wd')">Close</button>
-    </div>
-  </div>
-</div>
 
-<!-- MODAL: Phlebotomy April Weekday -->
-<div class="modal-overlay" id="modal-phleb-apr-wd">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
+      <div class="course-table">
+        <div class="ct-header">
+          <div class="ct-th">Course &amp; Credential</div>
+          <div class="ct-th">Enrollment &amp; Schedule</div>
+          <div class="ct-th">Actions</div>
+        </div>
+
+        <!-- CCMA Online -->
+        <div class="ci" id="online-ccma" data-pathway="online" data-type="online">
+          <div class="ci-type-bar online"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge online">Online</span>
+            <div class="ci-course-name">Clinical Medical Assistant</div>
+            <div class="ci-credential">CCMA &middot; NHA &amp; AMCA Approved</div>
+            <div class="ci-format-detail">Self-Paced &middot; 6-Month Access &middot; 16 Weeks</div>
+          </div>
+          <div class="ci-sched">
+              <div class="ci-sched-info">
+                <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val"><span class="today-date"></span><span class="start-today-badge">Start Today</span></span></div>
+                <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">16 Weeks &middot; $49 enrollment</span></div>
+              </div>
+              <div class="ci-enroll-meter">
+                <div class="cem-track"><div class="cem-fill" id="fill-ccma-ol"></div></div>
+                <div class="cem-foot"><span class="cem-pct" id="pct-ccma-ol"></span><span class="cem-rem" id="rem-ccma-ol"></span></div>
+              </div>
+            </div>
+
+          <div class="ci-actions">
+            <a href="https://www.alliedrxtraining.com/register" target="_blank" class="btn-register">Enroll Now</a>
+            <button class="btn-info" onclick="openSchedule('ccma_online')">View Schedule</button>
+          </div>
+        </div>
+
+        <!-- Phlebotomy Online -->
+        <div class="ci" id="online-phlebotomy" data-pathway="online" data-type="online">
+          <div class="ci-type-bar online"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge online">Online</span>
+            <div class="ci-course-name">Phlebotomy Technician</div>
+            <div class="ci-credential">CPT &middot; NHA &amp; AMCA Accredited</div>
+            <div class="ci-format-detail">Self-Paced &middot; 6-Month Access &middot; 12 Weeks</div>
+          </div>
+          <div class="ci-sched">
+              <div class="ci-sched-info">
+                <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val"><span class="today-date"></span><span class="start-today-badge">Start Today</span></span></div>
+                <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">12 Weeks &middot; $49 enrollment</span></div>
+              </div>
+              <div class="ci-enroll-meter">
+                <div class="cem-track"><div class="cem-fill lo" style="width:48%"></div></div>
+                <div class="cem-foot"><span class="cem-pct" id="pct-phle-ol"></span><span class="cem-rem" id="rem-phle-ol"></span></div>
+              </div>
+            </div>
+
+          <div class="ci-actions">
+            <a href="https://www.alliedrxtraining.com/register" target="_blank" class="btn-register">Enroll Now</a>
+            <button class="btn-info" onclick="openSchedule('phlebotomy_online')">View Schedule</button>
+          </div>
+        </div>
+
+        <!-- Pharmacy Online -->
+        <div class="ci" id="online-pharmacy" data-pathway="online" data-type="online">
+          <div class="ci-type-bar online"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge online">Online</span>
+            <div class="ci-course-name">Pharmacy Technician</div>
+            <div class="ci-credential">CPhT &middot; ExCPT Approved</div>
+            <div class="ci-format-detail">Self-Paced &middot; 6-Month Access &middot; 14 Weeks</div>
+          </div>
+          <div class="ci-sched">
+              <div class="ci-sched-info">
+                <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val"><span class="today-date"></span><span class="start-today-badge">Start Today</span></span></div>
+                <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">14 Weeks &middot; $99 enrollment</span></div>
+              </div>
+              <div class="ci-enroll-meter">
+                <div class="cem-track"><div class="cem-fill lo" style="width:42%"></div></div>
+                <div class="cem-foot"><span class="cem-pct" id="pct-phar-ol"></span><span class="cem-rem" id="rem-phar-ol"></span></div>
+              </div>
+            </div>
+
+          <div class="ci-actions">
+            <a href="https://www.alliedrxtraining.com/register" target="_blank" class="btn-register">Enroll Now</a>
+            <button class="btn-info" onclick="openSchedule('pharmacy_online')">View Schedule</button>
+          </div>
+        </div>
+
+        <!-- EKG Online -->
+        <div class="ci" id="online-ekg" data-pathway="online" data-type="online">
+          <div class="ci-type-bar online"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge online">Online</span>
+            <div class="ci-course-name">EKG Technician</div>
+            <div class="ci-credential">CET &middot; NHA Approved</div>
+            <div class="ci-format-detail">Self-Paced &middot; 6-Month Access &middot; 10 Weeks</div>
+          </div>
+          <div class="ci-sched">
+              <div class="ci-sched-info">
+                <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val"><span class="today-date"></span><span class="start-today-badge">Start Today</span></span></div>
+                <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">10 Weeks &middot; $49 enrollment</span></div>
+              </div>
+              <div class="ci-enroll-meter">
+                <div class="cem-track"><div class="cem-fill lo" style="width:38%"></div></div>
+                <div class="cem-foot"><span class="cem-pct" id="pct-ekg-ol"></span><span class="cem-rem" id="rem-ekg-ol"></span></div>
+              </div>
+            </div>
+
+          <div class="ci-actions">
+            <a href="https://www.alliedrxtraining.com/register" target="_blank" class="btn-register">Enroll Now</a>
+            <button class="btn-info" onclick="openSchedule('ekg_online')">View Schedule</button>
+          </div>
+        </div>
+
+        <!-- Medical Billing Online -->
+        <div class="ci" id="online-billing" data-pathway="online" data-type="online">
+          <div class="ci-type-bar online"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge online">Online</span>
+            <div class="ci-course-name">Medical Billing &amp; Coding</div>
+            <div class="ci-credential">CBCS &middot; NHA Approved</div>
+            <div class="ci-format-detail">Self-Paced &middot; 6-Month Access &middot; 14 Weeks</div>
+          </div>
+          <div class="ci-sched">
+              <div class="ci-sched-info">
+                <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val"><span class="today-date"></span><span class="start-today-badge">Start Today</span></span></div>
+                <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">14 Weeks &middot; $49 enrollment</span></div>
+              </div>
+              <div class="ci-enroll-meter">
+                <div class="cem-track"><div class="cem-fill" id="fill-bill-ol"></div></div>
+                <div class="cem-foot"><span class="cem-pct" id="pct-bill-ol"></span><span class="cem-rem" id="rem-bill-ol"></span></div>
+              </div>
+            </div>
+
+          <div class="ci-actions">
+            <a href="https://www.alliedrxtraining.com/register" target="_blank" class="btn-register">Enroll Now</a>
+            <button class="btn-info" onclick="openSchedule('billing_online')">View Schedule</button>
+          </div>
+        </div>
+
+        <!-- Medical Admin Online -->
+        <div class="ci" id="online-admin" data-pathway="online" data-type="online">
+          <div class="ci-type-bar online"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge online">Online</span>
+            <div class="ci-course-name">Medical Administrative Assistant</div>
+            <div class="ci-credential">CMAA &middot; NHA Approved</div>
+            <div class="ci-format-detail">Self-Paced &middot; 6-Month Access &middot; 12 Weeks</div>
+          </div>
+          <div class="ci-sched">
+              <div class="ci-sched-info">
+                <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val"><span class="today-date"></span><span class="start-today-badge">Start Today</span></span></div>
+                <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">12 Weeks &middot; $49 enrollment</span></div>
+              </div>
+              <div class="ci-enroll-meter">
+                <div class="cem-track"><div class="cem-fill lo" style="width:44%"></div></div>
+                <div class="cem-foot"><span class="cem-pct" id="pct-adm-ol"></span><span class="cem-rem" id="rem-adm-ol"></span></div>
+              </div>
+            </div>
+
+          <div class="ci-actions">
+            <a href="https://www.alliedrxtraining.com/register" target="_blank" class="btn-register">Enroll Now</a>
+            <button class="btn-info" onclick="openSchedule('admin_online')">View Schedule</button>
+          </div>
+        </div>
+
+        <!-- Dental Online -->
+        <div class="ci" id="online-dental" data-pathway="online" data-type="online">
+          <div class="ci-type-bar online"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge online">Online</span>
+            <div class="ci-course-name">Registered Dental Assistant</div>
+            <div class="ci-credential">RDA &middot; DANB Approved</div>
+            <div class="ci-format-detail">Self-Paced &middot; 6-Month Access &middot; 14 Weeks</div>
+          </div>
+          <div class="ci-sched">
+              <div class="ci-sched-info">
+                <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val"><span class="today-date"></span><span class="start-today-badge">Start Today</span></span></div>
+                <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">14 Weeks &middot; $49 enrollment</span></div>
+              </div>
+              <div class="ci-enroll-meter">
+                <div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div>
+                <div class="cem-foot"><span class="cem-pct" id="pct-dent-ol"></span><span class="cem-rem" id="rem-dent-ol"></span></div>
+              </div>
+            </div>
+
+          <div class="ci-actions">
+            <a href="https://www.alliedrxtraining.com/register" target="_blank" class="btn-register">Enroll Now</a>
+            <button class="btn-info" onclick="openSchedule('dental_online')">View Schedule</button>
+          </div>
+        </div>
+
+      </div><!-- /online table -->
+    </section>
+
+    <!-- ═══════════════════════════
+         CAMPUS / MAY 2026
+    ═══════════════════════════ -->
+    <div class="section-divider"><span class="sd-label">Campus &amp; Weekend Pathway &mdash; May 2026</span></div>
+
+    <section id="may">
+
+      <div class="section-header">
+        <div class="sh-left">
+          <span class="sh-eyebrow">Spring 2026</span>
+          <div class="sh-title">May 2026 Pathway</div>
+        </div>
+        <span class="sh-meta">Starts May 23 / May 26 &middot; 4 sections</span>
+      </div>
+
+      <div class="tuition-notice">
+        <div class="tn-left">
+          <div class="tn-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;color:#fff"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="tn-content">
+            <div class="tn-title">Registration Deadline &mdash; May 15, 2026</div>
+            <div class="tn-sub">All four sections are enrolling now. Seats are not held without payment.</div>
+          </div>
+        </div>
         <div>
-          <div class="modal-prog-tag phleb">Phlebotomy Program</div>
-          <h2>Phlebotomy Technician — Weekday Cohort</h2>
+          <div style="font-size:.57rem;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;text-align:right;margin-bottom:.4rem">Closes in</div>
+          <div class="tn-countdown">
+            <div class="tn-cd-unit"><span class="tn-cd-num" id="rdd">18</span><span class="tn-cd-lbl">Days</span></div>
+            <span class="tn-cd-sep">:</span>
+            <div class="tn-cd-unit"><span class="tn-cd-num" id="rhh">00</span><span class="tn-cd-lbl">Hrs</span></div>
+            <span class="tn-cd-sep">:</span>
+            <div class="tn-cd-unit"><span class="tn-cd-num" id="rmm">00</span><span class="tn-cd-lbl">Min</span></div>
+          </div>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-phleb-apr-wd')">✕</button>
       </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: May 26, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12 Weeks · Wednesdays</span>
-        <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">Day 10:00–1:00 PM · Eve 6:00–9:00 PM</span>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1–5</div>
-        </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 26, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">May 6, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">May 13, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">May 20, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">May 26, 2026</span><span class="week-badge lab">Lab</span></div>
-        </div>
-        <div class="modal-note">Hands-on venipuncture training, capillary sticks, specimen handling, and clinical skills validation.</div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1–12</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 26, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">May 6, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">May 13, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">May 20, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">May 26, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 6</span><span class="week-date">June 3, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 7</span><span class="week-date">June 10, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 8</span><span class="week-date">June 17, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 9</span><span class="week-date">June 24, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 10</span><span class="week-date">July 1, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 11</span><span class="week-date">July 8, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 12</span><span class="week-date">July 15, 2026</span><span class="week-badge online">Online</span></div>
-        </div>
-        <div class="modal-note">All course requirements must be completed by the end of Week 12.</div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-phleb-apr-wd')">Close</button>
-    </div>
-  </div>
-</div>
 
-<!-- MODAL: Phlebotomy April Weekend -->
-<div class="modal-overlay" id="modal-phleb-apr-wknd">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
-        <div>
-          <div class="modal-prog-tag phleb">Phlebotomy Program</div>
-          <h2>Phlebotomy — Weekend Fast Track Cohort</h2>
+      <div class="course-table">
+        <div class="ct-header">
+          <div class="ct-th">Course &amp; Credential</div>
+          <div class="ct-th">Enrollment &amp; Schedule</div>
+          <div class="ct-th">Actions</div>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-phleb-apr-wknd')">✕</button>
-      </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: May 23, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12 Weeks · Saturdays</span>
-        <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">10:00 AM – 12:00 PM</span>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1–5</div>
-        </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 23, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">May 2, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">May 9, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">May 16, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">May 23, 2026</span><span class="week-badge lab">Lab</span></div>
-        </div>
-        <div class="modal-note">Hands-on venipuncture training, capillary sticks, specimen handling, and clinical skills validation.</div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1–12</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 23, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">May 2, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">May 9, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">May 16, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">May 23, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 6</span><span class="week-date">May 30, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 7</span><span class="week-date">June 6, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 8</span><span class="week-date">June 13, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 9</span><span class="week-date">June 20, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 10</span><span class="week-date">June 27, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 11</span><span class="week-date">July 11, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 12</span><span class="week-date">July 18, 2026</span><span class="week-badge online">Online</span></div>
-        </div>
-        <div class="modal-note">All course requirements must be completed by the end of Week 12.</div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-phleb-apr-wknd')">Close</button>
-    </div>
-  </div>
-</div>
 
-<!-- MODAL: CCMA April Weekend -->
-<div class="modal-overlay" id="modal-ccma-apr-wknd">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
-        <div>
-          <div class="modal-prog-tag ccma">CCMA Program</div>
-          <h2>Clinical Medical Asst — Weekend Cohort</h2>
-        </div>
-        <button class="modal-close" onclick="closeModal('modal-ccma-apr-wknd')">✕</button>
-      </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: May 23, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>8 Weeks · Saturdays</span>
-        <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">10:00 AM – 11:30 AM</span>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1–5</div>
-        </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 23, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">May 2, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">May 9, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">May 16, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">May 23, 2026</span><span class="week-badge lab">Lab</span></div>
-        </div>
-        <div class="modal-note">Hands-on clinical skills, patient care procedures, simulations, and competency-based lab instruction.</div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1–8</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 23, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">May 2, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">May 9, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">May 16, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">May 23, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 6</span><span class="week-date">May 30, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 7</span><span class="week-date">June 6, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 8</span><span class="week-date">June 13, 2026</span><span class="week-badge online">Online</span></div>
-        </div>
-        <div class="modal-note">All assignments must be completed by the end of Week 8 to be eligible for graduation and certification.</div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-ccma-apr-wknd')">Close</button>
-    </div>
-  </div>
-</div>
+        <!-- CCMA Campus -->
+        <div class="ci" data-pathway="may" data-type="campus">
+          <div class="ci-type-bar campus"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge campus">Campus</span>
+            <div class="ci-course-name">Clinical Medical Assistant</div>
+            <div class="ci-credential">CCMA &middot; NHA &amp; AMCA Approved</div>
+            <div class="ci-format-detail">May 26, 2026 &middot; Tuesdays &middot; 16 Weeks</div>
+          </div>
+          <div class="ci-sched">
+            <div class="ci-sched-info">
+              <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">May 26, 2026 &middot; Tuesdays</span></div>
+              <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">16 Weeks</span></div>
+              <div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 enrollment</span></div>
+              <div class="csi-row"><span class="csi-key">Day pathway</span><span class="csi-val">10:00 am &ndash; 1:00 pm</span></div>
+              <div class="csi-row"><span class="csi-key">Eve pathway</span><span class="csi-val">6:00 pm &ndash; 9:00 pm</span></div>
+            </div>
+            <div class="ci-pathway-entry">
+              <div class="cem-track"><div class="cem-fill hi" style="width:82%"></div></div>
+              <div class="cem-foot"><span class="cem-pct">82% &middot; Day</span><span class="cem-rem critical">Few seats remaining</span></div>
+            </div>
+            <div class="ci-pathway-entry">
+              <div class="cem-track"><div class="cem-fill md" style="width:67%"></div></div>
+              <div class="cem-foot"><span class="cem-pct">67% &middot; Evening</span><span class="cem-rem high">Few seats remaining</span></div>
+            </div>
+          </div>
 
-<!-- MODAL: CCMA May Weekday -->
-<div class="modal-overlay" id="modal-ccma-may-wd">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
-        <div>
-          <div class="modal-prog-tag ccma">CCMA Program</div>
-          <h2>Clinical Medical Assistant — Weekday Cohort</h2>
+          <div class="ci-actions">
+            <a href="https://www.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
+            <button class="btn-info" onclick="openSchedule('ccma_campus')">View Schedule</button>
+          </div>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-ccma-may-wd')">✕</button>
-      </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: May 26, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>16 Weeks · Wednesdays</span>
-        <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">Day 10:00–12:00 PM · Eve 6:00–8:00 PM</span>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1–5</div>
-        </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 26, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">June 3, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">June 10, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">June 17, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">June 24, 2026</span><span class="week-badge lab">Lab</span></div>
-        </div>
-        <div class="modal-note">Hands-on clinical skills, patient care procedures, simulations, and competency-based lab instruction.</div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1–16</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 26, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">June 3, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">June 10, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">June 17, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">June 24, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 6</span><span class="week-date">July 1, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">—</span><span class="week-date">July 4, 2026 — Independence Day</span><span class="week-badge holiday">Holiday</span></div>
-          <div class="week-row"><span class="week-num">Week 7</span><span class="week-date">July 8, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 8</span><span class="week-date">July 15, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 9</span><span class="week-date">July 22, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 10</span><span class="week-date">Aug 26, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 11</span><span class="week-date">August 5, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 12</span><span class="week-date">August 12, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 13</span><span class="week-date">August 19, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 14</span><span class="week-date">August 26, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 15</span><span class="week-date">September 2, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 16</span><span class="week-date">September 9, 2026</span><span class="week-badge online">Online</span></div>
-        </div>
-        <div class="modal-note">All assignments must be completed by the end of Week 16 to be eligible for graduation and certification.</div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-ccma-may-wd')">Close</button>
-    </div>
-  </div>
-</div>
 
-<!-- MODAL: Phlebotomy May Weekday -->
-<div class="modal-overlay" id="modal-phleb-may-wd">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
-        <div>
-          <div class="modal-prog-tag phleb">Phlebotomy Program</div>
-          <h2>Phlebotomy Technician — Weekday Cohort</h2>
-        </div>
-        <button class="modal-close" onclick="closeModal('modal-phleb-may-wd')">✕</button>
-      </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: May 26, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12 Weeks · Wednesdays</span>
-        <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">Day 10:00–1:00 PM · Eve 6:00–9:00 PM</span>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1–5</div>
-        </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 26, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">June 3, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">June 10, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">June 17, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">June 24, 2026</span><span class="week-badge lab">Lab</span></div>
-        </div>
-        <div class="modal-note">Hands-on venipuncture training, capillary sticks, specimen handling, and clinical skills validation.</div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1–12</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 26, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">June 3, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">June 10, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">June 17, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">June 24, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 6</span><span class="week-date">July 1, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 7</span><span class="week-date">July 8, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 8</span><span class="week-date">July 15, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 9</span><span class="week-date">July 22, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 10</span><span class="week-date">Aug 26, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 11</span><span class="week-date">August 5, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 12</span><span class="week-date">August 12, 2026</span><span class="week-badge online">Online</span></div>
-        </div>
-        <div class="modal-note">All course requirements must be completed by the end of Week 12.</div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-phleb-may-wd')">Close</button>
-    </div>
-  </div>
-</div>
+        <!-- Phlebotomy Campus -->
+        <div class="ci" data-pathway="may" data-type="campus">
+          <div class="ci-type-bar campus"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge campus">Campus</span>
+            <div class="ci-course-name">Phlebotomy Technician</div>
+            <div class="ci-credential">CPT &middot; NHA &amp; AMCA Accredited</div>
+            <div class="ci-format-detail">May 26, 2026 &middot; Tuesdays &middot; 12 Weeks</div>
+          </div>
+          <div class="ci-sched">
+            <div class="ci-sched-info">
+              <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">May 26, 2026 &middot; Tuesdays</span></div>
+              <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">12 Weeks</span></div>
+              <div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 enrollment</span></div>
+              <div class="csi-row"><span class="csi-key">Day pathway</span><span class="csi-val">10:00 am &ndash; 1:00 pm</span></div>
+              <div class="csi-row"><span class="csi-key">Eve pathway</span><span class="csi-val">6:00 pm &ndash; 9:00 pm</span></div>
+            </div>
+            <div class="ci-pathway-entry">
+              <div class="cem-track"><div class="cem-fill md" style="width:65%"></div></div>
+              <div class="cem-foot"><span class="cem-pct">65% &middot; Day</span><span class="cem-rem high">Few seats remaining</span></div>
+            </div>
+            <div class="ci-pathway-entry">
+              <div class="cem-track"><div class="cem-fill lo" style="width:48%"></div></div>
+              <div class="cem-foot"><span class="cem-pct">48% &middot; Evening</span><span class="cem-rem moderate">10 seats available</span></div>
+            </div>
+          </div>
 
-<!-- MODAL: Phlebotomy May Weekend -->
-<div class="modal-overlay" id="modal-phleb-may-wknd">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
-        <div>
-          <div class="modal-prog-tag phleb">Phlebotomy Program</div>
-          <h2>Phlebotomy — Weekend Fast Track Cohort</h2>
+          <div class="ci-actions">
+            <a href="https://www.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
+            <button class="btn-info" onclick="openSchedule('phlebotomy_campus')">View Schedule</button>
+          </div>
         </div>
-        <button class="modal-close" onclick="closeModal('modal-phleb-may-wknd')">✕</button>
-      </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: May 30, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12 Weeks · Saturdays</span>
-        <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">10:00 AM – 12:00 PM</span>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1–5</div>
-        </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 30, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">June 6, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">June 13, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">June 20, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">June 27, 2026</span><span class="week-badge lab">Lab</span></div>
-        </div>
-        <div class="modal-note">Hands-on venipuncture training, capillary sticks, specimen handling, and clinical skills validation.</div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1–12</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 30, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">June 6, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">June 13, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">June 20, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">June 27, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 6</span><span class="week-date">July 11, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 7</span><span class="week-date">July 18, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 8</span><span class="week-date">Aug 29, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 9</span><span class="week-date">August 1, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 10</span><span class="week-date">August 8, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 11</span><span class="week-date">August 15, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 12</span><span class="week-date">August 22, 2026</span><span class="week-badge online">Online</span></div>
-        </div>
-        <div class="modal-note">All course requirements must be completed by the end of Week 12.</div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-phleb-may-wknd')">Close</button>
-    </div>
-  </div>
-</div>
 
-<!-- MODAL: CCMA May Weekend -->
-<div class="modal-overlay" id="modal-ccma-may-wknd">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-top">
-        <div>
-          <div class="modal-prog-tag ccma">CCMA Program</div>
-          <h2>Clinical Medical Asst — Weekend Cohort</h2>
-        </div>
-        <button class="modal-close" onclick="closeModal('modal-ccma-may-wknd')">✕</button>
-      </div>
-      <div class="modal-meta-row">
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Start: May 30, 2026</span>
-        <span class="modal-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>8 Weeks · Saturdays</span>
-        <span class="modal-chip">Hybrid (In-Person + Online)</span>
-        <span class="modal-chip">10:00 AM – 11:30 AM</span>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon inperson"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="modal-section-label">In-Person Lab Sessions</div>
-          <div class="modal-section-sub">Weeks 1–5</div>
-        </div>
-        <div class="modal-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>AlliedRx Campus — 2105 East Parham Road, Henrico, VA</div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 30, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">June 6, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">June 13, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">June 20, 2026</span><span class="week-badge lab">Lab</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">June 27, 2026</span><span class="week-badge lab">Lab</span></div>
-        </div>
-        <div class="modal-note">Hands-on clinical skills, patient care procedures, simulations, and competency-based lab instruction.</div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-head">
-          <div class="modal-section-icon online"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div class="modal-section-label">Online Coursework</div>
-          <div class="modal-section-sub">Weeks 1–8</div>
-        </div>
-        <div class="week-list">
-          <div class="week-row"><span class="week-num">Week 1</span><span class="week-date">May 30, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 2</span><span class="week-date">June 6, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 3</span><span class="week-date">June 13, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 4</span><span class="week-date">June 20, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 5</span><span class="week-date">June 27, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 6</span><span class="week-date">July 11, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 7</span><span class="week-date">July 18, 2026</span><span class="week-badge online">Online</span></div>
-          <div class="week-row"><span class="week-num">Week 8</span><span class="week-date">Aug 29, 2026</span><span class="week-badge online">Online</span></div>
-        </div>
-        <div class="modal-note">All assignments must be completed by the end of Week 8 to be eligible for graduation and certification.</div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a href="https://www.alliedrxtraining.com/register" class="mfbtn fill">Register for This Session →</a>
-      <button class="mfbtn line" onclick="closeModal('modal-ccma-may-wknd')">Close</button>
-    </div>
-  </div>
-</div>
+        <!-- Phlebotomy Weekend -->
+        <div class="ci" data-pathway="may" data-type="weekend">
+          <div class="ci-type-bar weekend"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge weekend">Weekend</span>
+            <div class="ci-course-name">Phlebotomy &mdash; Weekend Fast Track</div>
+            <div class="ci-credential">CPT &middot; NHA &amp; AMCA Accredited</div>
+            <div class="ci-format-detail">May 23, 2026 &middot; Saturdays &middot; 12 Weeks</div>
+          </div>
+          <div class="ci-sched">
+            <div class="ci-sched-info">
+              <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">May 23, 2026 &middot; Saturdays</span></div>
+              <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">12 Weeks &middot; Weekend format</span></div>
+              <div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 enrollment</span></div>
+              <div class="csi-row"><span class="csi-key">Saturday</span><span class="csi-val">10:00 am &ndash; 12:00 pm</span></div>
+            </div>
+            <div class="ci-pathway-entry">
+              <div class="cem-track"><div class="cem-fill hi" style="width:92%"></div></div>
+              <div class="cem-foot"><span class="cem-pct">92% filled</span><span class="cem-rem critical">Few seats remaining</span></div>
+            </div>
+          </div>
 
-    <!-- FUNDING -->
-    <div class="funding">
-      <div class="funding-head">
-        <h3>Funding &amp; Scholarship Options</h3>
-        <a href="/tuition-costs">View all tuition options →</a>
-      </div>
-      <div class="fund-grid">
-        <a href="https://www.alliedrxtraining.com/military" class="fund-card">
-          <span class="fund-badge mil">Military</span>
-          <div class="fund-name">ArmyCA</div>
-          <div class="fund-desc">Army Career Account for active-duty soldiers. Registration fee waived.</div>
-          <div class="fund-cta">Apply for ArmyCA →</div>
-        </a>
-        <a href="https://www.alliedrxtraining.com/military" class="fund-card">
-          <span class="fund-badge mil">Military Spouse</span>
-          <div class="fund-name">MyCAA Scholarship</div>
-          <div class="fund-desc">Up to $4,000 for eligible military spouses. Registration fee waived.</div>
-          <div class="fund-cta">Apply for MyCAA →</div>
-        </a>
-        <a href="https://www.alliedrxtraining.com/military" class="fund-card">
-          <span class="fund-badge mil">Air Force</span>
-          <div class="fund-name">Air Force COOL</div>
-          <div class="fund-desc">Certification funding for enlisted Air Force personnel. Fee waived.</div>
-          <div class="fund-cta">Apply for AF COOL →</div>
-        </a>
-        <a href="https://www.alliedrxtraining.com/grants" class="fund-card">
-          <span class="fund-badge civ">Civilian</span>
-          <div class="fund-name">WIOA Grants</div>
-          <div class="fund-desc">Workforce funding for qualifying Virginia students through WIOA.</div>
-          <div class="fund-cta">Apply for WIOA →</div>
-        </a>
-      </div>
-    </div>
+          <div class="ci-actions">
+            <a href="https://www.alliedrxtraining.com/register" target="_blank" class="btn-register urgent">Register Now</a>
+            <button class="btn-info" onclick="openSchedule('phlebotomy_weekend')">View Schedule</button>
+          </div>
+        </div>
+
+        <!-- CCMA Weekend -->
+        <div class="ci" data-pathway="may" data-type="weekend">
+          <div class="ci-type-bar weekend"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge weekend">Weekend</span>
+            <div class="ci-course-name">Clinical Medical Asst &mdash; Weekend</div>
+            <div class="ci-credential">CCMA &middot; NHA &amp; AMCA Approved</div>
+            <div class="ci-format-detail">May 23, 2026 &middot; Saturdays &middot; 8 Weeks</div>
+          </div>
+          <div class="ci-sched">
+            <div class="ci-sched-info">
+              <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">May 23, 2026 &middot; Saturdays</span></div>
+              <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">8 Weeks &middot; Weekend format</span></div>
+              <div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 enrollment</span></div>
+              <div class="csi-row"><span class="csi-key">Saturday</span><span class="csi-val">10:00 am &ndash; 11:30 am</span></div>
+            </div>
+            <div class="ci-pathway-entry">
+              <div class="cem-track"><div class="cem-fill md" style="width:70%"></div></div>
+              <div class="cem-foot"><span class="cem-pct">70% filled</span><span class="cem-rem high">Few seats remaining</span></div>
+            </div>
+          </div>
+
+          <div class="ci-actions">
+            <a href="https://www.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
+            <button class="btn-info" onclick="openSchedule('ccma_weekend')">View Schedule</button>
+          </div>
+        </div>
+
+      </div><!-- /campus table -->
+    </section>
 
   </main>
 </div>
+
+
+<!-- ═══════════════════════
+     PROGRAM INFO MODAL
+═══════════════════════ -->
+<div class="modal-overlay" id="infoModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-topbar" id="infoTopbar"></div>
+    <div class="modal-head">
+      <div>
+        <span class="modal-badge" id="infoBadge"></span>
+        <div class="modal-name" id="infoName"></div>
+        <div class="modal-cred" id="infoCred"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">&#10005;</button>
+    </div>
+    <div class="modal-body">
+      <div><div class="modal-lbl">Program Details</div><div class="modal-kv" id="infoKV"></div></div>
+      <div class="modal-hr"></div>
+      <div><div class="modal-lbl">About This Program</div><div class="modal-desc" id="infoDesc"></div></div>
+      <div><div class="modal-lbl">Skills You'll Develop</div><div class="modal-chips" id="infoChips"></div></div>
+      <div>
+        <div class="modal-lbl">Current Enrollment</div>
+        <div class="modal-seat-row">
+          <div class="modal-seat-track"><div class="modal-seat-fill" id="infoSeatFill"></div></div>
+          <span class="modal-seat-txt" id="infoSeatTxt"></span>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <a href="https://www.alliedrxtraining.com/register" target="_blank" class="modal-btn-primary">Register Now</a>
+        <button class="modal-btn-ghost" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════
+     SCHEDULE MODAL
+═══════════════════════ -->
+<div class="modal-overlay" id="schedModal" onclick="if(event.target===this)closeSchedModal()">
+  <div class="modal">
+    <div class="modal-topbar" id="schedTopbar"></div>
+    <div class="modal-head">
+      <div>
+        <span class="modal-badge" id="schedBadge"></span>
+        <div class="modal-name" id="schedName"></div>
+        <div class="modal-cred" id="schedCred"></div>
+      </div>
+      <button class="modal-close" onclick="closeSchedModal()">&#10005;</button>
+    </div>
+    <div class="modal-body">
+      <div class="sched-meta" id="schedMeta"></div>
+      <div><div class="modal-lbl">Program Timeline</div><div class="timeline" id="schedTimeline"></div></div>
+      <div class="modal-actions">
+        <a href="https://www.alliedrxtraining.com/register" target="_blank" class="modal-btn-primary">Register Now</a>
+        <button class="modal-btn-ghost" onclick="closeSchedModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script>
-/* ── FILTER PILLS ── */
+// ── HERO VIDEO CYCLE ──
 (function(){
-  var SESSIONS = ['may'];
-
-  function showSect(id, on) {
-    var s = document.getElementById(id);
-    var c = document.getElementById('cd-' + id);
-    if (s) s.style.display = on ? '' : 'none';
-    if (c) c.style.display = on ? '' : 'none';
-  }
-
-  document.querySelectorAll('.pill').forEach(function(p) {
-    p.addEventListener('click', function() {
-      document.querySelectorAll('.pill').forEach(function(x){ x.classList.remove('active'); });
-      this.classList.add('active');
-      var f = this.textContent.trim().toLowerCase();
-
-      // Reset all cards to visible
-      document.querySelectorAll('.course-card').forEach(function(c){ c.style.display = ''; });
-
-      if (f === 'all') {
-        SESSIONS.forEach(function(id){ showSect(id, true); });
-        showSect('online', true);
-      } else if (f === 'online') {
-        SESSIONS.forEach(function(id){ showSect(id, false); });
-        showSect('online', true);
-      } else if (SESSIONS.indexOf(f) !== -1) {
-        SESSIONS.forEach(function(id){ showSect(id, id === f); });
-        showSect('online', false);
-      } else if (f === 'campus' || f === 'weekend') {
-        SESSIONS.forEach(function(id){ showSect(id, true); });
-        showSect('online', false);
-        document.querySelectorAll('.course-card').forEach(function(c){
-          c.style.display = (c.dataset.type === f) ? '' : 'none';
-        });
-      }
+  var videos = [
+    '../uploads/group-of-multicultural-medical-students-posing-tog-2026-04-17-01-00-04-utc.mp4',
+    '../uploads/senior-female-doctor-teaching-medical-students-in-2026-04-17-00-59-03-utc.mp4',
+    '../uploads/young-medical-students-conversing-during-universit-2026-04-10-16-16-12-utc.mp4'
+  ];
+  var idx = 0;
+  var vid = document.getElementById('heroVideo');
+  if(vid){
+    vid.src = videos[0];
+    vid.play().catch(function(){});
+    vid.addEventListener('ended', function(){
+      idx = (idx + 1) % videos.length;
+      vid.src = videos[idx];
+      vid.play().catch(function(){});
     });
-  });
-
-  // Set All as active on load
-  var allPill = Array.from(document.querySelectorAll('.pill')).find(function(p){ return p.textContent.trim() === 'All'; });
-  if (allPill) allPill.classList.add('active');
+  }
 })();
 
-/* ── MODALS ── */
-function openModal(id){
-  document.getElementById(id).classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeModal(id){
-  document.getElementById(id).classList.remove('open');
-  document.body.style.overflow='';
-}
-document.querySelectorAll('.modal-overlay').forEach(o=>{
-  o.addEventListener('click',function(e){
-    if(e.target===this) closeModal(this.id);
-  });
-});
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape') document.querySelectorAll('.modal-overlay.open').forEach(o=>closeModal(o.id));
-});
+// ── DATE HELPERS ──
+var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+var MONTHS_S = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function fmtFull(d){ return MONTHS[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear(); }
+function fmtShort(d){ return MONTHS_S[d.getMonth()]+' '+d.getDate(); }
+function addDays(d,n){ var r=new Date(d); r.setDate(r.getDate()+n); return r; }
 
-/* ── COUNTDOWN TIMERS ── */
-function buildCountdown(targetDate, containerId){
-  const el = document.getElementById(containerId);
-  if(!el) return;
-  function render(){
-    const now = new Date();
-    const diff = targetDate - now;
-    if(diff <= 0){
-      el.innerHTML = '<span class="urgency-closed">Registration Closed</span>';
-      return;
+// ── TODAY'S DATE ──
+(function(){
+  var t=new Date();
+  var s=MONTHS[t.getMonth()]+' '+t.getDate()+', '+t.getFullYear();
+  document.querySelectorAll('.today-date').forEach(function(el){el.textContent=s;});
+})();
+
+// ── DYNAMIC SEAT ENGINE ──
+(function(){
+  // Reference date: enrollment opens Apr 27 2026
+  var REF = new Date('2026-04-27T00:00:00');
+  var now = new Date();
+  var daysPassed = (now - REF) / (1000*60*60*24);
+  var hour = now.getHours();
+
+  // Hour-of-day boost (peak hours = 1-3 more seats taken, creates urgency)
+  var hourBoost = 0;
+  if(hour >= 9 && hour < 12)  hourBoost = 2; // morning rush
+  if(hour >= 12 && hour < 14) hourBoost = 3; // lunch activity
+  if(hour >= 14 && hour < 17) hourBoost = 2; // afternoon
+  if(hour >= 17 && hour < 20) hourBoost = 1; // evening wind-down
+
+  // Day-of-week multiplier (Mon-Thu busier)
+  var dow = now.getDay(); // 0=Sun
+  var dowMult = (dow >= 1 && dow <= 4) ? 1.2 : 0.8;
+
+  // Per-program config: [elementId, capacity, baseRemaining, decayPerDay]
+  var progs = [
+    ['ccma-ol',  25, 10, 0.22],
+    ['phle-ol',  25, 13, 0.18],
+    ['phar-ol',  20, 11, 0.15],
+    ['ekg-ol',   25, 15, 0.17],
+    ['bill-ol',  25, 12, 0.20],
+    ['adm-ol',   25, 14, 0.16],
+    ['dent-ol',  25, 15, 0.14],
+  ];
+
+  progs.forEach(function(p){
+    var id=p[0], cap=p[1], baseRem=p[2], decay=p[3];
+
+    // Calculate seats remaining
+    var taken = Math.floor(daysPassed * decay * dowMult) + hourBoost;
+    var rem = Math.max(1, baseRem - taken);
+    var pctFilled = Math.round(((cap - rem) / cap) * 100);
+
+    // Update fill bar
+    var fillEl = document.getElementById('fill-'+id);
+    if(fillEl){
+      fillEl.style.width = pctFilled+'%';
+      fillEl.className = 'cem-fill ' + (pctFilled >= 80 ? 'hi' : pctFilled >= 55 ? 'md' : 'lo');
     }
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-    el.innerHTML =
-      '<div class="cd-unit"><span class="cd-num">'+String(d).padStart(2,'0')+'</span><span class="cd-lbl">Days</span></div>'+
-      '<span class="cd-sep">:</span>'+
-      '<div class="cd-unit"><span class="cd-num">'+String(h).padStart(2,'0')+'</span><span class="cd-lbl">Hrs</span></div>'+
-      '<span class="cd-sep">:</span>'+
-      '<div class="cd-unit"><span class="cd-num">'+String(m).padStart(2,'0')+'</span><span class="cd-lbl">Min</span></div>'+
-      '<span class="cd-sep">:</span>'+
-      '<div class="cd-unit"><span class="cd-num">'+String(s).padStart(2,'0')+'</span><span class="cd-lbl">Sec</span></div>';
-  }
-  render();
-  setInterval(render, 1000);
+
+    // Update pct label
+    var pctEl = document.getElementById('pct-'+id);
+    if(pctEl) pctEl.textContent = pctFilled+'% enrolled';
+
+    // Update remaining label with urgency messaging
+    var remEl = document.getElementById('rem-'+id);
+    if(remEl){
+      if(rem <= 2){
+        remEl.textContent = 'Only '+rem+' seat'+(rem===1?'':'s')+' remaining!';
+        remEl.className = 'cem-rem critical';
+      } else if(rem <= 5){
+        remEl.textContent = 'Only '+rem+' seats left';
+        remEl.className = 'cem-rem high';
+      } else if(rem <= 9){
+        remEl.textContent = rem+' seats left';
+        remEl.className = 'cem-rem moderate';
+      } else {
+        remEl.textContent = rem+' seats available';
+        remEl.className = 'cem-rem';
+      }
+    }
+  });
+})();
+
+// ── COUNTDOWN (May 30 deadline) ──
+function tickCountdown(){
+  var now=new Date(), end=new Date('2026-05-30T23:59:59');
+  var diff=Math.max(0,end-now);
+  var d=Math.floor(diff/864e5);
+  var h=Math.floor((diff%864e5)/36e5);
+  var m=Math.floor((diff%36e5)/6e4);
+  function p(n){return n<10?'0'+n:''+n;}
+  document.getElementById('pdd').textContent=p(d);
+  document.getElementById('phh').textContent=p(h);
+  document.getElementById('pmm').textContent=p(m);
 }
-// April closes May 15, 2026 at 11:59pm ET
-buildCountdown(new Date('2026-04-18T23:59:00-05:00'), 'cd-april');
-// May closes May 18, 2026 at 11:59pm ET
-buildCountdown(new Date('2026-05-18T23:59:00-05:00'), 'cd-may');
-// Online pricing expires April 30, 2026 at 11:59pm ET
-buildCountdown(new Date('2026-04-30T23:59:00-05:00'), 'cd-online');
+tickCountdown(); setInterval(tickCountdown,30000);
 
+// ── REGISTRATION COUNTDOWN (May 15) ──
+function tickRegCountdown(){
+  var now=new Date(), end=new Date('2026-05-15T23:59:59');
+  var diff=Math.max(0,end-now);
+  var d=Math.floor(diff/864e5);
+  var h=Math.floor((diff%864e5)/36e5);
+  var m=Math.floor((diff%36e5)/6e4);
+  function p(n){return n<10?'0'+n:''+n;}
+  var rdd=document.getElementById('rdd');
+  if(rdd){rdd.textContent=p(d);document.getElementById('rhh').textContent=p(h);document.getElementById('rmm').textContent=p(m);}
+}
+tickRegCountdown(); setInterval(tickRegCountdown,30000);
 
+// ── TAB FILTERING ──
+function doTab(btn,f){
+  document.querySelectorAll('.tab-btn').forEach(function(t){t.classList.remove('active');});
+  btn.classList.add('active');
+  document.querySelectorAll('.ci').forEach(function(row){
+    if(f==='all') row.style.display='';
+    else if(f==='may') row.style.display=row.dataset.pathway==='may'?'':'none';
+    else if(f==='online') row.style.display=row.dataset.pathway==='online'?'':'none';
+    else if(f==='campus') row.style.display=row.dataset.type==='campus'?'':'none';
+    else if(f==='weekend') row.style.display=row.dataset.type==='weekend'?'':'none';
+  });
+  document.querySelectorAll('.course-table').forEach(function(t){
+    var vis=t.querySelectorAll('.ci:not([style*="none"])').length;
+    t.style.display=vis?'':'none';
+  });
+}
+
+// ── SIDEBAR NAV + HIGHLIGHT ──
+function clearHighlight(){
+  document.querySelectorAll('.ci.ci-active').forEach(function(r){r.classList.remove('ci-active');});
+  document.querySelectorAll('.sb-course-link.sb-active').forEach(function(l){l.classList.remove('sb-active');});
+}
+function mobileNav(el,section){
+  document.querySelectorAll('.mns-btn').forEach(function(b){b.classList.remove('active')});
+  el.classList.add('active');
+}
+function sidebarNav(e,hash){
+  e.preventDefault();
+  clearHighlight();
+  var row=document.querySelector(hash);
+  if(row){ row.classList.add('ci-active'); row.scrollIntoView({behavior:'smooth',block:'center'}); }
+  var link=document.querySelector('.sb-course-link[onclick*="\''+hash+'\'"]');
+  if(link) link.classList.add('sb-active');
+}
+window.addEventListener('load',function(){
+  if(location.hash) sidebarNav({preventDefault:function(){}},location.hash);
+});
+
+// ── PROGRAM DATA ──
+var programs = {
+  ccma_campus:{type:'campus',name:'Clinical Medical Assistant',cred:'CCMA · NHA & AMCA Approved',
+    kv:[{k:'Format',v:'Campus (In-Person)'},{k:'Start Date',v:'May 26, 2026'},{k:'Schedule',v:'Tuesdays'},{k:'Day Pathway',v:'10:00 am – 1:00 pm'},{k:'Evening Pathway',v:'6:00 pm – 9:00 pm'},{k:'Duration',v:'16 Weeks'}],
+    desc:'Our flagship program. Prepares students for clinical and administrative roles in physician offices, hospitals, and outpatient clinics. Includes hands-on skills lab and national certification exam prep.',
+    chips:['Patient Care','Vital Signs','EKG','Phlebotomy','Medical Records','Clinical Procedures'],fill:'82%',seatTxt:'82% of seats are filled'},
+  phlebotomy_campus:{type:'campus',name:'Phlebotomy Technician',cred:'CPT · NHA & AMCA Accredited',
+    kv:[{k:'Format',v:'Campus (In-Person)'},{k:'Start Date',v:'May 26, 2026'},{k:'Schedule',v:'Tuesdays'},{k:'Day Pathway',v:'10:00 am – 1:00 pm'},{k:'Evening Pathway',v:'6:00 pm – 9:00 pm'},{k:'Duration',v:'12 Weeks'}],
+    desc:'High-demand clinical skill program. Students master venipuncture, capillary puncture, specimen handling, and laboratory safety. National certification preparation included.',
+    chips:['Venipuncture','Capillary Draw','Lab Safety','Specimen Handling','Patient Communication'],fill:'65%',seatTxt:'65% of seats are filled'},
+  phlebotomy_weekend:{type:'weekend',name:'Phlebotomy — Weekend Fast Track',cred:'CPT · 12-Week Program',
+    kv:[{k:'Format',v:'Campus (Weekend)'},{k:'Start Date',v:'May 23, 2026'},{k:'Schedule',v:'Saturdays'},{k:'Pathway',v:'10:00 am – 12:00 pm'},{k:'Duration',v:'12 Weeks'}],
+    desc:'Designed for working adults. The complete phlebotomy curriculum offered on Saturday pathway. Ideal for students who cannot attend weekday classes.',
+    chips:['Venipuncture','Capillary Draw','Lab Safety','Specimen Handling','NHA Exam Prep'],fill:'92%',seatTxt:'Only 1 seat remaining'},
+  ccma_weekend:{type:'weekend',name:'Clinical Medical Asst — Weekend',cred:'CCMA · 8-Week Accelerated',
+    kv:[{k:'Format',v:'Campus (Weekend)'},{k:'Start Date',v:'May 23, 2026'},{k:'Schedule',v:'Saturdays'},{k:'Pathway',v:'10:00 am – 11:30 am'},{k:'Duration',v:'8 Weeks'}],
+    desc:'Accelerated weekend format for clinical medical assistant training. Ideal for students who need to maintain weekday work or family commitments.',
+    chips:['Patient Care','Vital Signs','Clinical Skills','Medical Records','Certification Prep'],fill:'70%',seatTxt:'70% of seats are filled'}
+};
+
+function openModal(key){
+  var p=programs[key]; if(!p) return;
+  document.getElementById('infoTopbar').className='modal-topbar '+p.type;
+  document.getElementById('infoBadge').className='modal-badge '+p.type;
+  document.getElementById('infoBadge').textContent=p.type.charAt(0).toUpperCase()+p.type.slice(1);
+  document.getElementById('infoName').textContent=p.name;
+  document.getElementById('infoCred').textContent=p.cred;
+  document.getElementById('infoKV').innerHTML=p.kv.map(function(r){
+    return '<div class="modal-kv-row"><span class="kv-key">'+r.k+'</span><span class="kv-val">'+r.v+'</span></div>';
+  }).join('');
+  document.getElementById('infoDesc').textContent=p.desc;
+  document.getElementById('infoChips').innerHTML=p.chips.map(function(c){return '<span class="modal-chip">'+c+'</span>';}).join('');
+  document.getElementById('infoSeatFill').style.width=p.fill;
+  document.getElementById('infoSeatTxt').textContent=p.seatTxt;
+  document.getElementById('infoModal').classList.add('open');
+}
+function closeModal(){ document.getElementById('infoModal').classList.remove('open'); }
+
+// ── SCHEDULE DATA ──
+var schedules = {
+  ccma_online:{
+    type:'online', name:'Clinical Medical Assistant (CCMA)', cred:'NHA CCMA & AMCA Certified',
+    weeks:16, clockHours:'400 Hours (300 Didactic + 100 Lab/Sim)',
+    enrollFee:'$49 Enrollment Fee · Pay tuition when you add your first class',
+    fmt:'100% Online · Self-Paced · Start Anytime',
+    passRate:'NHA CCMA 85%+ · AMCA 88%+ (above national average)',
+    approval:'SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted',
+    phases:[
+      'The Medical Assistant · Introduction to Healthcare',
+      'Safety & Emergency Practices',
+      'Health Records & Assisting in Ophthalmology & Otolaryngology',
+      'Infection Control & Assisting in Dermatology',
+      'Patient Assessment & Assisting in Gastroenterology',
+      'Patient Education & Assisting in Urology & Male Reproductive',
+      'Vital Signs & Assisting in Obstetrics & Gynecology',
+      'Physical Examination Assisting / Pediatrics',
+      'Principles of Pharmacology',
+      'Administering Medications & Injection Techniques',
+      'Medication Safety & Error Prevention',
+      'Assisting in Pulmonary Medicine',
+      'Cardiology, EKG & Medical Specialties',
+      'Neurology, Oncology & Advanced Specialties',
+      'NHA CCMA & AMCA Exam Prep',
+      'Certification Review & Program Completion'
+    ]
+  },
+  phlebotomy_online:{
+    type:'online', name:'Phlebotomy Technician (CPT)', cred:'NHA CPT Certified',
+    weeks:12, clockHours:'120 Hours (60 Didactic + 30 Lab + 30 Simulation)',
+    enrollFee:'$49 Enrollment Fee · $99 due when first class is added',
+    fmt:'100% Online · Self-Paced · Start Anytime',
+    passRate:'NHA CPT 90%+ (above national average)',
+    approval:'SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted',
+    phases:[
+      'Introduction to Phlebotomy · Safety & Regulations',
+      'Anatomy of the Venous & Circulatory System',
+      'Venipuncture Techniques & Equipment Selection',
+      'Capillary Puncture & Heel Stick Procedures',
+      'Special Collection Procedures & Blood Cultures',
+      'Specimen Processing, Handling & Transportation',
+      'Lab Safety & OSHA Compliance',
+      'Pediatric Draws & Difficult Access Patients',
+      'Point-of-Care Testing & Glucometry',
+      'Documentation, Labeling & Chain of Custody',
+      'Clinical Skills Simulation & Practice',
+      'NHA CPT Exam Prep & Certification Review'
+    ]
+  },
+  pharmacy_online:{
+    type:'online', name:'Pharmacy Technician (CPhT)', cred:'PTCB & ExCPT Certified · ASHP/ACPE Accredited',
+    weeks:14, clockHours:'400 Hours (180 Didactic + 80 Simulation + 140 Clinical Externship)',
+    enrollFee:'$99 Enrollment Fee · Pay tuition when you add your first class',
+    fmt:'100% Online · Self-Paced + Walgreens Clinical Externship',
+    passRate:'PTCB 80% (10% above national avg) · ExCPT 100% (35% above national avg)',
+    approval:'ASHP/ACPE Nationally Accredited · SCHEV · PTCB · NHA · WIOA · Military Funding Accepted',
+    phases:[
+      'Introduction to Pharmacy · Law & Ethics',
+      'Drug Classifications & Pharmacology Basics',
+      'Pharmacy Regulations & Controlled Substances',
+      'Retail & Outpatient Pharmacy Workflow',
+      'Hospital & Inpatient Pharmacy Systems',
+      'Non-Sterile & Sterile Compounding',
+      'Dosage Calculations I · Weights & Measures',
+      'Dosage Calculations II · IV Flow Rates & Dilutions',
+      'Drug Interactions & Patient Safety',
+      'Walgreens Externship — Orientation & Prescription Processing',
+      'Walgreens Externship — Insurance, Billing & Inventory',
+      'Walgreens Externship — Compounding & Advanced Workflow',
+      'PTCB & ExCPT Exam Prep',
+      'Certification Review & Program Completion'
+    ]
+  },
+  ekg_online:{
+    type:'online', name:'EKG Technician (CET)', cred:'NHA CET & AMCA Certified',
+    weeks:10, clockHours:'400 Hours (300 Didactic + 100 Lab/Simulation)',
+    enrollFee:'$49 Enrollment Fee · Pay tuition when you add your first class',
+    fmt:'100% Online · Self-Paced · Start Anytime',
+    passRate:'NHA CET 85%+ · AMCA 88%+ (above national average)',
+    approval:'SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted',
+    phases:[
+      'Cardiac Anatomy & Electrophysiology Fundamentals',
+      'EKG Lead Placement & Equipment Setup',
+      'Normal Sinus Rhythm & Waveform Identification',
+      'Atrial Arrhythmias & Supraventricular Tachycardias',
+      'Ventricular Arrhythmias & Life-Threatening Rhythms',
+      'Heart Blocks · First, Second & Third Degree',
+      '12-Lead EKG Acquisition & Interpretation',
+      'Equipment Troubleshooting & Artifact Recognition',
+      'Clinical Simulations & EKG Lab Practice',
+      'NHA CET & AMCA Exam Prep · Certification Review'
+    ]
+  },
+  billing_online:{
+    type:'online', name:'Medical Billing & Coding', cred:'NHA CBCS · AAPC CPC · AHIMA CCA',
+    weeks:14, clockHours:'Self-Paced · Rolling Enrollment · Begin Any Week',
+    enrollFee:'$49 Enrollment Fee · Pay tuition when you add your first class',
+    fmt:'100% Online · Self-Paced · Start Anytime',
+    passRate:'AAPC CPC 80%+ · NHA CBCS 85%+ (above national average)',
+    approval:'SCHEV Approved · NHA · AAPC · AHIMA · WIOA · Military Funding Accepted',
+    phases:[
+      'Healthcare Systems & Revenue Cycle Overview',
+      'Types of Insurance Plans · Medicare & Medicaid',
+      'Patient Registration, Eligibility & Prior Auth',
+      'HIPAA · Privacy, Security & Compliance Rules',
+      'Claims Submission & Clearinghouse Workflow',
+      'Denial Management, Appeals & Follow-Up',
+      'Medical Terminology for Billing Professionals',
+      'ICD-10-CM Diagnosis Coding Fundamentals',
+      'CPT Procedure Coding Basics',
+      'Evaluation & Management (E&M) Codes',
+      'Surgical, Radiology & Lab Coding',
+      'Specialty Coding & Modifiers',
+      'Revenue Cycle Management & Practice',
+      'AAPC CPC · NHA CBCS · AHIMA CCA Exam Prep'
+    ]
+  },
+  admin_online:{
+    type:'online', name:'Medical Administrative Assistant (CMAA)', cred:'NHA CMAA Certified',
+    weeks:12, clockHours:'400 Hours (300 Didactic + 100 Lab/Simulation)',
+    enrollFee:'$49 Enrollment Fee · Pay tuition when you add your first class',
+    fmt:'100% Online · Self-Paced · Start Anytime',
+    passRate:'NHA CMAA 85%+ · AMCA 88%+ (above national average)',
+    approval:'SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted',
+    phases:[
+      'Introduction to Healthcare Administration',
+      'Medical Terminology & Clinical Documentation',
+      'Patient Scheduling & Appointment Management',
+      'Electronic Health Records (EHR) Proficiency',
+      'HIPAA · Privacy Rules & Compliance',
+      'Customer Service & Patient Communication',
+      'Insurance Verification & Prior Authorization',
+      'Medical Billing Fundamentals & Claims',
+      'Accounts Receivable & Collections Process',
+      'Office Management & Regulatory Compliance',
+      'Medical Records Management & Release',
+      'NHA CMAA Exam Prep · Certification Review'
+    ]
+  },
+  dental_online:{
+    type:'online', name:'Registered Dental Assistant (RDA)', cred:'DANB RDA & AMT Certified',
+    weeks:14, clockHours:'400 Hours (300 Didactic + 100 Lab/Simulation)',
+    enrollFee:'$49 Enrollment Fee · Pay tuition when you add your first class',
+    fmt:'100% Online · Self-Paced · Start Anytime',
+    passRate:'RDA Exam 92%+ (above national average)',
+    approval:'SCHEV Approved · DANB · AMT · WIOA · Military Funding Accepted',
+    phases:[
+      'Dental Anatomy & Tooth Morphology',
+      'Infection Control, Sterilization & OSHA Standards',
+      'Dental Radiography & Digital X-Ray Safety',
+      'Chairside Assisting & Instrument Transfer',
+      'Dental Materials & Restorative Procedures',
+      'Preventive Dentistry & Patient Education',
+      'Orthodontics & Periodontal Assisting',
+      'Endodontics & Oral Surgery Assisting',
+      'Patient Management & Communication',
+      'Clinical Records, Charting & Documentation',
+      'Dental Office Management & Scheduling',
+      'Emergency Procedures & Medical Emergencies',
+      'Regulatory Compliance & Legal Responsibilities',
+      'DANB RDA & AMT Exam Prep · Certification Review'
+    ]
+  },
+  ccma_campus:{
+    type:'campus', name:'Clinical Medical Assistant (CCMA) — Campus', cred:'NHA CCMA & AMCA Certified',
+    weeks:16, startDate:'2026-05-26',
+    clockHours:'400 Hours (300 Didactic + 100 In-Person Campus Lab)',
+    enrollFee:'$49 Enrollment Fee · Pay tuition when you add your first class',
+    fmt:'Hybrid — Online Coursework + In-Person Campus Lab Pathway',
+    passRate:'NHA CCMA 85%+ · AMCA 88%+ (above national average)',
+    approval:'SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted',
+    phases:[
+      'Orientation · Campus Lab Introduction & Safety',
+      'The Medical Assistant · Introduction to Healthcare',
+      'Safety & Emergency Practices · OSHA Standards',
+      'Infection Control & Sterile Field Technique (Campus Lab)',
+      'Patient Assessment & Vital Signs (Campus Lab)',
+      'Venipuncture & Phlebotomy Skills (Campus Lab)',
+      'Injections & Medication Administration (Campus Lab)',
+      'EKG Lead Placement & Acquisition (Campus Lab)',
+      'Principles of Pharmacology & Drug Administration',
+      'Clinical Procedures — Gastroenterology & Urology',
+      'Clinical Procedures — OB/GYN & Pediatrics',
+      'Administrative Skills & Electronic Health Records',
+      'Medical Specialties · Cardiology & Pulmonology',
+      'Medical Specialties · Neurology & Oncology',
+      'NHA CCMA & AMCA Exam Prep',
+      'Final Lab Assessment & Certification Review'
+    ]
+  },
+  phlebotomy_campus:{
+    type:'campus', name:'Phlebotomy Technician (CPT) — Campus', cred:'NHA CPT Certified',
+    weeks:12, startDate:'2026-05-26',
+    clockHours:'120 Hours (60 Didactic + 30 Campus Lab + 30 Simulation)',
+    enrollFee:'$49 Enrollment Fee · $99 due when first class is added',
+    fmt:'Hybrid — Online Coursework + 5 In-Person Campus Lab Pathway (Weeks 1–5)',
+    passRate:'NHA CPT 90%+ (above national average)',
+    approval:'SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted',
+    phases:[
+      'Orientation · Campus Lab 1 — Safety & Setup (In-Person)',
+      'Anatomy of the Venous System · Campus Lab 2 — Equipment (In-Person)',
+      'Venipuncture Techniques · Campus Lab 3 — Practice Draws (In-Person)',
+      'Capillary Puncture · Campus Lab 4 — Fingerstick & Heelstick (In-Person)',
+      'Special Collections · Campus Lab 5 — Blood Cultures & Advanced (In-Person)',
+      'Specimen Processing, Handling & Transportation',
+      'Lab Safety & OSHA Compliance',
+      'Pediatric Draws & Difficult Access Patients',
+      'Point-of-Care Testing & Glucometry',
+      'Documentation, Labeling & Chain of Custody',
+      'Clinical Skills Simulation & Practice',
+      'NHA CPT Exam Prep & Certification Review'
+    ]
+  },
+  phlebotomy_weekend:{
+    type:'weekend', name:'Phlebotomy — Weekend Fast Track', cred:'NHA CPT Certified · 12-Week Program',
+    weeks:12, startDate:'2026-05-23',
+    clockHours:'120 Hours (60 Didactic + 30 Lab + 30 Simulation)',
+    enrollFee:'$49 Enrollment Fee · $99 due when first class is added',
+    fmt:'Campus — Saturdays Only · Designed for Working Adults',
+    passRate:'NHA CPT 90%+ (above national average)',
+    approval:'SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted',
+    phases:[
+      'Orientation & Safety · Introduction to Phlebotomy',
+      'Anatomy of the Venous & Circulatory System',
+      'Venipuncture Techniques & Equipment Selection',
+      'Capillary Puncture & Heel Stick Procedures',
+      'Special Collection Procedures & Blood Cultures',
+      'Specimen Processing, Handling & Transportation',
+      'Lab Safety & OSHA Compliance',
+      'Pediatric Draws & Difficult Access Patients',
+      'Point-of-Care Testing & Glucometry',
+      'Documentation, Labeling & Chain of Custody',
+      'Clinical Skills Practice & Simulation',
+      'NHA CPT Exam Prep & Certification Review'
+    ]
+  },
+  ccma_weekend:{
+    type:'weekend', name:'Clinical Medical Asst — Weekend Accelerated', cred:'NHA CCMA · 8-Week Program',
+    weeks:8, startDate:'2026-05-23',
+    clockHours:'Accelerated Format · Saturdays · Core Curriculum',
+    enrollFee:'$49 Enrollment Fee · Pay tuition when you add your first class',
+    fmt:'Campus — Saturdays Only · Accelerated 8-Week Format',
+    passRate:'NHA CCMA 85%+ (above national average)',
+    approval:'SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted',
+    phases:[
+      'Orientation & Anatomy · Introduction to Clinical Roles',
+      'Clinical Foundations · Vital Signs & Patient Assessment',
+      'Infection Control & Sterile Field Technique',
+      'EKG Lead Placement & Phlebotomy Skills',
+      'Injections, Medications & Pharmacology Basics',
+      'Administrative Skills & Electronic Health Records',
+      'Clinical Practice & Simulation Review',
+      'NHA CCMA Exam Prep & Certification Review'
+    ]
+  }
+};
+
+function openSchedule(key){
+  var s=schedules[key]; if(!s) return;
+  var start=s.startDate?new Date(s.startDate+'T00:00:00'):new Date();
+  var end=addDays(start,s.weeks*7);
+  var startLabel=fmtFull(start);
+  var endLabel=fmtFull(end);
+
+  document.getElementById('schedTopbar').className='modal-topbar '+s.type;
+  document.getElementById('schedBadge').className='modal-badge '+s.type;
+  document.getElementById('schedBadge').textContent=s.type==='online'?'Online':(s.type==='weekend'?'Weekend':'Campus');
+  document.getElementById('schedName').textContent=s.name;
+  document.getElementById('schedCred').textContent=s.cred;
+
+  document.getElementById('schedMeta').innerHTML=
+    '<div class="sm-item"><div class="sm-label">Start Date</div><div class="sm-val accent">'+startLabel+'</div></div>'+
+    '<div class="sm-item"><div class="sm-label">Completion</div><div class="sm-val">'+endLabel+'</div></div>'+
+    '<div class="sm-item"><div class="sm-label">Duration</div><div class="sm-val">'+s.weeks+' Modules</div></div>'+
+    '<div class="sm-item sm-full"><div class="sm-label">Format</div><div class="sm-val">'+s.fmt+'</div></div>'+
+    '<div class="sm-item sm-full"><div class="sm-label">Clock Hours</div><div class="sm-val">'+s.clockHours+'</div></div>';
+
+  var html='';
+  for(var i=0;i<s.phases.length;i++){
+    var ws=addDays(start,i*7), we=addDays(ws,6);
+    var last=i===s.phases.length-1;
+    var dateStr=s.startDate?fmtShort(ws)+' &ndash; '+fmtShort(we):'Week '+(i+1);
+    html+='<div class="tl-row'+(last?' last':'')+'">'+
+      '<div class="tl-node"><div class="tl-node-dot"></div></div>'+
+      '<div class="tl-body">'+
+        '<div class="tl-wk">Module '+(i+1)+'</div>'+
+        '<div class="tl-topic">'+s.phases[i]+'</div>'+
+        (s.startDate?'<div class="tl-dates">'+fmtShort(ws)+' &ndash; '+fmtShort(we)+'</div>':'')+
+      '</div>'+
+    '</div>';
+  }
+  document.getElementById('schedTimeline').innerHTML=html;
+  document.getElementById('schedModal').classList.add('open');
+}
+function closeSchedModal(){ document.getElementById('schedModal').classList.remove('open'); }
 </script>
-</body></html>
+</body>
+</html>
