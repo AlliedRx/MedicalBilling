@@ -193,6 +193,426 @@
   .sub-inline{display:none;}
 }
 </style> </head> <body> <!-- ── SECOND HERO ── -->
+<!-- ============================================================
+     MEDSIM SECTION â paste this ABOVE the "Online Healthcare
+     Programs" section in your homepage.html
+     ============================================================ -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ââ MedSim Section ââ */
+  .medsim-section {
+    position: relative;
+    padding: 100px 80px 0;
+    overflow: hidden;
+    min-height: 700px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .medsim-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69ef9b2a1d166539d4a029f3_CCMA%20Interactive%20James.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) brightness(0.35);
+    transform: scale(1.05);
+  }
+  .medsim-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10,8,30,.6);
+  }
+  .medsim-inner {
+    position: relative;
+    z-index: 2;
+  }
+  .medsim-header {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+  .medsim-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 999px;
+    background: rgba(124,108,219,.25);
+    color: #c4b8ff;
+    border: 1px solid rgba(124,108,219,.45);
+    margin-bottom: 22px;
+  }
+  .medsim-header h2 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -.025em;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+  .medsim-header h2 .medsim-accent {
+    background: linear-gradient(135deg, #7c6cdb 0%, #9b8ce8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .medsim-header p {
+    color: rgba(255,255,255,.55);
+    font-size: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+  .medsim-carousel-outer { position: relative; }
+  .medsim-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    z-index: 10;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.2);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s;
+    backdrop-filter: blur(8px);
+  }
+  .medsim-arrow:hover { background: rgba(124,108,219,.5); border-color: rgba(124,108,219,.6); }
+  .medsim-arrow.medsim-prev { left: -22px; }
+  .medsim-arrow.medsim-next { right: -22px; }
+  .medsim-carousel-wrap { overflow: hidden; border-radius: 16px; }
+  .medsim-track {
+    display: flex;
+    gap: 16px;
+    transition: transform .55s cubic-bezier(.4,0,.2,1);
+  }
+  .medsim-card {
+    flex: 0 0 calc((100% - 32px) / 3);
+    min-width: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: border-color .25s, transform .25s;
+    cursor: pointer;
+  }
+  .medsim-card:hover {
+    border-color: rgba(124,108,219,.55);
+    transform: translateY(-4px);
+  }
+  .medsim-card-img-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 215px;
+  }
+  .medsim-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+  }
+  .medsim-card:hover .medsim-card-img { transform: scale(1.04); }
+  .medsim-card-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(10,8,30,.8) 100%);
+    pointer-events: none;
+  }
+  .medsim-card-label {
+    position: absolute;
+    bottom: 12px;
+    left: 14px;
+    z-index: 2;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: #c4b8ff;
+    background: rgba(124,108,219,.3);
+    border: 1px solid rgba(124,108,219,.45);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .medsim-card-body { padding: 16px 18px 20px; }
+  .medsim-card-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,.5);
+    line-height: 1.65;
+    font-weight: 400;
+  }
+  .medsim-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 22px 0 0;
+  }
+  .medsim-dot {
+    width: 28px;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.2);
+    cursor: pointer;
+    transition: background .25s, width .25s;
+    border: none;
+    padding: 0;
+  }
+  .medsim-dot.active {
+    background: linear-gradient(90deg, #7c6cdb, #9b8ce8);
+    width: 44px;
+  }
+  .medsim-stats-bar {
+    background: rgba(255,255,255,.06);
+    border-top: 1px solid rgba(255,255,255,.1);
+    margin: 28px -80px 0;
+    padding: 28px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .medsim-stats-group { display: flex; gap: 0; }
+  .medsim-stat {
+    padding: 0 40px 0 0;
+    border-right: 1px solid rgba(255,255,255,.12);
+    margin-right: 40px;
+  }
+  .medsim-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+  .medsim-stat-num {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    background: linear-gradient(135deg, #7c6cdb, #9b8ce8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+  .medsim-stat-lbl {
+    font-size: 12px;
+    color: rgba(255,255,255,.4);
+    font-weight: 500;
+    letter-spacing: .02em;
+  }
+  .medsim-register-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #7c6cdb 0%, #5b4ccc 50%, #9b8ce8 100%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: opacity .15s, transform .15s;
+    white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(91,76,204,.4);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    flex-shrink: 0;
+  }
+  .medsim-register-btn:hover { opacity: .9; transform: translateY(-1px); }
+  @media (max-width: 800px) {
+    .medsim-section { padding: 64px 24px 0; }
+    .medsim-header h2 { font-size: 36px; }
+    .medsim-card { flex: 0 0 82%; }
+    .medsim-stats-bar { flex-direction: column; gap: 20px; margin: 28px -24px 0; padding: 24px; }
+    .medsim-stats-group { flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .medsim-stat { border-right: none; padding: 0; margin: 0; }
+    .medsim-arrow { display: none; }
+  }
+</style>
+
+<section class="medsim-section">
+  <div class="medsim-bg"></div>
+  <div class="medsim-overlay"></div>
+  <div class="medsim-inner">
+
+    <div class="medsim-header">
+      <div class="medsim-badge">&#9733; &nbsp;MedSim &mdash; Included with every program</div>
+      <h2>Real Skills. <span class="medsim-accent">Real Simulations.</span></h2>
+      <p>Practice patient communication, vital monitoring, wristband verification, phlebotomy, lab requisition, and post-op care â all before you step into a real clinical setting.</p>
+    </div>
+
+    <div class="medsim-carousel-outer">
+      <button class="medsim-arrow medsim-prev" id="medsimPrev">&#8592;</button>
+      <button class="medsim-arrow medsim-next" id="medsimNext">&#8594;</button>
+      <div class="medsim-carousel-wrap">
+        <div class="medsim-track" id="medsimTrack">
+
+          <div class="medsim-card">
+            <div class="medsim-card-img-wrap">
+              <img class="medsim-card-img" src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69ef9b2a1d166539d4a029f3_CCMA%20Interactive%20James.png" alt="Post-Op Observation" loading="lazy">
+              <span class="medsim-card-label">Post-Op Observation</span>
+            </div>
+            <div class="medsim-card-body">
+              <p class="medsim-card-desc">Monitor vitals, review clinical actions, and build patient rapport post-surgery.</p>
+            </div>
+          </div>
+
+          <div class="medsim-card">
+            <div class="medsim-card-img-wrap">
+              <img class="medsim-card-img" src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69f3a435a52ce33707f7d709_Screenshot%202026-04-30%20at%202.39.30%E2%80%AFPM.png" alt="Phlebotomy Skills Lab" loading="lazy">
+              <span class="medsim-card-label">Phlebotomy Skills Lab</span>
+            </div>
+            <div class="medsim-card-body">
+              <p class="medsim-card-desc">Practice wristband verification, lab requisition, and patient safety protocols.</p>
+            </div>
+          </div>
+
+          <div class="medsim-card">
+            <div class="medsim-card-img-wrap">
+              <img class="medsim-card-img" src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69f3c7b41397b7485126fd0c_Screenshot%202026-04-30%20at%202.39.58%E2%80%AFPM.png" alt="Pediatric Asthma Check" loading="lazy">
+              <span class="medsim-card-label">Pediatric Asthma Check</span>
+            </div>
+            <div class="medsim-card-body">
+              <p class="medsim-card-desc">Communicate with pediatric patients, take weight, and document findings accurately.</p>
+            </div>
+          </div>
+
+          <div class="medsim-card">
+            <div class="medsim-card-img-wrap">
+              <img class="medsim-card-img" src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69f01cfd85746182f902b47c_Screenshot%202026-04-27%20at%208.22.40%E2%80%AFAM.png" alt="Pharmacy Simulation" loading="lazy">
+              <span class="medsim-card-label">Pharmacy Simulation</span>
+            </div>
+            <div class="medsim-card-body">
+              <p class="medsim-card-desc">Navigate live drive-thru pharmacy workflows, verify prescriptions, and manage patient interactions.</p>
+            </div>
+          </div>
+
+          <div class="medsim-card">
+            <div class="medsim-card-img-wrap">
+              <img class="medsim-card-img" src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69f3a436d1d81381c04f6ce7_Screenshot%202026-04-30%20at%202.39.03%E2%80%AFPM.png" alt="Phlebotomy Skills" loading="lazy">
+              <span class="medsim-card-label">Phlebotomy Skills Lab</span>
+            </div>
+            <div class="medsim-card-body">
+              <p class="medsim-card-desc">Verify patient identity using wristband scanning before performing clinical procedures.</p>
+            </div>
+          </div>
+
+          <div class="medsim-card">
+            <div class="medsim-card-img-wrap">
+              <img class="medsim-card-img" src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964f2b171cbe25dc01112b6_Screenshot%202026-01-12%20at%207.24.19%E2%80%AFAM.png" alt="Medical Billing" loading="lazy">
+              <span class="medsim-card-label">Medical Billing</span>
+            </div>
+            <div class="medsim-card-body">
+              <p class="medsim-card-desc">Practice coding, claims submission, and insurance workflows in a real-world billing environment.</p>
+            </div>
+          </div>
+
+          <div class="medsim-card">
+            <div class="medsim-card-img-wrap">
+              <img class="medsim-card-img" src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/6964f2d4b39c2dcacff775da_Screenshot%202026-01-11%20at%202.26.49%E2%80%AFPM.png" alt="Medical Coding" loading="lazy">
+              <span class="medsim-card-label">Medical Coding</span>
+            </div>
+            <div class="medsim-card-body">
+              <p class="medsim-card-desc">Apply ICD-10 and CPT codes to real patient cases and sharpen accuracy before entering the field.</p>
+            </div>
+          </div>
+
+          <div class="medsim-card">
+            <div class="medsim-card-img-wrap">
+              <img class="medsim-card-img" src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69f3ceaf87524566d21a3fa3_Screenshot%202026-04-30%20at%205.50.31%E2%80%AFPM.png" alt="EKG Interpretation" loading="lazy">
+              <span class="medsim-card-label">EKG</span>
+            </div>
+            <div class="medsim-card-body">
+              <p class="medsim-card-desc">Read and interpret live electrocardiogram rhythms and identify cardiac conditions in real time.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="medsim-dots" id="medsimDots"></div>
+
+    <div class="medsim-stats-bar">
+      <div class="medsim-stats-group">
+        <div class="medsim-stat">
+          <p class="medsim-stat-num">Multiple</p>
+          <p class="medsim-stat-lbl">Clinical scenarios</p>
+        </div>
+        <div class="medsim-stat">
+          <p class="medsim-stat-num">Patient</p>
+          <p class="medsim-stat-lbl">Live patient reactions</p>
+        </div>
+        <div class="medsim-stat">
+          <p class="medsim-stat-num">100%</p>
+          <p class="medsim-stat-lbl">Browser-based</p>
+        </div>
+      </div>
+      <a class="medsim-register-btn" href="/register">Register</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function() {
+  var track = document.getElementById('medsimTrack');
+  var dotsEl = document.getElementById('medsimDots');
+  var prevBtn = document.getElementById('medsimPrev');
+  var nextBtn = document.getElementById('medsimNext');
+  var cards = track.querySelectorAll('.medsim-card');
+  var total = cards.length;
+  var visible = 3;
+  var steps = total - visible + 1;
+  var current = 0;
+  var timer;
+
+  for (var i = 0; i < steps; i++) {
+    (function(idx) {
+      var d = document.createElement('button');
+      d.className = 'medsim-dot' + (idx === 0 ? ' active' : '');
+      d.addEventListener('click', function() { goTo(idx); });
+      dotsEl.appendChild(d);
+    })(i);
+  }
+
+  function goTo(idx) {
+    current = ((idx % steps) + steps) % steps;
+    var cardW = cards[0].offsetWidth;
+    track.style.transform = 'translateX(-' + (current * (cardW + 16)) + 'px)';
+    dotsEl.querySelectorAll('.medsim-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
+    });
+    resetTimer();
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  nextBtn.addEventListener('click', next);
+  prevBtn.addEventListener('click', prev);
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(next, 3800);
+  }
+
+  resetTimer();
+})();
+</script>
+<!-- ============================================================
+     END MEDSIM SECTION
+     ============================================================ -->
+
 <section id="hero2" style="position:relative;overflow:hidden;min-height:620px;display:flex;align-items:center;justify-content:center;margin-top:0;">
   <!-- Video -->
   <video id="hero2-video" autoplay muted playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
