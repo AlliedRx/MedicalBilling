@@ -213,85 +213,58 @@
   <!-- Gradient overlay — dark at bottom, lighter up top so video breathes -->
   <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.42) 60%, rgba(0,0,0,0.62) 100%);"></div>
 
-  <!-- Content — floats directly on the video -->
-  <div style="position:relative;z-index:2;width:100%;max-width:760px;margin:0 auto;padding:96px 40px;text-align:center;">
-
-    <!-- Eyebrow line -->
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;color:rgba(255,255,255,0.85);letter-spacing:.18em;text-transform:uppercase;margin:0 0 24px;">Spring 2026<span class="eyebrow-break"> &nbsp;·&nbsp; </span><span class="eyebrow-newline"><br></span>Now Enrolling</p>
-
-    <!-- Headline -->
-    <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(38px,6.5vw,72px);font-weight:900;color:#fff;line-height:1.0;margin:0 0 24px;letter-spacing:-.03em;">
-      Your Healthcare Career<br>
-      <span style="background:linear-gradient(135deg,#a78bfa,#f0abfc,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Starts Now.</span>
-    </h2>
-
-    <!-- Subtext — single clean line -->
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0 auto 44px;max-width:500px;font-weight:500;">Board-Certified Programs.<span class="sub-break"><br></span><span class="sub-inline"> </span>100% Online or Hybrid.<br>Accepted By Top Employers Nationwide.</p>
-
-    <!-- CTAs -->
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:44px;">
-      <a href="https://www.alliedrxtraining.com/register" style="font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#0f172a;padding:16px 40px;border-radius:100px;font-size:15px;font-weight:800;text-decoration:none;letter-spacing:-.01em;">Enroll Today →</a>
-      <a href="#programs" style="font-family:'Plus Jakarta Sans',sans-serif;background:transparent;color:#fff;padding:16px 40px;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,0.5);">View Programs</a>
+  <!-- Content — 2-column: text left | picker card right -->
+  <style>
+  #hero2-inner{display:grid;grid-template-columns:1fr 370px;gap:56px;align-items:center;width:100%;max-width:1240px;margin:0 auto;padding:80px 60px;position:relative;z-index:2;}
+  @media(max-width:960px){#hero2-inner{grid-template-columns:1fr;gap:32px;padding:60px 28px;}}
+  @media(max-width:767px){#hero2-inner{padding:48px 20px 40px;}}
+  </style>
+  <div id="hero2-inner">
+    <div>
+      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.85);letter-spacing:.18em;text-transform:uppercase;margin:0 0 20px;">Fall 2026 &nbsp;&middot;&nbsp; Now Enrolling</p>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(36px,5vw,66px);font-weight:900;color:#fff;line-height:1.0;margin:0 0 22px;letter-spacing:-.03em;">Your Healthcare Career<br><span style="background:linear-gradient(135deg,#a78bfa,#f0abfc,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Starts Now.</span></h2>
+      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;color:rgba(255,255,255,0.75);line-height:1.65;margin:0 0 36px;max-width:460px;font-weight:500;">Board-Certified Programs. 100% Online or Hybrid.<br>Accepted By Top Employers Nationwide.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;">
+        <a href="https://www.alliedrxtraining.com/register" style="font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#0f172a;padding:16px 40px;border-radius:100px;font-size:15px;font-weight:800;text-decoration:none;letter-spacing:-.01em;">Enroll Today &rarr;</a>
+        <a href="#programs" style="font-family:'Plus Jakarta Sans',sans-serif;background:transparent;color:#fff;padding:16px 40px;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,0.5);">View Programs</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:0;flex-wrap:wrap;">
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.75);padding-right:14px;">&check; WIOA Approved</span>
+        <span style="color:rgba(255,255,255,0.25);font-size:18px;padding-right:14px;">|</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.75);padding-right:14px;">&check; Military Funding</span>
+        <span style="color:rgba(255,255,255,0.25);font-size:18px;padding-right:14px;">|</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.75);padding-right:14px;">&check; Payment Plans</span>
+        <span style="color:rgba(255,255,255,0.25);font-size:18px;padding-right:14px;">|</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.75);">&check; Board Accredited</span>
+      </div>
     </div>
-
-    <!-- Trust strip — plain text with dividers, no pill boxes -->
-    <div style="display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;">
-      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.75);padding:0 18px;">✓ WIOA Approved</span>
-      <span style="color:rgba(255,255,255,0.25);font-size:18px;">|</span>
-      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.75);padding:0 18px;">✓ Military Funding</span>
-      <span style="color:rgba(255,255,255,0.25);font-size:18px;">|</span>
-      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.75);padding:0 18px;">✓ Payment Plans</span>
-      <span style="color:rgba(255,255,255,0.25);font-size:18px;">|</span>
-      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.75);padding:0 18px;">✓ Board Accredited</span>
+    <style>
+    .picker-card{background:rgba(8,6,32,0.82);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid rgba(88,91,252,0.28);border-radius:18px;padding:22px 22px 18px;box-shadow:0 12px 48px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.06);}
+    .picker-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:linear-gradient(135deg,#a78bfa,#f0abfc,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 6px;display:block;}
+    .picker-divider{height:1px;background:linear-gradient(90deg,rgba(88,91,252,0.4),rgba(167,139,250,0.2),transparent);margin-bottom:14px;}
+    .picker-link{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.06);text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;color:rgba(255,255,255,0.78);transition:color .18s,padding-left .18s;}
+    .picker-link:last-of-type{border-bottom:none;}
+    .picker-link:hover{color:#a78bfa;padding-left:4px;}
+    .picker-link:hover .picker-arrow{color:#a78bfa;}
+    .picker-arrow{font-size:13px;color:rgba(88,91,252,0.6);transition:color .18s;flex-shrink:0;}
+    .picker-enroll{display:block;margin-top:16px;text-align:center;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;color:#fff;background:linear-gradient(135deg,#585bfc,#7c6cdb);padding:13px;border-radius:10px;letter-spacing:.02em;box-shadow:0 4px 20px rgba(88,91,252,0.45);transition:opacity .15s;}
+    .picker-enroll:hover{opacity:.88;}
+    </style>
+    <div class="picker-card">
+      <span class="picker-label">Certificate Programs</span>
+      <div class="picker-divider"></div>
+      <a class="picker-link" href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" target="_parent">Pharmacy Technician<span class="picker-arrow">&#8594;</span></a>
+      <a class="picker-link" href="https://www.alliedrxtraining.com/new-phlebotomy-page" target="_parent">Phlebotomy Technician<span class="picker-arrow">&#8594;</span></a>
+      <a class="picker-link" href="https://www.alliedrxtraining.com/new-medical-billing-page" target="_parent">Medical Billing &amp; Coding<span class="picker-arrow">&#8594;</span></a>
+      <a class="picker-link" href="https://www.alliedrxtraining.com/new-ekg-page" target="_parent">EKG Technician<span class="picker-arrow">&#8594;</span></a>
+      <a class="picker-link" href="https://www.alliedrxtraining.com/new-ccma-page" target="_parent">Clinical Medical Assistant<span class="picker-arrow">&#8594;</span></a>
+      <a class="picker-link" href="https://www.alliedrxtraining.com/new-cmaa-page" target="_parent">Medical Administrative Assistant<span class="picker-arrow">&#8594;</span></a>
+      <a class="picker-link" href="https://www.alliedrxtraining.com/new-registered-dental-assistant" target="_parent">Registered Dental Assistant<span class="picker-arrow">&#8594;</span></a>
+      <a class="picker-enroll" href="https://www.alliedrxtraining.com/register">Enroll Now &rarr;</a>
     </div>
-
   </div>
 </section>
 <!-- ── END SECOND HERO ── -->
-
-<!-- Hero --> <section class="hero"> <div class="hero-inner"> <div class="hero-copy"> <div class="eyebrow">★ 2026 OPEN ENROLLMENT</div> <h1>Launch Your <em>Healthcare Career</em> in Just in a Few Weeks</h1> <p style="font-size:22px;font-weight:800;margin-bottom:16px;line-height:1.4;"><span style="color:#0f172a;">Get</span> <span style="color:#585bfc;">Certified.</span> <span style="color:#0f172a;">Get</span> <span style="color:#585bfc;">Hired.</span> <span style="color:#0f172a;">Do It</span> <span style="background:linear-gradient(135deg,#a78bfa,#f0abfc,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Online.</span></p> <p class="hero-desc">Accredited Programs in Pharmacy Tech, Clinical Medical Assisting, EKG Technician, Medical Billing and Coding, Phlebotomy, Dental Assisting.</p> <div class="hero-ctas"> <a href="https://www.alliedrxtraining.com/register" class="cta-primary">Enroll Today →</a> <a href="https://www.alliedrxtraining.com/getmoreinfo" class="cta-secondary">Request Info</a> </div> <div style="display:inline-flex;align-items:stretch;gap:0;margin-top:-24px;margin-bottom:36px;background:#fff;border:1.5px solid #d1fae5;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(22,163,74,0.1);">
-  <!-- Left accent bar -->
-  <div style="width:6px;background:linear-gradient(180deg,#16a34a,#4ade80);flex-shrink:0;"></div>
-  <!-- Content -->
-  <div style="padding:14px 20px 14px 16px;display:flex;flex-direction:column;gap:10px;">
-    <!-- Row 1 -->
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div style="width:30px;height:30px;border-radius:50%;background:#dcfce7;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <div>
-        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:#0f172a;line-height:1.2;">$49 Registration Fee</div>
-        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;color:#64748b;font-weight:500;margin-top:1px;">Get started today — no large upfront cost</div>
-        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;color:#94a3b8;font-weight:400;margin-top:2px;">*Excludes Pharmacy Technician Program</div>
-      </div>
-    </div>
-    <!-- Divider -->
-    <div style="height:1px;background:#d1fae5;margin:0 -4px;"></div>
-    <!-- Row 2 -->
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div style="width:30px;height:30px;border-radius:50%;background:#dcfce7;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <div>
-        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:#0f172a;line-height:1.2;">Minimum $99 Down to Start</div>
-        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;color:#64748b;font-weight:500;margin-top:1px;">Flexible payment plans available</div>
-      </div>
-    </div>
-    <!-- Divider -->
-    <div style="height:1px;background:#d1fae5;margin:0 -4px;"></div>
-    <!-- Row 3 -->
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div style="width:30px;height:30px;border-radius:50%;background:#fef9c3;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
-      </div>
-      <div>
-        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:#0f172a;line-height:1.2;">Free Registration for Military</div>
-        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;color:#64748b;font-weight:500;margin-top:1px;">MyCAA · ArmyCA · Air Force COOL</div>
-      </div>
-    </div>
-  </div>
-</div> </div> <div class="hero-right"> <div class="hero-photo"> <img src="https://cdn.prod.website-files.com/64d0ccc1558d601cbfb09021/69d5b3cd000318ffe2e06ad4_homepageimage.png" alt="Healthcare student"> </div> </div><!-- /hero-right --> <div class="hero-card"> <div class="hc-head">Choose Your Program</div> <div class="program-list"> <a class="prog-item" href="https://www.alliedrxtraining.com/new-pharmacy-tech-page" target="_parent"> <div class="prog-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v3"/><circle cx="18" cy="18" r="4"/><path d="m15.5 15.5 5 5"/></svg></div> <div class="prog-info"><div class="prog-name">Pharmacy Technician</div><div class="prog-cert">PTCB &amp; ASHP Accredited</div></div> <div class="prog-arrow">›</div> </a> <a class="prog-item" href="https://www.alliedrxtraining.com/new-phlebotomy-page" target="_parent"> <div class="prog-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg></div> <div class="prog-info"><div class="prog-name">Phlebotomy Technician</div><div class="prog-cert">NHA &amp; AMCA Approved</div></div> <div class="prog-arrow">›</div> </a> <a class="prog-item" href="https://www.alliedrxtraining.com/new-medical-billing-page" target="_parent"> <div class="prog-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></div> <div class="prog-info"><div class="prog-name">Medical Billing &amp; Coding</div><div class="prog-cert">NHA | AAPC Approved</div></div> <div class="prog-arrow">›</div> </a> <a class="prog-item" href="https://www.alliedrxtraining.com/new-ekg-page" target="_parent"> <div class="prog-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div> <div class="prog-info"><div class="prog-name">EKG Technician</div><div class="prog-cert">NHA &amp; AMCA Approved</div></div> <div class="prog-arrow">›</div> </a> <a class="prog-item" href="https://www.alliedrxtraining.com/new-ccma-page" target="_parent"> <div class="prog-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></div> <div class="prog-info"><div class="prog-name">Clinical Medical Assistant</div><div class="prog-cert">NHA Approved</div></div> <div class="prog-arrow">›</div> </a> <a class="prog-item" href="https://www.alliedrxtraining.com/new-cmaa-page" target="_parent"> <div class="prog-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div> <div class="prog-info"><div class="prog-name">Medical Administrative Assistant</div><div class="prog-cert">NHA &amp; AMCA Approved</div></div> <div class="prog-arrow">›</div> </a> <a class="prog-item" href="https://www.alliedrxtraining.com/new-registered-dental-assistant" target="_parent"> <div class="prog-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-2.4 0-4.5 1.5-5.5 3.5C5.5 7.5 4 8 3 9c-1 1-1 3 0 5 .8 1.6 1.5 3.5 1.8 5 .3 1.4 1 2 2 2s1.5-.8 2-2l.7-2.5c.3-1 .8-1.5 2.5-1.5s2.2.5 2.5 1.5l.7 2.5c.5 1.2 1 2 2 2s1.7-.6 2-2c.3-1.5 1-3.4 1.8-5 1-2 1-4 0-5-1-1-2.5-1.5-3.5-3.5C16.5 3.5 14.4 2 12 2z"/></svg></div> <div class="prog-info"><div class="prog-name">Registered Dental Assistant</div><div class="prog-cert">AMT Accredited</div></div> <div class="prog-arrow">›</div> </a> </div> <a href="https://www.alliedrxtraining.com/register" class="hc-cta" style="display:block;text-align:center;text-decoration:none;">Enroll Now</a> </div> </div> </section>
-
 
 <!-- ── HOW IT WORKS ── -->
 <section style="background:#faf9ff;padding:88px 40px;">
@@ -958,6 +931,21 @@
 </section>
 
 
+<!-- ── EMPLOYER BAR ── -->
+<section style="padding:44px 40px;background:#ffffff;border-top:1px solid #f1f0ff;border-bottom:1px solid #f1f0ff;">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#94a3b8;margin:0 0 28px;">AlliedRx graduates work at</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;">
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;color:#c8d3e0;letter-spacing:-.02em;">CVS Health</span>
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;color:#c8d3e0;letter-spacing:-.02em;">Walgreens</span>
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;color:#c8d3e0;letter-spacing:-.02em;">DaVita</span>
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;color:#c8d3e0;letter-spacing:-.02em;">Labcorp</span>
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;color:#c8d3e0;letter-spacing:-.02em;">Quest Diagnostics</span>
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;color:#c8d3e0;letter-spacing:-.02em;">Humana</span>
+    </div>
+  </div>
+</section>
+<!-- ── END EMPLOYER BAR ── -->
 <div class="testi" style="position:relative;overflow:hidden;padding:72px 0;">
   <video id="testi-bg-video" autoplay muted playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:brightness(0.45);">
     <source src="https://public-assets.content-platform.envatousercontent.com/4db9b12a-7b18-4111-9e69-528e156e652c/213b92fb-10c6-48f8-85f5-8fd981892696/4db9b12a-7b18-4111-9e69-528e156e652c/preview_540p_crf22_higher_quality.mp4" type="video/mp4">
@@ -1039,7 +1027,7 @@ setInterval(function(){cur=(cur+1)%6;render(cur,true);},5000);
   <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(88,91,252,.18) 0%,transparent 70%);pointer-events:none;"></div>
   <div style="position:absolute;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;"></div>
   <div style="position:relative;z-index:2;max-width:720px;margin:0 auto;">
-    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(88,91,252,.15);border:1px solid rgba(88,91,252,.35);color:#a5a7fd;font-size:11px;font-weight:700;padding:6px 18px;border-radius:100px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;font-family:'Plus Jakarta Sans',sans-serif;">Spring 2026 Enrollment Open</div>
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(88,91,252,.15);border:1px solid rgba(88,91,252,.35);color:#a5a7fd;font-size:11px;font-weight:700;padding:6px 18px;border-radius:100px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;font-family:'Plus Jakarta Sans',sans-serif;">Fall 2026 Enrollment Open</div>
     <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(36px,5vw,58px);font-weight:900;color:#ffffff;line-height:1.05;margin-bottom:20px;letter-spacing:-.02em;">Your Next Chapter<br>Starts <span style="background:linear-gradient(135deg,#a78bfa,#f0abfc,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Right Now.</span></h2>
     <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:44px;">Join 2,500+ graduates who chose a faster, more affordable path into healthcare. Board-certified. Employer-ready. You're next.</p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;">
