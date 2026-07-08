@@ -396,7 +396,7 @@
                         <span class="calc-result-value highlight" id="resFeeToday">$148</span>
                     </div>
                     <div class="calc-result-row">
-                        <span class="calc-result-label calc-gradient-text">Registration Fee</span>
+                        <span class="calc-result-label calc-gradient-text" id="resRegistrationFeeLabel">Registration Fee Special (Regular $100)</span>
                         <span class="calc-result-value highlight" id="resRegistrationFee">$49</span>
                     </div>
                     <div class="calc-result-row">
@@ -462,7 +462,7 @@
                     <div class="pcard-breakdown">
                         <div class="pcard-breakdown-row">
                             <span class="pcard-breakdown-label">CMA · EKG · Billing · Phlebotomy · Admin</span>
-                            <span class="pcard-breakdown-value">$874 today<span class="pcard-breakdown-sub">tuition + $49 registration fee</span></span>
+                            <span class="pcard-breakdown-value">$874 today<span class="pcard-breakdown-sub">tuition + $49 registration special (regular $100)</span></span>
                         </div>
                         <div class="pcard-breakdown-row">
                             <span class="pcard-breakdown-label">Pharmacy Technician</span>
@@ -693,7 +693,7 @@
                 <div class="pbox">
                     <div class="pbox-top">
                         <div class="pbox-program">Clinical Medical Assistant</div>
-                        <div class="pbox-sub">CMA · $49 registration fee</div>
+                        <div class="pbox-sub">CMA · $49 registration special (regular $100)</div>
                     </div>
                     <div class="pbox-body">
                         <div>
@@ -731,7 +731,7 @@
                 <div class="pbox">
                     <div class="pbox-top">
                         <div class="pbox-program">Medical Administrative Assistant</div>
-                        <div class="pbox-sub">Admin · $49 registration fee</div>
+                        <div class="pbox-sub">Admin · $49 registration special (regular $100)</div>
                     </div>
                     <div class="pbox-body">
                         <div>
@@ -753,7 +753,7 @@
                 <div class="pbox">
                     <div class="pbox-top">
                         <div class="pbox-program">Medical Billing &amp; Coding</div>
-                        <div class="pbox-sub">Billing · $49 registration fee</div>
+                        <div class="pbox-sub">Billing · $49 registration special (regular $100)</div>
                     </div>
                     <div class="pbox-body">
                         <div>
@@ -772,7 +772,7 @@
                 <div class="pbox">
                     <div class="pbox-top">
                         <div class="pbox-program">EKG Technician</div>
-                        <div class="pbox-sub">EKG · $49 registration fee</div>
+                        <div class="pbox-sub">EKG · $49 registration special (regular $100)</div>
                     </div>
                     <div class="pbox-body">
                         <div>
@@ -791,7 +791,7 @@
                 <div class="pbox">
                     <div class="pbox-top">
                         <div class="pbox-program">Phlebotomy Technician</div>
-                        <div class="pbox-sub">Phlebotomy · $49 registration fee</div>
+                        <div class="pbox-sub">Phlebotomy · $49 registration special (regular $100)</div>
                     </div>
                     <div class="pbox-body">
                         <div>
@@ -833,14 +833,14 @@
                         <div class="rate-programs">
                             <div class="rate-pill">Clinical Medical Assistant</div>
                             <div class="rate-pill">Medical Administrative Assistant
-                                <span class="rate-pill-highlight">$49 fee</span>
+                                <span class="rate-pill-highlight">$49 special</span>
                             </div>
                             <div class="rate-pill">Pharmacy Technician
                                 <span class="rate-pill-highlight">$99 fee</span>
                             </div>
                         </div>
                     </div>
-                    <div class="rate-card-fee">$49 registration fee · $99 for Pharmacy Tech</div>
+                    <div class="rate-card-fee">$49 registration special (regular $100) · $99 for Pharmacy Tech</div>
                 </div>
                 <!-- $1,450 tier -->
                 <div class="rate-card">
@@ -856,7 +856,7 @@
                             <div class="rate-pill">Phlebotomy Technician</div>
                         </div>
                     </div>
-                    <div class="rate-card-fee">$49 registration fee</div>
+                    <div class="rate-card-fee">$49 registration special (regular $100)</div>
                 </div>
                 <!-- Dental -->
                 <div class="rate-card">
@@ -870,7 +870,7 @@
                             <div class="rate-pill">Registered Dental Assistant (RDA)</div>
                         </div>
                     </div>
-                    <div class="rate-card-fee">$49 registration fee</div>
+                    <div class="rate-card-fee">$49 registration special (regular $100)</div>
                 </div>
             </div>
         </div>
@@ -920,7 +920,7 @@
             <div class="faq-grid">
                 <div class="faq-item">
                     <button class="faq-btn" onclick="toggleFaq(this)">When is my first payment due?<span class="faq-chevron">▾</span></button>
-                    <div class="faq-body"><p>For self-pay students, your registration fee and required tuition payment are due based on the plan you choose. Most payment plans begin with a $99 down payment to begin your class. Students may also pay in full or submit approved military or WIOA voucher funding.</p></div>
+                    <div class="faq-body"><p>For self-pay students, your registration fee and required tuition payment are due based on the plan you choose. For most programs, the $49 registration fee is a registration special; the regular registration fee is $100. Most payment plans begin with a $99 down payment to begin your class. Students may also pay in full or submit approved military or WIOA voucher funding.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-btn" onclick="toggleFaq(this)">Why does Pharmacy Tech have a $99 registration fee?<span class="faq-chevron">▾</span></button>
@@ -968,12 +968,15 @@
             if (feeNote) {
                 feeNote.style.display = 'block';
                 if (plan === 'full') {
-                    feeNote.textContent = 'Due today includes your registration fee plus full tuition to begin your class.';
+                    feeNote.textContent = (fee === 49) ? 'Due today includes your $49 registration special (regular $100) plus full tuition to begin your class.' : 'Due today includes your registration fee plus full tuition to begin your class.';
                 } else {
-                    feeNote.textContent = 'Due today includes your registration fee ($' + fee + ') plus the $99 down payment to activate your payment plan.';
+                    feeNote.textContent = (fee === 49) ? 'Due today includes your $49 registration special (regular $100) plus the $99 down payment to activate your payment plan.' : 'Due today includes your registration fee ($' + fee + ') plus the $99 down payment to activate your payment plan.';
                 }
             }
             if (ids.feeToday) document.getElementById(ids.feeToday).textContent = '$' + dueToday.toLocaleString();
+            if (ids.registrationFeeLabel) {
+                document.getElementById(ids.registrationFeeLabel).textContent = (fee === 49) ? 'Registration Fee Special (Regular $100)' : 'Registration Fee';
+            }
             if (ids.registrationFee) document.getElementById(ids.registrationFee).textContent = '$' + fee;
             if (ids.tuition) document.getElementById(ids.tuition).textContent = '$' + tuition.toLocaleString();
 
@@ -1012,7 +1015,7 @@
         }
         function calcUpdate() {
             runCalc(currentPlan, 'programSelect', 'calcFeeNote', {
-                feeToday:'resFeeToday', registrationFee:'resRegistrationFee', tuition:'resTuition', downLabel:'resDownLabel', down:'resDown',
+                feeToday:'resFeeToday', registrationFeeLabel:'resRegistrationFeeLabel', registrationFee:'resRegistrationFee', tuition:'resTuition', downLabel:'resDownLabel', down:'resDown',
                 balance:'resBalance', balanceRow:'balanceRow', payment:'resPayment', total:'resTotal'
             });
         }
