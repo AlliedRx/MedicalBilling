@@ -1194,7 +1194,17 @@
                 updateActivityCount();
             }
 
-            document.getElementById('check-btn-1').disabled = true;
+            if (correct === 6) {
+                document.getElementById('check-btn-1').disabled = true;
+            } else {
+                setTimeout(function () {
+                    document.querySelectorAll('.duty-card.placed.incorrect').forEach(function (clone) {
+                        var orig = document.querySelector('.duty-card:not(.placed)[data-correct="' + clone.dataset.original + '"]');
+                        if (orig) { orig.style.opacity = '1'; orig.draggable = true; }
+                        clone.remove();
+                    });
+                }, 1200);
+            }
         }
 
         function submitScenario(scenarioNum, correctAnswer) {
@@ -1284,7 +1294,13 @@
                 updateActivityCount();
             }
 
-            document.getElementById('submit-quiz').disabled = true;
+            if (correct >= 4) {
+                document.getElementById('submit-quiz').disabled = true;
+            } else {
+                document.querySelectorAll('.quiz-option').forEach(function (o) { o.classList.remove('correct', 'incorrect'); });
+                document.querySelectorAll('.quiz-option input').forEach(function (i) { i.disabled = false; });
+                document.getElementById('submit-quiz').textContent = 'Try Again';
+            }
         }
 
         function updateActivityCount() {

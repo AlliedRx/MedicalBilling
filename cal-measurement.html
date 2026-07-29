@@ -186,10 +186,10 @@
                 <div class="drag-source" id="drag-source">
                     <div class="duty-card" draggable="true" data-correct="metric">1 kg = 2.2 lbs</div>
                     <div class="duty-card" draggable="true" data-correct="metric">1 L = 1000 mL</div>
-                    <div class="duty-card" draggable="true" data-correct="apothecary">1 grain = 65 mg</div>
+                    <div class="duty-card" draggable="true" data-correct="household">1 grain = 65 mg</div>
                     <div class="duty-card" draggable="true" data-correct="household">1 tbsp = 15 mL</div>
                     <div class="duty-card" draggable="true" data-correct="household">1 tsp = 5 mL</div>
-                    <div class="duty-card" draggable="true" data-correct="apothecary">1 oz = 30 mL</div>
+                    <div class="duty-card" draggable="true" data-correct="household">1 oz = 30 mL</div>
                 </div>
 
                 <div class="dropzone-grid">
@@ -358,7 +358,17 @@
                 document.querySelector('#activity-1 .activity-status').textContent = 'Complete';
                 activitiesCompleted++; updateProgressTracker(1); updateActivityCount();
             }
-            document.getElementById('check-btn-1').disabled = true;
+            if (correct === 6) {
+                document.getElementById('check-btn-1').disabled = true;
+            } else {
+                setTimeout(function () {
+                    document.querySelectorAll('.duty-card.placed.incorrect').forEach(function (clone) {
+                        var orig = document.querySelector('.duty-card:not(.placed)[data-correct="' + clone.dataset.original + '"]');
+                        if (orig) { orig.style.opacity = '1'; orig.draggable = true; }
+                        clone.remove();
+                    });
+                }, 1200);
+            }
         }
         function submitScenario(scenarioNum, correctAnswer) {
             const selected = document.querySelector(`input[name="scenario${scenarioNum}"]:checked`);
@@ -402,7 +412,13 @@
                 document.querySelector('#activity-3 .activity-status').textContent = 'Complete';
                 activitiesCompleted++; updateProgressTracker(3); updateActivityCount();
             }
-            document.getElementById('submit-quiz').disabled = true;
+            if (correct >= 4) {
+                document.getElementById('submit-quiz').disabled = true;
+            } else {
+                document.querySelectorAll('.quiz-option').forEach(function (o) { o.classList.remove('correct', 'incorrect'); });
+                document.querySelectorAll('.quiz-option input').forEach(function (i) { i.disabled = false; });
+                document.getElementById('submit-quiz').textContent = 'Try Again';
+            }
         }
         function updateActivityCount() { document.getElementById('activities-completed').textContent = activitiesCompleted; }
         function updateProgressTracker(step) {

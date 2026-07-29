@@ -950,7 +950,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="B">
-                                <span class="quiz-option-text">D)  To increase patient costs and reduce access to care</span>
+                                <span class="quiz-option-text">B)  To increase patient costs and reduce access to care</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="C">
@@ -958,7 +958,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q1" value="D">
-                                <span class="quiz-option-text">B)  To provide health coverage for elderly and low-income populations</span>
+                                <span class="quiz-option-text">D)  To provide health coverage for elderly and low-income populations</span>
                             </label>
                         </div>
                     </div>
@@ -968,11 +968,11 @@
                         <div class="quiz-options">
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="A">
-                                <span class="quiz-option-text">B)  Hospitals received fixed payment per diagnosis, creating incentive to reduce costs while maintaining quality</span>
+                                <span class="quiz-option-text">A)  Hospitals received fixed payment per diagnosis, creating incentive to reduce costs while maintaining quality</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="B">
-                                <span class="quiz-option-text">A)  Hospitals were reimbursed based on actual expenses incurred, giving them incentive to order more services</span>
+                                <span class="quiz-option-text">B)  Hospitals were reimbursed based on actual expenses incurred, giving them incentive to order more services</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q2" value="C">
@@ -1016,11 +1016,11 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="B">
-                                <span class="quiz-option-text">C)  To increase patient costs by requiring payment before services</span>
+                                <span class="quiz-option-text">B)  To increase patient costs by requiring payment before services</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="C">
-                                <span class="quiz-option-text">B)  To eliminate the need for hospitals in America</span>
+                                <span class="quiz-option-text">C)  To eliminate the need for hospitals in America</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q4" value="D">
@@ -1038,7 +1038,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="B">
-                                <span class="quiz-option-text">D)  Private insurance was the only form of healthcare available</span>
+                                <span class="quiz-option-text">B)  Private insurance was the only form of healthcare available</span>
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="C">
@@ -1046,7 +1046,7 @@
                             </label>
                             <label class="quiz-option">
                                 <input type="radio" name="q5" value="D">
-                                <span class="quiz-option-text">B)  Coverage gaps left elderly and low-income populations uninsured and vulnerable</span>
+                                <span class="quiz-option-text">D)  Coverage gaps left elderly and low-income populations uninsured and vulnerable</span>
                             </label>
                         </div>
                     </div>
@@ -1063,7 +1063,7 @@
     </main>
 
     <script>
-        const quizAnswers = { q1: 'D', q2: 'A', q3: 'B', q4: 'C', q5: 'D' };
+        const quizAnswers = { q1: 'D', q2: 'A', q3: 'B', q4: 'A', q5: 'D' };
         let activitiesCompleted = 0, totalAccuracy = 0, startTime = Date.now(), draggedCard = null;
 
         setInterval(() => {
@@ -1127,7 +1127,17 @@
                 updateProgressTracker(1);
                 updateActivityCount();
             }
-            document.getElementById('check-btn-1').disabled = true;
+            if (correct === 6) {
+                document.getElementById('check-btn-1').disabled = true;
+            } else {
+                setTimeout(function () {
+                    document.querySelectorAll('.duty-card.placed.incorrect').forEach(function (clone) {
+                        var orig = document.querySelector('.duty-card:not(.placed)[data-correct="' + clone.dataset.original + '"]');
+                        if (orig) { orig.style.opacity = '1'; orig.draggable = true; }
+                        clone.remove();
+                    });
+                }, 1200);
+            }
         }
 
         function submitScenario(scenarioNum, correctAnswer) {
@@ -1178,7 +1188,13 @@
                 updateProgressTracker(3);
                 updateActivityCount();
             }
-            document.getElementById('submit-quiz').disabled = true;
+            if (correct >= 4) {
+                document.getElementById('submit-quiz').disabled = true;
+            } else {
+                document.querySelectorAll('.quiz-option').forEach(function (o) { o.classList.remove('correct', 'incorrect'); });
+                document.querySelectorAll('.quiz-option input').forEach(function (i) { i.disabled = false; });
+                document.getElementById('submit-quiz').textContent = 'Try Again';
+            }
         }
 
         function updateActivityCount() { document.getElementById('activities-completed').textContent = activitiesCompleted; }
