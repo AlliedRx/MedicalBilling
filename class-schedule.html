@@ -685,7 +685,11 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f8f9;color:#1a1a2e
       <div class="sb-heading">Pathway</div>
       <a href="#online" class="sb-nav-link active"><span>Online Programs</span><span class="sb-badge">7</span></a>
 
-      <a href="#august" class="sb-nav-link"><span>August 2026 Hybrid</span><span class="sb-badge">4</span></a>
+<!-- ARX:NAV_COHORTS:START -->
+      <a href="#august-2026" class="sb-nav-link"><span>August 2026 Hybrid</span><span class="sb-badge">4</span></a>
+      <a href="#september-2026" class="sb-nav-link"><span>September 2026 Hybrid</span><span class="sb-badge">4</span></a>
+      <a href="#october-2026" class="sb-nav-link"><span>October 2026 Hybrid</span><span class="sb-badge">3</span></a>
+<!-- ARX:NAV_COHORTS:END -->
     </div>
     <div class="sb-rule"></div>
     <div class="sb-section">
@@ -720,7 +724,11 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f8f9;color:#1a1a2e
   <div class="mobile-nav-strip">
     <a href="#online" class="mns-btn active" onclick="mobileNav(this,'online')">Online (7)</a>
 
-    <a href="#august" class="mns-btn" onclick="mobileNav(this,'august')">Aug Hybrid (4)</a>
+<!-- ARX:MOBILE_COHORTS:START -->
+    <a href="#august-2026" class="mns-btn" onclick="mobileNav(this,'august-2026')">Aug Hybrid (4)</a>
+    <a href="#september-2026" class="mns-btn" onclick="mobileNav(this,'september-2026')">Sep Hybrid (4)</a>
+    <a href="#october-2026" class="mns-btn" onclick="mobileNav(this,'october-2026')">Oct Hybrid (3)</a>
+<!-- ARX:MOBILE_COHORTS:END -->
     <a href="#online-ccma" class="mns-btn" onclick="sidebarNav(event,'#online-ccma')">CCMA</a>
     <a href="#online-phlebotomy" class="mns-btn" onclick="sidebarNav(event,'#online-phlebotomy')">Phlebotomy</a>
     <a href="#online-pharmacy" class="mns-btn" onclick="sidebarNav(event,'#online-pharmacy')">Pharmacy</a>
@@ -737,10 +745,14 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f8f9;color:#1a1a2e
     <!-- FILTER TABS -->
     <div class="filter-row">
       <div class="tab-list">
-        <button class="tab-btn active" onclick="doTab(this,'all')">All Courses <span class="tab-count">11</span></button>
+      <!-- ARX:TAB_COHORTS:START -->
+        <button class="tab-btn active" onclick="doTab(this,'all')">All Courses <span class="tab-count">18</span></button>
         <button class="tab-btn" onclick="doTab(this,'online')">Online <span class="tab-count">7</span></button>
-        <button class="tab-btn" onclick="doTab(this,'august')">August 2026 <span class="tab-count">4</span></button>
+        <button class="tab-btn" onclick="doTab(this,'august-2026')">August 2026 <span class="tab-count">4</span></button>
+        <button class="tab-btn" onclick="doTab(this,'september-2026')">September 2026 <span class="tab-count">4</span></button>
+        <button class="tab-btn" onclick="doTab(this,'october-2026')">October 2026 <span class="tab-count">3</span></button>
         <button class="tab-btn" onclick="doTab(this,'weekend')">Weekend</button>
+<!-- ARX:TAB_COHORTS:END -->
       </div>
     </div>
 
@@ -977,9 +989,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f8f9;color:#1a1a2e
     <!-- ═══════════════════════════
          CAMPUS / AUGUST 2026
     ═══════════════════════════ -->
+<!-- ARX:SECTIONS_COHORTS:START -->
     <div class="section-divider"><span class="sd-label">Hybrid Pathway &mdash; August 2026</span></div>
 
-    <section id="august">
+    <section id="august-2026">
 
       <div class="section-header">
         <div class="sh-left">
@@ -1001,12 +1014,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f8f9;color:#1a1a2e
         </div>
         <div>
           <div style="font-size:.57rem;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;text-align:right;margin-bottom:.4rem">Closes in</div>
-          <div class="tn-countdown">
-            <div class="tn-cd-unit"><span class="tn-cd-num" id="add">--</span><span class="tn-cd-lbl">Days</span></div>
+          <div class="tn-countdown" data-arx-deadline="2026-08-14T23:59:59">
+            <div class="tn-cd-unit"><span class="tn-cd-num" data-cd="d">--</span><span class="tn-cd-lbl">Days</span></div>
             <span class="tn-cd-sep">:</span>
-            <div class="tn-cd-unit"><span class="tn-cd-num" id="ahh">--</span><span class="tn-cd-lbl">Hrs</span></div>
+            <div class="tn-cd-unit"><span class="tn-cd-num" data-cd="h">--</span><span class="tn-cd-lbl">Hrs</span></div>
             <span class="tn-cd-sep">:</span>
-            <div class="tn-cd-unit"><span class="tn-cd-num" id="amm">--</span><span class="tn-cd-lbl">Min</span></div>
+            <div class="tn-cd-unit"><span class="tn-cd-num" data-cd="m">--</span><span class="tn-cd-lbl">Min</span></div>
           </div>
         </div>
       </div>
@@ -1018,34 +1031,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f8f9;color:#1a1a2e
           <div class="ct-th">Actions</div>
         </div>
 
-        <!-- Phlebotomy Hybrid (Wednesday) - August -->
-        <div class="ci" data-pathway="august" data-type="campus">
-          <div class="ci-type-bar hybrid"></div>
-          <div class="ci-info">
-            <span class="ci-format-badge hybrid">Hybrid</span>
-            <div class="ci-course-name">Phlebotomy Technician</div>
-            <div class="ci-credential">CPT &middot; NHA &amp; AMCA Accredited</div>
-            <div class="ci-format-detail">Aug 26, 2026 &middot; Wednesdays &middot; 12 Weeks &middot; Hybrid</div>
-          </div>
-          <div class="ci-sched">
-            <div class="ci-sched-info">
-              <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">August 26, 2026 &middot; Wednesdays</span></div>
-              <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">12 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div>
-              <div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div>
-              <div class="csi-row"><span class="csi-key">Day pathway</span><span class="csi-val">10:00 am &ndash; 12:00 pm</span></div>
-              <div class="csi-row"><span class="csi-key">Eve pathway</span><span class="csi-val">6:00 pm &ndash; 8:00 pm</span></div>
-            </div>
-            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill md" style="width:60%"></div></div><div class="cem-foot"><span class="cem-pct">60% &middot; Day</span><span class="cem-rem high">Seats available</span></div></div>
-            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:45%"></div></div><div class="cem-foot"><span class="cem-pct">45% &middot; Evening</span><span class="cem-rem moderate">Seats available</span></div></div>
-          </div>
-          <div class="ci-actions">
-            <a href="https://register.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
-            <button class="btn-info" onclick="openSchedule('phlebotomy_aug_hybrid')">View Schedule</button>
-          </div>
-        </div>
-
-        <!-- CCMA Hybrid (Wednesday) - August -->
-        <div class="ci" data-pathway="august" data-type="campus">
+        <!-- CCMA Hybrid — August 2026 (generated) -->
+        <div class="ci" data-pathway="august-2026" data-type="campus">
           <div class="ci-type-bar hybrid"></div>
           <div class="ci-info">
             <span class="ci-format-badge hybrid">Hybrid</span>
@@ -1055,47 +1042,37 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f8f9;color:#1a1a2e
           </div>
           <div class="ci-sched">
             <div class="ci-sched-info">
-              <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">August 26, 2026 &middot; Wednesdays</span></div>
-              <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">16 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div>
-              <div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div>
-              <div class="csi-row"><span class="csi-key">Day pathway</span><span class="csi-val">10:00 am &ndash; 12:00 pm</span></div>
-              <div class="csi-row"><span class="csi-key">Eve pathway</span><span class="csi-val">6:00 pm &ndash; 8:00 pm</span></div>
+<div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">August 26, 2026 &middot; Wednesdays</span></div><div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">16 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div><div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div><div class="csi-row"><span class="csi-key">Day pathway</span><span class="csi-val">10:00 am &ndash; 12:00 pm</span></div><div class="csi-row"><span class="csi-key">Eve pathway</span><span class="csi-val">6:00 pm &ndash; 8:00 pm</span></div>
             </div>
-            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill md" style="width:55%"></div></div><div class="cem-foot"><span class="cem-pct">55% &middot; Day</span><span class="cem-rem high">Seats available</span></div></div>
-            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% &middot; Evening</span><span class="cem-rem moderate">Seats available</span></div></div>
+            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% &middot; Day</span><span class="cem-rem moderate">Seats available</span></div></div><div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% &middot; Evening</span><span class="cem-rem moderate">Seats available</span></div></div>
           </div>
           <div class="ci-actions">
             <a href="https://register.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
-            <button class="btn-info" onclick="openSchedule('ccma_aug_hybrid')">View Schedule</button>
+            <button class="btn-info" onclick="openSchedule('august-2026-clinical-medical-assistant-hybrid-program')">View Schedule</button>
           </div>
         </div>
-
-        <!-- Phlebotomy Weekend - August -->
-        <div class="ci" data-pathway="august" data-type="weekend">
+        <!-- Phlebotomy Hybrid — August 2026 (generated) -->
+        <div class="ci" data-pathway="august-2026" data-type="campus">
           <div class="ci-type-bar hybrid"></div>
           <div class="ci-info">
             <span class="ci-format-badge hybrid">Hybrid</span>
-            <div class="ci-course-name">Phlebotomy &mdash; Weekend Hybrid</div>
+            <div class="ci-course-name">Phlebotomy Technician</div>
             <div class="ci-credential">CPT &middot; NHA &amp; AMCA Accredited</div>
-            <div class="ci-format-detail">Aug 29, 2026 &middot; Saturdays &middot; 12 Weeks &middot; Hybrid</div>
+            <div class="ci-format-detail">Aug 26, 2026 &middot; Wednesdays &middot; 12 Weeks &middot; Hybrid</div>
           </div>
           <div class="ci-sched">
             <div class="ci-sched-info">
-              <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">August 29, 2026 &middot; Saturdays</span></div>
-              <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">12 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div>
-              <div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div>
-              <div class="csi-row"><span class="csi-key">Saturday</span><span class="csi-val">10:00 am &ndash; 2:00 pm</span></div>
+<div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">August 26, 2026 &middot; Wednesdays</span></div><div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">12 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div><div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div><div class="csi-row"><span class="csi-key">Day pathway</span><span class="csi-val">10:00 am &ndash; 12:00 pm</span></div><div class="csi-row"><span class="csi-key">Eve pathway</span><span class="csi-val">6:00 pm &ndash; 8:00 pm</span></div>
             </div>
-            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:50%"></div></div><div class="cem-foot"><span class="cem-pct">50% filled</span><span class="cem-rem moderate">Seats available</span></div></div>
+            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% &middot; Day</span><span class="cem-rem moderate">Seats available</span></div></div><div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% &middot; Evening</span><span class="cem-rem moderate">Seats available</span></div></div>
           </div>
           <div class="ci-actions">
             <a href="https://register.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
-            <button class="btn-info" onclick="openSchedule('phlebotomy_aug_weekend')">View Schedule</button>
+            <button class="btn-info" onclick="openSchedule('august-2026-phlebotomy-hybrid-program')">View Schedule</button>
           </div>
         </div>
-
-        <!-- CCMA Weekend - August -->
-        <div class="ci" data-pathway="august" data-type="weekend">
+        <!-- CCMA Weekend — August 2026 (generated) -->
+        <div class="ci" data-pathway="august-2026" data-type="weekend">
           <div class="ci-type-bar hybrid"></div>
           <div class="ci-info">
             <span class="ci-format-badge hybrid">Hybrid</span>
@@ -1105,21 +1082,270 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f8f9;color:#1a1a2e
           </div>
           <div class="ci-sched">
             <div class="ci-sched-info">
-              <div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">August 29, 2026 &middot; Saturdays</span></div>
-              <div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">16 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div>
-              <div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div>
-              <div class="csi-row"><span class="csi-key">Saturday</span><span class="csi-val">10:00 am &ndash; 2:00 pm</span></div>
+<div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">August 29, 2026 &middot; Saturdays</span></div><div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">16 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div><div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div><div class="csi-row"><span class="csi-key">Saturday</span><span class="csi-val">10:00 am &ndash; 2:00 pm</span></div>
             </div>
-            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:45%"></div></div><div class="cem-foot"><span class="cem-pct">45% filled</span><span class="cem-rem moderate">Seats available</span></div></div>
+            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% filled</span><span class="cem-rem moderate">Seats available</span></div></div>
           </div>
           <div class="ci-actions">
             <a href="https://register.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
-            <button class="btn-info" onclick="openSchedule('ccma_aug_weekend')">View Schedule</button>
+            <button class="btn-info" onclick="openSchedule('august-2026-clinical-medical-assistant-weekend-program')">View Schedule</button>
+          </div>
+        </div>
+        <!-- Phlebotomy Weekend — August 2026 (generated) -->
+        <div class="ci" data-pathway="august-2026" data-type="weekend">
+          <div class="ci-type-bar hybrid"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge hybrid">Hybrid</span>
+            <div class="ci-course-name">Phlebotomy &mdash; Weekend Hybrid</div>
+            <div class="ci-credential">CPT &middot; NHA &amp; AMCA Accredited</div>
+            <div class="ci-format-detail">Aug 29, 2026 &middot; Saturdays &middot; 12 Weeks &middot; Hybrid</div>
+          </div>
+          <div class="ci-sched">
+            <div class="ci-sched-info">
+<div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">August 29, 2026 &middot; Saturdays</span></div><div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">12 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div><div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div><div class="csi-row"><span class="csi-key">Saturday</span><span class="csi-val">10:00 am &ndash; 2:00 pm</span></div>
+            </div>
+            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% filled</span><span class="cem-rem moderate">Seats available</span></div></div>
+          </div>
+          <div class="ci-actions">
+            <a href="https://register.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
+            <button class="btn-info" onclick="openSchedule('may-2026-phlebotomy-weekend-programs')">View Schedule</button>
           </div>
         </div>
 
-      </div><!-- /august table -->
+      </div><!-- /august-2026 table -->
     </section>
+
+    <div class="section-divider"><span class="sd-label">Hybrid Pathway &mdash; September 2026</span></div>
+
+    <section id="september-2026">
+
+      <div class="section-header">
+        <div class="sh-left">
+          <span class="sh-eyebrow">Fall 2026</span>
+          <div class="sh-title">September 2026 Hybrid Pathway</div>
+        </div>
+        <span class="sh-meta">Starts Sep 26 / Sep 29 &middot; 4 sections</span>
+      </div>
+
+      <div class="tuition-notice">
+        <div class="tn-left">
+          <div class="tn-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;color:#fff"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="tn-content">
+            <div class="tn-title">Registration Deadline &mdash; September 14, 2026</div>
+            <div class="tn-sub">Hybrid cohort — in-person labs begin Week 1. Seats are not held without payment.</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:.57rem;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;text-align:right;margin-bottom:.4rem">Closes in</div>
+          <div class="tn-countdown" data-arx-deadline="2026-09-14T23:59:59">
+            <div class="tn-cd-unit"><span class="tn-cd-num" data-cd="d">--</span><span class="tn-cd-lbl">Days</span></div>
+            <span class="tn-cd-sep">:</span>
+            <div class="tn-cd-unit"><span class="tn-cd-num" data-cd="h">--</span><span class="tn-cd-lbl">Hrs</span></div>
+            <span class="tn-cd-sep">:</span>
+            <div class="tn-cd-unit"><span class="tn-cd-num" data-cd="m">--</span><span class="tn-cd-lbl">Min</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-table">
+        <div class="ct-header">
+          <div class="ct-th">Course &amp; Credential</div>
+          <div class="ct-th">Enrollment &amp; Schedule</div>
+          <div class="ct-th">Actions</div>
+        </div>
+
+        <!-- CCMA Hybrid — September 2026 (generated) -->
+        <div class="ci" data-pathway="september-2026" data-type="campus">
+          <div class="ci-type-bar hybrid"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge hybrid">Hybrid</span>
+            <div class="ci-course-name">Clinical Medical Assistant</div>
+            <div class="ci-credential">CCMA &middot; NHA &amp; AMCA Approved</div>
+            <div class="ci-format-detail">Sep 29, 2026 &middot; Tuesdays &middot; 16 Weeks &middot; Hybrid</div>
+          </div>
+          <div class="ci-sched">
+            <div class="ci-sched-info">
+<div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">September 29, 2026 &middot; Tuesdays</span></div><div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">16 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div><div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div><div class="csi-row"><span class="csi-key">Day pathway</span><span class="csi-val">10:00 am &ndash; 12:00 pm</span></div><div class="csi-row"><span class="csi-key">Eve pathway</span><span class="csi-val">6:00 pm &ndash; 8:00 pm</span></div>
+            </div>
+            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% &middot; Day</span><span class="cem-rem moderate">Seats available</span></div></div><div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% &middot; Evening</span><span class="cem-rem moderate">Seats available</span></div></div>
+          </div>
+          <div class="ci-actions">
+            <a href="https://register.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
+            <button class="btn-info" onclick="openSchedule('september-2026-clinical-medical-assistant-hybrid-program')">View Schedule</button>
+          </div>
+        </div>
+        <!-- Phlebotomy Hybrid — September 2026 (generated) -->
+        <div class="ci" data-pathway="september-2026" data-type="campus">
+          <div class="ci-type-bar hybrid"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge hybrid">Hybrid</span>
+            <div class="ci-course-name">Phlebotomy Technician</div>
+            <div class="ci-credential">CPT &middot; NHA &amp; AMCA Accredited</div>
+            <div class="ci-format-detail">Sep 29, 2026 &middot; Tuesdays &middot; 12 Weeks &middot; Hybrid</div>
+          </div>
+          <div class="ci-sched">
+            <div class="ci-sched-info">
+<div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">September 29, 2026 &middot; Tuesdays</span></div><div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">12 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div><div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div><div class="csi-row"><span class="csi-key">Day pathway</span><span class="csi-val">10:00 am &ndash; 12:00 pm</span></div><div class="csi-row"><span class="csi-key">Eve pathway</span><span class="csi-val">6:00 pm &ndash; 8:00 pm</span></div>
+            </div>
+            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% &middot; Day</span><span class="cem-rem moderate">Seats available</span></div></div><div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% &middot; Evening</span><span class="cem-rem moderate">Seats available</span></div></div>
+          </div>
+          <div class="ci-actions">
+            <a href="https://register.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
+            <button class="btn-info" onclick="openSchedule('september-2026-phlebotomy-hybrid-program')">View Schedule</button>
+          </div>
+        </div>
+        <!-- CCMA Weekend — September 2026 (generated) -->
+        <div class="ci" data-pathway="september-2026" data-type="weekend">
+          <div class="ci-type-bar hybrid"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge hybrid">Hybrid</span>
+            <div class="ci-course-name">Clinical Medical Asst &mdash; Weekend Hybrid</div>
+            <div class="ci-credential">CCMA &middot; NHA &amp; AMCA Approved</div>
+            <div class="ci-format-detail">Sep 26, 2026 &middot; Saturdays &middot; 16 Weeks &middot; Hybrid</div>
+          </div>
+          <div class="ci-sched">
+            <div class="ci-sched-info">
+<div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">September 26, 2026 &middot; Saturdays</span></div><div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">16 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div><div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div><div class="csi-row"><span class="csi-key">Saturday</span><span class="csi-val">10:00 am &ndash; 2:00 pm</span></div>
+            </div>
+            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% filled</span><span class="cem-rem moderate">Seats available</span></div></div>
+          </div>
+          <div class="ci-actions">
+            <a href="https://register.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
+            <button class="btn-info" onclick="openSchedule('september-2026-clinical-medical-assistant-weekend-program')">View Schedule</button>
+          </div>
+        </div>
+        <!-- Phlebotomy Weekend — September 2026 (generated) -->
+        <div class="ci" data-pathway="september-2026" data-type="weekend">
+          <div class="ci-type-bar hybrid"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge hybrid">Hybrid</span>
+            <div class="ci-course-name">Phlebotomy &mdash; Weekend Hybrid</div>
+            <div class="ci-credential">CPT &middot; NHA &amp; AMCA Accredited</div>
+            <div class="ci-format-detail">Sep 26, 2026 &middot; Saturdays &middot; 12 Weeks &middot; Hybrid</div>
+          </div>
+          <div class="ci-sched">
+            <div class="ci-sched-info">
+<div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">September 26, 2026 &middot; Saturdays</span></div><div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">12 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div><div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div><div class="csi-row"><span class="csi-key">Saturday</span><span class="csi-val">10:00 am &ndash; 2:00 pm</span></div>
+            </div>
+            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% filled</span><span class="cem-rem moderate">Seats available</span></div></div>
+          </div>
+          <div class="ci-actions">
+            <a href="https://register.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
+            <button class="btn-info" onclick="openSchedule('september-2026-phlebotomy-weekend-program')">View Schedule</button>
+          </div>
+        </div>
+
+      </div><!-- /september-2026 table -->
+    </section>
+
+    <div class="section-divider"><span class="sd-label">Hybrid Pathway &mdash; October 2026</span></div>
+
+    <section id="october-2026">
+
+      <div class="section-header">
+        <div class="sh-left">
+          <span class="sh-eyebrow">Fall 2026</span>
+          <div class="sh-title">October 2026 Hybrid Pathway</div>
+        </div>
+        <span class="sh-meta">Starts Oct 24 / Oct 26 &middot; 3 sections</span>
+      </div>
+
+      <div class="tuition-notice">
+        <div class="tn-left">
+          <div class="tn-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;color:#fff"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="tn-content">
+            <div class="tn-title">Registration Deadline &mdash; October 12, 2026</div>
+            <div class="tn-sub">Hybrid cohort — in-person labs begin Week 1. Seats are not held without payment.</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:.57rem;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;text-align:right;margin-bottom:.4rem">Closes in</div>
+          <div class="tn-countdown" data-arx-deadline="2026-10-12T23:59:59">
+            <div class="tn-cd-unit"><span class="tn-cd-num" data-cd="d">--</span><span class="tn-cd-lbl">Days</span></div>
+            <span class="tn-cd-sep">:</span>
+            <div class="tn-cd-unit"><span class="tn-cd-num" data-cd="h">--</span><span class="tn-cd-lbl">Hrs</span></div>
+            <span class="tn-cd-sep">:</span>
+            <div class="tn-cd-unit"><span class="tn-cd-num" data-cd="m">--</span><span class="tn-cd-lbl">Min</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-table">
+        <div class="ct-header">
+          <div class="ct-th">Course &amp; Credential</div>
+          <div class="ct-th">Enrollment &amp; Schedule</div>
+          <div class="ct-th">Actions</div>
+        </div>
+
+        <!-- CCMA Hybrid — October 2026 (generated) -->
+        <div class="ci" data-pathway="october-2026" data-type="campus">
+          <div class="ci-type-bar hybrid"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge hybrid">Hybrid</span>
+            <div class="ci-course-name">Clinical Medical Assistant</div>
+            <div class="ci-credential">CCMA &middot; NHA &amp; AMCA Approved</div>
+            <div class="ci-format-detail">Oct 26, 2026 &middot; Mondays &middot; 16 Weeks &middot; Hybrid</div>
+          </div>
+          <div class="ci-sched">
+            <div class="ci-sched-info">
+<div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">October 26, 2026 &middot; Mondays</span></div><div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">16 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div><div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div><div class="csi-row"><span class="csi-key">Day pathway</span><span class="csi-val">10:00 am &ndash; 12:00 pm</span></div><div class="csi-row"><span class="csi-key">Eve pathway</span><span class="csi-val">6:00 pm &ndash; 8:00 pm</span></div>
+            </div>
+            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% &middot; Day</span><span class="cem-rem moderate">Seats available</span></div></div><div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% &middot; Evening</span><span class="cem-rem moderate">Seats available</span></div></div>
+          </div>
+          <div class="ci-actions">
+            <a href="https://register.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
+            <button class="btn-info" onclick="openSchedule('october-2026-clinical-medical-assistant-hybrid-program')">View Schedule</button>
+          </div>
+        </div>
+        <!-- CCMA Weekend — October 2026 (generated) -->
+        <div class="ci" data-pathway="october-2026" data-type="weekend">
+          <div class="ci-type-bar hybrid"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge hybrid">Hybrid</span>
+            <div class="ci-course-name">Clinical Medical Asst &mdash; Weekend Hybrid</div>
+            <div class="ci-credential">CCMA &middot; NHA &amp; AMCA Approved</div>
+            <div class="ci-format-detail">Oct 24, 2026 &middot; Saturdays &middot; 16 Weeks &middot; Hybrid</div>
+          </div>
+          <div class="ci-sched">
+            <div class="ci-sched-info">
+<div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">October 24, 2026 &middot; Saturdays</span></div><div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">16 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div><div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div><div class="csi-row"><span class="csi-key">Saturday</span><span class="csi-val">10:00 am &ndash; 2:00 pm</span></div>
+            </div>
+            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% filled</span><span class="cem-rem moderate">Seats available</span></div></div>
+          </div>
+          <div class="ci-actions">
+            <a href="https://register.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
+            <button class="btn-info" onclick="openSchedule('october-2026-clinical-medical-assistant-weekend-program')">View Schedule</button>
+          </div>
+        </div>
+        <!-- Phlebotomy Weekend — October 2026 (generated) -->
+        <div class="ci" data-pathway="october-2026" data-type="weekend">
+          <div class="ci-type-bar hybrid"></div>
+          <div class="ci-info">
+            <span class="ci-format-badge hybrid">Hybrid</span>
+            <div class="ci-course-name">Phlebotomy &mdash; Weekend Hybrid</div>
+            <div class="ci-credential">CPT &middot; NHA &amp; AMCA Accredited</div>
+            <div class="ci-format-detail">Oct 24, 2026 &middot; Saturdays &middot; 12 Weeks &middot; Hybrid</div>
+          </div>
+          <div class="ci-sched">
+            <div class="ci-sched-info">
+<div class="csi-row"><span class="csi-key">Start date</span><span class="csi-val">October 24, 2026 &middot; Saturdays</span></div><div class="csi-row"><span class="csi-key">Duration</span><span class="csi-val">12 Weeks (Weeks 1&ndash;5 In-Person + Online)</span></div><div class="csi-row"><span class="csi-key">Reg. fee</span><span class="csi-val">$49 registration fee</span></div><div class="csi-row"><span class="csi-key">Saturday</span><span class="csi-val">10:00 am &ndash; 2:00 pm</span></div>
+            </div>
+            <div class="ci-pathway-entry"><div class="cem-track"><div class="cem-fill lo" style="width:40%"></div></div><div class="cem-foot"><span class="cem-pct">40% filled</span><span class="cem-rem moderate">Seats available</span></div></div>
+          </div>
+          <div class="ci-actions">
+            <a href="https://register.alliedrxtraining.com/register" target="_blank" class="btn-register">Register Now</a>
+            <button class="btn-info" onclick="openSchedule('october-2026-phlebotomy-weekend-program')">View Schedule</button>
+          </div>
+        </div>
+
+      </div><!-- /october-2026 table -->
+    </section>
+
+<!-- ARX:SECTIONS_COHORTS:END -->
 
   </main>
 </div>
@@ -1809,6 +2035,36 @@ document.querySelectorAll('.ci').forEach(function(row){
     window.open('https://register.alliedrxtraining.com/register','_blank');
   });
 });
+/* ARX:SCHEDULES_COHORTS:START */
+Object.assign(schedules, {
+"august-2026-clinical-medical-assistant-hybrid-program":{"type": "hybrid", "name": "Clinical Medical Assistant (CCMA) — Hybrid Cohort", "cred": "NHA CCMA & AMCA Certified", "weeks": 16, "startDate": "2026-08-26", "clockHours": "400 Hours (300 Didactic + 100 In-Person Campus Lab)", "enrollFee": "$49 Registration Fee · Pay tuition when you add your first class", "fmt": "Hybrid — Wednesdays · In-Person Lab (Weeks 1–5) + Online Coursework (Weeks 1–16)", "passRate": "NHA CCMA 85%+ · AMCA 88%+ (above national average)", "approval": "SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted", "phases": ["Week 1 (Aug 26) · Lab — Orientation, Safety & Vital Signs", "Week 2 (Sep 2) · Lab — Infection Control & Sterile Field Technique", "Week 3 (Sep 9) · Lab — Venipuncture & Phlebotomy Skills", "Week 4 (Sep 16) · Lab — Injections & Medication Administration", "Week 5 (Sep 23) · Lab — EKG Lead Placement & Acquisition", "Week 6 (Sep 30) · Online — Principles of Pharmacology & Drug Administration", "Week 7 (Oct 7) · Online — Clinical Procedures (Gastroenterology & Urology)", "Week 8 (Oct 14) · Online — Clinical Procedures (OB/GYN & Pediatrics)", "Week 9 (Oct 21) · Online — Administrative Skills & Electronic Health Records", "Week 10 (Oct 28) · Online — Medical Specialties (Cardiology & Pulmonology)", "Week 11 (Nov 4) · Online — Medical Specialties (Neurology & Oncology)", "Week 12 (Nov 11) · Online — Patient Assessment & Pharmacology Review", "Week 13 (Nov 18) · Online — Health Records & Clinical Documentation", "Week 14 (Nov 25) · Online — Medical Law, Ethics & Patient Rights", "Week 15 (Dec 2) · Online — NHA CCMA & AMCA Exam Prep", "Week 16 (Dec 9) · Online — Final Review & Certification Completion"]},
+"august-2026-phlebotomy-hybrid-program":{"type": "hybrid", "name": "Phlebotomy Technician (CPT) — Hybrid Cohort", "cred": "NHA CPT Certified", "weeks": 12, "startDate": "2026-08-26", "clockHours": "120 Hours (60 Didactic + 30 In-Person Lab + 30 Simulation)", "enrollFee": "$49 Registration Fee · $99 due when first class is added", "fmt": "Hybrid — Wednesdays · In-Person Lab (Weeks 1–5) + Online Coursework (Weeks 1–12)", "passRate": "NHA CPT 90%+ (above national average)", "approval": "SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted", "phases": ["Week 1 (Aug 26) · Lab — Safety & Setup · Introduction to Phlebotomy", "Week 2 (Sep 2) · Lab — Anatomy of the Venous System & Equipment", "Week 3 (Sep 9) · Lab — Venipuncture Techniques & Practice Draws", "Week 4 (Sep 16) · Lab — Capillary Puncture, Fingerstick & Heelstick", "Week 5 (Sep 23) · Lab — Blood Cultures, Special Collections & Advanced Draws", "Week 6 (Sep 30) · Online — Specimen Processing, Handling & Transportation", "Week 7 (Oct 7) · Online — Lab Safety & OSHA Compliance", "Week 8 (Oct 14) · Online — Pediatric Draws & Difficult Access Patients", "Week 9 (Oct 21) · Online — Point-of-Care Testing & Glucometry", "Week 10 (Oct 28) · Online — Documentation, Labeling & Chain of Custody", "Week 11 (Nov 4) · Online — Clinical Skills Simulation & Practice", "Week 12 (Nov 11) · Online — NHA CPT Exam Prep & Certification Review"]},
+"august-2026-clinical-medical-assistant-weekend-program":{"type": "hybrid", "name": "Clinical Medical Asst — Weekend Hybrid Cohort", "cred": "NHA CCMA · 16-Week Program", "weeks": 16, "startDate": "2026-08-29", "clockHours": "400 Hours (300 Didactic + 100 In-Person Campus Lab)", "enrollFee": "$49 Registration Fee · Pay tuition when you add your first class", "fmt": "Hybrid — Saturdays · In-Person Lab (Weeks 1–5) + Online Coursework (Weeks 1–16)", "passRate": "NHA CCMA 85%+ · AMCA 88%+ (above national average)", "approval": "SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted", "phases": ["Week 1 (Aug 29) · Lab — Orientation, Safety & Vital Signs", "Week 2 (Sep 5) · Lab — Infection Control & Sterile Field Technique", "Week 3 (Sep 12) · Lab — Venipuncture & Phlebotomy Skills", "Week 4 (Sep 19) · Lab — Injections & Medication Administration", "Week 5 (Sep 26) · Lab — EKG Lead Placement & Acquisition", "Week 6 (Oct 3) · Online — Principles of Pharmacology & Drug Administration", "Week 7 (Oct 10) · Online — Clinical Procedures (Gastroenterology & Urology)", "Week 8 (Oct 17) · Online — Clinical Procedures (OB/GYN & Pediatrics)", "Week 9 (Oct 24) · Online — Administrative Skills & Electronic Health Records", "Week 10 (Oct 31) · Online — Medical Specialties (Cardiology & Pulmonology)", "Week 11 (Nov 7) · Online — Medical Specialties (Neurology & Oncology)", "Week 12 (Nov 14) · Online — Patient Assessment & Pharmacology Review", "Week 13 (Nov 21) · Online — Health Records & Clinical Documentation", "Week 14 (Nov 28) · Online — Medical Law, Ethics & Patient Rights", "Week 15 (Dec 5) · Online — NHA CCMA & AMCA Exam Prep", "Week 16 (Dec 12) · Online — Final Review & Certification Completion"]},
+"may-2026-phlebotomy-weekend-programs":{"type": "hybrid", "name": "Phlebotomy — Weekend Hybrid Cohort", "cred": "NHA CPT Certified · 12-Week Program", "weeks": 12, "startDate": "2026-08-29", "clockHours": "120 Hours (60 Didactic + 30 In-Person Lab + 30 Simulation)", "enrollFee": "$49 Registration Fee · $99 due when first class is added", "fmt": "Hybrid — Saturdays · In-Person Lab (Weeks 1–5) + Online Coursework (Weeks 1–12)", "passRate": "NHA CPT 90%+ (above national average)", "approval": "SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted", "phases": ["Week 1 (Aug 29) · Lab — Safety & Setup · Introduction to Phlebotomy", "Week 2 (Sep 5) · Lab — Anatomy of the Venous System & Equipment", "Week 3 (Sep 12) · Lab — Venipuncture Techniques & Practice Draws", "Week 4 (Sep 19) · Lab — Capillary Puncture, Fingerstick & Heelstick", "Week 5 (Sep 26) · Lab — Blood Cultures, Special Collections & Advanced Draws", "Week 6 (Oct 3) · Online — Specimen Processing, Handling & Transportation", "Week 7 (Oct 10) · Online — Lab Safety & OSHA Compliance", "Week 8 (Oct 17) · Online — Pediatric Draws & Difficult Access Patients", "Week 9 (Oct 24) · Online — Point-of-Care Testing & Glucometry", "Week 10 (Oct 31) · Online — Documentation, Labeling & Chain of Custody", "Week 11 (Nov 7) · Online — Clinical Skills Simulation & Practice", "Week 12 (Nov 14) · Online — NHA CPT Exam Prep & Certification Review"]},
+"september-2026-clinical-medical-assistant-hybrid-program":{"type": "hybrid", "name": "Clinical Medical Assistant (CCMA) — Hybrid Cohort", "cred": "NHA CCMA & AMCA Certified", "weeks": 16, "startDate": "2026-09-29", "clockHours": "400 Hours (300 Didactic + 100 In-Person Campus Lab)", "enrollFee": "$49 Registration Fee · Pay tuition when you add your first class", "fmt": "Hybrid — Tuesdays · In-Person Lab (Weeks 1–5) + Online Coursework (Weeks 1–16)", "passRate": "NHA CCMA 85%+ · AMCA 88%+ (above national average)", "approval": "SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted", "phases": ["Week 1 (Sep 29) · Lab — Orientation, Safety & Vital Signs", "Week 2 (Oct 6) · Lab — Infection Control & Sterile Field Technique", "Week 3 (Oct 13) · Lab — Venipuncture & Phlebotomy Skills", "Week 4 (Oct 20) · Lab — Injections & Medication Administration", "Week 5 (Oct 27) · Lab — EKG Lead Placement & Acquisition", "Week 6 (Nov 3) · Online — Principles of Pharmacology & Drug Administration", "Week 7 (Nov 10) · Online — Clinical Procedures (Gastroenterology & Urology)", "Week 8 (Nov 17) · Online — Clinical Procedures (OB/GYN & Pediatrics)", "Week 9 (Nov 24) · Online — Administrative Skills & Electronic Health Records", "Week 10 (Dec 1) · Online — Medical Specialties (Cardiology & Pulmonology)", "Week 11 (Dec 8) · Online — Medical Specialties (Neurology & Oncology)", "Week 12 (Dec 15) · Online — Patient Assessment & Pharmacology Review", "Week 13 (Dec 22) · Online — Health Records & Clinical Documentation", "Week 14 (Dec 29) · Online — Medical Law, Ethics & Patient Rights", "Week 15 (Jan 5) · Online — NHA CCMA & AMCA Exam Prep", "Week 16 (Jan 12) · Online — Final Review & Certification Completion"]},
+"september-2026-phlebotomy-hybrid-program":{"type": "hybrid", "name": "Phlebotomy Technician (CPT) — Hybrid Cohort", "cred": "NHA CPT Certified", "weeks": 12, "startDate": "2026-09-29", "clockHours": "120 Hours (60 Didactic + 30 In-Person Lab + 30 Simulation)", "enrollFee": "$49 Registration Fee · $99 due when first class is added", "fmt": "Hybrid — Tuesdays · In-Person Lab (Weeks 1–5) + Online Coursework (Weeks 1–12)", "passRate": "NHA CPT 90%+ (above national average)", "approval": "SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted", "phases": ["Week 1 (Sep 29) · Lab — Safety & Setup · Introduction to Phlebotomy", "Week 2 (Oct 6) · Lab — Anatomy of the Venous System & Equipment", "Week 3 (Oct 13) · Lab — Venipuncture Techniques & Practice Draws", "Week 4 (Oct 20) · Lab — Capillary Puncture, Fingerstick & Heelstick", "Week 5 (Oct 27) · Lab — Blood Cultures, Special Collections & Advanced Draws", "Week 6 (Nov 3) · Online — Specimen Processing, Handling & Transportation", "Week 7 (Nov 10) · Online — Lab Safety & OSHA Compliance", "Week 8 (Nov 17) · Online — Pediatric Draws & Difficult Access Patients", "Week 9 (Nov 24) · Online — Point-of-Care Testing & Glucometry", "Week 10 (Dec 1) · Online — Documentation, Labeling & Chain of Custody", "Week 11 (Dec 8) · Online — Clinical Skills Simulation & Practice", "Week 12 (Dec 15) · Online — NHA CPT Exam Prep & Certification Review"]},
+"september-2026-clinical-medical-assistant-weekend-program":{"type": "hybrid", "name": "Clinical Medical Asst — Weekend Hybrid Cohort", "cred": "NHA CCMA · 16-Week Program", "weeks": 16, "startDate": "2026-09-26", "clockHours": "400 Hours (300 Didactic + 100 In-Person Campus Lab)", "enrollFee": "$49 Registration Fee · Pay tuition when you add your first class", "fmt": "Hybrid — Saturdays · In-Person Lab (Weeks 1–5) + Online Coursework (Weeks 1–16)", "passRate": "NHA CCMA 85%+ · AMCA 88%+ (above national average)", "approval": "SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted", "phases": ["Week 1 (Sep 26) · Lab — Orientation, Safety & Vital Signs", "Week 2 (Oct 3) · Lab — Infection Control & Sterile Field Technique", "Week 3 (Oct 10) · Lab — Venipuncture & Phlebotomy Skills", "Week 4 (Oct 17) · Lab — Injections & Medication Administration", "Week 5 (Oct 24) · Lab — EKG Lead Placement & Acquisition", "Week 6 (Oct 31) · Online — Principles of Pharmacology & Drug Administration", "Week 7 (Nov 7) · Online — Clinical Procedures (Gastroenterology & Urology)", "Week 8 (Nov 14) · Online — Clinical Procedures (OB/GYN & Pediatrics)", "Week 9 (Nov 21) · Online — Administrative Skills & Electronic Health Records", "Week 10 (Nov 28) · Online — Medical Specialties (Cardiology & Pulmonology)", "Week 11 (Dec 5) · Online — Medical Specialties (Neurology & Oncology)", "Week 12 (Dec 12) · Online — Patient Assessment & Pharmacology Review", "Week 13 (Dec 19) · Online — Health Records & Clinical Documentation", "Week 14 (Dec 26) · Online — Medical Law, Ethics & Patient Rights", "Week 15 (Jan 2) · Online — NHA CCMA & AMCA Exam Prep", "Week 16 (Jan 9) · Online — Final Review & Certification Completion"]},
+"september-2026-phlebotomy-weekend-program":{"type": "hybrid", "name": "Phlebotomy — Weekend Hybrid Cohort", "cred": "NHA CPT Certified · 12-Week Program", "weeks": 12, "startDate": "2026-09-26", "clockHours": "120 Hours (60 Didactic + 30 In-Person Lab + 30 Simulation)", "enrollFee": "$49 Registration Fee · $99 due when first class is added", "fmt": "Hybrid — Saturdays · In-Person Lab (Weeks 1–5) + Online Coursework (Weeks 1–12)", "passRate": "NHA CPT 90%+ (above national average)", "approval": "SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted", "phases": ["Week 1 (Sep 26) · Lab — Safety & Setup · Introduction to Phlebotomy", "Week 2 (Oct 3) · Lab — Anatomy of the Venous System & Equipment", "Week 3 (Oct 10) · Lab — Venipuncture Techniques & Practice Draws", "Week 4 (Oct 17) · Lab — Capillary Puncture, Fingerstick & Heelstick", "Week 5 (Oct 24) · Lab — Blood Cultures, Special Collections & Advanced Draws", "Week 6 (Oct 31) · Online — Specimen Processing, Handling & Transportation", "Week 7 (Nov 7) · Online — Lab Safety & OSHA Compliance", "Week 8 (Nov 14) · Online — Pediatric Draws & Difficult Access Patients", "Week 9 (Nov 21) · Online — Point-of-Care Testing & Glucometry", "Week 10 (Nov 28) · Online — Documentation, Labeling & Chain of Custody", "Week 11 (Dec 5) · Online — Clinical Skills Simulation & Practice", "Week 12 (Dec 12) · Online — NHA CPT Exam Prep & Certification Review"]},
+"october-2026-clinical-medical-assistant-hybrid-program":{"type": "hybrid", "name": "Clinical Medical Assistant (CCMA) — Hybrid Cohort", "cred": "NHA CCMA & AMCA Certified", "weeks": 16, "startDate": "2026-10-26", "clockHours": "400 Hours (300 Didactic + 100 In-Person Campus Lab)", "enrollFee": "$49 Registration Fee · Pay tuition when you add your first class", "fmt": "Hybrid — Mondays · In-Person Lab (Weeks 1–5) + Online Coursework (Weeks 1–16)", "passRate": "NHA CCMA 85%+ · AMCA 88%+ (above national average)", "approval": "SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted", "phases": ["Week 1 (Oct 26) · Lab — Orientation, Safety & Vital Signs", "Week 2 (Nov 2) · Lab — Infection Control & Sterile Field Technique", "Week 3 (Nov 9) · Lab — Venipuncture & Phlebotomy Skills", "Week 4 (Nov 16) · Lab — Injections & Medication Administration", "Week 5 (Nov 23) · Lab — EKG Lead Placement & Acquisition", "Week 6 (Nov 30) · Online — Principles of Pharmacology & Drug Administration", "Week 7 (Dec 7) · Online — Clinical Procedures (Gastroenterology & Urology)", "Week 8 (Dec 14) · Online — Clinical Procedures (OB/GYN & Pediatrics)", "Week 9 (Dec 21) · Online — Administrative Skills & Electronic Health Records", "Week 10 (Dec 28) · Online — Medical Specialties (Cardiology & Pulmonology)", "Week 11 (Jan 4) · Online — Medical Specialties (Neurology & Oncology)", "Week 12 (Jan 11) · Online — Patient Assessment & Pharmacology Review", "Week 13 (Jan 18) · Online — Health Records & Clinical Documentation", "Week 14 (Jan 25) · Online — Medical Law, Ethics & Patient Rights", "Week 15 (Feb 1) · Online — NHA CCMA & AMCA Exam Prep", "Week 16 (Feb 8) · Online — Final Review & Certification Completion"]},
+"october-2026-clinical-medical-assistant-weekend-program":{"type": "hybrid", "name": "Clinical Medical Asst — Weekend Hybrid Cohort", "cred": "NHA CCMA · 16-Week Program", "weeks": 16, "startDate": "2026-10-24", "clockHours": "400 Hours (300 Didactic + 100 In-Person Campus Lab)", "enrollFee": "$49 Registration Fee · Pay tuition when you add your first class", "fmt": "Hybrid — Saturdays · In-Person Lab (Weeks 1–5) + Online Coursework (Weeks 1–16)", "passRate": "NHA CCMA 85%+ · AMCA 88%+ (above national average)", "approval": "SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted", "phases": ["Week 1 (Oct 24) · Lab — Orientation, Safety & Vital Signs", "Week 2 (Oct 31) · Lab — Infection Control & Sterile Field Technique", "Week 3 (Nov 7) · Lab — Venipuncture & Phlebotomy Skills", "Week 4 (Nov 14) · Lab — Injections & Medication Administration", "Week 5 (Nov 21) · Lab — EKG Lead Placement & Acquisition", "Week 6 (Nov 28) · Online — Principles of Pharmacology & Drug Administration", "Week 7 (Dec 5) · Online — Clinical Procedures (Gastroenterology & Urology)", "Week 8 (Dec 12) · Online — Clinical Procedures (OB/GYN & Pediatrics)", "Week 9 (Dec 19) · Online — Administrative Skills & Electronic Health Records", "Week 10 (Dec 26) · Online — Medical Specialties (Cardiology & Pulmonology)", "Week 11 (Jan 2) · Online — Medical Specialties (Neurology & Oncology)", "Week 12 (Jan 9) · Online — Patient Assessment & Pharmacology Review", "Week 13 (Jan 16) · Online — Health Records & Clinical Documentation", "Week 14 (Jan 23) · Online — Medical Law, Ethics & Patient Rights", "Week 15 (Jan 30) · Online — NHA CCMA & AMCA Exam Prep", "Week 16 (Feb 6) · Online — Final Review & Certification Completion"]},
+"october-2026-phlebotomy-weekend-program":{"type": "hybrid", "name": "Phlebotomy — Weekend Hybrid Cohort", "cred": "NHA CPT Certified · 12-Week Program", "weeks": 12, "startDate": "2026-10-24", "clockHours": "120 Hours (60 Didactic + 30 In-Person Lab + 30 Simulation)", "enrollFee": "$49 Registration Fee · $99 due when first class is added", "fmt": "Hybrid — Saturdays · In-Person Lab (Weeks 1–5) + Online Coursework (Weeks 1–12)", "passRate": "NHA CPT 90%+ (above national average)", "approval": "SCHEV Approved · NHA · AMCA · WIOA · Military Funding Accepted", "phases": ["Week 1 (Oct 24) · Lab — Safety & Setup · Introduction to Phlebotomy", "Week 2 (Oct 31) · Lab — Anatomy of the Venous System & Equipment", "Week 3 (Nov 7) · Lab — Venipuncture Techniques & Practice Draws", "Week 4 (Nov 14) · Lab — Capillary Puncture, Fingerstick & Heelstick", "Week 5 (Nov 21) · Lab — Blood Cultures, Special Collections & Advanced Draws", "Week 6 (Nov 28) · Online — Specimen Processing, Handling & Transportation", "Week 7 (Dec 5) · Online — Lab Safety & OSHA Compliance", "Week 8 (Dec 12) · Online — Pediatric Draws & Difficult Access Patients", "Week 9 (Dec 19) · Online — Point-of-Care Testing & Glucometry", "Week 10 (Dec 26) · Online — Documentation, Labeling & Chain of Custody", "Week 11 (Jan 2) · Online — Clinical Skills Simulation & Practice", "Week 12 (Jan 9) · Online — NHA CPT Exam Prep & Certification Review"]}
+});
+/* ARX:SCHEDULES_COHORTS:END */
+/* ARX:COUNTDOWN_COHORTS:START */
+(function(){
+  function pad(n){return String(n).padStart(2,'0');}
+  function tickAll(){
+    document.querySelectorAll('[data-arx-deadline]').forEach(function(el){
+      var end=new Date(el.getAttribute('data-arx-deadline'));
+      var diff=end-new Date();
+      var d=diff>0?Math.floor(diff/864e5):0, h=diff>0?Math.floor((diff%864e5)/36e5):0, m=diff>0?Math.floor((diff%36e5)/6e4):0;
+      var q=function(s){return el.querySelector('[data-cd="'+s+'"]');};
+      if(q('d'))q('d').textContent=pad(d); if(q('h'))q('h').textContent=pad(h); if(q('m'))q('m').textContent=pad(m);
+    });
+  }
+  tickAll(); setInterval(tickAll,60000);
+})();
+/* ARX:COUNTDOWN_COHORTS:END */
 </script>
 </body>
 </html>
