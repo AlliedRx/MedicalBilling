@@ -327,7 +327,7 @@
                     <option value="825" data-fee="49">Medical Admin Assistant — $825</option>
                     <option value="825" data-fee="49">Phlebotomy Technician — $825</option>
                     <option value="825" data-fee="49">Patient Care Technician — $825</option>
-                    <option value="2499" data-fee="49">Registered Dental Assistant — $2,499</option>
+                    <option value="825" data-fee="49">Registered Dental Assistant — $825</option>
                 </select>
                 <div id="calcFeeNote" class="calc-enroll-fee" style="display:none;"></div>
                 <div class="plan-tabs">
@@ -1013,7 +1013,7 @@
                 else if (plan === 'monthly') { paymentStr = '$' + Math.ceil(balance/3).toLocaleString() + '/mo'; totalStr = '3 monthly payments'; }
             }
             if (ids.downLabel) document.getElementById(ids.downLabel).textContent = downLabel;
-            if (ids.down)    document.getElementById(ids.down().textContent = downStr;
+            if (ids.down)    document.getElementById(ids.down).textContent = downStr;
             if (ids.balance) document.getElementById(ids.balance).textContent = balanceStr;
             if (ids.payment) document.getElementById(ids.payment).textContent = paymentStr;
             if (ids.total)   document.getElementById(ids.total).textContent = totalStr;
