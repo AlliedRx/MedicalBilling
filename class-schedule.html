@@ -1884,7 +1884,7 @@ document.querySelectorAll('.ci').forEach(function(row){
   row.addEventListener('click', function(e){
     // Don't redirect if user clicked an action button or the View Schedule btn
     if(e.target.closest('.ci-actions')) return;
-    window.open('https://register.alliedrxtraining.com/register','_blank');
+    var arxA=row.querySelector('a.btn-register');window.open(arxA?arxA.href:'https://register.alliedrxtraining.com/register','_blank');
   });
 });
 /* ARX:SCHEDULES_COHORTS:START */
@@ -1913,5 +1913,13 @@ Object.assign(schedules, {
 })();
 /* ARX:COUNTDOWN_COHORTS:END */
 </script>
+<script id="arx-reg-links">/* Program-specific register links (row buttons, row click, schedule modal). Cohort keys are used as program ids. */
+(function(){var B='https://register.alliedrxtraining.com/register';var M={ccma_online:'distance-learning-ccma-program-2026-2027',phlebotomy_online:'distance-learning-phlebotomy-technician-program-2026-2027',pharmacy_online:'pharmacy_tech',ekg_online:'distance-learning-ekg-program-2026-2027',billing_online:'distance-learning-billing-and-coding-program-2024',admin_online:'maa',dental_online:'rda'};
+function url(k){var id=M[k]||(/-program$/.test(k)?k:'');return id?B+'?program='+encodeURIComponent(id):B;}
+function rowKey(r){var b=r.querySelector('[onclick*="openSchedule"]');var m=b&&b.getAttribute('onclick').match(/openSchedule\('([^']+)'\)/);return m?m[1]:'';}
+function apply(){document.querySelectorAll('.ci').forEach(function(r){var k=rowKey(r);if(!k)return;r.querySelectorAll('a.btn-register').forEach(function(a){a.href=url(k);});});}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);else apply();
+if(typeof openSchedule==='function'){var o=openSchedule;window.openSchedule=function(k){o.apply(this,arguments);var a=document.querySelector('#schedModal .modal-btn-primary');if(a)a.href=url(k);};}
+})();</script>
 </body>
 </html>
