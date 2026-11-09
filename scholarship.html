@@ -369,7 +369,8 @@
   }
   function showLeft(n){
     box.className='arx-sch-status';
-    box.textContent=n+' of 100 scholarships still available.';
+    var used=100-n, round=Math.floor(used/10)+1, left=10-(used%10);
+    box.textContent='Round '+round+' of 10: only '+left+(left===1?' scholarship':' scholarships')+' left in this round.';
     box.style.display='block';
   }
   rpc('scholarship_remaining').then(function(n){ if(n<=0) closeForm(); else showLeft(n); }).catch(function(){});
