@@ -384,6 +384,10 @@
     if(btn) btn.disabled=true;
     rpc('claim_scholarship',{p_email: em?em.value:'', p_program: pg?pg.value:''}).then(function(res){
       if(res && res.full){ closeForm(); return; }
+      if(res && res.token){
+        var nx=form.querySelector('input[name="_next"]');
+        if(nx) nx.value='https://register.alliedrxtraining.com/register?scholarship='+encodeURIComponent(res.token);
+      }
       sending=true; HTMLFormElement.prototype.submit.call(form);
     }).catch(function(){
       sending=true; HTMLFormElement.prototype.submit.call(form);
