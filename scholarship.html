@@ -343,5 +343,53 @@
     update();
   })();
 </script>
+
+<style>
+.arx-sch-status{margin:0 0 18px;padding:14px 18px;border-radius:12px;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;background:rgba(124,108,219,.15);border:1px solid rgba(124,108,219,.45);color:inherit}
+.arx-sch-closed{background:rgba(220,60,90,.12);border-color:rgba(220,60,90,.45)}
+</style>
+<script>
+(function(){
+  var SB='https://hhzggarfpslftqwvjuiq.supabase.co/rest/v1/rpc/';
+  var KEY='sb_publishable_hFR9bHl_kWaP9i0WlQogYA_KtawEs0U';
+  function rpc(name, body){
+    return fetch(SB+name,{method:'POST',headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json'},body:JSON.stringify(body||{})}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});
+  }
+  var form=document.querySelector('form[action*="formsubmit"]');
+  if(!form) return;
+  var box=document.createElement('div');
+  box.className='arx-sch-status';
+  box.style.display='none';
+  form.parentNode.insertBefore(box, form);
+  function closeForm(){
+    form.style.display='none';
+    box.className='arx-sch-status arx-sch-closed';
+    box.textContent='All 100 scholarships have been awarded. Thank you for your interest! You can still enroll at standard tuition, or contact admissions@alliedrxtraining.com.';
+    box.style.display='block';
+  }
+  function showLeft(n){
+    box.className='arx-sch-status';
+    box.textContent=n+' of 100 scholarships still available.';
+    box.style.display='block';
+  }
+  rpc('scholarship_remaining').then(function(n){ if(n<=0) closeForm(); else showLeft(n); }).catch(function(){});
+  var sending=false;
+  form.addEventListener('submit', function(e){
+    if(sending) return;
+    e.preventDefault();
+    if(form.checkValidity && !form.checkValidity()){ form.reportValidity(); return; }
+    var em=form.querySelector('input[type="email"]');
+    var pg=form.querySelector('select');
+    var btn=form.querySelector('button[type="submit"],input[type="submit"],button:not([type])');
+    if(btn) btn.disabled=true;
+    rpc('claim_scholarship',{p_email: em?em.value:'', p_program: pg?pg.value:''}).then(function(res){
+      if(res && res.full){ closeForm(); return; }
+      sending=true; HTMLFormElement.prototype.submit.call(form);
+    }).catch(function(){
+      sending=true; HTMLFormElement.prototype.submit.call(form);
+    });
+  });
+})();
+</script>
 </body>
 </html>
