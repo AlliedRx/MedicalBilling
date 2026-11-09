@@ -350,8 +350,8 @@
 </style>
 <script>
 (function(){
-  var SB='https://hhzggarfpslftqwvjuiq.supabase.co/rest/v1/rpc/';
-  var KEY='sb_publishable_hFR9bHl_kWaP9i0WlQogYA_KtawEs0U';
+  var SB='https://xbhynfqtdwutmpluzlmw.supabase.co/rest/v1/rpc/';
+  var KEY='sb_publishable_2Q6z7JuICQZ-ATPazxGU-w_aVqA0wHa';
   function rpc(name, body){
     return fetch(SB+name,{method:'POST',headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json'},body:JSON.stringify(body||{})}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});
   }
