@@ -383,7 +383,7 @@
     var pg=form.querySelector('select');
     var btn=form.querySelector('button[type="submit"],input[type="submit"],button:not([type])');
     if(btn) btn.disabled=true;
-    rpc('claim_scholarship',{p_email: em?em.value:'', p_program: pg?pg.value:''}).then(function(res){
+    (function(){var v=function(n){var x=form.querySelector('[name="'+n+'"]');return x?(x.type==='checkbox'?x.checked:x.value):null;};return rpc('claim_scholarship_v2',{p:{email:v('Email'),program:v('Program'),first_name:v('First name'),last_name:v('Last name'),phone:v('Phone'),city:v('City'),state:v('State'),why_healthcare:v('Why healthcare'),heard_about_us:v('Heard about us'),age_or_diploma:v('Age or diploma'),self_pay:v('Self-pay')}});})().then(function(res){
       if(res && res.full){ closeForm(); return; }
       if(res && res.token){
         var nx=form.querySelector('input[name="_next"]');
